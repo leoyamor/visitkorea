@@ -2,6 +2,24 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import TreePage from "../components/TreePage.astro";
 import { findNodeBySegments, getPathForNode, siteTree } from "../data/siteTree";
+import type { TreeNode } from "../data/siteTree";
+
+const walkTree = (node: TreeNode, prefix: string[] = []) => {
+  const paths: string[] = [];
+  if (node.children) {
+    for (const child of node.children) {
+      const next = [...prefix, child.slug];
+      paths.push(next.join("/"));
+      paths.push(...walkTree(child, next));
+    }
+  }
+  return paths;
+};
+
+export const getStaticPaths = () => {
+  const paths = walkTree(siteTree).map((slug) => ({ params: { slug } }));
+  return paths;
+};
 
 const { slug } = Astro.params;
 const segments = slug ? slug.split("/") : [];

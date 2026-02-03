@@ -1,46 +1,23 @@
-# Astro Starter Kit: Basics
+# Korea Travel Guide (Next.js)
 
-```sh
-npm create astro@latest -- --template basics
-```
+A mobile-first, AdSense-friendly Korea travel guide built with the Next.js App Router and static export.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Local Development
 
-## 🚀 Project Structure
+| Command | Action |
+| --- | --- |
+| `npm install` | Install dependencies |
+| `npm run dev` | Start local dev server at `http://localhost:3000` |
+| `npm run build` | Build and export the static site to `./out/` |
+| `npm run start` | Start the production server (not used for static export) |
 
-Inside of your Astro project, you'll see the following folders and files:
+## Cloudflare Pages
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+Use these settings:
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+- Build command: `npm run build`
+- Output directory: `out`
 
-## 🧞 Commands
+## AdSense
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Ad placeholders live in `src/components/AdSlot.tsx`. Replace the placeholder markup with your AdSense code when ready.

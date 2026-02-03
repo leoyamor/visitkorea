@@ -1,0 +1,12 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TreePage from "../components/TreePage.astro";
+import { siteTree } from "../data/siteTree";
+
+const node = siteTree;
+const segments: string[] = [];
+---
+
+<BaseLayout title="Visit Korea Planner">
+  <TreePage node={node} segments={segments} parentPath="/" isHome />
+</BaseLayout>

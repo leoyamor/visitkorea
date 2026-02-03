@@ -1,0 +1,44 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TreePage from "../components/TreePage.astro";
+import { findNodeBySegments, getPathForNode, siteTree } from "../data/siteTree";
+
+const { slug } = Astro.params;
+const segments = slug ? slug.split("/") : [];
+const { node } = findNodeBySegments(segments);
+const parentPath = segments.length > 1 ? getPathForNode(segments.slice(0, -1)) : "/";
+const breadcrumbs: { label: string; path: string }[] = [];
+let cursor = siteTree;
+let pathSegments: string[] = [];
+for (const segment of segments) {
+  const next = cursor.children?.find((child) => child.slug === segment);
+  if (!next) break;
+  pathSegments = [...pathSegments, segment];
+  breadcrumbs.push({ label: next.title, path: `/${pathSegments.join("/")}` });
+  cursor = next;
+}
+
+if (!node) {
+  return (
+    <BaseLayout title="Page Not Found | Visit Korea Planner">
+      <section style="padding: 64px 0; text-align: center;">
+        <h1 style="font-family: Fraunces, serif;">Page Not Found</h1>
+        <p style="color: #5f6b84;">The page you are looking for does not exist.</p>
+        <a href="/" style="display: inline-flex; margin-top: 18px; padding: 10px 18px; border-radius: 999px; background: #1f6f8b; color: #fff;">Go Home</a>
+      </section>
+    </BaseLayout>
+  );
+}
+
+const pageTitle = `${node.title} | Visit Korea Planner`;
+---
+
+<BaseLayout title={pageTitle}>
+  <TreePage
+    node={node}
+    segments={segments}
+    parentPath={parentPath}
+    isHome={segments.length === 0}
+    breadcrumbs={breadcrumbs}
+  />
+</BaseLayout>

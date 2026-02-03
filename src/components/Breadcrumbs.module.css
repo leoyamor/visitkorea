@@ -1,0 +1,36 @@
+.breadcrumbs {
+  font-size: 0.85rem;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.crumb {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+}
+
+.link {
+  color: var(--muted);
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.link:hover {
+  color: var(--text);
+}
+
+.current {
+  color: var(--text);
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.sep {
+  color: #cbd5f5;
+}

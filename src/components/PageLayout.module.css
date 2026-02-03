@@ -1,0 +1,89 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.header h1 {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  margin: 0 0 6px 0;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+}
+
+.contentGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 720px;
+  width: 100%;
+}
+
+.intro {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  color: var(--muted);
+}
+
+.section h2 {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.section ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.section li {
+  margin-bottom: 6px;
+}
+
+.faq h3 {
+  margin-bottom: 8px;
+}
+
+.faqItem h4 {
+  margin: 8px 0 4px;
+}
+
+.faqItem p {
+  margin: 0 0 8px;
+  color: var(--muted);
+}
+
+.updated {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.sidebar {
+  order: 2;
+}
+
+@media (min-width: 1024px) {
+  .contentGrid {
+    flex-direction: row;
+  }
+
+  .main {
+    flex: 1;
+  }
+
+  .sidebar {
+    width: 260px;
+    order: 1;
+  }
+}

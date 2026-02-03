@@ -1,0 +1,26 @@
+.adSlot {
+  width: 100%;
+  border: 2px dashed var(--border);
+  background: #f1f5f9;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  min-height: 80px;
+}
+
+.leaderboard {
+  min-height: 90px;
+}
+
+.in-article {
+  min-height: 90px;
+}
+
+.footer {
+  min-height: 90px;
+}

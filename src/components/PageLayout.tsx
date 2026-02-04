@@ -40,8 +40,8 @@ export default function PageLayout({
     <div className={styles.wrapper}>
       <Breadcrumbs items={crumbs} />
       <div className={styles.header}>
-        <h1>{title}</h1>
-        <p className={styles.subtitle}>{description}</p>
+        <h1 className="t-h1">{title}</h1>
+        <p className={`t-subheading ${styles.subtitle}`}>{description}</p>
       </div>
 
       <div className={styles.contentGrid}>
@@ -55,7 +55,7 @@ export default function PageLayout({
 
           {sections.map((section, index) => (
             <section key={section.id} id={section.id} className={styles.section}>
-              <h2>{section.title}</h2>
+              <h2 className="t-section">{section.title}</h2>
               <ul>
                 {section.bullets.map((bullet) => (
                   <li key={bullet}>{bullet}</li>
@@ -70,10 +70,10 @@ export default function PageLayout({
           <RelatedLinks links={related} />
 
           <div className={styles.faq}>
-            <h3>FAQ</h3>
+            <h3 className="t-section">FAQ</h3>
             {faq.map((item) => (
               <div key={item.question} className={styles.faqItem}>
-                <h4>{item.question}</h4>
+                <h4 className="t-card-title">{item.question}</h4>
                 <p>{item.answer}</p>
               </div>
             ))}

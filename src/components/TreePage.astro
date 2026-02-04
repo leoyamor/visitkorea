@@ -335,8 +335,8 @@ const breadcrumb = breadcrumbs;
 <section class="hero">
   <div>
     <p class="eyebrow">Visit Korea Planner</p>
-    <h1>{isHome ? "Your Simple Guide to Traveling in Korea" : node.title}</h1>
-    <p class="lead">
+    <h1 class="t-h1">{isHome ? "Your Simple Guide to Traveling in Korea" : node.title}</h1>
+    <p class="lead t-subheading">
       {isHome
         ? "No overload, no confusion. Just clear answers to help you plan, get around, eat well, and enjoy Korea."
         : node.description ?? "Explore the next set of guides."}
@@ -364,7 +364,7 @@ const breadcrumb = breadcrumbs;
 
 <section class="section">
   <div class="section-header">
-    <h2>{isHome ? "Start here" : hasChildren ? "Pick a sub page" : "Quick answer"}</h2>
+    <h2 class="t-section">{isHome ? "Start here" : hasChildren ? "Pick a sub page" : "Quick answer"}</h2>
     <p>
       {isHome
         ? "Begin with a category, then drill down to detailed tips."
@@ -388,8 +388,8 @@ const breadcrumb = breadcrumbs;
               <div class="icon" data-tone={getTone(child.icon)}>{getInitials(child.title)}</div>
             )}
             <div>
-              <h3>{child.title}</h3>
-              <p>{child.description ?? "Short summary coming soon."}</p>
+              <h3 class="t-card-title">{child.title}</h3>
+              <p class="t-card-desc">{child.description ?? "Short summary coming soon."}</p>
             </div>
           </div>
         </a>
@@ -402,13 +402,13 @@ const breadcrumb = breadcrumbs;
           <span class="thumb-mask" aria-hidden="true"></span>
         </div>
         <div>
-          <h3>{node.title}</h3>
-          <p>{node.description ?? "This guide is being prepared."}</p>
+          <h3 class="t-section">{node.title}</h3>
+          <p class="t-subheading">{node.description ?? "This guide is being prepared."}</p>
         </div>
       </div>
       {node.content?.map((section) => (
         <div class="content-block">
-          <h4>{section.title}</h4>
+          <h4 class="t-section">{section.title}</h4>
           <p>{section.body}</p>
           {section.bullets && (
             <ul>
@@ -429,7 +429,7 @@ const breadcrumb = breadcrumbs;
 
 <section class="section light">
   <div class="section-header">
-    <h2>Not sure where to go next?</h2>
+    <h2 class="t-section">Not sure where to go next?</h2>
     <p>Try these dependable starting points for first-time travelers.</p>
   </div>
   <div class="pill-row">
@@ -445,7 +445,8 @@ const breadcrumb = breadcrumbs;
     display: flex;
     flex-direction: column;
     gap: 12px;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
     margin-bottom: 36px;
   }
 
@@ -459,18 +460,13 @@ const breadcrumb = breadcrumbs;
 
   h1 {
     font-family: "Fraunces", serif;
-    font-size: clamp(2.2rem, 4vw, 40px);
-    font-weight: 700;
-    line-height: 1.2;
     margin: 0 0 10px;
     color: var(--ink);
     max-width: 720px;
+    white-space: nowrap;
   }
 
   .lead {
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 1.5;
     color: var(--ink-soft);
     margin: 0 0 20px;
     max-width: 680px;
@@ -548,7 +544,6 @@ const breadcrumb = breadcrumbs;
   .section-header h2 {
     margin: 0 0 8px;
     font-family: "Fraunces", serif;
-    font-size: clamp(1.4rem, 2.2vw, 2rem);
   }
 
   .section-header p {
@@ -649,13 +644,11 @@ const breadcrumb = breadcrumbs;
 
   .card h3 {
     margin: 0 0 6px;
-    font-size: 1.08rem;
   }
 
   .card p {
     margin: 0;
     color: var(--muted);
-    line-height: 1.5;
   }
 
   .icon {
@@ -756,7 +749,6 @@ const breadcrumb = breadcrumbs;
 
   .answer h3 {
     margin: 0 0 8px;
-    font-size: 1.3rem;
   }
 
   .answer p {

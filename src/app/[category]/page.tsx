@@ -49,8 +49,8 @@ export default function CategoryPage({ params }: { params: { category: string } 
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: meta.title }]} />
 
       <div className={styles.header}>
-        <h1>{meta.title}</h1>
-        <p>{meta.description}</p>
+        <h1 className="t-h1">{meta.title}</h1>
+        <p className="t-subheading">{meta.description}</p>
       </div>
 
       <div className={styles.grid}>
@@ -63,7 +63,7 @@ export default function CategoryPage({ params }: { params: { category: string } 
           <AdSlot variant="leaderboard" />
 
           <section id="category-cards" className={styles.section}>
-            <h2>Start here</h2>
+            <h2 className="t-section">Start here</h2>
             <p>Tap a guide to get quick, mobile-friendly answers.</p>
             <div className={styles.cardGrid}>
               {cards.map((card) => (
@@ -74,7 +74,7 @@ export default function CategoryPage({ params }: { params: { category: string } 
 
           {page.sections.map((section, index) => (
             <section key={section.id} id={section.id} className={styles.section}>
-              <h2>{section.title}</h2>
+              <h2 className="t-section">{section.title}</h2>
               <ul>
                 {section.bullets.map((bullet) => (
                   <li key={bullet}>{bullet}</li>
@@ -89,10 +89,10 @@ export default function CategoryPage({ params }: { params: { category: string } 
           <RelatedLinks links={page.related} />
 
           <section className={styles.faq}>
-            <h3>FAQ</h3>
+            <h3 className="t-section">FAQ</h3>
             {page.faq.map((item) => (
               <div key={item.question} className={styles.faqItem}>
-                <h4>{item.question}</h4>
+                <h4 className="t-card-title">{item.question}</h4>
                 <p>{item.answer}</p>
               </div>
             ))}

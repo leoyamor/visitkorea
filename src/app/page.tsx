@@ -33,8 +33,8 @@ export default function HomePage() {
       <Breadcrumbs items={[{ label: 'Home' }]} />
 
       <div className={styles.hero}>
-        <h1>Your Simple Guide to Traveling in Korea</h1>
-        <p>
+        <h1 className="t-h1">Your Simple Guide to Traveling in Korea</h1>
+        <p className="t-subheading">
           No overload, no confusion.
           <br />
           Just clear answers to help you plan, get around, eat well, and enjoy Korea.
@@ -51,7 +51,7 @@ export default function HomePage() {
           <AdSlot variant="leaderboard" />
 
           <section id="how-long" className={styles.section}>
-            <h2>How long will you stay?</h2>
+            <h2 className="t-section">How long will you stay?</h2>
             <p>Pick a trip length so your plan feels light and doable.</p>
             <div className={styles.cardGrid}>
               {itineraryCards.map((card) => (
@@ -67,7 +67,7 @@ export default function HomePage() {
           </section>
 
           <section id="choose-city" className={styles.section}>
-            <h2>Choose a city</h2>
+            <h2 className="t-section">Choose a city</h2>
             <p>Each city has a different vibe. Pick the one that fits you best.</p>
             <div className={styles.cardGrid}>
               {cityCards.map((card) => (
@@ -85,7 +85,7 @@ export default function HomePage() {
           <AdSlot variant="in-article" />
 
           <section id="quick-guides" className={styles.section}>
-            <h2>Quick Guides</h2>
+            <h2 className="t-section">Quick Guides</h2>
             <p>Fast, mobile-friendly answers for every part of your trip.</p>
             <div className={styles.cardGrid}>
               {categories.map((category) => (
@@ -101,7 +101,7 @@ export default function HomePage() {
           </section>
 
           <section id="start-basics" className={styles.section}>
-            <h2>Start with the basics</h2>
+            <h2 className="t-section">Start with the basics</h2>
             <p>Take care of the essentials before you dive into details.</p>
             <ul className={styles.bullets}>
               <li>Double-check entry rules and airport steps.</li>
@@ -115,10 +115,10 @@ export default function HomePage() {
           <RelatedLinks links={home.related} />
 
           <section className={styles.faq}>
-            <h3>FAQ</h3>
+            <h3 className="t-section">FAQ</h3>
             {home.faq.map((item) => (
               <div key={item.question} className={styles.faqItem}>
-                <h4>{item.question}</h4>
+                <h4 className="t-card-title">{item.question}</h4>
                 <p>{item.answer}</p>
               </div>
             ))}

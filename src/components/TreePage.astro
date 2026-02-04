@@ -409,10 +409,6 @@ const breadcrumb = breadcrumbs;
           )}
         </div>
       ))}
-      <div class="answer-actions">
-        <a class="button ghost" href={parentPath}>Back</a>
-        <a class="button" href="/">Home</a>
-      </div>
     </div>
   )}
 </section>
@@ -718,10 +714,6 @@ const breadcrumb = breadcrumbs;
     line-height: 1.6;
   }
 
-  .answer-actions {
-    display: flex;
-    gap: 12px;
-  }
 
   .pill-row {
     display: flex;
@@ -759,11 +751,6 @@ const breadcrumb = breadcrumbs;
   }
 
   @media (max-width: 600px) {
-    .answer-actions {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
     .grid {
       grid-template-columns: 1fr;
       gap: 16px;

@@ -44,47 +44,47 @@ export const categories = [
   {
     slug: 'itinerary',
     title: 'Plan Your Trip',
-    description: 'Simple trip lengths with realistic pacing and must-book tips.'
+    description: 'Plan your days realistically, without overpacking your schedule.'
   },
   {
     slug: 'cities',
-    title: 'Korean Cities, Explained',
-    description: 'Quick city snapshots so you can choose where to stay.'
+    title: 'Choose a City',
+    description: 'Choose the city that fits how you like to travel.'
   },
   {
     slug: 'transportation',
     title: 'Getting Around Korea',
-    description: 'Subway, bus, taxi, and card tips for smooth travel days.'
+    description: 'Learn how to use buses, subways, and taxis with confidence.'
   },
   {
     slug: 'accommodation',
     title: 'Where to Stay',
-    description: 'Hotel picks, neighborhoods, and booking advice.'
+    description: 'Find the right area and hotel for your budget.'
   },
   {
     slug: 'food',
-    title: 'What to Eat in Korea',
-    description: 'Friendly food guides for first-time visitors.'
+    title: 'What to Eat',
+    description: 'Know what to try first — and what to skip.'
   },
   {
     slug: 'attractions',
-    title: 'What’s Worth Visiting',
-    description: 'Top sights, passes, and honest expectations.'
+    title: 'Things to Do',
+    description: 'See what’s truly worth your time and money.'
   },
   {
     slug: 'practical-info',
-    title: 'Good to Know',
-    description: 'Money, safety, connectivity, and everyday travel basics.'
+    title: 'Travel Basics',
+    description: 'Handle internet, money, and safety with less stress.'
   },
   {
     slug: 'immigration',
-    title: 'Arriving in Korea',
-    description: 'Immigration, documents, and airport arrival steps.'
+    title: 'Before You Go',
+    description: 'Prepare for arrival, rules, and local customs.'
   },
   {
     slug: 'shopping',
-    title: 'Shopping & Savings',
-    description: 'Where to shop, how tax refund works, and deal tips.'
+    title: 'Shopping & Deals',
+    description: 'Shop smarter and avoid tourist price traps.'
   }
 ] as const;
 

@@ -350,18 +350,20 @@ const breadcrumb = breadcrumbs;
   </div>
 </section>
 
-<section class="section light">
-  <div class="section-header">
-    <h2 class="t-section">Not sure where to go next?</h2>
-    <p>Try these dependable starting points for first-time travelers.</p>
-  </div>
-  <div class="pill-row">
-    <a class="pill" href="/plan-your-trip/7-days-in-korea">7 Days in Korea</a>
-    <a class="pill" href="/travel-basics/sim-or-esim">SIM or eSIM?</a>
-    <a class="pill" href="/getting-around-korea/using-the-subway">Using the Subway</a>
-    <a class="pill" href="/choose-a-city/which-city-fits-you-best">Which City Fits You Best?</a>
-  </div>
-</section>
+{isHome && (
+  <section class="section light">
+    <div class="section-header">
+      <h2 class="t-section">Not sure where to go next?</h2>
+      <p>Try these dependable starting points for first-time travelers.</p>
+    </div>
+    <div class="pill-row">
+      <a class="pill" href="/plan-your-trip/7-days-in-korea">7 Days in Korea</a>
+      <a class="pill" href="/travel-basics/sim-or-esim">SIM or eSIM?</a>
+      <a class="pill" href="/getting-around-korea/using-the-subway">Using the Subway</a>
+      <a class="pill" href="/choose-a-city/which-city-fits-you-best">Which City Fits You Best?</a>
+    </div>
+  </section>
+)}
 
 {!isHome && (
   <div class="nav-row">

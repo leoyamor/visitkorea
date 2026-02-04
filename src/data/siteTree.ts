@@ -19,7 +19,7 @@ export const siteTree: TreeNode = {
       title: "Plan Your Trip",
       slug: "plan-your-trip",
       icon: "calendar",
-      image: "planning",
+      image: "/Plan%20Your%20Trip.webp",
       description: "Plan your days realistically, without overpacking your schedule.",
       children: [
         {
@@ -165,7 +165,7 @@ export const siteTree: TreeNode = {
       title: "Choose a City",
       slug: "choose-a-city",
       icon: "city",
-      image: "city",
+      image: "/Choose%20a%20City.webp",
       description: "Choose the city that fits how you like to travel.",
       children: [
         {
@@ -331,7 +331,7 @@ export const siteTree: TreeNode = {
       title: "Getting Around Korea",
       slug: "getting-around-korea",
       icon: "train",
-      image: "transport",
+      image: "/Getting%20Around%20Korea.webp",
       description: "Learn how to use buses, subways, and taxis with confidence.",
       children: [
         {
@@ -548,7 +548,7 @@ export const siteTree: TreeNode = {
       title: "What to Eat",
       slug: "what-to-eat",
       icon: "bowl",
-      image: "food",
+      image: "/What%20to%20Eat.webp",
       description: "Know what to try first — and what to skip.",
       children: [
         {
@@ -662,7 +662,7 @@ export const siteTree: TreeNode = {
       title: "Where to Stay",
       slug: "where-to-stay",
       icon: "bed",
-      image: "stay",
+      image: "/Where%20to%20Stay.webp",
       description: "Find the right area and hotel for your budget.",
       children: [
         {
@@ -802,7 +802,7 @@ export const siteTree: TreeNode = {
       title: "Things to Do",
       slug: "things-to-do",
       icon: "spark",
-      image: "basics",
+      image: "/Things%20to%20Do.webp",
       description: "See what’s truly worth your time and money.",
       children: [
         {
@@ -942,7 +942,7 @@ export const siteTree: TreeNode = {
       title: "Travel Basics",
       slug: "travel-basics",
       icon: "compass",
-      image: "basics",
+      image: "/Travel%20Basics.webp",
       description: "Handle internet, money, and safety with less stress.",
       children: [
         {
@@ -1081,7 +1081,7 @@ export const siteTree: TreeNode = {
       title: "Before You Go",
       slug: "before-you-go",
       icon: "passport",
-      image: "airport",
+      image: "/Before%20You%20Go.webp",
       description: "Prepare for arrival, rules, and local customs.",
       children: [
         {
@@ -1221,7 +1221,7 @@ export const siteTree: TreeNode = {
       title: "Shopping & Deals",
       slug: "shopping-and-deals",
       icon: "bag",
-      image: "shopping",
+      image: "/Shopping%20%26%20Deals.webp",
       description: "Shop smarter and avoid tourist price traps.",
       children: [
         {

@@ -324,6 +324,9 @@ const imageThemeMap: Record<string, string> = {
 };
 
 const getImage = (key?: string) => {
+  if (key && (key.startsWith("/") || key.includes(".webp"))) {
+    return key;
+  }
   const theme = key ? imageThemeMap[key] ?? "basics" : "basics";
   const svg = imageSvgs[theme] ?? imageSvgs.basics;
   return toDataUri(svg);

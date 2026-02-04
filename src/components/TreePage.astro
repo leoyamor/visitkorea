@@ -337,9 +337,15 @@ const breadcrumb = breadcrumbs;
     <p class="eyebrow">Visit Korea Planner</p>
     <h1 class="t-h1">{isHome ? "Your Simple Guide to Traveling in Korea" : node.title}</h1>
     <p class="lead t-subheading">
-      {isHome
-        ? "No overload, no confusion. Just clear answers to help you plan, get around, eat well, and enjoy Korea."
-        : node.description ?? "Explore the next set of guides."}
+      {isHome ? (
+        <>
+          No overload, no confusion.
+          <br />
+          Just clear answers to help you plan, get around, eat well, and enjoy Korea.
+        </>
+      ) : (
+        node.description ?? "Explore the next set of guides."
+      )}
     </p>
     {!isHome && (
       <div class="nav-row">

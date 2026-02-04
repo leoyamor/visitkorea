@@ -336,6 +336,13 @@ const breadcrumb = breadcrumbs;
   <div>
     <p class="eyebrow">Visit Korea Planner</p>
     <h1 class="t-h1">{isHome ? "Your Simple Guide to Traveling in Korea" : node.title}</h1>
+    {!isHome && (
+      <div class="nav-links">
+        <a href={parentPath} aria-label="Back to previous page">← Back</a>
+        <span class="nav-sep" aria-hidden="true">·</span>
+        <a href="/" aria-label="Go to home">Home</a>
+      </div>
+    )}
     <p class="lead t-subheading">
       {isHome ? (
         <>
@@ -349,13 +356,6 @@ const breadcrumb = breadcrumbs;
     </p>
   </div>
 </section>
-
-{!isHome && (
-  <div class="nav-row">
-    <a class="button ghost" href={parentPath}>Back</a>
-    <a class="button" href="/">Home</a>
-  </div>
-)}
 
 <section class="section">
   <div class="section-header">
@@ -464,11 +464,6 @@ const breadcrumb = breadcrumbs;
     max-width: 680px;
   }
 
-  .nav-row {
-    display: flex;
-    gap: 12px;
-  }
-
   .button {
     display: inline-flex;
     align-items: center;
@@ -493,6 +488,29 @@ const breadcrumb = breadcrumbs;
     color: var(--accent-strong);
     border-color: var(--ring);
     box-shadow: none;
+  }
+
+  .nav-links {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin: 6px 0 14px;
+  }
+
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .nav-links a:hover {
+    color: var(--accent-strong);
+  }
+
+  .nav-sep {
+    color: var(--muted);
   }
 
   .breadcrumbs {
@@ -741,7 +759,6 @@ const breadcrumb = breadcrumbs;
   }
 
   @media (max-width: 600px) {
-    .nav-row,
     .answer-actions {
       flex-direction: column;
       align-items: flex-start;

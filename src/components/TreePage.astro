@@ -347,25 +347,14 @@ const breadcrumb = breadcrumbs;
         node.description ?? "Explore the next set of guides."
       )}
     </p>
-    {!isHome && (
-      <div class="nav-row">
-        <a class="button ghost" href={parentPath}>Back</a>
-        <a class="button" href="/">Home</a>
-      </div>
-    )}
   </div>
 </section>
 
-{!isHome && breadcrumb.length > 0 && (
-  <nav class="breadcrumbs">
-    <a href="/">Home</a>
-    {breadcrumb.map((item) => (
-      <div class="crumb-group">
-        <span class="crumb" aria-hidden="true">/</span>
-        <a href={item.path}>{item.label}</a>
-      </div>
-    ))}
-  </nav>
+{!isHome && (
+  <div class="nav-row">
+    <a class="button ghost" href={parentPath}>Back</a>
+    <a class="button" href="/">Home</a>
+  </div>
 )}
 
 <section class="section">

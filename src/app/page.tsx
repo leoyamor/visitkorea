@@ -35,8 +35,9 @@ export default function HomePage() {
       <div className={styles.hero}>
         <h1>Your Simple Guide to Traveling in Korea</h1>
         <p>
-          No overload, no confusion. Just clear answers to help you plan, get around, eat well,
-          and enjoy Korea.
+          No overload, no confusion.
+          <br />
+          Just clear answers to help you plan, get around, eat well, and enjoy Korea.
         </p>
       </div>
 

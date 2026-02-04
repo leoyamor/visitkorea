@@ -44,47 +44,56 @@ export const categories = [
   {
     slug: 'itinerary',
     title: 'Plan Your Trip',
-    description: 'Plan your days realistically, without overpacking your schedule.'
+    description: 'Plan your days realistically, without overpacking your schedule.',
+    image: '/Plan%20Your%20Trip.webp'
   },
   {
     slug: 'cities',
     title: 'Choose a City',
-    description: 'Choose the city that fits how you like to travel.'
+    description: 'Choose the city that fits how you like to travel.',
+    image: '/Choose%20a%20City.webp'
   },
   {
     slug: 'transportation',
     title: 'Getting Around Korea',
-    description: 'Learn how to use buses, subways, and taxis with confidence.'
+    description: 'Learn how to use buses, subways, and taxis with confidence.',
+    image: '/Getting%20Around%20Korea.webp'
   },
   {
     slug: 'accommodation',
     title: 'Where to Stay',
-    description: 'Find the right area and hotel for your budget.'
+    description: 'Find the right area and hotel for your budget.',
+    image: '/Where%20to%20Stay.webp'
   },
   {
     slug: 'food',
     title: 'What to Eat',
-    description: 'Know what to try first — and what to skip.'
+    description: 'Know what to try first — and what to skip.',
+    image: '/What%20to%20Eat.webp'
   },
   {
     slug: 'attractions',
     title: 'Things to Do',
-    description: 'See what’s truly worth your time and money.'
+    description: 'See what’s truly worth your time and money.',
+    image: '/Things%20to%20Do.webp'
   },
   {
     slug: 'practical-info',
     title: 'Travel Basics',
-    description: 'Handle internet, money, and safety with less stress.'
+    description: 'Handle internet, money, and safety with less stress.',
+    image: '/Travel%20Basics.webp'
   },
   {
     slug: 'immigration',
     title: 'Before You Go',
-    description: 'Prepare for arrival, rules, and local customs.'
+    description: 'Prepare for arrival, rules, and local customs.',
+    image: '/Before%20You%20Go.webp'
   },
   {
     slug: 'shopping',
     title: 'Shopping & Deals',
-    description: 'Shop smarter and avoid tourist price traps.'
+    description: 'Shop smarter and avoid tourist price traps.',
+    image: '/Shopping%20%26%20Deals.webp'
   }
 ] as const;
 

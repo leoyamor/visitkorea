@@ -94,6 +94,8 @@ export default function HomePage() {
                   href={`/${category.slug}`}
                   title={category.title}
                   description={category.description}
+                  imageSrc={category.image}
+                  imageAlt={`${category.title} guide`}
                   kicker="Guide"
                 />
               ))}

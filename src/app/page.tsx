@@ -33,8 +33,11 @@ export default function HomePage() {
       <Breadcrumbs items={[{ label: 'Home' }]} />
 
       <div className={styles.hero}>
-        <h1>Traveling to Korea? Start Here</h1>
-        <p>Simple travel tips for foreigners visiting Korea</p>
+        <h1>Your Simple Guide to Traveling in Korea</h1>
+        <p>
+          No overload, no confusion. Just clear answers to help you plan, get around, eat well,
+          and enjoy Korea.
+        </p>
       </div>
 
       <div className={styles.grid}>

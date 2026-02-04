@@ -20,7 +20,7 @@ export const siteTree: TreeNode = {
       slug: "plan-your-trip",
       icon: "calendar",
       image: "planning",
-      description: "Build the right length and rhythm for your first Korea itinerary.",
+      description: "Plan your days realistically, without overpacking your schedule.",
       children: [
         {
           title: "7 Days in Korea",
@@ -166,7 +166,7 @@ export const siteTree: TreeNode = {
       slug: "choose-a-city",
       icon: "city",
       image: "city",
-      description: "Pick where to go based on your pace, interests, and season.",
+      description: "Choose the city that fits how you like to travel.",
       children: [
         {
           title: "Seoul",
@@ -332,7 +332,7 @@ export const siteTree: TreeNode = {
       slug: "getting-around-korea",
       icon: "train",
       image: "transport",
-      description: "Transportation basics that remove stress and save time.",
+      description: "Learn how to use buses, subways, and taxis with confidence.",
       children: [
         {
           title: "Is Getting Around Hard?",
@@ -549,7 +549,7 @@ export const siteTree: TreeNode = {
       slug: "what-to-eat",
       icon: "bowl",
       image: "food",
-      description: "Find delicious food without getting overwhelmed.",
+      description: "Know what to try first — and what to skip.",
       children: [
         {
           title: "What Should I Try First?",
@@ -663,7 +663,7 @@ export const siteTree: TreeNode = {
       slug: "where-to-stay",
       icon: "bed",
       image: "stay",
-      description: "Stay comfortable without wasting your budget.",
+      description: "Find the right area and hotel for your budget.",
       children: [
         {
           title: "Best Value Places",
@@ -803,7 +803,7 @@ export const siteTree: TreeNode = {
       slug: "things-to-do",
       icon: "spark",
       image: "basics",
-      description: "Highlights, hidden gems, and realistic costs.",
+      description: "See what’s truly worth your time and money.",
       children: [
         {
           title: "Must-See for First Timers",
@@ -943,7 +943,7 @@ export const siteTree: TreeNode = {
       slug: "travel-basics",
       icon: "compass",
       image: "basics",
-      description: "Internet, payments, safety, and emergency help.",
+      description: "Handle internet, money, and safety with less stress.",
       children: [
         {
           title: "SIM or eSIM?",
@@ -1082,7 +1082,7 @@ export const siteTree: TreeNode = {
       slug: "before-you-go",
       icon: "passport",
       image: "airport",
-      description: "Pre-trip essentials that reduce surprises.",
+      description: "Prepare for arrival, rules, and local customs.",
       children: [
         {
           title: "Basic Korean Etiquette",
@@ -1222,7 +1222,7 @@ export const siteTree: TreeNode = {
       slug: "shopping-and-deals",
       icon: "bag",
       image: "shopping",
-      description: "Where to shop and how to save money.",
+      description: "Shop smarter and avoid tourist price traps.",
       children: [
         {
           title: "Shopping in Seoul",

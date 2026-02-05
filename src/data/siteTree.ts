@@ -2330,21 +2330,90 @@ export const siteTree: TreeNode = {
           description: "Comfort without overpaying.",
           content: [
             {
-              title: "Quick summary",
+              title: "Best Value Places",
+              icon: "bed",
+              emphasis: "Comfort without overpaying.",
               body:
-                "Mid-range hotels and serviced residences offer the best value for most travelers.",
+                "The best value stays make your trip easier, not just cheaper. You do not need the cheapest or the most expensive place.",
             },
             {
-              title: "Key moves",
-              body: "Look for clean rooms and strong transit access.",
+              title: "What best value really means",
+              icon: "spark",
+              emphasis: "Location beats luxury.",
+              body: "In Korea, value usually comes from:",
               bullets: [
-                "Pick a subway station within 5 minutes",
-                "Check room size before booking",
+                "Location, not room size",
+                "Transport access, not luxury features",
+                "Clean, well-managed buildings",
               ],
             },
             {
-              title: "Common mistakes",
-              body: "Overpaying for a luxury view you barely use.",
+              title: "Where value-focused travelers usually stay",
+              icon: "bed",
+              emphasis: "Mid-range works best.",
+              body: "Most visitors choose:",
+              bullets: [
+                "Mid-range hotels",
+                "Serviced residences",
+                "Well-reviewed business hotels",
+              ],
+            },
+            {
+              title: "Location matters more than the hotel",
+              icon: "pin",
+              emphasis: "A great location beats a great room.",
+              body: "Look for places that are:",
+              bullets: [
+                "Within 5 minutes of a subway station",
+                "Near a main line, not a transfer maze",
+                "Surrounded by convenience stores and cafes",
+              ],
+            },
+            {
+              title: "Why cheaper is not always better",
+              icon: "alert",
+              emphasis: "Hidden costs add up.",
+              body: "Very cheap places sometimes mean:",
+              bullets: [
+                "Long walks at night",
+                "Poor soundproofing",
+                "Complicated check-in systems",
+              ],
+            },
+            {
+              title: "A smart way to balance comfort and cost",
+              icon: "route",
+              emphasis: "One solid base works best.",
+              body: "Many travelers do this:",
+              bullets: [
+                "Choose one solid base hotel",
+                "Stay longer instead of switching",
+                "Spend savings on food or experiences",
+              ],
+            },
+            {
+              title: "A common visitor mistake",
+              icon: "alert",
+              emphasis: "Cheap locations can cost more.",
+              body: "Some travelers:",
+              bullets: [
+                "Book far from the city center to save money",
+                "Spend more on taxis",
+                "Feel tired from long daily commutes",
+              ],
+            },
+            {
+              title: "How this page helps you",
+              icon: "checklist",
+              emphasis: "Will this place make my days easier?",
+              body: "If the answer is yes, it is probably good value.",
+            },
+            {
+              title: "Bottom line",
+              icon: "spark",
+              emphasis: "Comfort is part of traveling well.",
+              body:
+                "The best value stay is clean, well-located, and easy to live with.",
             },
           ],
         },

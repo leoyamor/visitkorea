@@ -3639,21 +3639,102 @@ export const siteTree: TreeNode = {
           description: "What to do and who to call.",
           content: [
             {
-              title: "Quick summary",
+              title: "In Case of Emergency",
+              icon: "alert",
+              emphasis: "Clarity, not fear.",
               body:
-                "Emergency services are fast and reliable. Save the key numbers before your trip.",
+                "Emergencies are rare in Korea, but knowing what to do makes everything feel calmer.",
             },
             {
-              title: "Key moves",
-              body: "Be prepared just in case.",
+              title: "First, take a breath",
+              icon: "shield",
+              emphasis: "Help is fast and reliable.",
+              body:
+                "Emergency services are organized and used to helping foreigners. You do not need perfect Korean.",
+            },
+            {
+              title: "The most important numbers",
+              icon: "alert",
+              emphasis: "Save these before you arrive.",
+              body: "Emergency numbers:",
               bullets: [
-                "Keep your hotel address handy",
-                "Use translation apps for quick help",
+                "Police: 112",
+                "Fire and medical emergency: 119",
+                "You can call from mobile, public, or hotel phones",
               ],
             },
             {
-              title: "Common mistakes",
-              body: "Waiting too long to ask for help.",
+              title: "If you need medical help",
+              icon: "shield",
+              emphasis: "Call 119 if it feels serious.",
+              body: "For non-life-threatening situations:",
+              bullets: [
+                "Go to a large hospital with English support",
+                "Ask your hotel to help explain symptoms",
+                "Use pharmacies for minor issues",
+              ],
+            },
+            {
+              title: "If you lose something important",
+              icon: "passport",
+              emphasis: "Manageable steps.",
+              body: "Do this in order:",
+              bullets: [
+                "Go to the nearest police station or ask hotel staff",
+                "Report the loss (routine and common)",
+                "Contact your embassy only if necessary",
+              ],
+            },
+            {
+              title: "If you feel unsafe",
+              icon: "hand",
+              emphasis: "Choose comfort.",
+              body: "If something feels off:",
+              bullets: [
+                "Go into a convenience store or cafe",
+                "Take a taxi instead of walking",
+                "Call your accommodation",
+              ],
+            },
+            {
+              title: "Language help in urgent moments",
+              icon: "sim",
+              emphasis: "You are not expected to solve it alone.",
+              body: "If communication is difficult:",
+              bullets: [
+                "Use a translation app with voice input",
+                "Show your hotel address or booking confirmation",
+                "Ask nearby staff or shop employees for help",
+              ],
+            },
+            {
+              title: "What most travelers worry about",
+              icon: "spark",
+              emphasis: "You will not be judged for confusion.",
+              body: "In reality:",
+              bullets: [
+                "Emergency workers are patient",
+                "Mistakes are expected",
+                "Helping you is their job",
+              ],
+            },
+            {
+              title: "Prepare once, then forget about it",
+              icon: "checklist",
+              emphasis: "Small prep, big calm.",
+              body: "Do this once:",
+              bullets: [
+                "Save emergency numbers",
+                "Screenshot your hotel address",
+                "Carry basic travel insurance info",
+              ],
+            },
+            {
+              title: "Final thought",
+              icon: "spark",
+              emphasis: "Response, not panic.",
+              body:
+                "If something happens, help is close and you are not alone.",
             },
           ],
         },

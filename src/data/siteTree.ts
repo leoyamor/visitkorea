@@ -413,22 +413,89 @@ export const siteTree: TreeNode = {
           description: "Ideas beyond the usual tourist route.",
           content: [
             {
-              title: "Quick summary",
+              title: "Been Here Before?",
+              icon: "spark",
+              emphasis: "Not more sights. Better days.",
               body:
-                "Second visits are great for local neighborhoods, seasonal festivals, and regional cities.",
+                "If this isn't your first trip to Korea, you already know the basics. This guide helps you travel differently, with a slower pace and better rhythm.",
             },
             {
-              title: "Key moves",
-              body: "Swap famous spots for slower, local experiences.",
+              title: "How a second trip should feel",
+              icon: "leaf",
+              emphasis: "Depth matters more than highlights.",
+              body: "A repeat visit works best when you:",
               bullets: [
-                "Stay in a smaller city for 2-3 nights",
-                "Plan one nature day each week",
+                "Move less",
+                "Stay longer",
+                "Slow the pace",
               ],
             },
             {
-              title: "Common mistakes",
+              title: "The simple shift that changes everything",
+              icon: "route",
+              emphasis: "Ask how you want your days to feel.",
               body:
-                "Repeating the same itinerary is safe but misses new experiences.",
+                "Instead of asking what you should see, ask how you want your days to feel. That question leads to better choices.",
+            },
+            {
+              title: "What works well on second visits",
+              icon: "checklist",
+              emphasis: "Less movement. More rhythm.",
+              body: "These ideas consistently make trips better:",
+              bullets: [
+                "Staying 2-3 nights in a smaller city",
+                "Exploring neighborhoods, not landmarks",
+                "Adding one nature-focused day per week",
+                "Spending mornings without a fixed plan",
+              ],
+            },
+            {
+              title: "Season matters more than places",
+              icon: "calendar",
+              emphasis: "Timing beats novelty.",
+              body: "Second trips are perfect for:",
+              bullets: [
+                "Spring flowers",
+                "Autumn foliage",
+                "Summer coastal cities",
+                "Winter food-focused travel",
+              ],
+            },
+            {
+              title: "What usually goes wrong",
+              icon: "alert",
+              emphasis: "Intentional beats different.",
+              body: "Even experienced travelers sometimes:",
+              bullets: [
+                "Repeat the same itinerary",
+                "Add too many cities again",
+                "Chase hidden spots without slowing down",
+              ],
+            },
+            {
+              title: "What you can skip without regret",
+              icon: "hand",
+              emphasis: "Your trip doesn't need validation.",
+              body: "You don't need to:",
+              bullets: [
+                "Revisit every major attraction",
+                "Follow top 10 lists again",
+                "Prove you saw more than last time",
+              ],
+            },
+            {
+              title: "One quick reminder",
+              icon: "shield",
+              emphasis: "Always double-check important details.",
+              body:
+                "Local spots, seasonal events, and regional details can change. Always confirm important information through current or official sources.",
+            },
+            {
+              title: "Bottom line",
+              icon: "spark",
+              emphasis: "Calmer and more personal.",
+              body:
+                "A second trip should feel familiar instead of rushed. If your days feel calm and personal, you planned it right.",
             },
           ],
         },

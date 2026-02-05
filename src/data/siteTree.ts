@@ -314,23 +314,94 @@ export const siteTree: TreeNode = {
           description: "What to expect and what to prepare.",
           content: [
             {
-              title: "Quick summary",
+              title: "First Time in Korea",
+              icon: "compass",
+              emphasis: "Most travelers are surprised by how easy it feels.",
               body:
-                "Korea is safe, efficient, and traveler-friendly. The biggest challenges are language details and knowing which apps to use.",
+                "If this is your first time in Korea, don't worry. This guide helps you know what to expect without overwhelming you.",
             },
             {
-              title: "Key moves",
-              body: "Prepare the essentials before your flight.",
+              title: "What first-time visitors usually notice",
+              icon: "spark",
+              emphasis: "You don't need survival skills.",
+              body: "Korea is:",
               bullets: [
-                "Install map and transit apps",
-                "Bring a bank card that works overseas",
-                "Carry a small amount of cash",
+                "Safe, even at night",
+                "Clean and well-organized",
+                "Easy to move around",
+                "Full of food and convenience stores",
               ],
             },
             {
-              title: "Common mistakes",
+              title: "What feels unfamiliar at first",
+              icon: "alert",
+              emphasis: "Small challenges, not serious ones.",
+              body: "The main challenges are:",
+              bullets: [
+                "Language differences",
+                "Knowing which apps to use",
+                "Understanding daily routines",
+              ],
+            },
+            {
+              title: "What to prepare before arrival",
+              icon: "passport",
+              emphasis: "Keep it simple.",
+              body: "Before your flight, make sure you have:",
+              bullets: [
+                "A phone that works overseas",
+                "At least one international payment method",
+                "Your first-night accommodation details",
+              ],
+            },
+            {
+              title: "What surprises many first-timers",
+              icon: "wallet",
+              emphasis: "These are normal, not problems.",
+              body: "Many first-time visitors notice:",
+              bullets: [
+                "Cards work almost everywhere",
+                "Cash is still useful in small places",
+                "Taxis are safe, apps make them easier",
+                "People may not speak much English, but they try to help",
+              ],
+            },
+            {
+              title: "Common mistakes to avoid",
+              icon: "checklist",
+              emphasis: "A little preparation makes a big difference.",
+              body: "Avoid these:",
+              bullets: [
+                "Overplanning the first days",
+                "Relying only on taxis",
+                "Expecting everything to work like home",
+                "Skipping preparation because it looks easy",
+              ],
+            },
+            {
+              title: "What you don't need to decide yet",
+              icon: "hand",
+              emphasis: "Let some plans wait.",
+              body: "You don't need:",
+              bullets: [
+                "Full attraction lists",
+                "Exact daily schedules",
+                "Restaurant planning in advance",
+              ],
+            },
+            {
+              title: "One important note",
+              icon: "shield",
+              emphasis: "Always confirm before traveling.",
               body:
-                "Skipping transport cards and relying only on taxis will raise your costs.",
+                "Entry rules, airport procedures, and practical details can change. Always confirm important information through official sources before traveling.",
+            },
+            {
+              title: "Bottom line",
+              icon: "spark",
+              emphasis: "Comfortable beats perfect.",
+              body:
+                "Your first trip to Korea doesn't need to be perfect. If you arrive relaxed instead of nervous, you planned it right.",
             },
           ],
         },

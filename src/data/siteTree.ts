@@ -2041,21 +2041,74 @@ export const siteTree: TreeNode = {
           description: "Mild dishes most visitors like.",
           content: [
             {
-              title: "Quick summary",
+              title: "Food for First-Timers",
+              icon: "leaf",
+              emphasis: "Start with comfort, not courage.",
               body:
-                "Many Korean meals are mild and comforting. You can ask for less spice in most restaurants.",
+                "Not everything is spicy or unfamiliar. Many Korean dishes are warm, balanced, and gentle, especially the ones locals suggest for first-time visitors.",
             },
             {
-              title: "Good choices",
-              body: "Look for these keywords.",
+              title: "Mild dishes most visitors enjoy",
+              icon: "bowl",
+              emphasis: "Safe, familiar, still very Korean.",
+              body: "Great starter dishes:",
               bullets: [
-                "Galbi (sweet grilled ribs)",
-                "Samgyetang (ginseng chicken soup)",
+                "Bulgogi: sweet grilled beef, soft flavor",
+                "Galbi: marinated ribs, rich but not spicy",
+                "Samgyetang: ginseng chicken soup, light and comforting",
+                "Gyeran-jjim: steamed egg, soft and warm",
+                "Kimbap: ask for simple fillings to keep it mild",
               ],
             },
             {
-              title: "Common mistakes",
-              body: "Assuming all food is spicy is a myth.",
+              title: "About spice levels",
+              icon: "chili",
+              emphasis: "You can ask for less spice.",
+              body: "In many restaurants:",
+              bullets: [
+                "Not spicy usually means mild, not flavorless",
+                "Chili paste is often added separately",
+                "It is okay to ask: Is this spicy?",
+              ],
+            },
+            {
+              title: "What to take slowly at first",
+              icon: "hand",
+              emphasis: "No rush.",
+              body: "You might want to wait before trying:",
+              bullets: [
+                "Extra-spicy rice cakes",
+                "Strong fermented flavors",
+                "Raw seafood dishes",
+              ],
+            },
+            {
+              title: "A common beginner mistake",
+              icon: "alert",
+              emphasis: "One or two dishes is enough.",
+              body: "Many visitors:",
+              bullets: [
+                "Order too many dishes at once",
+                "Mix spicy and non-spicy foods in one meal",
+                "Feel pressured to try everything",
+              ],
+            },
+            {
+              title: "How this page helps you",
+              icon: "checklist",
+              emphasis: "Confidence comes quickly.",
+              body: "This page helps you answer:",
+              bullets: [
+                "What should I eat first?",
+                "Once you enjoy a few meals, new dishes feel easier",
+              ],
+            },
+            {
+              title: "Bottom line",
+              icon: "spark",
+              emphasis: "Start mild and build confidence.",
+              body:
+                "Korean food does not need to be intense to be authentic. Start mild and let the rest come later.",
             },
           ],
         },

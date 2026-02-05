@@ -2806,22 +2806,70 @@ export const siteTree: TreeNode = {
           description: "Famous places worth your time.",
           content: [
             {
-              title: "Quick summary",
+              title: "Must-See for First Timers",
+              icon: "spark",
+              emphasis: "See a few places that explain Korea well.",
               body:
-                "Focus on a few iconic sites each city to avoid rushing. These are worth seeing once.",
+                "With limited time, the goal is not to see everything. This page helps you choose a few places that are worth your time.",
             },
             {
-              title: "Starter list",
-              body: "Pick 2-3 per city.",
+              title: "What must-see really means",
+              icon: "checklist",
+              emphasis: "Famous is not enough.",
+              body: "A must-see place should:",
               bullets: [
-                "Palaces and traditional villages",
-                "Night markets and food streets",
-                "A scenic viewpoint",
+                "Show Korean history or tradition clearly",
+                "Explain modern Korean life in one visit",
+                "Be easy to access without complicated planning",
               ],
             },
             {
-              title: "Common mistakes",
-              body: "Trying to see everything in one day is too much.",
+              title: "A simple rule that works",
+              icon: "route",
+              emphasis: "Pick 2 or 3 highlights per city.",
+              body: "Two or three keeps your days relaxed and your memories clear.",
+            },
+            {
+              title: "What usually belongs on a first-timer list",
+              icon: "spark",
+              emphasis: "Think in types, not exact names.",
+              body: "Most first trips work well with:",
+              bullets: [
+                "One historical site (palace, temple, or traditional village)",
+                "One everyday-life area (markets or food alleys)",
+                "One viewpoint or evening spot (city view or river walk)",
+              ],
+            },
+            {
+              title: "Why skipping some famous places is okay",
+              icon: "hand",
+              emphasis: "Skipping can be a win.",
+              body: "Common reasons to skip:",
+              bullets: [
+                "Long lines for short visits",
+                "Overcrowded photo spots",
+                "Too similar to things you will already see",
+              ],
+            },
+            {
+              title: "A mistake many first timers make",
+              icon: "alert",
+              emphasis: "One main area per half-day.",
+              body: "Trying to pass by many places in one day leads to rushing and fatigue.",
+            },
+            {
+              title: "How this page is meant to be used",
+              icon: "checklist",
+              emphasis: "Decide priorities, confirm details later.",
+              body:
+                "This page helps you decide what kinds of places are worth your time. After you choose priorities, confirm details later using official tourism sites or local maps.",
+            },
+            {
+              title: "Bottom line",
+              icon: "spark",
+              emphasis: "Clear and comfortable beats perfect.",
+              body:
+                "If you end each day feeling curious, not exhausted, you chose the right must-see places.",
             },
           ],
         },

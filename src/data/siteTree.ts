@@ -2521,21 +2521,83 @@ export const siteTree: TreeNode = {
           description: "When paying more is worth it.",
           content: [
             {
-              title: "Quick summary",
+              title: "Luxury Hotels",
+              icon: "spark",
+              emphasis: "Worth it when used intentionally.",
               body:
-                "Luxury stays are worth it for special occasions or when you want premium service and views.",
+                "Luxury hotels in Korea can be excellent, but only when they improve how you feel, not just how the room looks.",
             },
             {
-              title: "Key moves",
-              body: "Spend where it adds comfort.",
+              title: "When luxury makes sense",
+              icon: "spark",
+              emphasis: "A highlight, not the whole trip.",
+              body: "Luxury works best if you want:",
               bullets: [
-                "Pick one splurge night",
-                "Choose views you will actually enjoy",
+                "A special occasion stay",
+                "Easy access to transport and views",
+                "Reliable service with zero stress",
+                "One or two nights of full comfort",
               ],
             },
             {
-              title: "Common mistakes",
-              body: "Staying luxury the entire trip limits experiences elsewhere.",
+              title: "The smartest way to use luxury",
+              icon: "route",
+              emphasis: "One splurge night.",
+              body: "The best approach:",
+              bullets: [
+                "Choose one splurge night",
+                "Stay mid-range for the rest",
+                "Use savings for food and experiences",
+              ],
+            },
+            {
+              title: "What to look for (not just the price)",
+              icon: "checklist",
+              emphasis: "Value beats brand.",
+              body: "Before booking, check:",
+              bullets: [
+                "Location near major subway lines",
+                "Real views you will actually see",
+                "Lounge or breakfast value",
+                "Room size compared to price",
+              ],
+            },
+            {
+              title: "Where luxury works best in Korea",
+              icon: "pin",
+              emphasis: "Specific situations shine.",
+              body: "Luxury is best for:",
+              bullets: [
+                "Seoul: city views and walkable districts",
+                "Busan: beachfront stays and ocean views",
+                "Special nights like anniversaries or last night",
+              ],
+            },
+            {
+              title: "Common mistakes to avoid",
+              icon: "alert",
+              emphasis: "Luxury should support your trip.",
+              body: "Many travelers regret:",
+              bullets: [
+                "Booking luxury far from transit",
+                "Paying for facilities they never use",
+                "Staying luxury every night and cutting experiences",
+                "Choosing brand names over location",
+              ],
+            },
+            {
+              title: "What you don't need to decide now",
+              icon: "hand",
+              emphasis: "Decide later, confirm when dates are set.",
+              body:
+                "This page helps you decide if luxury fits your plan, not which hotel to book today. Prices and availability change often.",
+            },
+            {
+              title: "Bottom line",
+              icon: "spark",
+              emphasis: "One great night beats seven expensive ones.",
+              body:
+                "Luxury hotels are excellent when used intentionally. If it adds comfort, saves time, or creates a memory, it is worth it.",
             },
           ],
         },

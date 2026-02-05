@@ -1764,21 +1764,86 @@ export const siteTree: TreeNode = {
           description: "How switching lines and buses works.",
           content: [
             {
-              title: "Quick summary",
+              title: "Transfers Explained",
+              icon: "transfer",
+              emphasis: "Transfers make travel cheaper and easier.",
               body:
-                "Transfers are simple: stay within the time window and you will not pay twice.",
+                "Transfers in Korea are simple once you know the basic rule. The system is designed for daily commuters, not tourists.",
             },
             {
-              title: "Key moves",
-              body: "Make transfers smooth.",
+              title: "The one rule that matters most",
+              icon: "route",
+              emphasis: "Transfers work by time, not distance.",
+              body:
+                "If you tap out and tap in again within the time window, you usually do not pay a full new fare.",
               bullets: [
-                "Always tap when leaving and boarding",
-                "Follow station color lines and numbers",
+                "Subway to subway",
+                "Bus to bus",
+                "Subway to bus",
               ],
             },
             {
-              title: "Common mistakes",
-              body: "Missing the transfer window restarts the fare.",
+              title: "What makes transfers easy in Korea",
+              icon: "spark",
+              emphasis: "Follow the system and it rarely surprises you.",
+              body: "That means:",
+              bullets: [
+                "Clear signs and colors",
+                "Numbered subway lines",
+                "Announcements in English",
+                "Logical station layouts",
+              ],
+            },
+            {
+              title: "How to transfer smoothly",
+              icon: "checklist",
+              emphasis: "Three simple habits.",
+              body: "Do these and transfers stay simple:",
+              bullets: [
+                "Always tap your card when you enter and exit",
+                "Follow numbers more than names",
+                "Check direction before boarding",
+              ],
+            },
+            {
+              title: "Common transfer mistakes",
+              icon: "alert",
+              emphasis: "Easy to avoid.",
+              body: "First-timers often lose time or money by:",
+              bullets: [
+                "Waiting too long between rides",
+                "Forgetting to tap out",
+                "Panicking inside large stations",
+              ],
+            },
+            {
+              title: "What you don't need to worry about",
+              icon: "hand",
+              emphasis: "Keep it simple.",
+              body: "You do not need to:",
+              bullets: [
+                "Memorize station layouts",
+                "Plan every transfer in advance",
+                "Speak Korean to transfer correctly",
+              ],
+            },
+            {
+              title: "When transfers save you money",
+              icon: "wallet",
+              emphasis: "Small rides add up fast.",
+              body: "Transfers help most when:",
+              bullets: [
+                "You combine short rides",
+                "You switch from subway to bus",
+                "You travel across multiple neighborhoods in one day",
+              ],
+            },
+            {
+              title: "Bottom line",
+              icon: "spark",
+              emphasis: "Transfers are designed to help you.",
+              body:
+                "Tap correctly, move within time, and follow the numbers. If your trip feels smooth and affordable, your transfers are working.",
             },
           ],
         },

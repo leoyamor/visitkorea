@@ -4160,21 +4160,84 @@ export const siteTree: TreeNode = {
           description: "Getting to your hotel smoothly.",
           content: [
             {
-              title: "Quick summary",
+              title: "From Airport to City",
+              icon: "plane",
+              emphasis: "Pick the option that matches your energy.",
               body:
-                "You can reach the city by train, bus, or taxi. Most travelers use airport rail or bus.",
+                "Getting to your hotel is usually easier than expected. You only need to choose between rail, bus, or taxi.",
             },
             {
-              title: "Key moves",
-              body: "Choose based on budget and luggage.",
+              title: "First decision: speed, comfort, or simplicity",
+              icon: "checklist",
+              emphasis: "All three work well.",
+              body:
+                "The best choice depends on how you feel after the flight, not on travel skills.",
+            },
+            {
+              title: "Airport rail",
+              icon: "train",
+              emphasis: "Easiest for most travelers.",
+              body: "Why people choose it:",
               bullets: [
-                "Rail for speed and simplicity",
-                "Bus for direct routes to neighborhoods",
+                "Clear English signs",
+                "Fixed routes",
+                "No traffic delays",
+                "Predictable and calm",
               ],
             },
             {
-              title: "Common mistakes",
-              body: "Choosing the wrong terminal or bus stop.",
+              title: "Airport bus",
+              icon: "bus",
+              emphasis: "Comfort with fewer transfers.",
+              body: "Why people like it:",
+              bullets: [
+                "Direct to major neighborhoods and hotels",
+                "Comfortable seats",
+                "Luggage storage underneath",
+              ],
+            },
+            {
+              title: "Taxi",
+              icon: "taxi",
+              emphasis: "When you just want to arrive.",
+              body: "Best if:",
+              bullets: [
+                "You arrive late at night",
+                "You are tired or traveling in a group",
+                "Cost matters less than comfort",
+              ],
+            },
+            {
+              title: "What usually causes confusion",
+              icon: "alert",
+              emphasis: "Easy to avoid.",
+              body: "Most stress comes from:",
+              bullets: [
+                "Not knowing your hotel’s exact location",
+                "Not recognizing the correct terminal",
+                "Overthinking which option is best",
+              ],
+            },
+            {
+              title: "You don’t need to pre-book everything",
+              icon: "hand",
+              emphasis: "Decide after you land.",
+              body:
+                "All options are clearly signed after arrival. You can decide calmly once you land.",
+            },
+            {
+              title: "First-time arrival tip",
+              icon: "spark",
+              emphasis: "Fewer decisions, fewer transfers.",
+              body:
+                "After a long flight, choose the method that feels comfortable. The goal is arriving relaxed.",
+            },
+            {
+              title: "Final thought",
+              icon: "spark",
+              emphasis: "Not a test.",
+              body:
+                "Pick the option that matches your energy level. If you reach your hotel calm and rested, you chose correctly.",
             },
           ],
         },

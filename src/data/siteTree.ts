@@ -116,22 +116,95 @@ export const siteTree: TreeNode = {
           description: "How to see more without rushing.",
           content: [
             {
-              title: "Quick summary",
+              title: "2 Weeks in Korea",
+              icon: "calendar",
+              emphasis: "Two weeks is the easiest way to enjoy Korea.",
               body:
-                "Two weeks lets you add a third region and still keep rest days. This is the easiest length for first timers who want variety.",
+                "You have time to see more than highlights without feeling rushed or exhausted. This guide helps you choose a smart structure, not fill every day.",
             },
             {
-              title: "Key moves",
-              body: "Think in three blocks and add one slower day each block.",
+              title: "Why two weeks works so well",
+              icon: "spark",
+              emphasis: "Structure beats more planning.",
+              body: "With two weeks, you can:",
               bullets: [
-                "Seoul 5-6 days with day trips",
-                "Busan 3-4 days",
-                "Jeju or Gyeongju 3-4 days",
+                "Visit more than one region",
+                "Add rest days naturally",
+                "Enjoy food and neighborhoods, not just sights",
               ],
             },
             {
-              title: "Common mistakes",
-              body: "Avoid backtracking between cities to save time and cost.",
+              title: "The simple rule for 2 weeks",
+              icon: "route",
+              emphasis: "Think in three blocks.",
+              body:
+                "Three regions. One main base per region. No backtracking. That's all you need.",
+            },
+            {
+              title: "First: Seoul (5-6 days)",
+              icon: "city",
+              emphasis: "Seoul deserves time.",
+              body:
+                "Transport is easy, neighborhoods are varied, and day trips are simple. Rushing Seoul usually leads to fatigue.",
+            },
+            {
+              title: "Second: Busan (3-4 days)",
+              icon: "beach",
+              emphasis: "Busan adds contrast.",
+              body:
+                "Beaches, seafood, slower evenings, and a relaxed pace. More than four days is usually unnecessary.",
+            },
+            {
+              title: "Third: One slower region (3-4 days)",
+              icon: "leaf",
+              emphasis: "Keep this part light.",
+              body: "Choose one based on your style:",
+              bullets: [
+                "Jeju -> nature and driving",
+                "Gyeongju -> history and calm walks",
+                "Smaller city -> local atmosphere",
+              ],
+            },
+            {
+              title: "What often goes wrong",
+              icon: "alert",
+              emphasis: "More time does not mean more cities.",
+              body: "Even with two weeks, travelers still:",
+              bullets: [
+                "Add too many cities",
+                "Change hotels too often",
+                "Travel back and forth unnecessarily",
+              ],
+            },
+            {
+              title: "What you don't need to decide yet",
+              icon: "checklist",
+              emphasis: "Decide as you go.",
+              body: "Two weeks gives you room to choose later.",
+              bullets: [
+                "Exact attractions",
+                "Restaurant lists",
+                "Daily schedules",
+              ],
+            },
+            {
+              title: "Need current details?",
+              icon: "shield",
+              emphasis: "Always confirm with official sources.",
+              body:
+                "Transport routes, schedules, and prices can change. Use this site to decide, then confirm with official sources.",
+              bullets: [
+                "Official transport websites",
+                "City tourism offices",
+                "Airport or government pages",
+              ],
+            },
+            {
+              title: "Bottom line",
+              icon: "spark",
+              emphasis: "Full, not packed.",
+              body:
+                "Two weeks feels best when the trip is full, not busy. If you finish relaxed, you planned it right.",
             },
           ],
         },

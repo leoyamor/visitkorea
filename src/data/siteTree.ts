@@ -1666,21 +1666,93 @@ export const siteTree: TreeNode = {
           description: "How to pay less for daily travel.",
           content: [
             {
-              title: "Quick summary",
+              title: "Saving on Transport",
+              icon: "wallet",
+              emphasis: "Small choices make a big difference.",
               body:
-                "Transit cards offer automatic fare discounts and free transfers within time limits.",
+                "Most travelers spend more than they need to because they do not know how the system works. The good news is that simple habits lower costs.",
             },
             {
-              title: "Key moves",
-              body: "Small habits can cut costs.",
+              title: "First, understand the real secret",
+              icon: "spark",
+              emphasis: "The system rewards habits, not planning tricks.",
+              body:
+                "You do not save money by hunting for cheap tickets. You save money by using the system the way locals do.",
+            },
+            {
+              title: "The single biggest saver: one card, always",
+              icon: "card",
+              emphasis: "Use the same transportation card for everything.",
+              body: "Why this matters:",
               bullets: [
-                "Use transfers instead of separate rides",
-                "Walk short distances between nearby stops",
+                "Transfers are discounted automatically",
+                "You avoid paying full fares again and again",
+                "You move faster with less stress",
               ],
             },
             {
-              title: "Common mistakes",
-              body: "Taking short taxi rides adds up quickly.",
+              title: "Think in routes, not rides",
+              icon: "route",
+              emphasis: "Connect smoothly instead of paying twice.",
+              body: "This mindset saves money because:",
+              bullets: [
+                "Transfers within the time window cost less",
+                "Short walks between stops replace paid rides",
+                "One longer route is cheaper than multiple short trips",
+              ],
+            },
+            {
+              title: "The hidden money leak: short taxis",
+              icon: "taxi",
+              emphasis: "Small rides add up fast.",
+              body: "A smarter rule:",
+              bullets: [
+                "Use taxis late at night",
+                "Use taxis when public transport is finished",
+                "Avoid taxis for short daytime distances",
+              ],
+            },
+            {
+              title: "What you don't need to buy",
+              icon: "tag",
+              emphasis: "Pay for what you actually use.",
+              body: "You do not need:",
+              bullets: [
+                "Daily transport passes for most trips",
+                "Special tourist-only cards",
+                "Unlimited ride options just in case",
+              ],
+            },
+            {
+              title: "Simple habits that lower costs",
+              icon: "checklist",
+              emphasis: "Boring habits, big savings.",
+              body: "These habits work:",
+              bullets: [
+                "Walk between close stations",
+                "Group nearby places in one area",
+                "Avoid crossing the city multiple times a day",
+                "Start days earlier to avoid peak crowds",
+              ],
+            },
+            {
+              title: "What this page helps you do",
+              icon: "shield",
+              emphasis: "Focus on habits, not prices.",
+              body: "This page helps you:",
+              bullets: [
+                "Build cheaper travel habits",
+                "Avoid common money leaks",
+                "Move like someone who knows the system",
+                "Always double-check official sources for updated fares",
+              ],
+            },
+            {
+              title: "Bottom line",
+              icon: "spark",
+              emphasis: "Awareness saves money.",
+              body:
+                "Saving money on transport is not about being strict. When your day flows smoothly, your costs usually follow.",
             },
           ],
         },

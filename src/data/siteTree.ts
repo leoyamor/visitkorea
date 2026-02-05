@@ -1963,22 +1963,73 @@ export const siteTree: TreeNode = {
           description: "Easy Korean food for beginners.",
           content: [
             {
-              title: "Quick summary",
+              title: "What Should I Try First?",
+              icon: "bowl",
+              emphasis: "Start simple and feel comfortable.",
               body:
-                "Start with familiar flavors like grilled meats, dumplings, and mild soups.",
+                "You do not need the most famous dish on day one. A good first meal should feel easy and make you want to try more tomorrow.",
             },
             {
-              title: "Starter picks",
-              body: "These are easy for most visitors.",
+              title: "The best first dishes to start with",
+              icon: "spark",
+              emphasis: "Beginner-friendly and rarely too spicy.",
+              body: "Great starter dishes:",
               bullets: [
-                "Bibimbap or bulgogi",
-                "Korean fried chicken",
-                "Mandu dumplings",
+                "Bibimbap: rice bowl with sauce on the side",
+                "Bulgogi: sweet grilled beef with familiar flavor",
+                "Korean fried chicken: soy-garlic or plain",
+                "Mandu: steamed or fried dumplings",
               ],
             },
             {
-              title: "Common mistakes",
-              body: "Ordering too much at once can be overwhelming.",
+              title: "About spicy food",
+              icon: "chili",
+              emphasis: "Not all Korean food is spicy.",
+              body: "If you want to be safe, you can say:",
+              bullets: [
+                "Not spicy, please.",
+                "Many red dishes are mild, not extreme",
+              ],
+            },
+            {
+              title: "What you don't need to decide yet",
+              icon: "hand",
+              emphasis: "Your taste will adjust naturally.",
+              body: "You do not need to:",
+              bullets: [
+                "Know every dish name",
+                "Plan restaurant lists in advance",
+                "Order the most authentic food on day one",
+              ],
+            },
+            {
+              title: "How to pick a good place to eat",
+              icon: "pin",
+              emphasis: "Small menus and local customers.",
+              body: "A simple rule that works:",
+              bullets: [
+                "Small menu",
+                "Local customers",
+                "Busy during lunch or dinner",
+              ],
+            },
+            {
+              title: "Common beginner mistakes",
+              icon: "alert",
+              emphasis: "No rush.",
+              body: "Avoid these:",
+              bullets: [
+                "Ordering too many dishes at once",
+                "Choosing the spiciest option out of curiosity",
+                "Feeling pressured to eat foods you are unsure about",
+              ],
+            },
+            {
+              title: "Bottom line",
+              icon: "spark",
+              emphasis: "Start easy and build confidence.",
+              body:
+                "Your first Korean meals should feel enjoyable. Start with familiar flavors and let curiosity come naturally.",
             },
           ],
         },

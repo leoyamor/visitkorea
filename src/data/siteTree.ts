@@ -927,21 +927,90 @@ export const siteTree: TreeNode = {
           description: "Food and traditional streets.",
           content: [
             {
-              title: "Quick summary",
+              title: "Jeonju",
+              icon: "bowl",
+              emphasis: "A city you taste and stroll.",
               body:
-                "Jeonju is famous for food and the hanok village. It works well as a relaxed overnight stop.",
+                "Jeonju slows you down. It is one of the best places in Korea for traditional streets without pressure or crowds.",
             },
             {
-              title: "Best for",
-              body: "Food-focused travelers and traditional scenery.",
+              title: "Why Jeonju works so well in a Korea trip",
+              icon: "spark",
+              emphasis: "Compact, walkable, calm.",
+              body: "Most travelers come for three reasons:",
               bullets: [
-                "1-2 days recommended",
-                "Try a hanok stay for one night",
+                "Food that is easy to love",
+                "Traditional streets that feel lived-in, not staged",
+                "A slower pace that fits between bigger cities",
               ],
             },
             {
-              title: "Common mistakes",
-              body: "Arriving too late leaves no time for the night market vibe.",
+              title: "How much time is enough?",
+              icon: "calendar",
+              emphasis: "One night feels right.",
+              body: "For most travelers:",
+              bullets: [
+                "One night is ideal",
+                "Two days is comfortable",
+                "A short break between big cities works best",
+              ],
+            },
+            {
+              title: "What Jeonju is best known for",
+              icon: "bowl",
+              emphasis: "Comfort food, not extreme flavors.",
+              body: "You will notice:",
+              bullets: [
+                "Balanced tastes",
+                "Clear ingredients",
+                "Comfort food that does not overwhelm",
+              ],
+            },
+            {
+              title: "The streets are the experience",
+              icon: "route",
+              emphasis: "Walk more, plan less.",
+              body: "That is why:",
+              bullets: [
+                "Walking is the main activity",
+                "Small cafes and shops matter more than landmarks",
+                "The atmosphere changes beautifully from day to night",
+              ],
+            },
+            {
+              title: "Who will enjoy Jeonju most?",
+              icon: "leaf",
+              emphasis: "Great for slow travel.",
+              body: "A great choice if you:",
+              bullets: [
+                "Love food-focused travel",
+                "Enjoy traditional settings without crowds",
+                "Prefer walking cities over transport-heavy ones",
+              ],
+            },
+            {
+              title: "Common mistakes to avoid",
+              icon: "alert",
+              emphasis: "Staying overnight changes the mood.",
+              body: "Many travelers:",
+              bullets: [
+                "Visit only as a rushed day trip",
+                "Focus only on one famous street",
+                "Leave before evening",
+              ],
+            },
+            {
+              title: "One thing to keep in mind",
+              icon: "hand",
+              emphasis: "Less, but better.",
+              body: "If you want nightclubs, big shopping districts, or constant movement, Jeonju may feel quiet. If you want long walks, good food without stress, and a calm city, Jeonju fits beautifully.",
+            },
+            {
+              title: "Bottom line",
+              icon: "spark",
+              emphasis: "Warmth, flavor, and space to breathe.",
+              body:
+                "Jeonju is where Korea feels comfortable. If your trip needs warmth and a slower pace, this city gives it to you.",
             },
           ],
         },

@@ -3866,21 +3866,84 @@ export const siteTree: TreeNode = {
           description: "What happens at the airport.",
           content: [
             {
-              title: "Quick summary",
+              title: "Immigration Process",
+              icon: "passport",
+              emphasis: "Structured and predictable.",
               body:
-                "The process is straightforward: documents, fingerprints, then pick up your bags.",
+                "Arriving in Korea is smoother than most people expect. If you know the basic flow, there is nothing to worry about.",
             },
             {
-              title: "Key moves",
-              body: "Speed through with these steps.",
+              title: "After landing: follow the signs",
+              icon: "route",
+              emphasis: "Arrival and Immigration.",
+              body:
+                "Airports like Incheon and Gimpo have clear English signs. Follow the crowd and you are on the right path.",
+            },
+            {
+              title: "Step 1: Immigration check",
+              icon: "passport",
+              emphasis: "Simple questions, short answers.",
+              body: "You will be asked for:",
               bullets: [
-                "Prepare your arrival card",
-                "Keep your hotel address ready",
+                "Passport",
+                "Arrival card (if required)",
+                "Reason for visit, length of stay, first address",
               ],
             },
             {
-              title: "Common mistakes",
-              body: "Not knowing your first stay address can slow things down.",
+              title: "Step 2: Baggage claim",
+              icon: "bag",
+              emphasis: "Screens show your belt number.",
+              body: "Carts are free and staff are nearby if you need help.",
+            },
+            {
+              title: "Step 3: Customs",
+              icon: "shield",
+              emphasis: "Usually very fast.",
+              body:
+                "Most travelers walk through Nothing to Declare. Unless you have restricted items or large cash, it takes only seconds.",
+            },
+            {
+              title: "What usually makes things slower",
+              icon: "alert",
+              emphasis: "Easy to avoid.",
+              body: "Delays happen when:",
+              bullets: [
+                "You do not know your hotel name or address",
+                "You cannot explain your travel purpose",
+                "Arrival forms are incomplete",
+              ],
+            },
+            {
+              title: "Language concerns",
+              icon: "hand",
+              emphasis: "Do not stress.",
+              body: "Officers use simple English and focus on documents.",
+            },
+            {
+              title: "How long does it take?",
+              icon: "calendar",
+              emphasis: "Usually under an hour.",
+              body: "Typical ranges:",
+              bullets: [
+                "Immigration: 10-30 minutes",
+                "Baggage and customs: 10-20 minutes",
+                "Longer during peak hours",
+              ],
+            },
+            {
+              title: "First impression tip",
+              icon: "spark",
+              emphasis: "Formal, not unfriendly.",
+              body:
+                "Officers may not smile much. Efficiency matters more than small talk.",
+            },
+            {
+              title: "Final thought",
+              icon: "spark",
+              emphasis: "Documents ready, answers simple.",
+              body:
+                "If your documents are ready and your answers are simple, you will be on your way quickly.",
             },
           ],
         },

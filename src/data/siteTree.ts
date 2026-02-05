@@ -3068,21 +3068,81 @@ export const siteTree: TreeNode = {
           description: "Entrance fees and price ranges.",
           content: [
             {
-              title: "Quick summary",
+              title: "How Much Does It Cost?",
+              icon: "wallet",
+              emphasis: "Short answer: usually, no.",
               body:
-                "Many attractions are low cost or free. Museums and palaces are usually affordable.",
+                "Most sightseeing in Korea is low-cost or free. This page helps you decide if you need to worry about entrance fees.",
             },
             {
-              title: "Key moves",
-              body: "Budget by day instead of per attraction.",
+              title: "The good news first",
+              icon: "spark",
+              emphasis: "Tickets are not the big cost.",
+              body:
+                "You spend less on tickets and more on food, transport, and small daily choices.",
+            },
+            {
+              title: "Typical entrance fee ranges",
+              icon: "checklist",
+              emphasis: "Simple guide, no numbers needed.",
+              body: "In general:",
               bullets: [
-                "Many sites under a small entry fee",
-                "Food and transport are often bigger costs",
+                "Palaces and historical sites: low-cost",
+                "Museums and cultural spaces: many are free",
+                "Nature spots: almost always free",
+                "Special experiences: higher cost but optional",
               ],
             },
             {
-              title: "Common mistakes",
-              body: "Overbudgeting for tickets and underbudgeting for food.",
+              title: "What actually affects your daily budget",
+              icon: "route",
+              emphasis: "Food and transport matter more.",
+              body: "Focus on:",
+              bullets: [
+                "Food choices (street food vs sit-down)",
+                "Transport habits (walking and transit vs frequent taxis)",
+                "How many cities you move between",
+              ],
+            },
+            {
+              title: "A smart way to think about costs",
+              icon: "spark",
+              emphasis: "Budget per day, not per attraction.",
+              body: "Ask yourself:",
+              bullets: [
+                "Relaxed day or packed day?",
+                "Casual meals or a treat?",
+                "Move far or stay local?",
+              ],
+            },
+            {
+              title: "Common money mistakes",
+              icon: "alert",
+              emphasis: "Easy to avoid.",
+              body: "Many travelers:",
+              bullets: [
+                "Overestimate ticket costs and underestimate food spending",
+                "Buy paid attractions just because they are famous",
+                "Try to do too many things in one day",
+              ],
+            },
+            {
+              title: "About prices changing",
+              icon: "shield",
+              emphasis: "Always confirm official details.",
+              body: "Entrance fees and passes can change. For the latest prices, confirm with:",
+              bullets: [
+                "Official city tourism websites",
+                "Museum or attraction homepages",
+                "On-site ticket counters",
+              ],
+            },
+            {
+              title: "Bottom line",
+              icon: "spark",
+              emphasis: "Balanced days mean balanced spending.",
+              body:
+                "Korea is friendly to your budget when you travel with intention. Choose what adds value to your trip.",
             },
           ],
         },

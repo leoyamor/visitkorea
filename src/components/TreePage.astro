@@ -368,7 +368,7 @@ const breadcrumb = breadcrumbs;
         ? "Begin with a category, then drill down to detailed tips."
         : hasChildren
         ? "Each card opens a focused guide."
-        : "Here is the short description, with more detail to be added later."}
+        : node.quickAnswer ?? "Here is the short description, with more detail to be added later."}
     </p>
   </div>
 

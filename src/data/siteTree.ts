@@ -2,6 +2,7 @@ export type TreeNode = {
   title: string;
   slug: string;
   description?: string;
+  quickAnswer?: string;
   icon?: string;
   image?: string;
   content?: {
@@ -34,6 +35,8 @@ export const siteTree: TreeNode = {
           icon: "calendar",
           image: "planning",
           description: "A one-week travel plan that actually works.",
+          quickAnswer:
+            "This page helps you decide how to spend one week in Korea without rushing or overplanning.",
           content: [
             {
               title: "7 Days in Korea",
@@ -114,6 +117,8 @@ export const siteTree: TreeNode = {
           icon: "calendar",
           image: "planning",
           description: "How to see more without rushing.",
+          quickAnswer:
+            "This page helps you plan a two-week Korea trip with more variety and less stress.",
           content: [
             {
               title: "2 Weeks in Korea",
@@ -214,6 +219,8 @@ export const siteTree: TreeNode = {
           icon: "calendar",
           image: "planning",
           description: "Slow travel and long-stay ideas.",
+          quickAnswer:
+            "This page helps you decide how to slow down and enjoy Korea during a long stay.",
           content: [
             {
               title: "1 Month in Korea",
@@ -312,6 +319,8 @@ export const siteTree: TreeNode = {
           icon: "compass",
           image: "basics",
           description: "What to expect and what to prepare.",
+          quickAnswer:
+            "This page helps you understand what really matters before your first trip to Korea.",
           content: [
             {
               title: "First Time in Korea",
@@ -411,6 +420,8 @@ export const siteTree: TreeNode = {
           icon: "spark",
           image: "planning",
           description: "Ideas beyond the usual tourist route.",
+          quickAnswer:
+            "This page helps you find new ideas beyond the usual tourist route in Korea.",
           content: [
             {
               title: "Been Here Before?",
@@ -514,6 +525,8 @@ export const siteTree: TreeNode = {
           icon: "city",
           image: "city",
           description: "Big city life, food, and culture.",
+          quickAnswer:
+            "This page helps you decide if Seoul matches your travel style, pace, and interests.",
           content: [
             {
               title: "Seoul",
@@ -619,6 +632,8 @@ export const siteTree: TreeNode = {
           icon: "beach",
           image: "beach",
           description: "Beaches, seafood, and a relaxed vibe.",
+          quickAnswer:
+            "This page helps you decide if Busan is the right mix of beach, food, and city life for you.",
           content: [
             {
               title: "Busan",
@@ -716,6 +731,8 @@ export const siteTree: TreeNode = {
           icon: "island",
           image: "island",
           description: "Nature, driving, and island life.",
+          quickAnswer:
+            "This page helps you decide if Jeju's nature-focused travel fits your trip goals.",
           content: [
             {
               title: "Jeju",
@@ -830,6 +847,8 @@ export const siteTree: TreeNode = {
           icon: "temple",
           image: "heritage",
           description: "History everywhere you walk.",
+          quickAnswer:
+            "This page helps you decide if Gyeongju is worth adding for history and a slower pace.",
           content: [
             {
               title: "Gyeongju",
@@ -925,6 +944,8 @@ export const siteTree: TreeNode = {
           icon: "bowl",
           image: "food",
           description: "Food and traditional streets.",
+          quickAnswer:
+            "This page helps you decide if Jeonju is the right stop for food and traditional streets.",
           content: [
             {
               title: "Jeonju",
@@ -1020,6 +1041,8 @@ export const siteTree: TreeNode = {
           icon: "spark",
           image: "planning",
           description: "Pick a city based on your travel style.",
+          quickAnswer:
+            "This page helps you choose the best Korean city based on how you like to travel.",
           content: [
             {
               title: "Which City Fits You Best?",
@@ -1138,6 +1161,8 @@ export const siteTree: TreeNode = {
           icon: "route",
           image: "transport",
           description: "How easy transportation really is in Korea.",
+          quickAnswer:
+            "This page helps you understand how easy transportation really is in Korea.",
           content: [
             {
               title: "Is Getting Around Hard?",
@@ -1248,6 +1273,8 @@ export const siteTree: TreeNode = {
           icon: "train",
           image: "transport",
           description: "Tickets, cards, and how to pay.",
+          quickAnswer:
+            "This page helps you use the Korean subway with confidence from day one.",
           content: [
             {
               title: "Using the Subway",
@@ -1356,6 +1383,8 @@ export const siteTree: TreeNode = {
           icon: "bus",
           image: "transport",
           description: "How buses work and when to use them.",
+          quickAnswer:
+            "This page helps you know when and how to use buses without confusion.",
           content: [
             {
               title: "Taking the Bus",
@@ -1466,6 +1495,8 @@ export const siteTree: TreeNode = {
           icon: "taxi",
           image: "transport",
           description: "Costs, apps, and payment tips.",
+          quickAnswer:
+            "This page helps you decide when taxis make sense and how to use them safely.",
           content: [
             {
               title: "Using Taxis",
@@ -1567,6 +1598,8 @@ export const siteTree: TreeNode = {
           icon: "card",
           image: "transport",
           description: "What card to buy and how to use it.",
+          quickAnswer:
+            "This page helps you choose the right transport card and use it correctly.",
           content: [
             {
               title: "Transportation Cards",
@@ -1664,6 +1697,8 @@ export const siteTree: TreeNode = {
           icon: "wallet",
           image: "transport",
           description: "How to pay less for daily travel.",
+          quickAnswer:
+            "This page helps you reduce daily transport costs without changing your plans.",
           content: [
             {
               title: "Saving on Transport",
@@ -1762,6 +1797,8 @@ export const siteTree: TreeNode = {
           icon: "transfer",
           image: "transport",
           description: "How switching lines and buses works.",
+          quickAnswer:
+            "This page helps you understand transfers so you do not pay more than necessary.",
           content: [
             {
               title: "Transfers Explained",
@@ -1853,6 +1890,8 @@ export const siteTree: TreeNode = {
           icon: "car",
           image: "transport",
           description: "When it makes sense (and when it does not).",
+          quickAnswer:
+            "This page helps you decide if renting a car in Korea is actually worth it.",
           content: [
             {
               title: "Renting a Car in Korea",
@@ -1961,6 +2000,8 @@ export const siteTree: TreeNode = {
           icon: "bowl",
           image: "food",
           description: "Easy Korean food for beginners.",
+          quickAnswer:
+            "This page helps you choose beginner-friendly Korean food with confidence.",
           content: [
             {
               title: "What Should I Try First?",
@@ -2039,6 +2080,8 @@ export const siteTree: TreeNode = {
           icon: "leaf",
           image: "food",
           description: "Mild dishes most visitors like.",
+          quickAnswer:
+            "This page helps you find mild Korean dishes most visitors enjoy.",
           content: [
             {
               title: "Food for First-Timers",
@@ -2118,6 +2161,8 @@ export const siteTree: TreeNode = {
           icon: "pin",
           image: "food",
           description: "How locals choose places to eat.",
+          quickAnswer:
+            "This page helps you spot good local restaurants without relying on reviews.",
           content: [
             {
               title: "Finding Good Restaurants",
@@ -2224,6 +2269,8 @@ export const siteTree: TreeNode = {
           icon: "chili",
           image: "food",
           description: "Very spicy or unfamiliar dishes.",
+          quickAnswer:
+            "This page helps you avoid food choices that often surprise first-time visitors.",
           content: [
             {
               title: "Food to Be Careful With",
@@ -2328,6 +2375,8 @@ export const siteTree: TreeNode = {
           icon: "bed",
           image: "stay",
           description: "Comfort without overpaying.",
+          quickAnswer:
+            "This page helps you find comfortable places to stay without overpaying.",
           content: [
             {
               title: "Best Value Places",
@@ -2423,6 +2472,8 @@ export const siteTree: TreeNode = {
           icon: "wallet",
           image: "stay",
           description: "Clean and affordable options.",
+          quickAnswer:
+            "This page helps you choose clean and affordable accommodations safely.",
           content: [
             {
               title: "Budget Stays",
@@ -2519,6 +2570,8 @@ export const siteTree: TreeNode = {
           icon: "spark",
           image: "stay",
           description: "When paying more is worth it.",
+          quickAnswer:
+            "This page helps you decide when a luxury hotel is actually worth the cost.",
           content: [
             {
               title: "Luxury Hotels",
@@ -2607,6 +2660,8 @@ export const siteTree: TreeNode = {
           icon: "city",
           image: "city",
           description: "Best areas by travel style.",
+          quickAnswer:
+            "This page helps you choose the best Seoul area based on your travel style.",
           content: [
             {
               title: "Where to Stay in Seoul",
@@ -2706,6 +2761,8 @@ export const siteTree: TreeNode = {
           icon: "beach",
           image: "beach",
           description: "Beach areas vs city areas.",
+          quickAnswer:
+            "This page helps you decide between beach areas and city areas in Busan.",
           content: [
             {
               title: "Where to Stay in Busan",
@@ -2804,6 +2861,8 @@ export const siteTree: TreeNode = {
           icon: "spark",
           image: "basics",
           description: "Famous places worth your time.",
+          quickAnswer:
+            "This page helps you focus on the sights that are truly worth your time.",
           content: [
             {
               title: "Must-See for First Timers",
@@ -2879,6 +2938,8 @@ export const siteTree: TreeNode = {
           icon: "leaf",
           image: "heritage",
           description: "Nice spots most tourists miss.",
+          quickAnswer:
+            "This page helps you find calmer places most tourists miss.",
           content: [
             {
               title: "Good Places Without Crowds",
@@ -2962,6 +3023,8 @@ export const siteTree: TreeNode = {
           icon: "pin",
           image: "city",
           description: "Highlights for each city.",
+          quickAnswer:
+            "This page helps you plan activities by city without jumping around too much.",
           content: [
             {
               title: "Top Places by City",
@@ -3066,6 +3129,8 @@ export const siteTree: TreeNode = {
           icon: "wallet",
           image: "basics",
           description: "Entrance fees and price ranges.",
+          quickAnswer:
+            "This page helps you estimate attraction costs without overbudgeting.",
           content: [
             {
               title: "How Much Does It Cost?",
@@ -3152,6 +3217,8 @@ export const siteTree: TreeNode = {
           icon: "card",
           image: "shopping",
           description: "When passes actually save money.",
+          quickAnswer:
+            "This page helps you decide if discount passes will actually save you money.",
           content: [
             {
               title: "Discount Passes",
@@ -3238,6 +3305,8 @@ export const siteTree: TreeNode = {
           icon: "sim",
           image: "basics",
           description: "Internet options explained simply.",
+          quickAnswer:
+            "This page helps you choose the simplest internet option for your phone.",
           content: [
             {
               title: "SIM or eSIM?",
@@ -3323,6 +3392,8 @@ export const siteTree: TreeNode = {
           icon: "wallet",
           image: "basics",
           description: "Card, cash, and what really works.",
+          quickAnswer:
+            "This page helps you understand what payment methods actually work in Korea.",
           content: [
             {
               title: "How to Pay in Korea",
@@ -3429,6 +3500,8 @@ export const siteTree: TreeNode = {
           icon: "shield",
           image: "safety",
           description: "What travelers should know.",
+          quickAnswer:
+            "This page helps you understand real safety expectations for travelers.",
           content: [
             {
               title: "Is Korea Safe?",
@@ -3526,6 +3599,8 @@ export const siteTree: TreeNode = {
           icon: "shield",
           image: "safety",
           description: "Tips for traveling alone.",
+          quickAnswer:
+            "This page helps solo travelers feel confident and prepared in Korea.",
           content: [
             {
               title: "Solo Travel Safety",
@@ -3637,6 +3712,8 @@ export const siteTree: TreeNode = {
           icon: "alert",
           image: "safety",
           description: "What to do and who to call.",
+          quickAnswer:
+            "This page helps you know what to do quickly if something goes wrong.",
           content: [
             {
               title: "In Case of Emergency",
@@ -3753,6 +3830,8 @@ export const siteTree: TreeNode = {
           icon: "hand",
           image: "basics",
           description: "Simple rules to avoid awkward moments.",
+          quickAnswer:
+            "This page helps you avoid awkward moments with simple local etiquette.",
           content: [
             {
               title: "Basic Korean Etiquette",
@@ -3864,6 +3943,8 @@ export const siteTree: TreeNode = {
           icon: "passport",
           image: "airport",
           description: "What happens at the airport.",
+          quickAnswer:
+            "This page helps you know what to expect when arriving at a Korean airport.",
           content: [
             {
               title: "Immigration Process",
@@ -3953,6 +4034,8 @@ export const siteTree: TreeNode = {
           icon: "passport",
           image: "airport",
           description: "Do you need it or not?",
+          quickAnswer:
+            "This page helps you decide if you need K-ETA before traveling to Korea.",
           content: [
             {
               title: "What Is K-ETA?",
@@ -4063,6 +4146,8 @@ export const siteTree: TreeNode = {
           icon: "checklist",
           image: "basics",
           description: "A simple pre-trip checklist.",
+          quickAnswer:
+            "This page helps you pack and prepare without forgetting the essentials.",
           content: [
             {
               title: "What Should I Prepare?",
@@ -4158,6 +4243,8 @@ export const siteTree: TreeNode = {
           icon: "plane",
           image: "airport",
           description: "Getting to your hotel smoothly.",
+          quickAnswer:
+            "This page helps you choose the easiest way to reach your hotel from the airport.",
           content: [
             {
               title: "From Airport to City",
@@ -4256,6 +4343,8 @@ export const siteTree: TreeNode = {
           icon: "bag",
           image: "shopping",
           description: "Popular shopping areas.",
+          quickAnswer:
+            "This page helps you choose the right shopping areas in Seoul for your style.",
           content: [
             {
               title: "Shopping in Seoul",
@@ -4349,6 +4438,8 @@ export const siteTree: TreeNode = {
           icon: "bag",
           image: "shopping",
           description: "Local shopping spots.",
+          quickAnswer:
+            "This page helps you find relaxed and local shopping spots in Busan.",
           content: [
             {
               title: "Shopping in Busan",
@@ -4437,6 +4528,8 @@ export const siteTree: TreeNode = {
           icon: "receipt",
           image: "shopping",
           description: "How to get money back.",
+          quickAnswer:
+            "This page helps you understand how tax refunds work before you shop.",
           content: [
             {
               title: "Tax Refund Explained",
@@ -4545,6 +4638,8 @@ export const siteTree: TreeNode = {
           icon: "tag",
           image: "shopping",
           description: "Tourist savings tips.",
+          quickAnswer:
+            "This page helps you save money without chasing unnecessary deals.",
           content: [
             {
               title: "How to Get Discounts",
@@ -4656,6 +4751,8 @@ export const siteTree: TreeNode = {
           icon: "wallet",
           image: "shopping",
           description: "What is actually worth buying.",
+          quickAnswer:
+            "This page helps you decide what is actually worth buying in Korea.",
           content: [
             {
               title: "Is Shopping Cheap in Korea?",

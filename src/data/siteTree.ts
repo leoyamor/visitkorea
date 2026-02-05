@@ -3154,21 +3154,72 @@ export const siteTree: TreeNode = {
           description: "When passes actually save money.",
           content: [
             {
-              title: "Quick summary",
+              title: "Discount Passes",
+              icon: "card",
+              emphasis: "Passes save money only in specific situations.",
               body:
-                "Passes are useful if you plan multiple paid attractions in a short time.",
+                "Most travelers do not need a discount pass. Passes only work if you already plan to move fast.",
             },
             {
-              title: "Key moves",
-              body: "Check your planned sites before buying.",
+              title: "When a discount pass makes sense",
+              icon: "spark",
+              emphasis: "Speed and structure.",
+              body: "A pass can be worth it if:",
               bullets: [
-                "Calculate total price vs pass price",
-                "Use passes only if you will be busy",
+                "You will visit several paid attractions in a short period",
+                "Your days are already full and well-timed",
+                "You are comfortable following a fixed schedule",
               ],
             },
             {
-              title: "Common mistakes",
-              body: "Buying a pass and then moving too slowly to use it.",
+              title: "When a discount pass does NOT help",
+              icon: "hand",
+              emphasis: "Relaxed trips do not benefit.",
+              body: "A pass usually does not save money if:",
+              bullets: [
+                "You prefer relaxed mornings and flexible plans",
+                "You enjoy wandering, cafes, and free areas",
+                "You change plans based on weather or mood",
+              ],
+            },
+            {
+              title: "The most common pass mistake",
+              icon: "alert",
+              emphasis: "Buying before planning.",
+              body: "Many travelers:",
+              bullets: [
+                "Buy a pass just in case",
+                "Feel pressure to use it",
+                "Rush between places and end tired",
+              ],
+            },
+            {
+              title: "A smarter way to decide",
+              icon: "checklist",
+              emphasis: "Ask one question.",
+              body: "How many paid places will I really visit in one day?",
+              bullets: [
+                "One or two -> skip the pass",
+                "Three or more -> compare prices carefully",
+              ],
+            },
+            {
+              title: "About prices and availability",
+              icon: "shield",
+              emphasis: "Always confirm official details.",
+              body: "Pass contents and prices can change. Check:",
+              bullets: [
+                "Official city tourism websites",
+                "The pass's official homepage",
+                "Current attraction lists included in the pass",
+              ],
+            },
+            {
+              title: "Bottom line",
+              icon: "spark",
+              emphasis: "Freedom is often the better deal.",
+              body:
+                "Passes reward speed and structure and punish slow, flexible travel. If your trip is relaxed, you often save more by skipping a pass.",
             },
           ],
         },

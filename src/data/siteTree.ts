@@ -2226,21 +2226,90 @@ export const siteTree: TreeNode = {
           description: "Very spicy or unfamiliar dishes.",
           content: [
             {
-              title: "Quick summary",
+              title: "Food to Be Careful With",
+              icon: "chili",
+              emphasis: "Not everything is beginner-friendly.",
               body:
-                "Some dishes are very spicy or have strong flavors. Try a small portion first.",
+                "Some dishes are intense or better saved for later. This page helps you choose the right moment, not avoid Korean food.",
             },
             {
-              title: "Use caution with",
-              body: "These can surprise new visitors.",
+              title: "Spicy doesn't always mean what you think",
+              icon: "alert",
+              emphasis: "Korean spice is built for locals.",
+              body: "Spicy can mean:",
               bullets: [
-                "Extra spicy tteokbokki",
-                "Raw seafood dishes",
+                "Slow, deep heat",
+                "Sweet at first, then burning",
+                "Spice that lingers for hours",
               ],
             },
             {
-              title: "Common mistakes",
-              body: "Ordering the spiciest level can ruin the meal.",
+              title: "Dishes many visitors struggle with",
+              icon: "chili",
+              emphasis: "Popular but intense early on.",
+              body: "These are often challenging at first:",
+              bullets: [
+                "Extra-spicy tteokbokki",
+                "Fire chicken dishes",
+                "Raw or marinated seafood",
+                "Strong fermented dishes",
+              ],
+            },
+            {
+              title: "Why first meals matter",
+              icon: "spark",
+              emphasis: "Start gently to build confidence.",
+              body: "If you start with overwhelming spice or strong flavors, you may hesitate to try new dishes later.",
+            },
+            {
+              title: "How locals approach strong flavors",
+              icon: "hand",
+              emphasis: "Mix and adjust over time.",
+              body: "Locals:",
+              bullets: [
+                "Mix spicy and non-spicy meals",
+                "Adjust spice levels naturally",
+                "Know their limits",
+              ],
+            },
+            {
+              title: "A common visitor mistake",
+              icon: "alert",
+              emphasis: "Testing yourself is not the goal.",
+              body: "Many travelers:",
+              bullets: [
+                "Order the spiciest option for the experience",
+                "Feel pressure to prove they can handle it",
+                "End up skipping meals afterward",
+              ],
+            },
+            {
+              title: "What to do instead",
+              icon: "checklist",
+              emphasis: "Try it later or share.",
+              body: "If a dish sounds risky:",
+              bullets: [
+                "Try it later in the trip",
+                "Share one portion with others",
+                "Ask how spicy it is before ordering",
+              ],
+            },
+            {
+              title: "How this page helps you",
+              icon: "shield",
+              emphasis: "Now or later?",
+              body: "This page helps you answer:",
+              bullets: [
+                "Should I try this now or later?",
+                "Waiting means enjoying it properly",
+              ],
+            },
+            {
+              title: "Bottom line",
+              icon: "spark",
+              emphasis: "Korean food rewards patience.",
+              body:
+                "Start with comfort, build curiosity, and save intense flavors for when you are ready.",
             },
           ],
         },

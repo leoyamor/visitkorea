@@ -1569,21 +1569,92 @@ export const siteTree: TreeNode = {
           description: "What card to buy and how to use it.",
           content: [
             {
-              title: "Quick summary",
+              title: "Transportation Cards",
+              icon: "card",
+              emphasis: "One small decision that makes travel easy.",
               body:
-                "A transit card works on subways and buses nationwide. It saves time and keeps fares lower.",
+                "Get a transportation card early and almost everything becomes simpler. You do not need to overthink brands or versions.",
             },
             {
-              title: "Key moves",
-              body: "Buy once, use everywhere.",
+              title: "What a transportation card actually does",
+              icon: "train",
+              emphasis: "Saves time and small daily costs.",
+              body: "A card lets you:",
               bullets: [
-                "Purchase at convenience stores",
-                "Top up in small amounts often",
+                "Ride subways and buses without buying tickets each time",
+                "Transfer between bus and subway without paying twice",
+                "Move faster through stations and bus doors",
               ],
             },
             {
-              title: "Common mistakes",
-              body: "Forgetting to tap out can charge the max fare.",
+              title: "What card should you buy?",
+              icon: "wallet",
+              emphasis: "Any standard card works.",
+              body: "Buy any standard transit card you see at:",
+              bullets: [
+                "Convenience stores",
+                "Subway station kiosks",
+                "If it works on buses and subways, it works for you",
+              ],
+            },
+            {
+              title: "How it works in real life",
+              icon: "card",
+              emphasis: "Tap in. Tap out.",
+              body: "Using the card is simple:",
+              bullets: [
+                "Tap when you enter",
+                "Tap when you exit",
+                "The system calculates the fare automatically",
+                "If you forget to tap out, you may pay the maximum fare",
+              ],
+            },
+            {
+              title: "How much money should you load?",
+              icon: "receipt",
+              emphasis: "Start small and top up easily.",
+              body: "Load enough for one or two days. You can top up at:",
+              bullets: [
+                "Convenience stores",
+                "Station machines",
+                "There is no benefit to loading a large amount at once",
+              ],
+            },
+            {
+              title: "One habit that saves money",
+              icon: "transfer",
+              emphasis: "Always use the same card.",
+              body:
+                "Transfers only apply if you keep using the same card within the time window. This is how locals pay less without thinking about it.",
+            },
+            {
+              title: "What this card does NOT do",
+              icon: "tag",
+              emphasis: "It is a movement tool.",
+              body: "A transportation card is not:",
+              bullets: [
+                "A sightseeing pass",
+                "A discount card for attractions",
+                "A travel package",
+              ],
+            },
+            {
+              title: "Common mistakes to avoid",
+              icon: "alert",
+              emphasis: "Small issues, easy fixes.",
+              body: "Avoid these:",
+              bullets: [
+                "Waiting until day two to buy a card",
+                "Carrying multiple cards and mixing them",
+                "Forgetting to tap out when exiting",
+              ],
+            },
+            {
+              title: "Bottom line",
+              icon: "spark",
+              emphasis: "Less thinking. Less stopping. Less stress.",
+              body:
+                "A transportation card removes friction from your trip. If moving around Korea feels easy, you chose the right card.",
             },
           ],
         },

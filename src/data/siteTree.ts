@@ -3240,21 +3240,80 @@ export const siteTree: TreeNode = {
           description: "Internet options explained simply.",
           content: [
             {
-              title: "Quick summary",
+              title: "SIM or eSIM?",
+              icon: "sim",
+              emphasis: "Good internet is not optional in Korea.",
               body:
-                "Both SIM and eSIM work well. eSIM is easier if your phone supports it.",
+                "Maps, transport, payments, and translation all depend on it. The real question is which option fits you better.",
             },
             {
-              title: "Key moves",
-              body: "Choose what fits your phone.",
+              title: "First, the short answer",
+              icon: "checklist",
+              emphasis: "One choice solves most of it.",
+              body: "If your phone supports eSIM, choose eSIM. If it doesn't, get a physical SIM.",
+            },
+            {
+              title: "What is an eSIM",
+              icon: "sim",
+              emphasis: "Digital, simple, and fast.",
+              body: "Why travelers like it:",
               bullets: [
-                "eSIM for easy setup",
-                "Physical SIM for older phones",
+                "Set it up before landing",
+                "No shop visit at the airport",
+                "Keep your home SIM active for messages or banking",
               ],
             },
             {
-              title: "Common mistakes",
-              body: "Buying a SIM before confirming phone compatibility.",
+              title: "When a physical SIM makes more sense",
+              icon: "card",
+              emphasis: "Compatibility and support.",
+              body: "A physical SIM is better if:",
+              bullets: [
+                "Your phone is older",
+                "You are unsure about eSIM compatibility",
+                "You prefer in-person help",
+                "You want to buy at the airport or telecom counters",
+              ],
+            },
+            {
+              title: "What you actually need",
+              icon: "spark",
+              emphasis: "Data first.",
+              body: "For most travelers:",
+              bullets: [
+                "Data-only is enough",
+                "Unlimited data is more comfortable",
+                "Calling minutes are rarely necessary",
+              ],
+            },
+            {
+              title: "The most common mistake",
+              icon: "alert",
+              emphasis: "Check compatibility first.",
+              body: "Always confirm:",
+              bullets: [
+                "Your phone model",
+                "eSIM support",
+                "Network compatibility",
+              ],
+            },
+            {
+              title: "Do you need to decide everything now?",
+              icon: "hand",
+              emphasis: "Decide the type, confirm the details later.",
+              body: "Exact prices and plans change often. Always confirm on:",
+              bullets: [
+                "Official telecom websites",
+                "Airport telecom counters",
+                "Authorized sellers",
+              ],
+            },
+            {
+              title: "Bottom line",
+              icon: "spark",
+              emphasis: "Either way, being online makes everything easier.",
+              body:
+                "Choose eSIM for speed and simplicity. Choose physical SIM for compatibility and support.",
             },
           ],
         },

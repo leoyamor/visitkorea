@@ -216,23 +216,93 @@ export const siteTree: TreeNode = {
           description: "Slow travel and long-stay ideas.",
           content: [
             {
-              title: "Quick summary",
+              title: "1 Month in Korea",
+              icon: "calendar",
+              emphasis: "A month is about living better, not seeing more.",
               body:
-                "A month is perfect for slow travel, language practice, and deeper neighborhoods. Pick 2-3 home bases and settle in.",
+                "This guide helps you use a month comfortably without turning your trip into a long to-do list.",
             },
             {
-              title: "Key moves",
-              body: "Plan around weekly rhythms instead of daily checklists.",
+              title: "The key mindset for a 1-month trip",
+              icon: "spark",
+              emphasis: "Stop thinking in days. Start thinking in weeks.",
+              body: "A good long stay has:",
               bullets: [
-                "Two weeks in Seoul with flexible days",
-                "One week in a coastal city",
-                "One week in a smaller historical city",
+                "Fewer cities",
+                "Longer stays",
+                "Repeated routines",
               ],
             },
             {
-              title: "Common mistakes",
+              title: "The simple rule that works",
+              icon: "route",
+              emphasis: "Pick 2 or 3 home bases.",
               body:
-                "Overplanning daily activities can make long stays feel tiring.",
+                "Stay long enough to feel familiar. Anything more usually leads to fatigue.",
+            },
+            {
+              title: "Weeks 1-2: Seoul",
+              icon: "city",
+              emphasis: "Seoul is the best long-stay base.",
+              body:
+                "Daily life is easy, transport is strong, and neighborhoods feel endless. Two weeks makes the city feel natural, not overwhelming.",
+            },
+            {
+              title: "Week 3: One nature or coastal city",
+              icon: "leaf",
+              emphasis: "Change the rhythm.",
+              body: "This week is about space, not sightseeing.",
+              bullets: [
+                "Busan -> sea, walks, slower evenings",
+                "Jeju -> nature, driving, quiet mornings",
+              ],
+            },
+            {
+              title: "Week 4: One smaller or calmer city",
+              icon: "temple",
+              emphasis: "Finish somewhere relaxed.",
+              body: "Fewer plans. More comfort.",
+              bullets: [
+                "Gyeongju -> history and bike-friendly paths",
+                "Jeonju -> food and traditional streets",
+                "Smaller regional city -> local pace",
+              ],
+            },
+            {
+              title: "What often goes wrong",
+              icon: "alert",
+              emphasis: "Treating a long stay like a tour leads to burnout.",
+              body: "Even with a month, travelers:",
+              bullets: [
+                "Move cities too often",
+                "Plan sightseeing every day",
+                "Treat a long stay like a tour",
+              ],
+            },
+            {
+              title: "What you don't need to plan early",
+              icon: "checklist",
+              emphasis: "Long trips work best with flexibility.",
+              body: "You don't need:",
+              bullets: [
+                "Daily schedules",
+                "Attraction lists",
+                "Restaurant plans",
+              ],
+            },
+            {
+              title: "Need current details?",
+              icon: "shield",
+              emphasis: "Always confirm before booking.",
+              body:
+                "Accommodation rules, prices, and options can change. Always confirm long-stay details through official or up-to-date sources before booking.",
+            },
+            {
+              title: "Bottom line",
+              icon: "spark",
+              emphasis: "Calm beats busy.",
+              body:
+                "A good month in Korea feels calm, not busy. If your days start to feel normal, you planned it right.",
             },
           ],
         },

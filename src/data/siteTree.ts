@@ -832,21 +832,90 @@ export const siteTree: TreeNode = {
           description: "History everywhere you walk.",
           content: [
             {
-              title: "Quick summary",
+              title: "Gyeongju",
+              icon: "temple",
+              emphasis: "Quiet, spacious, and deeply Korean.",
               body:
-                "Gyeongju is a compact historical city with tombs, temples, and bike-friendly paths.",
+                "Gyeongju is not a city you rush through. History is under your feet, beside the road, and across the park. It carries the calm rhythm of Korea's ancient capital.",
             },
             {
-              title: "Best for",
-              body: "History lovers and calm day trips.",
+              title: "Why Gyeongju works so well for travelers",
+              icon: "spark",
+              emphasis: "Walk more than you commute.",
+              body: "Most major sights are close together, flat, and easy to explore. That means:",
               bullets: [
-                "1-2 days recommended",
-                "Rent a bike for easy touring",
+                "You walk more than you commute",
+                "You explore without constant phone-checking",
+                "You feel history instead of chasing it",
               ],
             },
             {
-              title: "Common mistakes",
-              body: "Visiting in a single afternoon is too rushed.",
+              title: "How much time is enough?",
+              icon: "calendar",
+              emphasis: "Overnight feels right.",
+              body: "For most travelers:",
+              bullets: [
+                "1 full day is the minimum",
+                "1 night + 2 days feels ideal",
+                "A calm break between Seoul and Busan works best",
+              ],
+            },
+            {
+              title: "What makes Gyeongju different",
+              icon: "route",
+              emphasis: "Not a checklist city.",
+              body: "It is about:",
+              bullets: [
+                "Walking past royal tombs at sunset",
+                "Biking between temples and fields",
+                "Sitting longer and moving slower",
+              ],
+            },
+            {
+              title: "Best way to explore",
+              icon: "route",
+              emphasis: "Simple transport is the experience.",
+              body: "Gyeongju is friendly for:",
+              bullets: [
+                "Walking",
+                "Biking",
+                "Short taxi rides",
+              ],
+            },
+            {
+              title: "Who will enjoy Gyeongju most?",
+              icon: "leaf",
+              emphasis: "Great for calm travelers.",
+              body: "A great fit if you:",
+              bullets: [
+                "Enjoy history without crowds",
+                "Prefer calm cities over nightlife",
+                "Want space between busy destinations",
+              ],
+            },
+            {
+              title: "Common mistakes to avoid",
+              icon: "alert",
+              emphasis: "Staying overnight changes everything.",
+              body: "Many visitors:",
+              bullets: [
+                "Try to squeeze Gyeongju into a half-day",
+                "Treat it like a checklist stop",
+                "Leave before nightfall",
+              ],
+            },
+            {
+              title: "One important thing to remember",
+              icon: "hand",
+              emphasis: "Not flashy, but unforgettable.",
+              body: "If you are looking for clubs, shopping streets, or fast entertainment, this may not be your place. But if you want space, silence, and slow stories, Gyeongju quietly delivers.",
+            },
+            {
+              title: "Bottom line",
+              icon: "spark",
+              emphasis: "Where Korea slows down.",
+              body:
+                "If your trip feels too full, this is the city that restores balance.",
             },
           ],
         },

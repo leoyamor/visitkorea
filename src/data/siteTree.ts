@@ -516,21 +516,100 @@ export const siteTree: TreeNode = {
           description: "Big city life, food, and culture.",
           content: [
             {
-              title: "Quick summary",
+              title: "Seoul",
+              icon: "city",
+              emphasis: "The easiest first base for most travelers.",
               body:
-                "Seoul is the best base for first timers: transport is easy, neighborhoods are walkable, and there is endless food and shopping.",
+                "Seoul brings transport, food, culture, and daily convenience into one system that works for visitors. It feels big, but it is manageable once you see how the city is structured.",
             },
             {
-              title: "Best for",
-              body: "City explorers, food lovers, and museum fans.",
+              title: "Why Seoul works so well for travelers",
+              icon: "train",
+              emphasis: "Built for movement.",
+              body:
+                "Subways are frequent, signs are bilingual, and neighborhoods are clearly defined. You do not need a car, perfect Korean, or a detailed plan to enjoy Seoul.",
+            },
+            {
+              title: "What Seoul is best for",
+              icon: "spark",
+              emphasis: "City energy without chaos.",
+              body: "Seoul fits travelers who like:",
               bullets: [
-                "3-6 days recommended",
-                "Stay near subway lines 2 or 4",
+                "Easy access to food at all hours",
+                "Mixing history and modern life in one day",
+                "Shopping, cafes, museums, and neighborhoods",
+                "A strong public transport system",
               ],
             },
             {
-              title: "Common mistakes",
-              body: "Trying to see all districts in one day will exhaust you.",
+              title: "How long to stay in Seoul",
+              icon: "calendar",
+              emphasis: "Seoul rewards slower exploration.",
+              body: "Most travelers feel comfortable with:",
+              bullets: [
+                "3-4 days as part of a short trip",
+                "5-6 days if Seoul is your main base",
+              ],
+            },
+            {
+              title: "How to use Seoul without burning out",
+              icon: "route",
+              emphasis: "Think small cities, not one giant attraction.",
+              body: "A better approach:",
+              bullets: [
+                "Stay in one area",
+                "Explore one or two nearby neighborhoods per day",
+                "Use cafes, parks, and food breaks as part of the plan",
+              ],
+            },
+            {
+              title: "Where Seoul really shines",
+              icon: "temple",
+              emphasis: "Variety, not one landmark.",
+              body: "In a single day, you can:",
+              bullets: [
+                "Walk past royal palaces",
+                "Eat in a local market",
+                "Ride a subway 10 minutes",
+                "End the night in a modern shopping or nightlife area",
+              ],
+            },
+            {
+              title: "Common mistakes to avoid",
+              icon: "alert",
+              emphasis: "Efficient on paper, exhausting in real life.",
+              body: "Avoid these:",
+              bullets: [
+                "Trying to visit too many districts in one day",
+                "Changing hotels to save time",
+                "Overplanning attractions instead of neighborhoods",
+                "Treating Seoul as a checklist instead of a base",
+              ],
+            },
+            {
+              title: "What you don't need to decide yet",
+              icon: "hand",
+              emphasis: "Decide after you see distances.",
+              body: "You don't need to pick:",
+              bullets: [
+                "Exact attractions",
+                "Restaurant lists",
+                "Daily schedules",
+              ],
+            },
+            {
+              title: "About updated information",
+              icon: "shield",
+              emphasis: "Use official sources to confirm.",
+              body:
+                "Neighborhood trends, events, and transportation details change over time. For the latest maps, routes, and city updates, always confirm through official city tourism or public transport channels.",
+            },
+            {
+              title: "Bottom line",
+              icon: "spark",
+              emphasis: "Stay put. Move smart. Explore slowly.",
+              body:
+                "Seoul is not overwhelming when you use it correctly. If you finish your stay feeling curious instead of tired, you chose the city and the pace well.",
             },
           ],
         },

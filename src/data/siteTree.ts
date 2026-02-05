@@ -1022,22 +1022,104 @@ export const siteTree: TreeNode = {
           description: "Pick a city based on your travel style.",
           content: [
             {
-              title: "Quick summary",
+              title: "Which City Fits You Best?",
+              icon: "spark",
+              emphasis: "There is a right city for your style.",
               body:
-                "Choose based on your priority: city energy, nature, history, or food.",
+                "Choosing the right city matters more than choosing the famous one. This guide helps you decide without endless comparisons.",
             },
             {
-              title: "Quick picks",
-              body: "Match your style to a city.",
+              title: "Start with how you like to travel",
+              icon: "route",
+              emphasis: "Think about your days, not city names.",
+              body: "Do you prefer:",
               bullets: [
-                "City + shopping: Seoul",
-                "Sea + seafood: Busan",
-                "Nature + driving: Jeju",
+                "Busy streets or quiet walks?",
+                "Food-focused days or nature breaks?",
+                "Easy transport or open-road freedom?",
               ],
             },
             {
-              title: "Common mistakes",
-              body: "Trying to visit all cities on a short trip reduces quality.",
+              title: "If you like energy, food, and variety",
+              icon: "city",
+              emphasis: "Major city base.",
+              body: "You enjoy:",
+              bullets: [
+                "Walking different neighborhoods every day",
+                "Trying many foods in one trip",
+                "Shopping, cafes, museums, nightlife",
+                "Excellent public transport and short-distance plans",
+              ],
+            },
+            {
+              title: "If you want contrast and a slower rhythm",
+              icon: "beach",
+              emphasis: "Change of pace after a big city.",
+              body: "You enjoy:",
+              bullets: [
+                "Scenic walks and open views",
+                "Calmer evenings and earlier nights",
+                "Nature and city life mixed together",
+              ],
+            },
+            {
+              title: "If food is your main reason for traveling",
+              icon: "bowl",
+              emphasis: "Compact and walkable.",
+              body: "You travel to:",
+              bullets: [
+                "Eat well, not just see sights",
+                "Walk between meals",
+                "Enjoy atmosphere more than attractions",
+              ],
+            },
+            {
+              title: "If history and calm matter most",
+              icon: "temple",
+              emphasis: "Smaller historical cities.",
+              body: "You enjoy:",
+              bullets: [
+                "Quiet mornings",
+                "Walking instead of commuting",
+                "Places that feel layered, not flashy",
+              ],
+            },
+            {
+              title: "If freedom matters more than convenience",
+              icon: "car",
+              emphasis: "The journey is part of the trip.",
+              body: "You prefer:",
+              bullets: [
+                "Driving at your own pace",
+                "Nature over nightlife",
+                "Fewer crowds and looser plans",
+              ],
+            },
+            {
+              title: "Common mistake to avoid",
+              icon: "alert",
+              emphasis: "Ask the right question.",
+              body:
+                "The question is not which city is best. It is which city fits how you travel. Trying to visit every type in one short trip leads to constant packing and less enjoyment.",
+            },
+            {
+              title: "How to use this page",
+              icon: "checklist",
+              emphasis: "Narrow, then confirm.",
+              body: "Use this page to:",
+              bullets: [
+                "Narrow your options",
+                "Choose a main base",
+                "Decide where to slow down",
+                "Then use the city pages to confirm details",
+              ],
+            },
+            {
+              title: "Bottom line",
+              icon: "spark",
+              emphasis: "The right city makes everything easier.",
+              body:
+                "There is no perfect city for everyone. But there is a right city for you. Once that choice is clear, the rest of your trip becomes much easier.",
             },
           ],
         },

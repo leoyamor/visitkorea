@@ -1140,21 +1140,105 @@ export const siteTree: TreeNode = {
           description: "How easy transportation really is in Korea.",
           content: [
             {
-              title: "Quick summary",
+              title: "Is Getting Around Hard?",
+              icon: "train",
+              emphasis: "For most travelers, it's easier than expected.",
               body:
-                "Korea is one of the easiest countries to navigate. Signs are clear and public transport is frequent.",
+                "Korea's transport is modern, reliable, and designed for daily use. Once you know the basics, it becomes one of the least stressful parts of your trip.",
             },
             {
-              title: "What helps most",
-              body: "Two tools make travel simple.",
+              title: "The short answer",
+              icon: "spark",
+              emphasis: "No, it is not hard.",
+              body: "For visitors:",
               bullets: [
-                "Use a transit card for every ride",
-                "Use local map apps for directions",
+                "Public transport is frequent",
+                "Signs are clear and often bilingual",
+                "Cities are built around transit, not cars",
               ],
             },
             {
-              title: "Common mistakes",
-              body: "Using only taxis can become expensive and slower in traffic.",
+              title: "What actually makes transportation easy",
+              icon: "route",
+              emphasis: "One system, used by everyone.",
+              body:
+                "Subways, buses, and transfers are connected, so you do not need to relearn each time. Locals use the same system you do. That is why it works so well.",
+            },
+            {
+              title: "What first-time visitors usually worry about",
+              icon: "alert",
+              emphasis: "Unfamiliar, not complicated.",
+              body: "Common worries:",
+              bullets: [
+                "Will I get lost?",
+                "What if I cannot read Korean?",
+                "Is it expensive?",
+                "What if I make a mistake?",
+              ],
+            },
+            {
+              title: "The reality",
+              icon: "shield",
+              emphasis: "You are rarely stuck.",
+              body: "In practice:",
+              bullets: [
+                "Getting lost is rare if you follow stations and exits",
+                "You do not need to speak Korean to use transport",
+                "Public transport is affordable",
+                "Mistakes are easy to fix",
+              ],
+            },
+            {
+              title: "How people actually get around",
+              icon: "train",
+              emphasis: "Mix modes naturally.",
+              body: "Most travelers use:",
+              bullets: [
+                "Subways for longer distances",
+                "Buses for local routes",
+                "Taxis late at night or when tired",
+              ],
+            },
+            {
+              title: "What you don't need to overthink",
+              icon: "hand",
+              emphasis: "Trust the system.",
+              body: "You do not need:",
+              bullets: [
+                "Perfect route planning",
+                "Local-level knowledge",
+                "Backup plans for every ride",
+              ],
+            },
+            {
+              title: "A common mistake to avoid",
+              icon: "alert",
+              emphasis: "Simple beats complex.",
+              body: "Many visitors:",
+              bullets: [
+                "Assume transport will be confusing",
+                "Default to taxis too often",
+                "Over-plan routes instead of trusting the system",
+              ],
+            },
+            {
+              title: "How this page helps you",
+              icon: "checklist",
+              emphasis: "Confidence first.",
+              body: "Use this page to:",
+              bullets: [
+                "Feel confident before arrival",
+                "Understand the overall ease of movement",
+                "Stop transport anxiety from shaping your itinerary",
+                "Then read the detailed guides later",
+              ],
+            },
+            {
+              title: "Bottom line",
+              icon: "spark",
+              emphasis: "Transport works with you.",
+              body:
+                "Once you trust the system, moving around becomes routine, not a problem to solve.",
             },
           ],
         },

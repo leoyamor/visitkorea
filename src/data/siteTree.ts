@@ -4658,21 +4658,84 @@ export const siteTree: TreeNode = {
           description: "What is actually worth buying.",
           content: [
             {
-              title: "Quick summary",
+              title: "Is Shopping Cheap in Korea?",
+              icon: "wallet",
+              emphasis: "Sometimes yes. Sometimes no.",
               body:
-                "Some items are cheaper, but not everything is a bargain. Focus on local specialties.",
+                "Shopping in Korea is exciting, but not everything is a bargain. The key is knowing what is worth buying here.",
             },
             {
-              title: "Worth it",
-              body: "Look for items with a good price-quality ratio.",
+              title: "What is usually worth buying",
+              icon: "spark",
+              emphasis: "Best value categories.",
+              body: "Most travelers feel good about:",
               bullets: [
                 "Skincare and cosmetics",
-                "Local snacks and gifts",
+                "Local snacks and food gifts",
+                "Small lifestyle items like stationery or accessories",
               ],
             },
             {
-              title: "Common mistakes",
-              body: "Buying bulky items that are expensive to pack.",
+              title: "What is often NOT a good deal",
+              icon: "alert",
+              emphasis: "Tempting but disappointing.",
+              body: "Usually not great value:",
+              bullets: [
+                "Global brand clothing",
+                "Electronics with warranty or voltage issues",
+                "Large or heavy items that are hard to pack",
+              ],
+            },
+            {
+              title: "Street markets and local stalls",
+              icon: "pin",
+              emphasis: "Compare before buying.",
+              body: "Best approach:",
+              bullets: [
+                "Compare prices casually",
+                "Do not buy the first thing you see",
+                "Walk one street further",
+              ],
+            },
+            {
+              title: "Luxury shopping",
+              icon: "spark",
+              emphasis: "Only if you planned it anyway.",
+              body: "Luxury makes sense only if:",
+              bullets: [
+                "You planned to buy it anyway",
+                "Tax refunds apply",
+                "Exchange rates work in your favor",
+              ],
+            },
+            {
+              title: "Common shopping mistakes",
+              icon: "alert",
+              emphasis: "Avoid stress.",
+              body: "Avoid:",
+              bullets: [
+                "Buying bulky items late in the trip",
+                "Assuming all Made in Korea items are cheap",
+                "Shopping without checking tax refund eligibility",
+              ],
+            },
+            {
+              title: "Where to check current prices and rules",
+              icon: "shield",
+              emphasis: "Always confirm official details.",
+              body: "Check:",
+              bullets: [
+                "Official tourism information centers",
+                "Store service desks",
+                "Airport tax refund counters",
+              ],
+            },
+            {
+              title: "Bottom line",
+              icon: "spark",
+              emphasis: "Buy the right things, not everything.",
+              body:
+                "If you come home with items you actually use, you shopped well.",
             },
           ],
         },

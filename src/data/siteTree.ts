@@ -1358,21 +1358,105 @@ export const siteTree: TreeNode = {
           description: "How buses work and when to use them.",
           content: [
             {
-              title: "Quick summary",
+              title: "Taking the Bus",
+              icon: "bus",
+              emphasis: "Not a backup option.",
               body:
-                "Buses fill the gaps where subways do not go. They are reliable but require the right stop.",
+                "Buses are part of the main system, especially for places the subway does not reach. Once you know when to use them, they feel convenient.",
             },
             {
-              title: "Key moves",
-              body: "Use bus rides efficiently.",
+              title: "When buses make the most sense",
+              icon: "route",
+              emphasis: "Short, direct, local.",
+              body: "Use the bus when:",
               bullets: [
-                "Use a map app to find the correct stop",
-                "Tap when boarding and exiting",
+                "Your destination is not near a subway station",
+                "You want to avoid long underground transfers",
+                "You are moving within one neighborhood",
               ],
             },
             {
-              title: "Common mistakes",
-              body: "Boarding the wrong direction is a common first-timer issue.",
+              title: "How paying on buses actually works",
+              icon: "card",
+              emphasis: "Same card, simple taps.",
+              body: "You use the same transportation card as the subway:",
+              bullets: [
+                "Tap once when you get on",
+                "Tap again when you get off",
+                "The system calculates the fare and transfers",
+              ],
+            },
+            {
+              title: "What first-time riders usually worry about",
+              icon: "alert",
+              emphasis: "You are not guessing blindly.",
+              body: "Most visitors worry about:",
+              bullets: [
+                "Getting on the wrong bus",
+                "Missing their stop",
+                "Not knowing when to get off",
+              ],
+            },
+            {
+              title: "The reality",
+              icon: "shield",
+              emphasis: "Clear and trackable.",
+              body: "In practice:",
+              bullets: [
+                "Bus numbers are clearly displayed",
+                "Stops are announced and shown on screens",
+                "Map apps show your progress in real time",
+              ],
+            },
+            {
+              title: "What makes buses feel different",
+              icon: "pin",
+              emphasis: "You see the city.",
+              body: "Buses:",
+              bullets: [
+                "Follow street routes",
+                "Stop more frequently",
+                "Give you a better sense of where you are",
+              ],
+            },
+            {
+              title: "One common mistake to avoid",
+              icon: "alert",
+              emphasis: "Do not default to taxis.",
+              body: "Some travelers:",
+              bullets: [
+                "Avoid buses completely",
+                "Use taxis instead for short trips",
+                "Overuse the subway even when it is inefficient",
+              ],
+            },
+            {
+              title: "What you don't need to master in advance",
+              icon: "hand",
+              emphasis: "The logic becomes clear fast.",
+              body: "You do not need:",
+              bullets: [
+                "To memorize bus routes",
+                "To understand the color system deeply",
+                "To speak Korean",
+              ],
+            },
+            {
+              title: "How this page helps you",
+              icon: "checklist",
+              emphasis: "Use buses as a tool.",
+              body: "This page answers one question:",
+              bullets: [
+                "Should I use the bus? If the subway feels indirect, usually yes.",
+                "Use buses when they save time and steps",
+              ],
+            },
+            {
+              title: "Bottom line",
+              icon: "spark",
+              emphasis: "Practical and predictable.",
+              body:
+                "Buses in Korea are easy to use. If the subway gets you close, the bus often gets you exactly there.",
             },
           ],
         },

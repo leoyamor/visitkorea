@@ -1250,21 +1250,103 @@ export const siteTree: TreeNode = {
           description: "Tickets, cards, and how to pay.",
           content: [
             {
-              title: "Quick summary",
+              title: "Using the Subway",
+              icon: "train",
+              emphasis: "If you can use a subway anywhere, you can use it here.",
               body:
-                "Subways are fast, cheap, and bilingual. The hardest part is choosing the right exit.",
+                "Korea's subway is fast, clean, affordable, and designed for everyone. Most travelers feel comfortable after their first ride.",
             },
             {
-              title: "Key moves",
-              body: "Make every ride smooth.",
+              title: "The one thing you really need to know",
+              icon: "card",
+              emphasis: "You do not need single tickets.",
+              body:
+                "Almost everyone uses a transportation card. You tap in, ride, and tap out. Once you have a card, the subway becomes automatic.",
+            },
+            {
+              title: "How paying actually works",
+              icon: "wallet",
+              emphasis: "Simple and automatic.",
+              body: "Here is the simple version:",
               bullets: [
-                "Tap in and out with a transit card",
-                "Use exit numbers for navigation",
+                "Buy one transportation card",
+                "Add some money to it",
+                "Use it for every subway ride",
+                "You do not need to calculate fares or zones",
               ],
             },
             {
-              title: "Common mistakes",
-              body: "Skipping the exit number often adds 10 minutes of walking.",
+              title: "What stations are like",
+              icon: "pin",
+              emphasis: "Exit numbers matter most.",
+              body: "Stations are:",
+              bullets: [
+                "Clearly numbered",
+                "Well signposted",
+                "Often bilingual",
+                "Exit numbers save time and walking",
+              ],
+            },
+            {
+              title: "What first-time riders worry about",
+              icon: "alert",
+              emphasis: "Most worries fade quickly.",
+              body: "Common worries:",
+              bullets: [
+                "Reading Korean",
+                "Choosing the wrong line",
+                "Paying incorrectly",
+              ],
+            },
+            {
+              title: "The reality",
+              icon: "shield",
+              emphasis: "Mistakes are easy to fix.",
+              body: "In practice:",
+              bullets: [
+                "Station names are romanized",
+                "Line colors and numbers are consistent",
+                "Gates will not let you through if something is wrong",
+              ],
+            },
+            {
+              title: "What you don't need to stress about",
+              icon: "hand",
+              emphasis: "Keep it simple.",
+              body: "You do not need:",
+              bullets: [
+                "A daily subway pass",
+                "Perfect route memorization",
+                "Local-level knowledge",
+              ],
+            },
+            {
+              title: "A common mistake to avoid",
+              icon: "alert",
+              emphasis: "The subway is almost always better.",
+              body: "Some travelers:",
+              bullets: [
+                "Buy single tickets repeatedly",
+                "Avoid the subway out of fear",
+                "Use taxis for short distances",
+              ],
+            },
+            {
+              title: "How this page helps you",
+              icon: "checklist",
+              emphasis: "Confidence comes fast.",
+              body: "This page answers one question:",
+              bullets: [
+                "Can I handle the subway in Korea? Yes.",
+                "Detailed routes and apps come later",
+              ],
+            },
+            {
+              title: "Bottom line",
+              icon: "spark",
+              emphasis: "It works for you.",
+              body:
+                "Once you start using the subway, you will wonder why you ever hesitated.",
             },
           ],
         },

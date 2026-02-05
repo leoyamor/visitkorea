@@ -4065,22 +4065,90 @@ export const siteTree: TreeNode = {
           description: "A simple pre-trip checklist.",
           content: [
             {
-              title: "Quick summary",
+              title: "What Should I Prepare?",
+              icon: "checklist",
+              emphasis: "Minimum setup, maximum ease.",
               body:
-                "A few essentials make the trip smooth: documents, phone setup, and basic apps.",
+                "Preparing for Korea means packing smarter and deciding a few key things before you leave. This is the minimum setup that makes everything easier.",
             },
             {
-              title: "Checklist",
-              body: "Keep this short and focused.",
+              title: "Start with the non-negotiables",
+              icon: "passport",
+              emphasis: "Three essentials.",
+              body: "Make sure these are done:",
               bullets: [
-                "Passport and entry documents",
-                "Travel card and some cash",
-                "Transit and map apps",
+                "Passport valid for your entire stay",
+                "Entry requirement checked (visa or K-ETA if needed)",
+                "Flight and first accommodation confirmed",
               ],
             },
             {
-              title: "Common mistakes",
-              body: "Forgetting a portable charger can be a hassle.",
+              title: "Your phone is your most important tool",
+              icon: "sim",
+              emphasis: "Install before you fly.",
+              body: "Before you go:",
+              bullets: [
+                "Enable international payments on your card",
+                "Make sure your phone is unlocked",
+                "Install a map app and a translation app",
+              ],
+            },
+            {
+              title: "Money: keep it simple",
+              icon: "wallet",
+              emphasis: "Card + small cash.",
+              body: "Prepare:",
+              bullets: [
+                "One card that works overseas",
+                "A small amount of cash for emergencies",
+              ],
+            },
+            {
+              title: "What to save offline",
+              icon: "checklist",
+              emphasis: "Convenience, not paranoia.",
+              body: "Save these offline:",
+              bullets: [
+                "Your hotel name and address",
+                "Airport name you arrive at",
+                "Emergency numbers",
+              ],
+            },
+            {
+              title: "What you probably don't need to worry about",
+              icon: "hand",
+              emphasis: "Keep it light.",
+              body: "In reality:",
+              bullets: [
+                "Dress casually and comfortably",
+                "Adapters are easy to buy locally",
+                "Gifts are not expected",
+              ],
+            },
+            {
+              title: "One small item that helps a lot",
+              icon: "bag",
+              emphasis: "Portable charger.",
+              body:
+                "A dead battery causes more stress than almost anything else. Bring a portable charger.",
+            },
+            {
+              title: "Final mental check",
+              icon: "spark",
+              emphasis: "If yes, you're ready.",
+              body: "Ask yourself:",
+              bullets: [
+                "Do I know where I'm sleeping the first night?",
+                "Can I access my money?",
+                "Can I navigate if needed?",
+              ],
+            },
+            {
+              title: "Final thought",
+              icon: "spark",
+              emphasis: "Quiet preparation.",
+              body:
+                "If you arrive calm and flexible, you prepared exactly the right amount.",
             },
           ],
         },

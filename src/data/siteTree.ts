@@ -3955,21 +3955,105 @@ export const siteTree: TreeNode = {
           description: "Do you need it or not?",
           content: [
             {
-              title: "Quick summary",
+              title: "What Is K-ETA?",
+              icon: "passport",
+              emphasis: "A quick yes-or-no question for most travelers.",
               body:
-                "K-ETA is an online travel authorization for some nationalities. Check if your passport requires it.",
+                "K-ETA is an online pre-approval system for travelers from certain countries. This page helps you decide if it matters to you.",
             },
             {
-              title: "Key moves",
-              body: "Confirm before you fly.",
+              title: "What K-ETA actually is",
+              icon: "checklist",
+              emphasis: "A digital permission to board.",
+              body: "Think of it as:",
               bullets: [
-                "Apply online if required",
-                "Use the same passport you applied with",
+                "A digital permission to board your flight",
+                "Not a visa",
+                "Not something everyone needs",
               ],
             },
             {
-              title: "Common mistakes",
-              body: "Waiting until the day before departure.",
+              title: "Do you need K-ETA?",
+              icon: "spark",
+              emphasis: "Check your passport, not your plan.",
+              body: "Ask one question:",
+              bullets: [
+                "Does my passport require pre-travel authorization for Korea?",
+                "Yes -> apply before your flight",
+                "No -> skip it completely",
+              ],
+            },
+            {
+              title: "When K-ETA is usually required",
+              icon: "passport",
+              emphasis: "Short-term tourists from listed countries.",
+              body: "More likely required if:",
+              bullets: [
+                "You are visiting as a tourist",
+                "Your stay is short-term",
+                "Your country is on the K-ETA-required list",
+              ],
+            },
+            {
+              title: "When you might be exempt",
+              icon: "hand",
+              emphasis: "Rules change, so always verify.",
+              body: "Less likely required if:",
+              bullets: [
+                "You have a temporary exemption",
+                "You hold a long-term visa",
+                "You enter under a special agreement",
+              ],
+            },
+            {
+              title: "What happens if you need it and don't apply",
+              icon: "alert",
+              emphasis: "Usually stops you before boarding.",
+              body: "Without K-ETA (if required):",
+              bullets: [
+                "Airlines may not let you board",
+                "Immigration issues can occur before departure",
+              ],
+            },
+            {
+              title: "What K-ETA does NOT affect",
+              icon: "shield",
+              emphasis: "It does not guarantee entry.",
+              body: "K-ETA does not:",
+              bullets: [
+                "Guarantee entry",
+                "Replace immigration checks",
+                "Control how long you stay",
+              ],
+            },
+            {
+              title: "Common misunderstandings",
+              icon: "alert",
+              emphasis: "Very common.",
+              body: "Many travelers think:",
+              bullets: [
+                "I can do it at the airport",
+                "My friend didn't need it, so I don't either",
+                "It is the same as a visa",
+              ],
+            },
+            {
+              title: "What to do next",
+              icon: "checklist",
+              emphasis: "Keep it simple.",
+              body: "Do this instead:",
+              bullets: [
+                "Confirm your passport's current requirement",
+                "Apply only if needed",
+                "Screenshot your approval if you apply",
+              ],
+            },
+            {
+              title: "Final thought",
+              icon: "spark",
+              emphasis: "Check once, decide once.",
+              body:
+                "K-ETA is not scary, but ignoring it can ruin a trip before it starts.",
             },
           ],
         },

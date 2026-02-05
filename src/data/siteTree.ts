@@ -3431,21 +3431,92 @@ export const siteTree: TreeNode = {
           description: "What travelers should know.",
           content: [
             {
-              title: "Quick summary",
+              title: "Is Korea Safe?",
+              icon: "shield",
+              emphasis: "Yes, generally very safe.",
               body:
-                "Korea is generally very safe, even at night. Still, normal travel awareness is important.",
+                "Safe does not mean stop thinking completely. This page explains what that really means for travelers.",
             },
             {
-              title: "Key moves",
-              body: "Stay confident and practical.",
+              title: "Why most visitors feel safe right away",
+              icon: "spark",
+              emphasis: "Comfortable from day one.",
+              body: "Many travelers notice:",
               bullets: [
-                "Keep valuables close",
-                "Stick to well-lit areas at night",
+                "People walk alone late at night",
+                "Public transport runs very late",
+                "Streets are well lit and busy",
+                "Violent crime is rare in visitor areas",
               ],
             },
             {
-              title: "Common mistakes",
-              body: "Assuming nothing can ever go wrong.",
+              title: "Where you still need basic awareness",
+              icon: "alert",
+              emphasis: "Crowds are still crowds.",
+              body: "Use normal awareness in:",
+              bullets: [
+                "Crowded subways",
+                "Busy nightlife areas",
+                "Tourist-heavy shopping streets",
+              ],
+            },
+            {
+              title: "Night travel: what to expect",
+              icon: "route",
+              emphasis: "Safe, lively, and reliable.",
+              body: "In reality:",
+              bullets: [
+                "Subways and buses are safe",
+                "Taxis are reliable",
+                "Late-night food streets are lively",
+              ],
+            },
+            {
+              title: "If you are alone at night",
+              icon: "hand",
+              emphasis: "Comfort choices.",
+              body: "Simple habits:",
+              bullets: [
+                "Stick to main streets",
+                "Avoid empty alleys late at night",
+                "Use taxis if you feel tired or unsure",
+              ],
+            },
+            {
+              title: "What often worries travelers but shouldn't",
+              icon: "spark",
+              emphasis: "Cultural differences, not danger.",
+              body: "These are normal:",
+              bullets: [
+                "People staring out of curiosity",
+                "Quiet behavior on public transport",
+                "Fewer visible police than expected",
+              ],
+            },
+            {
+              title: "When to be a bit more careful",
+              icon: "alert",
+              emphasis: "Know your limits.",
+              body: "Extra awareness helps if you:",
+              bullets: [
+                "Drink heavily",
+                "Stay out very late in nightlife zones",
+                "Ignore your surroundings",
+              ],
+            },
+            {
+              title: "Emergency help",
+              icon: "shield",
+              emphasis: "Rarely needed, but organized.",
+              body:
+                "Emergency services are fast and organized. English support is available in many situations.",
+            },
+            {
+              title: "Final thought",
+              icon: "spark",
+              emphasis: "Stay aware, not anxious.",
+              body:
+                "Korea is safe enough that safety rarely becomes part of your daily decisions. That is how a good trip should feel.",
             },
           ],
         },

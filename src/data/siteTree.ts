@@ -2964,21 +2964,99 @@ export const siteTree: TreeNode = {
           description: "Highlights for each city.",
           content: [
             {
-              title: "Quick summary",
+              title: "Top Places by City",
+              icon: "pin",
+              emphasis: "Choose fewer places and enjoy them more.",
               body:
-                "Each city has a few standout areas. Plan your day around one main cluster at a time.",
+                "Every city has a lot to see. This page helps you decide what is worth your limited time, city by city.",
             },
             {
-              title: "Key moves",
-              body: "Group sights by neighborhood.",
+              title: "How to use this page",
+              icon: "checklist",
+              emphasis: "Pick one main highlight cluster per day.",
+              body:
+                "Do not try to see everything listed for a city. One clear focus per day saves time, energy, and money.",
+            },
+            {
+              title: "Seoul: history + modern life",
+              icon: "city",
+              emphasis: "Group by neighborhood.",
+              body: "Best highlights to focus on:",
               bullets: [
-                "Seoul: palaces + nearby districts",
-                "Busan: beach + market",
+                "Palaces and traditional streets in the city center",
+                "One modern area for shopping or nightlife",
+                "One scenic viewpoint or river walk",
               ],
             },
             {
-              title: "Common mistakes",
-              body: "Cross-city travel in one day is tiring.",
+              title: "Busan: coast first, city second",
+              icon: "beach",
+              emphasis: "Stay near your main beach area.",
+              body: "Best highlights to focus on:",
+              bullets: [
+                "One beach area with a coastal walk",
+                "One local market or food street",
+                "One viewpoint or cable car experience",
+              ],
+            },
+            {
+              title: "Jeju: nature beats landmarks",
+              icon: "leaf",
+              emphasis: "Choose a direction and slow down.",
+              body: "Best highlights to focus on:",
+              bullets: [
+                "One coast route or scenic drive",
+                "One nature experience (trail, cliff, or field)",
+                "One relaxed local food stop",
+              ],
+            },
+            {
+              title: "Gyeongju: one open-air museum",
+              icon: "temple",
+              emphasis: "Move slowly to feel the charm.",
+              body: "Best highlights to focus on:",
+              bullets: [
+                "Royal tomb areas and historic parks",
+                "One major temple or heritage site",
+                "Evening walk in the old town area",
+              ],
+            },
+            {
+              title: "Jeonju: food + streets",
+              icon: "bowl",
+              emphasis: "Evenings are the best.",
+              body: "Best highlights to focus on:",
+              bullets: [
+                "Hanok village streets",
+                "Local food experiences",
+                "Nighttime walking and cafes",
+              ],
+            },
+            {
+              title: "The most common mistake",
+              icon: "alert",
+              emphasis: "Do not rank cities by importance.",
+              body:
+                "There is no universal must-see list. There is only what fits your trip style.",
+            },
+            {
+              title: "What this page does and doesn't do",
+              icon: "hand",
+              emphasis: "Focus, not a full list.",
+              body: "This page helps you:",
+              bullets: [
+                "Decide where to focus in each city",
+                "Avoid overpacked sightseeing days",
+                "Build a realistic daily rhythm",
+                "For updated details, confirm with official sources",
+              ],
+            },
+            {
+              title: "Bottom line",
+              icon: "spark",
+              emphasis: "Fit your pace, not the hype.",
+              body:
+                "The best highlights are the ones that match your energy and reason for traveling.",
             },
           ],
         },

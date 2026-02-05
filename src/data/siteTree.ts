@@ -2708,21 +2708,84 @@ export const siteTree: TreeNode = {
           description: "Beach areas vs city areas.",
           content: [
             {
-              title: "Quick summary",
+              title: "Where to Stay in Busan",
+              icon: "beach",
+              emphasis: "Beach life or city life.",
               body:
-                "Busan offers beach neighborhoods and city hubs. Choose based on your focus.",
+                "Busan does not have one best area. Where you stay changes how your trip feels. Make one clear choice and everything gets easier.",
             },
             {
-              title: "Area tips",
-              body: "Pick the best base for your trip.",
+              title: "If you want the beach experience",
+              icon: "beach",
+              emphasis: "Atmosphere over efficiency.",
+              body: "Choose a beach area if you want:",
               bullets: [
-                "Haeundae for beach time",
-                "Seomyeon for city access",
+                "Morning walks by the sea",
+                "Cafes with ocean views",
+                "Slower nights and open air",
+                "The beach as part of your daily plan",
               ],
             },
             {
-              title: "Common mistakes",
-              body: "Switching hotels too often wastes time.",
+              title: "What to expect in beach areas",
+              icon: "spark",
+              emphasis: "Beautiful views, less central access.",
+              body: "Beach areas usually mean:",
+              bullets: [
+                "Higher prices near the water",
+                "Longer rides to other parts of the city",
+                "Great mood for slow travel",
+              ],
+            },
+            {
+              title: "If you prefer convenience and movement",
+              icon: "city",
+              emphasis: "Efficiency and access.",
+              body: "Choose a city area if you want:",
+              bullets: [
+                "Easy transport connections",
+                "Shopping, food streets, and late dinners",
+                "Fast subway access for moving around",
+              ],
+            },
+            {
+              title: "What to expect in city areas",
+              icon: "route",
+              emphasis: "Practical, not scenic.",
+              body: "City areas usually mean:",
+              bullets: [
+                "Faster travel times",
+                "More local daily life",
+                "Fewer scenic views from your hotel",
+              ],
+            },
+            {
+              title: "Which one should you choose?",
+              icon: "checklist",
+              emphasis: "Ask one question.",
+              body: "What do you want to see first when you leave your hotel?",
+              bullets: [
+                "The ocean -> choose a beach area",
+                "A subway entrance or food street -> choose a city area",
+              ],
+            },
+            {
+              title: "What you don't need to decide yet",
+              icon: "hand",
+              emphasis: "Type first, details later.",
+              body: "You do not need:",
+              bullets: [
+                "A specific hotel name",
+                "A room view",
+                "A perfect neighborhood map",
+              ],
+            },
+            {
+              title: "Bottom line",
+              icon: "spark",
+              emphasis: "Choose the feeling you want.",
+              body:
+                "Beach areas give you mood. City areas give you movement. Choose the feeling you want and your Busan trip makes sense from day one.",
             },
           ],
         },

@@ -718,21 +718,109 @@ export const siteTree: TreeNode = {
           description: "Nature, driving, and island life.",
           content: [
             {
-              title: "Quick summary",
+              title: "Jeju",
+              icon: "island",
+              emphasis: "Slow, wide, and quiet.",
               body:
-                "Jeju is Korea's island getaway. Renting a car makes the island much easier.",
+                "Jeju is not just another city. It feels like a different country inside Korea. This guide helps you decide if you will love it or feel frustrated.",
             },
             {
-              title: "Best for",
-              body: "Hiking, ocean views, and road trips.",
+              title: "What Jeju is really like",
+              icon: "leaf",
+              emphasis: "Jeju is about space.",
+              body: "More sky, more ocean, more distance. It is ideal if you want:",
               bullets: [
-                "3-5 days recommended",
-                "Consider a car for flexibility",
+                "Nature over nightlife",
+                "Scenery over shopping",
+                "Calm days over packed schedules",
               ],
             },
             {
-              title: "Common mistakes",
-              body: "Trying to rely only on buses can limit your day plans.",
+              title: "One honest question before you choose Jeju",
+              icon: "car",
+              emphasis: "Are you comfortable driving?",
+              body:
+                "Jeju is easiest with a car. Without one, your day follows bus schedules and some spots become stressful or unreachable.",
+              bullets: [
+                "With a car: choose your pace and reach beaches, trails, and cafes easily",
+                "Without a car: you will wait more and see less",
+              ],
+            },
+            {
+              title: "How long Jeju actually needs",
+              icon: "calendar",
+              emphasis: "Jeju works best with time.",
+              body: "Recommended stay:",
+              bullets: [
+                "Minimum: 3 nights",
+                "Comfortable: 4-5 nights",
+                "One slow arrival day, two full days, one flexible weather day",
+              ],
+            },
+            {
+              title: "Where to stay (keep it simple)",
+              icon: "bed",
+              emphasis: "Choose one base.",
+              body: "Jeju is bigger than it looks. Two practical choices:",
+              bullets: [
+                "Near Jeju City: good for arrivals, food, and short drives",
+                "Near Seogwipo: closer to waterfalls, coastlines, and nature",
+                "Switching hotels wastes hours on this island",
+              ],
+            },
+            {
+              title: "What Jeju is best for",
+              icon: "spark",
+              emphasis: "Jeju shines when you stop rushing.",
+              body: "Perfect for:",
+              bullets: [
+                "Scenic coastal drives",
+                "Easy hikes and nature walks",
+                "Cafes with views",
+                "Quiet evenings",
+              ],
+            },
+            {
+              title: "What Jeju is not ideal for",
+              icon: "alert",
+              emphasis: "Not built for tight schedules.",
+              body: "Less ideal for:",
+              bullets: [
+                "Nightlife",
+                "Dense sightseeing days",
+                "Shopping-focused trips",
+              ],
+            },
+            {
+              title: "What usually goes wrong",
+              icon: "alert",
+              emphasis: "Jeju rewards patience, not efficiency.",
+              body: "Common mistakes:",
+              bullets: [
+                "Visiting for only 1-2 nights",
+                "Planning too many stops per day",
+                "Expecting city-style convenience",
+                "Underestimating driving time",
+              ],
+            },
+            {
+              title: "What you don't need to plan yet",
+              icon: "hand",
+              emphasis: "Details come later.",
+              body: "You don't need:",
+              bullets: [
+                "A full driving route",
+                "Cafe lists",
+                "Exact attraction names",
+                "Weather and season will shape the final plan",
+              ],
+            },
+            {
+              title: "Bottom line",
+              icon: "spark",
+              emphasis: "Jeju fits travelers who want slower days.",
+              body:
+                "Jeju is not for everyone. If you want space, nature, and calm, it is unforgettable. If you need constant movement and urban energy, choose another city this time.",
             },
           ],
         },

@@ -1855,21 +1855,94 @@ export const siteTree: TreeNode = {
           description: "When it makes sense (and when it does not).",
           content: [
             {
-              title: "Quick summary",
+              title: "Renting a Car in Korea",
+              icon: "car",
+              emphasis: "A tool, not a default choice.",
               body:
-                "Car rental is useful for Jeju or rural areas, but not for Seoul traffic.",
+                "For many trips a car is unnecessary. For a few specific trips it is extremely useful. This page helps you decide which one you are planning.",
             },
             {
-              title: "Key moves",
-              body: "Know when driving is smart.",
+              title: "First, the honest truth",
+              icon: "alert",
+              emphasis: "Public transport is excellent in cities.",
+              body:
+                "Traffic, parking, and navigation can feel stressful if you are not used to the system. That is why most visitors do not need a car in big cities.",
+            },
+            {
+              title: "When renting a car makes sense",
+              icon: "spark",
+              emphasis: "Best for Jeju and rural areas.",
+              body: "A car is a good idea if:",
               bullets: [
-                "Best for islands and countryside",
-                "Avoid central city driving",
+                "You are traveling in Jeju",
+                "You want to visit rural or coastal areas",
+                "You plan to stop at multiple places in one day",
+                "You are staying outside major cities",
               ],
             },
             {
-              title: "Common mistakes",
-              body: "Parking costs and traffic can outweigh convenience.",
+              title: "When renting a car does NOT make sense",
+              icon: "alert",
+              emphasis: "City-focused trips are better without a car.",
+              body: "A car is usually a bad idea if:",
+              bullets: [
+                "You are staying mainly in Seoul",
+                "You plan to move between major cities by train",
+                "You stay near subway lines",
+                "You want a relaxed, low-effort trip",
+              ],
+            },
+            {
+              title: "The biggest mistake first-time visitors make",
+              icon: "hand",
+              emphasis: "Renting a car just in case.",
+              body: "This often leads to:",
+              bullets: [
+                "Stress from traffic and parking",
+                "Higher costs than expected",
+                "Less walking and exploring",
+              ],
+            },
+            {
+              title: "What you actually need to rent a car",
+              icon: "passport",
+              emphasis: "Have these ready.",
+              body: "Before you decide, check these basics:",
+              bullets: [
+                "An International Driving Permit (IDP)",
+                "Your home country driver’s license",
+                "A passport",
+                "A credit card for deposit",
+              ],
+            },
+            {
+              title: "You don't need to decide on day one",
+              icon: "checklist",
+              emphasis: "Start with public transport first.",
+              body: "You can:",
+              bullets: [
+                "Start your trip with public transport",
+                "See how comfortable you feel",
+                "Decide later if a car adds value",
+              ],
+            },
+            {
+              title: "Confirming details before you book",
+              icon: "shield",
+              emphasis: "Always confirm official details.",
+              body: "Rental rules and requirements can change. Always confirm on:",
+              bullets: [
+                "Official rental company websites",
+                "Airport rental desks",
+                "Government or tourism authority pages",
+              ],
+            },
+            {
+              title: "Bottom line",
+              icon: "spark",
+              emphasis: "Freedom if it fits, stress if it doesn't.",
+              body:
+                "Renting a car is a tool, not a rule. If it gives you freedom, use it. If it adds stress, skip it.",
             },
           ],
         },

@@ -172,7 +172,7 @@ const categoryBullets: Record<CategorySlug, string[][]> = {
 };
 
 const subpages = [
-  { category: 'itinerary', slug: '7-days-in-korea', title: '7 Days in Korea', description: 'A week-long plan that balances cities and day trips.' },
+  { category: 'itinerary', slug: '7-days-in-korea', title: '7 Days in Korea', description: 'A one-week travel plan that actually works.' },
   { category: 'itinerary', slug: '2-weeks-in-korea', title: '2 Weeks in Korea', description: 'A two-week trip with time for islands and slower mornings.' },
   { category: 'itinerary', slug: '1-month-in-korea', title: '1 Month in Korea', description: 'A relaxed month with regional variety and rest days.' },
 

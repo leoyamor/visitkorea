@@ -400,8 +400,16 @@ const breadcrumb = breadcrumbs;
         </div>
       </div>
       {node.content?.map((section) => (
-        <div class="content-block">
-          <h4 class="t-section">{section.title}</h4>
+        <div class="content-block" data-tone={getTone(section.icon)}>
+          <div class="content-title">
+            {section.icon && (
+              <span class="content-icon" set:html={renderIcon(section.icon)} />
+            )}
+            <h4 class="t-section">{section.title}</h4>
+          </div>
+          {section.emphasis && (
+            <p class="content-emphasis">{section.emphasis}</p>
+          )}
           <p>{section.body}</p>
           {section.bullets && (
             <ul>
@@ -711,6 +719,7 @@ const breadcrumb = breadcrumbs;
   .content-block p {
     margin: 0 0 8px;
     color: var(--muted);
+    line-height: 1.7;
   }
 
   .content-block ul {
@@ -718,6 +727,95 @@ const breadcrumb = breadcrumbs;
     padding-left: 18px;
     color: var(--ink-soft);
     line-height: 1.6;
+  }
+
+  .content-block {
+    position: relative;
+    padding: 16px 18px 16px 20px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.65);
+    border: 1px solid rgba(31, 111, 139, 0.1);
+    box-shadow: 0 10px 24px rgba(15, 32, 60, 0.08);
+  }
+
+  .content-block::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    bottom: 10px;
+    width: 4px;
+    border-radius: 999px;
+    background: var(--content-accent, var(--ring));
+  }
+
+  .content-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+
+  .content-icon {
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: rgba(31, 111, 139, 0.1);
+    color: var(--accent-strong);
+  }
+
+  .content-icon svg {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.6;
+  }
+
+  .content-emphasis {
+    margin: 0 0 8px;
+    font-family: "Fraunces", serif;
+    font-size: 1.12rem;
+    letter-spacing: 0.01em;
+    color: var(--ink);
+    background: linear-gradient(90deg, rgba(31, 111, 139, 0.12), rgba(31, 111, 139, 0));
+    border-left: 3px solid var(--content-accent, var(--ring));
+    padding: 8px 10px;
+    border-radius: 10px;
+  }
+
+  .content-block[data-tone="sea"] {
+    --content-accent: #2a9fbf;
+  }
+
+  .content-block[data-tone="gold"] {
+    --content-accent: #e89b4e;
+  }
+
+  .content-block[data-tone="spice"] {
+    --content-accent: #d16b4a;
+  }
+
+  .content-block[data-tone="lilac"] {
+    --content-accent: #9f8ed6;
+  }
+
+  .content-block[data-tone="mint"] {
+    --content-accent: #4fb79a;
+  }
+
+  .content-block[data-tone="sky"] {
+    --content-accent: #5aa0dc;
+  }
+
+  .content-block[data-tone="sand"] {
+    --content-accent: #d6b176;
+  }
+
+  .content-block[data-tone="amber"] {
+    --content-accent: #f0b352;
   }
 
 

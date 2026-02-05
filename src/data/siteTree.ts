@@ -4,7 +4,13 @@ export type TreeNode = {
   description?: string;
   icon?: string;
   image?: string;
-  content?: { title: string; body: string; bullets?: string[] }[];
+  content?: {
+    title: string;
+    body: string;
+    bullets?: string[];
+    icon?: string;
+    emphasis?: string;
+  }[];
   children?: TreeNode[];
 };
 
@@ -27,25 +33,78 @@ export const siteTree: TreeNode = {
           slug: "7-days-in-korea",
           icon: "calendar",
           image: "planning",
-          description: "One-week travel plan that actually works.",
+          description: "A one-week travel plan that actually works.",
           content: [
             {
-              title: "Quick summary",
+              title: "7 Days in Korea",
+              icon: "calendar",
+              emphasis: "Seven days is short. That's okay.",
               body:
-                "A one-week trip is best with two cities and a simple travel pace. Focus on Seoul plus one additional area so your time stays balanced.",
+                "You cannot see all of Korea in one week. A great trip is not about more stops. It is about better choices.",
             },
             {
-              title: "Key moves",
-              body: "Use one base per city and avoid switching hotels too often.",
+              title: "The decision that saves your entire trip",
+              icon: "spark",
+              emphasis: "Choose two places. Not three.",
+              body:
+                "Pick one main city and one contrast city. More stops mean rushing, packing, and higher costs with less joy.",
+            },
+            {
+              title: "Days 1-4: Seoul (stay in one hotel)",
+              icon: "city",
+              emphasis: "Stay in one area. Explore by neighborhood.",
+              body:
+                "Seoul is the easiest first base. Airport access is simple, transit is excellent, and food, culture, shopping, and day trips are all close. Move around the city, not your hotel.",
+            },
+            {
+              title: "Days 5-7: Pick ONE contrast city",
+              icon: "route",
+              emphasis: "City comfort or nature?",
+              body:
+                "City + beach + food -> Busan. Nature + driving + wide views -> Jeju. Pick one. Trying to fit both in one week usually backfires.",
+            },
+            {
+              title: "What usually goes wrong (avoid this)",
+              icon: "alert",
+              emphasis: "Looks good online. Feels bad in real life.",
+              body: "These are the usual traps:",
               bullets: [
-                "Days 1-4: Seoul core neighborhoods",
-                "Days 5-7: Busan or Jeju for contrast",
+                "Seoul + Busan + Jeju in 7 days",
+                "Changing hotels every 1-2 nights",
+                "Planning every hour instead of every day",
+                "More plans don't mean a better trip",
               ],
             },
             {
-              title: "Common mistakes",
+              title: "What you don't need to decide yet",
+              icon: "checklist",
+              emphasis: "Skip the micro-planning.",
               body:
-                "Trying to add too many cities makes every day feel rushed and expensive.",
+                "Decide the shape of your trip first. Details can wait.",
+              bullets: [
+                "Exact attractions",
+                "Restaurant lists",
+                "Hour-by-hour schedules",
+              ],
+            },
+            {
+              title: "Need updated information?",
+              icon: "shield",
+              emphasis: "Always confirm with official sources.",
+              body:
+                "Schedules, prices, and seasonal options can change. Use this site to decide, then confirm with official sources.",
+              bullets: [
+                "Official transport websites",
+                "City tourism offices",
+                "Airport or government pages",
+              ],
+            },
+            {
+              title: "Bottom line",
+              icon: "spark",
+              emphasis: "Balanced beats busy.",
+              body:
+                "A great 7-day trip feels calm and flexible. If you finish relaxed, you planned it right.",
             },
           ],
         },

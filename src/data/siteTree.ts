@@ -621,21 +621,92 @@ export const siteTree: TreeNode = {
           description: "Beaches, seafood, and a relaxed vibe.",
           content: [
             {
-              title: "Quick summary",
+              title: "Busan",
+              icon: "beach",
+              emphasis: "Slower, more open, easier to breathe.",
               body:
-                "Busan mixes beach views with city convenience. It is a great contrast after Seoul.",
+                "Busan feels different from Seoul in a good way. If Seoul is energy and movement, Busan is space and rhythm.",
             },
             {
-              title: "Best for",
-              body: "Seafood, coastal walks, and slower evenings.",
+              title: "Why Busan works so well on a short trip",
+              icon: "spark",
+              emphasis: "Choose where to stay. Skip the checklist.",
+              body: "Busan is big but simple to enjoy. The city divides into:",
               bullets: [
-                "2-4 days recommended",
-                "Pick a beach area or city area",
+                "Beach areas",
+                "Local food neighborhoods",
+                "Easy city hubs",
               ],
             },
             {
-              title: "Common mistakes",
-              body: "Staying too far from your main beach spot wastes time.",
+              title: "Seafood without overthinking it",
+              icon: "bowl",
+              emphasis: "Where you eat matters more than a list.",
+              body: "Look for places:",
+              bullets: [
+                "Near the sea",
+                "Near local markets",
+                "Not inside tourist-only streets",
+                "Busy with locals around dinner time",
+              ],
+            },
+            {
+              title: "Beach area or city area?",
+              icon: "route",
+              emphasis: "This choice decides your trip.",
+              body: "Ask yourself one question: sea mornings or easy transport?",
+              bullets: [
+                "Beach areas: slower days, sea walks, calm evenings",
+                "City areas: faster transport, more food options, easier transfers",
+                "Mixing them too much causes stress",
+              ],
+            },
+            {
+              title: "How long is right for Busan?",
+              icon: "calendar",
+              emphasis: "2 to 4 days works for most travelers.",
+              body: "That is enough to:",
+              bullets: [
+                "Enjoy the coast",
+                "Eat well",
+                "Rest between travel days",
+              ],
+            },
+            {
+              title: "What usually makes Busan disappointing",
+              icon: "alert",
+              emphasis: "Let the day stretch.",
+              body: "Common mistakes include:",
+              bullets: [
+                "Staying far from the area you want to explore",
+                "Planning too many beaches in one day",
+                "Treating Busan like a checklist city",
+              ],
+            },
+            {
+              title: "When Busan is the perfect choice",
+              icon: "spark",
+              emphasis: "A balance after Seoul.",
+              body: "Busan is ideal if you want:",
+              bullets: [
+                "A break after Seoul",
+                "Ocean views without island logistics",
+                "Good food without planning stress",
+              ],
+            },
+            {
+              title: "About prices, events, and seasonal details",
+              icon: "shield",
+              emphasis: "Always confirm current details.",
+              body:
+                "Beach conditions, festivals, and transport details change by season. Use this page to decide, then confirm dates, prices, and schedules through official city or transport sources.",
+            },
+            {
+              title: "Bottom line",
+              icon: "spark",
+              emphasis: "Enjoy what you already chose.",
+              body:
+                "Busan is not about doing more. If you finish Busan feeling rested, you planned it right.",
             },
           ],
         },

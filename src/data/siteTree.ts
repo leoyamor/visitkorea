@@ -4841,7 +4841,7 @@ export const siteTree: TreeNode = {
     },
 {
       title: "Latest Travel Updates for Korea",
-      slug: "latest-travel-updates-for-koreas",
+      slug: "latest-travel-updates-for-korea",
       icon: "shield",
       image: "airport",
       description: "Official sources to confirm details that can change.",

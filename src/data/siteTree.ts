@@ -4882,7 +4882,7 @@ export const siteTree: TreeNode = {
           emphasis:
             "Train schedules, airport procedures, and transit prices may vary during holidays or peak seasons.",
           body:
-            "Confirm schedules and prices before you go, especially around holidays.",
+            "Train schedules, airport procedures, and transit prices may vary during holidays or peak seasons.",
           bullets: [
             "Incheon International Airport: https://www.airport.kr/sites/ap_en/index.do",
             "Korail (KTX & Trains): https://www.korail.com/global/eng/main",
@@ -4897,7 +4897,7 @@ export const siteTree: TreeNode = {
           emphasis:
             "Weather affects travel more than most people expect, especially in summer and winter.",
           body:
-            "Check current conditions before planning outdoor activities.",
+            "Weather affects travel more than most people expect, especially in summer and winter.",
           bullets: [
             "Korea Meteorological Administration: https://www.kma.go.kr/neng/index.do",
           ],
@@ -4906,8 +4906,7 @@ export const siteTree: TreeNode = {
           title: "City Tourism Offices (Opening Hours & Closures)",
           icon: "pin",
           emphasis: "Attraction hours, festivals, and closures are updated by each city.",
-          body:
-            "Always check local tourism offices for current schedules.",
+          body: "Attraction hours, festivals, and closures are updated by each city.",
           bullets: [
             "Korea Tourism Organization: https://english.visitkorea.or.kr/",
             "Seoul Tourism Organization: https://english.visitseoul.net/",
@@ -4933,11 +4932,10 @@ export const siteTree: TreeNode = {
           title: "Payments, Shopping & Tax Refunds",
           icon: "wallet",
           emphasis: "Tax refund rules and payment methods vary by store and location.",
-          body: "Always confirm eligibility and required documents.",
+          body: "Tax refund rules and payment methods vary by store and location.",
           bullets: [
             "Korea Customs Service: https://www.customs.go.kr/english/main.do",
             "Global Tax Free Korea: https://www.global-taxfree.com/?lang=en#1",
-            "Korea Customs Service: https://www.customs.go.kr",
           ],
         },
         {

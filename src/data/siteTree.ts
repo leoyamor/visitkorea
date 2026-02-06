@@ -4335,26 +4335,25 @@ export const siteTree: TreeNode = {
       slug: "latest-travel-updates",
       icon: "shield",
       image: "airport",
-      description: "Confirm the latest rules, prices, and conditions with official sources.",
+      description: "Official sources to confirm details that can change.",
       quickAnswer:
-        "This page is a final checkpoint for travelers. Use it to confirm the most up-to-date information before booking or moving.",
+        "Use this page as your final checkpoint before booking or moving.",
       content: [
         {
           title: "Latest Travel Updates for Korea",
           icon: "shield",
-          emphasis: "Travel details change fast.",
+          emphasis: "Official sources to confirm details that can change.",
           body:
-            "Entry rules, prices, and conditions can change faster than any guidebook. This page helps you confirm the latest information through official and trusted sources.",
+            "Travel information can change faster than any guidebook. This page exists so you can confirm the latest rules, prices, and conditions using official and trusted sources — without searching all over the internet.",
         },
         {
-          title: "How to use this page",
+          title: "Final checkpoint",
           icon: "checklist",
-          emphasis: "Decide first, confirm last.",
-          body: "Use this page after you decide where to go and how long to stay.",
+          emphasis: "Use this page after you decide where to go and how long to stay.",
+          body: "Think of it as the final checkpoint before booking or moving.",
           bullets: [
-            "Decide your trip using our guides",
-            "Come here to confirm what changes",
-            "Book or move with confidence",
+            "This site helps you decide.",
+            "Official sources help you confirm.",
           ],
         },
         {
@@ -4407,7 +4406,7 @@ export const siteTree: TreeNode = {
         {
           title: "Safety, emergencies & travel notices",
           icon: "alert",
-          emphasis: "Korea is very safe, but it is smart to know where to check.",
+          emphasis: "Korea is generally very safe, but it’s smart to know where to check.",
           body: "Save emergency numbers and check official notices if needed.",
           bullets: [
             "Emergency numbers: Police 112, Fire/Ambulance 119",
@@ -4427,11 +4426,15 @@ export const siteTree: TreeNode = {
           ],
         },
         {
-          title: "Final checkpoint",
+          title: "How to use this page",
           icon: "spark",
-          emphasis: "This site helps you decide. Official sources help you confirm.",
-          body:
-            "Use our guides to choose your plan. Use official sources to confirm the details before you book or move.",
+          emphasis: "Use this page after you decide where to go and how long to stay.",
+          body: "Many travelers return to this page just before booking or traveling.",
+          bullets: [
+            "Decide your trip using our guides.",
+            "Come here to confirm what changes.",
+            "Book or move with confidence.",
+          ],
         },
       ],
     },

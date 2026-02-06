@@ -476,7 +476,8 @@ const breadcrumb = breadcrumbs;
         </div>
       ))}
       <div class="content-identity">
-        This site helps you decide what fits your trip — not just list information.
+        <span class="content-identity-icon" aria-hidden="true" set:html={renderIcon("spark")} />
+        <span>This site helps you decide what fits your trip — not just list information.</span>
       </div>
     </div>
   )}
@@ -816,6 +817,25 @@ const breadcrumb = breadcrumbs;
     line-height: 1.6;
     text-align: center;
     box-shadow: 0 10px 30px rgba(66, 46, 20, 0.12);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .content-identity-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    color: #c98735;
+  }
+  .content-identity-icon svg {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.6;
   }
 
   .content-title {

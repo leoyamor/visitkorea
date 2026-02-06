@@ -86,11 +86,15 @@ body:has(.page--home) {
 
 .page--sub {
   position: relative;
+  background: var(--bg-subpage);
+  min-height: 100%;
 }
 
 .page--leaf {
   position: relative;
   line-height: 1.7;
+  background: var(--bg-leaf);
+  min-height: 100%;
 }
 
 .t-h1 {

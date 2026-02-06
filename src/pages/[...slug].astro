@@ -34,10 +34,12 @@ for (const segment of segments) {
 const pageTitle = node
   ? `${node.title} | Visit Korea Planner`
   : "Page Not Found | Visit Korea Planner";
+
+const bodyClass = node ? (node.children && node.children.length > 0 ? "page--sub" : "page--leaf") : "page--sub";
 ---
 
 {node ? (
-  <BaseLayout title={pageTitle}>
+  <BaseLayout title={pageTitle} bodyClass={bodyClass}>
     <TreePage
       node={node}
       segments={segments}
@@ -47,7 +49,7 @@ const pageTitle = node
     />
   </BaseLayout>
 ) : (
-  <BaseLayout title={pageTitle}>
+  <BaseLayout title={pageTitle} bodyClass={bodyClass}>
     <section style="padding: 64px 0; text-align: center;">
       <h1 class="t-h1" style="font-family: Fraunces, serif;">Page Not Found</h1>
       <p class="t-subheading" style="color: #5f6b84;">The page you are looking for does not exist.</p>

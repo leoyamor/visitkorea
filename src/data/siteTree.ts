@@ -4839,7 +4839,7 @@ export const siteTree: TreeNode = {
         },
       ],
     },
-{
+    {
       title: "Latest Travel Updates for Korea",
       slug: "latest-travel-updates-for-korea",
       icon: "shield",
@@ -4866,76 +4866,82 @@ export const siteTree: TreeNode = {
           ],
         },
         {
-          title: "Entry & immigration updates",
+          title: "Entry & Immigration Updates",
           icon: "passport",
-          emphasis: "Rules depend on nationality and can change without notice.",
+          emphasis:
+            "Entry rules and authorization depend on your nationality and can change without notice.",
           body: "Always confirm your entry status before flying.",
           bullets: [
             "K-ETA (Official Authorization System): https://www.k-eta.go.kr",
-            "Korean Immigration Service: https://www.immigration.go.kr",
-            "Visit Korea – Entry Information: https://english.visitkorea.or.kr",
+            "Arrival / Immigration – Incheon Airport: https://www.airport.kr/ap_en/1439/subview.do",
           ],
         },
         {
-          title: "Transportation & airport information",
+          title: "Transportation & Airport Information",
           icon: "train",
-          emphasis: "Schedules and prices can change around holidays.",
+          emphasis:
+            "Train schedules, airport procedures, and transit prices may vary during holidays or peak seasons.",
           body:
-            "Train schedules, airport procedures, and transit prices may vary during peak seasons.",
+            "Confirm schedules and prices before you go, especially around holidays.",
           bullets: [
-            "Korail (KTX & Trains): https://www.letskorail.com",
-            "Incheon International Airport: https://www.airport.kr",
-            "Seoul Metro: https://www.seoulmetro.co.kr",
+            "Incheon International Airport: https://www.airport.kr/sites/ap_en/index.do",
+            "Korail (KTX & Trains): https://www.korail.com/global/eng/main",
+            "AREX (Airport Railroad): https://www.arex.or.kr/main.do",
+            "Seoul Public Transportation: https://english.seoul.go.kr/service/movement/public-transportation/",
+            "Busan Public Transportation: https://www.busan.go.kr/eng/public-transportation",
           ],
         },
         {
-          title: "Weather & seasonal travel conditions",
-          icon: "leaf",
-          emphasis: "Weather changes how your trip feels.",
-          body:
+          title: "Weather & Seasonal Travel Conditions",
+          icon: "cloud",
+          emphasis:
             "Weather affects travel more than most people expect, especially in summer and winter.",
-          bullets: [
-            "Korea Meteorological Administration: https://www.weather.go.kr",
-            "Visit Korea – Seasonal Travel Info: https://english.visitkorea.or.kr",
-          ],
-        },
-        {
-          title: "City tourism offices (openings & closures)",
-          icon: "pin",
-          emphasis: "Attractions and festivals are updated by each city.",
           body:
-            "Always check local tourism offices for opening hours, festival schedules, and closures.",
+            "Check current conditions before planning outdoor activities.",
           bullets: [
-            "Seoul Tourism Organization: https://english.visitseoul.net",
-            "Busan Tourism Organization: https://english.busan.go.kr",
-            "Jeju Tourism Organization: https://english.visitjeju.net",
-            "Gyeongju Tourism: https://www.gyeongju.go.kr",
+            "Korea Meteorological Administration: https://www.kma.go.kr/neng/index.do",
           ],
         },
         {
-          title: "Safety, emergencies & travel notices",
+          title: "City Tourism Offices (Opening Hours & Closures)",
+          icon: "pin",
+          emphasis: "Attraction hours, festivals, and closures are updated by each city.",
+          body:
+            "Always check local tourism offices for current schedules.",
+          bullets: [
+            "Korea Tourism Organization: https://english.visitkorea.or.kr/",
+            "Seoul Tourism Organization: https://english.visitseoul.net/",
+            "Busan Tourism Organization: https://www.visitbusan.net/en/index.do",
+            "Jeju Tourism Organization: https://www.visitjeju.net/en",
+            "Gyeongju Tourism: https://www.gyeongju.go.kr/tour/index.do",
+            "Jeonju Tourism: https://tour.jeonju.go.kr/eng/index.jeonju",
+          ],
+        },
+        {
+          title: "Safety, Emergencies & Travel Notices",
           icon: "alert",
-          emphasis: "Korea is generally very safe, but it’s smart to know where to check.",
+          emphasis:
+            "Korea is generally very safe, but it’s smart to know where to check official guidance.",
           body: "Save emergency numbers and check official notices if needed.",
           bullets: [
-            "Emergency numbers: Police 112, Fire/Ambulance 119",
+            "Emergency Numbers: Police 112, Fire / Ambulance 119",
             "Ministry of Foreign Affairs – Travel Notices: https://www.mofa.go.kr",
             "Your country’s embassy in Korea: check your official embassy website",
           ],
         },
         {
-          title: "Payments, shopping & tax refunds",
+          title: "Payments, Shopping & Tax Refunds",
           icon: "wallet",
-          emphasis: "Refund rules and payment options vary by store.",
-          body:
-            "Tax refund rules and payment methods can change by location and merchant.",
+          emphasis: "Tax refund rules and payment methods vary by store and location.",
+          body: "Always confirm eligibility and required documents.",
           bullets: [
-            "Global Tax Free Korea: https://www.globaltaxfree.com",
+            "Korea Customs Service: https://www.customs.go.kr/english/main.do",
+            "Global Tax Free Korea: https://www.global-taxfree.com/?lang=en#1",
             "Korea Customs Service: https://www.customs.go.kr",
           ],
         },
         {
-          title: "How to use this page",
+          title: "How to Use This Page",
           icon: "spark",
           emphasis: "Use this page after you decide where to go and how long to stay.",
           body: "Many travelers return to this page just before booking or traveling.",

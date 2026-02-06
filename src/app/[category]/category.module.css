@@ -44,11 +44,11 @@
 }
 
 .intro {
-  border: 1px solid var(--border);
-  background: white;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
   border-radius: 16px;
   padding: 16px;
-  color: var(--muted);
+  color: var(--text-secondary);
 }
 
 .section li {

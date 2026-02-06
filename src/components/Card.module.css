@@ -1,18 +1,19 @@
 .card {
-  border: 1px solid var(--border);
-  background: white;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
   border-radius: 18px;
   padding: 16px;
   display: flex;
   flex-direction: column;
   gap: 6px;
   min-height: 120px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
 .card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  background: var(--card-hover-bg);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
 }
 
 .card h3 {
@@ -21,13 +22,13 @@
 
 .card p {
   margin: 0;
-  color: var(--muted);
+  color: var(--text-secondary);
 }
 
 .imageWrap {
   border-radius: 14px;
   overflow: hidden;
-  background: #f2f4f7;
+  background: #2b2620;
   aspect-ratio: 16 / 9;
 }
 

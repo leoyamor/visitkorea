@@ -29,7 +29,7 @@ export default function HomePage() {
   const cityCards = getSubPagesByCategory('cities');
 
   return (
-    <div className={styles.wrapper}>
+    <div className={`${styles.wrapper} page--home`}>
       <Breadcrumbs items={[{ label: 'Home' }]} />
 
       <div className={styles.hero}>

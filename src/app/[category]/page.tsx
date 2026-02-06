@@ -45,7 +45,7 @@ export default function CategoryPage({ params }: { params: { category: string } 
   const cards = getSubPagesByCategory(meta.slug).slice(0, 9);
 
   return (
-    <div className={styles.wrapper}>
+    <div className={`${styles.wrapper} page--sub`}>
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: meta.title }]} />
 
       <div className={styles.header}>

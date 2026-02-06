@@ -1,10 +1,19 @@
 :root {
-  color-scheme: light;
-  --text: #0f172a;
-  --muted: #475569;
-  --border: #e2e8f0;
-  --bg: #f8fafc;
-  --card: #ffffff;
+  color-scheme: dark;
+  --bg-home-overlay-top: rgba(20, 18, 15, 0.45);
+  --bg-home-overlay-bottom: rgba(20, 18, 15, 0.65);
+  --bg-subpage: #302a22;
+  --bg-leaf: #3f372d;
+  --card-bg: #151413;
+  --card-border: rgba(255, 255, 255, 0.06);
+  --card-hover-bg: #1d1b18;
+  --text-primary: rgba(255, 255, 255, 0.92);
+  --text-secondary: rgba(255, 255, 255, 0.72);
+  --muted: rgba(255, 255, 255, 0.55);
+  --text: var(--text-primary);
+  --border: var(--card-border);
+  --bg: var(--bg-subpage);
+  --card: var(--card-bg);
   --accent: #2563eb;
 }
 
@@ -16,7 +25,7 @@ body {
   margin: 0;
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   background: var(--bg);
-  color: var(--text);
+  color: var(--text-primary);
   line-height: 1.6;
   font-size: 16px;
 }
@@ -33,6 +42,55 @@ img {
 
 main {
   min-height: 70vh;
+}
+
+body:has(.page--leaf) {
+  --bg: var(--bg-leaf);
+}
+
+body:has(.page--sub) {
+  --bg: var(--bg-subpage);
+}
+
+body:has(.page--home) {
+  --bg: var(--bg-subpage);
+}
+
+.page--home {
+  position: relative;
+  isolation: isolate;
+}
+
+.page--home::before,
+.page--home::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 100vw;
+  height: 100%;
+  transform: translateX(-50%) scale(1.02);
+  pointer-events: none;
+}
+
+.page--home::before {
+  background: url("/hero.webp") center / cover no-repeat;
+  filter: blur(3px) saturate(0.8) brightness(1.05);
+  z-index: -2;
+}
+
+.page--home::after {
+  background: linear-gradient(var(--bg-home-overlay-top), var(--bg-home-overlay-bottom));
+  z-index: -1;
+}
+
+.page--sub {
+  position: relative;
+}
+
+.page--leaf {
+  position: relative;
+  line-height: 1.7;
 }
 
 .t-h1 {

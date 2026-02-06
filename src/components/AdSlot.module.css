@@ -1,7 +1,7 @@
 .adSlot {
   width: 100%;
-  border: 2px dashed var(--border);
-  background: #f1f5f9;
+  border: 2px dashed var(--card-border);
+  background: var(--card-bg);
   color: var(--muted);
   text-transform: uppercase;
   letter-spacing: 0.12em;

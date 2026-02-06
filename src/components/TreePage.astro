@@ -427,7 +427,7 @@ const breadcrumb = breadcrumbs;
   </div>
 
   {hasChildren ? (
-    <div class="grid">
+    <div class="grid" data-orphans={children.length % 3}>
       {children.map((child) => (
         <a class="card" href={`${basePath}/${child.slug}`} data-tone={getTone(child.icon)}>
           <div class="thumb" style={`--thumb: url(${getImage(child.image ?? child.icon)})`}>
@@ -634,6 +634,15 @@ const breadcrumb = breadcrumbs;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
+  }
+
+  @media (min-width: 901px) {
+    .grid[data-orphans="1"] .card:last-child {
+      grid-column: 1 / -1;
+      justify-self: center;
+      max-width: 520px;
+      width: 100%;
+    }
   }
 
   .card {

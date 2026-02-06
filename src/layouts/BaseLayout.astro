@@ -37,9 +37,9 @@ const { title = "Visit Korea Planner", bodyClass = "" } = Astro.props;
         margin: 0;
         font-family: "Work Sans", system-ui, sans-serif;
         color: var(--ink);
-        background: radial-gradient(circle at top left, rgba(255, 239, 219, 0.9), transparent 50%),
-          radial-gradient(circle at 85% 10%, rgba(197, 229, 255, 0.55), transparent 48%),
-          linear-gradient(150deg, #f9f6f2 0%, #f1f6fb 55%, #e6eef6 100%);
+        background: radial-gradient(circle at top left, rgba(255, 241, 224, 0.95), transparent 52%),
+          radial-gradient(circle at 90% 12%, rgba(195, 233, 255, 0.6), transparent 50%),
+          linear-gradient(160deg, #fbf8f3 0%, #f2f7fb 55%, #e8f0f7 100%);
         min-height: 100vh;
       }
 
@@ -50,6 +50,20 @@ const { title = "Visit Korea Planner", bodyClass = "" } = Astro.props;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+      }
+
+      body:not(.home-bg) main {
+        background: rgba(255, 255, 255, 0.75);
+        border-radius: 30px;
+        box-shadow: 0 26px 60px rgba(15, 32, 60, 0.12);
+        padding: 48px 36px 80px;
+        backdrop-filter: blur(10px);
+      }
+
+      @media (max-width: 720px) {
+        body:not(.home-bg) main {
+          padding: 32px 18px 64px;
+        }
       }
 
       a {

@@ -123,6 +123,61 @@ const renderIcon = (key?: string) => {
   return iconMap[key] ?? null;
 };
 
+const escapeHtml = (value: string) =>
+  value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+const keywordLinks: Record<string, string> = {
+  "K-ETA": "https://www.k-eta.go.kr",
+  "Korean Immigration Service": "https://www.immigration.go.kr",
+  "Visit Korea": "https://english.visitkorea.or.kr",
+  "Korail": "https://www.letskorail.com",
+  "Incheon International Airport": "https://www.airport.kr",
+  "Seoul Metro": "https://www.seoulmetro.co.kr",
+  "Korea Meteorological Administration": "https://www.weather.go.kr",
+  "Seoul Tourism Organization": "https://english.visitseoul.net",
+  "Busan Tourism Organization": "https://english.busan.go.kr",
+  "Jeju Tourism Organization": "https://english.visitjeju.net",
+  "Gyeongju Tourism": "https://www.gyeongju.go.kr",
+  "Ministry of Foreign Affairs": "https://www.mofa.go.kr",
+  "Global Tax Free Korea": "https://www.globaltaxfree.com",
+  "Korea Customs Service": "https://www.customs.go.kr",
+};
+
+const getUrlLabel = (url: string) => {
+  try {
+    const { hostname } = new URL(url);
+    return hostname.replace(/^www\./, "");
+  } catch {
+    return url;
+  }
+};
+
+const linkify = (text: string) => {
+  const escaped = escapeHtml(text);
+  const withUrls = escaped.replace(/(https?:\/\/[^\s]+)/g, (url) => {
+    const safeUrl = url.replace(/"/g, "&quot;");
+    const label = getUrlLabel(url);
+    return `<a href="${safeUrl}" target="_blank" rel="noopener noreferrer">${label}</a>`;
+  });
+
+  const parts = withUrls.split(/(<a\b[^>]*>.*?<\/a>)/g);
+  return parts
+    .map((part) => {
+      if (part.startsWith("<a")) return part;
+      let next = part;
+      for (const [keyword, href] of Object.entries(keywordLinks)) {
+        const safeHref = href.replace(/"/g, "&quot;");
+        const pattern = new RegExp(`\\b${keyword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "g");
+        next = next.replace(
+          pattern,
+          `<a href="${safeHref}" target="_blank" rel="noopener noreferrer">${keyword}</a>`
+        );
+      }
+      return next;
+    })
+    .join("");
+};
+
 const getTone = (key?: string) => {
   if (!key) return "default";
   return toneMap[key] ?? "default";
@@ -410,11 +465,11 @@ const breadcrumb = breadcrumbs;
           {section.emphasis && (
             <p class="content-emphasis">{section.emphasis}</p>
           )}
-          <p>{section.body}</p>
+          <p set:html={linkify(section.body)} />
           {section.bullets && (
             <ul>
               {section.bullets.map((bullet) => (
-                <li>{bullet}</li>
+                <li set:html={linkify(bullet)} />
               ))}
             </ul>
           )}

@@ -4331,6 +4331,111 @@ export const siteTree: TreeNode = {
       ],
     },
     {
+      title: "Latest Travel Updates for Korea",
+      slug: "latest-travel-updates",
+      icon: "shield",
+      image: "airport",
+      description: "Confirm the latest rules, prices, and conditions with official sources.",
+      quickAnswer:
+        "This page is a final checkpoint for travelers. Use it to confirm the most up-to-date information before booking or moving.",
+      content: [
+        {
+          title: "Latest Travel Updates for Korea",
+          icon: "shield",
+          emphasis: "Travel details change fast.",
+          body:
+            "Entry rules, prices, and conditions can change faster than any guidebook. This page helps you confirm the latest information through official and trusted sources.",
+        },
+        {
+          title: "How to use this page",
+          icon: "checklist",
+          emphasis: "Decide first, confirm last.",
+          body: "Use this page after you decide where to go and how long to stay.",
+          bullets: [
+            "Decide your trip using our guides",
+            "Come here to confirm what changes",
+            "Book or move with confidence",
+          ],
+        },
+        {
+          title: "Entry & immigration updates",
+          icon: "passport",
+          emphasis: "Rules depend on nationality and can change without notice.",
+          body: "Always confirm your entry status before flying.",
+          bullets: [
+            "K-ETA (Official Authorization System): https://www.k-eta.go.kr",
+            "Korean Immigration Service: https://www.immigration.go.kr",
+            "Visit Korea – Entry Information: https://english.visitkorea.or.kr",
+          ],
+        },
+        {
+          title: "Transportation & airport information",
+          icon: "train",
+          emphasis: "Schedules and prices can change around holidays.",
+          body:
+            "Train schedules, airport procedures, and transit prices may vary during peak seasons.",
+          bullets: [
+            "Korail (KTX & Trains): https://www.letskorail.com",
+            "Incheon International Airport: https://www.airport.kr",
+            "Seoul Metro: https://www.seoulmetro.co.kr",
+          ],
+        },
+        {
+          title: "Weather & seasonal travel conditions",
+          icon: "leaf",
+          emphasis: "Weather changes how your trip feels.",
+          body:
+            "Weather affects travel more than most people expect, especially in summer and winter.",
+          bullets: [
+            "Korea Meteorological Administration: https://www.weather.go.kr",
+            "Visit Korea – Seasonal Travel Info: https://english.visitkorea.or.kr",
+          ],
+        },
+        {
+          title: "City tourism offices (openings & closures)",
+          icon: "pin",
+          emphasis: "Attractions and festivals are updated by each city.",
+          body:
+            "Always check local tourism offices for opening hours, festival schedules, and closures.",
+          bullets: [
+            "Seoul Tourism Organization: https://english.visitseoul.net",
+            "Busan Tourism Organization: https://english.busan.go.kr",
+            "Jeju Tourism Organization: https://english.visitjeju.net",
+            "Gyeongju Tourism: https://www.gyeongju.go.kr",
+          ],
+        },
+        {
+          title: "Safety, emergencies & travel notices",
+          icon: "alert",
+          emphasis: "Korea is very safe, but it is smart to know where to check.",
+          body: "Save emergency numbers and check official notices if needed.",
+          bullets: [
+            "Emergency numbers: Police 112, Fire/Ambulance 119",
+            "Ministry of Foreign Affairs – Travel Notices: https://www.mofa.go.kr",
+            "Your country’s embassy in Korea: check your official embassy website",
+          ],
+        },
+        {
+          title: "Payments, shopping & tax refunds",
+          icon: "wallet",
+          emphasis: "Refund rules and payment options vary by store.",
+          body:
+            "Tax refund rules and payment methods can change by location and merchant.",
+          bullets: [
+            "Global Tax Free Korea: https://www.globaltaxfree.com",
+            "Korea Customs Service: https://www.customs.go.kr",
+          ],
+        },
+        {
+          title: "Final checkpoint",
+          icon: "spark",
+          emphasis: "This site helps you decide. Official sources help you confirm.",
+          body:
+            "Use our guides to choose your plan. Use official sources to confirm the details before you book or move.",
+        },
+      ],
+    },
+    {
       title: "Shopping & Deals",
       slug: "shopping-and-deals",
       icon: "bag",

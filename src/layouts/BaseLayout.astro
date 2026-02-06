@@ -62,9 +62,16 @@ const { title = "Visit Korea Planner", bodyClass = "" } = Astro.props;
         background-repeat: no-repeat;
       }
 
-      body.page--sub main,
-      body.page--leaf main {
+      body.page--sub main {
         background: var(--bg-subpage);
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
+        padding: 48px 36px 80px;
+      }
+
+      body.page--leaf main {
+        background: var(--bg-leaf);
         border-radius: 0;
         border: none;
         box-shadow: none;

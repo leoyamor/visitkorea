@@ -739,6 +739,15 @@ const breadcrumb = breadcrumbs;
     transition: transform 0.2s ease, border-color 0.2s ease;
     position: relative;
     overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .card:visited,
+  .card:hover,
+  .card:focus-visible {
+    text-decoration: none;
+    color: inherit;
   }
 
   .card:hover {
@@ -812,11 +821,13 @@ const breadcrumb = breadcrumbs;
 
   .card h3 {
     margin: 0 0 6px;
+    text-decoration: none;
   }
 
   .card p {
     margin: 0;
     color: var(--muted);
+    text-decoration: none;
   }
 
 

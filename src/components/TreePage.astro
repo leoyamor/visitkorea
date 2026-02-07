@@ -436,11 +436,21 @@ const normalizeLeafTitle = (value: string) =>
     .replace(/[^a-z0-9]+/g, " ")
     .trim();
 
+const normalizeLeafSlug = (value: string) =>
+  value
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
 const leafImageNameMap = new Map(
   leafImageNames.map((name) => [normalizeLeafTitle(name), name])
 );
 
-const getImage = (key?: string, title?: string) => {
+const leafImageSlugMap = new Map(
+  leafImageNames.map((name) => [normalizeLeafSlug(name), name])
+);
+
+const getImage = (key?: string, title?: string, slug?: string) => {
   if (key && (key.startsWith("/") || key.includes(".webp"))) {
     return key;
   }
@@ -448,6 +458,12 @@ const getImage = (key?: string, title?: string) => {
     const matchedName = leafImageNameMap.get(normalizeLeafTitle(title));
     if (matchedName) {
       return `/leaf%20images/${encodeURIComponent(matchedName)}.webp`;
+    }
+  }
+  if (slug) {
+    const matchedBySlug = leafImageSlugMap.get(normalizeLeafSlug(slug));
+    if (matchedBySlug) {
+      return `/leaf%20images/${encodeURIComponent(matchedBySlug)}.webp`;
     }
   }
   const theme = key ? imageThemeMap[key] ?? "basics" : "basics";
@@ -498,7 +514,7 @@ const breadcrumb = breadcrumbs;
     <div class="grid" data-orphans={children.length % 3}>
       {children.map((child) => (
         <a class="card" href={`${basePath}/${child.slug}`} data-tone={getTone(child.icon)}>
-          <div class="thumb" style={`--thumb: url(${getImage(child.image ?? child.icon, child.title)})`}>
+          <div class="thumb" style={`--thumb: url(${getImage(child.image ?? child.icon, child.title, child.slug)})`}>
             <span class="thumb-mask" aria-hidden="true"></span>
           </div>
           <div class="card-body">
@@ -513,7 +529,7 @@ const breadcrumb = breadcrumbs;
   ) : (
     <div class="answer">
       <div class="answer-hero">
-        <div class="answer-thumb" style={`--thumb: url(${getImage(node.image ?? node.icon)})`}>
+        <div class="answer-thumb" style={`--thumb: url(${getImage(node.image ?? node.icon, node.title, node.slug)})`}>
           <span class="thumb-mask" aria-hidden="true"></span>
         </div>
         <div>

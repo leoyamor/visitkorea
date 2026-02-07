@@ -378,9 +378,77 @@ const imageThemeMap: Record<string, string> = {
   airport: "airport",
 };
 
-const getImage = (key?: string) => {
+const leafImageNames = [
+  "1 Month in Korea",
+  "2 Weeks in Korea",
+  "7 Days in Korea",
+  "Basic Korean",
+  "Been Here Before",
+  "Best Value Places",
+  "Budget Stays",
+  "Busan",
+  "Discount Passes",
+  "Finding Good Restaurants",
+  "First Time in Korea",
+  "Food for First-Timers",
+  "Food to Be Careful With",
+  "From Airport to City",
+  "Good Places Without Crowds",
+  "Gyeongju",
+  "How Much Does It Cost",
+  "How to Get Discounts",
+  "How to Pay in Korea",
+  "Immigration Process",
+  "In Case of Emergency",
+  "Is Getting Around Hard",
+  "Is Korea Safe",
+  "Is Shopping Cheap in Korea",
+  "Jeju",
+  "Jeonju",
+  "Latest Travel Updates for Korea",
+  "Luxury Hotels",
+  "Must-See for First Timers",
+  "Renting a Car",
+  "SIM or eSIM",
+  "Saving on Transport",
+  "Seoul",
+  "Shopping in Busan",
+  "Shopping in Seoul",
+  "Solo Travel Safety",
+  "Taking the Bus",
+  "Tax Refund Explained",
+  "Top Places by City",
+  "Transfers Explained",
+  "Transportation Cards",
+  "Using Taxis",
+  "Using the Subway",
+  "What Is K-ETA",
+  "What Should I Prepare",
+  "What Should I Try First",
+  "Where to Stay in Busan",
+  "Where to Stay in Seoul",
+  "Which City Fits You Best",
+] as const;
+
+const normalizeLeafTitle = (value: string) =>
+  value
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+
+const leafImageNameMap = new Map(
+  leafImageNames.map((name) => [normalizeLeafTitle(name), name])
+);
+
+const getImage = (key?: string, title?: string) => {
   if (key && (key.startsWith("/") || key.includes(".webp"))) {
     return key;
+  }
+  if (title) {
+    const matchedName = leafImageNameMap.get(normalizeLeafTitle(title));
+    if (matchedName) {
+      return `/leaf%20images/${encodeURIComponent(matchedName)}.webp`;
+    }
   }
   const theme = key ? imageThemeMap[key] ?? "basics" : "basics";
   const svg = imageSvgs[theme] ?? imageSvgs.basics;
@@ -430,7 +498,7 @@ const breadcrumb = breadcrumbs;
     <div class="grid" data-orphans={children.length % 3}>
       {children.map((child) => (
         <a class="card" href={`${basePath}/${child.slug}`} data-tone={getTone(child.icon)}>
-          <div class="thumb" style={`--thumb: url(${getImage(child.image ?? child.icon)})`}>
+          <div class="thumb" style={`--thumb: url(${getImage(child.image ?? child.icon, child.title)})`}>
             <span class="thumb-mask" aria-hidden="true"></span>
           </div>
           <div class="card-body">

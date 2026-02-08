@@ -664,28 +664,32 @@ const breadcrumb = breadcrumbs;
     const getCurrentLang = () =>
       new URL(window.location.href).searchParams.get("lang") === "es" ? "es" : "en";
 
+    const normalizeInternalHref = (rawHref, targetLang) => {
+      if (
+        !rawHref ||
+        rawHref.startsWith("#") ||
+        rawHref.startsWith("mailto:") ||
+        rawHref.startsWith("tel:") ||
+        rawHref.startsWith("javascript:")
+      ) {
+        return null;
+      }
+      const next = new URL(rawHref, window.location.origin);
+      if (next.origin !== window.location.origin) return null;
+      if (targetLang === "es") {
+        next.searchParams.set("lang", "es");
+      } else {
+        next.searchParams.delete("lang");
+      }
+      return `${next.pathname}${next.search}${next.hash}`;
+    };
+
     const syncInternalLinks = (targetLang) => {
       const anchors = document.querySelectorAll("a[href]");
       anchors.forEach((anchor) => {
-        const rawHref = anchor.getAttribute("href");
-        if (!rawHref) return;
-        if (
-          rawHref.startsWith("#") ||
-          rawHref.startsWith("mailto:") ||
-          rawHref.startsWith("tel:") ||
-          rawHref.startsWith("javascript:")
-        ) {
-          return;
-        }
-        const next = new URL(rawHref, window.location.origin);
-        if (next.origin !== window.location.origin) return;
-
-        if (targetLang === "es") {
-          next.searchParams.set("lang", "es");
-        } else {
-          next.searchParams.delete("lang");
-        }
-        anchor.setAttribute("href", `${next.pathname}${next.search}${next.hash}`);
+        const normalized = normalizeInternalHref(anchor.getAttribute("href"), targetLang);
+        if (!normalized) return;
+        anchor.setAttribute("href", normalized);
       });
     };
 
@@ -706,6 +710,21 @@ const breadcrumb = breadcrumbs;
     const currentLang = getCurrentLang();
     select.value = currentLang;
     syncInternalLinks(currentLang);
+    window.setTimeout(() => syncInternalLinks(getCurrentLang()), 250);
+
+    document.addEventListener(
+      "click",
+      (event) => {
+        const target = event.target;
+        if (!(target instanceof Element)) return;
+        const anchor = target.closest("a[href]");
+        if (!anchor) return;
+        const normalized = normalizeInternalHref(anchor.getAttribute("href"), getCurrentLang());
+        if (!normalized) return;
+        anchor.setAttribute("href", normalized);
+      },
+      true
+    );
 
     select.addEventListener("change", () => {
       const nextLang = select.value === "es" ? "es" : "en";

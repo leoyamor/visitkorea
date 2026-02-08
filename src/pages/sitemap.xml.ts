@@ -1,0 +1,63 @@
+import { siteTree } from "../data/siteTree";
+import { legalPaths } from "../lib/legal-pages";
+import { withLang } from "../lib/i18n";
+import { absoluteUrl } from "../lib/site";
+
+const getTreePaths = () => {
+  const paths: string[] = ["/"];
+
+  const walk = (slugPrefix: string[], node: typeof siteTree) => {
+    if (!node.children || node.children.length === 0) {
+      return;
+    }
+
+    for (const child of node.children) {
+      const nextPrefix = [...slugPrefix, child.slug];
+      paths.push(`/${nextPrefix.join("/")}`);
+      walk(nextPrefix, child);
+    }
+  };
+
+  walk([], siteTree);
+  return paths;
+};
+
+const escapeXml = (value: string) =>
+  value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;");
+
+export const GET = () => {
+  const routeSet = new Set<string>([...getTreePaths(), ...legalPaths]);
+  const routes = [...routeSet].sort((a, b) => a.localeCompare(b));
+
+  const urls = routes
+    .map((route) => {
+      const enUrl = absoluteUrl(route);
+      const esUrl = absoluteUrl(withLang(route, "es"));
+
+      return [
+        "<url>",
+        `<loc>${escapeXml(enUrl)}</loc>`,
+        `<xhtml:link rel="alternate" hreflang="en" href="${escapeXml(enUrl)}" />`,
+        `<xhtml:link rel="alternate" hreflang="es" href="${escapeXml(esUrl)}" />`,
+        `<xhtml:link rel="alternate" hreflang="x-default" href="${escapeXml(enUrl)}" />`,
+        "</url>",
+      ].join("");
+    })
+    .join("");
+
+  const xml =
+    `<?xml version="1.0" encoding="UTF-8"?>` +
+    `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" ` +
+    `xmlns:xhtml="http://www.w3.org/1999/xhtml">${urls}</urlset>`;
+
+  return new Response(xml, {
+    headers: {
+      "Content-Type": "application/xml; charset=utf-8",
+    },
+  });
+};

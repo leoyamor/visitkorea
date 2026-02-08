@@ -1,15 +1,49 @@
 ---
-import type { SupportedLang } from "../lib/i18n";
+import { withLang, type SupportedLang } from "../lib/i18n";
+import { absoluteUrl } from "../lib/site";
 
 const {
   title = "Visit Korea Planner",
+  description = "Practical travel guidance for foreigners visiting Korea.",
   bodyClass = "",
   lang = "en",
+  canonicalUrl = absoluteUrl("/"),
+  alternateEnUrl = absoluteUrl("/"),
+  alternateEsUrl = absoluteUrl(withLang("/", "es")),
+  noindex = false,
 } = Astro.props as {
   title?: string;
+  description?: string;
   bodyClass?: string;
   lang?: SupportedLang;
+  canonicalUrl?: string;
+  alternateEnUrl?: string;
+  alternateEsUrl?: string;
+  noindex?: boolean;
 };
+
+const footerText =
+  lang === "es"
+    ? {
+        title: "Planificador de viaje a Corea",
+        subtitle:
+          "Guías claras y prácticas para planear tu viaje a Corea con confianza.",
+        about: "Acerca de",
+        contact: "Contacto",
+        privacy: "Política de privacidad",
+        terms: "Términos",
+        disclaimer: "Descargo",
+      }
+    : {
+        title: "Visit Korea Planner",
+        subtitle:
+          "Clear, practical guidance for first-time and repeat Korea travelers.",
+        about: "About",
+        contact: "Contact",
+        privacy: "Privacy Policy",
+        terms: "Terms",
+        disclaimer: "Disclaimer",
+      };
 ---
 
 <!doctype html>
@@ -19,6 +53,18 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" href="/favicon.ico" />
+    <meta name="description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content="Visit Korea Planner" />
+    <meta name="twitter:card" content="summary_large_image" />
+    {noindex ? <meta name="robots" content="noindex, nofollow" /> : null}
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="en" href={alternateEnUrl} />
+    <link rel="alternate" hreflang="es" href={alternateEsUrl} />
+    <link rel="alternate" hreflang="x-default" href={alternateEnUrl} />
     <title>{title}</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Work+Sans:wght@300;400;500;600&display=swap");
@@ -172,6 +218,47 @@ const {
         opacity: 0;
         pointer-events: none;
       }
+
+      .site-footer {
+        border-top: 1px solid var(--border-dark);
+        background: rgba(18, 14, 11, 0.94);
+      }
+
+      .site-footer-inner {
+        width: min(1100px, 92vw);
+        margin: 0 auto;
+        padding: 22px 0 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .site-footer-title {
+        margin: 0;
+        font-weight: 700;
+        color: var(--text-strong);
+      }
+
+      .site-footer-subtitle {
+        margin: 0;
+        font-size: 0.92rem;
+        color: var(--text-muted);
+      }
+
+      .site-footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 14px;
+        font-size: 0.9rem;
+      }
+
+      .site-footer-links a {
+        color: var(--text-soft);
+      }
+
+      .site-footer-links a:hover {
+        color: var(--accent);
+      }
     </style>
   </head>
   <body class={bodyClass}>
@@ -180,6 +267,19 @@ const {
     <main id="content">
       <slot />
     </main>
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <p class="site-footer-title">{footerText.title}</p>
+        <p class="site-footer-subtitle">{footerText.subtitle}</p>
+        <nav class="site-footer-links" aria-label="Footer links">
+          <a href={withLang("/about", lang)}>{footerText.about}</a>
+          <a href={withLang("/contact", lang)}>{footerText.contact}</a>
+          <a href={withLang("/privacy-policy", lang)}>{footerText.privacy}</a>
+          <a href={withLang("/terms", lang)}>{footerText.terms}</a>
+          <a href={withLang("/disclaimer", lang)}>{footerText.disclaimer}</a>
+        </nav>
+      </div>
+    </footer>
     <script is:inline define:vars={{ lang }}>
       (() => {
         const storageKey = "vk_lang";

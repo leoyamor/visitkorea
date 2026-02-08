@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import TreePage from "../components/TreePage.astro";
 import { findNodeBySegments, getPathForNode, siteTree } from "../data/siteTree";
 import { parseLang, withLang } from "../lib/i18n";
+import { absoluteUrl } from "../lib/site";
 export const getStaticPaths = () => {
   const paths: string[] = [];
   const walk = (node: TreeNode, prefix: string[] = []) => {
@@ -21,6 +22,9 @@ const { slug } = Astro.params;
 const segments = slug ? slug.split("/") : [];
 const lang = parseLang(Astro.url.searchParams.get("lang"));
 const { node } = findNodeBySegments(segments);
+if (!node) {
+  Astro.response.status = 404;
+}
 const parentPath = segments.length > 1 ? getPathForNode(segments.slice(0, -1)) : "/";
 const breadcrumbs: { label: string; path: string }[] = [];
 let cursor = siteTree;
@@ -49,6 +53,11 @@ const ui = {
 } as const;
 
 const t = ui[lang];
+const routePath = segments.length ? `/${segments.join("/")}` : "/";
+const pageDescription = node?.description ?? t.notFoundDesc;
+const canonicalUrl = absoluteUrl(withLang(routePath, lang));
+const alternateEnUrl = absoluteUrl(routePath);
+const alternateEsUrl = absoluteUrl(withLang(routePath, "es"));
 
 const pageTitle = node
   ? `${node.title} | ${t.siteName}`
@@ -58,7 +67,15 @@ const bodyClass = node ? (node.children && node.children.length > 0 ? "page--sub
 ---
 
 {node ? (
-  <BaseLayout title={pageTitle} bodyClass={bodyClass} lang={lang}>
+  <BaseLayout
+    title={pageTitle}
+    description={pageDescription}
+    bodyClass={bodyClass}
+    lang={lang}
+    canonicalUrl={canonicalUrl}
+    alternateEnUrl={alternateEnUrl}
+    alternateEsUrl={alternateEsUrl}
+  >
     <TreePage
       node={node}
       segments={segments}
@@ -69,7 +86,16 @@ const bodyClass = node ? (node.children && node.children.length > 0 ? "page--sub
     />
   </BaseLayout>
 ) : (
-  <BaseLayout title={pageTitle} bodyClass={bodyClass} lang={lang}>
+  <BaseLayout
+    title={pageTitle}
+    description={pageDescription}
+    bodyClass="page--leaf"
+    lang={lang}
+    canonicalUrl={canonicalUrl}
+    alternateEnUrl={alternateEnUrl}
+    alternateEsUrl={alternateEsUrl}
+    noindex
+  >
     <section style="padding: 64px 0; text-align: center;">
       <h1 class="t-h1" style="font-family: Fraunces, serif;">{t.notFound}</h1>
       <p class="t-subheading" style="color: #5f6b84;">{t.notFoundDesc}</p>

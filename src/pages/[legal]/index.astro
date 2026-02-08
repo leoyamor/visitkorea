@@ -1,0 +1,88 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import TreePage from "../../components/TreePage.astro";
+import type { TreeNode } from "../../data/siteTree";
+import { parseLang, withLang } from "../../lib/i18n";
+import { absoluteUrl } from "../../lib/site";
+import {
+  getLegalPageBySlug,
+  legalPages,
+  legalSections,
+} from "../../lib/legal-pages";
+
+export const getStaticPaths = () =>
+  legalPages.map((page) => ({
+    params: { legal: page.slug },
+  }));
+
+const { legal } = Astro.params;
+const entry = getLegalPageBySlug(legal ?? "");
+
+if (!entry) {
+  Astro.response.status = 404;
+}
+
+const lang = parseLang(Astro.url.searchParams.get("lang"));
+const isSpanish = lang === "es";
+const siteName = isSpanish
+  ? "Planificador de viaje a Corea"
+  : "Visit Korea Planner";
+const fallbackTitle = isSpanish ? "Página no encontrada" : "Page Not Found";
+const fallbackDescription = isSpanish
+  ? "La página que buscas no existe."
+  : "The page you are looking for does not exist.";
+
+const routePath = entry?.path ?? "/404";
+const pageTitle = `${entry ? (isSpanish ? entry.titleEs : entry.titleEn) : fallbackTitle} | ${siteName}`;
+const pageDescription = entry
+  ? isSpanish
+    ? entry.descriptionEs
+    : entry.descriptionEn
+  : fallbackDescription;
+const canonicalUrl = absoluteUrl(withLang(routePath, lang));
+const alternateEnUrl = absoluteUrl(routePath);
+const alternateEsUrl = absoluteUrl(withLang(routePath, "es"));
+
+const node: TreeNode = entry
+  ? {
+      title: isSpanish ? entry.titleEs : entry.titleEn,
+      slug: entry.slug,
+      description: pageDescription,
+      quickAnswer: pageDescription,
+      content: legalSections.map((section) => ({
+        title: isSpanish ? section.titleEs : section.titleEn,
+        body: isSpanish ? section.bodyEs : section.bodyEn,
+        bullets: isSpanish ? section.bulletsEs : section.bulletsEn,
+        icon: section.icon,
+      })),
+    }
+  : {
+      title: fallbackTitle,
+      slug: "404",
+      description: fallbackDescription,
+      quickAnswer: fallbackDescription,
+    };
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  bodyClass="page--leaf"
+  lang={lang}
+  canonicalUrl={canonicalUrl}
+  alternateEnUrl={alternateEnUrl}
+  alternateEsUrl={alternateEsUrl}
+  noindex={!entry}
+>
+  <TreePage
+    node={node}
+    segments={entry ? [entry.slug] : []}
+    parentPath={withLang("/", lang)}
+    breadcrumbs={
+      entry
+        ? [{ label: isSpanish ? entry.titleEs : entry.titleEn, path: withLang(entry.path, lang) }]
+        : []
+    }
+    lang={lang}
+  />
+</BaseLayout>

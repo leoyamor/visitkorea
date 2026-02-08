@@ -1,0 +1,43 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { parseLang, withLang } from "../lib/i18n";
+import { absoluteUrl } from "../lib/site";
+
+Astro.response.status = 404;
+
+const lang = parseLang(Astro.url.searchParams.get("lang"));
+const isSpanish = lang === "es";
+
+const title = isSpanish
+  ? "Página no encontrada | Planificador de viaje a Corea"
+  : "Page Not Found | Visit Korea Planner";
+const description = isSpanish
+  ? "La página que buscas no existe."
+  : "The page you are looking for does not exist.";
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  bodyClass="page--leaf"
+  lang={lang}
+  canonicalUrl={absoluteUrl(withLang("/404", lang))}
+  alternateEnUrl={absoluteUrl("/404")}
+  alternateEsUrl={absoluteUrl(withLang("/404", "es"))}
+  noindex
+>
+  <section style="padding: 64px 0; text-align: center;">
+    <h1 class="t-h1" style="font-family: Fraunces, serif;">
+      {isSpanish ? "Página no encontrada" : "Page Not Found"}
+    </h1>
+    <p class="t-subheading" style="color: #c9c1b6;">
+      {description}
+    </p>
+    <a
+      href={withLang("/", lang)}
+      style="display: inline-flex; margin-top: 18px; padding: 10px 18px; border-radius: 999px; background: #7c5cff; color: #fff;"
+    >
+      {isSpanish ? "Ir al inicio" : "Go Home"}
+    </a>
+  </section>
+</BaseLayout>

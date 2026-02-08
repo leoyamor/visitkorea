@@ -1,15 +1,15 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import TreePage from "../../components/TreePage.astro";
-import type { TreeNode } from "../../data/siteTree";
-import { buildLeafSchemaNodes } from "../../lib/geo";
-import { withLang } from "../../lib/i18n";
-import { absoluteUrl } from "../../lib/site";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import TreePage from "../../../components/TreePage.astro";
+import type { TreeNode } from "../../../data/siteTree";
+import { buildLeafSchemaNodes } from "../../../lib/geo";
+import { withLang } from "../../../lib/i18n";
+import { absoluteUrl } from "../../../lib/site";
 import {
   getLegalPageBySlug,
   legalPages,
   legalSections,
-} from "../../lib/legal-pages";
+} from "../../../lib/legal-pages";
 
 export const getStaticPaths = () =>
   legalPages.map((page) => ({
@@ -23,37 +23,30 @@ if (!entry) {
   Astro.response.status = 404;
 }
 
-const lang = "en";
-const isSpanish = false;
-const siteName = isSpanish
-  ? "Planificador de viaje a Corea"
-  : "Visit Korea Planner";
-const fallbackTitle = isSpanish ? "Página no encontrada" : "Page Not Found";
-const fallbackDescription = isSpanish
-  ? "La página que buscas no existe."
-  : "The page you are looking for does not exist.";
+const lang = "es";
+const siteName = "Planificador de viaje a Corea";
+const fallbackTitle = "Página no encontrada";
+const fallbackDescription = "La página que buscas no existe.";
 
 const routePath = entry?.path ?? "/404";
-const pageTitle = `${entry ? (isSpanish ? entry.titleEs : entry.titleEn) : fallbackTitle} | ${siteName}`;
+const pageTitle = `${entry ? entry.titleEs : fallbackTitle} | ${siteName}`;
 const pageDescription = entry
-  ? isSpanish
-    ? entry.descriptionEs
-    : entry.descriptionEn
+  ? entry.descriptionEs
   : fallbackDescription;
-const canonicalUrl = absoluteUrl(routePath);
+const canonicalUrl = absoluteUrl(withLang(routePath, lang));
 const alternateEnUrl = absoluteUrl(routePath);
-const alternateEsUrl = absoluteUrl(withLang(routePath, "es"));
+const alternateEsUrl = canonicalUrl;
 
 const node: TreeNode = entry
   ? {
-      title: isSpanish ? entry.titleEs : entry.titleEn,
+      title: entry.titleEs,
       slug: entry.slug,
       description: pageDescription,
       quickAnswer: pageDescription,
       content: legalSections.map((section) => ({
-        title: isSpanish ? section.titleEs : section.titleEn,
-        body: isSpanish ? section.bodyEs : section.bodyEn,
-        bullets: isSpanish ? section.bulletsEs : section.bulletsEn,
+        title: section.titleEs,
+        body: section.bodyEs,
+        bullets: section.bulletsEs,
         icon: section.icon,
       })),
     }
@@ -65,7 +58,7 @@ const node: TreeNode = entry
     };
 
 const pageBreadcrumbs = entry
-  ? [{ label: isSpanish ? entry.titleEs : entry.titleEn, path: withLang(entry.path, lang) }]
+  ? [{ label: entry.titleEs, path: withLang(entry.path, lang) }]
   : [];
 const schemaNodes = entry
   ? buildLeafSchemaNodes({

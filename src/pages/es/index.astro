@@ -1,0 +1,38 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import TreePage from "../../components/TreePage.astro";
+import { siteTree } from "../../data/siteTree";
+import { buildCollectionSchemaNodes } from "../../lib/geo";
+import { withLang } from "../../lib/i18n";
+import { absoluteUrl } from "../../lib/site";
+
+const node = siteTree;
+const segments: string[] = [];
+const lang = "es";
+const pageTitle = "Planificador de viaje a Corea";
+const pageDescription =
+  "Guía práctica para planear tu viaje a Corea con claridad y confianza.";
+const canonicalUrl = absoluteUrl(withLang("/", "es"));
+const alternateEnUrl = absoluteUrl("/");
+const alternateEsUrl = canonicalUrl;
+const schemaNodes = buildCollectionSchemaNodes({
+  canonicalUrl,
+  routePath: "/",
+  node,
+  lang,
+  description: pageDescription,
+});
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  bodyClass="home-bg"
+  lang={lang}
+  canonicalUrl={canonicalUrl}
+  alternateEnUrl={alternateEnUrl}
+  alternateEsUrl={alternateEsUrl}
+  schemaNodes={schemaNodes}
+>
+  <TreePage node={node} segments={segments} parentPath="/" isHome lang={lang} />
+</BaseLayout>

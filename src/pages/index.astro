@@ -2,20 +2,28 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import TreePage from "../components/TreePage.astro";
 import { siteTree } from "../data/siteTree";
-import { parseLang, withLang } from "../lib/i18n";
+import { buildCollectionSchemaNodes } from "../lib/geo";
+import { withLang } from "../lib/i18n";
 import { absoluteUrl } from "../lib/site";
 
 const node = siteTree;
 const segments: string[] = [];
-const lang = parseLang(Astro.url.searchParams.get("lang"));
+const lang = "en";
 const pageTitle = lang === "es" ? "Planificador de viaje a Corea" : "Visit Korea Planner";
 const pageDescription =
   lang === "es"
     ? "Guía práctica para planear tu viaje a Corea con claridad y confianza."
     : "Practical, beginner-friendly guidance for foreigners planning a trip to Korea.";
-const canonicalUrl = absoluteUrl(withLang("/", lang));
+const canonicalUrl = absoluteUrl("/");
 const alternateEnUrl = absoluteUrl("/");
 const alternateEsUrl = absoluteUrl(withLang("/", "es"));
+const schemaNodes = buildCollectionSchemaNodes({
+  canonicalUrl,
+  routePath: "/",
+  node,
+  lang,
+  description: pageDescription,
+});
 ---
 
 <BaseLayout
@@ -26,6 +34,7 @@ const alternateEsUrl = absoluteUrl(withLang("/", "es"));
   canonicalUrl={canonicalUrl}
   alternateEnUrl={alternateEnUrl}
   alternateEsUrl={alternateEsUrl}
+  schemaNodes={schemaNodes}
 >
   <TreePage node={node} segments={segments} parentPath="/" isHome lang={lang} />
 </BaseLayout>

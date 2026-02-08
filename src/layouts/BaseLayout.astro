@@ -6,11 +6,18 @@ import {
   DEFAULT_OG_IMAGE_PATH,
   SITE_NAME,
 } from "../lib/site";
+import {
+  EDITORIAL_AUTHOR_NAME,
+  EDITORIAL_REVIEWER_NAME,
+  EDITORIAL_UPDATED_ISO,
+} from "../lib/editorial";
 
 type BreadcrumbItem = {
   label: string;
   path: string;
 };
+
+type JsonLdNode = Record<string, unknown>;
 
 const {
   title = "Visit Korea Planner",
@@ -24,6 +31,7 @@ const {
   noindex = false,
   ogImage = absoluteUrl(DEFAULT_OG_IMAGE_PATH),
   ogImageAlt = DEFAULT_OG_IMAGE_ALT,
+  schemaNodes = [],
 } = Astro.props as {
   title?: string;
   description?: string;
@@ -36,6 +44,7 @@ const {
   noindex?: boolean;
   ogImage?: string;
   ogImageAlt?: string;
+  schemaNodes?: JsonLdNode[];
 };
 
 const robotsContent = noindex
@@ -59,11 +68,19 @@ const breadcrumbTrail = [{ label: homeLabel, path: localizedHomePath }, ...bread
 
 const schemaGraph: Record<string, unknown>[] = [
   {
+    "@type": "Organization",
+    "@id": `${absoluteUrl("/")}#organization`,
+    url: absoluteUrl("/"),
+    name: SITE_NAME,
+    inLanguage: ["en", "es"],
+  },
+  {
     "@type": "WebSite",
     "@id": `${absoluteUrl("/")}#website`,
     url: absoluteUrl("/"),
     name: siteName,
     inLanguage: lang,
+    publisher: { "@id": `${absoluteUrl("/")}#organization` },
   },
   {
     "@type": "WebPage",
@@ -73,6 +90,28 @@ const schemaGraph: Record<string, unknown>[] = [
     description,
     inLanguage: lang,
     isPartOf: { "@id": `${absoluteUrl("/")}#website` },
+    about: [
+      {
+        "@type": "Thing",
+        name:
+          lang === "es"
+            ? "Planificación de viajes a Corea del Sur"
+            : "South Korea travel planning",
+      },
+    ],
+    primaryImageOfPage: {
+      "@type": "ImageObject",
+      url: ogImage,
+    },
+    author: {
+      "@type": "Organization",
+      name: EDITORIAL_AUTHOR_NAME,
+    },
+    reviewedBy: {
+      "@type": "Organization",
+      name: EDITORIAL_REVIEWER_NAME,
+    },
+    dateModified: EDITORIAL_UPDATED_ISO,
   },
 ];
 
@@ -87,6 +126,12 @@ if (breadcrumbTrail.length > 1) {
       item: absoluteUrl(item.path),
     })),
   });
+}
+
+for (const node of schemaNodes) {
+  if (node && typeof node === "object") {
+    schemaGraph.push(node);
+  }
 }
 
 const schemaJson = JSON.stringify({
@@ -109,12 +154,30 @@ const schemaJson = JSON.stringify({
     <meta name="author" content={siteName} />
     <link rel="icon" href="/favicon.ico" />
     <link rel="sitemap" type="application/xml" href={absoluteUrl("/sitemap.xml")} />
+    {bodyClass.includes("home-bg") ? (
+      <link rel="preload" as="image" href="/hero.webp" fetchpriority="high" />
+    ) : null}
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      rel="stylesheet"
+      rel="preload"
+      as="style"
       href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Work+Sans:wght@300;400;500;600&display=swap"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Work+Sans:wght@300;400;500;600&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Work+Sans:wght@300;400;500;600&display=swap"
+      />
+    </noscript>
     <meta name="description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
@@ -295,40 +358,68 @@ const schemaJson = JSON.stringify({
     <main id="content">
       <slot />
     </main>
-    <script is:inline>
+    <script is:inline define:vars={{ lang }}>
       (() => {
-        const STORAGE_KEY = "visitkorea_lang_pref";
-        const readLangPref = () => {
-          try {
-            const stored = sessionStorage.getItem(STORAGE_KEY);
-            return stored === "es" || stored === "en" ? stored : null;
-          } catch {
-            return null;
-          }
+        const normalizePath = (pathname) => {
+          if (!pathname) return "/";
+          return pathname.startsWith("/") ? pathname : `/${pathname}`;
         };
-        const writeLangPref = (value) => {
-          try {
-            sessionStorage.setItem(STORAGE_KEY, value);
-          } catch {
-            // Ignore storage failures (privacy mode, blocked storage, etc.)
+        const stripEsPrefix = (pathname) => {
+          const normalized = normalizePath(pathname);
+          if (normalized === "/es") return "/";
+          if (normalized.startsWith("/es/")) {
+            const stripped = normalized.slice(3);
+            return stripped || "/";
           }
+          return normalized;
         };
-        const getNavigationType = () => {
-          const navEntry = performance.getEntriesByType("navigation")[0];
-          if (!navEntry || typeof navEntry !== "object" || !("type" in navEntry)) {
-            return "navigate";
+        const toLangPath = (pathname, targetLang) => {
+          const base = stripEsPrefix(pathname);
+          if (targetLang === "es") {
+            return base === "/" ? "/es" : `/es${base}`;
           }
-          return navEntry.type;
+          return base;
         };
-        const hasSpanishCookie = () =>
-          /(?:^|;\s*)googtrans=\/(?:en|auto)\/es(?:;|$)/.test(document.cookie);
+
+        const normalizeLegacyLangQueryUrl = () => {
+          const currentUrl = new URL(window.location.href);
+          const queryLang = currentUrl.searchParams.get("lang");
+          if (queryLang !== "es" && queryLang !== "en") {
+            return false;
+          }
+          currentUrl.pathname = toLangPath(currentUrl.pathname, queryLang);
+          currentUrl.searchParams.delete("lang");
+          if (currentUrl.hash.startsWith("#googtrans")) {
+            currentUrl.hash = "";
+          }
+          const nextUrl = currentUrl.toString();
+          if (nextUrl === window.location.href) {
+            return false;
+          }
+          window.location.replace(nextUrl);
+          return true;
+        };
+
+        if (normalizeLegacyLangQueryUrl()) {
+          return;
+        }
+
+        const enforceLegacyLangOnHistoryNav = () => {
+          normalizeLegacyLangQueryUrl();
+        };
+        window.addEventListener("pageshow", enforceLegacyLangOnHistoryNav);
+        window.addEventListener("popstate", () => {
+          window.setTimeout(enforceLegacyLangOnHistoryNav, 0);
+        });
+
+        const activeLang = lang === "es" ? "es" : "en";
+        document.documentElement.lang = activeLang;
+
         const hasTranslatedClass = () =>
           document.documentElement.classList.contains("translated-ltr") ||
           document.documentElement.classList.contains("translated-rtl") ||
           document.body.classList.contains("translated-ltr") ||
           document.body.classList.contains("translated-rtl");
-        const hasSpanishGoogTransState = () =>
-          hasSpanishCookie() || window.location.hash.startsWith("#googtrans");
 
         const cookieVariants = [location.hostname, `.${location.hostname}`];
         const setGoogTrans = (value, maxAge = 31536000) => {
@@ -381,128 +472,21 @@ const schemaJson = JSON.stringify({
           script.addEventListener("load", initTranslate, { once: true });
           document.head.appendChild(script);
         };
-
-        const LANG_STATE_KEY = "visitkoreaLang";
-        const readHistoryLang = () => {
-          const state = window.history.state;
-          if (!state || typeof state !== "object") return null;
-          const value = state[LANG_STATE_KEY];
-          return value === "es" || value === "en" ? value : null;
-        };
-        const replaceHistoryWithLang = (nextUrl, nextLang) => {
-          const previousState =
-            window.history.state && typeof window.history.state === "object"
-              ? window.history.state
-              : {};
-          window.history.replaceState({ ...previousState, [LANG_STATE_KEY]: nextLang }, "", nextUrl.toString());
-        };
-
-        const normalizeEnQuery = () => {
-          const currentUrl = new URL(window.location.href);
-          if (currentUrl.searchParams.get("lang") === "en") {
-            currentUrl.searchParams.delete("lang");
-            replaceHistoryWithLang(currentUrl, "en");
-          }
-        };
-
-        const applyEnglishState = () => {
-          document.documentElement.lang = "en";
-          const cleanUrl = new URL(window.location.href);
-          const needsEnglishReset = hasSpanishGoogTransState() || hasTranslatedClass();
-          clearGoogTrans();
-          if (cleanUrl.searchParams.get("lang") === "en") {
-            cleanUrl.searchParams.delete("lang");
-          }
-          if (cleanUrl.hash.startsWith("#googtrans")) {
-            cleanUrl.hash = "";
-            replaceHistoryWithLang(cleanUrl, "en");
-          }
-          if (needsEnglishReset) {
-            cleanUrl.hash = "";
-            cleanUrl.searchParams.delete("lang");
-            window.location.replace(cleanUrl.toString());
-            return;
-          }
-          replaceHistoryWithLang(cleanUrl, "en");
-        };
-
-        const applySpanishState = () => {
-          const currentUrl = new URL(window.location.href);
-          if (currentUrl.searchParams.get("lang") !== "es") {
-            currentUrl.searchParams.set("lang", "es");
-          }
-          replaceHistoryWithLang(currentUrl, "es");
-          document.documentElement.lang = "es";
-          ensureSpanishTranslate();
-          window.setTimeout(() => {
-            if (!hasTranslatedClass()) {
-              ensureSpanishTranslate();
-            }
-          }, 350);
-        };
-
-        const resolveActiveLang = () => {
-          normalizeEnQuery();
-          const currentUrl = new URL(window.location.href);
-          const queryLang = currentUrl.searchParams.get("lang");
-          const storedLang = readLangPref();
-          const historyLang = readHistoryLang();
-          const navType = getNavigationType();
-          const isInternalReferrer = document.referrer.startsWith(window.location.origin);
-          const fromSpanishInternalReferrer = isInternalReferrer && /[?&]lang=es(?:&|$)/.test(document.referrer);
-          const hasSpanishSignal =
-            queryLang === "es" ||
-            historyLang === "es" ||
-            (storedLang === "es" && (navType === "back_forward" || isInternalReferrer || fromSpanishInternalReferrer));
-          const shouldKeepSpanish =
-            queryLang !== "es" &&
-            hasSpanishSignal;
-
-          if (queryLang === "es" || shouldKeepSpanish) {
-            writeLangPref("es");
-            return "es";
-          }
-
-          const isDirectEntry = !isInternalReferrer && navType !== "back_forward";
-          if (isDirectEntry || queryLang === "en" || historyLang === "en") {
-            writeLangPref("en");
-            return "en";
-          }
-
-          writeLangPref("en");
-          return "en";
-        };
-
-        const syncLanguageOnHistoryNavigation = () => {
-          const resolvedLang = resolveActiveLang();
-          if (resolvedLang === "es") {
-            applySpanishState();
-            return;
-          }
-          applyEnglishState();
-        };
-
-        const activeLang = resolveActiveLang();
         if (activeLang === "es") {
-          applySpanishState();
-        } else {
-          applyEnglishState();
+          ensureSpanishTranslate();
+          return;
         }
 
-        window.addEventListener("pageshow", (event) => {
-          if (event.persisted) {
-            syncLanguageOnHistoryNavigation();
-            return;
-          }
-          const pageUrl = new URL(window.location.href);
-          if (pageUrl.searchParams.get("lang") === "es") {
-            applySpanishState();
-          }
-        });
-
-        window.addEventListener("popstate", () => {
-          window.setTimeout(syncLanguageOnHistoryNavigation, 0);
-        });
+        const cleanUrl = new URL(window.location.href);
+        clearGoogTrans();
+        if (cleanUrl.hash.startsWith("#googtrans")) {
+          cleanUrl.hash = "";
+          window.history.replaceState({}, "", cleanUrl.toString());
+        }
+        if (hasTranslatedClass()) {
+          cleanUrl.hash = "";
+          window.location.replace(cleanUrl.toString());
+        }
       })();
     </script>
   </body>

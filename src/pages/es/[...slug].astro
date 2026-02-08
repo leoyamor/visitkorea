@@ -1,10 +1,12 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import TreePage from "../components/TreePage.astro";
-import { findNodeBySegments, getPathForNode, siteTree } from "../data/siteTree";
-import { buildCollectionSchemaNodes, buildLeafSchemaNodes } from "../lib/geo";
-import { withLang } from "../lib/i18n";
-import { absoluteUrl } from "../lib/site";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import TreePage from "../../components/TreePage.astro";
+import type { TreeNode } from "../../data/siteTree";
+import { findNodeBySegments, getPathForNode, siteTree } from "../../data/siteTree";
+import { buildCollectionSchemaNodes, buildLeafSchemaNodes } from "../../lib/geo";
+import { withLang } from "../../lib/i18n";
+import { absoluteUrl } from "../../lib/site";
+
 export const getStaticPaths = () => {
   const paths: string[] = [];
   const walk = (node: TreeNode, prefix: string[] = []) => {
@@ -21,7 +23,7 @@ export const getStaticPaths = () => {
 
 const { slug } = Astro.params;
 const segments = slug ? slug.split("/") : [];
-const lang = "en";
+const lang = "es";
 const { node } = findNodeBySegments(segments);
 if (!node) {
   Astro.response.status = 404;
@@ -38,31 +40,18 @@ for (const segment of segments) {
   cursor = next;
 }
 
-const ui = {
-  en: {
-    siteName: "Visit Korea Planner",
-    notFound: "Page Not Found",
-    notFoundDesc: "The page you are looking for does not exist.",
-    goHome: "Go Home",
-  },
-  es: {
-    siteName: "Planificador de viaje a Corea",
-    notFound: "Página no encontrada",
-    notFoundDesc: "La página que buscas no existe.",
-    goHome: "Ir al inicio",
-  },
-} as const;
-
-const t = ui[lang];
+const siteName = "Planificador de viaje a Corea";
+const notFound = "Página no encontrada";
+const notFoundDesc = "La página que buscas no existe.";
 const routePath = segments.length ? `/${segments.join("/")}` : "/";
-const pageDescription = node?.description ?? t.notFoundDesc;
-const canonicalUrl = absoluteUrl(routePath);
+const pageDescription = node?.description ?? notFoundDesc;
+const canonicalUrl = absoluteUrl(withLang(routePath, lang));
 const alternateEnUrl = absoluteUrl(routePath);
-const alternateEsUrl = absoluteUrl(withLang(routePath, "es"));
+const alternateEsUrl = canonicalUrl;
 
 const pageTitle = node
-  ? `${node.title} | ${t.siteName}`
-  : `${t.notFound} | ${t.siteName}`;
+  ? `${node.title} | ${siteName}`
+  : `${notFound} | ${siteName}`;
 
 const bodyClass = node ? (node.children && node.children.length > 0 ? "page--sub" : "page--leaf") : "page--sub";
 const schemaNodes = node
@@ -119,13 +108,13 @@ const schemaNodes = node
     noindex
   >
     <section style="padding: 64px 0; text-align: center;">
-      <h1 class="t-h1" style="font-family: Fraunces, serif;">{t.notFound}</h1>
-      <p class="t-subheading" style="color: #5f6b84;">{t.notFoundDesc}</p>
+      <h1 class="t-h1" style="font-family: Fraunces, serif;">{notFound}</h1>
+      <p class="t-subheading" style="color: #5f6b84;">{notFoundDesc}</p>
       <a
         href={withLang("/", lang)}
         style="display: inline-flex; margin-top: 18px; padding: 10px 18px; border-radius: 999px; background: #1f6f8b; color: #fff;"
       >
-        {t.goHome}
+        Ir al inicio
       </a>
     </section>
   </BaseLayout>

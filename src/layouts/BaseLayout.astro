@@ -231,7 +231,10 @@ const {
           const currentUrl = new URL(window.location.href);
           const currentQueryLang = currentUrl.searchParams.get("lang");
           const preferredLang = readLangPref();
-          const prefersSpanish = preferredLang === "es" || hasSpanishCookie();
+          const referrer = document.referrer;
+          const fromSpanishReferrer =
+            referrer.startsWith(window.location.origin) && /[?&]lang=es(?:&|$)/.test(referrer);
+          const prefersSpanish = preferredLang === "es" || fromSpanishReferrer;
 
           if (prefersSpanish && currentQueryLang !== "es") {
             currentUrl.searchParams.set("lang", "es");
@@ -287,10 +290,7 @@ const {
           }
         };
 
-        const activeLang =
-          queryLang === "es" || (queryLang === null && (langPref === "es" || hasSpanishCookie()))
-            ? "es"
-            : "en";
+        const activeLang = queryLang === "es" || (queryLang === null && langPref === "es") ? "es" : "en";
         document.documentElement.lang = activeLang;
 
         const hasSpanishGoogTransState = () =>

@@ -765,9 +765,12 @@ const breadcrumb = breadcrumbs;
         if (!(target instanceof Element)) return;
         const anchor = target.closest("a[href]");
         if (!anchor) return;
-        const normalized = normalizeInternalHref(anchor.getAttribute("href"), getCurrentLang());
+        const rawHref = anchor.getAttribute("href");
+        const normalized = normalizeInternalHref(rawHref, getCurrentLang());
         if (!normalized) return;
-        anchor.setAttribute("href", normalized);
+        if (rawHref === normalized) return;
+        event.preventDefault();
+        window.location.href = normalized;
       },
       true
     );

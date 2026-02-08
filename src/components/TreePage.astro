@@ -672,9 +672,26 @@ const breadcrumb = breadcrumbs;
     const select = document.querySelector("[data-lang-switcher]");
     if (!select) return;
     const langButtons = Array.from(document.querySelectorAll("[data-lang-button]"));
+    const STORAGE_KEY = "visitkorea_lang_pref";
+    const readLangPref = () => {
+      try {
+        const stored = sessionStorage.getItem(STORAGE_KEY);
+        return stored === "es" || stored === "en" ? stored : null;
+      } catch {
+        return null;
+      }
+    };
+    const writeLangPref = (value) => {
+      try {
+        sessionStorage.setItem(STORAGE_KEY, value);
+      } catch {
+        // Ignore storage failures (privacy mode, blocked storage, etc.)
+      }
+    };
     const getCurrentLang = () => {
       const queryLang = new URL(window.location.href).searchParams.get("lang");
       if (queryLang === "es") return "es";
+      if (readLangPref() === "es") return "es";
       return "en";
     };
 
@@ -757,6 +774,7 @@ const breadcrumb = breadcrumbs;
 
     select.addEventListener("change", () => {
       const nextLang = select.value === "es" ? "es" : "en";
+      writeLangPref(nextLang);
       syncLangButtons(nextLang);
       if (nextLang === "es") {
         setGoogTrans("/en/es");

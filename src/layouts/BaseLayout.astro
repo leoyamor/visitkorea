@@ -209,10 +209,56 @@ const {
       (() => {
         const url = new URL(window.location.href);
         const queryLang = url.searchParams.get("lang");
+        const STORAGE_KEY = "visitkorea_lang_pref";
+        const readLangPref = () => {
+          try {
+            const stored = sessionStorage.getItem(STORAGE_KEY);
+            return stored === "es" || stored === "en" ? stored : null;
+          } catch {
+            return null;
+          }
+        };
+        const writeLangPref = (value) => {
+          try {
+            sessionStorage.setItem(STORAGE_KEY, value);
+          } catch {
+            // Ignore storage failures (privacy mode, blocked storage, etc.)
+          }
+        };
+        const syncUrlWithPreference = () => {
+          const currentUrl = new URL(window.location.href);
+          const currentQueryLang = currentUrl.searchParams.get("lang");
+          const preferredLang = readLangPref();
+
+          if (currentQueryLang === "en") {
+            currentUrl.searchParams.delete("lang");
+            window.history.replaceState({}, "", currentUrl.toString());
+            return;
+          }
+
+          if (!currentQueryLang && preferredLang === "es") {
+            currentUrl.searchParams.set("lang", "es");
+            window.history.replaceState({}, "", currentUrl.toString());
+          }
+        };
+
+        window.addEventListener("pageshow", syncUrlWithPreference);
+        window.addEventListener("popstate", () => {
+          window.setTimeout(syncUrlWithPreference, 0);
+        });
+
+        let langPref = readLangPref();
+        if (queryLang === "es") {
+          langPref = "es";
+          writeLangPref("es");
+        }
         if (queryLang === "en") {
           url.searchParams.delete("lang");
           window.history.replaceState({}, "", url.toString());
+          langPref = "en";
+          writeLangPref("en");
         }
+        syncUrlWithPreference();
 
         const cookieVariants = [location.hostname, `.${location.hostname}`];
         const setGoogTrans = (value, maxAge = 31536000) => {
@@ -228,7 +274,7 @@ const {
           }
         };
 
-        const activeLang = queryLang === "es" ? "es" : "en";
+        const activeLang = queryLang === "es" || (queryLang === null && langPref === "es") ? "es" : "en";
         document.documentElement.lang = activeLang;
 
         const hasSpanishGoogTransState = () =>

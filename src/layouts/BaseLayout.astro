@@ -381,11 +381,26 @@ const schemaJson = JSON.stringify({
           document.head.appendChild(script);
         };
 
+        const LANG_STATE_KEY = "visitkoreaLang";
+        const readHistoryLang = () => {
+          const state = window.history.state;
+          if (!state || typeof state !== "object") return null;
+          const value = state[LANG_STATE_KEY];
+          return value === "es" || value === "en" ? value : null;
+        };
+        const replaceHistoryWithLang = (nextUrl, nextLang) => {
+          const previousState =
+            window.history.state && typeof window.history.state === "object"
+              ? window.history.state
+              : {};
+          window.history.replaceState({ ...previousState, [LANG_STATE_KEY]: nextLang }, "", nextUrl.toString());
+        };
+
         const normalizeEnQuery = () => {
           const currentUrl = new URL(window.location.href);
           if (currentUrl.searchParams.get("lang") === "en") {
             currentUrl.searchParams.delete("lang");
-            window.history.replaceState({}, "", currentUrl.toString());
+            replaceHistoryWithLang(currentUrl, "en");
           }
         };
 
@@ -399,21 +414,23 @@ const schemaJson = JSON.stringify({
           }
           if (cleanUrl.hash.startsWith("#googtrans")) {
             cleanUrl.hash = "";
-            window.history.replaceState({}, "", cleanUrl.toString());
+            replaceHistoryWithLang(cleanUrl, "en");
           }
           if (needsEnglishReset) {
             cleanUrl.hash = "";
             cleanUrl.searchParams.delete("lang");
             window.location.replace(cleanUrl.toString());
+            return;
           }
+          replaceHistoryWithLang(cleanUrl, "en");
         };
 
         const applySpanishState = () => {
           const currentUrl = new URL(window.location.href);
           if (currentUrl.searchParams.get("lang") !== "es") {
             currentUrl.searchParams.set("lang", "es");
-            window.history.replaceState({}, "", currentUrl.toString());
           }
+          replaceHistoryWithLang(currentUrl, "es");
           document.documentElement.lang = "es";
           ensureSpanishTranslate();
           window.setTimeout(() => {
@@ -428,18 +445,27 @@ const schemaJson = JSON.stringify({
           const currentUrl = new URL(window.location.href);
           const queryLang = currentUrl.searchParams.get("lang");
           const storedLang = readLangPref();
+          const historyLang = readHistoryLang();
           const navType = getNavigationType();
-          const fromSpanishInternalReferrer =
-            document.referrer.startsWith(window.location.origin) &&
-            /[?&]lang=es(?:&|$)/.test(document.referrer);
+          const isInternalReferrer = document.referrer.startsWith(window.location.origin);
+          const fromSpanishInternalReferrer = isInternalReferrer && /[?&]lang=es(?:&|$)/.test(document.referrer);
+          const hasSpanishSignal =
+            queryLang === "es" ||
+            historyLang === "es" ||
+            (storedLang === "es" && (navType === "back_forward" || isInternalReferrer || fromSpanishInternalReferrer));
           const shouldKeepSpanish =
             queryLang !== "es" &&
-            storedLang === "es" &&
-            (navType === "back_forward" || fromSpanishInternalReferrer);
+            hasSpanishSignal;
 
           if (queryLang === "es" || shouldKeepSpanish) {
             writeLangPref("es");
             return "es";
+          }
+
+          const isDirectEntry = !isInternalReferrer && navType !== "back_forward";
+          if (isDirectEntry || queryLang === "en" || historyLang === "en") {
+            writeLangPref("en");
+            return "en";
           }
 
           writeLangPref("en");
@@ -447,7 +473,8 @@ const schemaJson = JSON.stringify({
         };
 
         const syncLanguageOnHistoryNavigation = () => {
-          if (readLangPref() === "es") {
+          const resolvedLang = resolveActiveLang();
+          if (resolvedLang === "es") {
             applySpanishState();
             return;
           }

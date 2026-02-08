@@ -662,14 +662,36 @@ const breadcrumb = breadcrumbs;
     const select = document.querySelector("[data-lang-switcher]");
     if (!select) return;
 
+    const cookieVariants = [location.hostname, `.${location.hostname}`];
+    const setGoogTrans = (value, maxAge = 31536000) => {
+      document.cookie = `googtrans=${value};path=/;max-age=${maxAge}`;
+      for (const domain of cookieVariants) {
+        document.cookie = `googtrans=${value};path=/;domain=${domain};max-age=${maxAge}`;
+      }
+    };
+    const clearGoogTrans = () => {
+      document.cookie = "googtrans=;path=/;max-age=0";
+      for (const domain of cookieVariants) {
+        document.cookie = `googtrans=;path=/;domain=${domain};max-age=0`;
+      }
+    };
+
     select.addEventListener("change", () => {
       const nextLang = select.value === "es" ? "es" : "en";
+      if (nextLang === "es") {
+        setGoogTrans("/en/es");
+        setGoogTrans("/auto/es");
+      } else {
+        clearGoogTrans();
+        setGoogTrans("/en/en");
+        setGoogTrans("/auto/en");
+      }
 
       const url = new URL(window.location.href);
       if (nextLang === "es") {
         url.searchParams.set("lang", "es");
       } else {
-        url.searchParams.set("lang", "en");
+        url.searchParams.delete("lang");
       }
       if (url.hash.startsWith("#googtrans")) {
         url.hash = "";

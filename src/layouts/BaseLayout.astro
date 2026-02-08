@@ -209,16 +209,48 @@ const {
       (() => {
         const url = new URL(window.location.href);
         const queryLang = url.searchParams.get("lang");
+        const cookieVariants = [location.hostname, `.${location.hostname}`];
+        const setGoogTrans = (value, maxAge = 31536000) => {
+          document.cookie = `googtrans=${value};path=/;max-age=${maxAge}`;
+          for (const domain of cookieVariants) {
+            document.cookie = `googtrans=${value};path=/;domain=${domain};max-age=${maxAge}`;
+          }
+        };
+        const clearGoogTrans = () => {
+          document.cookie = "googtrans=;path=/;max-age=0";
+          for (const domain of cookieVariants) {
+            document.cookie = `googtrans=;path=/;domain=${domain};max-age=0`;
+          }
+        };
 
         const activeLang = queryLang === "es" || lang === "es" ? "es" : "en";
-        const googValue = activeLang === "es" ? "/auto/es" : "/auto/en";
+        const hasSpanishGoogTransState = () =>
+          /(?:^|;\s*)googtrans=\/(?:en|auto)\/es(?:;|$)/.test(document.cookie) ||
+          url.hash.startsWith("#googtrans");
+        const hasTranslatedClass = () =>
+          document.documentElement.classList.contains("translated-ltr") ||
+          document.documentElement.classList.contains("translated-rtl") ||
+          document.body.classList.contains("translated-ltr") ||
+          document.body.classList.contains("translated-rtl");
 
-        document.cookie = `googtrans=${googValue};path=/;max-age=31536000`;
-        document.cookie = `googtrans=${googValue};path=/;domain=${location.hostname};max-age=31536000`;
-
-        if (activeLang === "en" && url.hash.startsWith("#googtrans")) {
-          url.hash = "";
-          window.history.replaceState({}, "", url.toString());
+        if (activeLang === "es") {
+          setGoogTrans("/en/es");
+          setGoogTrans("/auto/es");
+        } else {
+          const needsEnglishReset = hasSpanishGoogTransState() || hasTranslatedClass();
+          clearGoogTrans();
+          setGoogTrans("/en/en");
+          setGoogTrans("/auto/en");
+          if (url.hash.startsWith("#googtrans")) {
+            url.hash = "";
+            window.history.replaceState({}, "", url.toString());
+          }
+          if (needsEnglishReset) {
+            const cleanUrl = new URL(window.location.href);
+            cleanUrl.hash = "";
+            window.location.replace(cleanUrl.toString());
+            return;
+          }
         }
 
         if (activeLang !== "es") {

@@ -97,7 +97,7 @@ body:has(.page--home) {
 }
 
 .page--home::before {
-  background: url("/leaf%20images/hanok_hero.webp") center / cover no-repeat;
+  background: url("/hanok-hero.webp") center / cover no-repeat;
   filter: saturate(0.96) brightness(1.02) contrast(0.95);
   z-index: -2;
 }

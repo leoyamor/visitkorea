@@ -669,7 +669,10 @@ const breadcrumb = breadcrumbs;
       if (nextLang === "es") {
         url.searchParams.set("lang", "es");
       } else {
-        url.searchParams.delete("lang");
+        url.searchParams.set("lang", "en");
+      }
+      if (url.hash.startsWith("#googtrans")) {
+        url.hash = "";
       }
       window.location.href = url.toString();
     });

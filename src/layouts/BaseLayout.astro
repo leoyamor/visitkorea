@@ -211,10 +211,15 @@ const {
         const queryLang = url.searchParams.get("lang");
 
         const activeLang = queryLang === "es" || lang === "es" ? "es" : "en";
-        const googValue = activeLang === "es" ? "/en/es" : "/en/en";
+        const googValue = activeLang === "es" ? "/auto/es" : "/auto/en";
 
         document.cookie = `googtrans=${googValue};path=/;max-age=31536000`;
         document.cookie = `googtrans=${googValue};path=/;domain=${location.hostname};max-age=31536000`;
+
+        if (activeLang === "en" && url.hash.startsWith("#googtrans")) {
+          url.hash = "";
+          window.history.replaceState({}, "", url.toString());
+        }
 
         if (activeLang !== "es") {
           return;

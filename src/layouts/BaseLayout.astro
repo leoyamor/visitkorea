@@ -22,28 +22,6 @@ const {
   noindex?: boolean;
 };
 
-const footerText =
-  lang === "es"
-    ? {
-        title: "Planificador de viaje a Corea",
-        subtitle:
-          "Guías claras y prácticas para planear tu viaje a Corea con confianza.",
-        about: "Acerca de",
-        contact: "Contacto",
-        privacy: "Política de privacidad",
-        terms: "Términos",
-        disclaimer: "Descargo",
-      }
-    : {
-        title: "Visit Korea Planner",
-        subtitle:
-          "Clear, practical guidance for first-time and repeat Korea travelers.",
-        about: "About",
-        contact: "Contact",
-        privacy: "Privacy Policy",
-        terms: "Terms",
-        disclaimer: "Disclaimer",
-      };
 ---
 
 <!doctype html>
@@ -219,46 +197,6 @@ const footerText =
         pointer-events: none;
       }
 
-      .site-footer {
-        border-top: 1px solid var(--border-dark);
-        background: rgba(18, 14, 11, 0.94);
-      }
-
-      .site-footer-inner {
-        width: min(1100px, 92vw);
-        margin: 0 auto;
-        padding: 22px 0 30px;
-        display: flex;
-        flex-direction: column;
-        gap: 14px;
-      }
-
-      .site-footer-title {
-        margin: 0;
-        font-weight: 700;
-        color: var(--text-strong);
-      }
-
-      .site-footer-subtitle {
-        margin: 0;
-        font-size: 0.92rem;
-        color: var(--text-muted);
-      }
-
-      .site-footer-links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px 14px;
-        font-size: 0.9rem;
-      }
-
-      .site-footer-links a {
-        color: var(--text-soft);
-      }
-
-      .site-footer-links a:hover {
-        color: var(--accent);
-      }
     </style>
   </head>
   <body class={bodyClass}>
@@ -267,35 +205,10 @@ const footerText =
     <main id="content">
       <slot />
     </main>
-    <footer class="site-footer">
-      <div class="site-footer-inner">
-        <p class="site-footer-title">{footerText.title}</p>
-        <p class="site-footer-subtitle">{footerText.subtitle}</p>
-        <nav class="site-footer-links" aria-label="Footer links">
-          <a href={withLang("/about", lang)}>{footerText.about}</a>
-          <a href={withLang("/contact", lang)}>{footerText.contact}</a>
-          <a href={withLang("/privacy-policy", lang)}>{footerText.privacy}</a>
-          <a href={withLang("/terms", lang)}>{footerText.terms}</a>
-          <a href={withLang("/disclaimer", lang)}>{footerText.disclaimer}</a>
-        </nav>
-      </div>
-    </footer>
     <script is:inline define:vars={{ lang }}>
       (() => {
-        const storageKey = "vk_lang";
         const url = new URL(window.location.href);
         const queryLang = url.searchParams.get("lang");
-
-        if (queryLang === "en" || queryLang === "es") {
-          localStorage.setItem(storageKey, queryLang);
-        } else {
-          const savedLang = localStorage.getItem(storageKey);
-          if (savedLang === "es") {
-            url.searchParams.set("lang", "es");
-            window.location.replace(url.toString());
-            return;
-          }
-        }
 
         const activeLang = queryLang === "es" || lang === "es" ? "es" : "en";
         const googValue = activeLang === "es" ? "/en/es" : "/en/en";

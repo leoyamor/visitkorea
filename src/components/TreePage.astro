@@ -664,7 +664,6 @@ const breadcrumb = breadcrumbs;
 
     select.addEventListener("change", () => {
       const nextLang = select.value === "es" ? "es" : "en";
-      localStorage.setItem("vk_lang", nextLang);
 
       const url = new URL(window.location.href);
       if (nextLang === "es") {

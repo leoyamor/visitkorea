@@ -224,16 +224,34 @@ const {
             // Ignore storage failures (privacy mode, blocked storage, etc.)
           }
         };
+        const syncUrlWithStoredLang = () => {
+          const currentUrl = new URL(window.location.href);
+          const currentQueryLang = currentUrl.searchParams.get("lang");
+          const preferredLang = readStoredLang();
+
+          if (preferredLang === "es" && currentQueryLang !== "es") {
+            currentUrl.searchParams.set("lang", "es");
+            window.history.replaceState({}, "", currentUrl.toString());
+            return;
+          }
+
+          if (currentQueryLang === "en") {
+            currentUrl.searchParams.delete("lang");
+            window.history.replaceState({}, "", currentUrl.toString());
+          }
+        };
+
+        window.addEventListener("pageshow", syncUrlWithStoredLang);
+        window.addEventListener("popstate", () => {
+          window.setTimeout(syncUrlWithStoredLang, 0);
+        });
+
         let storedLang = readStoredLang();
         if (queryLang === "es") {
           storedLang = "es";
           writeStoredLang("es");
-        } else if (queryLang === "en") {
-          storedLang = "en";
-          writeStoredLang("en");
-          url.searchParams.delete("lang");
-          window.history.replaceState({}, "", url.toString());
         }
+        syncUrlWithStoredLang();
 
         const cookieVariants = [location.hostname, `.${location.hostname}`];
         const setGoogTrans = (value, maxAge = 31536000) => {
@@ -249,10 +267,7 @@ const {
           }
         };
 
-        const activeLang =
-          queryLang === "es" || (queryLang === null && (storedLang === "es" || lang === "es"))
-            ? "es"
-            : "en";
+        const activeLang = queryLang === "es" || storedLang === "es" || lang === "es" ? "es" : "en";
         document.documentElement.lang = activeLang;
         writeStoredLang(activeLang);
 

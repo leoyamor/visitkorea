@@ -690,7 +690,6 @@ const breadcrumb = breadcrumbs;
     const getCurrentLang = () => {
       const queryLang = new URL(window.location.href).searchParams.get("lang");
       if (queryLang === "es") return "es";
-      if (queryLang === "en") return "en";
       return readStoredLang();
     };
 
@@ -737,9 +736,6 @@ const breadcrumb = breadcrumbs;
       }
     };
 
-    const currentLang = getCurrentLang();
-    writeStoredLang(currentLang);
-    select.value = currentLang;
     const syncLangButtons = (activeLang) => {
       langButtons.forEach((button) => {
         const isActive = button.getAttribute("data-lang-button") === activeLang;
@@ -747,9 +743,19 @@ const breadcrumb = breadcrumbs;
         button.toggleAttribute("data-active", isActive);
       });
     };
-    syncLangButtons(currentLang);
-    syncInternalLinks(currentLang);
-    window.setTimeout(() => syncInternalLinks(getCurrentLang()), 250);
+    const resyncLanguageUi = () => {
+      const activeLang = getCurrentLang();
+      writeStoredLang(activeLang);
+      select.value = activeLang;
+      syncLangButtons(activeLang);
+      syncInternalLinks(activeLang);
+    };
+    resyncLanguageUi();
+    window.setTimeout(resyncLanguageUi, 250);
+    window.addEventListener("pageshow", resyncLanguageUi);
+    window.addEventListener("popstate", () => {
+      window.setTimeout(resyncLanguageUi, 0);
+    });
 
     document.addEventListener(
       "click",

@@ -111,14 +111,14 @@ body:has(.page--home) {
 
 .page--sub {
   position: relative;
-  background: linear-gradient(180deg, #1a120e, #0f0b09);
+  background-color: #2E2A26;
   min-height: 100%;
 }
 
 .page--leaf {
   position: relative;
   line-height: 1.7;
-  background: linear-gradient(180deg, #1a120e, #0f0b09);
+  background-color: #2E2A26;
   min-height: 100%;
 }
 

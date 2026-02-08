@@ -246,14 +246,6 @@ const schemaJson = JSON.stringify({
         min-height: 100vh;
       }
 
-      body.page--sub {
-        background-color: #2E2A26;
-      }
-
-      body.page--leaf {
-        background-color: #2E2A26;
-      }
-
       body.home-bg {
         background:
           radial-gradient(1300px 700px at 18% -6%, rgba(255, 244, 224, 0.22), transparent 56%),
@@ -346,6 +338,169 @@ const schemaJson = JSON.stringify({
         pointer-events: none;
       }
 
+    </style>
+    <style is:global>
+      .page--sub,
+      .page--leaf {
+        --page-bg-top: #4F7898;
+        --page-bg-bot: #3E5F74;
+        --page-overlay: rgba(18, 14, 11, 0.18);
+
+        --text: #FFFFFF;
+        --text-soft: rgba(255, 255, 255, 0.82);
+        --text-mute: rgba(255, 255, 255, 0.68);
+        --text-muted: rgba(255, 255, 255, 0.68);
+
+        --card-bg: #F5F0E8;
+        --card-text: #2E2A26;
+        --card-muted: rgba(46, 42, 38, 0.70);
+        --card-border: rgba(255, 255, 255, 0.10);
+
+        --thumb-bg-a: #F5F0E8;
+        --thumb-bg-b: #EFE7DC;
+        --thumb-mask-top: rgba(18, 14, 11, 0.16);
+        --thumb-mask-bot: rgba(18, 14, 11, 0.02);
+
+        --accent: #E6D3A3;
+        --accent-text: #2E2A26;
+        --focus: rgba(230, 211, 163, 0.45);
+
+        --paper: var(--card-bg);
+        --paper-2: var(--thumb-bg-b);
+        --ink-strong: var(--card-text);
+        --ink-soft: var(--card-muted);
+        --border-paper: rgba(0, 0, 0, 0.06);
+        --ring: var(--focus);
+
+        background: linear-gradient(180deg, var(--page-bg-top) 0%, var(--page-bg-bot) 100%);
+        color: var(--text);
+        position: relative;
+      }
+
+      .page--sub::before,
+      .page--leaf::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: var(--page-overlay);
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .page--sub > *,
+      .page--leaf > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .page--sub a,
+      .page--leaf a {
+        color: var(--text);
+        text-decoration-color: rgba(255, 255, 255, 0.35);
+        text-underline-offset: 0.18em;
+      }
+
+      .page--sub a:hover,
+      .page--leaf a:hover {
+        color: rgba(255, 255, 255, 0.92);
+        text-decoration-color: rgba(255, 255, 255, 0.55);
+      }
+
+      .page--sub .muted,
+      .page--leaf .muted {
+        color: var(--text-mute);
+      }
+
+      .page--sub :focus-visible,
+      .page--leaf :focus-visible {
+        outline: 3px solid var(--focus);
+        outline-offset: 3px;
+        border-radius: 12px;
+      }
+
+      .page--sub .panel,
+      .page--leaf .panel {
+        background: rgba(0, 0, 0, 0.18);
+        border: 1px solid rgba(255, 255, 255, 0.10);
+        border-radius: 28px;
+        box-shadow: 0 18px 60px rgba(0, 0, 0, 0.25);
+      }
+
+      .page--sub .card,
+      .page--leaf .card {
+        background: var(--card-bg);
+        color: var(--card-text);
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        border-radius: 22px;
+        box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+      }
+
+      .page--sub .card p,
+      .page--leaf .card p {
+        color: var(--card-muted);
+      }
+
+      .page--sub .card:hover,
+      .page--leaf .card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 22px 60px rgba(0, 0, 0, 0.22);
+      }
+
+      .page--sub .thumb,
+      .page--leaf .thumb {
+        background: linear-gradient(140deg, var(--thumb-bg-a), var(--thumb-bg-b));
+        border-radius: 18px;
+        overflow: hidden;
+      }
+
+      .page--sub .thumb-mask,
+      .page--leaf .thumb-mask {
+        background: linear-gradient(180deg, var(--thumb-mask-top), var(--thumb-mask-bot));
+      }
+
+      .page--sub .btn,
+      .page--leaf .btn,
+      .page--sub .button,
+      .page--leaf .button {
+        background: rgba(255, 255, 255, 0.10);
+        color: var(--text);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 999px;
+        backdrop-filter: blur(10px);
+      }
+
+      .page--sub .btn:hover,
+      .page--leaf .btn:hover,
+      .page--sub .button:hover,
+      .page--leaf .button:hover {
+        background: rgba(255, 255, 255, 0.14);
+      }
+
+      .page--sub .btn--primary,
+      .page--leaf .btn--primary {
+        background: var(--accent);
+        color: var(--accent-text);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+      }
+
+      .page--sub .btn--primary:hover,
+      .page--leaf .btn--primary:hover {
+        filter: brightness(0.98);
+      }
+
+      .page--sub h1,
+      .page--sub h2,
+      .page--sub h3,
+      .page--leaf h1,
+      .page--leaf h2,
+      .page--leaf h3 {
+        color: var(--text);
+      }
+
+      .page--sub .subtitle,
+      .page--leaf .subtitle {
+        color: var(--text-soft);
+      }
     </style>
   </head>
   <body class={bodyClass}>

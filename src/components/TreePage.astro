@@ -661,8 +661,27 @@ const breadcrumb = breadcrumbs;
   (() => {
     const select = document.querySelector("[data-lang-switcher]");
     if (!select) return;
-    const getCurrentLang = () =>
-      new URL(window.location.href).searchParams.get("lang") === "es" ? "es" : "en";
+    const STORAGE_KEY = "visitkorea_lang";
+    const readStoredLang = () => {
+      try {
+        return sessionStorage.getItem(STORAGE_KEY) === "es" ? "es" : "en";
+      } catch {
+        return "en";
+      }
+    };
+    const writeStoredLang = (value) => {
+      try {
+        sessionStorage.setItem(STORAGE_KEY, value);
+      } catch {
+        // Ignore storage failures (privacy mode, blocked storage, etc.)
+      }
+    };
+    const getCurrentLang = () => {
+      const queryLang = new URL(window.location.href).searchParams.get("lang");
+      if (queryLang === "es") return "es";
+      if (queryLang === "en") return "en";
+      return readStoredLang();
+    };
 
     const normalizeInternalHref = (rawHref, targetLang) => {
       if (
@@ -708,6 +727,7 @@ const breadcrumb = breadcrumbs;
     };
 
     const currentLang = getCurrentLang();
+    writeStoredLang(currentLang);
     select.value = currentLang;
     syncInternalLinks(currentLang);
     window.setTimeout(() => syncInternalLinks(getCurrentLang()), 250);
@@ -728,6 +748,7 @@ const breadcrumb = breadcrumbs;
 
     select.addEventListener("change", () => {
       const nextLang = select.value === "es" ? "es" : "en";
+      writeStoredLang(nextLang);
       if (nextLang === "es") {
         setGoogTrans("/en/es");
         setGoogTrans("/auto/es");

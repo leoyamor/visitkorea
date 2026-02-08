@@ -209,6 +209,32 @@ const {
       (() => {
         const url = new URL(window.location.href);
         const queryLang = url.searchParams.get("lang");
+        const STORAGE_KEY = "visitkorea_lang";
+        const readStoredLang = () => {
+          try {
+            return sessionStorage.getItem(STORAGE_KEY) === "es" ? "es" : "en";
+          } catch {
+            return "en";
+          }
+        };
+        const writeStoredLang = (value) => {
+          try {
+            sessionStorage.setItem(STORAGE_KEY, value);
+          } catch {
+            // Ignore storage failures (privacy mode, blocked storage, etc.)
+          }
+        };
+        let storedLang = readStoredLang();
+        if (queryLang === "es") {
+          storedLang = "es";
+          writeStoredLang("es");
+        } else if (queryLang === "en") {
+          storedLang = "en";
+          writeStoredLang("en");
+          url.searchParams.delete("lang");
+          window.history.replaceState({}, "", url.toString());
+        }
+
         const cookieVariants = [location.hostname, `.${location.hostname}`];
         const setGoogTrans = (value, maxAge = 31536000) => {
           document.cookie = `googtrans=${value};path=/;max-age=${maxAge}`;
@@ -223,8 +249,19 @@ const {
           }
         };
 
-        const activeLang = queryLang === "es" || lang === "es" ? "es" : "en";
+        const activeLang =
+          queryLang === "es" || (queryLang === null && (storedLang === "es" || lang === "es"))
+            ? "es"
+            : "en";
         document.documentElement.lang = activeLang;
+        writeStoredLang(activeLang);
+
+        if (queryLang === null && activeLang === "es") {
+          const esUrl = new URL(url.toString());
+          esUrl.searchParams.set("lang", "es");
+          window.history.replaceState({}, "", esUrl.toString());
+        }
+
         const hasSpanishGoogTransState = () =>
           /(?:^|;\s*)googtrans=\/(?:en|auto)\/es(?:;|$)/.test(document.cookie) ||
           url.hash.startsWith("#googtrans");
@@ -240,11 +277,6 @@ const {
         } else {
           const needsEnglishReset = hasSpanishGoogTransState() || hasTranslatedClass();
           clearGoogTrans();
-
-          if (queryLang === "en") {
-            url.searchParams.delete("lang");
-            window.history.replaceState({}, "", url.toString());
-          }
 
           if (url.hash.startsWith("#googtrans")) {
             url.hash = "";

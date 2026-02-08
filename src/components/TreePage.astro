@@ -167,7 +167,11 @@ const linkify = (text: string) => {
       let next = part;
       for (const [keyword, href] of Object.entries(keywordLinks)) {
         const safeHref = href.replace(/"/g, "&quot;");
-        const pattern = new RegExp(`\\b${keyword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "g");
+        // Keep "Name: https://..." patterns readable by linking only the URL label.
+        const pattern = new RegExp(
+          `\\b${keyword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b(?!\\s*:)`,
+          "g"
+        );
         next = next.replace(
           pattern,
           `<a href="${safeHref}" target="_blank" rel="noopener noreferrer">${keyword}</a>`

@@ -1,9 +1,19 @@
 ---
-const { title = "Visit Korea Planner", bodyClass = "" } = Astro.props;
+import type { SupportedLang } from "../lib/i18n";
+
+const {
+  title = "Visit Korea Planner",
+  bodyClass = "",
+  lang = "en",
+} = Astro.props as {
+  title?: string;
+  bodyClass?: string;
+  lang?: SupportedLang;
+};
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -153,12 +163,83 @@ const { title = "Visit Korea Planner", bodyClass = "" } = Astro.props;
           padding: 32px 0 64px;
         }
       }
+
+      #google_translate_element {
+        position: absolute;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        opacity: 0;
+        pointer-events: none;
+      }
     </style>
   </head>
   <body class={bodyClass}>
     <a href="#content" class="skip-link">Skip to content</a>
+    <div id="google_translate_element" aria-hidden="true"></div>
     <main id="content">
       <slot />
     </main>
+    <script is:inline define:vars={{ lang }}>
+      (() => {
+        const storageKey = "vk_lang";
+        const url = new URL(window.location.href);
+        const queryLang = url.searchParams.get("lang");
+
+        if (queryLang === "en" || queryLang === "es") {
+          localStorage.setItem(storageKey, queryLang);
+        } else {
+          const savedLang = localStorage.getItem(storageKey);
+          if (savedLang === "es") {
+            url.searchParams.set("lang", "es");
+            window.location.replace(url.toString());
+            return;
+          }
+        }
+
+        const activeLang = queryLang === "es" || lang === "es" ? "es" : "en";
+        const googValue = activeLang === "es" ? "/en/es" : "/en/en";
+
+        document.cookie = `googtrans=${googValue};path=/;max-age=31536000`;
+        document.cookie = `googtrans=${googValue};path=/;domain=${location.hostname};max-age=31536000`;
+
+        if (activeLang !== "es") {
+          return;
+        }
+
+        const initTranslate = () => {
+          if (!window.google || !window.google.translate || !window.google.translate.TranslateElement) {
+            return;
+          }
+          new window.google.translate.TranslateElement(
+            {
+              pageLanguage: "en",
+              includedLanguages: "en,es",
+              autoDisplay: false,
+            },
+            "google_translate_element"
+          );
+        };
+
+        if (window.google && window.google.translate && window.google.translate.TranslateElement) {
+          initTranslate();
+          return;
+        }
+
+        window.googleTranslateElementInit = initTranslate;
+
+        const existingScript = document.querySelector("script[data-google-translate]");
+        if (existingScript) {
+          return;
+        }
+
+        const script = document.createElement("script");
+        script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+        script.async = true;
+        script.defer = true;
+        script.setAttribute("data-google-translate", "true");
+        document.head.appendChild(script);
+      })();
+    </script>
   </body>
 </html>

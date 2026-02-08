@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import TreePage from "../components/TreePage.astro";
 import { findNodeBySegments, getPathForNode, siteTree } from "../data/siteTree";
+import { parseLang, withLang } from "../lib/i18n";
 export const getStaticPaths = () => {
   const paths: string[] = [];
   const walk = (node: TreeNode, prefix: string[] = []) => {
@@ -18,6 +19,7 @@ export const getStaticPaths = () => {
 
 const { slug } = Astro.params;
 const segments = slug ? slug.split("/") : [];
+const lang = parseLang(Astro.url.searchParams.get("lang"));
 const { node } = findNodeBySegments(segments);
 const parentPath = segments.length > 1 ? getPathForNode(segments.slice(0, -1)) : "/";
 const breadcrumbs: { label: string; path: string }[] = [];
@@ -27,37 +29,55 @@ for (const segment of segments) {
   const next = cursor.children?.find((child) => child.slug === segment);
   if (!next) break;
   pathSegments = [...pathSegments, segment];
-  breadcrumbs.push({ label: next.title, path: `/${pathSegments.join("/")}` });
+  breadcrumbs.push({ label: next.title, path: withLang(`/${pathSegments.join("/")}`, lang) });
   cursor = next;
 }
 
+const ui = {
+  en: {
+    siteName: "Visit Korea Planner",
+    notFound: "Page Not Found",
+    notFoundDesc: "The page you are looking for does not exist.",
+    goHome: "Go Home",
+  },
+  es: {
+    siteName: "Planificador de viaje a Corea",
+    notFound: "Página no encontrada",
+    notFoundDesc: "La página que buscas no existe.",
+    goHome: "Ir al inicio",
+  },
+} as const;
+
+const t = ui[lang];
+
 const pageTitle = node
-  ? `${node.title} | Visit Korea Planner`
-  : "Page Not Found | Visit Korea Planner";
+  ? `${node.title} | ${t.siteName}`
+  : `${t.notFound} | ${t.siteName}`;
 
 const bodyClass = node ? (node.children && node.children.length > 0 ? "page--sub" : "page--leaf") : "page--sub";
 ---
 
 {node ? (
-  <BaseLayout title={pageTitle} bodyClass={bodyClass}>
+  <BaseLayout title={pageTitle} bodyClass={bodyClass} lang={lang}>
     <TreePage
       node={node}
       segments={segments}
-      parentPath={parentPath}
+      parentPath={withLang(parentPath, lang)}
       isHome={segments.length === 0}
       breadcrumbs={breadcrumbs}
+      lang={lang}
     />
   </BaseLayout>
 ) : (
-  <BaseLayout title={pageTitle} bodyClass={bodyClass}>
+  <BaseLayout title={pageTitle} bodyClass={bodyClass} lang={lang}>
     <section style="padding: 64px 0; text-align: center;">
-      <h1 class="t-h1" style="font-family: Fraunces, serif;">Page Not Found</h1>
-      <p class="t-subheading" style="color: #5f6b84;">The page you are looking for does not exist.</p>
+      <h1 class="t-h1" style="font-family: Fraunces, serif;">{t.notFound}</h1>
+      <p class="t-subheading" style="color: #5f6b84;">{t.notFoundDesc}</p>
       <a
-        href="/"
+        href={withLang("/", lang)}
         style="display: inline-flex; margin-top: 18px; padding: 10px 18px; border-radius: 999px; background: #1f6f8b; color: #fff;"
       >
-        Go Home
+        {t.goHome}
       </a>
     </section>
   </BaseLayout>

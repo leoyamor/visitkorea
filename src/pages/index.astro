@@ -2,11 +2,14 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import TreePage from "../components/TreePage.astro";
 import { siteTree } from "../data/siteTree";
+import { parseLang } from "../lib/i18n";
 
 const node = siteTree;
 const segments: string[] = [];
+const lang = parseLang(Astro.url.searchParams.get("lang"));
+const pageTitle = lang === "es" ? "Planificador de viaje a Corea" : "Visit Korea Planner";
 ---
 
-<BaseLayout title="Visit Korea Planner" bodyClass="home-bg">
-  <TreePage node={node} segments={segments} parentPath="/" isHome />
+<BaseLayout title={pageTitle} bodyClass="home-bg" lang={lang}>
+  <TreePage node={node} segments={segments} parentPath="/" isHome lang={lang} />
 </BaseLayout>

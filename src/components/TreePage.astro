@@ -1,5 +1,7 @@
 ---
 import type { TreeNode } from "../data/siteTree";
+import type { SupportedLang } from "../lib/i18n";
+import { withLang } from "../lib/i18n";
 
 type Props = {
   node: TreeNode;
@@ -7,14 +9,75 @@ type Props = {
   parentPath: string;
   isHome?: boolean;
   breadcrumbs?: { label: string; path: string }[];
+  lang?: SupportedLang;
 };
 
-const { node, segments, parentPath, isHome = false, breadcrumbs = [] } =
+const { node, segments, parentPath, isHome = false, breadcrumbs = [], lang = "en" } =
   Astro.props as Props;
 
 const basePath = segments.length ? `/${segments.join("/")}` : "";
 const children = node.children ?? [];
 const hasChildren = children.length > 0;
+const t = {
+  en: {
+    language: "Language",
+    english: "English",
+    spanish: "Spanish",
+    plannerName: "Visit Korea Planner",
+    homeTitle: "Travel Korea with Clarity, Not Overload",
+    homeLead:
+      "Clear, practical answers to help you decide where to go, how long to stay, and how to travel Korea with confidence.",
+    back: "Back",
+    home: "Home",
+    backAria: "Back to previous page",
+    homeAria: "Go to home",
+    nextSet: "Explore the next set of guides.",
+    startHere: "Start here",
+    pickSub: "Pick a sub page",
+    quickAnswer: "Quick answer",
+    homeSectionDesc: "Begin with a category, then drill down to detailed tips.",
+    subSectionDesc: "Each card opens a focused guide.",
+    quickFallback: "Here is the short description, with more detail to be added later.",
+    cardFallback: "Short summary coming soon.",
+    guidePreparing: "This guide is being prepared.",
+    identity: "This site helps you decide what fits your trip — not just list information.",
+    homeCtaTitle: "Not sure where to go next?",
+    homeCtaDesc: "Try these dependable starting points for first-time travelers.",
+    pillDays: "7 Days in Korea",
+    pillSim: "SIM or eSIM?",
+    pillSubway: "Using the Subway",
+    pillCityFit: "Which City Fits You Best?",
+  },
+  es: {
+    language: "Idioma",
+    english: "Inglés",
+    spanish: "Español",
+    plannerName: "Planificador de viaje a Corea",
+    homeTitle: "Viaja por Corea con claridad, sin sobrecarga",
+    homeLead:
+      "Respuestas claras y prácticas para ayudarte a decidir adónde ir, cuánto tiempo quedarte y cómo viajar por Corea con confianza.",
+    back: "Volver",
+    home: "Inicio",
+    backAria: "Volver a la página anterior",
+    homeAria: "Ir al inicio",
+    nextSet: "Explora el siguiente conjunto de guías.",
+    startHere: "Empieza aquí",
+    pickSub: "Elige una subpágina",
+    quickAnswer: "Respuesta rápida",
+    homeSectionDesc: "Empieza con una categoría y luego entra en detalles útiles.",
+    subSectionDesc: "Cada tarjeta abre una guía enfocada.",
+    quickFallback: "Aquí tienes una descripción breve; pronto añadiremos más detalles.",
+    cardFallback: "Resumen breve próximamente.",
+    guidePreparing: "Esta guía se está preparando.",
+    identity: "Este sitio te ayuda a decidir lo que mejor se adapta a tu viaje, no solo a listar información.",
+    homeCtaTitle: "¿No sabes a dónde ir después?",
+    homeCtaDesc: "Prueba estos puntos de partida confiables para viajeros primerizos.",
+    pillDays: "7 días en Corea",
+    pillSim: "¿SIM o eSIM?",
+    pillSubway: "Cómo usar el metro",
+    pillCityFit: "¿Qué ciudad encaja mejor contigo?",
+  },
+}[lang];
 
 const getInitials = (title: string) => {
   const words = title.replace(/[?]/g, "").split(" ").filter(Boolean);
@@ -485,23 +548,27 @@ const breadcrumb = breadcrumbs;
 
 <section class="hero">
   <div>
-    <p class="eyebrow">Visit Korea Planner</p>
-    <h1 class="t-h1">{isHome ? "Travel Korea with Clarity, Not Overload" : node.title}</h1>
+    <div class="hero-tools">
+      <label class="lang-label" for="lang-switcher">{t.language}</label>
+      <select id="lang-switcher" class="lang-select" data-lang-switcher>
+        <option value="en" selected={lang === "en"}>{t.english}</option>
+        <option value="es" selected={lang === "es"}>{t.spanish}</option>
+      </select>
+    </div>
+    <p class="eyebrow">{t.plannerName}</p>
+    <h1 class="t-h1">{isHome ? t.homeTitle : node.title}</h1>
     {!isHome && (
       <div class="nav-links">
-        <a href={parentPath} aria-label="Back to previous page">← Back</a>
+        <a href={withLang(parentPath, lang)} aria-label={t.backAria}>← {t.back}</a>
         <span class="nav-sep" aria-hidden="true">·</span>
-        <a href="/" aria-label="Go to home">Home</a>
+        <a href={withLang("/", lang)} aria-label={t.homeAria}>{t.home}</a>
       </div>
     )}
     <p class="lead t-subheading">
       {isHome ? (
-        <>
-          Clear, practical answers to help you decide where to go, how long to
-          stay, and how to travel Korea with confidence.
-        </>
+        t.homeLead
       ) : (
-        node.description ?? "Explore the next set of guides."
+        node.description ?? t.nextSet
       )}
     </p>
   </div>
@@ -509,27 +576,27 @@ const breadcrumb = breadcrumbs;
 
 <section class="section">
   <div class="section-header">
-    <h2 class="t-section">{isHome ? "Start here" : hasChildren ? "Pick a sub page" : "Quick answer"}</h2>
+    <h2 class="t-section">{isHome ? t.startHere : hasChildren ? t.pickSub : t.quickAnswer}</h2>
     <p>
       {isHome
-        ? "Begin with a category, then drill down to detailed tips."
+        ? t.homeSectionDesc
         : hasChildren
-        ? "Each card opens a focused guide."
-        : node.quickAnswer ?? "Here is the short description, with more detail to be added later."}
+        ? t.subSectionDesc
+        : node.quickAnswer ?? t.quickFallback}
     </p>
   </div>
 
   {hasChildren ? (
     <div class="grid" data-orphans={children.length % 3}>
       {children.map((child) => (
-        <a class="card" href={`${basePath}/${child.slug}`} data-tone={getTone(child.icon)}>
+        <a class="card" href={withLang(`${basePath}/${child.slug}`, lang)} data-tone={getTone(child.icon)}>
           <div class="thumb" style={`--thumb: url(${getImage(child.image ?? child.icon, child.title, child.slug)})`}>
             <span class="thumb-mask" aria-hidden="true"></span>
           </div>
           <div class="card-body">
             <div>
               <h3 class="t-card-title">{child.title}</h3>
-              <p class="t-card-desc">{child.description ?? "Short summary coming soon."}</p>
+              <p class="t-card-desc">{child.description ?? t.cardFallback}</p>
             </div>
           </div>
         </a>
@@ -543,7 +610,7 @@ const breadcrumb = breadcrumbs;
         </div>
         <div>
           <h3 class="t-section">{node.title}</h3>
-          <p class="t-subheading">{node.description ?? "This guide is being prepared."}</p>
+          <p class="t-subheading">{node.description ?? t.guidePreparing}</p>
         </div>
       </div>
       {node.content?.map((section) => (
@@ -569,7 +636,7 @@ const breadcrumb = breadcrumbs;
       ))}
       <div class="content-identity">
         <span class="content-identity-icon" aria-hidden="true" set:html={renderIcon("spark")} />
-        <span>This site helps you decide what fits your trip — not just list information.</span>
+        <span>{t.identity}</span>
       </div>
     </div>
   )}
@@ -578,17 +645,37 @@ const breadcrumb = breadcrumbs;
 {isHome && (
   <section class="section light">
     <div class="section-header">
-      <h2 class="t-section">Not sure where to go next?</h2>
-      <p>Try these dependable starting points for first-time travelers.</p>
+      <h2 class="t-section">{t.homeCtaTitle}</h2>
+      <p>{t.homeCtaDesc}</p>
     </div>
     <div class="pill-row">
-      <a class="pill" href="/plan-your-trip/7-days-in-korea">7 Days in Korea</a>
-      <a class="pill" href="/travel-basics/sim-or-esim">SIM or eSIM?</a>
-      <a class="pill" href="/getting-around-korea/using-the-subway">Using the Subway</a>
-      <a class="pill" href="/choose-a-city/which-city-fits-you-best">Which City Fits You Best?</a>
+      <a class="pill" href={withLang("/plan-your-trip/7-days-in-korea", lang)}>{t.pillDays}</a>
+      <a class="pill" href={withLang("/travel-basics/sim-or-esim", lang)}>{t.pillSim}</a>
+      <a class="pill" href={withLang("/getting-around-korea/using-the-subway", lang)}>{t.pillSubway}</a>
+      <a class="pill" href={withLang("/choose-a-city/which-city-fits-you-best", lang)}>{t.pillCityFit}</a>
     </div>
   </section>
 )}
+
+<script is:inline>
+  (() => {
+    const select = document.querySelector("[data-lang-switcher]");
+    if (!select) return;
+
+    select.addEventListener("change", () => {
+      const nextLang = select.value === "es" ? "es" : "en";
+      localStorage.setItem("vk_lang", nextLang);
+
+      const url = new URL(window.location.href);
+      if (nextLang === "es") {
+        url.searchParams.set("lang", "es");
+      } else {
+        url.searchParams.delete("lang");
+      }
+      window.location.href = url.toString();
+    });
+  })();
+</script>
 
 <style>
   .hero {
@@ -609,6 +696,30 @@ const breadcrumb = breadcrumbs;
     position: relative;
     z-index: 1;
     max-width: 760px;
+  }
+
+  .hero-tools {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  .lang-label {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+  }
+
+  .lang-select {
+    border-radius: 999px;
+    border: 1px solid var(--border-dark);
+    background: rgba(18, 14, 11, 0.6);
+    color: var(--text-strong);
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    min-width: 118px;
+    cursor: pointer;
   }
 
   .home-bg .hero::before {

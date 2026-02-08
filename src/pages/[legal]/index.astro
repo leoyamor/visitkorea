@@ -62,6 +62,10 @@ const node: TreeNode = entry
       description: fallbackDescription,
       quickAnswer: fallbackDescription,
     };
+
+const pageBreadcrumbs = entry
+  ? [{ label: isSpanish ? entry.titleEs : entry.titleEn, path: withLang(entry.path, lang) }]
+  : [];
 ---
 
 <BaseLayout
@@ -72,17 +76,14 @@ const node: TreeNode = entry
   canonicalUrl={canonicalUrl}
   alternateEnUrl={alternateEnUrl}
   alternateEsUrl={alternateEsUrl}
+  breadcrumbs={pageBreadcrumbs}
   noindex={!entry}
 >
   <TreePage
     node={node}
     segments={entry ? [entry.slug] : []}
     parentPath={withLang("/", lang)}
-    breadcrumbs={
-      entry
-        ? [{ label: isSpanish ? entry.titleEs : entry.titleEn, path: withLang(entry.path, lang) }]
-        : []
-    }
+    breadcrumbs={pageBreadcrumbs}
     lang={lang}
   />
 </BaseLayout>

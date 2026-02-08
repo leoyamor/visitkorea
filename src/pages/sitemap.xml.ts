@@ -33,15 +33,22 @@ const escapeXml = (value: string) =>
 export const GET = () => {
   const routeSet = new Set<string>([...getTreePaths(), ...legalPaths]);
   const routes = [...routeSet].sort((a, b) => a.localeCompare(b));
+  const lastModified = new Date().toISOString();
 
   const urls = routes
     .map((route) => {
       const enUrl = absoluteUrl(route);
       const esUrl = absoluteUrl(withLang(route, "es"));
+      const depth = route === "/" ? 0 : route.split("/").filter(Boolean).length;
+      const priority = route === "/" ? "1.0" : depth <= 1 ? "0.8" : "0.6";
+      const changeFreq = depth <= 1 ? "weekly" : "monthly";
 
       return [
         "<url>",
         `<loc>${escapeXml(enUrl)}</loc>`,
+        `<lastmod>${escapeXml(lastModified)}</lastmod>`,
+        `<changefreq>${changeFreq}</changefreq>`,
+        `<priority>${priority}</priority>`,
         `<xhtml:link rel="alternate" hreflang="en" href="${escapeXml(enUrl)}" />`,
         `<xhtml:link rel="alternate" hreflang="es" href="${escapeXml(esUrl)}" />`,
         `<xhtml:link rel="alternate" hreflang="x-default" href="${escapeXml(enUrl)}" />`,

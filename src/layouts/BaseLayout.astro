@@ -1,6 +1,16 @@
 ---
 import { withLang, type SupportedLang } from "../lib/i18n";
-import { absoluteUrl } from "../lib/site";
+import {
+  absoluteUrl,
+  DEFAULT_OG_IMAGE_ALT,
+  DEFAULT_OG_IMAGE_PATH,
+  SITE_NAME,
+} from "../lib/site";
+
+type BreadcrumbItem = {
+  label: string;
+  path: string;
+};
 
 const {
   title = "Visit Korea Planner",
@@ -10,7 +20,10 @@ const {
   canonicalUrl = absoluteUrl("/"),
   alternateEnUrl = absoluteUrl("/"),
   alternateEsUrl = absoluteUrl(withLang("/", "es")),
+  breadcrumbs = [],
   noindex = false,
+  ogImage = absoluteUrl(DEFAULT_OG_IMAGE_PATH),
+  ogImageAlt = DEFAULT_OG_IMAGE_ALT,
 } = Astro.props as {
   title?: string;
   description?: string;
@@ -19,8 +32,67 @@ const {
   canonicalUrl?: string;
   alternateEnUrl?: string;
   alternateEsUrl?: string;
+  breadcrumbs?: BreadcrumbItem[];
   noindex?: boolean;
+  ogImage?: string;
+  ogImageAlt?: string;
 };
+
+const robotsContent = noindex
+  ? "noindex, nofollow"
+  : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1";
+const locale = lang === "es" ? "es_ES" : "en_US";
+const alternateLocale = lang === "es" ? "en_US" : "es_ES";
+const siteName = lang === "es" ? "Planificador de viaje a Corea" : SITE_NAME;
+const homeLabel = lang === "es" ? "Inicio" : "Home";
+const localizedHomePath = withLang("/", lang);
+
+const breadcrumbTrail = [{ label: homeLabel, path: localizedHomePath }, ...breadcrumbs].reduce(
+  (acc, item) => {
+    if (!item?.label || !item?.path) return acc;
+    if (acc.some((existing) => existing.path === item.path)) return acc;
+    acc.push(item);
+    return acc;
+  },
+  [] as BreadcrumbItem[]
+);
+
+const schemaGraph: Record<string, unknown>[] = [
+  {
+    "@type": "WebSite",
+    "@id": `${absoluteUrl("/")}#website`,
+    url: absoluteUrl("/"),
+    name: siteName,
+    inLanguage: lang,
+  },
+  {
+    "@type": "WebPage",
+    "@id": `${canonicalUrl}#webpage`,
+    url: canonicalUrl,
+    name: title,
+    description,
+    inLanguage: lang,
+    isPartOf: { "@id": `${absoluteUrl("/")}#website` },
+  },
+];
+
+if (breadcrumbTrail.length > 1) {
+  schemaGraph.push({
+    "@type": "BreadcrumbList",
+    "@id": `${canonicalUrl}#breadcrumb`,
+    itemListElement: breadcrumbTrail.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.label,
+      item: absoluteUrl(item.path),
+    })),
+  });
+}
+
+const schemaJson = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": schemaGraph,
+});
 
 ---
 
@@ -30,23 +102,40 @@ const {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#120E0B" />
+    <meta name="robots" content={robotsContent} />
+    <meta name="googlebot" content={robotsContent} />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="author" content={siteName} />
     <link rel="icon" href="/favicon.ico" />
+    <link rel="sitemap" type="application/xml" href={absoluteUrl("/sitemap.xml")} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Work+Sans:wght@300;400;500;600&display=swap"
+    />
     <meta name="description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
-    <meta property="og:site_name" content="Visit Korea Planner" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content={ogImageAlt} />
+    <meta property="og:locale" content={locale} />
+    <meta property="og:locale:alternate" content={alternateLocale} />
     <meta name="twitter:card" content="summary_large_image" />
-    {noindex ? <meta name="robots" content="noindex, nofollow" /> : null}
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
     <link rel="canonical" href={canonicalUrl} />
     <link rel="alternate" hreflang="en" href={alternateEnUrl} />
     <link rel="alternate" hreflang="es" href={alternateEsUrl} />
     <link rel="alternate" hreflang="x-default" href={alternateEnUrl} />
+    <script type="application/ld+json" set:html={schemaJson} />
     <title>{title}</title>
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Work+Sans:wght@300;400;500;600&display=swap");
-
       :root {
         color-scheme: dark;
         --bg-0: #120e0b;
@@ -205,10 +294,8 @@ const {
     <main id="content">
       <slot />
     </main>
-    <script is:inline define:vars={{ lang }}>
+    <script is:inline>
       (() => {
-        const url = new URL(window.location.href);
-        const queryLang = url.searchParams.get("lang");
         const STORAGE_KEY = "visitkorea_lang_pref";
         const readLangPref = () => {
           try {
@@ -225,56 +312,22 @@ const {
             // Ignore storage failures (privacy mode, blocked storage, etc.)
           }
         };
+        const getNavigationType = () => {
+          const navEntry = performance.getEntriesByType("navigation")[0];
+          if (!navEntry || typeof navEntry !== "object" || !("type" in navEntry)) {
+            return "navigate";
+          }
+          return navEntry.type;
+        };
         const hasSpanishCookie = () =>
           /(?:^|;\s*)googtrans=\/(?:en|auto)\/es(?:;|$)/.test(document.cookie);
-        const syncUrlWithPreference = () => {
-          const currentUrl = new URL(window.location.href);
-          const currentQueryLang = currentUrl.searchParams.get("lang");
-          const preferredLang = readLangPref();
-          const referrer = document.referrer;
-          const fromSpanishReferrer =
-            referrer.startsWith(window.location.origin) && /[?&]lang=es(?:&|$)/.test(referrer);
-          const prefersSpanish = preferredLang === "es" || fromSpanishReferrer;
-
-          if (prefersSpanish && currentQueryLang !== "es") {
-            currentUrl.searchParams.set("lang", "es");
-            window.location.replace(currentUrl.toString());
-            return true;
-          }
-
-          if (currentQueryLang === "en") {
-            currentUrl.searchParams.delete("lang");
-            window.history.replaceState({}, "", currentUrl.toString());
-            return false;
-          }
-          return false;
-        };
-
-        window.addEventListener("pageshow", () => {
-          syncUrlWithPreference();
-        });
-        window.addEventListener("popstate", () => {
-          window.setTimeout(() => {
-            syncUrlWithPreference();
-          }, 0);
-        });
-
-        let langPref = readLangPref();
-        if (queryLang === "es") {
-          langPref = "es";
-          writeLangPref("es");
-        }
-        if (queryLang === "en") {
-          url.searchParams.delete("lang");
-          window.history.replaceState({}, "", url.toString());
-          if (langPref === null) {
-            langPref = "en";
-            writeLangPref("en");
-          }
-        }
-        if (syncUrlWithPreference()) {
-          return;
-        }
+        const hasTranslatedClass = () =>
+          document.documentElement.classList.contains("translated-ltr") ||
+          document.documentElement.classList.contains("translated-rtl") ||
+          document.body.classList.contains("translated-ltr") ||
+          document.body.classList.contains("translated-rtl");
+        const hasSpanishGoogTransState = () =>
+          hasSpanishCookie() || window.location.hash.startsWith("#googtrans");
 
         const cookieVariants = [location.hostname, `.${location.hostname}`];
         const setGoogTrans = (value, maxAge = 31536000) => {
@@ -289,17 +342,6 @@ const {
             document.cookie = `googtrans=;path=/;domain=${domain};max-age=0`;
           }
         };
-
-        const activeLang = queryLang === "es" || (queryLang === null && langPref === "es") ? "es" : "en";
-        document.documentElement.lang = activeLang;
-
-        const hasSpanishGoogTransState = () =>
-          hasSpanishCookie() || window.location.hash.startsWith("#googtrans");
-        const hasTranslatedClass = () =>
-          document.documentElement.classList.contains("translated-ltr") ||
-          document.documentElement.classList.contains("translated-rtl") ||
-          document.body.classList.contains("translated-ltr") ||
-          document.body.classList.contains("translated-rtl");
 
         const initTranslate = () => {
           if (!window.google || !window.google.translate || !window.google.translate.TranslateElement) {
@@ -339,35 +381,99 @@ const {
           document.head.appendChild(script);
         };
 
-        if (activeLang !== "es") {
+        const normalizeEnQuery = () => {
+          const currentUrl = new URL(window.location.href);
+          if (currentUrl.searchParams.get("lang") === "en") {
+            currentUrl.searchParams.delete("lang");
+            window.history.replaceState({}, "", currentUrl.toString());
+          }
+        };
+
+        const applyEnglishState = () => {
+          document.documentElement.lang = "en";
+          const cleanUrl = new URL(window.location.href);
           const needsEnglishReset = hasSpanishGoogTransState() || hasTranslatedClass();
           clearGoogTrans();
-
-          if (url.hash.startsWith("#googtrans")) {
-            url.hash = "";
-            window.history.replaceState({}, "", url.toString());
+          if (cleanUrl.searchParams.get("lang") === "en") {
+            cleanUrl.searchParams.delete("lang");
+          }
+          if (cleanUrl.hash.startsWith("#googtrans")) {
+            cleanUrl.hash = "";
+            window.history.replaceState({}, "", cleanUrl.toString());
           }
           if (needsEnglishReset) {
-            const cleanUrl = new URL(window.location.href);
             cleanUrl.hash = "";
+            cleanUrl.searchParams.delete("lang");
             window.location.replace(cleanUrl.toString());
-            return;
           }
-          return;
-        }
+        };
 
-        ensureSpanishTranslate();
-        window.addEventListener("pageshow", () => {
-          const pageUrl = new URL(window.location.href);
-          if (pageUrl.searchParams.get("lang") !== "es" && readLangPref() !== "es" && !hasSpanishCookie()) {
-            return;
+        const applySpanishState = () => {
+          const currentUrl = new URL(window.location.href);
+          if (currentUrl.searchParams.get("lang") !== "es") {
+            currentUrl.searchParams.set("lang", "es");
+            window.history.replaceState({}, "", currentUrl.toString());
           }
+          document.documentElement.lang = "es";
           ensureSpanishTranslate();
           window.setTimeout(() => {
             if (!hasTranslatedClass()) {
               ensureSpanishTranslate();
             }
           }, 350);
+        };
+
+        const resolveActiveLang = () => {
+          normalizeEnQuery();
+          const currentUrl = new URL(window.location.href);
+          const queryLang = currentUrl.searchParams.get("lang");
+          const storedLang = readLangPref();
+          const navType = getNavigationType();
+          const fromSpanishInternalReferrer =
+            document.referrer.startsWith(window.location.origin) &&
+            /[?&]lang=es(?:&|$)/.test(document.referrer);
+          const shouldKeepSpanish =
+            queryLang !== "es" &&
+            storedLang === "es" &&
+            (navType === "back_forward" || fromSpanishInternalReferrer);
+
+          if (queryLang === "es" || shouldKeepSpanish) {
+            writeLangPref("es");
+            return "es";
+          }
+
+          writeLangPref("en");
+          return "en";
+        };
+
+        const syncLanguageOnHistoryNavigation = () => {
+          if (readLangPref() === "es") {
+            applySpanishState();
+            return;
+          }
+          applyEnglishState();
+        };
+
+        const activeLang = resolveActiveLang();
+        if (activeLang === "es") {
+          applySpanishState();
+        } else {
+          applyEnglishState();
+        }
+
+        window.addEventListener("pageshow", (event) => {
+          if (event.persisted) {
+            syncLanguageOnHistoryNavigation();
+            return;
+          }
+          const pageUrl = new URL(window.location.href);
+          if (pageUrl.searchParams.get("lang") === "es") {
+            applySpanishState();
+          }
+        });
+
+        window.addEventListener("popstate", () => {
+          window.setTimeout(syncLanguageOnHistoryNavigation, 0);
         });
       })();
     </script>

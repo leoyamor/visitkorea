@@ -230,16 +230,16 @@ const {
           const currentQueryLang = currentUrl.searchParams.get("lang");
           const preferredLang = readLangPref();
 
+          if (preferredLang === "es" && currentQueryLang !== "es") {
+            currentUrl.searchParams.set("lang", "es");
+            window.location.replace(currentUrl.toString());
+            return true;
+          }
+
           if (currentQueryLang === "en") {
             currentUrl.searchParams.delete("lang");
             window.history.replaceState({}, "", currentUrl.toString());
             return false;
-          }
-
-          if (!currentQueryLang && preferredLang === "es") {
-            currentUrl.searchParams.set("lang", "es");
-            window.location.replace(currentUrl.toString());
-            return true;
           }
           return false;
         };
@@ -261,8 +261,10 @@ const {
         if (queryLang === "en") {
           url.searchParams.delete("lang");
           window.history.replaceState({}, "", url.toString());
-          langPref = "en";
-          writeLangPref("en");
+          if (langPref === null) {
+            langPref = "en";
+            writeLangPref("en");
+          }
         }
         if (syncUrlWithPreference()) {
           return;

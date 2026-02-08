@@ -162,8 +162,13 @@ const linkify = (text: string) => {
 
   const parts = withUrls.split(/(<a\b[^>]*>.*?<\/a>)/g);
   return parts
-    .map((part) => {
+    .map((part, index) => {
       if (part.startsWith("<a")) return part;
+      // For "Name: <url>" patterns, keep the label plain text and link only the URL.
+      const nextPart = parts[index + 1] ?? "";
+      if (nextPart.startsWith("<a") && /:\s*$/.test(part)) {
+        return part;
+      }
       let next = part;
       for (const [keyword, href] of Object.entries(keywordLinks)) {
         const safeHref = href.replace(/"/g, "&quot;");

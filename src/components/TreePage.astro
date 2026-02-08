@@ -1,6 +1,5 @@
 ---
 import type { TreeNode } from "../data/siteTree";
-import { getEditorialMeta } from "../lib/editorial";
 import type { SupportedLang } from "../lib/i18n";
 import { withLang } from "../lib/i18n";
 
@@ -19,7 +18,6 @@ const { node, segments, parentPath, isHome = false, breadcrumbs = [], lang = "en
 const basePath = segments.length ? `/${segments.join("/")}` : "";
 const children = node.children ?? [];
 const hasChildren = children.length > 0;
-const editorial = getEditorialMeta(lang);
 const t = {
   en: {
     language: "Language",
@@ -583,20 +581,6 @@ const breadcrumb = breadcrumbs;
         node.description ?? t.nextSet
       )}
     </p>
-    <div class="editorial-meta" aria-label={editorial.labels.aria}>
-      <span>
-        <strong>{editorial.labels.writtenBy}:</strong> {editorial.authorName}
-      </span>
-      <span class="meta-sep" aria-hidden="true">·</span>
-      <span>
-        <strong>{editorial.labels.reviewedBy}:</strong> {editorial.reviewerName}
-      </span>
-      <span class="meta-sep" aria-hidden="true">·</span>
-      <span>
-        <strong>{editorial.labels.updated}:</strong>{" "}
-        <time datetime={editorial.updatedIso}>{editorial.updatedText}</time>
-      </span>
-    </div>
   </div>
 </section>
 
@@ -972,35 +956,6 @@ const breadcrumb = breadcrumbs;
     line-height: 1.55;
     letter-spacing: 0.006em;
     text-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
-  }
-
-  .editorial-meta {
-    display: inline-flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-    margin: 2px auto 0;
-    padding: 8px 12px;
-    border-radius: 999px;
-    border: 1px solid var(--border-dark);
-    background: rgba(18, 14, 11, 0.58);
-    color: var(--text-soft);
-    font-size: 0.8rem;
-    line-height: 1.5;
-  }
-
-  .editorial-meta strong {
-    color: var(--text-strong);
-    font-weight: 600;
-  }
-
-  .editorial-meta time {
-    color: var(--text-soft);
-  }
-
-  .meta-sep {
-    color: var(--text-muted);
-    font-weight: 600;
   }
 
   .button {

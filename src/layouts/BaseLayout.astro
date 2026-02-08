@@ -380,6 +380,10 @@ const schemaJson = JSON.stringify({
           }
           return base;
         };
+        const isSpanishPath = (pathname) => {
+          const normalized = normalizePath(pathname);
+          return normalized === "/es" || normalized.startsWith("/es/");
+        };
 
         const normalizeLegacyLangQueryUrl = () => {
           const currentUrl = new URL(window.location.href);
@@ -472,12 +476,68 @@ const schemaJson = JSON.stringify({
           script.addEventListener("load", initTranslate, { once: true });
           document.head.appendChild(script);
         };
-        if (activeLang === "es") {
+        const ES_RECOVERY_KEY = "visitkorea_es_recovery";
+        const getEsRecoveryId = () => `${window.location.pathname}${window.location.search}`;
+        const readEsRecoveryId = () => {
+          try {
+            return sessionStorage.getItem(ES_RECOVERY_KEY);
+          } catch {
+            return null;
+          }
+        };
+        const writeEsRecoveryId = (value) => {
+          try {
+            sessionStorage.setItem(ES_RECOVERY_KEY, value);
+          } catch {
+            // Ignore session storage failures.
+          }
+        };
+        const clearEsRecoveryId = () => {
+          try {
+            sessionStorage.removeItem(ES_RECOVERY_KEY);
+          } catch {
+            // Ignore session storage failures.
+          }
+        };
+        const enforceSpanishRendering = () => {
+          if (!isSpanishPath(window.location.pathname)) {
+            return;
+          }
+          document.documentElement.lang = "es";
           ensureSpanishTranslate();
+          window.setTimeout(() => {
+            if (hasTranslatedClass()) {
+              clearEsRecoveryId();
+              return;
+            }
+            ensureSpanishTranslate();
+            window.setTimeout(() => {
+              if (hasTranslatedClass()) {
+                clearEsRecoveryId();
+                return;
+              }
+              const recoveryId = getEsRecoveryId();
+              if (readEsRecoveryId() === recoveryId) {
+                return;
+              }
+              writeEsRecoveryId(recoveryId);
+              window.location.reload();
+            }, 700);
+          }, 260);
+        };
+        if (activeLang === "es") {
+          enforceSpanishRendering();
+          window.addEventListener("pageshow", () => {
+            window.setTimeout(enforceSpanishRendering, 0);
+          });
+          window.addEventListener("popstate", () => {
+            window.setTimeout(enforceSpanishRendering, 0);
+          });
           return;
         }
 
         const cleanUrl = new URL(window.location.href);
+        clearEsRecoveryId();
         clearGoogTrans();
         if (cleanUrl.hash.startsWith("#googtrans")) {
           cleanUrl.hash = "";

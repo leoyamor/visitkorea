@@ -53,7 +53,7 @@ const t = {
     english: "Inglés",
     spanish: "Español",
     plannerName: "Planificador de viaje a Corea",
-    homeTitle: "Viaja por Corea con claridad, sin sobrecarga",
+    homeTitle: "Viaja por Corea con claridad, sin complicaciones",
     homeLead:
       "Respuestas claras y prácticas para ayudarte a decidir adónde ir, cuánto tiempo quedarte y cómo viajar por Corea con confianza.",
     back: "Volver",
@@ -65,13 +65,13 @@ const t = {
     pickSub: "Elige una subpágina",
     quickAnswer: "Respuesta rápida",
     homeSectionDesc: "Empieza con una categoría y luego entra en detalles útiles.",
-    subSectionDesc: "Cada tarjeta abre una guía enfocada.",
+    subSectionDesc: "Cada tarjeta abre una guía específica.",
     quickFallback: "Aquí tienes una descripción breve; pronto añadiremos más detalles.",
     cardFallback: "Resumen breve próximamente.",
     guidePreparing: "Esta guía se está preparando.",
-    identity: "Este sitio te ayuda a decidir lo que mejor se adapta a tu viaje, no solo a listar información.",
+    identity: "Este sitio te ayuda a decidir qué encaja mejor con tu viaje; no solo te muestra información.",
     homeCtaTitle: "¿No sabes a dónde ir después?",
-    homeCtaDesc: "Prueba estos puntos de partida confiables para viajeros primerizos.",
+    homeCtaDesc: "Prueba estos puntos de partida confiables para quienes viajan por primera vez.",
     pillDays: "7 días en Corea",
     pillSim: "¿SIM o eSIM?",
     pillSubway: "Cómo usar el metro",
@@ -661,6 +661,33 @@ const breadcrumb = breadcrumbs;
   (() => {
     const select = document.querySelector("[data-lang-switcher]");
     if (!select) return;
+    const getCurrentLang = () =>
+      new URL(window.location.href).searchParams.get("lang") === "es" ? "es" : "en";
+
+    const syncInternalLinks = (targetLang) => {
+      const anchors = document.querySelectorAll("a[href]");
+      anchors.forEach((anchor) => {
+        const rawHref = anchor.getAttribute("href");
+        if (!rawHref) return;
+        if (
+          rawHref.startsWith("#") ||
+          rawHref.startsWith("mailto:") ||
+          rawHref.startsWith("tel:") ||
+          rawHref.startsWith("javascript:")
+        ) {
+          return;
+        }
+        const next = new URL(rawHref, window.location.origin);
+        if (next.origin !== window.location.origin) return;
+
+        if (targetLang === "es") {
+          next.searchParams.set("lang", "es");
+        } else {
+          next.searchParams.delete("lang");
+        }
+        anchor.setAttribute("href", `${next.pathname}${next.search}${next.hash}`);
+      });
+    };
 
     const cookieVariants = [location.hostname, `.${location.hostname}`];
     const setGoogTrans = (value, maxAge = 31536000) => {
@@ -676,6 +703,10 @@ const breadcrumb = breadcrumbs;
       }
     };
 
+    const currentLang = getCurrentLang();
+    select.value = currentLang;
+    syncInternalLinks(currentLang);
+
     select.addEventListener("change", () => {
       const nextLang = select.value === "es" ? "es" : "en";
       if (nextLang === "es") {
@@ -683,8 +714,6 @@ const breadcrumb = breadcrumbs;
         setGoogTrans("/auto/es");
       } else {
         clearGoogTrans();
-        setGoogTrans("/en/en");
-        setGoogTrans("/auto/en");
       }
 
       const url = new URL(window.location.href);

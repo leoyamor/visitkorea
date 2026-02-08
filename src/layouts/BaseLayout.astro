@@ -224,6 +224,7 @@ const {
         };
 
         const activeLang = queryLang === "es" || lang === "es" ? "es" : "en";
+        document.documentElement.lang = activeLang;
         const hasSpanishGoogTransState = () =>
           /(?:^|;\s*)googtrans=\/(?:en|auto)\/es(?:;|$)/.test(document.cookie) ||
           url.hash.startsWith("#googtrans");
@@ -239,8 +240,12 @@ const {
         } else {
           const needsEnglishReset = hasSpanishGoogTransState() || hasTranslatedClass();
           clearGoogTrans();
-          setGoogTrans("/en/en");
-          setGoogTrans("/auto/en");
+
+          if (queryLang === "en") {
+            url.searchParams.delete("lang");
+            window.history.replaceState({}, "", url.toString());
+          }
+
           if (url.hash.startsWith("#googtrans")) {
             url.hash = "";
             window.history.replaceState({}, "", url.toString());

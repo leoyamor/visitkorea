@@ -25,7 +25,7 @@ export const legalPages: LegalPageInfo[] = [
     titleEn: "About",
     titleEs: "Acerca de",
     descriptionEn: "Why this guide exists and how we keep it simple.",
-    descriptionEs: "Por qué existe esta guía y cómo mantenemos todo simple.",
+    descriptionEs: "Por qué existe esta guía y cómo mantenemos todo sencillo.",
   },
   {
     slug: "contact",
@@ -74,9 +74,9 @@ export const legalSections: LegalSection[] = [
       "We update pages when important travel details change.",
     ],
     bulletsEs: [
-      "El contenido es práctico y fácil para principiantes.",
+      "El contenido es práctico y fácil de entender para principiantes.",
       "Nos enfocamos en decisiones claras, no en sobrecarga de información.",
-      "Actualizamos las páginas cuando cambian datos importantes de viaje.",
+      "Actualizamos las páginas cuando cambian detalles de viaje importantes.",
     ],
     icon: "spark",
   },
@@ -94,7 +94,7 @@ export const legalSections: LegalSection[] = [
     bulletsEs: [
       "Podemos usar métricas anónimas para mejorar la calidad del contenido.",
       "Este sitio no solicita documentos de viaje sensibles.",
-      "Para políticas finales, verifica siempre en fuentes oficiales del gobierno.",
+      "Para información definitiva, verifica siempre en fuentes oficiales del gobierno.",
     ],
     icon: "shield",
   },
@@ -103,15 +103,15 @@ export const legalSections: LegalSection[] = [
     titleEn: "User Responsibility",
     titleEs: "Responsabilidad del usuario",
     bodyEn: "Travel rules can change quickly by nationality, season, and local policy updates.",
-    bodyEs: "Las reglas de viaje pueden cambiar rápidamente según nacionalidad, temporada y actualizaciones locales.",
+    bodyEs: "Las reglas de viaje pueden cambiar rápidamente según tu nacionalidad, la temporada y las actualizaciones de políticas locales.",
     bulletsEn: [
       "Use this site as a planning guide, not as legal advice.",
       "Confirm visas, entry rules, and transport conditions before booking.",
       "Keep your own travel documents and confirmations up to date.",
     ],
     bulletsEs: [
-      "Usa este sitio como guía de planificación, no como asesoría legal.",
-      "Confirma visados, reglas de entrada y transporte antes de reservar.",
+      "Usa este sitio como guía de planificación, no como asesoramiento legal.",
+      "Confirma visas, requisitos de entrada y condiciones de transporte antes de reservar.",
       "Mantén tus documentos y confirmaciones de viaje actualizados.",
     ],
     icon: "checklist",

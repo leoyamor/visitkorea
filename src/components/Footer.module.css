@@ -1,6 +1,6 @@
 .footer {
-  border-top: 1px solid var(--card-border);
-  background: rgba(21, 20, 19, 0.95);
+  border-top: 1px solid var(--border-dark);
+  background: rgba(18, 14, 11, 0.95);
   margin-top: 48px;
 }
 
@@ -31,7 +31,7 @@
 }
 
 .links a:hover {
-  color: var(--text);
+  color: var(--accent);
 }
 
 @media (min-width: 1024px) {

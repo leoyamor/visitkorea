@@ -22,11 +22,11 @@
 }
 
 .link:hover {
-  color: var(--text);
+  color: var(--accent);
 }
 
 .current {
-  color: var(--text);
+  color: var(--text-strong);
   text-overflow: ellipsis;
   overflow: hidden;
 }

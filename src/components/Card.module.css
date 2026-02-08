@@ -1,35 +1,39 @@
 .card {
-  border: 1px solid var(--card-border);
-  background: var(--card-bg);
-  border-radius: 18px;
+  border: 1px solid var(--border-paper);
+  background: var(--paper);
+  border-radius: var(--radius-xl);
   padding: 16px;
   display: flex;
   flex-direction: column;
   gap: 6px;
   min-height: 120px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  box-shadow: var(--shadow-1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  color: var(--ink-soft);
 }
 
 .card:hover {
   transform: translateY(-2px);
-  background: var(--card-hover-bg);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  border-color: rgba(124, 92, 255, 0.25);
+  box-shadow: var(--shadow-2);
 }
 
 .card h3 {
   margin: 0;
+  color: var(--ink-strong);
 }
 
 .card p {
   margin: 0;
-  color: var(--text-secondary);
+  color: var(--ink-soft);
 }
 
 .imageWrap {
-  border-radius: 14px;
+  border-radius: 16px;
   overflow: hidden;
-  background: #2b2620;
+  background: var(--paper-2);
   aspect-ratio: 16 / 9;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
 }
 
 .imageWrap img {

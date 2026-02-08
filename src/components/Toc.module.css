@@ -1,14 +1,16 @@
 .toc {
-  border: 1px solid var(--card-border);
-  background: var(--card-bg);
-  border-radius: 16px;
+  border: 1px solid var(--border-paper);
+  background: var(--paper);
+  border-radius: var(--radius-xl);
   padding: 16px;
+  box-shadow: var(--shadow-1);
 }
 
 .title {
   font-weight: 600;
   font-size: 0.9rem;
   margin: 0 0 8px 0;
+  color: var(--ink-strong);
 }
 
 .list {
@@ -22,9 +24,9 @@
 
 .link {
   font-size: 0.85rem;
-  color: var(--muted);
+  color: var(--ink-soft);
 }
 
 .link:hover {
-  color: var(--text);
+  color: var(--accent);
 }

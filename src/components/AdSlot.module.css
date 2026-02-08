@@ -1,16 +1,17 @@
 .adSlot {
   width: 100%;
-  border: 2px dashed var(--card-border);
-  background: var(--card-bg);
-  color: var(--muted);
+  border: 1px dashed var(--border-paper);
+  background: var(--paper-2);
+  color: var(--ink-soft);
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-size: 0.7rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 16px;
+  border-radius: var(--radius-xl);
   min-height: 80px;
+  box-shadow: var(--shadow-1);
 }
 
 .leaderboard {

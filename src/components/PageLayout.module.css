@@ -10,7 +10,7 @@
 
 .subtitle {
   margin: 0;
-  color: var(--muted);
+  color: var(--text-soft);
 }
 
 .contentGrid {
@@ -28,11 +28,12 @@
 }
 
 .intro {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 16px;
+  background: var(--paper);
+  border: 1px solid var(--border-paper);
+  border-radius: var(--radius-xl);
   padding: 16px;
-  color: var(--text-secondary);
+  color: var(--ink-soft);
+  box-shadow: var(--shadow-1);
 }
 
 .section h2 {
@@ -42,7 +43,7 @@
 .section ul {
   margin: 0;
   padding-left: 18px;
-  color: var(--muted);
+  color: var(--text-soft);
 }
 
 .section li {
@@ -59,7 +60,7 @@
 
 .faqItem p {
   margin: 0 0 8px;
-  color: var(--muted);
+  color: var(--text-soft);
 }
 
 .updated {

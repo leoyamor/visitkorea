@@ -8,20 +8,46 @@
 }
 
 .hero {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 8px;
+  padding: 22px 20px;
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(18, 14, 11, 0.72), rgba(18, 14, 11, 0.55)),
+    radial-gradient(900px 500px at 50% 30%, rgba(0, 0, 0, 0.25), transparent 60%);
+  pointer-events: none;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
 }
 
 .hero h1 {
   max-width: 720px;
   margin: 0;
+  color: var(--text-strong);
+  letter-spacing: 0.012em;
+  text-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
 }
 
 .hero p {
   max-width: 680px;
   margin: 0;
-  color: var(--text-secondary);
+  color: var(--text-soft);
+  line-height: 1.55;
+  letter-spacing: 0.006em;
+  text-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
 }
 
 .grid {
@@ -37,26 +63,30 @@
 }
 
 .intro {
-  border: 1px solid var(--card-border);
-  background: var(--card-bg);
-  border-radius: 16px;
+  border: 1px solid var(--border-paper);
+  background: var(--paper);
+  border-radius: var(--radius-xl);
   padding: 16px;
-  color: var(--text-secondary);
+  color: var(--ink-soft);
+  box-shadow: var(--shadow-1);
 }
 
 .section h2 {
   margin-bottom: 6px;
+  color: var(--text-strong);
 }
 
 .section p {
   margin-top: 0;
-  color: var(--muted);
+  color: var(--text-soft);
+  line-height: 1.6;
+  max-width: 68ch;
 }
 
 .bullets {
   margin: 0;
   padding-left: 18px;
-  color: var(--muted);
+  color: var(--text-soft);
 }
 
 .bullets li {
@@ -79,7 +109,7 @@
 
 .faqItem p {
   margin: 0 0 8px;
-  color: var(--muted);
+  color: var(--text-soft);
 }
 
 .updated {

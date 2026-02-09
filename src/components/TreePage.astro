@@ -49,7 +49,7 @@ const t = {
     pillSim: "SIM or eSIM?",
     pillSubway: "Using the Subway",
     pillCityFit: "Which City Fits You Best?",
-    pillCulture: "K-Culture & Everyday Korea",
+    pillNowMore: "Korea Now & More",
     nextPrefix: "Next",
     nextDecision: "Next decision",
     returnCheckpoints: "Return checkpoints",
@@ -58,7 +58,7 @@ const t = {
       "No login needed. Tick what you completed, then screenshot or bookmark this page for later.",
     bookmarkTip: "Pro tip: Save this page to your home screen for quick access during your trip.",
     returnLatest: "Latest Travel Updates",
-    returnCulture: "K-Culture & Everyday Korea",
+    returnNowMore: "Korea Now & More",
     updatedLabel: "Last updated",
     sourceNote: "For final booking decisions, always verify with official sources.",
     nextFallback: "Latest Travel Updates for Korea",
@@ -91,7 +91,7 @@ const t = {
     pillSim: "¿SIM o eSIM?",
     pillSubway: "Cómo usar el metro",
     pillCityFit: "¿Qué ciudad encaja mejor contigo?",
-    pillCulture: "Cultura y vida diaria en Corea",
+    pillNowMore: "Corea ahora y más",
     nextPrefix: "Siguiente",
     nextDecision: "Siguiente decisión",
     returnCheckpoints: "Puntos para volver",
@@ -100,7 +100,7 @@ const t = {
       "Sin registro. Marca lo que ya hiciste y guarda una captura o marcador para volver rápido.",
     bookmarkTip: "Consejo: guarda esta página en tu pantalla de inicio para usarla durante el viaje.",
     returnLatest: "Últimas actualizaciones",
-    returnCulture: "Cultura y vida diaria",
+    returnNowMore: "Corea ahora y más",
     updatedLabel: "Última actualización",
     sourceNote: "Antes de reservar, confirma siempre con fuentes oficiales.",
     nextFallback: "Últimas actualizaciones para Corea",
@@ -573,7 +573,7 @@ const getImage = (key?: string, title?: string, slug?: string) => {
 
 const editorialMeta = getEditorialMeta(lang);
 const latestUpdatesPath = withLang("/latest-travel-updates-for-korea", lang);
-const culturePath = withLang("/k-culture-and-everyday-korea", lang);
+const nowMorePath = withLang("/korea-now-and-more", lang);
 const isLeafPage = !isHome && !hasChildren;
 const rootSlug = segments[0] ?? "";
 
@@ -797,7 +797,7 @@ const breadcrumb = breadcrumbs;
             <p class="leaf-tools-label">{t.returnCheckpoints}</p>
             <div class="leaf-return-links">
               <a href={latestUpdatesPath} data-kpi-section="leaf_return_latest">{t.returnLatest}</a>
-              <a href={culturePath} data-kpi-section="leaf_return_culture">{t.returnCulture}</a>
+              <a href={nowMorePath} data-kpi-section="leaf_return_now_more">{t.returnNowMore}</a>
             </div>
           </div>
 
@@ -839,7 +839,7 @@ const breadcrumb = breadcrumbs;
       <a class="pill" href={withLang("/travel-basics/sim-or-esim", lang)} data-kpi-section="home_pill_sim">{t.pillSim}</a>
       <a class="pill" href={withLang("/getting-around-korea/using-the-subway", lang)} data-kpi-section="home_pill_subway">{t.pillSubway}</a>
       <a class="pill" href={withLang("/choose-a-city/which-city-fits-you-best", lang)} data-kpi-section="home_pill_city">{t.pillCityFit}</a>
-      <a class="pill" href={culturePath} data-kpi-section="home_pill_culture">{t.pillCulture}</a>
+      <a class="pill" href={nowMorePath} data-kpi-section="home_pill_now_more">{t.pillNowMore}</a>
     </div>
   </section>
 )}

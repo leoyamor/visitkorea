@@ -4952,180 +4952,39 @@ export const siteTree: TreeNode = {
       ],
     },
     {
-      title: "K-Culture & Everyday Korea",
-      slug: "k-culture-and-everyday-korea",
+      title: "Korea Now & More",
+      slug: "korea-now-and-more",
       icon: "spark",
-      image: "basics",
-      description: "Weekly 5-minute culture and Korean language insights for travelers.",
+      image: "city",
+      description: "Weekly tips, trends, and culture — in plain English.",
       quickAnswer:
-        "Come back weekly for practical language and etiquette you can use right away.",
-      children: [
+        "A short, plain-English page for what travelers are talking about now in Korea.",
+      content: [
         {
-          title: "Week 1 Culture: Airport & Arrival Basics",
-          slug: "week-1-airport-and-arrival-basics",
-          icon: "plane",
-          image: "basics",
-          description: "5-minute phrases and etiquette for your first hours in Korea.",
-          quickAnswer:
-            "Use short, clear phrases and calm gestures during airport and first transfer moments.",
-          content: [
-            {
-              title: "5-minute focus",
-              icon: "spark",
-              emphasis: "Arrival clarity saves energy.",
-              body: "You do not need many words. You need useful words.",
-              bullets: [
-                "Where is Airport Railroad? (AREX)",
-                "Where can I buy a transit card?",
-                "Can I pay by card?",
-              ],
-            },
-            {
-              title: "Behavior cue of the week",
-              icon: "hand",
-              emphasis: "Speak briefly and show destination text when needed.",
-              body: "A short sentence plus visual destination works well.",
-              bullets: [
-                "Keep line movement smooth at counters",
-                "Prepare passport and booking info before your turn",
-                "Thank staff clearly after assistance",
-              ],
-            },
-            {
-              title: "Companion update hub",
-              icon: "calendar",
-              emphasis: "Pair this with travel-impact checks.",
-              body: "Read the latest travel updates before final decisions.",
-              bullets: [
-                "https://visitingkorea.pages.dev/latest-travel-updates-for-korea/",
-              ],
-            },
+          title: "What this card is for",
+          icon: "spark",
+          emphasis: "Quick context, not information overload.",
+          body:
+            "Use this page for short updates about trends, culture, and travel mood in Korea. It is designed for fast reading and practical relevance.",
+        },
+        {
+          title: "What to check each week",
+          icon: "calendar",
+          emphasis: "5-minute scan, then decide.",
+          body: "Use this checklist to decide if anything affects your plans.",
+          bullets: [
+            "Travel timing changes that affect visitors",
+            "Culture trends that help you understand local context",
+            "Simple language tips that reduce friction on the ground",
           ],
         },
         {
-          title: "Week 2 Culture: Restaurant & Cafe Korean",
-          slug: "week-2-restaurant-and-cafe-korean",
-          icon: "bowl",
-          image: "food",
-          description: "Simple Korean phrases for ordering food and drinks confidently.",
-          quickAnswer:
-            "A few polite request phrases reduce confusion and improve your food experience.",
-          content: [
-            {
-              title: "5-minute focus",
-              icon: "spark",
-              emphasis: "Short requests work best in busy places.",
-              body: "Use clear request language and point to menu items if needed.",
-              bullets: [
-                "Not spicy, please.",
-                "No seafood, please.",
-                "Can I get one more rice?",
-              ],
-            },
-            {
-              title: "Behavior cue of the week",
-              icon: "hand",
-              emphasis: "Respect queue and pickup flow in cafes.",
-              body: "Many places are efficient and process-heavy during peak hours.",
-              bullets: [
-                "Wait behind the marked line",
-                "Collect drinks when your number is called",
-                "Return trays where expected",
-              ],
-            },
-            {
-              title: "Companion update hub",
-              icon: "calendar",
-              emphasis: "Pair this with final-week prep checks.",
-              body: "Read the latest travel updates for trip-readiness tasks.",
-              bullets: [
-                "https://visitingkorea.pages.dev/latest-travel-updates-for-korea/",
-              ],
-            },
-          ],
-        },
-        {
-          title: "Week 3 Culture: Shopping & Payment Etiquette",
-          slug: "week-3-shopping-and-payment-etiquette",
-          icon: "wallet",
-          image: "shopping",
-          description: "Practical culture cues for paying, refund questions, and checkout flow.",
-          quickAnswer:
-            "Payment is usually fast in Korea, but preparation and brief communication matter.",
-          content: [
-            {
-              title: "5-minute focus",
-              icon: "spark",
-              emphasis: "Prepare payment before your turn.",
-              body: "Fast checkout culture rewards readiness.",
-              bullets: [
-                "Card first, then small cash as backup",
-                "Keep passport ready for tax refund requests",
-                "Ask short refund questions clearly",
-              ],
-            },
-            {
-              title: "Behavior cue of the week",
-              icon: "hand",
-              emphasis: "Avoid counter delays during busy periods.",
-              body: "Small prep helps both you and staff.",
-              bullets: [
-                "Do not pack items while others are waiting on the counter",
-                "Step aside after payment to reorganize",
-                "Confirm refund receipt before leaving the store",
-              ],
-            },
-            {
-              title: "Companion update hub",
-              icon: "calendar",
-              emphasis: "Use this with 24-hour departure checks.",
-              body: "Read the latest travel updates for final-day preparation.",
-              bullets: [
-                "https://visitingkorea.pages.dev/latest-travel-updates-for-korea/",
-              ],
-            },
-          ],
-        },
-        {
-          title: "Week 4 Culture: Public Transport & Street Manners",
-          slug: "week-4-public-transport-and-street-manners",
-          icon: "train",
-          image: "transport",
-          description: "Simple etiquette for buses, subways, and crowded pedestrian areas.",
-          quickAnswer:
-            "During your trip, these small habits make daily movement smoother and less stressful.",
-          content: [
-            {
-              title: "5-minute focus",
-              icon: "spark",
-              emphasis: "Public-space behavior matters every day.",
-              body: "Crowded environments feel easier when you follow local flow.",
-              bullets: [
-                "Keep bag close on crowded trains",
-                "Stand to one side on escalators",
-                "Avoid stopping suddenly in narrow sidewalks",
-              ],
-            },
-            {
-              title: "Behavior cue of the week",
-              icon: "hand",
-              emphasis: "Quiet transit culture is widely expected.",
-              body: "Lower voice and short calls help avoid friction.",
-              bullets: [
-                "Use earphones for media",
-                "Keep phone calls short and soft",
-                "Offer priority seats when appropriate",
-              ],
-            },
-            {
-              title: "Companion update hub",
-              icon: "calendar",
-              emphasis: "Pair this with in-trip adjustment checks.",
-              body: "Read the latest travel updates for same-day route decisions.",
-              bullets: [
-                "https://visitingkorea.pages.dev/latest-travel-updates-for-korea/",
-              ],
-            },
+          title: "Related checkpoint",
+          icon: "shield",
+          emphasis: "For rules, prices, and critical details, confirm with official sources.",
+          body: "After reading this page, verify critical details in the updates hub.",
+          bullets: [
+            "Latest Travel Updates for Korea: https://visitingkorea.pages.dev/latest-travel-updates-for-korea/",
           ],
         },
       ],

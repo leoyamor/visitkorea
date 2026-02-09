@@ -4955,7 +4955,7 @@ export const siteTree: TreeNode = {
       title: "Korea Now & More",
       slug: "korea-now-and-more",
       icon: "spark",
-      image: "city",
+      image: "/leaf%20images/korea-now-more.webp",
       description: "Weekly tips, trends, and culture — in plain English.",
       quickAnswer:
         "A short, plain-English page for what travelers are talking about now in Korea.",

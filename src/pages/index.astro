@@ -9,11 +9,13 @@ import { absoluteUrl } from "../lib/site";
 const node = siteTree;
 const segments: string[] = [];
 const lang = "en";
-const pageTitle = lang === "es" ? "Planificador de viaje a Corea" : "Visit Korea Planner";
+const pageTitle = lang === "es"
+  ? "Planificador de viaje a Corea"
+  : "Visit Korea Planner: Practical South Korea Travel Guide";
 const pageDescription =
   lang === "es"
     ? "Guía práctica para planear tu viaje a Corea con claridad y confianza."
-    : "Practical, beginner-friendly guidance for foreigners planning a trip to Korea.";
+    : "Practical South Korea travel guide for first-time and repeat visitors: city picks, transport, food, stays, etiquette, and regularly updated planning tips.";
 const canonicalUrl = absoluteUrl("/");
 const alternateEnUrl = absoluteUrl("/");
 const alternateEsUrl = absoluteUrl(withLang("/", "es"));

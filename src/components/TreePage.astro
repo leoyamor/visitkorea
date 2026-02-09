@@ -578,7 +578,9 @@ const latestUpdatesPath = withLang("/latest-travel-updates-for-korea", lang);
 const nowMorePath = withLang("/korea-now-and-more", lang);
 const isLeafPage = !isHome && !hasChildren;
 const rootSlug = segments[0] ?? "";
-const showLeafMetaNote = isLeafPage && rootSlug === "latest-travel-updates-for-korea";
+const showLeafMetaNote =
+  isLeafPage &&
+  (rootSlug === "latest-travel-updates-for-korea" || rootSlug === "korea-now-and-more");
 const centerCardIconForPage =
   rootSlug === "latest-travel-updates-for-korea" || rootSlug === "korea-now-and-more";
 

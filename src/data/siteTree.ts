@@ -4956,35 +4956,97 @@ export const siteTree: TreeNode = {
       slug: "korea-now-and-more",
       icon: "spark",
       image: "/leaf%20images/korea-now-more.webp",
-      description: "Weekly tips, trends, and culture — in plain English.",
+      description:
+        "Discover Gangneung 'Gangneung-Gallae' Tour Pass: discounts, conditions, and transport tips for foreign travelers.",
       quickAnswer:
-        "A short, plain-English page for what travelers are talking about now in Korea.",
+        "Gangneung's 'Gangneung-Gallae' Tour Pass bundles attractions, experiences, cafes, and stays into one ticket with savings promoted up to 55%.",
       content: [
         {
-          title: "What this card is for",
+          title: "Discover Gangneung 'Gangneung-Gallae' Tour Pass",
           icon: "spark",
-          emphasis: "Quick context, not information overload.",
+          emphasis: "Save big in one of Korea's top coastal cities.",
           body:
-            "Use this page for short updates about trends, culture, and travel mood in Korea. It is designed for fast reading and practical relevance.",
+            "Gangneung City launched a discounted tour pass called 'Gangneung-Gallae.' It bundles major sights, experiences, cafes, and even accommodation into one pass for easier and cheaper trip planning.",
         },
         {
-          title: "What to check each week",
-          icon: "calendar",
-          emphasis: "5-minute scan, then decide.",
-          body: "Use this checklist to decide if anything affects your plans.",
+          title: "TL;DR",
+          icon: "checklist",
+          emphasis: "One pass, multiple benefits, major savings.",
+          body:
+            "Travelers can access several Gangneung activities in one package and potentially save up to 55% compared with buying each item separately.",
           bullets: [
-            "Travel timing changes that affect visitors",
-            "Culture trends that help you understand local context",
-            "Simple language tips that reduce friction on the ground",
+            "Pay one fare and unlock multiple activities and benefits in one package.",
+            "Built to reduce travel costs and simplify planning for visitors.",
+            "Includes pass choices by transport style and day type.",
           ],
         },
         {
-          title: "Related checkpoint",
-          icon: "shield",
-          emphasis: "For rules, prices, and critical details, confirm with official sources.",
-          body: "After reading this page, verify critical details in the updates hub.",
+          title: "Benefits for Korea Travel Visitors",
+          icon: "wallet",
+          emphasis: "Budget and convenience in one product.",
+          body: "This pass is positioned as a high-value option for affordable Korea travel in Gangneung.",
           bullets: [
-            "Latest Travel Updates for Korea: https://visitingkorea.pages.dev/latest-travel-updates-for-korea/",
+            "Big savings: up to 55% off combined costs of sights, stays, cafes, and experiences.",
+            "Simplified planning: one pass replaces multiple reservations and ticket purchases.",
+            "Flexible options: choose based on public transport vs self-drive and weekday vs weekend plans.",
+          ],
+        },
+        {
+          title: "Validity of the Offer",
+          icon: "calendar",
+          emphasis: "Part of the 2026-2027 Visit Gangneung campaign.",
+          body:
+            "The pass was introduced within Gangneung's 2026-2027 tourism campaign, so it is publicized as active through 2026 and into 2027.",
+          bullets: [
+            "Campaign window: 2026 to 2027.",
+            "Final end date may change as city campaign updates are announced.",
+          ],
+        },
+        {
+          title: "Conditions to Use It",
+          icon: "passport",
+          emphasis: "Simple purchase flow for all visitors.",
+          body:
+            "Buy the pass on the travel platform Frip by searching 'Gangneung-Gallae.' No Korean residency or special eligibility is required.",
+          bullets: [
+            "Purchase channel: Frip (search: Gangneung-Gallae).",
+            "Open to all travelers, including foreign tourists.",
+            "No special status needed beyond a standard purchase.",
+            "Frip: https://www.frip.co.kr/",
+          ],
+        },
+        {
+          title: "Where This Happens",
+          icon: "pin",
+          emphasis: "Gangneung City, Gangwon Province, Korea.",
+          body:
+            "Gangneung is a popular coastal destination known for beaches, culture spots, and local food scenes.",
+          bullets: [
+            "Location: Gangneung, Gangwon Province, South Korea.",
+            "Search 'Gangneung' in major map apps for routing and local planning.",
+          ],
+        },
+        {
+          title: "How to Get There from Incheon International Airport",
+          icon: "train",
+          emphasis: "Common and traveler-friendly route in about 3 hours.",
+          body:
+            "A practical route is AREX from Incheon Airport to Seoul Station, then transfer to KTX or ITX-Saemaeul to Gangneung.",
+          bullets: [
+            "Step 1: AREX from Incheon Airport to Seoul Station (about 1 hour).",
+            "Step 2: Transfer at Seoul Station to KTX or ITX-Saemaeul to Gangneung (about 2 hours).",
+            "Estimated total travel time: about 3 hours depending on connections.",
+          ],
+        },
+        {
+          title: "Bottom Line for Affordable Korea Trips",
+          icon: "spark",
+          emphasis: "Lower cost, lower hassle, better value.",
+          body:
+            "For foreign travelers planning a budget-friendly Korea itinerary, the Gangneung-Gallae Tour Pass can reduce costs and booking friction while covering key Gangneung experiences.",
+          bullets: [
+            "Good fit for first-time visitors who want simpler trip logistics.",
+            "Good fit for repeat visitors who want better value from bundled travel products.",
           ],
         },
       ],

@@ -56,7 +56,7 @@ const alternateLocale = lang === "es" ? "en_US" : "es_ES";
 const siteName = lang === "es" ? "Planificador de viaje a Corea" : SITE_NAME;
 const homeLabel = lang === "es" ? "Inicio" : "Home";
 const localizedHomePath = withLang("/", lang);
-const HOME_HERO_IMAGE = "/hanok-hero.webp?v=20260209b";
+const HOME_HERO_IMAGE = "/hanok-hero.webp?v=20260209c";
 const homeBodyStyle = bodyClass.includes("home-bg")
   ? `background:
       radial-gradient(1300px 700px at 18% -6%, rgba(255, 244, 224, 0.22), transparent 56%),
@@ -289,10 +289,10 @@ const schemaJson = JSON.stringify({
           radial-gradient(900px 520px at 76% 86%, rgba(0, 0, 0, 0.26), transparent 62%),
           linear-gradient(180deg, rgba(24, 18, 14, 0.36), rgba(18, 14, 11, 0.6)),
           linear-gradient(180deg, rgba(26, 18, 14, 0.2), rgba(15, 11, 9, 0.46)),
-          url("/hanok-hero.webp?v=20260209b");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
+          url("/hanok-hero.webp?v=20260209c") !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
       }
 
       body.page--sub main {

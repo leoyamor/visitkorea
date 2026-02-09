@@ -56,48 +56,6 @@ const alternateLocale = lang === "es" ? "en_US" : "es_ES";
 const siteName = lang === "es" ? "Planificador de viaje a Corea" : SITE_NAME;
 const homeLabel = lang === "es" ? "Inicio" : "Home";
 const localizedHomePath = withLang("/", lang);
-const footerUi =
-  lang === "es"
-    ? {
-        title: "Vuelve cada semana antes de decidir",
-        subtitle:
-          "Consulta actualizaciones de viaje, novedades semanales y cultura útil en 5 minutos.",
-        latest: "Últimas actualizaciones",
-        weekly: "Esta semana en Corea",
-        culture: "Cultura y vida diaria",
-        about: "Acerca de",
-        contact: "Contacto",
-        privacy: "Privacidad",
-        terms: "Términos",
-        disclaimer: "Descargo",
-      }
-    : {
-        title: "Come Back Weekly Before You Decide",
-        subtitle:
-          "Check travel-impact updates, weekly briefings, and 5-minute culture tips in one place.",
-        latest: "Latest Travel Updates",
-        weekly: "This Week in Korea",
-        culture: "K-Culture & Everyday Korea",
-        about: "About",
-        contact: "Contact",
-        privacy: "Privacy Policy",
-        terms: "Terms",
-        disclaimer: "Disclaimer",
-      };
-
-const footerQuickLinks = [
-  { href: withLang("/latest-travel-updates-for-korea", lang), label: footerUi.latest },
-  { href: withLang("/this-week-in-korea-for-travelers", lang), label: footerUi.weekly },
-  { href: withLang("/k-culture-and-everyday-korea", lang), label: footerUi.culture },
-];
-
-const footerLegalLinks = [
-  { href: withLang("/about", lang), label: footerUi.about },
-  { href: withLang("/contact", lang), label: footerUi.contact },
-  { href: withLang("/privacy-policy", lang), label: footerUi.privacy },
-  { href: withLang("/terms", lang), label: footerUi.terms },
-  { href: withLang("/disclaimer", lang), label: footerUi.disclaimer },
-];
 const gaMeasurementId = ((import.meta.env.PUBLIC_GA4_MEASUREMENT_ID as string | undefined) ?? "").trim();
 const gaEnabled = gaMeasurementId.length > 0;
 
@@ -375,57 +333,6 @@ const schemaJson = JSON.stringify({
         padding: 48px 0 80px;
       }
 
-      .site-footer {
-        width: min(1100px, 92vw);
-        margin: 0 auto 28px;
-        padding: 20px 18px;
-        border-radius: 16px;
-        border: 1px solid var(--border-dark);
-        background: linear-gradient(180deg, rgba(16, 12, 10, 0.72), rgba(12, 9, 8, 0.68));
-        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.24);
-      }
-
-      .site-footer h2 {
-        margin: 0;
-        font-family: "Fraunces", serif;
-        font-size: clamp(1.1rem, 1.7vw, 1.35rem);
-      }
-
-      .site-footer p {
-        margin: 6px 0 0;
-        color: var(--text-soft);
-        font-size: 0.95rem;
-      }
-
-      .site-footer-grid {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr);
-        gap: 14px;
-      }
-
-      .site-footer-links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-
-      .site-footer-links a {
-        display: inline-flex;
-        align-items: center;
-        padding: 7px 12px;
-        border-radius: 999px;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        color: var(--text-strong);
-        text-decoration: none;
-        font-size: 0.88rem;
-        font-weight: 600;
-        background: rgba(255, 255, 255, 0.04);
-      }
-
-      .site-footer-links a:hover {
-        background: rgba(255, 255, 255, 0.09);
-      }
-
       .skip-link {
         position: absolute;
         left: -999px;
@@ -444,11 +351,6 @@ const schemaJson = JSON.stringify({
       @media (max-width: 720px) {
         main {
           padding: 32px 0 64px;
-        }
-
-        .site-footer {
-          padding: 18px 14px;
-          margin-bottom: 20px;
         }
       }
 
@@ -660,30 +562,6 @@ const schemaJson = JSON.stringify({
     <main id="content">
       <slot />
     </main>
-    <footer class="site-footer">
-      <div class="site-footer-grid">
-        <div>
-          <h2>{footerUi.title}</h2>
-          <p>{footerUi.subtitle}</p>
-        </div>
-        <nav
-          class="site-footer-links"
-          aria-label={lang === "es" ? "Enlaces de regreso semanal" : "Weekly return links"}
-        >
-          {footerQuickLinks.map((link) => (
-            <a href={link.href}>{link.label}</a>
-          ))}
-        </nav>
-        <nav
-          class="site-footer-links"
-          aria-label={lang === "es" ? "Enlaces de políticas" : "Policy links"}
-        >
-          {footerLegalLinks.map((link) => (
-            <a href={link.href}>{link.label}</a>
-          ))}
-        </nav>
-      </div>
-    </footer>
     <script is:inline define:vars={{ lang }}>
       (() => {
         const normalizePath = (pathname) => {

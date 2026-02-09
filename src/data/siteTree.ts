@@ -3828,7 +3828,7 @@ export const siteTree: TreeNode = {
           title: "Basic Korean Etiquette",
           slug: "basic-korean-etiquette",
           icon: "hand",
-          image: "/leaf%20images/Basic%20Korean.webp",
+          image: "/leaf%20images/Basic%20Korean.webp?v=20260209",
           description: "Simple rules to avoid awkward moments.",
           quickAnswer:
             "This page helps you avoid awkward moments with simple local etiquette.",

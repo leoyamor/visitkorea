@@ -54,7 +54,7 @@ export const GET = () => {
     "- Page titles and descriptions are written to provide direct answers.",
     "- Structured data is implemented with WebPage, CollectionPage, Article, FAQPage, and BreadcrumbList.",
     "- External official sources are linked and surfaced in page schema when available.",
-    "- Weekly revisit hubs: /this-week-in-korea-for-travelers and /k-culture-and-everyday-korea.",
+    "- Revisit hubs: /latest-travel-updates-for-korea and /k-culture-and-everyday-korea.",
     "- Time-sensitive guidance routes users to /latest-travel-updates-for-korea for source verification.",
     "",
     "## Main Guide Sections",

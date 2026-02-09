@@ -28,7 +28,7 @@ const t = {
     plannerName: "Visit Korea Planner",
     homeTitle: "Travel Korea with Clarity, Not Overload",
     homeLead:
-      "Clear, practical answers plus weekly traveler updates and 5-minute culture tips for every stage of your trip.",
+      "Clear, practical answers plus timely travel updates and 5-minute culture tips for every stage of your trip.",
     back: "Back",
     home: "Home",
     backAria: "Back to previous page",
@@ -37,19 +37,18 @@ const t = {
     startHere: "Start here",
     pickSub: "Pick a sub page",
     quickAnswer: "Quick answer",
-    homeSectionDesc: "Start with a category, then return weekly for updates and culture snapshots.",
+    homeSectionDesc: "Start with a category, then come back for update checks and culture snapshots.",
     subSectionDesc: "Each card opens a focused guide.",
     quickFallback: "Here is the short description, with more detail to be added later.",
     cardFallback: "Short summary coming soon.",
     guidePreparing: "This guide is being prepared.",
     identity: "This site helps you decide what fits your trip — not just list information.",
     homeCtaTitle: "Not sure where to go next?",
-    homeCtaDesc: "Start with these core guides, then check weekly update cards before key travel decisions.",
+    homeCtaDesc: "Start with these core guides, then check update cards before key travel decisions.",
     pillDays: "7 Days in Korea",
     pillSim: "SIM or eSIM?",
     pillSubway: "Using the Subway",
     pillCityFit: "Which City Fits You Best?",
-    pillWeekly: "This Week in Korea",
     pillCulture: "K-Culture & Everyday Korea",
     nextPrefix: "Next",
     nextDecision: "Next decision",
@@ -59,7 +58,6 @@ const t = {
       "No login needed. Tick what you completed, then screenshot or bookmark this page for later.",
     bookmarkTip: "Pro tip: Save this page to your home screen for quick access during your trip.",
     returnLatest: "Latest Travel Updates",
-    returnWeekly: "This Week in Korea",
     returnCulture: "K-Culture & Everyday Korea",
     updatedLabel: "Last updated",
     sourceNote: "For final booking decisions, always verify with official sources.",
@@ -72,7 +70,7 @@ const t = {
     plannerName: "Planificador de viaje a Corea",
     homeTitle: "Viaja por Corea con claridad, sin complicaciones",
     homeLead:
-      "Respuestas claras y prácticas, más actualizaciones semanales y cultura en 5 minutos para cada etapa del viaje.",
+      "Respuestas claras y prácticas, más actualizaciones útiles y cultura en 5 minutos para cada etapa del viaje.",
     back: "Volver",
     home: "Inicio",
     backAria: "Volver a la página anterior",
@@ -81,19 +79,18 @@ const t = {
     startHere: "Empieza aquí",
     pickSub: "Elige una subpágina",
     quickAnswer: "Respuesta rápida",
-    homeSectionDesc: "Empieza con una categoría y vuelve cada semana para ver novedades y cultura.",
+    homeSectionDesc: "Empieza con una categoría y vuelve para ver novedades y cultura.",
     subSectionDesc: "Cada tarjeta abre una guía específica.",
     quickFallback: "Aquí tienes una descripción breve; pronto añadiremos más detalles.",
     cardFallback: "Resumen breve próximamente.",
     guidePreparing: "Esta guía se está preparando.",
     identity: "Este sitio te ayuda a decidir qué encaja mejor con tu viaje; no solo te muestra información.",
     homeCtaTitle: "¿No sabes a dónde ir después?",
-    homeCtaDesc: "Empieza con estas guías clave y vuelve cada semana antes de decisiones importantes.",
+    homeCtaDesc: "Empieza con estas guías clave y vuelve antes de decisiones importantes.",
     pillDays: "7 días en Corea",
     pillSim: "¿SIM o eSIM?",
     pillSubway: "Cómo usar el metro",
     pillCityFit: "¿Qué ciudad encaja mejor contigo?",
-    pillWeekly: "Esta semana en Corea",
     pillCulture: "Cultura y vida diaria en Corea",
     nextPrefix: "Siguiente",
     nextDecision: "Siguiente decisión",
@@ -103,7 +100,6 @@ const t = {
       "Sin registro. Marca lo que ya hiciste y guarda una captura o marcador para volver rápido.",
     bookmarkTip: "Consejo: guarda esta página en tu pantalla de inicio para usarla durante el viaje.",
     returnLatest: "Últimas actualizaciones",
-    returnWeekly: "Esta semana en Corea",
     returnCulture: "Cultura y vida diaria",
     updatedLabel: "Última actualización",
     sourceNote: "Antes de reservar, confirma siempre con fuentes oficiales.",
@@ -577,7 +573,6 @@ const getImage = (key?: string, title?: string, slug?: string) => {
 
 const editorialMeta = getEditorialMeta(lang);
 const latestUpdatesPath = withLang("/latest-travel-updates-for-korea", lang);
-const weeklyBriefPath = withLang("/this-week-in-korea-for-travelers", lang);
 const culturePath = withLang("/k-culture-and-everyday-korea", lang);
 const isLeafPage = !isHome && !hasChildren;
 const rootSlug = segments[0] ?? "";
@@ -586,7 +581,7 @@ const checklistByRoot: Record<string, string[]> = {
   "plan-your-trip": [
     "I chose my trip length and one backup plan.",
     "I confirmed my first city and first-night stay.",
-    "I bookmarked the weekly update page before booking."
+    "I bookmarked the latest updates page before booking."
   ],
   "choose-a-city": [
     "I picked one main city and one optional contrast city.",
@@ -802,7 +797,6 @@ const breadcrumb = breadcrumbs;
             <p class="leaf-tools-label">{t.returnCheckpoints}</p>
             <div class="leaf-return-links">
               <a href={latestUpdatesPath} data-kpi-section="leaf_return_latest">{t.returnLatest}</a>
-              <a href={weeklyBriefPath} data-kpi-section="leaf_return_weekly">{t.returnWeekly}</a>
               <a href={culturePath} data-kpi-section="leaf_return_culture">{t.returnCulture}</a>
             </div>
           </div>
@@ -845,7 +839,6 @@ const breadcrumb = breadcrumbs;
       <a class="pill" href={withLang("/travel-basics/sim-or-esim", lang)} data-kpi-section="home_pill_sim">{t.pillSim}</a>
       <a class="pill" href={withLang("/getting-around-korea/using-the-subway", lang)} data-kpi-section="home_pill_subway">{t.pillSubway}</a>
       <a class="pill" href={withLang("/choose-a-city/which-city-fits-you-best", lang)} data-kpi-section="home_pill_city">{t.pillCityFit}</a>
-      <a class="pill" href={weeklyBriefPath} data-kpi-section="home_pill_weekly">{t.pillWeekly}</a>
       <a class="pill" href={culturePath} data-kpi-section="home_pill_culture">{t.pillCulture}</a>
     </div>
   </section>

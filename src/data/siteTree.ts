@@ -4951,6 +4951,424 @@ export const siteTree: TreeNode = {
         },
       ],
     },
+    {
+      title: "This Week in Korea for Travelers",
+      slug: "this-week-in-korea-for-travelers",
+      icon: "calendar",
+      image: "airport",
+      description: "A weekly 5-minute brief focused on travel-impact changes.",
+      quickAnswer:
+        "Check this page before booking, before flying, and while moving between cities.",
+      children: [
+        {
+          title: "Week 1: Pre-Booking Brief",
+          slug: "week-1-pre-booking-brief",
+          icon: "calendar",
+          image: "airport",
+          description: "Confirm what can change before paying for flights and stays.",
+          quickAnswer:
+            "Use this brief before payment so you can avoid avoidable schedule and entry surprises.",
+          content: [
+            {
+              title: "Travel-impact focus this week",
+              icon: "route",
+              emphasis: "Book after verification, not before.",
+              body: "Before payment, these checks reduce expensive changes later.",
+              bullets: [
+                "Entry authorization status by nationality",
+                "Airport-to-city transfer availability at your arrival time",
+                "Holiday or event periods that increase transport pressure",
+              ],
+            },
+            {
+              title: "Action list (high impact first)",
+              icon: "checklist",
+              emphasis: "Do these in order before checkout.",
+              body: "Keep this list short and practical.",
+              bullets: [
+                "Recheck K-ETA or visa requirements",
+                "Confirm first-night hotel cancellation rules",
+                "Verify airport transfer options after your landing time",
+                "Check weather risk for your planned region",
+              ],
+            },
+            {
+              title: "K-Culture snapshot of the week",
+              icon: "spark",
+              emphasis: "First impression tip: keep requests short and polite.",
+              body: "Simple language with calm tone works better than long explanations.",
+              bullets: [
+                "Use clear one-sentence requests",
+                "Show destination text in Korean when needed",
+                "Thank staff briefly and politely",
+              ],
+            },
+            {
+              title: "Official sources to confirm",
+              icon: "shield",
+              emphasis: "Use primary sources for final decisions.",
+              body: "These are the default checks used in this launch brief.",
+              bullets: [
+                "K-ETA: https://www.k-eta.go.kr",
+                "Incheon International Airport: https://www.airport.kr/sites/ap_en/index.do",
+                "Korail: https://www.korail.com/global/eng/main",
+                "Korea Meteorological Administration: https://www.weather.go.kr",
+              ],
+            },
+          ],
+        },
+        {
+          title: "Week 2: 7 Days Before Flight",
+          slug: "week-2-seven-days-before-flight",
+          icon: "calendar",
+          image: "airport",
+          description: "One week before departure, lock in what must not fail.",
+          quickAnswer:
+            "This week is about removing last-minute friction from airport, transport, and payment.",
+          content: [
+            {
+              title: "Travel-impact focus this week",
+              icon: "route",
+              emphasis: "Move from planning to execution.",
+              body: "At seven days out, practical readiness matters more than extra research.",
+              bullets: [
+                "Airport arrival flow and immigration document readiness",
+                "SIM/eSIM activation plan by landing time",
+                "Transit card and cash/card balance strategy",
+              ],
+            },
+            {
+              title: "Action list (7-day window)",
+              icon: "checklist",
+              emphasis: "Avoid the three common misses.",
+              body: "Many travelers lose time because of these preventable gaps.",
+              bullets: [
+                "Save hotel addresses offline and as screenshot",
+                "Prepare one backup payment method",
+                "Check first intercity train route and backup route",
+                "Review emergency contacts (112, 119, 1330)",
+              ],
+            },
+            {
+              title: "K-Culture snapshot of the week",
+              icon: "hand",
+              emphasis: "Small etiquette reduces stress quickly.",
+              body: "Respectful behavior on transit and in lines is highly valued.",
+              bullets: [
+                "Keep phone voice low in trains and buses",
+                "Queue clearly and wait your turn",
+                "Offer seats to older passengers when possible",
+              ],
+            },
+            {
+              title: "Official sources to confirm",
+              icon: "shield",
+              emphasis: "Check updates in the final week.",
+              body: "Use these pages for final-week verification.",
+              bullets: [
+                "Incheon International Airport: https://www.airport.kr/sites/ap_en/index.do",
+                "Korea Tourism Organization: https://english.visitkorea.or.kr",
+                "Seoul Public Transportation: https://english.seoul.go.kr/service/movement/public-transportation/",
+                "Busan Public Transportation: https://www.busan.go.kr/eng/public-transportation",
+              ],
+            },
+          ],
+        },
+        {
+          title: "Week 3: 24 Hours Before Departure",
+          slug: "week-3-twenty-four-hours-before-departure",
+          icon: "calendar",
+          image: "airport",
+          description: "Final-day checks to reduce airport surprises and first-day delays.",
+          quickAnswer:
+            "In the last 24 hours, only verify essentials that affect arrival and movement.",
+          content: [
+            {
+              title: "Travel-impact focus this week",
+              icon: "plane",
+              emphasis: "Last day means risk control.",
+              body: "You do not need new plans. You need clean execution.",
+              bullets: [
+                "Passport and authorization double-check",
+                "Arrival transport first option plus backup",
+                "Weather and regional warning recheck",
+              ],
+            },
+            {
+              title: "Action list (24-hour window)",
+              icon: "checklist",
+              emphasis: "Keep this checklist short and visible.",
+              body: "Complete these before sleeping on departure eve.",
+              bullets: [
+                "Screenshot first-night booking and route details",
+                "Store offline map for airport-to-hotel path",
+                "Prepare one emergency phrase list in Korean",
+                "Reconfirm critical source pages one final time",
+              ],
+            },
+            {
+              title: "K-Culture snapshot of the week",
+              icon: "spark",
+              emphasis: "Arrival calm beats perfect pronunciation.",
+              body: "Polite tone and clear gestures work reliably.",
+              bullets: [
+                "Use short requests with location names",
+                "Show written destination when needed",
+                "Say thank you clearly after help",
+              ],
+            },
+            {
+              title: "Official sources to confirm",
+              icon: "shield",
+              emphasis: "Final checks should come from primary pages.",
+              body: "These sources matter most in the 24-hour window.",
+              bullets: [
+                "K-ETA: https://www.k-eta.go.kr",
+                "Incheon International Airport: https://www.airport.kr/sites/ap_en/index.do",
+                "Korea Meteorological Administration: https://www.weather.go.kr",
+                "Ministry of Foreign Affairs: https://www.mofa.go.kr",
+              ],
+            },
+          ],
+        },
+        {
+          title: "Week 4: During-Trip Adjustment Brief",
+          slug: "week-4-during-trip-adjustment-brief",
+          icon: "calendar",
+          image: "city",
+          description: "Use this brief while in Korea to adapt plans without stress.",
+          quickAnswer:
+            "During your trip, this brief helps you adjust transport, weather plans, and daily decisions quickly.",
+          content: [
+            {
+              title: "Travel-impact focus this week",
+              icon: "route",
+              emphasis: "Adjust, do not overcorrect.",
+              body: "Small route and timing changes usually solve most in-trip issues.",
+              bullets: [
+                "Crowd pressure around major attractions",
+                "Weather shifts that affect outdoor activities",
+                "Intercity timing and transfer reliability",
+              ],
+            },
+            {
+              title: "Action list (in-trip mode)",
+              icon: "checklist",
+              emphasis: "Use one-day planning cycles.",
+              body: "Decide each day with a simple structure.",
+              bullets: [
+                "Confirm tomorrow morning transport tonight",
+                "Swap one outdoor stop with one indoor backup when needed",
+                "Keep one flexible hour between major moves",
+                "Check return route before evening peak",
+              ],
+            },
+            {
+              title: "K-Culture snapshot of the week",
+              icon: "hand",
+              emphasis: "Public-space awareness improves daily comfort.",
+              body: "Small local habits make your day smoother.",
+              bullets: [
+                "Keep bag close in crowded transport",
+                "Stand clearly to one side on escalators",
+                "Avoid blocking narrow sidewalks while checking maps",
+              ],
+            },
+            {
+              title: "Official sources to confirm",
+              icon: "shield",
+              emphasis: "For same-day decisions, verify fast.",
+              body: "These are practical in-trip verification points.",
+              bullets: [
+                "Korea Tourism Organization: https://english.visitkorea.or.kr",
+                "Korail: https://www.korail.com/global/eng/main",
+                "Seoul Public Transportation: https://english.seoul.go.kr/service/movement/public-transportation/",
+                "Busan Public Transportation: https://www.busan.go.kr/eng/public-transportation",
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      title: "K-Culture & Everyday Korea",
+      slug: "k-culture-and-everyday-korea",
+      icon: "spark",
+      image: "basics",
+      description: "Weekly 5-minute culture and Korean language insights for travelers.",
+      quickAnswer:
+        "Come back weekly for practical language and etiquette you can use right away.",
+      children: [
+        {
+          title: "Week 1 Culture: Airport & Arrival Basics",
+          slug: "week-1-airport-and-arrival-basics",
+          icon: "plane",
+          image: "basics",
+          description: "5-minute phrases and etiquette for your first hours in Korea.",
+          quickAnswer:
+            "Use short, clear phrases and calm gestures during airport and first transfer moments.",
+          content: [
+            {
+              title: "5-minute focus",
+              icon: "spark",
+              emphasis: "Arrival clarity saves energy.",
+              body: "You do not need many words. You need useful words.",
+              bullets: [
+                "Where is Airport Railroad? (AREX)",
+                "Where can I buy a transit card?",
+                "Can I pay by card?",
+              ],
+            },
+            {
+              title: "Behavior cue of the week",
+              icon: "hand",
+              emphasis: "Speak briefly and show destination text when needed.",
+              body: "A short sentence plus visual destination works well.",
+              bullets: [
+                "Keep line movement smooth at counters",
+                "Prepare passport and booking info before your turn",
+                "Thank staff clearly after assistance",
+              ],
+            },
+            {
+              title: "Companion weekly brief",
+              icon: "calendar",
+              emphasis: "Pair this with travel-impact checks.",
+              body: "Read the matching travel brief for decision updates.",
+              bullets: [
+                "https://visitingkorea.pages.dev/this-week-in-korea-for-travelers/week-1-pre-booking-brief/",
+              ],
+            },
+          ],
+        },
+        {
+          title: "Week 2 Culture: Restaurant & Cafe Korean",
+          slug: "week-2-restaurant-and-cafe-korean",
+          icon: "bowl",
+          image: "food",
+          description: "Simple Korean phrases for ordering food and drinks confidently.",
+          quickAnswer:
+            "A few polite request phrases reduce confusion and improve your food experience.",
+          content: [
+            {
+              title: "5-minute focus",
+              icon: "spark",
+              emphasis: "Short requests work best in busy places.",
+              body: "Use clear request language and point to menu items if needed.",
+              bullets: [
+                "Not spicy, please.",
+                "No seafood, please.",
+                "Can I get one more rice?",
+              ],
+            },
+            {
+              title: "Behavior cue of the week",
+              icon: "hand",
+              emphasis: "Respect queue and pickup flow in cafes.",
+              body: "Many places are efficient and process-heavy during peak hours.",
+              bullets: [
+                "Wait behind the marked line",
+                "Collect drinks when your number is called",
+                "Return trays where expected",
+              ],
+            },
+            {
+              title: "Companion weekly brief",
+              icon: "calendar",
+              emphasis: "Pair this with final-week prep checks.",
+              body: "Read the matching travel brief for trip-readiness tasks.",
+              bullets: [
+                "https://visitingkorea.pages.dev/this-week-in-korea-for-travelers/week-2-seven-days-before-flight/",
+              ],
+            },
+          ],
+        },
+        {
+          title: "Week 3 Culture: Shopping & Payment Etiquette",
+          slug: "week-3-shopping-and-payment-etiquette",
+          icon: "wallet",
+          image: "shopping",
+          description: "Practical culture cues for paying, refund questions, and checkout flow.",
+          quickAnswer:
+            "Payment is usually fast in Korea, but preparation and brief communication matter.",
+          content: [
+            {
+              title: "5-minute focus",
+              icon: "spark",
+              emphasis: "Prepare payment before your turn.",
+              body: "Fast checkout culture rewards readiness.",
+              bullets: [
+                "Card first, then small cash as backup",
+                "Keep passport ready for tax refund requests",
+                "Ask short refund questions clearly",
+              ],
+            },
+            {
+              title: "Behavior cue of the week",
+              icon: "hand",
+              emphasis: "Avoid counter delays during busy periods.",
+              body: "Small prep helps both you and staff.",
+              bullets: [
+                "Do not pack items while others are waiting on the counter",
+                "Step aside after payment to reorganize",
+                "Confirm refund receipt before leaving the store",
+              ],
+            },
+            {
+              title: "Companion weekly brief",
+              icon: "calendar",
+              emphasis: "Use this with 24-hour departure checks.",
+              body: "Read the matching travel brief for final-day preparation.",
+              bullets: [
+                "https://visitingkorea.pages.dev/this-week-in-korea-for-travelers/week-3-twenty-four-hours-before-departure/",
+              ],
+            },
+          ],
+        },
+        {
+          title: "Week 4 Culture: Public Transport & Street Manners",
+          slug: "week-4-public-transport-and-street-manners",
+          icon: "train",
+          image: "transport",
+          description: "Simple etiquette for buses, subways, and crowded pedestrian areas.",
+          quickAnswer:
+            "During your trip, these small habits make daily movement smoother and less stressful.",
+          content: [
+            {
+              title: "5-minute focus",
+              icon: "spark",
+              emphasis: "Public-space behavior matters every day.",
+              body: "Crowded environments feel easier when you follow local flow.",
+              bullets: [
+                "Keep bag close on crowded trains",
+                "Stand to one side on escalators",
+                "Avoid stopping suddenly in narrow sidewalks",
+              ],
+            },
+            {
+              title: "Behavior cue of the week",
+              icon: "hand",
+              emphasis: "Quiet transit culture is widely expected.",
+              body: "Lower voice and short calls help avoid friction.",
+              bullets: [
+                "Use earphones for media",
+                "Keep phone calls short and soft",
+                "Offer priority seats when appropriate",
+              ],
+            },
+            {
+              title: "Companion weekly brief",
+              icon: "calendar",
+              emphasis: "Pair this with in-trip adjustment checks.",
+              body: "Read the matching travel brief for same-day route decisions.",
+              bullets: [
+                "https://visitingkorea.pages.dev/this-week-in-korea-for-travelers/week-4-during-trip-adjustment-brief/",
+              ],
+            },
+          ],
+        },
+      ],
+    },
   ],
 };
 

@@ -11,6 +11,7 @@ import {
   EDITORIAL_REVIEWER_NAME,
   EDITORIAL_UPDATED_ISO,
 } from "../lib/editorial";
+import { ADSENSE_CLIENT_ID, ADSENSE_ENABLED } from "../lib/ads";
 
 type BreadcrumbItem = {
   label: string;
@@ -55,6 +56,50 @@ const alternateLocale = lang === "es" ? "en_US" : "es_ES";
 const siteName = lang === "es" ? "Planificador de viaje a Corea" : SITE_NAME;
 const homeLabel = lang === "es" ? "Inicio" : "Home";
 const localizedHomePath = withLang("/", lang);
+const footerUi =
+  lang === "es"
+    ? {
+        title: "Vuelve cada semana antes de decidir",
+        subtitle:
+          "Consulta actualizaciones de viaje, novedades semanales y cultura útil en 5 minutos.",
+        latest: "Últimas actualizaciones",
+        weekly: "Esta semana en Corea",
+        culture: "Cultura y vida diaria",
+        about: "Acerca de",
+        contact: "Contacto",
+        privacy: "Privacidad",
+        terms: "Términos",
+        disclaimer: "Descargo",
+      }
+    : {
+        title: "Come Back Weekly Before You Decide",
+        subtitle:
+          "Check travel-impact updates, weekly briefings, and 5-minute culture tips in one place.",
+        latest: "Latest Travel Updates",
+        weekly: "This Week in Korea",
+        culture: "K-Culture & Everyday Korea",
+        about: "About",
+        contact: "Contact",
+        privacy: "Privacy Policy",
+        terms: "Terms",
+        disclaimer: "Disclaimer",
+      };
+
+const footerQuickLinks = [
+  { href: withLang("/latest-travel-updates-for-korea", lang), label: footerUi.latest },
+  { href: withLang("/this-week-in-korea-for-travelers", lang), label: footerUi.weekly },
+  { href: withLang("/k-culture-and-everyday-korea", lang), label: footerUi.culture },
+];
+
+const footerLegalLinks = [
+  { href: withLang("/about", lang), label: footerUi.about },
+  { href: withLang("/contact", lang), label: footerUi.contact },
+  { href: withLang("/privacy-policy", lang), label: footerUi.privacy },
+  { href: withLang("/terms", lang), label: footerUi.terms },
+  { href: withLang("/disclaimer", lang), label: footerUi.disclaimer },
+];
+const gaMeasurementId = ((import.meta.env.PUBLIC_GA4_MEASUREMENT_ID as string | undefined) ?? "").trim();
+const gaEnabled = gaMeasurementId.length > 0;
 
 const breadcrumbTrail = [{ label: homeLabel, path: localizedHomePath }, ...breadcrumbs].reduce(
   (acc, item) => {
@@ -154,6 +199,28 @@ const schemaJson = JSON.stringify({
     <meta name="author" content={siteName} />
     <link rel="icon" href="/favicon.ico" />
     <link rel="sitemap" type="application/xml" href={absoluteUrl("/sitemap.xml")} />
+    {ADSENSE_ENABLED ? (
+      <script
+        async
+        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`}
+        crossorigin="anonymous"
+      />
+    ) : null}
+    {gaEnabled ? (
+      <>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`} />
+        <script is:inline define:vars={{ gaMeasurementId }}>
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag("js", new Date());
+          gtag("config", gaMeasurementId, {
+            anonymize_ip: true,
+          });
+        </script>
+      </>
+    ) : null}
     {bodyClass.includes("home-bg") ? (
       <link rel="preload" as="image" href="/hanok-hero.webp" fetchpriority="high" />
     ) : null}
@@ -308,6 +375,57 @@ const schemaJson = JSON.stringify({
         padding: 48px 0 80px;
       }
 
+      .site-footer {
+        width: min(1100px, 92vw);
+        margin: 0 auto 28px;
+        padding: 20px 18px;
+        border-radius: 16px;
+        border: 1px solid var(--border-dark);
+        background: linear-gradient(180deg, rgba(16, 12, 10, 0.72), rgba(12, 9, 8, 0.68));
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.24);
+      }
+
+      .site-footer h2 {
+        margin: 0;
+        font-family: "Fraunces", serif;
+        font-size: clamp(1.1rem, 1.7vw, 1.35rem);
+      }
+
+      .site-footer p {
+        margin: 6px 0 0;
+        color: var(--text-soft);
+        font-size: 0.95rem;
+      }
+
+      .site-footer-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+      }
+
+      .site-footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .site-footer-links a {
+        display: inline-flex;
+        align-items: center;
+        padding: 7px 12px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: var(--text-strong);
+        text-decoration: none;
+        font-size: 0.88rem;
+        font-weight: 600;
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .site-footer-links a:hover {
+        background: rgba(255, 255, 255, 0.09);
+      }
+
       .skip-link {
         position: absolute;
         left: -999px;
@@ -326,6 +444,11 @@ const schemaJson = JSON.stringify({
       @media (max-width: 720px) {
         main {
           padding: 32px 0 64px;
+        }
+
+        .site-footer {
+          padding: 18px 14px;
+          margin-bottom: 20px;
         }
       }
 
@@ -509,6 +632,30 @@ const schemaJson = JSON.stringify({
     <main id="content">
       <slot />
     </main>
+    <footer class="site-footer">
+      <div class="site-footer-grid">
+        <div>
+          <h2>{footerUi.title}</h2>
+          <p>{footerUi.subtitle}</p>
+        </div>
+        <nav
+          class="site-footer-links"
+          aria-label={lang === "es" ? "Enlaces de regreso semanal" : "Weekly return links"}
+        >
+          {footerQuickLinks.map((link) => (
+            <a href={link.href}>{link.label}</a>
+          ))}
+        </nav>
+        <nav
+          class="site-footer-links"
+          aria-label={lang === "es" ? "Enlaces de políticas" : "Policy links"}
+        >
+          {footerLegalLinks.map((link) => (
+            <a href={link.href}>{link.label}</a>
+          ))}
+        </nav>
+      </div>
+    </footer>
     <script is:inline define:vars={{ lang }}>
       (() => {
         const normalizePath = (pathname) => {
@@ -698,6 +845,112 @@ const schemaJson = JSON.stringify({
           cleanUrl.hash = "";
           window.location.replace(cleanUrl.toString());
         }
+      })();
+    </script>
+    <script is:inline define:vars={{ gaMeasurementId }}>
+      (() => {
+        if (!gaMeasurementId) return;
+
+        const send = (eventName, params = {}) => {
+          if (typeof window.gtag !== "function") return;
+          window.gtag("event", eventName, params);
+        };
+
+        const now = Date.now();
+        const dayMs = 24 * 60 * 60 * 1000;
+        const storageKey = "visitkorea_last_visit_ts";
+
+        let previousVisit = null;
+        try {
+          const raw = window.localStorage.getItem(storageKey);
+          const parsed = raw ? Number(raw) : NaN;
+          previousVisit = Number.isFinite(parsed) ? parsed : null;
+        } catch {
+          previousVisit = null;
+        }
+
+        const daysSinceLast = previousVisit ? Math.floor((now - previousVisit) / dayMs) : -1;
+        const within7d = previousVisit !== null && daysSinceLast >= 0 && daysSinceLast <= 7;
+
+        send("visit_recency", {
+          page_path: window.location.pathname,
+          days_since_last: daysSinceLast,
+          within_7d: within7d ? "yes" : "no",
+        });
+
+        try {
+          window.localStorage.setItem(storageKey, String(now));
+        } catch {
+          // Ignore localStorage failures in private mode.
+        }
+
+        const cardLinks = document.querySelectorAll(".card[data-card-link]");
+        if (cardLinks.length > 0) {
+          send("card_impression", {
+            page_path: window.location.pathname,
+            card_count: cardLinks.length,
+          });
+        }
+
+        const isInternalHttpLink = (url) =>
+          (url.protocol === "http:" || url.protocol === "https:") && url.origin === window.location.origin;
+
+        const getKpiSection = (anchor) =>
+          anchor.getAttribute("data-kpi-section") ||
+          anchor.closest("[data-kpi-section]")?.getAttribute("data-kpi-section") ||
+          (anchor.closest(".leaf-tools") ? "leaf_tools" : "main_content");
+
+        document.addEventListener(
+          "click",
+          (event) => {
+            const target = event.target;
+            if (!(target instanceof Element)) return;
+            const anchor = target.closest("a[href]");
+            if (!(anchor instanceof HTMLAnchorElement)) return;
+
+            const href = anchor.getAttribute("href");
+            if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) return;
+
+            const next = new URL(anchor.href, window.location.origin);
+            if (!isInternalHttpLink(next)) return;
+
+            const currentPath = `${window.location.pathname}${window.location.search}`;
+            const targetPath = `${next.pathname}${next.search}`;
+            if (targetPath === currentPath) return;
+
+            const linkText = (anchor.textContent || "").trim().slice(0, 90);
+            const section = getKpiSection(anchor);
+
+            send("internal_navigation_click", {
+              from_path: window.location.pathname,
+              to_path: next.pathname,
+              link_text: linkText || "(empty)",
+              section,
+            });
+
+            if (anchor.matches(".card[data-card-link]")) {
+              send("card_click", {
+                from_path: window.location.pathname,
+                card_title: anchor.getAttribute("data-card-title") || linkText || "(untitled)",
+                to_path: next.pathname,
+                section,
+              });
+            }
+
+            if (
+              next.pathname.includes("/latest-travel-updates-for-korea") ||
+              next.pathname.includes("/this-week-in-korea-for-travelers") ||
+              next.pathname.includes("/k-culture-and-everyday-korea")
+            ) {
+              send("weekly_hub_click", {
+                from_path: window.location.pathname,
+                to_path: next.pathname,
+                section,
+              });
+            }
+          },
+          true
+        );
       })();
     </script>
   </body>

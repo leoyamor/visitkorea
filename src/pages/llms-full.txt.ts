@@ -52,6 +52,8 @@ export const GET = () => {
     `Sitemap: ${SITE_URL}/sitemap.xml`,
     "Canonical language: English URLs without query parameters.",
     "Spanish alternate: use /es/... path equivalents.",
+    "Weekly revisit hubs: /this-week-in-korea-for-travelers and /k-culture-and-everyday-korea.",
+    "Time-sensitive checks: /latest-travel-updates-for-korea.",
     "",
     "## Content Pages",
     ...contentRoutes.map((route) => {

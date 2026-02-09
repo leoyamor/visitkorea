@@ -1,0 +1,68 @@
+---
+import { ADSENSE_CLIENT_ID, getAdSlotByZone, type AdZone } from "../lib/ads";
+
+type Props = {
+  zone: AdZone;
+  className?: string;
+};
+
+const { zone, className = "" } = Astro.props as Props;
+const slotId = getAdSlotByZone(zone);
+const isEnabled = Boolean(ADSENSE_CLIENT_ID && slotId);
+const showPlaceholder = import.meta.env.DEV && !isEnabled;
+---
+
+{isEnabled ? (
+  <div class={`ad-safe-slot ${className}`} data-ad-zone={zone} data-kpi-section="adsense_slot">
+    <p class="ad-safe-label">Advertisement</p>
+    <ins
+      class="adsbygoogle"
+      style="display:block"
+      data-ad-client={ADSENSE_CLIENT_ID}
+      data-ad-slot={slotId}
+      data-ad-format="auto"
+      data-full-width-responsive="true"
+    />
+    <script is:inline>
+      (() => {
+        const queue = (window.adsbygoogle = window.adsbygoogle || []);
+        queue.push({});
+      })();
+    </script>
+  </div>
+) : showPlaceholder ? (
+  <div class={`ad-safe-slot ad-safe-slot--placeholder ${className}`} data-ad-zone={zone} aria-hidden="true">
+    <p class="ad-safe-label">Ad template: {zone}</p>
+  </div>
+) : null}
+
+<style>
+  .ad-safe-slot {
+    margin: 18px 0;
+    padding: 14px 12px;
+    border-radius: 14px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.72);
+  }
+
+  .ad-safe-slot--placeholder {
+    border-style: dashed;
+    background: rgba(255, 255, 255, 0.46);
+  }
+
+  .ad-safe-label {
+    margin: 0 0 10px;
+    font-size: 0.76rem;
+    line-height: 1;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(46, 42, 38, 0.68);
+  }
+
+  @media (max-width: 720px) {
+    .ad-safe-slot {
+      margin: 14px 0;
+      padding: 12px 10px;
+    }
+  }
+</style>

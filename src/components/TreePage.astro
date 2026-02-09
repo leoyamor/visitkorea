@@ -1,5 +1,7 @@
 ---
-import type { TreeNode } from "../data/siteTree";
+import AdSenseSafeSlot from "./AdSenseSafeSlot.astro";
+import { findNodeBySegments, type TreeNode } from "../data/siteTree";
+import { getEditorialMeta } from "../lib/editorial";
 import type { SupportedLang } from "../lib/i18n";
 import { withLang } from "../lib/i18n";
 
@@ -26,7 +28,7 @@ const t = {
     plannerName: "Visit Korea Planner",
     homeTitle: "Travel Korea with Clarity, Not Overload",
     homeLead:
-      "Clear, practical answers to help you decide where to go, how long to stay, and how to travel Korea with confidence.",
+      "Clear, practical answers plus weekly traveler updates and 5-minute culture tips for every stage of your trip.",
     back: "Back",
     home: "Home",
     backAria: "Back to previous page",
@@ -35,18 +37,33 @@ const t = {
     startHere: "Start here",
     pickSub: "Pick a sub page",
     quickAnswer: "Quick answer",
-    homeSectionDesc: "Begin with a category, then drill down to detailed tips.",
+    homeSectionDesc: "Start with a category, then return weekly for updates and culture snapshots.",
     subSectionDesc: "Each card opens a focused guide.",
     quickFallback: "Here is the short description, with more detail to be added later.",
     cardFallback: "Short summary coming soon.",
     guidePreparing: "This guide is being prepared.",
     identity: "This site helps you decide what fits your trip — not just list information.",
     homeCtaTitle: "Not sure where to go next?",
-    homeCtaDesc: "Try these dependable starting points for first-time travelers.",
+    homeCtaDesc: "Start with these core guides, then check weekly update cards before key travel decisions.",
     pillDays: "7 Days in Korea",
     pillSim: "SIM or eSIM?",
     pillSubway: "Using the Subway",
     pillCityFit: "Which City Fits You Best?",
+    pillWeekly: "This Week in Korea",
+    pillCulture: "K-Culture & Everyday Korea",
+    nextPrefix: "Next",
+    nextDecision: "Next decision",
+    returnCheckpoints: "Return checkpoints",
+    quickChecklist: "Quick checklist",
+    checklistHint:
+      "No login needed. Tick what you completed, then screenshot or bookmark this page for later.",
+    bookmarkTip: "Pro tip: Save this page to your home screen for quick access during your trip.",
+    returnLatest: "Latest Travel Updates",
+    returnWeekly: "This Week in Korea",
+    returnCulture: "K-Culture & Everyday Korea",
+    updatedLabel: "Last updated",
+    sourceNote: "For final booking decisions, always verify with official sources.",
+    nextFallback: "Latest Travel Updates for Korea",
   },
   es: {
     language: "Idioma",
@@ -55,7 +72,7 @@ const t = {
     plannerName: "Planificador de viaje a Corea",
     homeTitle: "Viaja por Corea con claridad, sin complicaciones",
     homeLead:
-      "Respuestas claras y prácticas para ayudarte a decidir adónde ir, cuánto tiempo quedarte y cómo viajar por Corea con confianza.",
+      "Respuestas claras y prácticas, más actualizaciones semanales y cultura en 5 minutos para cada etapa del viaje.",
     back: "Volver",
     home: "Inicio",
     backAria: "Volver a la página anterior",
@@ -64,18 +81,33 @@ const t = {
     startHere: "Empieza aquí",
     pickSub: "Elige una subpágina",
     quickAnswer: "Respuesta rápida",
-    homeSectionDesc: "Empieza con una categoría y luego entra en detalles útiles.",
+    homeSectionDesc: "Empieza con una categoría y vuelve cada semana para ver novedades y cultura.",
     subSectionDesc: "Cada tarjeta abre una guía específica.",
     quickFallback: "Aquí tienes una descripción breve; pronto añadiremos más detalles.",
     cardFallback: "Resumen breve próximamente.",
     guidePreparing: "Esta guía se está preparando.",
     identity: "Este sitio te ayuda a decidir qué encaja mejor con tu viaje; no solo te muestra información.",
     homeCtaTitle: "¿No sabes a dónde ir después?",
-    homeCtaDesc: "Prueba estos puntos de partida confiables para quienes viajan por primera vez.",
+    homeCtaDesc: "Empieza con estas guías clave y vuelve cada semana antes de decisiones importantes.",
     pillDays: "7 días en Corea",
     pillSim: "¿SIM o eSIM?",
     pillSubway: "Cómo usar el metro",
     pillCityFit: "¿Qué ciudad encaja mejor contigo?",
+    pillWeekly: "Esta semana en Corea",
+    pillCulture: "Cultura y vida diaria en Corea",
+    nextPrefix: "Siguiente",
+    nextDecision: "Siguiente decisión",
+    returnCheckpoints: "Puntos para volver",
+    quickChecklist: "Checklist rápida",
+    checklistHint:
+      "Sin registro. Marca lo que ya hiciste y guarda una captura o marcador para volver rápido.",
+    bookmarkTip: "Consejo: guarda esta página en tu pantalla de inicio para usarla durante el viaje.",
+    returnLatest: "Últimas actualizaciones",
+    returnWeekly: "Esta semana en Corea",
+    returnCulture: "Cultura y vida diaria",
+    updatedLabel: "Última actualización",
+    sourceNote: "Antes de reservar, confirma siempre con fuentes oficiales.",
+    nextFallback: "Últimas actualizaciones para Corea",
   },
 }[lang];
 
@@ -543,6 +575,75 @@ const getImage = (key?: string, title?: string, slug?: string) => {
   return toDataUri(svg);
 };
 
+const editorialMeta = getEditorialMeta(lang);
+const latestUpdatesPath = withLang("/latest-travel-updates-for-korea", lang);
+const weeklyBriefPath = withLang("/this-week-in-korea-for-travelers", lang);
+const culturePath = withLang("/k-culture-and-everyday-korea", lang);
+const isLeafPage = !isHome && !hasChildren;
+const rootSlug = segments[0] ?? "";
+
+const checklistByRoot: Record<string, string[]> = {
+  "plan-your-trip": [
+    "I chose my trip length and one backup plan.",
+    "I confirmed my first city and first-night stay.",
+    "I bookmarked the weekly update page before booking."
+  ],
+  "choose-a-city": [
+    "I picked one main city and one optional contrast city.",
+    "I checked seasonal weather for my travel dates.",
+    "I compared transit time between selected cities."
+  ],
+  "where-to-stay": [
+    "I chose an area near transit, not only a cheap room.",
+    "I checked late check-in and luggage storage policy.",
+    "I saved the hotel address in map and screenshot form."
+  ],
+  "getting-around-korea": [
+    "I know how I will go from airport to hotel.",
+    "I decided which transit card or pass to use first.",
+    "I checked if weekend/holiday schedule changes affect my route."
+  ],
+  "travel-basics": [
+    "I picked SIM/eSIM/Wi-Fi based on my phone.",
+    "I prepared one card and a small amount of cash.",
+    "I saved emergency numbers (112 / 119 / 1330)."
+  ],
+  "before-you-go": [
+    "I verified entry and authorization requirements.",
+    "I prepared passport and key booking confirmations.",
+    "I checked latest updates within 24 hours before departure."
+  ],
+};
+
+const defaultChecklist = [
+  "I reviewed the key points on this page.",
+  "I checked the latest travel updates before making decisions.",
+  "I saved this page for quick access during my trip."
+];
+
+const leafChecklist = checklistByRoot[rootSlug] ?? defaultChecklist;
+
+const joinPath = (base: string, slug: string) => {
+  const normalizedBase = base === "/" ? "" : base.replace(/\/+$/, "");
+  return `${normalizedBase}/${slug}`;
+};
+
+const { parent } = isLeafPage ? findNodeBySegments(segments) : { parent: undefined };
+const siblingLeaves = (parent?.children ?? []).filter((child) => !child.children?.length);
+const currentLeafIndex = siblingLeaves.findIndex((child) => child.slug === node.slug);
+const nextLeaf =
+  siblingLeaves.length > 1 && currentLeafIndex >= 0
+    ? siblingLeaves[(currentLeafIndex + 1) % siblingLeaves.length]
+    : undefined;
+const nextDecisionPath = nextLeaf
+  ? withLang(joinPath(parentPath, nextLeaf.slug), lang)
+  : latestUpdatesPath;
+const nextDecisionLabel = nextLeaf?.title ?? t.nextFallback;
+const checklistStorageKey = segments.join("/") || node.slug || "leaf";
+const contentBlockCount = node.content?.length ?? 0;
+const middleContentIndex =
+  contentBlockCount > 0 ? Math.max(1, Math.floor((contentBlockCount - 1) / 2)) : -1;
+
 const breadcrumb = breadcrumbs;
 ---
 
@@ -584,7 +685,10 @@ const breadcrumb = breadcrumbs;
   </div>
 </section>
 
-<section class="section">
+<section
+  class="section"
+  data-kpi-section={isHome ? "home_main" : hasChildren ? `collection_${node.slug ?? "root"}` : "leaf_content"}
+>
   <div class="section-header">
     <h2 class="t-section">{isHome ? t.startHere : hasChildren ? t.pickSub : t.quickAnswer}</h2>
     <p>
@@ -599,7 +703,14 @@ const breadcrumb = breadcrumbs;
   {hasChildren ? (
     <div class="grid" data-orphans={children.length % 3}>
       {children.map((child, index) => (
-        <a class="card" href={withLang(`${basePath}/${child.slug}`, lang)} data-tone={getTone(child.icon)}>
+        <a
+          class="card"
+          href={withLang(`${basePath}/${child.slug}`, lang)}
+          data-tone={getTone(child.icon)}
+          data-card-link
+          data-card-title={child.title}
+          data-kpi-section={isHome ? "home_card_grid" : `collection_${node.slug ?? "root"}_cards`}
+        >
           <div class="thumb">
             <img
               src={getImage(child.image ?? child.icon, child.title, child.slug)}
@@ -641,31 +752,84 @@ const breadcrumb = breadcrumbs;
           <p class="t-subheading">{node.description ?? t.guidePreparing}</p>
         </div>
       </div>
-      {node.content?.map((section) => (
-        <div class="content-block" data-tone={getTone(section.icon)}>
-          <div class="content-title">
-            {section.icon && (
-              <span class="content-icon" set:html={renderIcon(section.icon)} />
+      {node.content?.map((section, index) => (
+        <Fragment>
+          <div class="content-block" data-tone={getTone(section.icon)}>
+            <div class="content-title">
+              {section.icon && (
+                <span class="content-icon" set:html={renderIcon(section.icon)} />
+              )}
+              <h4 class="t-section">{section.title}</h4>
+            </div>
+            {section.emphasis && (
+              <p class="content-emphasis">{section.emphasis}</p>
             )}
-            <h4 class="t-section">{section.title}</h4>
+            <p set:html={linkify(section.body)} />
+            {section.bullets && (
+              <ul>
+                {section.bullets.map((bullet) => (
+                  <li set:html={linkify(bullet)} />
+                ))}
+              </ul>
+            )}
           </div>
-          {section.emphasis && (
-            <p class="content-emphasis">{section.emphasis}</p>
+          {isLeafPage && index === 0 && (
+            <AdSenseSafeSlot zone="leaf_after_intro" className="ad-safe-spacing ad-safe-spacing--intro" />
           )}
-          <p set:html={linkify(section.body)} />
-          {section.bullets && (
-            <ul>
-              {section.bullets.map((bullet) => (
-                <li set:html={linkify(bullet)} />
-              ))}
-            </ul>
+          {isLeafPage && contentBlockCount >= 4 && index === middleContentIndex && (
+            <AdSenseSafeSlot zone="leaf_mid_content" className="ad-safe-spacing ad-safe-spacing--middle" />
           )}
-        </div>
+        </Fragment>
       ))}
       <div class="content-identity">
         <span class="content-identity-icon" aria-hidden="true" set:html={renderIcon("spark")} />
         <span>{t.identity}</span>
       </div>
+      {isLeafPage && (
+        <AdSenseSafeSlot zone="leaf_end_content" className="ad-safe-spacing ad-safe-spacing--end" />
+      )}
+      {isLeafPage && (
+        <div class="leaf-tools">
+          <div class="leaf-next">
+            <p class="leaf-tools-label">{t.nextDecision}</p>
+            <a class="leaf-next-link" href={nextDecisionPath} data-kpi-section="leaf_next_decision">
+              <span class="leaf-next-prefix">{t.nextPrefix}</span>
+              <strong>{nextDecisionLabel}</strong>
+            </a>
+          </div>
+
+          <div class="leaf-return">
+            <p class="leaf-tools-label">{t.returnCheckpoints}</p>
+            <div class="leaf-return-links">
+              <a href={latestUpdatesPath} data-kpi-section="leaf_return_latest">{t.returnLatest}</a>
+              <a href={weeklyBriefPath} data-kpi-section="leaf_return_weekly">{t.returnWeekly}</a>
+              <a href={culturePath} data-kpi-section="leaf_return_culture">{t.returnCulture}</a>
+            </div>
+          </div>
+
+          <div class="leaf-checklist-wrap">
+            <p class="leaf-tools-label">{t.quickChecklist}</p>
+            <p class="leaf-checklist-hint">{t.checklistHint}</p>
+            <ul class="leaf-checklist-list" data-leaf-checklist data-checklist-key={checklistStorageKey}>
+              {leafChecklist.map((item, index) => (
+                <li>
+                  <label>
+                    <input type="checkbox" data-checklist-item={index} />
+                    <span>{item}</span>
+                  </label>
+                </li>
+              ))}
+            </ul>
+            <p class="leaf-bookmark-tip">{t.bookmarkTip}</p>
+          </div>
+
+          <p class="leaf-meta">
+            <strong>{t.updatedLabel}:</strong> {editorialMeta.updatedText}
+            <span aria-hidden="true"> · </span>
+            <span>{t.sourceNote}</span>
+          </p>
+        </div>
+      )}
     </div>
   )}
 </section>
@@ -677,10 +841,12 @@ const breadcrumb = breadcrumbs;
       <p>{t.homeCtaDesc}</p>
     </div>
     <div class="pill-row">
-      <a class="pill" href={withLang("/plan-your-trip/7-days-in-korea", lang)}>{t.pillDays}</a>
-      <a class="pill" href={withLang("/travel-basics/sim-or-esim", lang)}>{t.pillSim}</a>
-      <a class="pill" href={withLang("/getting-around-korea/using-the-subway", lang)}>{t.pillSubway}</a>
-      <a class="pill" href={withLang("/choose-a-city/which-city-fits-you-best", lang)}>{t.pillCityFit}</a>
+      <a class="pill" href={withLang("/plan-your-trip/7-days-in-korea", lang)} data-kpi-section="home_pill_days">{t.pillDays}</a>
+      <a class="pill" href={withLang("/travel-basics/sim-or-esim", lang)} data-kpi-section="home_pill_sim">{t.pillSim}</a>
+      <a class="pill" href={withLang("/getting-around-korea/using-the-subway", lang)} data-kpi-section="home_pill_subway">{t.pillSubway}</a>
+      <a class="pill" href={withLang("/choose-a-city/which-city-fits-you-best", lang)} data-kpi-section="home_pill_city">{t.pillCityFit}</a>
+      <a class="pill" href={weeklyBriefPath} data-kpi-section="home_pill_weekly">{t.pillWeekly}</a>
+      <a class="pill" href={culturePath} data-kpi-section="home_pill_culture">{t.pillCulture}</a>
     </div>
   </section>
 )}
@@ -801,6 +967,49 @@ const breadcrumb = breadcrumbs;
         select.value = targetLang;
         select.dispatchEvent(new Event("change"));
       });
+    });
+  })();
+</script>
+
+<script is:inline>
+  (() => {
+    const checklist = document.querySelector("[data-leaf-checklist]");
+    if (!checklist) return;
+    const keyBase = checklist.getAttribute("data-checklist-key");
+    if (!keyBase) return;
+
+    const storageKey = `visitkorea_checklist_${keyBase}`;
+    const items = Array.from(checklist.querySelectorAll("[data-checklist-item]"));
+    if (!items.length) return;
+
+    const readSavedState = () => {
+      try {
+        const raw = window.localStorage.getItem(storageKey);
+        if (!raw) return [];
+        const parsed = JSON.parse(raw);
+        return Array.isArray(parsed) ? parsed : [];
+      } catch {
+        return [];
+      }
+    };
+
+    const writeSavedState = () => {
+      try {
+        const state = items.map((input) => {
+          if (!(input instanceof HTMLInputElement)) return false;
+          return input.checked;
+        });
+        window.localStorage.setItem(storageKey, JSON.stringify(state));
+      } catch {
+        // Ignore storage errors and keep checklist usable.
+      }
+    };
+
+    const saved = readSavedState();
+    items.forEach((input, index) => {
+      if (!(input instanceof HTMLInputElement)) return;
+      input.checked = Boolean(saved[index]);
+      input.addEventListener("change", writeSavedState);
     });
   })();
 </script>
@@ -1319,6 +1528,137 @@ const breadcrumb = breadcrumbs;
     stroke: currentColor;
     fill: none;
     stroke-width: 1.6;
+  }
+
+  .leaf-tools {
+    margin-top: 24px;
+    display: grid;
+    gap: 14px;
+    padding: 18px;
+    border-radius: 16px;
+    background: var(--paper-2);
+    border: 1px solid var(--border-paper);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+  }
+
+  .leaf-tools-label {
+    margin: 0 0 8px;
+    font-size: 0.84rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  .leaf-next-link {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: var(--paper);
+    border: 1px solid var(--border-paper);
+    text-decoration: none;
+    color: var(--ink-strong);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.14);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .leaf-next-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 24px rgba(0, 0, 0, 0.18);
+  }
+
+  .leaf-next-prefix {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink-soft);
+  }
+
+  .leaf-return-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .leaf-return-links a {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: var(--paper);
+    border: 1px solid var(--border-paper);
+    color: var(--ink-strong);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .leaf-return-links a:hover {
+    color: var(--accent-hover);
+  }
+
+  .leaf-checklist-hint {
+    margin: 0 0 10px;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+
+  .leaf-checklist-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 8px;
+  }
+
+  .leaf-checklist-list label {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--ink-strong);
+    font-size: 0.95rem;
+    line-height: 1.55;
+    cursor: pointer;
+  }
+
+  .leaf-checklist-list input[type="checkbox"] {
+    margin-top: 3px;
+    accent-color: var(--accent);
+  }
+
+  .leaf-bookmark-tip {
+    margin: 10px 0 0;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+  }
+
+  .leaf-meta {
+    margin: 2px 0 0;
+    color: var(--ink-soft);
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  .ad-safe-spacing {
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+
+  .ad-safe-spacing--intro {
+    margin-top: 6px;
+    margin-bottom: 20px;
+  }
+
+  .ad-safe-spacing--middle {
+    margin-top: 10px;
+    margin-bottom: 18px;
+  }
+
+  .ad-safe-spacing--end {
+    margin-top: 14px;
+    margin-bottom: 24px;
   }
 
   .content-title {

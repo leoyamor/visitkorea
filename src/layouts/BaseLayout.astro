@@ -487,6 +487,10 @@ const schemaJson = JSON.stringify({
         --accent: #E6D3A3;
         --accent-text: #2E2A26;
         --focus: rgba(230, 211, 163, 0.45);
+        --link-on-dark: #ffe3a3;
+        --link-on-dark-hover: #fff2cf;
+        --link-on-light: #0b5bd3;
+        --link-on-light-hover: #08429a;
 
         --paper: var(--card-bg);
         --paper-2: var(--thumb-bg-b);
@@ -518,15 +522,39 @@ const schemaJson = JSON.stringify({
 
       .page--sub a,
       .page--leaf a {
-        color: var(--text);
-        text-decoration-color: rgba(255, 255, 255, 0.35);
+        color: var(--link-on-dark);
+        text-decoration-color: rgba(255, 227, 163, 0.5);
         text-underline-offset: 0.18em;
       }
 
       .page--sub a:hover,
       .page--leaf a:hover {
-        color: rgba(255, 255, 255, 0.92);
-        text-decoration-color: rgba(255, 255, 255, 0.55);
+        color: var(--link-on-dark-hover);
+        text-decoration-color: rgba(255, 242, 207, 0.74);
+      }
+
+      .page--sub .section.light a,
+      .page--leaf .section.light a,
+      .page--sub .answer a,
+      .page--leaf .answer a,
+      .page--sub .content-block a,
+      .page--leaf .content-block a,
+      .page--sub .leaf-tools a,
+      .page--leaf .leaf-tools a {
+        color: var(--link-on-light);
+        text-decoration-color: rgba(11, 91, 211, 0.45);
+      }
+
+      .page--sub .section.light a:hover,
+      .page--leaf .section.light a:hover,
+      .page--sub .answer a:hover,
+      .page--leaf .answer a:hover,
+      .page--sub .content-block a:hover,
+      .page--leaf .content-block a:hover,
+      .page--sub .leaf-tools a:hover,
+      .page--leaf .leaf-tools a:hover {
+        color: var(--link-on-light-hover);
+        text-decoration-color: rgba(8, 66, 154, 0.62);
       }
 
       .page--sub .muted,

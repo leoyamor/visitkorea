@@ -576,6 +576,8 @@ const latestUpdatesPath = withLang("/latest-travel-updates-for-korea", lang);
 const nowMorePath = withLang("/korea-now-and-more", lang);
 const isLeafPage = !isHome && !hasChildren;
 const rootSlug = segments[0] ?? "";
+const centerCardIconForPage =
+  rootSlug === "latest-travel-updates-for-korea" || rootSlug === "korea-now-and-more";
 
 const checklistByRoot: Record<string, string[]> = {
   "plan-your-trip": [
@@ -749,7 +751,11 @@ const breadcrumb = breadcrumbs;
       </div>
       {node.content?.map((section, index) => (
         <Fragment>
-          <div class="content-block" data-tone={getTone(section.icon)}>
+          <div
+            class="content-block"
+            data-tone={getTone(section.icon)}
+            data-icon-align={centerCardIconForPage ? "center" : undefined}
+          >
             <div class="content-title">
               {section.icon && (
                 <span class="content-icon" set:html={renderIcon(section.icon)} />
@@ -1721,6 +1727,18 @@ const breadcrumb = breadcrumbs;
 
   .content-block[data-tone="amber"] {
     --content-accent: #f0b352;
+  }
+
+  .content-block[data-icon-align="center"] .content-title {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .content-block[data-icon-align="center"] .content-title h4 {
+    text-align: center;
   }
 
 

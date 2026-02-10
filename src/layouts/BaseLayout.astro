@@ -68,8 +68,8 @@ const homeBodyStyle = bodyClass.includes("home-bg")
      background-position: center;
      background-repeat: no-repeat;`
   : undefined;
-const gaMeasurementId = ((import.meta.env.PUBLIC_GA4_MEASUREMENT_ID as string | undefined) ?? "").trim();
-const gaEnabled = gaMeasurementId.length > 0;
+const gaMeasurementId = "G-VKP8CHGJKH";
+const gaEnabled = true;
 
 const breadcrumbTrail = [{ label: homeLabel, path: localizedHomePath }, ...breadcrumbs].reduce(
   (acc, item) => {
@@ -178,16 +178,13 @@ const schemaJson = JSON.stringify({
     ) : null}
     {gaEnabled ? (
       <>
-        <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`} />
-        <script is:inline define:vars={{ gaMeasurementId }}>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-VKP8CHGJKH" />
+        <script is:inline>
           window.dataLayer = window.dataLayer || [];
-          function gtag() {
-            dataLayer.push(arguments);
-          }
-          gtag("js", new Date());
-          gtag("config", gaMeasurementId, {
-            anonymize_ip: true,
-          });
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-VKP8CHGJKH');
         </script>
       </>
     ) : null}

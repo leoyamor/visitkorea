@@ -382,6 +382,43 @@ const schemaJson = JSON.stringify({
 
     </style>
     <style is:global>
+      .goog-te-banner-frame.skiptranslate,
+      iframe.goog-te-banner-frame,
+      .goog-te-balloon-frame,
+      #goog-gt-tt,
+      .goog-tooltip {
+        display: none !important;
+        visibility: hidden !important;
+      }
+
+      body {
+        top: 0 !important;
+      }
+
+      html.translated-ltr body.home-bg,
+      html.translated-rtl body.home-bg,
+      body.translated-ltr.home-bg,
+      body.translated-rtl.home-bg {
+        background:
+          radial-gradient(1300px 700px at 18% -6%, rgba(255, 244, 224, 0.22), transparent 56%),
+          radial-gradient(900px 520px at 76% 86%, rgba(0, 0, 0, 0.26), transparent 62%),
+          linear-gradient(180deg, rgba(24, 18, 14, 0.36), rgba(18, 14, 11, 0.6)),
+          linear-gradient(180deg, rgba(26, 18, 14, 0.2), rgba(15, 11, 9, 0.46)),
+          url("/hanok-hero-home.webp?v=20260210b") !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+      }
+
+      html.translated-ltr body.home-bg .hero,
+      html.translated-rtl body.home-bg .hero,
+      body.translated-ltr.home-bg .hero,
+      body.translated-rtl.home-bg .hero {
+        background:
+          linear-gradient(180deg, rgba(18, 14, 11, 0.24), rgba(15, 11, 9, 0.38)),
+          url("/hanok-hero-home.webp?v=20260210b") center / cover no-repeat !important;
+      }
+
       .page--sub,
       .page--leaf {
         --page-bg-top: #456A86;

@@ -23,10 +23,52 @@ const showPlaceholder = import.meta.env.DEV && !isEnabled;
       data-ad-format="auto"
       data-full-width-responsive="true"
     />
-    <script is:inline>
+    <script is:inline define:vars={{ ADSENSE_CLIENT_ID }}>
       (() => {
-        const queue = (window.adsbygoogle = window.adsbygoogle || []);
-        queue.push({});
+        const clientId = ADSENSE_CLIENT_ID;
+        if (!clientId) return;
+
+        const enqueue = () => {
+          const queue = (window.adsbygoogle = window.adsbygoogle || []);
+          queue.push({});
+        };
+
+        const loadScript = () => {
+          if (window.__adsenseLoaderPromise) {
+            return window.__adsenseLoaderPromise;
+          }
+
+          const existing = document.querySelector("script[data-adsense-loader]");
+          if (existing) {
+            window.__adsenseLoaderPromise = Promise.resolve();
+            return window.__adsenseLoaderPromise;
+          }
+
+          window.__adsenseLoaderPromise = new Promise((resolve, reject) => {
+            const script = document.createElement("script");
+            script.async = true;
+            script.crossOrigin = "anonymous";
+            script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${clientId}`;
+            script.setAttribute("data-adsense-loader", "true");
+            script.addEventListener("load", () => resolve(), { once: true });
+            script.addEventListener("error", () => reject(new Error("adsense_load_failed")), { once: true });
+            document.head.appendChild(script);
+          });
+
+          return window.__adsenseLoaderPromise;
+        };
+
+        const schedule = () => {
+          loadScript()
+            .catch(() => null)
+            .finally(enqueue);
+        };
+
+        if ("requestIdleCallback" in window) {
+          window.requestIdleCallback(schedule, { timeout: 1200 });
+          return;
+        }
+        window.setTimeout(schedule, 300);
       })();
     </script>
   </div>

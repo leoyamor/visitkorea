@@ -566,29 +566,54 @@ const leafImageSlugMap = new Map(
   leafImageNames.map((name) => [normalizeLeafSlug(name), name])
 );
 
-const LEAF_IMAGE_VERSION = "20260210q";
+const IMAGE_ASSET_VERSION = "20260210r";
+
+const toCardThumbPath = (value: string) => {
+  if (!value.startsWith("/") || !/\.webp($|\?)/i.test(value)) {
+    return value;
+  }
+
+  const [path, query = ""] = value.split("?");
+  let nextPath = path;
+
+  if (!nextPath.includes("/thumbs/")) {
+    if (nextPath.startsWith("/leaf%20images/")) {
+      nextPath = nextPath.replace("/leaf%20images/", "/leaf%20images/thumbs/");
+    } else if (nextPath.startsWith("/leaf images/")) {
+      nextPath = nextPath.replace("/leaf images/", "/leaf images/thumbs/");
+    } else if (!/^\/(?:hanok-hero-home|hanok-hero|hero)\.webp$/i.test(nextPath)) {
+      nextPath = `/thumbs${nextPath}`;
+    }
+  }
+
+  return query ? `${nextPath}?${query}` : nextPath;
+};
 
 const withLocalWebpVersion = (value: string) => {
   if (!value.startsWith("/") || !/\.webp($|\?)/i.test(value) || /(?:\?|&)v=/.test(value)) {
     return value;
   }
-  return `${value}${value.includes("?") ? "&" : "?"}v=${LEAF_IMAGE_VERSION}`;
+  return `${value}${value.includes("?") ? "&" : "?"}v=${IMAGE_ASSET_VERSION}`;
 };
 
 const getImage = (key?: string, title?: string, slug?: string) => {
   if (key && (key.startsWith("/") || key.includes(".webp"))) {
-    return withLocalWebpVersion(key);
+    return withLocalWebpVersion(toCardThumbPath(key));
   }
   if (title) {
     const matchedName = leafImageNameMap.get(normalizeLeafTitle(title));
     if (matchedName) {
-      return withLocalWebpVersion(`/leaf%20images/${encodeURIComponent(matchedName)}.webp`);
+      return withLocalWebpVersion(
+        toCardThumbPath(`/leaf%20images/${encodeURIComponent(matchedName)}.webp`)
+      );
     }
   }
   if (slug) {
     const matchedBySlug = leafImageSlugMap.get(normalizeLeafSlug(slug));
     if (matchedBySlug) {
-      return withLocalWebpVersion(`/leaf%20images/${encodeURIComponent(matchedBySlug)}.webp`);
+      return withLocalWebpVersion(
+        toCardThumbPath(`/leaf%20images/${encodeURIComponent(matchedBySlug)}.webp`)
+      );
     }
   }
   const theme = key ? imageThemeMap[key] ?? "basics" : "basics";

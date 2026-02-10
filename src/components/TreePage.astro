@@ -731,8 +731,8 @@ const breadcrumb = breadcrumbs;
             <img
               src={getImage(child.image ?? child.icon, child.title, child.slug)}
               alt={child.title}
-              loading={index < 2 ? "eager" : "lazy"}
-              fetchpriority={index === 0 ? "high" : "auto"}
+              loading={isHome ? (index === 0 ? "eager" : "lazy") : index < 2 ? "eager" : "lazy"}
+              fetchpriority={isHome ? (index === 0 ? "high" : "low") : index === 0 ? "high" : "auto"}
               decoding="async"
               width="360"
               height="220"

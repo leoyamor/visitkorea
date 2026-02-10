@@ -11,6 +11,7 @@ import {
   EDITORIAL_REVIEWER_NAME,
   EDITORIAL_UPDATED_ISO,
 } from "../lib/editorial";
+import { ADSENSE_CLIENT_ID, ADSENSE_ENABLED } from "../lib/ads";
 
 type BreadcrumbItem = {
   label: string;
@@ -157,6 +158,13 @@ const schemaJson = JSON.stringify({
     <meta name="author" content={siteName} />
     <link rel="icon" href="/favicon.ico" />
     <link rel="sitemap" type="application/xml" href={absoluteUrl("/sitemap.xml")} />
+    {ADSENSE_ENABLED ? (
+      <script
+        async
+        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`}
+        crossorigin="anonymous"
+      />
+    ) : null}
     {gaEnabled ? (
       <>
         <script is:inline define:vars={{ gaMeasurementId }}>

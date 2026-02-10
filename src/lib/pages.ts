@@ -1,4 +1,6 @@
-export const siteUrl = 'https://visitkorea.pages.dev';
+import { SITE_URL } from "./site";
+
+export const siteUrl = SITE_URL;
 
 export type CategorySlug =
   | 'itinerary'

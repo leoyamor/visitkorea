@@ -4,6 +4,7 @@ import Card from '../components/Card';
 import RelatedLinks from '../components/RelatedLinks';
 import Toc from '../components/Toc';
 import { allPages, getSubPagesByCategory, categories } from '../lib/pages';
+import { SITE_URL } from '../lib/site';
 import styles from './home.module.css';
 
 const home = allPages.find((page) => page.path === '/');
@@ -12,12 +13,12 @@ export const metadata = {
   title: 'Traveling to Korea? Start Here',
   description: 'Simple travel tips for foreigners visiting Korea.',
   alternates: {
-    canonical: 'https://visitkorea.pages.dev/'
+    canonical: `${SITE_URL}/`
   },
   openGraph: {
     title: 'Traveling to Korea? Start Here',
     description: 'Simple travel tips for foreigners visiting Korea.',
-    url: 'https://visitkorea.pages.dev/',
+    url: `${SITE_URL}/`,
     type: 'website'
   }
 };

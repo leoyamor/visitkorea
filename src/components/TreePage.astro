@@ -20,6 +20,8 @@ const { node, segments, parentPath, isHome = false, breadcrumbs = [], lang = "en
 const basePath = segments.length ? `/${segments.join("/")}` : "";
 const children = node.children ?? [];
 const hasChildren = children.length > 0;
+const FEEDBACK_FORM_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLScp3g5IZRpBYck0IdSL7j5Dk7BBYJAnGP4MTUChd02X47oRIg/viewform?usp=publish-editor";
 const t = {
   en: {
     language: "Language",
@@ -62,6 +64,12 @@ const t = {
     updatedLabel: "Last updated",
     sourceNote: "For final booking decisions, always verify with official sources.",
     nextFallback: "Latest Travel Updates for Korea",
+    feedbackEyebrow: "Help us improve",
+    feedbackTitle: "What should we improve for travelers?",
+    feedbackDesc:
+      "Tell us what felt unclear or missing. It takes about 2 minutes and helps us make this guide easier to use.",
+    feedbackButton: "Open feedback form",
+    feedbackNote: "Opens Google Form in a new tab.",
   },
   es: {
     language: "Idioma",
@@ -104,6 +112,12 @@ const t = {
     updatedLabel: "Última actualización",
     sourceNote: "Antes de reservar, confirma siempre con fuentes oficiales.",
     nextFallback: "Últimas actualizaciones para Corea",
+    feedbackEyebrow: "Ayúdanos a mejorar",
+    feedbackTitle: "¿Qué deberíamos mejorar para viajeros?",
+    feedbackDesc:
+      "Cuéntanos qué fue poco claro o qué faltó. Tarda unos 2 minutos y nos ayuda a mejorar esta guía.",
+    feedbackButton: "Abrir formulario",
+    feedbackNote: "Se abre en una nueva pestaña (Google Form).",
   },
 }[lang];
 
@@ -854,6 +868,21 @@ const breadcrumb = breadcrumbs;
       <a class="pill" href={withLang("/choose-a-city/which-city-fits-you-best", lang)} data-kpi-section="home_pill_city">{t.pillCityFit}</a>
       <a class="pill" href={nowMorePath} data-kpi-section="home_pill_now_more">{t.pillNowMore}</a>
     </div>
+    <div class="feedback-cta" data-kpi-section="home_feedback_section">
+      <p class="feedback-eyebrow">{t.feedbackEyebrow}</p>
+      <h3 class="feedback-title">{t.feedbackTitle}</h3>
+      <p class="feedback-desc">{t.feedbackDesc}</p>
+      <a
+        class="feedback-link"
+        href={FEEDBACK_FORM_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        data-kpi-section="home_feedback_form"
+      >
+        {t.feedbackButton}
+      </a>
+      <p class="feedback-note">{t.feedbackNote}</p>
+    </div>
   </section>
 )}
 
@@ -1134,7 +1163,7 @@ const breadcrumb = breadcrumbs;
   .home-bg .hero {
     background:
       linear-gradient(180deg, rgba(18, 14, 11, 0.24), rgba(15, 11, 9, 0.38)),
-      url("/hanok-hero.webp?v=20260209d") center / cover no-repeat;
+      url("/hanok-hero-home.webp?v=20260210b") center / cover no-repeat;
   }
 
   .home-bg .lang-switcher {
@@ -1293,6 +1322,67 @@ const breadcrumb = breadcrumbs;
 
   .section.light .section-header p {
     color: var(--ink-soft);
+  }
+
+  .feedback-cta {
+    margin-top: 22px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-paper);
+    display: grid;
+    gap: 8px;
+    max-width: 780px;
+  }
+
+  .feedback-eyebrow {
+    margin: 0;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--ink-soft);
+  }
+
+  .feedback-title {
+    margin: 0;
+    font-family: "Fraunces", serif;
+    color: var(--ink-strong);
+    font-size: clamp(1.08rem, 1.45vw, 1.34rem);
+    line-height: 1.32;
+  }
+
+  .feedback-desc {
+    margin: 0;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    max-width: 62ch;
+  }
+
+  .feedback-link {
+    width: fit-content;
+    margin-top: 4px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    border: 1px solid rgba(124, 92, 255, 0.28);
+    background: linear-gradient(180deg, rgba(124, 92, 255, 0.16), rgba(124, 92, 255, 0.1));
+    color: var(--ink-strong);
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+
+  .feedback-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 22px rgba(0, 0, 0, 0.18);
+    border-color: rgba(124, 92, 255, 0.42);
+    color: var(--ink-strong);
+  }
+
+  .feedback-note {
+    margin: 2px 0 0;
+    font-size: 0.84rem;
+    color: var(--ink-soft);
+    opacity: 0.9;
   }
 
   .grid {
@@ -1868,6 +1958,11 @@ const breadcrumb = breadcrumbs;
 
     .answer-hero {
       grid-template-columns: 1fr;
+    }
+
+    .feedback-cta {
+      margin-top: 18px;
+      padding-top: 16px;
     }
   }
 </style>

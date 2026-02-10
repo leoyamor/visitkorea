@@ -1,4 +1,4 @@
-export const SITE_URL = "https://www.planmykorea.com";
+export const SITE_URL = "https://planmykorea.com";
 export const SITE_NAME = "Visit Korea Planner";
 export const DEFAULT_OG_IMAGE_PATH = "/hero.webp";
 export const DEFAULT_OG_IMAGE_ALT = "Visit Korea Planner home hero";

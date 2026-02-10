@@ -48,6 +48,7 @@ To pass AdSense site review reliably, confirm all items below in production:
 
 1. Set AdSense environment variables in Cloudflare Pages (`Workers & Pages > visitkorea > Settings > Variables and Secrets`)
    - `PUBLIC_ADSENSE_CLIENT_ID` (or `ADSENSE_CLIENT_ID`)
+   - Or set publisher ID directly: `PUBLIC_ADSENSE_PUBLISHER_ID` (or `ADSENSE_PUBLISHER_ID`)
    - Optional slot IDs:
      - `PUBLIC_ADSENSE_SLOT_LEAF_AFTER_INTRO`
      - `PUBLIC_ADSENSE_SLOT_LEAF_MID_CONTENT`
@@ -62,3 +63,4 @@ To pass AdSense site review reliably, confirm all items below in production:
    - Canonical: `https://planmykorea.com/`
    - `https://www.planmykorea.com/*` -> `https://planmykorea.com/*` (301)
    - `https://visitkorea.pages.dev/*` -> `https://planmykorea.com/*` (301)
+6. Verify robots policy for GEO bots in Cloudflare Dashboard is not contradicting site policy.

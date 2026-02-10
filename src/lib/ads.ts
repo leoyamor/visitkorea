@@ -21,13 +21,36 @@ const normalizeAdSenseClientId = (raw: string) => {
   return "";
 };
 
-const toPublisherId = (clientId: string) => clientId.replace(/^ca-/, "");
+const normalizePublisherId = (raw: string) => {
+  const value = raw.trim().toLowerCase();
+  if (/^pub-\d{16}$/.test(value)) return value;
+  if (/^ca-pub-\d{16}$/.test(value)) return value.replace(/^ca-/, "");
+  return "";
+};
 
-export const ADSENSE_CLIENT_ID = normalizeAdSenseClientId(
-  readEnv("PUBLIC_ADSENSE_CLIENT_ID", "ADSENSE_CLIENT_ID", "NEXT_PUBLIC_ADSENSE_CLIENT_ID")
+const toPublisherId = (clientId: string) => (clientId ? clientId.replace(/^ca-/, "") : "");
+const toClientId = (publisherId: string) => (publisherId ? `ca-${publisherId}` : "");
+
+const normalizedClientId = normalizeAdSenseClientId(
+  readEnv(
+    "PUBLIC_ADSENSE_CLIENT_ID",
+    "ADSENSE_CLIENT_ID",
+    "NEXT_PUBLIC_ADSENSE_CLIENT_ID",
+    "PUBLIC_GOOGLE_ADSENSE_CLIENT_ID"
+  )
 );
+const normalizedPublisherId = normalizePublisherId(
+  readEnv(
+    "PUBLIC_ADSENSE_PUBLISHER_ID",
+    "ADSENSE_PUBLISHER_ID",
+    "NEXT_PUBLIC_ADSENSE_PUBLISHER_ID",
+    "PUBLIC_GOOGLE_ADSENSE_PUBLISHER_ID"
+  )
+);
+
+export const ADSENSE_CLIENT_ID = normalizedClientId || toClientId(normalizedPublisherId);
+export const ADSENSE_PUBLISHER_ID = normalizedPublisherId || toPublisherId(ADSENSE_CLIENT_ID);
 export const ADSENSE_ENABLED = ADSENSE_CLIENT_ID.length > 0;
-export const ADSENSE_PUBLISHER_ID = toPublisherId(ADSENSE_CLIENT_ID);
 
 export const ADSENSE_SLOT_BY_ZONE: Record<AdZone, string> = {
   leaf_after_intro: readEnv("PUBLIC_ADSENSE_SLOT_LEAF_AFTER_INTRO", "ADSENSE_SLOT_LEAF_AFTER_INTRO"),

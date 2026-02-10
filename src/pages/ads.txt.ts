@@ -5,7 +5,7 @@ const adsTxtBody =
     ? `google.com, ${ADSENSE_PUBLISHER_ID}, DIRECT, f08c47fec0942fa0\n`
     : [
         "# No authorized digital sellers configured.",
-        "# Set PUBLIC_ADSENSE_CLIENT_ID (or ADSENSE_CLIENT_ID) to publish a valid ads.txt record.",
+        "# Set PUBLIC_ADSENSE_CLIENT_ID/ADSENSE_CLIENT_ID or PUBLIC_ADSENSE_PUBLISHER_ID/ADSENSE_PUBLISHER_ID to publish a valid ads.txt record.",
       ].join("\n");
 
 export const GET = () =>

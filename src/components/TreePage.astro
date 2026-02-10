@@ -566,20 +566,29 @@ const leafImageSlugMap = new Map(
   leafImageNames.map((name) => [normalizeLeafSlug(name), name])
 );
 
+const LEAF_IMAGE_VERSION = "20260210q";
+
+const withLocalWebpVersion = (value: string) => {
+  if (!value.startsWith("/") || !/\.webp($|\?)/i.test(value) || /(?:\?|&)v=/.test(value)) {
+    return value;
+  }
+  return `${value}${value.includes("?") ? "&" : "?"}v=${LEAF_IMAGE_VERSION}`;
+};
+
 const getImage = (key?: string, title?: string, slug?: string) => {
   if (key && (key.startsWith("/") || key.includes(".webp"))) {
-    return key;
+    return withLocalWebpVersion(key);
   }
   if (title) {
     const matchedName = leafImageNameMap.get(normalizeLeafTitle(title));
     if (matchedName) {
-      return `/leaf%20images/${encodeURIComponent(matchedName)}.webp`;
+      return withLocalWebpVersion(`/leaf%20images/${encodeURIComponent(matchedName)}.webp`);
     }
   }
   if (slug) {
     const matchedBySlug = leafImageSlugMap.get(normalizeLeafSlug(slug));
     if (matchedBySlug) {
-      return `/leaf%20images/${encodeURIComponent(matchedBySlug)}.webp`;
+      return withLocalWebpVersion(`/leaf%20images/${encodeURIComponent(matchedBySlug)}.webp`);
     }
   }
   const theme = key ? imageThemeMap[key] ?? "basics" : "basics";
@@ -1163,7 +1172,7 @@ const breadcrumb = breadcrumbs;
   .home-bg .hero {
     background:
       linear-gradient(180deg, rgba(18, 14, 11, 0.24), rgba(15, 11, 9, 0.38)),
-      url("/hanok-hero-home.webp?v=20260210b") center / cover no-repeat;
+      url("/hanok-hero-home.webp?v=20260210q") center / cover no-repeat;
   }
 
   .home-bg .lang-switcher {

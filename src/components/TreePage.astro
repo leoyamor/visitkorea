@@ -566,7 +566,7 @@ const leafImageSlugMap = new Map(
   leafImageNames.map((name) => [normalizeLeafSlug(name), name])
 );
 
-const IMAGE_ASSET_VERSION = "20260210r";
+const IMAGE_ASSET_VERSION = "20260211a";
 
 const toCardThumbPath = (value: string) => {
   if (!value.startsWith("/") || !/\.webp($|\?)/i.test(value)) {
@@ -1246,7 +1246,7 @@ const breadcrumb = breadcrumbs;
     .home-bg .hero {
       background:
         linear-gradient(180deg, rgba(18, 14, 11, 0.24), rgba(15, 11, 9, 0.38)),
-        url("/leaf%20images/thumbs/hanok_hero.webp?v=20260210r") center / cover no-repeat;
+        url("/leaf%20images/thumbs/hanok_hero.webp?v=20260211a") center / cover no-repeat;
     }
   }
 

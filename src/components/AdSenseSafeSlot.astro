@@ -71,35 +71,49 @@ const showPlaceholder = import.meta.env.DEV && !isEnabled;
             .finally(enqueue);
         };
 
-        const waitForFirstInteraction = () => {
-          if (window.__visitkoreaAdInteractionPromise) {
-            return window.__visitkoreaAdInteractionPromise;
+        const waitForStartSignal = () => {
+          if (window.__visitkoreaAdStartPromise) {
+            return window.__visitkoreaAdStartPromise;
           }
 
-          window.__visitkoreaAdInteractionPromise = new Promise((resolve) => {
-            let done = false;
-            const finish = () => {
-              if (done) return;
-              done = true;
+          window.__visitkoreaAdStartPromise = new Promise((resolve) => {
+            let started = false;
+            const options = { passive: true };
+            const startNow = () => {
+              if (started) return;
+              started = true;
               cleanup();
               resolve();
             };
             const cleanup = () => {
-              window.removeEventListener("pointerdown", finish, options);
-              window.removeEventListener("keydown", finish, options);
-              window.removeEventListener("touchstart", finish, options);
-              window.removeEventListener("scroll", finish, options);
+              window.removeEventListener("pointerdown", startNow, options);
+              window.removeEventListener("keydown", startNow, options);
+              window.removeEventListener("touchstart", startNow, options);
+              window.removeEventListener("scroll", startNow, options);
             };
-            const options = { once: true, passive: true };
+            const startSoft = () => {
+              if (started) return;
+              if ("requestIdleCallback" in window) {
+                window.requestIdleCallback(startNow, { timeout: 1200 });
+                return;
+              }
+              window.setTimeout(startNow, 500);
+            };
 
-            window.addEventListener("pointerdown", finish, options);
-            window.addEventListener("keydown", finish, options);
-            window.addEventListener("touchstart", finish, options);
-            window.addEventListener("scroll", finish, options);
-            window.setTimeout(finish, 9000);
+            window.addEventListener("pointerdown", startNow, options);
+            window.addEventListener("keydown", startNow, options);
+            window.addEventListener("touchstart", startNow, options);
+            window.addEventListener("scroll", startNow, options);
+
+            if (document.readyState === "complete") {
+              startSoft();
+            } else {
+              window.addEventListener("load", startSoft, { once: true });
+            }
+            window.setTimeout(startNow, 3500);
           });
 
-          return window.__visitkoreaAdInteractionPromise;
+          return window.__visitkoreaAdStartPromise;
         };
 
         const scheduleWhenIdle = () => {
@@ -110,20 +124,32 @@ const showPlaceholder = import.meta.env.DEV && !isEnabled;
           window.setTimeout(schedule, 300);
         };
 
-        if ("IntersectionObserver" in window && slotEl) {
-          const observer = new IntersectionObserver(
-            (entries) => {
-              if (!entries.some((entry) => entry.isIntersecting)) return;
-              observer.disconnect();
-              waitForFirstInteraction().then(scheduleWhenIdle);
-            },
-            { rootMargin: "600px 0px" }
-          );
-          observer.observe(slotEl);
-          return;
-        }
+        const waitForSlotSignal = () => {
+          if (!("IntersectionObserver" in window) || !slotEl) {
+            return Promise.resolve();
+          }
 
-        waitForFirstInteraction().then(scheduleWhenIdle);
+          return new Promise((resolve) => {
+            let done = false;
+            const finish = () => {
+              if (done) return;
+              done = true;
+              observer.disconnect();
+              resolve();
+            };
+            const observer = new IntersectionObserver(
+              (entries) => {
+                if (!entries.some((entry) => entry.isIntersecting)) return;
+                finish();
+              },
+              { rootMargin: "900px 0px" }
+            );
+            observer.observe(slotEl);
+            window.setTimeout(finish, 4500);
+          });
+        };
+
+        Promise.all([waitForStartSignal(), waitForSlotSignal()]).then(scheduleWhenIdle);
       })();
     </script>
   </div>

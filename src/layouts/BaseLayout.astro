@@ -170,42 +170,40 @@ const schemaJson = JSON.stringify({
               document.head.appendChild(script);
             };
 
-            const schedule = () => {
+            let started = false;
+            const options = { passive: true };
+            const cleanup = () => {
+              window.removeEventListener("pointerdown", startNow, options);
+              window.removeEventListener("keydown", startNow, options);
+              window.removeEventListener("touchstart", startNow, options);
+              window.removeEventListener("scroll", startNow, options);
+            };
+            const startNow = () => {
+              if (started) return;
+              started = true;
+              cleanup();
+              loadGaScript();
+            };
+            const startSoft = () => {
+              if (started) return;
               if ("requestIdleCallback" in window) {
-                window.requestIdleCallback(loadGaScript, { timeout: 2500 });
+                window.requestIdleCallback(startNow, { timeout: 1800 });
                 return;
               }
-              window.setTimeout(loadGaScript, 1500);
+              window.setTimeout(startNow, 900);
             };
 
-            const startOnInteraction = () => {
-              let started = false;
-              const start = () => {
-                if (started) return;
-                started = true;
-                cleanup();
-                schedule();
-              };
-              const cleanup = () => {
-                window.removeEventListener("pointerdown", start, options);
-                window.removeEventListener("keydown", start, options);
-                window.removeEventListener("touchstart", start, options);
-                window.removeEventListener("scroll", start, options);
-              };
-              const options = { once: true, passive: true };
-
-              window.addEventListener("pointerdown", start, options);
-              window.addEventListener("keydown", start, options);
-              window.addEventListener("touchstart", start, options);
-              window.addEventListener("scroll", start, options);
-              window.setTimeout(start, 10000);
-            };
+            window.addEventListener("pointerdown", startNow, options);
+            window.addEventListener("keydown", startNow, options);
+            window.addEventListener("touchstart", startNow, options);
+            window.addEventListener("scroll", startNow, options);
 
             if (document.readyState === "complete") {
-              startOnInteraction();
-              return;
+              startSoft();
+            } else {
+              window.addEventListener("load", startSoft, { once: true });
             }
-            window.addEventListener("load", startOnInteraction, { once: true });
+            window.setTimeout(startNow, 4500);
           })();
         </script>
         <script is:inline>
@@ -227,42 +225,40 @@ const schemaJson = JSON.stringify({
               })(window, document, "clarity", "script", "vf7k31hdmt");
             };
 
-            const schedule = () => {
+            let started = false;
+            const options = { passive: true };
+            const cleanup = () => {
+              window.removeEventListener("pointerdown", startNow, options);
+              window.removeEventListener("keydown", startNow, options);
+              window.removeEventListener("touchstart", startNow, options);
+              window.removeEventListener("scroll", startNow, options);
+            };
+            const startNow = () => {
+              if (started) return;
+              started = true;
+              cleanup();
+              loadClarity();
+            };
+            const startSoft = () => {
+              if (started) return;
               if ("requestIdleCallback" in window) {
-                window.requestIdleCallback(loadClarity, { timeout: 3500 });
+                window.requestIdleCallback(startNow, { timeout: 2800 });
                 return;
               }
-              window.setTimeout(loadClarity, 2200);
+              window.setTimeout(startNow, 1400);
             };
 
-            const startOnInteraction = () => {
-              let started = false;
-              const start = () => {
-                if (started) return;
-                started = true;
-                cleanup();
-                schedule();
-              };
-              const cleanup = () => {
-                window.removeEventListener("pointerdown", start, options);
-                window.removeEventListener("keydown", start, options);
-                window.removeEventListener("touchstart", start, options);
-                window.removeEventListener("scroll", start, options);
-              };
-              const options = { once: true, passive: true };
-
-              window.addEventListener("pointerdown", start, options);
-              window.addEventListener("keydown", start, options);
-              window.addEventListener("touchstart", start, options);
-              window.addEventListener("scroll", start, options);
-              window.setTimeout(start, 12000);
-            };
+            window.addEventListener("pointerdown", startNow, options);
+            window.addEventListener("keydown", startNow, options);
+            window.addEventListener("touchstart", startNow, options);
+            window.addEventListener("scroll", startNow, options);
 
             if (document.readyState === "complete") {
-              startOnInteraction();
-              return;
+              startSoft();
+            } else {
+              window.addEventListener("load", startSoft, { once: true });
             }
-            window.addEventListener("load", startOnInteraction, { once: true });
+            window.setTimeout(startNow, 6500);
           })();
         </script>
       </>

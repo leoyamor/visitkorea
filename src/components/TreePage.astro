@@ -596,6 +596,32 @@ const withLocalWebpVersion = (value: string) => {
   return `${value}${value.includes("?") ? "&" : "?"}v=${IMAGE_ASSET_VERSION}`;
 };
 
+const toCardThumbW384Path = (value: string) => {
+  if (!value.startsWith("/") || !/\.webp($|\?)/i.test(value)) {
+    return value;
+  }
+
+  const [path, query = ""] = value.split("?");
+  let nextPath = path;
+
+  if (nextPath.startsWith("/leaf%20images/thumbs/")) {
+    nextPath = nextPath.replace("/leaf%20images/thumbs/", "/leaf%20images/thumbs-w384/");
+  } else if (nextPath.startsWith("/leaf images/thumbs/")) {
+    nextPath = nextPath.replace("/leaf images/thumbs/", "/leaf images/thumbs-w384/");
+  } else if (nextPath.startsWith("/thumbs/")) {
+    nextPath = nextPath.replace("/thumbs/", "/thumbs-w384/");
+  } else {
+    return value;
+  }
+
+  return query ? `${nextPath}?${query}` : nextPath;
+};
+
+type ResponsiveImageSource = {
+  src: string;
+  srcSet?: string;
+};
+
 const getImage = (key?: string, title?: string, slug?: string) => {
   if (key && (key.startsWith("/") || key.includes(".webp"))) {
     return withLocalWebpVersion(toCardThumbPath(key));
@@ -621,6 +647,15 @@ const getImage = (key?: string, title?: string, slug?: string) => {
   return toDataUri(svg);
 };
 
+const getResponsiveImage = (key?: string, title?: string, slug?: string): ResponsiveImageSource => {
+  const src = getImage(key, title, slug);
+  const w384 = toCardThumbW384Path(src);
+  return {
+    src,
+    srcSet: w384 !== src ? `${w384} 1x, ${src} 2x` : undefined,
+  };
+};
+
 const editorialMeta = getEditorialMeta(lang);
 const latestUpdatesPath = withLang("/latest-travel-updates-for-korea", lang);
 const nowMorePath = withLang("/korea-now-and-more", lang);
@@ -631,6 +666,7 @@ const showLeafMetaNote =
   (rootSlug === "latest-travel-updates-for-korea" || rootSlug === "korea-now-and-more");
 const centerCardIconForPage =
   rootSlug === "latest-travel-updates-for-korea" || rootSlug === "korea-now-and-more";
+const answerImage = getResponsiveImage(node.image ?? node.icon, node.title, node.slug);
 
 const checklistByRoot: Record<string, string[]> = {
   "plan-your-trip": [
@@ -752,42 +788,48 @@ const breadcrumb = breadcrumbs;
 
   {hasChildren ? (
     <div class="grid" data-orphans={children.length % 3}>
-      {children.map((child, index) => (
-        <a
-          class="card"
-          href={withLang(`${basePath}/${child.slug}`, lang)}
-          data-tone={getTone(child.icon)}
-          data-card-link
-          data-card-title={child.title}
-          data-kpi-section={isHome ? "home_card_grid" : `collection_${node.slug ?? "root"}_cards`}
-        >
-          <div class="thumb">
-            <img
-              src={getImage(child.image ?? child.icon, child.title, child.slug)}
-              alt={child.title}
-              loading={isHome ? (index === 0 ? "eager" : "lazy") : index < 2 ? "eager" : "lazy"}
-              fetchpriority={isHome ? (index === 0 ? "high" : "low") : index === 0 ? "high" : "auto"}
-              decoding="async"
-              width="360"
-              height="220"
-            />
-            <span class="thumb-mask" aria-hidden="true"></span>
-          </div>
-          <div class="card-body">
-            <div>
-              <h3 class="t-card-title">{child.title}</h3>
-              <p class="t-card-desc">{child.description ?? t.cardFallback}</p>
+      {children.map((child, index) => {
+        const cardImage = getResponsiveImage(child.image ?? child.icon, child.title, child.slug);
+
+        return (
+          <a
+            class="card"
+            href={withLang(`${basePath}/${child.slug}`, lang)}
+            data-tone={getTone(child.icon)}
+            data-card-link
+            data-card-title={child.title}
+            data-kpi-section={isHome ? "home_card_grid" : `collection_${node.slug ?? "root"}_cards`}
+          >
+            <div class="thumb">
+              <img
+                src={cardImage.src}
+                srcset={cardImage.srcSet}
+                alt={child.title}
+                loading={isHome ? (index === 0 ? "eager" : "lazy") : index < 2 ? "eager" : "lazy"}
+                fetchpriority={isHome ? (index === 0 ? "high" : "low") : index === 0 ? "high" : "auto"}
+                decoding="async"
+                width="360"
+                height="220"
+              />
+              <span class="thumb-mask" aria-hidden="true"></span>
             </div>
-          </div>
-        </a>
-      ))}
+            <div class="card-body">
+              <div>
+                <h3 class="t-card-title">{child.title}</h3>
+                <p class="t-card-desc">{child.description ?? t.cardFallback}</p>
+              </div>
+            </div>
+          </a>
+        );
+      })}
     </div>
   ) : (
     <div class="answer">
       <div class="answer-hero">
         <div class="answer-thumb">
           <img
-            src={getImage(node.image ?? node.icon, node.title, node.slug)}
+            src={answerImage.src}
+            srcset={answerImage.srcSet}
             alt={node.title}
             loading="eager"
             fetchpriority="high"
@@ -1198,6 +1240,14 @@ const breadcrumb = breadcrumbs;
     background:
       linear-gradient(180deg, rgba(18, 14, 11, 0.24), rgba(15, 11, 9, 0.38)),
       url("/hanok-hero-home.webp?v=20260210q") center / cover no-repeat;
+  }
+
+  @media (max-width: 720px) {
+    .home-bg .hero {
+      background:
+        linear-gradient(180deg, rgba(18, 14, 11, 0.24), rgba(15, 11, 9, 0.38)),
+        url("/leaf%20images/thumbs/hanok_hero.webp?v=20260210r") center / cover no-repeat;
+    }
   }
 
   .home-bg .lang-switcher {

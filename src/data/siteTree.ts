@@ -335,21 +335,21 @@ export const siteTree: TreeNode = {
               emphasis: "You don't need survival skills.",
               body: "Korea is:",
               bullets: [
-                "Safe, even at night",
+                "Very safe, even late at night",
                 "Clean and well-organized",
-                "Easy to move around",
-                "Full of food and convenience stores",
+                "Easy to move around thanks to convenient public transport.",
+                "Full of convenience stores and food options, almost everywhere",
               ],
             },
             {
               title: "What feels unfamiliar at first",
               icon: "alert",
-              emphasis: "Small challenges, not serious ones.",
+              emphasis: "Small challenges, not real problems.",
               body: "The main challenges are:",
               bullets: [
-                "Language differences",
-                "Knowing which apps to use",
-                "Understanding daily routines",
+                "Language differences outside major tourist areas",
+                "Knowing which apps to use (maps, taxis, transport)",
+                "Understanding daily routines, like how to order food or sort trash",
               ],
             },
             {
@@ -370,7 +370,7 @@ export const siteTree: TreeNode = {
               body: "Many first-time visitors notice:",
               bullets: [
                 "Cards work almost everywhere",
-                "Cash is still useful in small places",
+                "Cash is still useful in small local shops or markets",
                 "Taxis are safe, apps make them easier",
                 "People may not speak much English, but they try to help",
               ],
@@ -381,8 +381,8 @@ export const siteTree: TreeNode = {
               emphasis: "A little preparation makes a big difference.",
               body: "Avoid these:",
               bullets: [
-                "Overplanning the first days",
-                "Relying only on taxis",
+                "Overplanning your first few days",
+                "Using taxis for everything instead of public transport",
                 "Expecting everything to work like home",
                 "Skipping preparation because it looks easy",
               ],

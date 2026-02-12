@@ -596,7 +596,7 @@ const withLocalWebpVersion = (value: string) => {
   return `${value}${value.includes("?") ? "&" : "?"}v=${IMAGE_ASSET_VERSION}`;
 };
 
-const toCardThumbW384Path = (value: string) => {
+const toCardThumbVariantPath = (value: string, variant: "w384" | "w640") => {
   if (!value.startsWith("/") || !/\.webp($|\?)/i.test(value)) {
     return value;
   }
@@ -605,11 +605,11 @@ const toCardThumbW384Path = (value: string) => {
   let nextPath = path;
 
   if (nextPath.startsWith("/leaf%20images/thumbs/")) {
-    nextPath = nextPath.replace("/leaf%20images/thumbs/", "/leaf%20images/thumbs-w384/");
+    nextPath = nextPath.replace("/leaf%20images/thumbs/", `/leaf%20images/thumbs-${variant}/`);
   } else if (nextPath.startsWith("/leaf images/thumbs/")) {
-    nextPath = nextPath.replace("/leaf images/thumbs/", "/leaf images/thumbs-w384/");
+    nextPath = nextPath.replace("/leaf images/thumbs/", `/leaf images/thumbs-${variant}/`);
   } else if (nextPath.startsWith("/thumbs/")) {
-    nextPath = nextPath.replace("/thumbs/", "/thumbs-w384/");
+    nextPath = nextPath.replace("/thumbs/", `/thumbs-${variant}/`);
   } else {
     return value;
   }
@@ -649,10 +649,13 @@ const getImage = (key?: string, title?: string, slug?: string) => {
 
 const getResponsiveImage = (key?: string, title?: string, slug?: string): ResponsiveImageSource => {
   const src = getImage(key, title, slug);
-  const w384 = toCardThumbW384Path(src);
+  const w384 = toCardThumbVariantPath(src, "w384");
+  const w640 = toCardThumbVariantPath(src, "w640");
+  const hasBothVariants = w384 !== src && w640 !== src;
+
   return {
-    src,
-    srcSet: w384 !== src ? `${w384} 1x, ${src} 2x` : undefined,
+    src: hasBothVariants ? w384 : src,
+    srcSet: hasBothVariants ? `${w384} 1x, ${w640} 2x` : w384 !== src ? `${w384} 1x, ${src} 2x` : undefined,
   };
 };
 

@@ -16,10 +16,16 @@
 /thumbs-w384/*
   Cache-Control: public, max-age=31536000, immutable
 
+/thumbs-w640/*
+  Cache-Control: public, max-age=31536000, immutable
+
 /leaf%20images/thumbs/*
   Cache-Control: public, max-age=31536000, immutable
 
 /leaf%20images/thumbs-w384/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/leaf%20images/thumbs-w640/*
   Cache-Control: public, max-age=31536000, immutable
 
 /*.ico

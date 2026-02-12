@@ -240,17 +240,17 @@ const legalPages = [
   {
     path: '/about',
     title: 'About',
-    description: 'Why this guide exists and how we keep it simple.'
-  },
-  {
-    path: '/contact',
-    title: 'Contact',
-    description: 'How to reach us with feedback or corrections.'
+    description: 'Learn what PlanMyKorea is and how we provide practical South Korea travel planning guidance for international visitors.'
   },
   {
     path: '/privacy-policy',
     title: 'Privacy Policy',
-    description: 'How we handle data and site analytics.'
+    description: 'Read how PlanMyKorea handles cookies, analytics, and Google AdSense data for transparent travel information browsing.'
+  },
+  {
+    path: '/contact',
+    title: 'Contact',
+    description: 'Contact PlanMyKorea to report outdated South Korea travel information or ask general questions.'
   },
   {
     path: '/terms',

@@ -11,8 +11,8 @@ export default function Footer() {
         </div>
         <div className={styles.links}>
           <Link href="/about">About</Link>
-          <Link href="/contact">Contact</Link>
           <Link href="/privacy-policy">Privacy Policy</Link>
+          <Link href="/contact">Contact</Link>
           <Link href="/terms">Terms</Link>
           <Link href="/disclaimer">Disclaimer</Link>
         </div>

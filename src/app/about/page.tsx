@@ -2,14 +2,14 @@ import LegalPage from '../../components/LegalPage';
 import { siteUrl } from '../../lib/pages';
 
 export const metadata = {
-  title: 'About',
-  description: 'Why this guide exists and how we keep it simple.',
+  title: 'About PlanMyKorea',
+  description: 'Learn what PlanMyKorea is and how we provide practical South Korea travel planning guidance for international visitors.',
   alternates: {
     canonical: `${siteUrl}/about/`
   },
   openGraph: {
-    title: 'About',
-    description: 'Why this guide exists and how we keep it simple.',
+    title: 'About PlanMyKorea',
+    description: 'Learn what PlanMyKorea is and how we provide practical South Korea travel planning guidance for international visitors.',
     url: `${siteUrl}/about/`
   }
 };

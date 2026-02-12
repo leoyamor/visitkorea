@@ -2,14 +2,14 @@ import LegalPage from '../../components/LegalPage';
 import { siteUrl } from '../../lib/pages';
 
 export const metadata = {
-  title: 'Contact',
-  description: 'How to reach us with feedback or corrections.',
+  title: 'Contact PlanMyKorea',
+  description: 'Contact PlanMyKorea to report outdated South Korea travel information or ask general questions.',
   alternates: {
     canonical: `${siteUrl}/contact/`
   },
   openGraph: {
-    title: 'Contact',
-    description: 'How to reach us with feedback or corrections.',
+    title: 'Contact PlanMyKorea',
+    description: 'Contact PlanMyKorea to report outdated South Korea travel information or ask general questions.',
     url: `${siteUrl}/contact/`
   }
 };

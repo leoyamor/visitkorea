@@ -8,7 +8,6 @@ import { absoluteUrl } from "../../../lib/site";
 import {
   getLegalPageBySlug,
   legalPages,
-  legalSections,
 } from "../../../lib/legal-pages";
 
 export const getStaticPaths = () =>
@@ -43,7 +42,7 @@ const node: TreeNode = entry
       slug: entry.slug,
       description: pageDescription,
       quickAnswer: pageDescription,
-      content: legalSections.map((section) => ({
+      content: entry.sections.map((section) => ({
         title: section.titleEs,
         body: section.bodyEs,
         bullets: section.bulletsEs,

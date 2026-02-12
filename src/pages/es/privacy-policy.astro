@@ -1,0 +1,150 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { absoluteUrl } from "../../lib/site";
+
+const canonicalUrl = absoluteUrl("/es/privacy-policy/");
+const alternateEnUrl = absoluteUrl("/privacy-policy/");
+---
+
+<BaseLayout
+  title="Política de privacidad | Planificador de viaje a Corea"
+  description="Política de privacidad de PlanMyKorea."
+  bodyClass="page--leaf"
+  lang="es"
+  canonicalUrl={canonicalUrl}
+  alternateEnUrl={alternateEnUrl}
+  alternateEsUrl={canonicalUrl}
+>
+  <section class="legal-page">
+    <h1>Política de privacidad</h1>
+
+    <p>Última actualización: febrero de 2026</p>
+
+    <p>
+      PlanMyKorea ("nosotros", "nuestro" o "este sitio web") es un sitio
+      informativo creado para ayudar a viajeros internacionales a encontrar
+      información útil al planear un viaje a Corea del Sur.
+    </p>
+    <p>
+      Respetamos tu privacidad y estamos comprometidos con la transparencia
+      sobre cómo se pueden usar los datos en este sitio.
+    </p>
+
+    <h2>1. Información que no recopilamos</h2>
+    <p>No recopilamos directamente información personal de los visitantes.</p>
+    <p>Esto significa:</p>
+    <ul>
+      <li>Sin registro de cuenta</li>
+      <li>Sin recopilación de nombre o correo electrónico</li>
+      <li>Sin comentarios ni formularios enviados por usuarios</li>
+    </ul>
+    <p>Puedes navegar este sitio web de forma anónima.</p>
+
+    <h2>2. Servicios de terceros</h2>
+    <p>
+      Aunque no recopilamos datos personales directamente, este sitio web usa
+      servicios de terceros que pueden recopilar automáticamente información
+      limitada.
+    </p>
+    <p>Estos servicios incluyen:</p>
+    <p>Estos servicios incluyen:</p>
+    <ul>
+      <li>Google AdSense (publicidad)</li>
+      <li>Google Analytics (análisis de tráfico)</li>
+      <li>Microsoft Clarity (análisis del comportamiento del usuario)</li>
+      <li>Cloudflare (seguridad y rendimiento del sitio web)</li>
+    </ul>
+    <p>
+      Estos terceros pueden usar cookies, balizas web o tecnologías similares
+      para recopilar información no identificable personalmente, como:
+    </p>
+    <ul>
+      <li>Dirección IP</li>
+      <li>Tipo de navegador</li>
+      <li>Información del dispositivo</li>
+      <li>Páginas visitadas</li>
+    </ul>
+    <p>
+      Esta información se utiliza para mejorar el rendimiento del sitio web y
+      mostrar anuncios relevantes.
+    </p>
+
+    <h2>3. Cookies y publicidad</h2>
+    <p>
+      Los proveedores externos, incluido Google, usan cookies para mostrar
+      anuncios según las visitas de los usuarios a este y otros sitios web.
+    </p>
+    <p>
+      Los usuarios pueden desactivar la publicidad personalizada en:
+      <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer">
+        https://adssettings.google.com
+      </a>
+    </p>
+    <p>
+      También puedes obtener más información sobre cómo Google usa datos de
+      sitios que utilizan sus servicios:
+      <a
+        href="https://policies.google.com/technologies/ads"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        https://policies.google.com/technologies/ads
+      </a>
+    </p>
+
+    <h2>4. Propósito de este sitio web</h2>
+    <p>
+      Todo el contenido de PlanMyKorea se ofrece solo con fines informativos y
+      de orientación de viaje.
+    </p>
+    <p>
+      Nos esforzamos por mantener la información precisa y actualizada, pero no
+      garantizamos su integridad ni su exactitud oficial. Los viajeros siempre
+      deben verificar los detalles importantes con fuentes oficiales.
+    </p>
+
+    <h2>5. Enlaces externos</h2>
+    <p>Este sitio web puede contener enlaces a sitios externos.</p>
+    <p>
+      No somos responsables de las prácticas de privacidad ni del contenido de
+      esos sitios de terceros.
+    </p>
+
+    <h2>6. Cambios en esta política</h2>
+    <p>Esta política de privacidad puede actualizarse ocasionalmente.</p>
+    <p>Cualquier cambio se publicará en esta página.</p>
+
+    <h2>7. Contacto</h2>
+    <p>
+      Si tienes alguna pregunta sobre esta política de privacidad, puedes
+      contactarnos en:
+    </p>
+    <p>Email: bayernmc@gmail.com</p>
+  </section>
+</BaseLayout>
+
+<style>
+  .legal-page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 10px 0 24px;
+    line-height: 1.75;
+  }
+
+  .legal-page h1 {
+    margin: 0 0 20px;
+  }
+
+  .legal-page h2 {
+    margin: 24px 0 8px;
+  }
+
+  .legal-page p {
+    margin: 0 0 10px;
+  }
+
+  .legal-page ul {
+    margin: 0 0 12px 20px;
+    padding: 0;
+  }
+</style>

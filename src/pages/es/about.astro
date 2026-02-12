@@ -1,0 +1,47 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { absoluteUrl } from "../../lib/site";
+
+const canonicalUrl = absoluteUrl("/es/about/");
+const alternateEnUrl = absoluteUrl("/about/");
+---
+
+<BaseLayout
+  title="Acerca de | Planificador de viaje a Corea"
+  description="Acerca de PlanMyKorea."
+  bodyClass="page--leaf"
+  lang="es"
+  canonicalUrl={canonicalUrl}
+  alternateEnUrl={alternateEnUrl}
+  alternateEsUrl={canonicalUrl}
+>
+  <section class="legal-page">
+    <h1>Acerca de</h1>
+    <p>
+      PlanMyKorea es un sitio web independiente de información de viajes creado
+      para ayudar a visitantes internacionales a entender y planear su viaje a
+      Corea del Sur.
+    </p>
+    <p>
+      Este sitio ofrece orientación práctica, explicaciones y recursos
+      seleccionados para viajeros.
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .legal-page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 10px 0 24px;
+    line-height: 1.75;
+  }
+
+  .legal-page h1 {
+    margin: 0 0 20px;
+  }
+
+  .legal-page p {
+    margin: 0 0 14px;
+  }
+</style>

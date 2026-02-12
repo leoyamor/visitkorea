@@ -60,9 +60,18 @@ const HOME_HERO_IMAGE_MOBILE = "/leaf%20images/thumbs/hanok_hero.webp?v=20260211
 const gaMeasurementId = "G-VKP8CHGJKH";
 const gaEnabled = true;
 const footerLinks = [
-  { path: "/about", label: "About" },
-  { path: "/privacy-policy", label: "Privacy Policy" },
-  { path: "/contact", label: "Contact" },
+  {
+    path: withLang("/about", lang),
+    label: lang === "es" ? "Acerca de" : "About",
+  },
+  {
+    path: withLang("/privacy-policy", lang),
+    label: lang === "es" ? "Política de privacidad" : "Privacy Policy",
+  },
+  {
+    path: withLang("/contact", lang),
+    label: lang === "es" ? "Contacto" : "Contact",
+  },
 ];
 
 const breadcrumbTrail = [{ label: homeLabel, path: localizedHomePath }, ...breadcrumbs].reduce(

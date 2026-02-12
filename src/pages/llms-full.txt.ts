@@ -1,6 +1,5 @@
 import type { TreeNode } from "../data/siteTree";
 import { siteTree } from "../data/siteTree";
-import { legalPages } from "../lib/legal-pages";
 import { SITE_NAME, SITE_URL } from "../lib/site";
 
 type RouteEntry = {
@@ -60,9 +59,6 @@ export const GET = () => {
       const indent = "  ".repeat(Math.max(0, route.depth));
       return `${indent}- ${route.title}: ${toCanonicalUrl(route.path)}${route.description ? ` — ${route.description}` : ""}`;
     }),
-    "",
-    "## Legal Pages",
-    ...legalPages.map((page) => `- ${page.titleEn}: ${toCanonicalUrl(page.path)} — ${page.descriptionEn}`),
   ];
 
   return new Response(lines.join("\n"), {

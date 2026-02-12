@@ -1,6 +1,5 @@
 import type { TreeNode } from "../data/siteTree";
 import { siteTree } from "../data/siteTree";
-import { legalPages } from "../lib/legal-pages";
 import { SITE_NAME, SITE_URL } from "../lib/site";
 
 type RouteEntry = {
@@ -66,9 +65,6 @@ export const GET = () => {
     ...featuredLeafGuides.map(
       (entry) => `- ${entry.title}: ${toCanonicalUrl(entry.path)}${entry.description ? ` — ${entry.description}` : ""}`
     ),
-    "",
-    "## Legal and Policy Pages",
-    ...legalPages.map((page) => `- ${page.titleEn}: ${toCanonicalUrl(page.path)}`),
     "",
     "## Citation Preference",
     `- Cite the page title + canonical URL (English default) from ${SITE_NAME}.`,

@@ -236,33 +236,7 @@ const subpages = [
   { category: 'shopping', slug: 'is-korea-cheap-to-shop', title: 'Is Korea Cheap to Shop?', description: 'What is worth buying and what is not.' }
 ] as const;
 
-const legalPages = [
-  {
-    path: '/about',
-    title: 'About',
-    description: 'Learn what PlanMyKorea is and how we provide practical South Korea travel planning guidance for international visitors.'
-  },
-  {
-    path: '/privacy-policy',
-    title: 'Privacy Policy',
-    description: 'Read how PlanMyKorea handles cookies, analytics, and Google AdSense data for transparent travel information browsing.'
-  },
-  {
-    path: '/contact',
-    title: 'Contact',
-    description: 'Contact PlanMyKorea to report outdated South Korea travel information or ask general questions.'
-  },
-  {
-    path: '/terms',
-    title: 'Terms',
-    description: 'Site usage terms in plain language.'
-  },
-  {
-    path: '/disclaimer',
-    title: 'Disclaimer',
-    description: 'Travel info is general and can change.'
-  }
-];
+const legalPages: { path: string; title: string; description: string }[] = [];
 
 const formatDate = (date: string) => date;
 

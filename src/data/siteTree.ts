@@ -157,12 +157,12 @@ export const siteTree: TreeNode = {
               icon: "beach",
               emphasis: "Busan adds contrast.",
               body:
-                "Beaches, seafood, slower evenings, and a relaxed pace. More than four days is usually unnecessary.",
+                "Beaches, fresh seafood, slower evenings, and a relaxed coastal vibe. If you’re spending two weeks in Korea, allocating 3–4 days to Busan usually feels just right.",
             },
             {
-              title: "Third: One slower region (3-4 days)",
+              title: "Third: One place to slow down (3–4 days)",
               icon: "leaf",
-              emphasis: "Keep this part light.",
+              emphasis: "Keep this part relaxed and flexible.",
               body: "Choose one based on your style:",
               bullets: [
                 "Jeju -> nature and driving",

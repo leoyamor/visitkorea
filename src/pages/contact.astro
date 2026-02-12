@@ -1,0 +1,41 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { absoluteUrl } from "../lib/site";
+
+const canonicalUrl = absoluteUrl("/contact/");
+---
+
+<BaseLayout
+  title="Contact | Visit Korea Planner"
+  description="Contact PlanMyKorea."
+  bodyClass="page--leaf"
+  canonicalUrl={canonicalUrl}
+  alternateEnUrl={canonicalUrl}
+  alternateEsUrl={canonicalUrl}
+>
+  <section class="legal-page">
+    <h1>Contact</h1>
+    <p>
+      If you have questions or notice outdated information, feel free to
+      contact us.
+    </p>
+    <p>Email: bayernmc@gmail.com</p>
+  </section>
+</BaseLayout>
+
+<style>
+  .legal-page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 10px 0 24px;
+    line-height: 1.75;
+  }
+
+  .legal-page h1 {
+    margin: 0 0 20px;
+  }
+
+  .legal-page p {
+    margin: 0 0 12px;
+  }
+</style>

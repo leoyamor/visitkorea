@@ -3,6 +3,7 @@ import { withLang } from "../lib/i18n";
 import { absoluteUrl } from "../lib/site";
 
 const utilityPaths = ["/llms.txt", "/llms-full.txt"];
+const staticInfoPaths = ["/about", "/privacy-policy", "/contact"];
 
 const getTreePaths = () => {
   const paths: string[] = ["/"];
@@ -32,7 +33,7 @@ const escapeXml = (value: string) =>
     .replace(/'/g, "&apos;");
 
 export const GET = () => {
-  const routeSet = new Set<string>([...getTreePaths(), ...utilityPaths]);
+  const routeSet = new Set<string>([...getTreePaths(), ...utilityPaths, ...staticInfoPaths]);
   const routes = [...routeSet].sort((a, b) => a.localeCompare(b));
   const lastModified = new Date().toISOString();
 

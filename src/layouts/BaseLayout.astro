@@ -59,6 +59,11 @@ const HOME_HERO_IMAGE_DESKTOP = "/hanok-hero-home.webp?v=20260210q";
 const HOME_HERO_IMAGE_MOBILE = "/leaf%20images/thumbs/hanok_hero.webp?v=20260211a";
 const gaMeasurementId = "G-VKP8CHGJKH";
 const gaEnabled = true;
+const footerLinks = [
+  { path: "/about", label: "About" },
+  { path: "/privacy-policy", label: "Privacy Policy" },
+  { path: "/contact", label: "Contact" },
+];
 
 const breadcrumbTrail = [{ label: homeLabel, path: localizedHomePath }, ...breadcrumbs].reduce(
   (acc, item) => {
@@ -447,6 +452,33 @@ const schemaJson = JSON.stringify({
         padding: 48px 0 80px;
       }
 
+      .site-footer {
+        width: min(1100px, 92vw);
+        margin: 0 auto 34px;
+        padding-top: 14px;
+        border-top: 1px solid rgba(255, 255, 255, 0.18);
+      }
+
+      .site-footer-links {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 18px;
+      }
+
+      .site-footer-links a {
+        color: var(--text-soft);
+        font-size: 0.95rem;
+      }
+
+      .site-footer-links a:hover {
+        color: var(--text-strong);
+      }
+
       .skip-link {
         position: absolute;
         left: -999px;
@@ -741,6 +773,15 @@ const schemaJson = JSON.stringify({
     <main id="content">
       <slot />
     </main>
+    <footer class="site-footer">
+      <nav aria-label="Footer links">
+        <ul class="site-footer-links">
+          {footerLinks.map((item) => (
+            <li><a href={item.path}>{item.label}</a></li>
+          ))}
+        </ul>
+      </nav>
+    </footer>
     <script is:inline define:vars={{ lang }}>
       (() => {
         const normalizePath = (pathname) => {

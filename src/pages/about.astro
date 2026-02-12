@@ -1,0 +1,44 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { absoluteUrl } from "../lib/site";
+
+const canonicalUrl = absoluteUrl("/about/");
+---
+
+<BaseLayout
+  title="About | Visit Korea Planner"
+  description="About PlanMyKorea."
+  bodyClass="page--leaf"
+  canonicalUrl={canonicalUrl}
+  alternateEnUrl={canonicalUrl}
+  alternateEsUrl={canonicalUrl}
+>
+  <section class="legal-page">
+    <h1>About</h1>
+    <p>
+      PlanMyKorea is an independent travel information website created to help
+      international visitors understand and plan their trip to South Korea.
+    </p>
+    <p>
+      This site provides practical guidance, explanations, and curated
+      resources for travelers.
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .legal-page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 10px 0 24px;
+    line-height: 1.75;
+  }
+
+  .legal-page h1 {
+    margin: 0 0 20px;
+  }
+
+  .legal-page p {
+    margin: 0 0 14px;
+  }
+</style>

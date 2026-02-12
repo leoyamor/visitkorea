@@ -252,7 +252,7 @@ export const siteTree: TreeNode = {
               icon: "city",
               emphasis: "Seoul is the best long-stay base.",
               body:
-                "Daily life is easy, transport is strong, and neighborhoods feel endless. Two weeks makes the city feel natural, not overwhelming.",
+                "Daily life is easy, public transport is efficient, and the neighborhoods feel almost endless. After two weeks, the city begins to feel familiar rather than overwhelming.",
             },
             {
               title: "Week 3: One nature or coastal city",
@@ -290,11 +290,11 @@ export const siteTree: TreeNode = {
               title: "What you don't need to plan early",
               icon: "checklist",
               emphasis: "Long trips work best with flexibility.",
-              body: "You don't need:",
+              body: "You don’t need to lock in:",
               bullets: [
-                "Daily schedules",
-                "Attraction lists",
-                "Restaurant plans",
+                "Detailed daily schedules",
+                "A full list of attractions",
+                "Restaurant reservations for every day",
               ],
             },
             {

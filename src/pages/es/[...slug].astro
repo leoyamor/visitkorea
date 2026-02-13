@@ -40,9 +40,9 @@ for (const segment of segments) {
   cursor = next;
 }
 
-const siteName = "Planificador de viaje a Corea";
-const notFound = "Página no encontrada";
-const notFoundDesc = "La página que buscas no existe.";
+const siteName = "Visit Korea Planner";
+const notFound = "Page Not Found";
+const notFoundDesc = "The page you are looking for does not exist.";
 const routePath = segments.length ? `/${segments.join("/")}` : "/";
 const routePathWithSlash = routePath === "/" ? "/" : `${routePath}/`;
 const pageDescription = node?.description ?? notFoundDesc;
@@ -118,7 +118,7 @@ const schemaNodes = node
         href={withLang("/", lang)}
         style="display: inline-flex; margin-top: 18px; padding: 10px 18px; border-radius: 999px; background: #1f6f8b; color: #fff;"
       >
-        Ir al inicio
+        Go Home
       </a>
     </section>
   </BaseLayout>

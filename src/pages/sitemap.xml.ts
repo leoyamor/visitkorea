@@ -5,6 +5,11 @@ import { absoluteUrl } from "../lib/site";
 const utilityPaths = ["/llms.txt", "/llms-full.txt"];
 const staticInfoPaths = ["/about", "/privacy-policy", "/contact"];
 
+const toSitemapPath = (path: string) => {
+  if (path === "/" || path.endsWith(".txt")) return path;
+  return `${path.replace(/\/+$/, "")}/`;
+};
+
 const getTreePaths = () => {
   const paths: string[] = ["/"];
 
@@ -39,8 +44,8 @@ export const GET = () => {
 
   const urls = routes
     .map((route) => {
-      const enUrl = absoluteUrl(route);
-      const esUrl = absoluteUrl(withLang(route, "es"));
+      const enUrl = absoluteUrl(toSitemapPath(route));
+      const esUrl = absoluteUrl(toSitemapPath(withLang(route, "es")));
       const depth = route === "/" ? 0 : route.split("/").filter(Boolean).length;
       const priority = route === "/" ? "1.0" : depth <= 1 ? "0.8" : "0.6";
       const changeFreq = depth <= 1 ? "weekly" : "monthly";

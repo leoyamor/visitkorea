@@ -3,7 +3,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import TreePage from "../components/TreePage.astro";
 import { siteTree } from "../data/siteTree";
 import { buildCollectionSchemaNodes } from "../lib/geo";
-import { withLang } from "../lib/i18n";
 import { absoluteUrl } from "../lib/site";
 
 const node = siteTree;
@@ -18,7 +17,7 @@ const pageDescription =
     : "Practical South Korea travel guide for first-time and repeat visitors: city picks, transport, food, stays, etiquette, and regularly updated planning tips.";
 const canonicalUrl = absoluteUrl("/");
 const alternateEnUrl = absoluteUrl("/");
-const alternateEsUrl = absoluteUrl(withLang("/", "es"));
+const alternateEsUrl = absoluteUrl("/es/");
 const schemaNodes = buildCollectionSchemaNodes({
   canonicalUrl,
   routePath: "/",

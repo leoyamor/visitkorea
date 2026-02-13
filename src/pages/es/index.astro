@@ -3,7 +3,6 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import TreePage from "../../components/TreePage.astro";
 import { siteTree } from "../../data/siteTree";
 import { buildCollectionSchemaNodes } from "../../lib/geo";
-import { withLang } from "../../lib/i18n";
 import { absoluteUrl } from "../../lib/site";
 
 const node = siteTree;
@@ -12,7 +11,7 @@ const lang = "es";
 const pageTitle = "Planificador de viaje a Corea: guía práctica para viajeros";
 const pageDescription =
   "Guía práctica para viajar por Corea del Sur con claridad: ciudades, transporte, comida, alojamiento, normas culturales y actualizaciones para planificar mejor.";
-const canonicalUrl = absoluteUrl(withLang("/", "es"));
+const canonicalUrl = absoluteUrl("/es/");
 const alternateEnUrl = absoluteUrl("/");
 const alternateEsUrl = canonicalUrl;
 const schemaNodes = buildCollectionSchemaNodes({

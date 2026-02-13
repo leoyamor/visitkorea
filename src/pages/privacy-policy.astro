@@ -2,7 +2,8 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { absoluteUrl } from "../lib/site";
 
-const canonicalUrl = absoluteUrl("/privacy-policy");
+const canonicalUrl = absoluteUrl("/privacy-policy/");
+const alternateEsUrl = absoluteUrl("/es/privacy-policy/");
 ---
 
 <BaseLayout
@@ -11,7 +12,7 @@ const canonicalUrl = absoluteUrl("/privacy-policy");
   bodyClass="page--leaf"
   canonicalUrl={canonicalUrl}
   alternateEnUrl={canonicalUrl}
-  alternateEsUrl={canonicalUrl}
+  alternateEsUrl={alternateEsUrl}
 >
   <section class="legal-page">
     <h1>Privacy Policy</h1>

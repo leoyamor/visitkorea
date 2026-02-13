@@ -44,9 +44,13 @@ const siteName = "Planificador de viaje a Corea";
 const notFound = "Página no encontrada";
 const notFoundDesc = "La página que buscas no existe.";
 const routePath = segments.length ? `/${segments.join("/")}` : "/";
+const routePathWithSlash = routePath === "/" ? "/" : `${routePath}/`;
 const pageDescription = node?.description ?? notFoundDesc;
-const canonicalUrl = absoluteUrl(withLang(routePath, lang));
-const alternateEnUrl = absoluteUrl(routePath);
+const canonicalPath = withLang(routePath, lang);
+const canonicalUrl = absoluteUrl(
+  canonicalPath === "/" ? "/" : `${canonicalPath.replace(/\/+$/, "")}/`
+);
+const alternateEnUrl = absoluteUrl(routePathWithSlash);
 const alternateEsUrl = canonicalUrl;
 
 const pageTitle = node

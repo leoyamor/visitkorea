@@ -55,10 +55,14 @@ const ui = {
 
 const t = ui[lang];
 const routePath = segments.length ? `/${segments.join("/")}` : "/";
+const routePathWithSlash = routePath === "/" ? "/" : `${routePath}/`;
 const pageDescription = node?.description ?? t.notFoundDesc;
-const canonicalUrl = absoluteUrl(routePath);
-const alternateEnUrl = absoluteUrl(routePath);
-const alternateEsUrl = absoluteUrl(withLang(routePath, "es"));
+const canonicalUrl = absoluteUrl(routePathWithSlash);
+const alternateEnUrl = absoluteUrl(routePathWithSlash);
+const alternateEsPath = withLang(routePath, "es");
+const alternateEsUrl = absoluteUrl(
+  alternateEsPath === "/" ? "/" : `${alternateEsPath.replace(/\/+$/, "")}/`
+);
 
 const pageTitle = node
   ? `${node.title} | ${t.siteName}`

@@ -1510,28 +1510,55 @@ const breadcrumb = breadcrumbs;
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
     margin-bottom: 20px;
-    padding: 10px 14px;
-    border-radius: 12px;
-    border: 1px solid var(--border-paper);
-    background: linear-gradient(180deg, var(--paper), var(--paper-2));
+    padding: 12px 16px;
+    border-radius: 14px;
+    border: 1px solid color-mix(in srgb, var(--border-paper) 72%, #7c5cff 28%);
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--paper) 90%, #7c5cff 10%),
+      color-mix(in srgb, var(--paper-2) 94%, #7c5cff 6%)
+    );
     box-shadow: var(--shadow-1);
   }
 
   .home-update-label {
     margin: 0;
-    font-size: 0.74rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+    padding: 5px 12px;
+    border-radius: 999px;
+    border: 1px solid color-mix(in srgb, var(--border-paper) 64%, #7c5cff 36%);
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--paper) 86%, #7c5cff 14%),
+      color-mix(in srgb, var(--paper-2) 90%, #7c5cff 10%)
+    );
+    font-family: "Fraunces", serif;
+    font-size: clamp(0.9rem, 1.15vw, 1rem);
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--ink-soft);
+    letter-spacing: 0.01em;
+    line-height: 1.2;
+    color: var(--ink-strong);
     white-space: nowrap;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  }
+
+  .home-update-label::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: #7c5cff;
+    box-shadow: 0 0 0 4px rgba(124, 92, 255, 0.18);
   }
 
   .home-update-view {
     position: relative;
-    height: 1.5rem;
+    height: 1.7rem;
     overflow: hidden;
   }
 
@@ -1539,7 +1566,9 @@ const breadcrumb = breadcrumbs;
     position: absolute;
     inset: 0;
     display: block;
-    line-height: 1.5rem;
+    line-height: 1.7rem;
+    font-size: 0.98rem;
+    font-weight: 500;
     color: var(--ink-strong);
     text-decoration: none;
     white-space: nowrap;
@@ -2175,12 +2204,12 @@ const breadcrumb = breadcrumbs;
     .home-update-bar {
       grid-template-columns: 1fr;
       gap: 8px;
-      padding: 10px 12px;
+      padding: 11px 12px;
     }
 
     .home-update-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.07em;
+      font-size: 0.86rem;
+      padding: 5px 10px;
     }
 
     .thumb {

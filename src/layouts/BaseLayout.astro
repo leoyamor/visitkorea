@@ -175,12 +175,20 @@ const schemaJson = JSON.stringify({
       <>
         <script is:inline define:vars={{ gaMeasurementId }}>
           (() => {
+            if (!gaMeasurementId) return;
+
+            const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+            const effectiveType = typeof connection?.effectiveType === "string" ? connection.effectiveType : "";
+            const shouldSkipForDataSavings = Boolean(connection?.saveData) || effectiveType.includes("2g");
+            if (shouldSkipForDataSavings) return;
+
             const loadGaScript = () => {
               if (document.querySelector("script[data-ga-loader]")) return;
               const script = document.createElement("script");
               script.async = true;
               script.src = `https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`;
               script.setAttribute("data-ga-loader", "true");
+              script.setAttribute("fetchpriority", "low");
               document.head.appendChild(script);
             };
 
@@ -198,26 +206,12 @@ const schemaJson = JSON.stringify({
               cleanup();
               loadGaScript();
             };
-            const startSoft = () => {
-              if (started) return;
-              if ("requestIdleCallback" in window) {
-                window.requestIdleCallback(startNow, { timeout: 1800 });
-                return;
-              }
-              window.setTimeout(startNow, 900);
-            };
 
             window.addEventListener("pointerdown", startNow, options);
             window.addEventListener("keydown", startNow, options);
             window.addEventListener("touchstart", startNow, options);
             window.addEventListener("scroll", startNow, options);
-
-            if (document.readyState === "complete") {
-              startSoft();
-            } else {
-              window.addEventListener("load", startSoft, { once: true });
-            }
-            window.setTimeout(startNow, 4500);
+            window.setTimeout(startNow, 15000);
           })();
         </script>
         <script is:inline>

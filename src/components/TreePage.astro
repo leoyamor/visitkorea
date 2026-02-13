@@ -64,11 +64,11 @@ const t = {
     returnThisWeek: "This Week in Korea",
     updateTickerLabel: "What changed this week",
     updateTickerFallbackTravel:
-      "Latest Travel Updates for Korea: Key travel checks were refreshed for this week.",
+      "Key travel checks were refreshed for this week.",
     updateTickerFallbackNowMore:
-      "Korea Now & More: New traveler benefits and event highlights were refreshed this week.",
+      "New traveler benefits and event highlights were refreshed this week.",
     updateTickerFallbackThisWeek:
-      "This Week in Korea: Weekly cultural and travel highlights were refreshed for visitors.",
+      "Weekly cultural and travel highlights were refreshed for visitors.",
     updatedLabel: "Last updated",
     sourceNote: "For final booking decisions, always verify with official sources.",
     nextFallback: "Latest Travel Updates for Korea",
@@ -120,11 +120,11 @@ const t = {
     returnThisWeek: "This Week in Korea",
     updateTickerLabel: "What changed this week",
     updateTickerFallbackTravel:
-      "Latest Travel Updates for Korea: Key travel checks were refreshed for this week.",
+      "Key travel checks were refreshed for this week.",
     updateTickerFallbackNowMore:
-      "Korea Now & More: New traveler benefits and event highlights were refreshed this week.",
+      "New traveler benefits and event highlights were refreshed this week.",
     updateTickerFallbackThisWeek:
-      "This Week in Korea: Weekly cultural and travel highlights were refreshed for visitors.",
+      "Weekly cultural and travel highlights were refreshed for visitors.",
     updatedLabel: "Last updated",
     sourceNote: "For final booking decisions, always verify with official sources.",
     nextFallback: "Latest Travel Updates for Korea",
@@ -765,35 +765,40 @@ const homeTickerCandidates = showHomeUpdateBar
   ? [
       {
         slug: "latest-travel-updates-for-korea",
+        title: "Latest Travel Updates for Korea",
         fallback: t.updateTickerFallbackTravel,
       },
       {
         slug: "korea-now-and-more",
+        title: "Korea Now & More",
         fallback: t.updateTickerFallbackNowMore,
       },
       {
         slug: "this-week-in-korea",
+        title: "This Week in Korea",
         fallback: t.updateTickerFallbackThisWeek,
       },
     ]
   : [];
 const homeUpdateTickerItems = homeTickerCandidates
-  .map(({ slug, fallback }) => {
+  .map(({ slug, title, fallback }) => {
     const child = children.find((item) => item.slug === slug);
     if (!child) {
       return {
         href: withLang(`/${slug}`, lang),
-        text: fallback,
+        leafTitle: title,
+        detail: fallback,
       };
     }
     const sourceText = child.quickAnswer ?? child.description ?? "";
-    const sentence = firstSentence(sourceText);
+    const detail = firstSentence(sourceText) || fallback;
     return {
       href: withLang(`/${child.slug}`, lang),
-      text: sentence ? `${child.title}: ${sentence}` : child.title,
+      leafTitle: child.title || title,
+      detail,
     };
   })
-  .filter((item) => item.text.trim().length > 0);
+  .filter((item) => item.leafTitle.trim().length > 0 && item.detail.trim().length > 0);
 
 const breadcrumb = breadcrumbs;
 ---
@@ -861,7 +866,9 @@ const breadcrumb = breadcrumbs;
             data-update-line
             data-kpi-section={`home_update_bar_${index + 1}`}
           >
-            {item.text}
+            <span class="home-update-leaf">{item.leafTitle}</span>
+            <span class="home-update-sep" aria-hidden="true">:</span>
+            <span class="home-update-detail">{item.detail}</span>
           </a>
         ))}
       </div>
@@ -1558,26 +1565,48 @@ const breadcrumb = breadcrumbs;
 
   .home-update-view {
     position: relative;
-    height: 1.7rem;
+    height: 1.8rem;
     overflow: hidden;
   }
 
   .home-update-line {
     position: absolute;
     inset: 0;
-    display: block;
-    line-height: 1.7rem;
-    font-size: 0.98rem;
-    font-weight: 500;
-    color: var(--ink-strong);
+    display: flex;
+    align-items: center;
+    gap: 7px;
     text-decoration: none;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
     transform: translateY(128%);
     opacity: 0;
     pointer-events: none;
     transition: transform 540ms cubic-bezier(0.22, 1, 0.36, 1), opacity 360ms ease;
+  }
+
+  .home-update-leaf {
+    flex: 0 0 auto;
+    font-family: "Fraunces", serif;
+    font-size: 1.02rem;
+    font-weight: 700;
+    letter-spacing: 0.004em;
+    color: var(--ink-strong);
+  }
+
+  .home-update-sep {
+    flex: 0 0 auto;
+    color: color-mix(in srgb, var(--ink-soft) 74%, #7c5cff 26%);
+    font-weight: 700;
+  }
+
+  .home-update-detail {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.97rem;
+    font-weight: 500;
+    color: var(--ink-soft);
   }
 
   .home-update-line.is-active {
@@ -1591,7 +1620,8 @@ const breadcrumb = breadcrumbs;
     opacity: 0;
   }
 
-  .home-update-line:hover {
+  .home-update-line:hover .home-update-leaf,
+  .home-update-line:hover .home-update-detail {
     color: var(--accent-hover);
   }
 
@@ -2210,6 +2240,18 @@ const breadcrumb = breadcrumbs;
     .home-update-label {
       font-size: 0.86rem;
       padding: 5px 10px;
+    }
+
+    .home-update-view {
+      height: 1.7rem;
+    }
+
+    .home-update-leaf {
+      font-size: 0.97rem;
+    }
+
+    .home-update-detail {
+      font-size: 0.92rem;
     }
 
     .thumb {

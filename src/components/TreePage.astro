@@ -753,6 +753,7 @@ const checklistStorageKey = segments.join("/") || node.slug || "leaf";
 const contentBlockCount = node.content?.length ?? 0;
 const middleContentIndex =
   contentBlockCount > 0 ? Math.max(1, Math.floor((contentBlockCount - 1) / 2)) : -1;
+const showHomeUpdateBar = isHome && segments.length === 0 && !node.slug;
 const firstSentence = (value?: string) => {
   if (!value) return "";
   const normalized = value.replace(/\s+/g, " ").trim();
@@ -760,7 +761,7 @@ const firstSentence = (value?: string) => {
   const match = normalized.match(/^[^.!?]+[.!?]/);
   return (match ? match[0] : normalized).trim();
 };
-const homeTickerCandidates = isHome
+const homeTickerCandidates = showHomeUpdateBar
   ? [
       {
         slug: "latest-travel-updates-for-korea",
@@ -849,7 +850,7 @@ const breadcrumb = breadcrumbs;
         : node.quickAnswer ?? t.quickFallback}
     </p>
   </div>
-  {isHome && homeUpdateTickerItems.length > 0 && (
+  {showHomeUpdateBar && homeUpdateTickerItems.length > 0 && (
     <div class="home-update-bar" data-update-bar>
       <p class="home-update-label">{t.updateTickerLabel}</p>
       <div class="home-update-view" aria-live="off">

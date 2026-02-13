@@ -37,9 +37,30 @@ const jobs = [
 ];
 
 const variants = [
-  { dir: "thumbs", width: 960, quality: 84 },
-  { dir: "thumbs-w640", width: 640, quality: 80 },
-  { dir: "thumbs-w384", width: 384, quality: 76 },
+  {
+    dir: "thumbs",
+    width: 960,
+    quality: 82,
+    minQuality: 62,
+    maxBytes: 130 * 1024,
+    qualityStep: 4,
+  },
+  {
+    dir: "thumbs-w640",
+    width: 640,
+    quality: 76,
+    minQuality: 50,
+    maxBytes: 48 * 1024,
+    qualityStep: 4,
+  },
+  {
+    dir: "thumbs-w384",
+    width: 384,
+    quality: 72,
+    minQuality: 48,
+    maxBytes: 26 * 1024,
+    qualityStep: 4,
+  },
 ];
 
 const counters = {
@@ -81,6 +102,25 @@ const buildWebp = async (srcPath, width, quality) => {
     .toBuffer();
 };
 
+const buildAdaptiveWebp = async (srcPath, variant) => {
+  const step = Math.max(1, variant.qualityStep ?? 4);
+  let selectedBuffer = await buildWebp(srcPath, variant.width, variant.quality);
+
+  if (!variant.maxBytes || selectedBuffer.length <= variant.maxBytes) {
+    return selectedBuffer;
+  }
+
+  for (let quality = variant.quality - step; quality >= variant.minQuality; quality -= step) {
+    const nextBuffer = await buildWebp(srcPath, variant.width, quality);
+    selectedBuffer = nextBuffer;
+    if (nextBuffer.length <= variant.maxBytes) {
+      break;
+    }
+  }
+
+  return selectedBuffer;
+};
+
 const writeIfNeeded = async (destPath, sourceMtimeMs, nextBuffer) => {
   const destStat = await safeStat(destPath);
 
@@ -116,7 +156,7 @@ for (const job of jobs) {
 
     for (const variant of variants) {
       const destPath = path.join(job.outputDir, variant.dir, name);
-      const buffer = await buildWebp(srcPath, variant.width, variant.quality);
+      const buffer = await buildAdaptiveWebp(srcPath, variant);
       await writeIfNeeded(destPath, srcStat.mtimeMs, buffer);
     }
   }

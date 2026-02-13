@@ -1,7 +1,8 @@
 ---
 import AdSenseSafeSlot from "./AdSenseSafeSlot.astro";
-import { findNodeBySegments, type TreeNode } from "../data/siteTree";
+import { findNodeBySegments, siteTree, type TreeNode } from "../data/siteTree";
 import { getEditorialMeta } from "../lib/editorial";
+import { getHomeLeafTickerItems } from "../lib/leafUpdates";
 import type { SupportedLang } from "../lib/i18n";
 import { withLang } from "../lib/i18n";
 
@@ -754,51 +755,7 @@ const contentBlockCount = node.content?.length ?? 0;
 const middleContentIndex =
   contentBlockCount > 0 ? Math.max(1, Math.floor((contentBlockCount - 1) / 2)) : -1;
 const showHomeUpdateBar = isHome && segments.length === 0 && !node.slug;
-const firstSentence = (value?: string) => {
-  if (!value) return "";
-  const normalized = value.replace(/\s+/g, " ").trim();
-  if (!normalized) return "";
-  const match = normalized.match(/^[^.!?]+[.!?]/);
-  return (match ? match[0] : normalized).trim();
-};
-const homeTickerCandidates = showHomeUpdateBar
-  ? [
-      {
-        slug: "latest-travel-updates-for-korea",
-        title: "Latest Travel Updates for Korea",
-        fallback: t.updateTickerFallbackTravel,
-      },
-      {
-        slug: "korea-now-and-more",
-        title: "Korea Now & More",
-        fallback: t.updateTickerFallbackNowMore,
-      },
-      {
-        slug: "this-week-in-korea",
-        title: "This Week in Korea",
-        fallback: t.updateTickerFallbackThisWeek,
-      },
-    ]
-  : [];
-const homeUpdateTickerItems = homeTickerCandidates
-  .map(({ slug, title, fallback }) => {
-    const child = children.find((item) => item.slug === slug);
-    if (!child) {
-      return {
-        href: withLang(`/${slug}`, lang),
-        leafTitle: title,
-        detail: fallback,
-      };
-    }
-    const sourceText = child.quickAnswer ?? child.description ?? "";
-    const detail = firstSentence(sourceText) || fallback;
-    return {
-      href: withLang(`/${child.slug}`, lang),
-      leafTitle: child.title || title,
-      detail,
-    };
-  })
-  .filter((item) => item.leafTitle.trim().length > 0 && item.detail.trim().length > 0);
+const homeUpdateTickerItems = showHomeUpdateBar ? await getHomeLeafTickerItems(siteTree) : [];
 
 const breadcrumb = breadcrumbs;
 ---
@@ -862,7 +819,7 @@ const breadcrumb = breadcrumbs;
         {homeUpdateTickerItems.map((item, index) => (
           <a
             class={`home-update-line${index === 0 ? " is-active" : ""}`}
-            href={item.href}
+            href={withLang(item.path, lang)}
             data-update-line
             data-kpi-section={`home_update_bar_${index + 1}`}
           >

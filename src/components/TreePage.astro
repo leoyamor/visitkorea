@@ -61,6 +61,7 @@ const t = {
     bookmarkTip: "Pro tip: Save this page to your home screen for quick access during your trip.",
     returnLatest: "Latest Travel Updates",
     returnNowMore: "Korea Now & More",
+    returnThisWeek: "This Week in Korea",
     updatedLabel: "Last updated",
     sourceNote: "For final booking decisions, always verify with official sources.",
     nextFallback: "Latest Travel Updates for Korea",
@@ -109,6 +110,7 @@ const t = {
     bookmarkTip: "Consejo: guarda esta página en tu pantalla de inicio para usarla durante el viaje.",
     returnLatest: "Últimas actualizaciones",
     returnNowMore: "Corea ahora y más",
+    returnThisWeek: "This Week in Korea",
     updatedLabel: "Última actualización",
     sourceNote: "Antes de reservar, confirma siempre con fuentes oficiales.",
     nextFallback: "Últimas actualizaciones para Corea",
@@ -662,6 +664,7 @@ const getResponsiveImage = (key?: string, title?: string, slug?: string): Respon
 const editorialMeta = getEditorialMeta(lang);
 const latestUpdatesPath = withLang("/latest-travel-updates-for-korea", lang);
 const nowMorePath = withLang("/korea-now-and-more", lang);
+const thisWeekPath = withLang("/this-week-in-korea", lang);
 const isLeafPage = !isHome && !hasChildren;
 const rootSlug = segments[0] ?? "";
 const showLeafMetaNote =
@@ -902,6 +905,7 @@ const breadcrumb = breadcrumbs;
             <div class="leaf-return-links">
               <a href={latestUpdatesPath} data-kpi-section="leaf_return_latest">{t.returnLatest}</a>
               <a href={nowMorePath} data-kpi-section="leaf_return_now_more">{t.returnNowMore}</a>
+              <a href={thisWeekPath} data-kpi-section="leaf_return_this_week">{t.returnThisWeek}</a>
             </div>
           </div>
 

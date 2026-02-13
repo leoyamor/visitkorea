@@ -5110,7 +5110,7 @@ export const siteTree: TreeNode = {
       title: "This Week in Korea",
       slug: "this-week-in-korea",
       icon: "calendar",
-      image: "planning",
+      image: "/leaf%20images/This_Week_in_Korea.webp",
       description:
         "Find this week's top events and festivals in Korea, with official links for final details.",
       quickAnswer:

@@ -5106,6 +5106,25 @@ export const siteTree: TreeNode = {
         },
       ],
     },
+    {
+      title: "This Week in Korea",
+      slug: "this-week-in-korea",
+      icon: "calendar",
+      image: "planning",
+      description:
+        "Find this week's top events and festivals in Korea, with official links for final details.",
+      quickAnswer:
+        "Check this page each week to see what is happening in Korea and plan your trip faster.",
+      content: [
+        {
+          title: "This Week in Korea",
+          icon: "calendar",
+          emphasis: "Simple weekly event picks for foreign travelers.",
+          body:
+            "This page highlights major events, festivals, and seasonal picks for the current week. Use it for quick planning, then confirm opening times, tickets, and location details on official event pages.",
+        },
+      ],
+    },
   ],
 };
 

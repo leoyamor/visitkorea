@@ -33,10 +33,32 @@ All commands are run from the root of the project, from a terminal:
 | :------------------------ | :----------------------------------------------- |
 | `npm install`             | Installs dependencies                            |
 | `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run images:optimize` | Generates compressed WebP card thumbnails         |
 | `npm run build`           | Build your production site to `./dist/`          |
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## Image Optimization Workflow
+
+Card images use pre-generated WebP thumbnails to reduce data usage on desktop and mobile.
+
+1. Upload source `.webp` files to:
+   - `public/` (top-level category cards)
+   - `public/leaf images/` (leaf and special cards)
+2. Run optimization:
+   - `npm run images:optimize`
+3. Build or deploy as usual.
+
+Generated files:
+- `thumbs` (max width 960, quality 84)
+- `thumbs-w640` (max width 640, quality 80)
+- `thumbs-w384` (max width 384, quality 76)
+
+Useful flags:
+- `npm run images:optimize -- --dry-run`
+- `npm run images:optimize -- --only=\"This Week\"`
+- `npm run images:optimize -- --force`
 
 ## 👀 Want to learn more?
 

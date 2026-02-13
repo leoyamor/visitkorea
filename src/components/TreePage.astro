@@ -62,6 +62,13 @@ const t = {
     returnLatest: "Latest Travel Updates",
     returnNowMore: "Korea Now & More",
     returnThisWeek: "This Week in Korea",
+    updateTickerLabel: "What changed this week",
+    updateTickerFallbackTravel:
+      "Latest Travel Updates for Korea: Key travel checks were refreshed for this week.",
+    updateTickerFallbackNowMore:
+      "Korea Now & More: New traveler benefits and event highlights were refreshed this week.",
+    updateTickerFallbackThisWeek:
+      "This Week in Korea: Weekly cultural and travel highlights were refreshed for visitors.",
     updatedLabel: "Last updated",
     sourceNote: "For final booking decisions, always verify with official sources.",
     nextFallback: "Latest Travel Updates for Korea",
@@ -111,6 +118,13 @@ const t = {
     returnLatest: "Latest Travel Updates",
     returnNowMore: "Korea Now & More",
     returnThisWeek: "This Week in Korea",
+    updateTickerLabel: "What changed this week",
+    updateTickerFallbackTravel:
+      "Latest Travel Updates for Korea: Key travel checks were refreshed for this week.",
+    updateTickerFallbackNowMore:
+      "Korea Now & More: New traveler benefits and event highlights were refreshed this week.",
+    updateTickerFallbackThisWeek:
+      "This Week in Korea: Weekly cultural and travel highlights were refreshed for visitors.",
     updatedLabel: "Last updated",
     sourceNote: "For final booking decisions, always verify with official sources.",
     nextFallback: "Latest Travel Updates for Korea",
@@ -739,6 +753,46 @@ const checklistStorageKey = segments.join("/") || node.slug || "leaf";
 const contentBlockCount = node.content?.length ?? 0;
 const middleContentIndex =
   contentBlockCount > 0 ? Math.max(1, Math.floor((contentBlockCount - 1) / 2)) : -1;
+const firstSentence = (value?: string) => {
+  if (!value) return "";
+  const normalized = value.replace(/\s+/g, " ").trim();
+  if (!normalized) return "";
+  const match = normalized.match(/^[^.!?]+[.!?]/);
+  return (match ? match[0] : normalized).trim();
+};
+const homeTickerCandidates = isHome
+  ? [
+      {
+        slug: "latest-travel-updates-for-korea",
+        fallback: t.updateTickerFallbackTravel,
+      },
+      {
+        slug: "korea-now-and-more",
+        fallback: t.updateTickerFallbackNowMore,
+      },
+      {
+        slug: "this-week-in-korea",
+        fallback: t.updateTickerFallbackThisWeek,
+      },
+    ]
+  : [];
+const homeUpdateTickerItems = homeTickerCandidates
+  .map(({ slug, fallback }) => {
+    const child = children.find((item) => item.slug === slug);
+    if (!child) {
+      return {
+        href: withLang(`/${slug}`, lang),
+        text: fallback,
+      };
+    }
+    const sourceText = child.quickAnswer ?? child.description ?? "";
+    const sentence = firstSentence(sourceText);
+    return {
+      href: withLang(`/${child.slug}`, lang),
+      text: sentence ? `${child.title}: ${sentence}` : child.title,
+    };
+  })
+  .filter((item) => item.text.trim().length > 0);
 
 const breadcrumb = breadcrumbs;
 ---
@@ -795,6 +849,23 @@ const breadcrumb = breadcrumbs;
         : node.quickAnswer ?? t.quickFallback}
     </p>
   </div>
+  {isHome && homeUpdateTickerItems.length > 0 && (
+    <div class="home-update-bar" data-update-bar>
+      <p class="home-update-label">{t.updateTickerLabel}</p>
+      <div class="home-update-view" aria-live="off">
+        {homeUpdateTickerItems.map((item, index) => (
+          <a
+            class={`home-update-line${index === 0 ? " is-active" : ""}`}
+            href={item.href}
+            data-update-line
+            data-kpi-section={`home_update_bar_${index + 1}`}
+          >
+            {item.text}
+          </a>
+        ))}
+      </div>
+    </div>
+  )}
 
   {hasChildren ? (
     <div class="grid" data-orphans={children.length % 3}>
@@ -1089,6 +1160,37 @@ const breadcrumb = breadcrumbs;
         select.value = targetLang;
         select.dispatchEvent(new Event("change"));
       });
+    });
+  })();
+</script>
+
+<script is:inline>
+  (() => {
+    const bars = Array.from(document.querySelectorAll("[data-update-bar]"));
+    if (!bars.length) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    bars.forEach((bar) => {
+      const lines = Array.from(bar.querySelectorAll("[data-update-line]"));
+      if (lines.length < 2) return;
+
+      let currentIndex = 0;
+      window.setInterval(() => {
+        const current = lines[currentIndex];
+        const nextIndex = (currentIndex + 1) % lines.length;
+        const next = lines[nextIndex];
+
+        current.classList.remove("is-active");
+        current.classList.add("is-exit");
+        next.classList.remove("is-exit");
+        next.classList.add("is-active");
+
+        window.setTimeout(() => {
+          current.classList.remove("is-exit");
+        }, 640);
+
+        currentIndex = nextIndex;
+      }, 6500);
     });
   })();
 </script>
@@ -1401,6 +1503,66 @@ const breadcrumb = breadcrumbs;
     max-width: 68ch;
     color: var(--text-soft);
     line-height: 1.6;
+  }
+
+  .home-update-bar {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid var(--border-paper);
+    background: linear-gradient(180deg, var(--paper), var(--paper-2));
+    box-shadow: var(--shadow-1);
+  }
+
+  .home-update-label {
+    margin: 0;
+    font-size: 0.74rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    white-space: nowrap;
+  }
+
+  .home-update-view {
+    position: relative;
+    height: 1.5rem;
+    overflow: hidden;
+  }
+
+  .home-update-line {
+    position: absolute;
+    inset: 0;
+    display: block;
+    line-height: 1.5rem;
+    color: var(--ink-strong);
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transform: translateY(128%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 540ms cubic-bezier(0.22, 1, 0.36, 1), opacity 360ms ease;
+  }
+
+  .home-update-line.is-active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .home-update-line.is-exit {
+    transform: translateY(-128%);
+    opacity: 0;
+  }
+
+  .home-update-line:hover {
+    color: var(--accent-hover);
   }
 
   .section.light {
@@ -2007,6 +2169,17 @@ const breadcrumb = breadcrumbs;
     .grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 18px;
+    }
+
+    .home-update-bar {
+      grid-template-columns: 1fr;
+      gap: 8px;
+      padding: 10px 12px;
+    }
+
+    .home-update-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.07em;
     }
 
     .thumb {

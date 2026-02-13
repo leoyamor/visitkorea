@@ -5112,16 +5112,75 @@ export const siteTree: TreeNode = {
       icon: "calendar",
       image: "/leaf%20images/This_Week_in_Korea.webp",
       description:
-        "Find this week's top events and festivals in Korea, with official links for final details.",
+        "Seollal 2026 guide for foreign visitors: key dates, travel patterns, closures, and cultural highlights.",
       quickAnswer:
-        "Check this page each week to see what is happening in Korea and plan your trip faster.",
+        "Seollal in 2026 centers on February 17. Plan transport and meals early, then enjoy one of Korea's most meaningful traditional holiday periods.",
       content: [
         {
-          title: "This Week in Korea",
+          title: "Seollal (Korean Lunar New Year): What Foreign Visitors Should Know",
           icon: "calendar",
-          emphasis: "Simple weekly event picks for foreign travelers.",
+          emphasis: "Korea's most important traditional holiday period.",
           body:
-            "This page highlights major events, festivals, and seasonal picks for the current week. Use it for quick planning, then confirm opening times, tickets, and location details on official event pages.",
+            "Seollal is Korea's most important traditional holiday. In 2026, Seollal falls on February 17 (Gregorian calendar), which corresponds to Lunar January 1. The holiday usually lasts three days, including the day before and the day after Seollal. During this period, the pace of life across Korea slows noticeably, and that shift is what makes Seollal unique.",
+        },
+        {
+          title: "What Is Seollal? (At a glance)",
+          icon: "checklist",
+          emphasis: "A family-centered Korean New Year.",
+          body:
+            "Seollal marks the Korean New Year and is centered around family. People travel back to their hometowns, honor their ancestors, and welcome the new year in a calm, reflective way.",
+        },
+        {
+          title: "What People Do During Seollal",
+          icon: "temple",
+          emphasis: "Traditions with deep family meaning.",
+          body: "Core Seollal traditions include:",
+          bullets: [
+            "Charye (ancestral rites): On Seollal morning, families gather to pay respect to their ancestors.",
+            "Sebae (New Year's bow): Younger family members bow to elders and receive words of blessing and gift money.",
+            "Traditional food: The most important dish is tteokguk (rice cake soup). Eating it symbolically means becoming one year older.",
+          ],
+        },
+        {
+          title: "What Travelers Will Notice",
+          icon: "alert",
+          emphasis: "Plan around transport demand and temporary closures.",
+          body: "Visitors usually notice these changes first:",
+          bullets: [
+            "Heavy travel traffic: Trains and highways are extremely busy before and after the holiday.",
+            "Shop closures: Small restaurants and local businesses may close for one or two days.",
+            "Tourist attractions stay active: Palaces, folk villages, and museums often run special Seollal programs for visitors.",
+          ],
+        },
+        {
+          title: "Why Seollal Is Special for Foreigners",
+          icon: "spark",
+          emphasis: "One of the best windows into traditional Korea.",
+          body:
+            "Seollal can be one of the most rewarding moments for international visitors because cultural programs are often easy to join.",
+          bullets: [
+            "Many people wear hanbok.",
+            "Traditional games like yutnori are often available to try.",
+            "Cultural events are frequently designed so foreigners can join without speaking Korean.",
+          ],
+        },
+        {
+          title: "Best Places to Visit During Seollal",
+          icon: "pin",
+          emphasis: "Choose places with structured visitor programs.",
+          body: "Good options include:",
+          bullets: [
+            "Folk villages and palaces: well-organized cultural programs for international visitors.",
+            "City centers: often quieter than usual, ideal for relaxed sightseeing.",
+            "Seollal festivals: special events created for both locals and foreign tourists.",
+          ],
+        },
+        {
+          title: "A Simple Travel Tip",
+          icon: "route",
+          emphasis: "Do not avoid Seollal. Prepare for it.",
+          body:
+            "With a bit of planning for meals and transportation, Seollal is not a period you need to avoid. For first-time visitors, it can be one of the most memorable chances to experience a slower, more traditional side of Korea that is rarely visible during normal travel seasons.",
         },
       ],
     },

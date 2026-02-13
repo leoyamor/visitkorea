@@ -669,7 +669,11 @@ const isLeafPage = !isHome && !hasChildren;
 const rootSlug = segments[0] ?? "";
 const showLeafMetaNote =
   isLeafPage &&
-  (rootSlug === "latest-travel-updates-for-korea" || rootSlug === "korea-now-and-more");
+  (
+    rootSlug === "latest-travel-updates-for-korea" ||
+    rootSlug === "korea-now-and-more" ||
+    rootSlug === "this-week-in-korea"
+  );
 const centerCardIconForPage =
   rootSlug === "latest-travel-updates-for-korea" || rootSlug === "korea-now-and-more";
 const answerImage = getResponsiveImage(node.image ?? node.icon, node.title, node.slug);

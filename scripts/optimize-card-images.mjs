@@ -63,6 +63,24 @@ const variants = [
   },
 ];
 
+const perImageMaxBytes = {
+  "this_week_in_korea.webp": {
+    thumbs: 130 * 1024,
+    "thumbs-w640": 48 * 1024,
+    "thumbs-w384": 26 * 1024,
+  },
+  "latest travel updates for korea.webp": {
+    thumbs: 95 * 1024,
+    "thumbs-w640": 34 * 1024,
+    "thumbs-w384": 22 * 1024,
+  },
+  "korea-now-more.webp": {
+    thumbs: 85 * 1024,
+    "thumbs-w640": 28 * 1024,
+    "thumbs-w384": 20 * 1024,
+  },
+};
+
 const counters = {
   scanned: 0,
   written: 0,
@@ -102,18 +120,25 @@ const buildWebp = async (srcPath, width, quality) => {
     .toBuffer();
 };
 
-const buildAdaptiveWebp = async (srcPath, variant) => {
+const getTargetMaxBytes = (fileName, variant) => {
+  const override = perImageMaxBytes[fileName.toLowerCase()];
+  if (!override) return variant.maxBytes;
+  return override[variant.dir] ?? variant.maxBytes;
+};
+
+const buildAdaptiveWebp = async (srcPath, variant, fileName) => {
   const step = Math.max(1, variant.qualityStep ?? 4);
+  const targetMaxBytes = getTargetMaxBytes(fileName, variant);
   let selectedBuffer = await buildWebp(srcPath, variant.width, variant.quality);
 
-  if (!variant.maxBytes || selectedBuffer.length <= variant.maxBytes) {
+  if (!targetMaxBytes || selectedBuffer.length <= targetMaxBytes) {
     return selectedBuffer;
   }
 
   for (let quality = variant.quality - step; quality >= variant.minQuality; quality -= step) {
     const nextBuffer = await buildWebp(srcPath, variant.width, quality);
     selectedBuffer = nextBuffer;
-    if (nextBuffer.length <= variant.maxBytes) {
+    if (nextBuffer.length <= targetMaxBytes) {
       break;
     }
   }
@@ -125,6 +150,11 @@ const writeIfNeeded = async (destPath, sourceMtimeMs, nextBuffer) => {
   const destStat = await safeStat(destPath);
 
   if (!force && destStat && destStat.mtimeMs >= sourceMtimeMs) {
+    counters.skipped += 1;
+    return;
+  }
+
+  if (destStat && destStat.size <= nextBuffer.length) {
     counters.skipped += 1;
     return;
   }
@@ -156,7 +186,7 @@ for (const job of jobs) {
 
     for (const variant of variants) {
       const destPath = path.join(job.outputDir, variant.dir, name);
-      const buffer = await buildAdaptiveWebp(srcPath, variant);
+      const buffer = await buildAdaptiveWebp(srcPath, variant, name);
       await writeIfNeeded(destPath, srcStat.mtimeMs, buffer);
     }
   }

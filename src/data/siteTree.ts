@@ -1242,101 +1242,87 @@ export const siteTree: TreeNode = {
             {
               title: "Using the Subway",
               icon: "train",
-              emphasis: "If you can use a subway anywhere, you can use it here.",
+              emphasis: "Simple. Clear. Reliable.",
               body:
-                "Korea's subway is fast, clean, affordable, and designed for everyone. Most travelers feel comfortable after their first ride.",
+                "If you've used a subway in any major city, you can use it in Korea. Korea's subway system is fast, clean, affordable, and designed for everyday commuters. That's exactly why it works so well for visitors. Most travelers feel comfortable after just one ride.",
             },
             {
-              title: "The one thing you really need to know",
+              title: "The One Thing You Need to Know",
               icon: "card",
-              emphasis: "You do not need single tickets.",
+              emphasis: "Get a transportation card.",
               body:
-                "Almost everyone uses a transportation card. You tap in, ride, and tap out. Once you have a card, the subway becomes automatic.",
+                "You can buy a rechargeable transit card (such as T-money) at convenience stores or subway stations. Tap once when you enter. Tap once when you exit. That's it.",
+              bullets: [
+                "You don't need paper tickets.",
+                "You don't need to calculate fares.",
+              ],
             },
             {
-              title: "How paying actually works",
+              title: "How Payment Works",
               icon: "wallet",
-              emphasis: "Simple and automatic.",
-              body: "Here is the simple version:",
-              bullets: [
-                "Buy one transportation card",
-                "Add some money to it",
-                "Use it for every subway ride",
-                "You do not need to calculate fares or zones",
-              ],
-            },
-            {
-              title: "What stations are like",
-              icon: "pin",
-              emphasis: "Exit numbers matter most.",
-              body: "Stations are:",
-              bullets: [
-                "Clearly numbered",
-                "Well signposted",
-                "Often bilingual",
-                "Exit numbers save time and walking",
-              ],
-            },
-            {
-              title: "What first-time riders worry about",
-              icon: "alert",
-              emphasis: "Most worries fade quickly.",
-              body: "Common worries:",
-              bullets: [
-                "Reading Korean",
-                "Choosing the wrong line",
-                "Paying incorrectly",
-              ],
-            },
-            {
-              title: "The reality",
-              icon: "shield",
-              emphasis: "Mistakes are easy to fix.",
-              body: "In practice:",
-              bullets: [
-                "Station names are romanized",
-                "Line colors and numbers are consistent",
-                "Gates will not let you through if something is wrong",
-              ],
-            },
-            {
-              title: "What you don't need to stress about",
-              icon: "hand",
-              emphasis: "Keep it simple.",
-              body: "You do not need:",
-              bullets: [
-                "A daily subway pass",
-                "Perfect route memorization",
-                "Local-level knowledge",
-              ],
-            },
-            {
-              title: "A common mistake to avoid",
-              icon: "alert",
-              emphasis: "The subway is almost always better.",
-              body: "Some travelers:",
-              bullets: [
-                "Buy single tickets repeatedly",
-                "Avoid the subway out of fear",
-                "Use taxis for short distances",
-              ],
-            },
-            {
-              title: "How this page helps you",
-              icon: "checklist",
-              emphasis: "Confidence comes fast.",
-              body: "This page answers one question:",
-              bullets: [
-                "Can I handle the subway in Korea? Yes.",
-                "Detailed routes and apps come later",
-              ],
-            },
-            {
-              title: "Bottom line",
-              icon: "spark",
-              emphasis: "It works for you.",
+              emphasis: "It's automatic.",
               body:
-                "Once you start using the subway, you will wonder why you ever hesitated.",
+                "You don't need to understand zones or complicated fare systems.",
+              bullets: [
+                "Add credit to your card",
+                "Fares are calculated by distance",
+                "Transfers between buses and subways are discounted automatically",
+              ],
+            },
+            {
+              title: "What Stations Are Like",
+              icon: "pin",
+              emphasis: "Clear and traveler-friendly.",
+              body:
+                "In most cases, following the line number and exit number is enough.",
+              bullets: [
+                "Lines are color-coded and numbered",
+                "Station names are shown in English",
+                "Major stations include English announcements",
+                "Exit numbers guide you directly to streets and landmarks",
+              ],
+            },
+            {
+              title: "What First-Time Riders Worry About",
+              icon: "alert",
+              emphasis: "Mistakes are easy to fix.",
+              body: "Common concerns:",
+              bullets: [
+                "What if I take the wrong direction?",
+                "What if I can't read Korean?",
+                "What if I tap incorrectly?",
+                "Signs are consistent and easy to follow",
+                "If you go the wrong way, get off at the next station and switch",
+                "If there's a payment issue, the gate won't open - so you'll know immediately",
+              ],
+            },
+            {
+              title: "What You Don't Need to Worry About",
+              icon: "hand",
+              emphasis: "A transit app and basic station signs are usually enough.",
+              body: "You don't need:",
+              bullets: [
+                "Fluent Korean",
+                "A rental car in major cities",
+                "Complex route memorization",
+                "Taxis for short distances",
+              ],
+            },
+            {
+              title: "A Helpful Tip",
+              icon: "route",
+              emphasis:
+                "Don't default to taxis just because you feel uncertain.",
+              body:
+                "In cities like Seoul or Busan, the subway is often faster, more predictable, and cheaper than driving.",
+            },
+            {
+              title: "Bottom Line",
+              icon: "spark",
+              emphasis:
+                "Korea's subway system is one of the easiest parts of your trip.",
+              body:
+                "Once you ride it once, it quickly feels routine - not something to stress about.",
             },
           ],
         },

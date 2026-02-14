@@ -116,8 +116,8 @@ const t = {
     returnNowMore: "Korea Now & More",
     returnThisWeek: "This Week in Korea",
     updateTickerLabel: "Novedades de esta semana",
-    updatedLabel: "Ultima actualizacion",
-    sourceNote: "Para decisiones finales de reserva, verifica siempre con fuentes oficiales.",
+    updatedLabel: "Last updated",
+    sourceNote: "For final booking decisions, always verify with official sources.",
     nextFallback: "Ultimas actualizaciones de viaje para Corea",
     feedbackEyebrow: "Ayudanos a mejorar",
     feedbackTitle: "Que deberiamos mejorar para los viajeros?",
@@ -573,7 +573,7 @@ const leafImageSlugMap = new Map(
   leafImageNames.map((name) => [normalizeLeafSlug(name), name])
 );
 
-const IMAGE_ASSET_VERSION = "20260213b";
+const IMAGE_ASSET_VERSION = "20260213c";
 
 const toCardThumbPath = (value: string) => {
   if (!value.startsWith("/") || !/\.webp($|\?)/i.test(value)) {
@@ -672,13 +672,7 @@ const nowMorePath = withLang("/korea-now-and-more", lang);
 const thisWeekPath = withLang("/this-week-in-korea", lang);
 const isLeafPage = !isHome && !hasChildren;
 const rootSlug = segments[0] ?? "";
-const showLeafMetaNote =
-  isLeafPage &&
-  (
-    rootSlug === "latest-travel-updates-for-korea" ||
-    rootSlug === "korea-now-and-more" ||
-    rootSlug === "this-week-in-korea"
-  );
+const showLeafMetaNote = isLeafPage;
 const centerCardIconForPage =
   rootSlug === "latest-travel-updates-for-korea" || rootSlug === "korea-now-and-more";
 const answerImage = getResponsiveImage(node.image ?? node.icon, node.title, node.slug);

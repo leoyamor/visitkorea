@@ -3991,82 +3991,105 @@ export const siteTree: TreeNode = {
             {
               title: "Immigration Process",
               icon: "passport",
-              emphasis: "Structured and predictable.",
+              emphasis: "Straightforward and quick.",
               body:
-                "Arriving in Korea is smoother than most people expect. If you know the basic flow, there is nothing to worry about.",
+                "Entering Korea is easy and efficient. Knowing the basic steps makes the process feel smooth and predictable.",
             },
             {
-              title: "After landing: follow the signs",
+              title: "After Landing: Follow the Signs",
               icon: "route",
               emphasis: "Arrival and Immigration.",
               body:
-                "Airports like Incheon and Gimpo have clear English signs. Follow the crowd and you are on the right path.",
+                "Korean airports, like Incheon and Gimpo, have clear English signs. Just follow the crowd, and you'll be on the right track.",
             },
             {
-              title: "Step 1: Immigration check",
-              icon: "passport",
-              emphasis: "Simple questions, short answers.",
-              body: "You will be asked for:",
-              bullets: [
-                "Passport",
-                "Arrival card (if required)",
-                "Reason for visit, length of stay, first address",
-              ],
-            },
-            {
-              title: "Step 2: Baggage claim",
-              icon: "bag",
-              emphasis: "Screens show your belt number.",
-              body: "Carts are free and staff are nearby if you need help.",
-            },
-            {
-              title: "Step 3: Customs",
-              icon: "shield",
-              emphasis: "Usually very fast.",
+              title: "Step 1: Arrival",
+              icon: "route",
+              emphasis: "Terminal flow is simple.",
               body:
-                "Most travelers walk through Nothing to Declare. Unless you have restricted items or large cash, it takes only seconds.",
-            },
-            {
-              title: "What usually makes things slower",
-              icon: "alert",
-              emphasis: "Easy to avoid.",
-              body: "Delays happen when:",
+                "Terminal 1 and Terminal 2 passengers will enter through the boarding gate on the 2nd floor.",
               bullets: [
-                "You do not know your hotel name or address",
-                "You cannot explain your travel purpose",
-                "Arrival forms are incomplete",
+                "Passengers arriving at the concourse will take the shuttle train to the terminal.",
               ],
             },
             {
-              title: "Language concerns",
-              icon: "hand",
-              emphasis: "Do not stress.",
-              body: "Officers use simple English and focus on documents.",
+              title: "Step 2: Information/Declaration",
+              icon: "checklist",
+              emphasis: "Submit declaration details.",
+              body: "Submit your customs declaration for carry-on items at the customs office.",
             },
             {
-              title: "How long does it take?",
+              title: "Step 3: Immigration",
+              icon: "passport",
+              emphasis: "Arrival card rules depend on traveler status.",
+              body:
+                "Korean citizens and registered foreign nationals do not need to fill out an arrival card.",
+              bullets: [
+                "Only unregistered foreign nationals need to fill out the card.",
+              ],
+            },
+            {
+              title: "Step 4: Baggage Claim",
+              icon: "bag",
+              emphasis: "Check the belt screen first.",
+              body:
+                "After clearing immigration, check the baggage belt number on the screen.",
+              bullets: [
+                "Proceed to the first floor to pick up your luggage.",
+              ],
+            },
+            {
+              title: "Step 5: Arrival Hall",
+              icon: "shield",
+              emphasis: "Most travelers pass quickly.",
+              body:
+                "After picking up your baggage, exit through the departure hall into the arrival area.",
+              bullets: [
+                "Most travelers walk through the \"Nothing to Declare\" section. If you're not carrying restricted items or large amounts of cash, it's quick and simple.",
+              ],
+            },
+            {
+              title: "What Might Slow Things Down",
+              icon: "alert",
+              emphasis: "Avoid delays with these tips.",
+              body: "Delays can occur if:",
+              bullets: [
+                "You don't know your hotel's name or address",
+                "You're unsure about your travel purpose",
+                "Your forms are incomplete",
+              ],
+            },
+            {
+              title: "Language Concerns",
+              icon: "hand",
+              emphasis: "Don't worry, help is available.",
+              body:
+                "Officers speak basic English and focus on your documents, so no need to stress about language.",
+            },
+            {
+              title: "How Long Does It Take?",
               icon: "calendar",
               emphasis: "Usually under an hour.",
-              body: "Typical ranges:",
+              body: "Typical times:",
               bullets: [
                 "Immigration: 10-30 minutes",
                 "Baggage and customs: 10-20 minutes",
-                "Longer during peak hours",
+                "It can take longer during peak times",
               ],
             },
             {
-              title: "First impression tip",
+              title: "First Impression Tip",
               icon: "spark",
-              emphasis: "Formal, not unfriendly.",
+              emphasis: "Be polite and clear.",
               body:
-                "Officers may not smile much. Efficiency matters more than small talk.",
+                "Officers may seem serious, but efficiency is key. Clear, concise answers will keep things moving smoothly.",
             },
             {
-              title: "Final thought",
+              title: "Final Thought",
               icon: "spark",
-              emphasis: "Documents ready, answers simple.",
+              emphasis: "Ready documents and simple answers.",
               body:
-                "If your documents are ready and your answers are simple, you will be on your way quickly.",
+                "With everything in order and straightforward answers, you'll breeze through the process and be on your way in no time.",
             },
           ],
         },

@@ -32,7 +32,7 @@ const jobs = [
     sourceDir: path.join(rootDir, "public", "leaf images"),
     outputDir: path.join(rootDir, "public", "leaf images"),
     label: "leaf",
-    excludeNames: new Set(),
+    excludeNames: new Set(["hanok_hero.webp"]),
   },
 ];
 
@@ -49,35 +49,35 @@ const variants = [
     dir: "thumbs-w640",
     width: 640,
     quality: 76,
-    minQuality: 50,
+    minQuality: 24,
     maxBytes: 48 * 1024,
-    qualityStep: 4,
+    qualityStep: 2,
   },
   {
     dir: "thumbs-w384",
     width: 384,
     quality: 72,
-    minQuality: 48,
+    minQuality: 24,
     maxBytes: 26 * 1024,
-    qualityStep: 4,
+    qualityStep: 2,
   },
 ];
 
 const perImageMaxBytes = {
   "this_week_in_korea.webp": {
     thumbs: 130 * 1024,
-    "thumbs-w640": 48 * 1024,
-    "thumbs-w384": 26 * 1024,
+    "thumbs-w640": 30 * 1024,
+    "thumbs-w384": 15 * 1024,
   },
   "latest travel updates for korea.webp": {
     thumbs: 95 * 1024,
-    "thumbs-w640": 34 * 1024,
-    "thumbs-w384": 22 * 1024,
+    "thumbs-w640": 28 * 1024,
+    "thumbs-w384": 13 * 1024,
   },
   "korea-now-more.webp": {
     thumbs: 85 * 1024,
-    "thumbs-w640": 28 * 1024,
-    "thumbs-w384": 20 * 1024,
+    "thumbs-w640": 22 * 1024,
+    "thumbs-w384": 10 * 1024,
   },
 };
 

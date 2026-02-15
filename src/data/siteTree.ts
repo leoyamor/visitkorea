@@ -3856,6 +3856,14 @@ export const siteTree: TreeNode = {
             },
           ],
         },
+        {
+          title: "Travel Insurance for Korea",
+          slug: "travel-insurance-for-korea",
+          icon: "shield",
+          image: "safety",
+          description: "When it makes sense (and when it may not).",
+          quickAnswer: "When it makes sense (and when it may not).",
+        },
       ],
     },
     {

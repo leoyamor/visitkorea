@@ -3864,7 +3864,8 @@ export const siteTree: TreeNode = {
           icon: "shield",
           image: "/leaf%20images/travel-insurance-for-korea.webp",
           description: "Not required - but highly recommended.",
-          quickAnswer: "Not required - but highly recommended.",
+          quickAnswer:
+            "Not required for most visitors, but strongly recommended. One medical issue can cost hundreds or thousands of dollars, so insurance removes major financial risk.",
           content: [
             {
               title: "Do I Need Travel Insurance for Korea?",

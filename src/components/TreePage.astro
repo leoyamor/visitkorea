@@ -3,6 +3,7 @@ import AdSenseSafeSlot from "./AdSenseSafeSlot.astro";
 import { findNodeBySegments, siteTree, type TreeNode } from "../data/siteTree";
 import { getEditorialMeta } from "../lib/editorial";
 import { getHubFaqItems, getHubQuickSummary } from "../lib/hubFaq";
+import { getLeafFaqItems } from "../lib/leafFaq";
 import { getHomeLeafTickerItems } from "../lib/leafUpdates";
 import type { SupportedLang } from "../lib/i18n";
 import { withLang } from "../lib/i18n";
@@ -41,6 +42,7 @@ const t = {
     startHere: "Start here",
     pickSub: "Pick a sub page",
     quickAnswer: "Quick answer",
+    leafFaqTitle: "Quick FAQ",
     hubFaqTitle: "Top questions",
     homeSectionDesc: "Start with a category, then come back for update checks and Korea insights.",
     subSectionDesc: "Each card opens a focused guide.",
@@ -92,6 +94,7 @@ const t = {
     startHere: "Empieza aqui",
     pickSub: "Elige una subpagina",
     quickAnswer: "Respuesta rapida",
+    leafFaqTitle: "FAQ rapido",
     hubFaqTitle: "Preguntas clave",
     homeSectionDesc:
       "Empieza con una categoria y vuelve para revisar actualizaciones y conocer mejor Corea.",
@@ -733,10 +736,18 @@ const nextLeaf =
   siblingLeaves.length > 1 && currentLeafIndex >= 0
     ? siblingLeaves[(currentLeafIndex + 1) % siblingLeaves.length]
     : undefined;
-const nextDecisionPath = nextLeaf
-  ? withLang(joinPath(parentPath, nextLeaf.slug), lang)
-  : latestUpdatesPath;
-const nextDecisionLabel = nextLeaf?.title ?? t.nextFallback;
+const leafNextOverrides: Record<string, { path: string; label: string }> = {
+  "travel-insurance-for-korea": {
+    path: withLang("/before-you-go/what-should-i-prepare", lang),
+    label:
+      lang === "es"
+        ? "Checklist antes de viajar (5 min)"
+        : "Before You Go Checklist (5 min)",
+  },
+};
+const nextOverride = leafNextOverrides[node.slug ?? ""];
+const nextDecisionPath = nextOverride?.path ?? (nextLeaf ? withLang(joinPath(parentPath, nextLeaf.slug), lang) : latestUpdatesPath);
+const nextDecisionLabel = nextOverride?.label ?? nextLeaf?.title ?? t.nextFallback;
 const checklistStorageKey = segments.join("/") || node.slug || "leaf";
 const contentBlockCount = node.content?.length ?? 0;
 const middleContentIndex =
@@ -744,6 +755,7 @@ const middleContentIndex =
 const showHomeUpdateBar = isHome && segments.length === 0 && !node.slug;
 const homeUpdateTickerItems = showHomeUpdateBar ? await getHomeLeafTickerItems(siteTree) : [];
 const hubFaqItems = hasChildren && !isHome ? getHubFaqItems(node, lang) : [];
+const leafFaqItems = isLeafPage ? getLeafFaqItems(node.slug, lang) : [];
 const collectionQuickSummary =
   hasChildren && !isHome ? node.quickAnswer ?? getHubQuickSummary(node, lang) : undefined;
 
@@ -935,8 +947,30 @@ const breadcrumb = breadcrumbs;
       {isLeafPage && (
         <AdSenseSafeSlot zone="leaf_end_content" className="ad-safe-spacing ad-safe-spacing--end" />
       )}
+      {isLeafPage && leafFaqItems.length > 0 && (
+        <div class="leaf-faq" data-kpi-section="leaf_faq">
+          <h3 class="t-section">{t.leafFaqTitle}</h3>
+          <div class="leaf-faq-list">
+            {leafFaqItems.map((item) => (
+              <article class="leaf-faq-item">
+                <h4>{item.question}</h4>
+                <p>{item.answer}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      )}
       {isLeafPage && (
         <div class="leaf-tools">
+          {showLeafMetaNote && (
+            <p class="leaf-meta">
+              <span class="leaf-meta-icon" aria-hidden="true" set:html={renderIcon("calendar")} />
+              <strong>{t.updatedLabel}:</strong> {editorialMeta.updatedText}
+              <span aria-hidden="true"> · </span>
+              <span>{t.sourceNote}</span>
+            </p>
+          )}
+
           <div class="leaf-next">
             <p class="leaf-tools-label">{t.nextDecision}</p>
             <a class="leaf-next-link" href={nextDecisionPath} data-kpi-section="leaf_next_decision">
@@ -969,14 +1003,6 @@ const breadcrumb = breadcrumbs;
             </ul>
             <p class="leaf-bookmark-tip">{t.bookmarkTip}</p>
           </div>
-
-          {showLeafMetaNote && (
-            <p class="leaf-meta">
-              <strong>{t.updatedLabel}:</strong> {editorialMeta.updatedText}
-              <span aria-hidden="true"> · </span>
-              <span>{t.sourceNote}</span>
-            </p>
-          )}
         </div>
       )}
     </div>
@@ -1836,6 +1862,45 @@ const breadcrumb = breadcrumbs;
     color: var(--ink-soft);
   }
 
+  .leaf-faq {
+    margin-top: 22px;
+    padding: 18px;
+    border-radius: 16px;
+    background: var(--paper);
+    border: 1px solid var(--border-paper);
+    box-shadow: var(--shadow-1);
+  }
+
+  .leaf-faq h3 {
+    margin: 0 0 12px;
+    color: var(--ink-strong);
+  }
+
+  .leaf-faq-list {
+    display: grid;
+    gap: 10px;
+  }
+
+  .leaf-faq-item {
+    padding: 12px 13px;
+    border-radius: 12px;
+    border: 1px solid var(--border-paper);
+    background: color-mix(in srgb, var(--paper) 86%, var(--paper-2) 14%);
+  }
+
+  .leaf-faq-item h4 {
+    margin: 0 0 6px;
+    font-size: 0.94rem;
+    color: var(--ink-strong);
+  }
+
+  .leaf-faq-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+
 
   .answer {
     display: flex;
@@ -2059,10 +2124,36 @@ const breadcrumb = breadcrumbs;
   }
 
   .leaf-meta {
-    margin: 2px 0 0;
+    margin: 0;
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid var(--border-paper);
+    background: var(--paper);
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
     color: var(--ink-soft);
-    font-size: 0.88rem;
+    font-size: 0.92rem;
     line-height: 1.5;
+  }
+
+  .leaf-meta strong {
+    color: var(--ink-strong);
+  }
+
+  .leaf-meta-icon {
+    width: 15px;
+    height: 15px;
+    display: inline-flex;
+    color: var(--accent);
+  }
+
+  .leaf-meta-icon svg {
+    width: 15px;
+    height: 15px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.7;
   }
 
   .ad-safe-spacing {
@@ -2248,6 +2339,20 @@ const breadcrumb = breadcrumbs;
 
     .hub-faq-item {
       padding: 12px;
+    }
+
+    .leaf-faq {
+      margin-top: 18px;
+      padding: 14px;
+    }
+
+    .leaf-faq-item {
+      padding: 10px 11px;
+    }
+
+    .leaf-meta {
+      font-size: 0.86rem;
+      padding: 8px 10px;
     }
 
     .home-update-bar {

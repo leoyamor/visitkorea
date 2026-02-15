@@ -64,6 +64,7 @@ const t = {
     returnNowMore: "Korea Now & More",
     returnThisWeek: "This Week in Korea",
     updateTickerLabel: "What changed this week",
+    updateTickerCta: "View all updates",
     updatedLabel: "Last updated",
     sourceNote: "For final booking decisions, always verify with official sources.",
     nextFallback: "Latest Travel Updates for Korea",
@@ -116,6 +117,7 @@ const t = {
     returnNowMore: "Korea Now & More",
     returnThisWeek: "This Week in Korea",
     updateTickerLabel: "Novedades de esta semana",
+    updateTickerCta: "Ver todas las novedades",
     updatedLabel: "Last updated",
     sourceNote: "For final booking decisions, always verify with official sources.",
     nextFallback: "Ultimas actualizaciones de viaje para Corea",
@@ -739,7 +741,7 @@ const contentBlockCount = node.content?.length ?? 0;
 const middleContentIndex =
   contentBlockCount > 0 ? Math.max(1, Math.floor((contentBlockCount - 1) / 2)) : -1;
 const showHomeUpdateBar = isHome && segments.length === 0 && !node.slug;
-const homeUpdateTickerItems = showHomeUpdateBar ? await getHomeLeafTickerItems(siteTree) : [];
+const homeUpdateTickerItems = showHomeUpdateBar ? (await getHomeLeafTickerItems(siteTree)).slice(0, 3) : [];
 
 const breadcrumb = breadcrumbs;
 ---
@@ -813,6 +815,9 @@ const breadcrumb = breadcrumbs;
           </a>
         ))}
       </div>
+      <a class="home-update-all" href={latestUpdatesPath} data-kpi-section="home_update_bar_all">
+        {t.updateTickerCta}
+      </a>
     </div>
   )}
 
@@ -1456,11 +1461,12 @@ const breadcrumb = breadcrumbs;
 
   .home-update-bar {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto minmax(0, 1fr) auto;
     align-items: center;
-    gap: 14px;
+    gap: 12px;
     margin-bottom: 20px;
-    padding: 12px 16px;
+    padding: 10px 14px;
+    min-height: 48px;
     border-radius: 14px;
     border: 1px solid color-mix(in srgb, var(--border-paper) 65%, #2d7ff9 35%);
     background: linear-gradient(
@@ -1477,7 +1483,7 @@ const breadcrumb = breadcrumbs;
     align-items: center;
     gap: 8px;
     width: fit-content;
-    padding: 6px 12px;
+    padding: 4px 10px;
     border-radius: 999px;
     border: 1px solid color-mix(in srgb, #2d7ff9 42%, #d6e6fb 58%);
     background: linear-gradient(
@@ -1486,7 +1492,7 @@ const breadcrumb = breadcrumbs;
       color-mix(in srgb, #eef5ff 82%, #d9e9ff 18%)
     );
     font-family: "Plus Jakarta Sans", "Work Sans", system-ui, sans-serif;
-    font-size: clamp(0.95rem, 1.22vw, 1.05rem);
+    font-size: clamp(0.84rem, 1.05vw, 0.95rem);
     font-weight: 700;
     letter-spacing: 0.005em;
     line-height: 1.2;
@@ -1506,7 +1512,8 @@ const breadcrumb = breadcrumbs;
 
   .home-update-view {
     position: relative;
-    height: 1.8rem;
+    min-width: 0;
+    height: 1.5rem;
     overflow: hidden;
   }
 
@@ -1528,7 +1535,7 @@ const breadcrumb = breadcrumbs;
   .home-update-leaf {
     flex: 0 0 auto;
     font-family: "Fraunces", serif;
-    font-size: 1.02rem;
+    font-size: 0.94rem;
     font-weight: 700;
     letter-spacing: 0.004em;
     color: var(--ink-strong);
@@ -1545,9 +1552,24 @@ const breadcrumb = breadcrumbs;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    font-size: 0.97rem;
+    font-size: 0.89rem;
     font-weight: 500;
     color: var(--ink-soft);
+  }
+
+  .home-update-all {
+    flex: 0 0 auto;
+    color: #1f66cc;
+    font-family: "Plus Jakarta Sans", "Work Sans", system-ui, sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .home-update-all:hover {
+    text-decoration: underline;
   }
 
   .home-update-line.is-active {
@@ -2173,26 +2195,38 @@ const breadcrumb = breadcrumbs;
     }
 
     .home-update-bar {
-      grid-template-columns: 1fr;
+      grid-template-columns: auto minmax(0, 1fr) auto;
       gap: 8px;
-      padding: 11px 12px;
+      min-height: 48px;
+      padding: 8px 10px;
     }
 
     .home-update-label {
-      font-size: 0.9rem;
-      padding: 6px 10px;
+      font-size: 0.76rem;
+      padding: 3px 7px;
+      box-shadow: none;
+    }
+
+    .home-update-label::before {
+      width: 6px;
+      height: 6px;
+      box-shadow: 0 0 0 3px rgba(45, 127, 249, 0.18);
     }
 
     .home-update-view {
-      height: 1.7rem;
+      height: 1.25rem;
     }
 
     .home-update-leaf {
-      font-size: 0.97rem;
+      font-size: 0.81rem;
     }
 
     .home-update-detail {
-      font-size: 0.92rem;
+      font-size: 0.79rem;
+    }
+
+    .home-update-all {
+      font-size: 0.74rem;
     }
 
     .thumb {

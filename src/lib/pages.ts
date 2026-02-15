@@ -221,7 +221,7 @@ const subpages = [
   { category: 'practical-info', slug: 'is-korea-safe', title: 'Is Korea Safe?', description: 'Quick safety overview for travelers.' },
   { category: 'practical-info', slug: 'emergency-numbers', title: 'Emergency Numbers', description: 'The key numbers you should save.' },
   { category: 'practical-info', slug: 'in-case-of-emergency', title: 'In Case of Emergency', description: 'What to do step-by-step if something happens.' },
-  { category: 'practical-info', slug: 'travel-insurance-for-korea', title: 'Travel Insurance for Korea', description: 'When it makes sense (and when it may not).' },
+  { category: 'practical-info', slug: 'travel-insurance-for-korea', title: 'Travel Insurance for Korea', description: 'Not required - but highly recommended.' },
 
   { category: 'immigration', slug: 'immigration-process', title: 'Immigration Process', description: 'What happens when you land in Korea.' },
   { category: 'immigration', slug: 'what-is-k-eta', title: 'What Is K-ETA?', description: 'A simple guide to Korea Electronic Travel Authorization.' },

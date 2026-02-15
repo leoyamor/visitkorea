@@ -3861,7 +3861,7 @@ export const siteTree: TreeNode = {
           slug: "travel-insurance-for-korea",
           icon: "shield",
           image: "safety",
-          description: "When it makes sense (and when it may not).",
+          description: "Not required - but highly recommended.",
           quickAnswer: "Not required - but highly recommended.",
           content: [
             {

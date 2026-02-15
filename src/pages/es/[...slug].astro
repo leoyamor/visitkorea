@@ -15,6 +15,525 @@ const ES_LEAF_OVERRIDES: Record<
     content?: NodeContentBlock[];
   }
 > = {
+  "travel-basics": {
+    title: "Basicos de Viaje",
+    description: "Internet, pagos y seguridad con menos estres.",
+  },
+  "sim-or-esim": {
+    title: "SIM o eSIM?",
+    description: "Opciones de internet explicadas de forma simple.",
+    quickAnswer:
+      "Esta pagina te ayuda a elegir la opcion de internet mas simple para tu telefono.",
+    content: [
+      {
+        title: "SIM o eSIM?",
+        icon: "sim",
+        emphasis: "Corea es conocida por su internet rapido y confiable.",
+        body:
+          "Necesitaras una buena conexion para mapas, transporte, pagos y traducciones. La clave es elegir la opcion que mejor se adapte a ti.",
+      },
+      {
+        title: "Respuesta rapida",
+        icon: "checklist",
+        emphasis: "Una sola eleccion resuelve casi todo.",
+        body:
+          "Si tu telefono admite eSIM, elige eSIM. Si no, usa una SIM fisica.",
+      },
+      {
+        title: "Que es una eSIM?",
+        icon: "sim",
+        emphasis: "Digital, simple y rapida.",
+        body: "Por que a los viajeros les gusta:",
+        bullets: [
+          "Puedes configurarla antes de llegar",
+          "No necesitas ir a una tienda en el aeropuerto",
+          "Puedes mantener activa tu SIM de origen para mensajes o banca",
+        ],
+      },
+      {
+        title: "Cuando conviene mas una SIM fisica",
+        icon: "card",
+        emphasis: "Compatibilidad y soporte.",
+        body: "Una SIM fisica es mejor si:",
+        bullets: [
+          "Tu telefono es antiguo",
+          "No estas seguro de la compatibilidad con eSIM",
+          "Prefieres ayuda presencial",
+          "Quieres comprarla en el aeropuerto o en un operador",
+        ],
+      },
+      {
+        title: "Lo que realmente necesitas",
+        icon: "spark",
+        emphasis: "Primero los datos.",
+        body: "Para la mayoria de viajeros:",
+        bullets: [
+          "Los planes solo de datos suelen ser suficientes",
+          "Datos ilimitados dan mas comodidad",
+          "Los minutos de llamada casi nunca son necesarios",
+        ],
+      },
+      {
+        title: "Precios orientativos (SIM y eSIM en Corea)",
+        icon: "wallet",
+        emphasis: "Rangos comunes para viajeros.",
+        body: "SIM fisica y plan eSIM:",
+        bullets: [
+          "SIM fisica - Precio: aprox. 20,000-30,000 KRW (5GB-10GB)",
+          "SIM fisica - Donde comprar: aeropuertos, tiendas grandes y mostradores de operadoras",
+          "SIM fisica - Operadoras: SK Telecom, KT, LG U+",
+          "eSIM - Precio: aprox. 15,000-25,000 KRW (5GB-10GB)",
+          "eSIM - Donde comprar: en linea antes del viaje y activar al llegar",
+          "eSIM - Operadoras: SK Telecom, KT",
+        ],
+      },
+      {
+        title: "Errores comunes que debes evitar",
+        icon: "alert",
+        emphasis: "Revisa la compatibilidad primero.",
+        body: "Antes de comprar, confirma:",
+        bullets: [
+          "Modelo de tu telefono",
+          "Soporte eSIM",
+          "Compatibilidad de red",
+        ],
+      },
+      {
+        title: "Debes decidir todo ahora?",
+        icon: "checklist",
+        emphasis: "Elige opcion primero, confirma detalles despues.",
+        body: "Los precios y planes pueden cambiar. Verifica siempre en:",
+        bullets: [
+          "Sitios oficiales de telecom",
+          "Mostradores de telecom en aeropuerto",
+          "Vendedores autorizados",
+        ],
+      },
+      {
+        title: "Conclusion",
+        icon: "spark",
+        emphasis: "Conectado siempre es la clave.",
+        body:
+          "Elige eSIM por rapidez y simplicidad. Elige SIM fisica por compatibilidad y soporte presencial.",
+      },
+    ],
+  },
+  "how-to-pay-in-korea": {
+    title: "Como pagar en Corea",
+    description: "Tarjeta, efectivo y lo que realmente funciona.",
+    quickAnswer:
+      "Esta pagina te ayuda a entender que metodos de pago funcionan de verdad en Corea.",
+    content: [
+      {
+        title: "Como pagar en Corea",
+        icon: "wallet",
+        emphasis: "Las tarjetas se aceptan en casi todo, pero el efectivo aun sirve.",
+        body:
+          "No necesitas preocuparte demasiado por los pagos. En Corea es simple: usa tarjeta para casi todo y lleva algo de efectivo como respaldo.",
+      },
+      {
+        title: "Tarjetas: que funciona mejor",
+        icon: "card",
+        emphasis: "La tarjeta es la opcion principal.",
+        body: "Puedes usar tarjeta en:",
+        bullets: [
+          "Hoteles y alojamientos",
+          "Restaurantes y cafes",
+          "Centros comerciales y tiendas de conveniencia",
+          "Transporte publico (T-money, etc.)",
+        ],
+      },
+      {
+        title: "Consejo util",
+        icon: "spark",
+        emphasis: "Las tarjetas de credito suelen funcionar con mas facilidad.",
+        body:
+          "Si tienes credito y debito, lleva ambas, pero espera usar credito como metodo principal.",
+      },
+      {
+        title: "Que puede sorprenderte",
+        icon: "alert",
+        emphasis: "Algunos lugares solo aceptan efectivo.",
+        body: "Suele pasar en:",
+        bullets: [
+          "Restaurantes locales pequenos",
+          "Mercados tradicionales",
+          "Puestos de comida callejera",
+        ],
+      },
+      {
+        title: "Cuanto efectivo necesitas realmente?",
+        icon: "wallet",
+        emphasis: "Normalmente, poco.",
+        body: "El efectivo se usa sobre todo para:",
+        bullets: [
+          "Comida callejera",
+          "Mercados",
+          "Tiendas pequenas",
+        ],
+      },
+      {
+        title: "Donde sacar efectivo",
+        icon: "pin",
+        emphasis: "Hay cajeros por todas partes.",
+        body: "Encontraras cajeros en:",
+        bullets: [
+          "Tiendas de conveniencia",
+          "Estaciones de metro",
+          "Bancos en zonas urbanas",
+        ],
+      },
+      {
+        title: "Lo que no hace falta complicar",
+        icon: "hand",
+        emphasis: "Mantenlo simple.",
+        body: "No necesitas:",
+        bullets: [
+          "Cuenta bancaria local especial",
+          "Apps de pago complicadas",
+          "Grandes cantidades de efectivo",
+        ],
+      },
+      {
+        title: "Errores comunes con pagos",
+        icon: "alert",
+        emphasis: "El equilibrio es la clave.",
+        body: "Muchos viajeros:",
+        bullets: [
+          "Dependen solo del efectivo",
+          "Llevan mas efectivo del necesario",
+          "Suponen que la debito extranjera funciona en todos lados",
+        ],
+      },
+      {
+        title: "La configuracion inteligente y sin estres",
+        icon: "checklist",
+        emphasis: "Tarjeta + poco efectivo",
+        body: "Para la mayoria de viajeros:",
+        bullets: [
+          "Usa una tarjeta internacional para pagos principales",
+          "Lleva una pequena cantidad de efectivo como respaldo",
+        ],
+      },
+      {
+        title: "Conclusion",
+        icon: "spark",
+        emphasis: "Si no piensas en el dinero, lo estas haciendo bien.",
+        body:
+          "Pagar en Corea es facil una vez que llegas. Mantenlo simple y sin estres.",
+      },
+    ],
+  },
+  "is-korea-safe": {
+    title: "Corea es segura?",
+    description: "Lo que los viajeros deben saber.",
+    quickAnswer:
+      "Esta pagina te ayuda a entender expectativas reales de seguridad para viajeros.",
+    content: [
+      {
+        title: "Corea es segura?",
+        icon: "shield",
+        emphasis: "Si, Corea en general es muy segura.",
+        body:
+          "Pero 'segura' no significa bajar totalmente la guardia. Esta guia te ayuda a entender que significa seguridad real para viajeros en Corea.",
+      },
+      {
+        title: "Por que muchos se sienten seguros desde el primer dia",
+        icon: "spark",
+        emphasis: "Comodidad desde el inicio.",
+        body: "Muchos viajeros notan:",
+        bullets: [
+          "Personas caminando solas de noche",
+          "Transporte publico funcionando hasta tarde",
+          "Calles iluminadas y activas",
+          "Delitos violentos poco comunes en zonas turisticas",
+        ],
+      },
+      {
+        title: "Donde conviene mantener atencion",
+        icon: "alert",
+        emphasis: "Los lugares llenos pueden ser abrumadores.",
+        body: "Manten atencion basica en:",
+        bullets: [
+          "Subtes concurridos",
+          "Zonas de vida nocturna",
+          "Calles turisticas de compras",
+        ],
+      },
+      {
+        title: "Moverte de noche: que esperar",
+        icon: "route",
+        emphasis: "Seguro, activo y confiable.",
+        body: "En la practica:",
+        bullets: [
+          "Subte y buses son seguros",
+          "Los taxis son confiables",
+          "Las zonas de comida nocturna estan activas",
+          "Si sales tarde, usa calles bien iluminadas y mantente atento",
+        ],
+      },
+      {
+        title: "Habitos simples de seguridad",
+        icon: "hand",
+        emphasis: "Viaja comodo y seguro.",
+        body: "Habitos utiles:",
+        bullets: [
+          "Usa calles principales",
+          "Evita callejones vacios por la noche",
+          "Toma un taxi si te sientes cansado o inseguro",
+        ],
+      },
+      {
+        title: "Preocupaciones comunes que no son problema",
+        icon: "spark",
+        emphasis: "Diferencias culturales, no peligro.",
+        body: "En Corea es normal:",
+        bullets: [
+          "Que la gente mire por curiosidad",
+          "Silencio en transporte publico",
+          "Menos policia visible de la que esperas",
+        ],
+      },
+      {
+        title: "Cuando conviene tener cuidado extra",
+        icon: "alert",
+        emphasis: "Conoce tus limites.",
+        body: "Pon mas atencion si:",
+        bullets: [
+          "Bebes mas de la cuenta",
+          "Te quedas muy tarde en zonas nocturnas",
+          "Ignoras tu entorno",
+        ],
+      },
+      {
+        title: "Ayuda en emergencias",
+        icon: "shield",
+        emphasis: "Casi nunca necesaria, pero facil de usar.",
+        body:
+          "Los servicios de emergencia son rapidos y bien organizados. En muchos casos hay soporte en ingles.",
+      },
+      {
+        title: "Conclusion",
+        icon: "spark",
+        emphasis: "Atento, pero sin estres.",
+        body:
+          "Corea es tan segura que no tendras que preocuparte constantemente. Un buen viaje empieza cuando te sientes tranquilo y confiado.",
+      },
+    ],
+  },
+  "solo-travel-safety": {
+    title: "Seguridad para viajar solo",
+    description: "Consejos para viajar por tu cuenta.",
+    quickAnswer:
+      "Esta pagina ayuda a viajeros solitarios a sentirse confiados y preparados en Corea.",
+    content: [
+      {
+        title: "Seguridad para viajar solo",
+        icon: "shield",
+        emphasis: "Viajar solo en Corea es seguro, facil y comodo.",
+        body:
+          "Viajar por tu cuenta es comun aqui, y muchos viajeros en solitario se sienten mas tranquilos de lo esperado despues de pocos dias.",
+      },
+      {
+        title: "Por que Corea funciona bien para viajeros solos",
+        icon: "spark",
+        emphasis: "Estructura clara y simple.",
+        body: "Encontraras:",
+        bullets: [
+          "Transporte publico claro",
+          "Calles y estaciones faciles de seguir",
+          "Tiendas de conveniencia en todas partes",
+          "Comer solo es totalmente normal",
+        ],
+      },
+      {
+        title: "Comer solo es normal",
+        icon: "bowl",
+        emphasis: "En Corea no es raro comer sin compania.",
+        body: "En Corea:",
+        bullets: [
+          "Cafes y restaurantes reciben bien a clientes solos",
+          "La comida de tienda de conveniencia suele ser de buena calidad",
+          "Algunos BBQ prefieren grupos, pero hay muchas alternativas",
+        ],
+      },
+      {
+        title: "Moverte solo de dia y de noche",
+        icon: "route",
+        emphasis: "Confiable y seguro.",
+        body: "Durante el dia:",
+        bullets: [
+          "El transporte publico es muy seguro",
+          "Las zonas turisticas son activas y vigiladas",
+          "Caminar solo se siente comodo",
+        ],
+      },
+      {
+        title: "Por la noche",
+        icon: "spark",
+        emphasis: "Las calles principales siguen activas.",
+        body: "Por la noche:",
+        bullets: [
+          "Las calles principales siguen con movimiento",
+          "Los taxis son faciles de usar",
+          "Las zonas de comida nocturna siguen seguras y llenas de vida",
+        ],
+      },
+      {
+        title: "Habitos simples para mayor comodidad",
+        icon: "checklist",
+        emphasis: "Pequenos habitos ayudan mucho.",
+        body: "Sugerencias utiles:",
+        bullets: [
+          "Guarda offline la direccion del hotel",
+          "Lleva bateria externa",
+          "Ubica la estacion de metro mas cercana",
+        ],
+      },
+      {
+        title: "Lo que a veces se sobrepiensa",
+        icon: "hand",
+        emphasis: "Es cultural, no personal.",
+        body: "Podrias notar:",
+        bullets: [
+          "Subtes silenciosos",
+          "Menos sonrisas de desconocidos",
+          "Menos charla casual",
+        ],
+      },
+      {
+        title: "Cuando tener precaucion extra",
+        icon: "alert",
+        emphasis: "Escucha tu energia.",
+        body: "Ten mas cuidado si:",
+        bullets: [
+          "Bebes mas de lo normal",
+          "Te quedas muy tarde en zonas de fiesta",
+          "Te sientes cansado o desorientado",
+        ],
+      },
+      {
+        title: "Por que viajar solo aqui se siente empoderador",
+        icon: "spark",
+        emphasis: "La confianza crece rapido.",
+        body: "Muchos viajeros solos dicen que Corea les ayuda a:",
+        bullets: [
+          "Viajar a su propio ritmo",
+          "Moverse con confianza",
+          "Disfrutar momentos tranquilos sin presion",
+        ],
+      },
+      {
+        title: "Conclusion",
+        icon: "spark",
+        emphasis: "Comodidad, atencion y facilidad.",
+        body:
+          "Si te sientes tranquilo explorando por tu cuenta, lo estas haciendo bien.",
+      },
+    ],
+  },
+  "in-case-of-emergency": {
+    title: "En caso de emergencia",
+    description: "Que hacer y a quien llamar.",
+    quickAnswer:
+      "Esta pagina te ayuda a saber que hacer rapido si algo sale mal.",
+    content: [
+      {
+        title: "En caso de emergencia",
+        icon: "alert",
+        emphasis: "Manten la calma y sigue pasos simples.",
+        body:
+          "Las emergencias son poco frecuentes en Corea, pero estar preparado hace que todo sea mas facil de manejar.",
+      },
+      {
+        title: "Primero, respira",
+        icon: "shield",
+        emphasis: "La ayuda llega rapido y es facil de acceder.",
+        body:
+          "Los servicios de emergencia en Corea estan bien organizados y acostumbrados a ayudar a extranjeros. No necesitas hablar coreano perfecto.",
+      },
+      {
+        title: "Numeros de emergencia importantes",
+        icon: "alert",
+        emphasis: "Guardalos antes de viajar.",
+        body: "Guardalos antes de viajar:",
+        bullets: [
+          "Policia: 112",
+          "Bomberos/Medico: 119",
+          "Funcionan en movil, telefonos publicos y hotel",
+        ],
+      },
+      {
+        title: "Si necesitas atencion medica",
+        icon: "shield",
+        emphasis: "Llama al 119 si es grave.",
+        body: "Para casos no urgentes:",
+        bullets: [
+          "Ve a un hospital con personal que hable ingles",
+          "Pide al hotel ayuda para explicar sintomas",
+          "Visita una farmacia para problemas leves",
+        ],
+      },
+      {
+        title: "Si pierdes algo",
+        icon: "passport",
+        emphasis: "No entres en panico. Tiene solucion.",
+        body: "Sigue estos pasos:",
+        bullets: [
+          "Ve a la comisaria mas cercana o pide ayuda en el hotel",
+          "Reporta la perdida (es un proceso habitual)",
+          "Contacta a tu embajada si hace falta",
+        ],
+      },
+      {
+        title: "Si te sientes inseguro",
+        icon: "hand",
+        emphasis: "Haz acciones simples.",
+        body: "Si algo te incomoda:",
+        bullets: [
+          "Entra a una tienda de conveniencia o cafe cercano",
+          "Toma taxi en lugar de caminar",
+          "Llama a tu alojamiento para pedir ayuda",
+        ],
+      },
+      {
+        title: "Ayuda con el idioma en emergencias",
+        icon: "sim",
+        emphasis: "No estas solo.",
+        body: "Si la comunicacion es dificil:",
+        bullets: [
+          "Usa una app de traduccion con voz",
+          "Muestra direccion del hotel o reserva",
+          "Pide apoyo al personal cercano",
+        ],
+      },
+      {
+        title: "Preocupaciones comunes",
+        icon: "spark",
+        emphasis: "Nadie te va a juzgar.",
+        body:
+          "En emergencias, el personal es paciente y espera errores. Ayudarte es su trabajo.",
+      },
+      {
+        title: "Preparacion rapida, gran tranquilidad",
+        icon: "checklist",
+        emphasis: "Haz esto una vez.",
+        body: "Haz esto una vez:",
+        bullets: [
+          "Guarda numeros de emergencia",
+          "Haz captura de la direccion del hotel",
+          "Lleva los datos de tu seguro de viaje",
+        ],
+      },
+      {
+        title: "Conclusion",
+        icon: "spark",
+        emphasis: "Manten la calma. La ayuda esta cerca.",
+        body:
+          "En Corea no estas solo. Sea un problema pequeno o una emergencia, la ayuda suele estar a una llamada.",
+      },
+    ],
+  },
   "travel-insurance-for-korea": {
     title: "Seguro de Viaje para Corea",
     description: "No es obligatorio, pero es muy recomendable.",
@@ -92,11 +611,21 @@ const ES_LEAF_OVERRIDES: Record<
 const localizeEsNode = (node?: TreeNode): TreeNode | undefined => {
   if (!node) return undefined;
   const override = ES_LEAF_OVERRIDES[node.slug];
-  if (!override) return node;
+  const children = node.children
+    ? node.children.map((child) => localizeEsNode(child) ?? child)
+    : undefined;
+  if (!override) {
+    if (!children) return node;
+    return {
+      ...node,
+      children,
+    };
+  }
   return {
     ...node,
     ...override,
     content: override.content ?? node.content,
+    children,
   };
 };
 

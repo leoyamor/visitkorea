@@ -7,6 +7,102 @@ import { buildCollectionSchemaNodes, buildLeafSchemaNodes } from "../../lib/geo"
 import { withLang } from "../../lib/i18n";
 import { absoluteUrl } from "../../lib/site";
 
+type NodeContentBlock = NonNullable<TreeNode["content"]>[number];
+
+const ES_LEAF_OVERRIDES: Record<
+  string,
+  Partial<Pick<TreeNode, "title" | "description" | "quickAnswer">> & {
+    content?: NodeContentBlock[];
+  }
+> = {
+  "travel-insurance-for-korea": {
+    title: "Seguro de Viaje para Corea",
+    description: "No es obligatorio, pero es muy recomendable.",
+    quickAnswer: "No es obligatorio, pero es muy recomendable.",
+    content: [
+      {
+        title: "Necesito seguro de viaje para Corea?",
+        icon: "shield",
+        emphasis: "No es obligatorio, pero es muy recomendable.",
+        body:
+          "El seguro de viaje no es obligatorio para la mayoria de los visitantes de corta estancia. Sin embargo, si ocurre algo inesperado, como viajero extranjero tendras que pagar todos los costos medicos. El sistema de salud de Corea es moderno y de alta calidad, pero no es gratuito para turistas.",
+      },
+      {
+        title: "Que pasa sin seguro?",
+        icon: "alert",
+        emphasis: "Pagas todo de tu bolsillo.",
+        body: "En situaciones reales:",
+        bullets: [
+          "Los hospitales exigen el pago antes del alta.",
+          "Una visita a urgencias en Seul puede costar entre $300 y $800 USD.",
+          "Una noche de hospital puede costar entre $1,000 y $3,000 USD o mas.",
+          "Analisis, escaneos o procedimientos menores aumentan la factura rapidamente.",
+          "No existe cobertura medica automatica para turistas.",
+        ],
+      },
+      {
+        title: "Situaciones comunes de viaje",
+        icon: "spark",
+        emphasis: "Problemas normales, no emergencias extremas.",
+        body: "Lo que mas suele pasar a los viajeros:",
+        bullets: [
+          "Intoxicacion alimentaria",
+          "Resbalones en calles heladas durante el invierno",
+          "Accidentes de trafico menores",
+          "Gripe fuerte o COVID",
+          "Equipaje perdido o vuelos retrasados",
+          "Son problemas cotidianos de viaje y pueden pasar en cualquier lugar.",
+        ],
+      },
+      {
+        title: "Que cobertura es practica para Corea?",
+        icon: "checklist",
+        emphasis: "Mantenlo simple.",
+        body: "Busca una poliza que incluya:",
+        bullets: [
+          "Cobertura medica de emergencia (al menos $50,000-$100,000 USD)",
+          "Hospitalizacion y ambulancia",
+          "Cancelacion o retraso del viaje",
+          "Equipaje perdido o retrasado",
+          "Solo necesitas cobertura de aventura si planeas senderismo, esqui u otras actividades de alto riesgo.",
+        ],
+      },
+      {
+        title: "Cuanto suele costar?",
+        icon: "wallet",
+        emphasis: "Cuesta menos de lo que la mayoria imagina.",
+        body: "Para viajeros sanos de 20 a 40 anos:",
+        bullets: [
+          "1 semana: $15-$40 USD",
+          "2 semanas: $30-$70 USD",
+          "Estos precios son ejemplos generales. El costo real varia segun tu pais de residencia, edad, nivel de cobertura y aseguradora. Confirma siempre los detalles directamente con la aseguradora.",
+        ],
+      },
+      {
+        title: "Conclusion",
+        icon: "spark",
+        emphasis: "Viaja con confianza.",
+        body:
+          "La mayoria de los viajeros nunca usa su seguro, y eso es ideal. El seguro de viaje simplemente reduce el riesgo financiero para que puedas disfrutar Corea con tranquilidad desde el momento en que aterrizas.",
+      },
+    ],
+  },
+};
+
+const localizeEsNode = (node?: TreeNode): TreeNode | undefined => {
+  if (!node) return undefined;
+  const override = ES_LEAF_OVERRIDES[node.slug];
+  if (!override) return node;
+  return {
+    ...node,
+    ...override,
+    content: override.content ?? node.content,
+  };
+};
+
+const localizeEsLabel = (node: TreeNode): string =>
+  ES_LEAF_OVERRIDES[node.slug]?.title ?? node.title;
+
 export const getStaticPaths = () => {
   const paths: string[] = [];
   const walk = (node: TreeNode, prefix: string[] = []) => {
@@ -24,7 +120,8 @@ export const getStaticPaths = () => {
 const { slug } = Astro.params;
 const segments = slug ? slug.split("/") : [];
 const lang = "es";
-const { node } = findNodeBySegments(segments);
+const { node: rawNode } = findNodeBySegments(segments);
+const node = localizeEsNode(rawNode);
 if (!node) {
   Astro.response.status = 404;
 }
@@ -36,7 +133,10 @@ for (const segment of segments) {
   const next = cursor.children?.find((child) => child.slug === segment);
   if (!next) break;
   pathSegments = [...pathSegments, segment];
-  breadcrumbs.push({ label: next.title, path: withLang(`/${pathSegments.join("/")}`, lang) });
+  breadcrumbs.push({
+    label: localizeEsLabel(next),
+    path: withLang(`/${pathSegments.join("/")}`, lang),
+  });
   cursor = next;
 }
 

@@ -1,4 +1,5 @@
 import { siteTree } from "../data/siteTree";
+import { EDITORIAL_UPDATED_ISO } from "../lib/editorial";
 import { withLang } from "../lib/i18n";
 import { absoluteUrl } from "../lib/site";
 
@@ -40,7 +41,7 @@ const escapeXml = (value: string) =>
 export const GET = () => {
   const routeSet = new Set<string>([...getTreePaths(), ...utilityPaths, ...staticInfoPaths]);
   const routes = [...routeSet].sort((a, b) => a.localeCompare(b));
-  const lastModified = new Date().toISOString();
+  const lastModified = EDITORIAL_UPDATED_ISO;
 
   const urls = routes
     .map((route) => {

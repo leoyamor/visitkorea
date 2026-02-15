@@ -1456,13 +1456,13 @@ const breadcrumb = breadcrumbs;
 
   .home-update-bar {
     display: grid;
-    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-columns: auto minmax(0, 1fr);
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     margin-bottom: 20px;
-    padding: 10px 14px;
-    min-height: 48px;
-    border-radius: 14px;
+    padding: 7px 12px;
+    min-height: 42px;
+    border-radius: 12px;
     border: 1px solid color-mix(in srgb, var(--border-paper) 65%, #2d7ff9 35%);
     background: linear-gradient(
       180deg,
@@ -1476,9 +1476,9 @@ const breadcrumb = breadcrumbs;
     margin: 0;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     width: fit-content;
-    padding: 4px 10px;
+    padding: 3px 8px;
     border-radius: 999px;
     border: 1px solid color-mix(in srgb, #2d7ff9 42%, #d6e6fb 58%);
     background: linear-gradient(
@@ -1487,10 +1487,10 @@ const breadcrumb = breadcrumbs;
       color-mix(in srgb, #eef5ff 82%, #d9e9ff 18%)
     );
     font-family: "Plus Jakarta Sans", "Work Sans", system-ui, sans-serif;
-    font-size: clamp(0.84rem, 1.05vw, 0.95rem);
+    font-size: clamp(0.8rem, 0.98vw, 0.9rem);
     font-weight: 700;
     letter-spacing: 0.005em;
-    line-height: 1.2;
+    line-height: 1.15;
     color: #16324f;
     white-space: nowrap;
     box-shadow: 0 8px 18px rgba(22, 50, 79, 0.12);
@@ -1498,17 +1498,17 @@ const breadcrumb = breadcrumbs;
 
   .home-update-label::before {
     content: "";
-    width: 8px;
-    height: 8px;
+    width: 7px;
+    height: 7px;
     border-radius: 999px;
     background: #2d7ff9;
-    box-shadow: 0 0 0 4px rgba(45, 127, 249, 0.2);
+    box-shadow: 0 0 0 3px rgba(45, 127, 249, 0.2);
   }
 
   .home-update-view {
     position: relative;
     min-width: 0;
-    height: 1.5rem;
+    height: 1.35rem;
     overflow: hidden;
   }
 
@@ -1530,7 +1530,7 @@ const breadcrumb = breadcrumbs;
   .home-update-leaf {
     flex: 0 0 auto;
     font-family: "Fraunces", serif;
-    font-size: 0.94rem;
+    font-size: 0.9rem;
     font-weight: 700;
     letter-spacing: 0.004em;
     color: var(--ink-strong);
@@ -1547,7 +1547,7 @@ const breadcrumb = breadcrumbs;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    font-size: 0.89rem;
+    font-size: 0.85rem;
     font-weight: 500;
     color: var(--ink-soft);
   }
@@ -2176,15 +2176,15 @@ const breadcrumb = breadcrumbs;
     }
 
     .home-update-bar {
-      grid-template-columns: auto minmax(0, 1fr) auto;
-      gap: 8px;
-      min-height: 48px;
-      padding: 8px 10px;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 6px;
+      min-height: 42px;
+      padding: 6px 8px;
     }
 
     .home-update-label {
-      font-size: 0.76rem;
-      padding: 3px 7px;
+      font-size: 0.72rem;
+      padding: 2px 6px;
       box-shadow: none;
     }
 
@@ -2195,15 +2195,15 @@ const breadcrumb = breadcrumbs;
     }
 
     .home-update-view {
-      height: 1.25rem;
+      height: 1.15rem;
     }
 
     .home-update-leaf {
-      font-size: 0.81rem;
+      font-size: 0.77rem;
     }
 
     .home-update-detail {
-      font-size: 0.79rem;
+      font-size: 0.75rem;
     }
 
     .thumb {

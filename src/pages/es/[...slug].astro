@@ -18,6 +18,8 @@ const ES_LEAF_OVERRIDES: Record<
   "travel-basics": {
     title: "Basicos de Viaje",
     description: "Internet, pagos y seguridad con menos estres.",
+    quickAnswer:
+      "Enfocate en 3 basicos: internet, pagos y seguridad. En unos 5 minutos puedes decidir lo esencial y viajar con menos estres.",
   },
   "sim-or-esim": {
     title: "SIM o eSIM?",
@@ -672,9 +674,16 @@ for (const segment of segments) {
 const siteName = "Visit Korea Planner";
 const notFound = "Page Not Found";
 const notFoundDesc = "The page you are looking for does not exist.";
+const ROUTE_META_DESCRIPTION_OVERRIDES: Record<string, string> = {
+  "/travel-basics":
+    "SIM/eSIM, tarjeta o efectivo y seguridad en Corea, explicado en 5 minutos. Un plan SIM tipico cuesta aprox. 15,000-30,000 KRW.",
+};
 const routePath = segments.length ? `/${segments.join("/")}` : "/";
 const routePathWithSlash = routePath === "/" ? "/" : `${routePath}/`;
-const pageDescription = node?.description ?? notFoundDesc;
+const pageDescription =
+  (node ? ROUTE_META_DESCRIPTION_OVERRIDES[routePath] : undefined) ??
+  node?.description ??
+  notFoundDesc;
 const canonicalPath = withLang(routePath, lang);
 const canonicalUrl = absoluteUrl(
   canonicalPath === "/" ? "/" : `${canonicalPath.replace(/\/+$/, "")}/`

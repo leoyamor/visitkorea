@@ -5,6 +5,7 @@ import {
   EDITORIAL_REVIEWER_NAME,
   EDITORIAL_UPDATED_ISO,
 } from "./editorial";
+import { getHubFaqItems } from "./hubFaq";
 import { withLang } from "./i18n";
 import { absoluteUrl } from "./site";
 
@@ -138,6 +139,7 @@ export const buildCollectionSchemaNodes = ({
 }: CollectionSchemaArgs): JsonLdNode[] => {
   const children = node.children ?? [];
   if (!children.length) return [];
+  const faqItems = getHubFaqItems(node.slug, lang);
 
   const listId = `${canonicalUrl}#itemlist`;
   const itemListElement = children.map((child, index) => {
@@ -152,7 +154,7 @@ export const buildCollectionSchemaNodes = ({
     };
   });
 
-  return [
+  const schemaNodes: JsonLdNode[] = [
     {
       "@type": "CollectionPage",
       "@id": `${canonicalUrl}#collection`,
@@ -182,6 +184,24 @@ export const buildCollectionSchemaNodes = ({
       itemListElement,
     },
   ];
+
+  if (faqItems.length) {
+    schemaNodes.push({
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      inLanguage: lang,
+      mainEntity: faqItems.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer,
+        },
+      })),
+    });
+  }
+
+  return schemaNodes;
 };
 
 export const buildLeafSchemaNodes = ({

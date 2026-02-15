@@ -53,10 +53,18 @@ const ui = {
   },
 } as const;
 
+const ROUTE_META_DESCRIPTION_OVERRIDES: Record<string, string> = {
+  "/travel-basics":
+    "SIM/eSIM setup, card vs cash, and safety basics in 5 minutes. Typical traveler SIM plans cost 15,000-30,000 KRW.",
+};
+
 const t = ui[lang];
 const routePath = segments.length ? `/${segments.join("/")}` : "/";
 const routePathWithSlash = routePath === "/" ? "/" : `${routePath}/`;
-const pageDescription = node?.description ?? t.notFoundDesc;
+const pageDescription =
+  (node ? ROUTE_META_DESCRIPTION_OVERRIDES[routePath] : undefined) ??
+  node?.description ??
+  t.notFoundDesc;
 const canonicalUrl = absoluteUrl(routePathWithSlash);
 const alternateEnUrl = absoluteUrl(routePathWithSlash);
 const alternateEsPath = withLang(routePath, "es");

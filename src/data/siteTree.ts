@@ -3327,6 +3327,8 @@ export const siteTree: TreeNode = {
       icon: "compass",
       image: "/Travel%20Basics.webp",
       description: "Handle internet, money, and safety with less stress.",
+      quickAnswer:
+        "Focus on 3 essentials first: internet, payments, and safety. In about 5 minutes, you can decide what matters most and avoid common arrival mistakes.",
       children: [
         {
           title: "SIM or eSIM?",

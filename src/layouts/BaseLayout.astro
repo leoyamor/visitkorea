@@ -251,26 +251,11 @@ const schemaJson = JSON.stringify({
               cleanup();
               loadClarity();
             };
-            const startSoft = () => {
-              if (started) return;
-              if ("requestIdleCallback" in window) {
-                window.requestIdleCallback(startNow, { timeout: 2800 });
-                return;
-              }
-              window.setTimeout(startNow, 1400);
-            };
 
             window.addEventListener("pointerdown", startNow, options);
             window.addEventListener("keydown", startNow, options);
             window.addEventListener("touchstart", startNow, options);
             window.addEventListener("scroll", startNow, options);
-
-            if (document.readyState === "complete") {
-              startSoft();
-            } else {
-              window.addEventListener("load", startSoft, { once: true });
-            }
-            window.setTimeout(startNow, 6500);
           })();
         </script>
       </>

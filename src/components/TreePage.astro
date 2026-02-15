@@ -853,6 +853,11 @@ const breadcrumb = breadcrumbs;
       </div>
     </div>
   )}
+  {isHome && showHomeUpdateBar && homeUpdateTickerItems.length > 0 && (
+    <div data-kpi-section="home_ad_after_updates">
+      <AdSenseSafeSlot zone="home_after_update_bar" className="ad-safe-spacing ad-safe-spacing--home" />
+    </div>
+  )}
 
   {hasChildren ? (
     <>
@@ -892,6 +897,11 @@ const breadcrumb = breadcrumbs;
           );
         })}
       </div>
+      {!isHome && (
+        <div data-kpi-section={`collection_${node.slug ?? "root"}_ad_after_grid`}>
+          <AdSenseSafeSlot zone="hub_after_grid" className="ad-safe-spacing ad-safe-spacing--hub" />
+        </div>
+      )}
       {hubFaqItems.length > 0 && (
         <div class="hub-faq" data-kpi-section={`collection_${node.slug ?? "root"}_faq`}>
           <h3 class="t-section">{t.hubFaqTitle}</h3>
@@ -2202,6 +2212,16 @@ const breadcrumb = breadcrumbs;
   .ad-safe-spacing--end {
     margin-top: 14px;
     margin-bottom: 24px;
+  }
+
+  .ad-safe-spacing--home {
+    margin-top: 6px;
+    margin-bottom: 20px;
+  }
+
+  .ad-safe-spacing--hub {
+    margin-top: 12px;
+    margin-bottom: 14px;
   }
 
   .content-title {

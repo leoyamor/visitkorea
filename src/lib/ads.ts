@@ -1,4 +1,9 @@
-export type AdZone = "leaf_after_intro" | "leaf_mid_content" | "leaf_end_content";
+export type AdZone =
+  | "home_after_update_bar"
+  | "hub_after_grid"
+  | "leaf_after_intro"
+  | "leaf_mid_content"
+  | "leaf_end_content";
 
 const env = import.meta.env as Record<string, string | undefined>;
 const processEnv =
@@ -53,6 +58,11 @@ export const ADSENSE_PUBLISHER_ID = normalizedPublisherId || toPublisherId(ADSEN
 export const ADSENSE_ENABLED = ADSENSE_CLIENT_ID.length > 0;
 
 export const ADSENSE_SLOT_BY_ZONE: Record<AdZone, string> = {
+  home_after_update_bar: readEnv(
+    "PUBLIC_ADSENSE_SLOT_HOME_AFTER_UPDATE_BAR",
+    "ADSENSE_SLOT_HOME_AFTER_UPDATE_BAR"
+  ),
+  hub_after_grid: readEnv("PUBLIC_ADSENSE_SLOT_HUB_AFTER_GRID", "ADSENSE_SLOT_HUB_AFTER_GRID"),
   leaf_after_intro: readEnv("PUBLIC_ADSENSE_SLOT_LEAF_AFTER_INTRO", "ADSENSE_SLOT_LEAF_AFTER_INTRO"),
   leaf_mid_content: readEnv("PUBLIC_ADSENSE_SLOT_LEAF_MID_CONTENT", "ADSENSE_SLOT_LEAF_MID_CONTENT"),
   leaf_end_content: readEnv("PUBLIC_ADSENSE_SLOT_LEAF_END_CONTENT", "ADSENSE_SLOT_LEAF_END_CONTENT"),

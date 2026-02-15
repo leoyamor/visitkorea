@@ -72,6 +72,8 @@ To pass AdSense site review reliably, confirm all items below in production:
    - `PUBLIC_ADSENSE_CLIENT_ID` (or `ADSENSE_CLIENT_ID`)
    - Or set publisher ID directly: `PUBLIC_ADSENSE_PUBLISHER_ID` (or `ADSENSE_PUBLISHER_ID`)
    - Optional slot IDs:
+     - `PUBLIC_ADSENSE_SLOT_HOME_AFTER_UPDATE_BAR`
+     - `PUBLIC_ADSENSE_SLOT_HUB_AFTER_GRID`
      - `PUBLIC_ADSENSE_SLOT_LEAF_AFTER_INTRO`
      - `PUBLIC_ADSENSE_SLOT_LEAF_MID_CONTENT`
      - `PUBLIC_ADSENSE_SLOT_LEAF_END_CONTENT`

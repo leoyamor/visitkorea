@@ -139,7 +139,7 @@ export const buildCollectionSchemaNodes = ({
 }: CollectionSchemaArgs): JsonLdNode[] => {
   const children = node.children ?? [];
   if (!children.length) return [];
-  const faqItems = getHubFaqItems(node.slug, lang);
+  const faqItems = getHubFaqItems(node, lang);
 
   const listId = `${canonicalUrl}#itemlist`;
   const itemListElement = children.map((child, index) => {

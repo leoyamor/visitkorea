@@ -675,8 +675,30 @@ const siteName = "Visit Korea Planner";
 const notFound = "Page Not Found";
 const notFoundDesc = "The page you are looking for does not exist.";
 const ROUTE_META_DESCRIPTION_OVERRIDES: Record<string, string> = {
+  "/plan-your-trip":
+    "Duracion, ritmo y flujo entre ciudades en 7-14 dias. Arma un plan realista para Corea en unos 10 minutos.",
+  "/choose-a-city":
+    "Compara Seul, Busan, Jeju y mas en 5 minutos. Elige ciudad segun estilo de viaje, ritmo y traslados.",
+  "/getting-around-korea":
+    "Metro, bus, taxi y tarjetas de transporte en 7 minutos. Un viaje basico de metro suele empezar cerca de 1,400 KRW.",
+  "/what-to-eat":
+    "Comida coreana facil para empezar en 5 minutos. Prueba 5-7 platos base antes de elegir opciones picantes.",
+  "/where-to-stay":
+    "Elige zona y tipo de alojamiento en 8 minutos. Un hotel de rango medio suele costar aprox. 80,000-180,000 KRW por noche.",
+  "/things-to-do":
+    "Atracciones clave, planes por ciudad y costos en 7 minutos. Muchos lugares populares van de gratis a 20,000 KRW.",
   "/travel-basics":
     "SIM/eSIM, tarjeta o efectivo y seguridad en Corea, explicado en 5 minutos. Un plan SIM tipico cuesta aprox. 15,000-30,000 KRW.",
+  "/before-you-go":
+    "Entrada, documentos y llegada al aeropuerto en 6 minutos. Ten listos 3 basicos: pasaporte, reservas y requisitos de entrada.",
+  "/shopping-and-deals":
+    "Zonas de compras, tax refund y descuentos en 6 minutos. La elegibilidad y el monto del reembolso cambian segun tienda y compra.",
+  "/latest-travel-updates-for-korea":
+    "Cambios clave de viaje a Corea en menos de 3 minutos. Revisalo otra vez dentro de las 24 horas antes de salir.",
+  "/korea-now-and-more":
+    "Contexto semanal de Corea en unos 5 minutos. Te ayuda a ajustar el plan segun el momento local.",
+  "/this-week-in-korea":
+    "Corea esta semana en unos 2 minutos. Punto rapido de control antes de salir y durante el viaje.",
 };
 const routePath = segments.length ? `/${segments.join("/")}` : "/";
 const routePathWithSlash = routePath === "/" ? "/" : `${routePath}/`;

@@ -1,3 +1,4 @@
+import type { TreeNode } from "../data/siteTree";
 import type { SupportedLang } from "./i18n";
 
 export type HubFaqItem = {
@@ -66,8 +67,51 @@ const HUB_FAQ_BY_LANG: Record<SupportedLang, Record<string, HubFaqItem[]>> = {
   },
 };
 
-export const getHubFaqItems = (slug: string | undefined, lang: SupportedLang): HubFaqItem[] => {
-  if (!slug) return [];
+const compact = (value?: string) => (value ?? "").replace(/\s+/g, " ").trim();
+
+const joinTitles = (titles: string[], lang: SupportedLang) => {
+  const cleaned = titles.map((title) => compact(title)).filter(Boolean);
+  if (!cleaned.length) return "";
+  if (cleaned.length === 1) return cleaned[0];
+  if (cleaned.length === 2) {
+    return lang === "es" ? `${cleaned[0]} y ${cleaned[1]}` : `${cleaned[0]} and ${cleaned[1]}`;
+  }
+  if (lang === "es") return `${cleaned[0]}, ${cleaned[1]} y ${cleaned[2]}`;
+  return `${cleaned[0]}, ${cleaned[1]}, and ${cleaned[2]}`;
+};
+
+const buildAutoHubFaqItems = (node: TreeNode, lang: SupportedLang): HubFaqItem[] => {
+  const children = (node.children ?? []).filter((child) => compact(child.title));
+  if (!children.length) return [];
+
+  return children.slice(0, 5).map((child) => {
+    const question =
+      lang === "es" ? `Que debo saber sobre ${child.title}?` : `What should I know about ${child.title}?`;
+    const description = compact(child.description);
+    const answer = description
+      ? description
+      : lang === "es"
+      ? "Esta guia resume lo esencial para decidir rapido sin perder los puntos importantes."
+      : "This guide summarizes the essentials so you can decide quickly without missing key points.";
+    return { question, answer };
+  });
+};
+
+export const getHubQuickSummary = (node: TreeNode, lang: SupportedLang) => {
+  if (!node.slug || !(node.children?.length)) return "";
+  const shortlist = node.children.map((child) => child.title).slice(0, 3);
+  const joined = joinTitles(shortlist, lang);
+  if (!joined) return "";
+  if (lang === "es") {
+    return `Empieza con ${joined}. Compara opciones rapido y luego abre cada guia para los detalles practicos.`;
+  }
+  return `Start with ${joined}. Compare options quickly, then open each guide for practical details.`;
+};
+
+export const getHubFaqItems = (node: TreeNode, lang: SupportedLang): HubFaqItem[] => {
+  if (!node.slug) return [];
   const bySlug = HUB_FAQ_BY_LANG[lang] ?? HUB_FAQ_BY_LANG.en;
-  return bySlug[slug] ?? [];
+  const curated = bySlug[node.slug];
+  if (curated?.length) return curated;
+  return buildAutoHubFaqItems(node, lang);
 };

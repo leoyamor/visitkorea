@@ -3,7 +3,7 @@ import { withLang } from "../lib/i18n";
 import { absoluteUrl } from "../lib/site";
 
 const utilityPaths = ["/llms.txt", "/llms-full.txt"];
-const staticInfoPaths = ["/about", "/privacy-policy", "/contact"];
+const staticInfoPaths = ["/about", "/privacy-policy", "/contact", "/disclaimer"];
 
 const toSitemapPath = (path: string) => {
   if (path === "/" || path.endsWith(".txt")) return path;

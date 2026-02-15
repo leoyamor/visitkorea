@@ -1,0 +1,60 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { absoluteUrl } from "../lib/site";
+
+const canonicalUrl = absoluteUrl("/disclaimer/");
+const alternateEsUrl = absoluteUrl("/es/disclaimer/");
+---
+
+<BaseLayout
+  title="Disclaimer | Visit Korea Planner"
+  description="Disclaimer for PlanMyKorea."
+  bodyClass="page--leaf"
+  canonicalUrl={canonicalUrl}
+  alternateEnUrl={canonicalUrl}
+  alternateEsUrl={alternateEsUrl}
+>
+  <section class="legal-page">
+    <h1>Disclaimer</h1>
+
+    <p>
+      The information on this website is provided for general travel guidance
+      only.
+    </p>
+    <p>
+      We are an independent travel information website and are not affiliated
+      with the Korean government, immigration authorities, airlines, insurance
+      providers, or official tourism organizations.
+    </p>
+    <p>
+      While we aim to keep information accurate and up to date, travel rules,
+      prices, visa policies, transportation schedules, and insurance terms may
+      change at any time.
+    </p>
+    <p>
+      Visitors are responsible for confirming important details with official
+      sources before making travel decisions.
+    </p>
+    <p>
+      We are not liable for any loss, inconvenience, or damages resulting from
+      the use of information on this website.
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .legal-page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 10px 0 24px;
+    line-height: 1.75;
+  }
+
+  .legal-page h1 {
+    margin: 0 0 20px;
+  }
+
+  .legal-page p {
+    margin: 0 0 14px;
+  }
+</style>

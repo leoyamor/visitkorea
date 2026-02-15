@@ -1,0 +1,61 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { absoluteUrl } from "../../lib/site";
+
+const canonicalUrl = absoluteUrl("/es/disclaimer/");
+const alternateEnUrl = absoluteUrl("/disclaimer/");
+---
+
+<BaseLayout
+  title="Descargo de responsabilidad | Planificador de viaje a Corea"
+  description="Descargo de responsabilidad de PlanMyKorea."
+  bodyClass="page--leaf"
+  lang="es"
+  canonicalUrl={canonicalUrl}
+  alternateEnUrl={alternateEnUrl}
+  alternateEsUrl={canonicalUrl}
+>
+  <section class="legal-page">
+    <h1>Descargo de responsabilidad</h1>
+
+    <p>
+      La información de este sitio web se proporciona únicamente como guía
+      general de viaje.
+    </p>
+    <p>
+      Somos un sitio web independiente de información de viajes y no estamos
+      afiliados al gobierno de Corea, autoridades de inmigración, aerolíneas,
+      aseguradoras ni organizaciones oficiales de turismo.
+    </p>
+    <p>
+      Aunque buscamos mantener la información precisa y actualizada, las reglas
+      de viaje, precios, políticas de visa, horarios de transporte y términos
+      de seguro pueden cambiar en cualquier momento.
+    </p>
+    <p>
+      Los visitantes son responsables de confirmar los detalles importantes con
+      fuentes oficiales antes de tomar decisiones de viaje.
+    </p>
+    <p>
+      No somos responsables por pérdidas, inconvenientes o daños resultantes
+      del uso de la información de este sitio web.
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .legal-page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 10px 0 24px;
+    line-height: 1.75;
+  }
+
+  .legal-page h1 {
+    margin: 0 0 20px;
+  }
+
+  .legal-page p {
+    margin: 0 0 14px;
+  }
+</style>

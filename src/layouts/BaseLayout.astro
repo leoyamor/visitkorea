@@ -72,6 +72,10 @@ const footerLinks = [
     path: withLang("/contact", lang),
     label: lang === "es" ? "Contacto" : "Contact",
   },
+  {
+    path: withLang("/disclaimer", lang),
+    label: lang === "es" ? "Descargo de responsabilidad" : "Disclaimer",
+  },
 ];
 
 const breadcrumbTrail = [{ label: homeLabel, path: localizedHomePath }, ...breadcrumbs].reduce(

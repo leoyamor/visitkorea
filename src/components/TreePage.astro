@@ -42,6 +42,8 @@ const t = {
     startHere: "Start here",
     pickSub: "Pick a sub page",
     quickAnswer: "Quick answer",
+    leafQuickSupport:
+      "Use the key points below, then run the checklist to lock your plan in about 5 minutes.",
     leafFaqTitle: "Quick FAQ",
     hubFaqTitle: "Top questions",
     homeSectionDesc: "Start with a category, then come back for update checks and Korea insights.",
@@ -59,6 +61,7 @@ const t = {
     pillNowMore: "Korea Now & More",
     nextPrefix: "Next",
     nextDecision: "Next decision",
+    nextDecisionHint: "Best next step after this page.",
     returnCheckpoints: "Return checkpoints",
     quickChecklist: "Quick checklist",
     checklistHint:
@@ -94,6 +97,8 @@ const t = {
     startHere: "Empieza aqui",
     pickSub: "Elige una subpagina",
     quickAnswer: "Respuesta rapida",
+    leafQuickSupport:
+      "Usa los puntos clave de abajo y luego la lista rapida para cerrar tu plan en unos 5 minutos.",
     leafFaqTitle: "FAQ rapido",
     hubFaqTitle: "Preguntas clave",
     homeSectionDesc:
@@ -113,6 +118,7 @@ const t = {
     pillNowMore: "Korea Now & More",
     nextPrefix: "Siguiente",
     nextDecision: "Siguiente decision",
+    nextDecisionHint: "Mejor siguiente paso despues de esta pagina.",
     returnCheckpoints: "Puntos de regreso",
     quickChecklist: "Lista rapida",
     checklistHint:
@@ -122,8 +128,8 @@ const t = {
     returnNowMore: "Korea Now & More",
     returnThisWeek: "This Week in Korea",
     updateTickerLabel: "Novedades de esta semana",
-    updatedLabel: "Last updated",
-    sourceNote: "For final booking decisions, always verify with official sources.",
+    updatedLabel: "Actualizado",
+    sourceNote: "Para decisiones finales de reserva, verifica siempre en fuentes oficiales.",
     nextFallback: "Ultimas actualizaciones de viaje para Corea",
     feedbackEyebrow: "Ayudanos a mejorar",
     feedbackTitle: "Que deberiamos mejorar para los viajeros?",
@@ -746,8 +752,14 @@ const leafNextOverrides: Record<string, { path: string; label: string }> = {
   },
 };
 const nextOverride = leafNextOverrides[node.slug ?? ""];
-const nextDecisionPath = nextOverride?.path ?? (nextLeaf ? withLang(joinPath(parentPath, nextLeaf.slug), lang) : latestUpdatesPath);
-const nextDecisionLabel = nextOverride?.label ?? nextLeaf?.title ?? t.nextFallback;
+const nextDecisionPath =
+  nextOverride?.path ??
+  (nextLeaf ? withLang(joinPath(parentPath, nextLeaf.slug), lang) : latestUpdatesPath);
+const nextDecisionLabel =
+  nextOverride?.label ??
+  (nextLeaf
+    ? `${nextLeaf.title} (${lang === "es" ? "guia de 5 min" : "5-min guide"})`
+    : t.nextFallback);
 const checklistStorageKey = segments.join("/") || node.slug || "leaf";
 const contentBlockCount = node.content?.length ?? 0;
 const middleContentIndex =
@@ -755,9 +767,17 @@ const middleContentIndex =
 const showHomeUpdateBar = isHome && segments.length === 0 && !node.slug;
 const homeUpdateTickerItems = showHomeUpdateBar ? await getHomeLeafTickerItems(siteTree) : [];
 const hubFaqItems = hasChildren && !isHome ? getHubFaqItems(node, lang) : [];
-const leafFaqItems = isLeafPage ? getLeafFaqItems(node.slug, lang) : [];
+const leafFaqItems = isLeafPage ? getLeafFaqItems(node, lang) : [];
 const collectionQuickSummary =
   hasChildren && !isHome ? node.quickAnswer ?? getHubQuickSummary(node, lang) : undefined;
+const leafQuickAnswerSeed = (node.quickAnswer ?? node.description ?? t.quickFallback).trim();
+const leafQuickAnswerNeedsSupport =
+  leafQuickAnswerSeed.length < 120 &&
+  (leafQuickAnswerSeed.match(/[.!?](?=\s|$)/g)?.length ?? 0) < 2;
+const leafQuickAnswerText =
+  isLeafPage && leafQuickAnswerNeedsSupport
+    ? `${leafQuickAnswerSeed}${/[.!?]$/.test(leafQuickAnswerSeed) ? "" : "."} ${t.leafQuickSupport}`
+    : leafQuickAnswerSeed;
 
 const breadcrumb = breadcrumbs;
 ---
@@ -811,7 +831,7 @@ const breadcrumb = breadcrumbs;
         ? t.homeSectionDesc
         : hasChildren
         ? collectionQuickSummary ?? t.subSectionDesc
-        : node.quickAnswer ?? t.quickFallback}
+        : leafQuickAnswerText}
     </p>
   </div>
   {showHomeUpdateBar && homeUpdateTickerItems.length > 0 && (
@@ -977,6 +997,7 @@ const breadcrumb = breadcrumbs;
               <span class="leaf-next-prefix">{t.nextPrefix}</span>
               <strong>{nextDecisionLabel}</strong>
             </a>
+            <p class="leaf-next-hint">{t.nextDecisionHint}</p>
           </div>
 
           <div class="leaf-return">
@@ -2062,6 +2083,13 @@ const breadcrumb = breadcrumbs;
     font-size: 0.78rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    color: var(--ink-soft);
+  }
+
+  .leaf-next-hint {
+    margin: 7px 2px 0;
+    font-size: 0.86rem;
+    line-height: 1.45;
     color: var(--ink-soft);
   }
 

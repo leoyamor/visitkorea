@@ -66,13 +66,13 @@ const variants = [
 const perImageMaxBytes = {
   "this_week_in_korea.webp": {
     thumbs: 130 * 1024,
-    "thumbs-w640": 30 * 1024,
-    "thumbs-w384": 15 * 1024,
+    "thumbs-w640": 22 * 1024,
+    "thumbs-w384": 11 * 1024,
   },
   "latest travel updates for korea.webp": {
     thumbs: 95 * 1024,
-    "thumbs-w640": 28 * 1024,
-    "thumbs-w384": 13 * 1024,
+    "thumbs-w640": 20 * 1024,
+    "thumbs-w384": 9 * 1024,
   },
   "korea-now-more.webp": {
     thumbs: 85 * 1024,

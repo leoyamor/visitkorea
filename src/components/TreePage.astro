@@ -64,7 +64,6 @@ const t = {
     returnNowMore: "Korea Now & More",
     returnThisWeek: "This Week in Korea",
     updateTickerLabel: "What changed this week",
-    updateTickerCta: "View all updates",
     updatedLabel: "Last updated",
     sourceNote: "For final booking decisions, always verify with official sources.",
     nextFallback: "Latest Travel Updates for Korea",
@@ -117,7 +116,6 @@ const t = {
     returnNowMore: "Korea Now & More",
     returnThisWeek: "This Week in Korea",
     updateTickerLabel: "Novedades de esta semana",
-    updateTickerCta: "Ver todas las novedades",
     updatedLabel: "Last updated",
     sourceNote: "For final booking decisions, always verify with official sources.",
     nextFallback: "Ultimas actualizaciones de viaje para Corea",
@@ -741,7 +739,7 @@ const contentBlockCount = node.content?.length ?? 0;
 const middleContentIndex =
   contentBlockCount > 0 ? Math.max(1, Math.floor((contentBlockCount - 1) / 2)) : -1;
 const showHomeUpdateBar = isHome && segments.length === 0 && !node.slug;
-const homeUpdateTickerItems = showHomeUpdateBar ? (await getHomeLeafTickerItems(siteTree)).slice(0, 3) : [];
+const homeUpdateTickerItems = showHomeUpdateBar ? await getHomeLeafTickerItems(siteTree) : [];
 
 const breadcrumb = breadcrumbs;
 ---
@@ -815,9 +813,6 @@ const breadcrumb = breadcrumbs;
           </a>
         ))}
       </div>
-      <a class="home-update-all" href={latestUpdatesPath} data-kpi-section="home_update_bar_all">
-        {t.updateTickerCta}
-      </a>
     </div>
   )}
 
@@ -1557,20 +1552,6 @@ const breadcrumb = breadcrumbs;
     color: var(--ink-soft);
   }
 
-  .home-update-all {
-    flex: 0 0 auto;
-    color: #1f66cc;
-    font-family: "Plus Jakarta Sans", "Work Sans", system-ui, sans-serif;
-    font-size: 0.82rem;
-    font-weight: 700;
-    letter-spacing: 0.01em;
-    text-decoration: none;
-    white-space: nowrap;
-  }
-
-  .home-update-all:hover {
-    text-decoration: underline;
-  }
 
   .home-update-line.is-active {
     transform: translateY(0);
@@ -2223,10 +2204,6 @@ const breadcrumb = breadcrumbs;
 
     .home-update-detail {
       font-size: 0.79rem;
-    }
-
-    .home-update-all {
-      font-size: 0.74rem;
     }
 
     .thumb {

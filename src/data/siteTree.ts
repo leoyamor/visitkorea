@@ -3860,7 +3860,7 @@ export const siteTree: TreeNode = {
           title: "Travel Insurance for Korea",
           slug: "travel-insurance-for-korea",
           icon: "shield",
-          image: "safety",
+          image: "/leaf%20images/travel-insurance-for-korea.webp",
           description: "Not required - but highly recommended.",
           quickAnswer: "Not required - but highly recommended.",
           content: [

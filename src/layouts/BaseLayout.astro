@@ -11,6 +11,7 @@ import {
   EDITORIAL_REVIEWER_NAME,
   EDITORIAL_UPDATED_ISO,
 } from "../lib/editorial";
+import { ADSENSE_CLIENT_ID } from "../lib/ads";
 
 type BreadcrumbItem = {
   label: string;
@@ -57,6 +58,8 @@ const homeLabel = lang === "es" ? "Inicio" : "Home";
 const localizedHomePath = withLang("/", lang);
 const HOME_HERO_IMAGE_DESKTOP = "/hanok-hero-home.webp?v=20260210q";
 const HOME_HERO_IMAGE_MOBILE = "/leaf%20images/thumbs/hanok_hero.webp?v=20260211a";
+const adsenseClientId = ADSENSE_CLIENT_ID;
+const adsenseEnabled = adsenseClientId.length > 0;
 const gaMeasurementId = "G-VKP8CHGJKH";
 const gaEnabled = true;
 const footerLinks = [
@@ -175,6 +178,14 @@ const schemaJson = JSON.stringify({
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta name="author" content={siteName} />
     <link rel="icon" href="/favicon.ico" />
+    {adsenseEnabled ? (
+      <script
+        async
+        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClientId}`}
+        crossorigin="anonymous"
+        data-adsense-loader="true"
+      />
+    ) : null}
     {gaEnabled ? (
       <>
         <script is:inline define:vars={{ gaMeasurementId }}>

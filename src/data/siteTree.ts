@@ -3,6 +3,7 @@ export type TreeNode = {
   slug: string;
   description?: string;
   quickAnswer?: string;
+  updatedIso?: string;
   icon?: string;
   image?: string;
   content?: {
@@ -1135,6 +1136,7 @@ export const siteTree: TreeNode = {
         {
           title: "Is Getting Around Hard in South Korea?",
           slug: "is-getting-around-hard",
+          updatedIso: "2026-02-18T00:00:00.000Z",
           icon: "route",
           image: "transport",
           description:

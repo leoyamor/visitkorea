@@ -678,7 +678,7 @@ const getResponsiveImage = (key?: string, title?: string, slug?: string): Respon
   };
 };
 
-const editorialMeta = getEditorialMeta(lang);
+const editorialMeta = getEditorialMeta(lang, node.updatedIso);
 const latestUpdatesPath = withLang("/latest-travel-updates-for-korea", lang);
 const nowMorePath = withLang("/korea-now-and-more", lang);
 const thisWeekPath = withLang("/this-week-in-korea", lang);

@@ -11,7 +11,7 @@ type NodeContentBlock = NonNullable<TreeNode["content"]>[number];
 
 const ES_LEAF_OVERRIDES: Record<
   string,
-  Partial<Pick<TreeNode, "title" | "description" | "quickAnswer">> & {
+  Partial<Pick<TreeNode, "title" | "description" | "quickAnswer" | "updatedIso">> & {
     content?: NodeContentBlock[];
   }
 > = {
@@ -23,6 +23,7 @@ const ES_LEAF_OVERRIDES: Record<
   },
   "is-getting-around-hard": {
     title: "Es dificil moverse por Corea del Sur?",
+    updatedIso: "2026-02-18T00:00:00.000Z",
     description:
       "Que tan facil es realmente usar el transporte publico en Corea del Sur.",
     quickAnswer:
@@ -852,6 +853,7 @@ const schemaNodes = node
     alternateEsUrl={alternateEsUrl}
     breadcrumbs={breadcrumbs}
     schemaNodes={schemaNodes}
+    updatedIso={node.updatedIso}
   >
     <TreePage
       node={node}

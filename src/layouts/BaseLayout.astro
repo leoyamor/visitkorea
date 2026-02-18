@@ -33,6 +33,7 @@ const {
   ogImage = absoluteUrl(DEFAULT_OG_IMAGE_PATH),
   ogImageAlt = DEFAULT_OG_IMAGE_ALT,
   schemaNodes = [],
+  updatedIso = EDITORIAL_UPDATED_ISO,
 } = Astro.props as {
   title?: string;
   description?: string;
@@ -46,6 +47,7 @@ const {
   ogImage?: string;
   ogImageAlt?: string;
   schemaNodes?: JsonLdNode[];
+  updatedIso?: string;
 };
 
 const robotsContent = noindex
@@ -136,7 +138,7 @@ const schemaGraph: Record<string, unknown>[] = [
       "@type": "Organization",
       name: EDITORIAL_REVIEWER_NAME,
     },
-    dateModified: EDITORIAL_UPDATED_ISO,
+    dateModified: updatedIso,
   },
 ];
 

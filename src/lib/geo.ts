@@ -172,7 +172,7 @@ export const buildCollectionSchemaNodes = ({
         "@type": "Organization",
         name: EDITORIAL_REVIEWER_NAME,
       },
-      dateModified: EDITORIAL_UPDATED_ISO,
+      dateModified: node.updatedIso ?? EDITORIAL_UPDATED_ISO,
     },
     {
       "@type": "ItemList",
@@ -240,7 +240,7 @@ export const buildLeafSchemaNodes = ({
         name: EDITORIAL_REVIEWER_NAME,
       },
       publisher: { "@id": `${absoluteUrl("/")}#organization` },
-      dateModified: EDITORIAL_UPDATED_ISO,
+      dateModified: node.updatedIso ?? EDITORIAL_UPDATED_ISO,
       keywords,
       about: [
         {

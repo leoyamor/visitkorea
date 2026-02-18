@@ -5080,7 +5080,7 @@ export const siteTree: TreeNode = {
       ],
     },
     {
-      title: "✈️ Latest Travel Updates for Korea",
+      title: "Latest Travel Updates for Korea",
       slug: "latest-travel-updates-for-korea",
       icon: "shield",
       image: "airport",
@@ -5089,7 +5089,7 @@ export const siteTree: TreeNode = {
         "Use this page as your final checkpoint before booking or flying.",
       content: [
         {
-          title: "✈️ Latest Travel Updates for Korea",
+          title: "Latest Travel Updates for Korea",
           icon: "shield",
           emphasis: "Official Sources to Confirm Before You Travel",
           body:
@@ -5099,7 +5099,7 @@ export const siteTree: TreeNode = {
           ],
         },
         {
-          title: "🛂 Entry & Immigration Updates",
+          title: "Entry & Immigration Updates",
           icon: "passport",
           emphasis:
             "Entry rules and authorization depend on your nationality and can change without notice.",
@@ -5111,7 +5111,7 @@ export const siteTree: TreeNode = {
           ],
         },
         {
-          title: "🚆 Transportation & Airports",
+          title: "Transportation & Airports",
           icon: "train",
           emphasis:
             "Train schedules, airport procedures, and transit prices may vary during holidays and peak seasons.",
@@ -5127,7 +5127,7 @@ export const siteTree: TreeNode = {
           ],
         },
         {
-          title: "☀️ Weather & Seasonal Travel Conditions",
+          title: "Weather & Seasonal Travel Conditions",
           icon: "cloud",
           emphasis:
             "Weather significantly affects travel plans — especially in summer and winter.",
@@ -5138,7 +5138,7 @@ export const siteTree: TreeNode = {
           ],
         },
         {
-          title: "📍 Official Tourism Organizations",
+          title: "Official Tourism Organizations",
           icon: "pin",
           emphasis: "Updated attraction hours, festivals, and closures for cities.",
           body: "Updated attraction hours, festivals, and closures for cities.",
@@ -5152,7 +5152,7 @@ export const siteTree: TreeNode = {
           ],
         },
         {
-          title: "🛡️ Safety & Travel Notices",
+          title: "Safety & Travel Notices",
           icon: "alert",
           emphasis:
             "South Korea is generally very safe, but official guides help you stay informed.",
@@ -5164,7 +5164,7 @@ export const siteTree: TreeNode = {
           ],
         },
         {
-          title: "💳 Payments, Shopping & Tax Refunds",
+          title: "Payments, Shopping & Tax Refunds",
           icon: "wallet",
           emphasis: "Tax refund rules and payment methods vary by store and location.",
           body: "Tax refund rules and payment methods vary by store and location.",
@@ -5174,7 +5174,7 @@ export const siteTree: TreeNode = {
           ],
         },
         {
-          title: "✅ How to Use This Page",
+          title: "How to Use This Page",
           icon: "spark",
           emphasis:
             "Decide where you’re going and how long you’ll stay, then confirm here.",

@@ -75,11 +75,15 @@ const ROUTE_META_DESCRIPTION_OVERRIDES: Record<string, string> = {
   "/shopping-and-deals":
     "Shopping zones, tax refund flow, and discount tips in 6 minutes. Refund eligibility and rates vary by store and purchase amount.",
   "/latest-travel-updates-for-korea":
-    "Track major Korea travel changes in under 3 minutes. Check again within 24 hours before departure.",
+    "Updated for 2026. Check South Korea entry rules, K-ETA, airport procedures, transport, and weather before booking or departure.",
   "/korea-now-and-more":
     "Fast weekly Korea context in about 5 minutes. Use it to adjust plans with better local timing.",
   "/this-week-in-korea":
     "This week in Korea at a glance in about 2 minutes. A quick pre-departure and in-trip checkpoint.",
+};
+const ROUTE_META_TITLE_OVERRIDES: Record<string, string> = {
+  "/latest-travel-updates-for-korea":
+    "Korea Travel Updates 2026: Entry Rules, K-ETA, Airport Info",
 };
 
 const t = ui[lang];
@@ -97,7 +101,7 @@ const alternateEsUrl = absoluteUrl(
 );
 
 const pageTitle = node
-  ? `${node.title} | ${t.siteName}`
+  ? `${ROUTE_META_TITLE_OVERRIDES[routePath] ?? node.title} | ${t.siteName}`
   : `${t.notFound} | ${t.siteName}`;
 
 const bodyClass = node ? (node.children && node.children.length > 0 ? "page--sub" : "page--leaf") : "page--sub";

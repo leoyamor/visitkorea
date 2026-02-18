@@ -963,11 +963,15 @@ const ROUTE_META_DESCRIPTION_OVERRIDES: Record<string, string> = {
   "/shopping-and-deals":
     "Zonas de compras, tax refund y descuentos en 6 minutos. La elegibilidad y el monto del reembolso cambian segun tienda y compra.",
   "/latest-travel-updates-for-korea":
-    "Cambios clave de viaje a Corea en menos de 3 minutos. Revisalo otra vez dentro de las 24 horas antes de salir.",
+    "Actualizado para 2026. Revisa requisitos de entrada, K-ETA, aeropuerto, transporte y clima antes de reservar o volar.",
   "/korea-now-and-more":
     "Contexto semanal de Corea en unos 5 minutos. Te ayuda a ajustar el plan segun el momento local.",
   "/this-week-in-korea":
     "Corea esta semana en unos 2 minutos. Punto rapido de control antes de salir y durante el viaje.",
+};
+const ROUTE_META_TITLE_OVERRIDES: Record<string, string> = {
+  "/latest-travel-updates-for-korea":
+    "Actualizaciones de Viaje a Corea 2026: Entrada, K-ETA y Aeropuerto",
 };
 const routePath = segments.length ? `/${segments.join("/")}` : "/";
 const routePathWithSlash = routePath === "/" ? "/" : `${routePath}/`;
@@ -983,7 +987,7 @@ const alternateEnUrl = absoluteUrl(routePathWithSlash);
 const alternateEsUrl = canonicalUrl;
 
 const pageTitle = node
-  ? `${node.title} | ${siteName}`
+  ? `${ROUTE_META_TITLE_OVERRIDES[routePath] ?? node.title} | ${siteName}`
   : `${notFound} | ${siteName}`;
 
 const bodyClass = node ? (node.children && node.children.length > 0 ? "page--sub" : "page--leaf") : "page--sub";

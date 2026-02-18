@@ -288,8 +288,29 @@ const getUrlLabel = (url: string) => {
 };
 
 const isAbsoluteHttpUrl = (url: string) => /^https?:\/\//i.test(url);
+const EMPTY_EXCLUDED_KEYWORDS = new Set<string>();
+const KEYWORD_LINK_EXCLUSIONS_BY_PATH: Record<string, Set<string>> = {
+  "/getting-around-korea/is-getting-around-hard": new Set([
+    "Korail",
+    "Incheon International Airport",
+  ]),
+  "/latest-travel-updates-for-korea": new Set([
+    "K-ETA",
+    "Incheon International Airport",
+    "Korail",
+    "Korea Meteorological Administration",
+    "Seoul Tourism Organization",
+    "Busan Tourism Organization",
+    "Jeju Tourism Organization",
+    "Gyeongju Tourism",
+    "Ministry of Foreign Affairs",
+    "Global Tax Free Korea",
+    "Korea Customs Service",
+  ]),
+};
 
 const linkify = (text: string) => {
+  const excludedKeywords = KEYWORD_LINK_EXCLUSIONS_BY_PATH[basePath] ?? EMPTY_EXCLUDED_KEYWORDS;
   const escaped = escapeHtml(text);
   const withUrls = escaped.replace(/(https?:\/\/[^\s]+)/g, (url) => {
     const safeUrl = url.replace(/"/g, "&quot;");
@@ -308,6 +329,7 @@ const linkify = (text: string) => {
       }
       let next = part;
       for (const [keyword, href] of Object.entries(keywordLinks)) {
+        if (excludedKeywords.has(keyword)) continue;
         const safeHref = href.replace(/"/g, "&quot;");
         const externalAttrs = isAbsoluteHttpUrl(href)
           ? ` target="_blank" rel="noopener noreferrer"`

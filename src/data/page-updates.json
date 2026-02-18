@@ -1,0 +1,422 @@
+{
+  "version": 1,
+  "defaultUpdatedIso": "2026-02-15T00:00:00.000Z",
+  "pages": {
+    "en:/before-you-go/basic-korean-etiquette": {
+      "hash": "ba7581d6ff5877ea66bea2c708a050535dc55133e8e0f565c079194d4c8ae73a",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/before-you-go/from-airport-to-city": {
+      "hash": "cfdc704f004b96e7fd08cabd6a77fa13bf6c3f90708e9545c29c717689f981d1",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/before-you-go/immigration-process": {
+      "hash": "788bf6105a9877a17525e5dedbc0e3b60f2b70b7161fd7f6b4844cf8c997cb61",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/before-you-go/what-is-k-eta": {
+      "hash": "7c974724847f2185481e000e98ef1e3db0c3554db0f0f80d3217fec84044431c",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/before-you-go/what-should-i-prepare": {
+      "hash": "37f77c4004212c0aecf4dd1f0a6258ee55e0567355e5ca9d965a48eb40476f3c",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/choose-a-city/busan": {
+      "hash": "dad9d673c157199dcc67e61b48eeeec068e1ec8fa6f97127dfdb00e81249b3a7",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/choose-a-city/gyeongju": {
+      "hash": "84d713de0193937b160378bd4296cf9e8b6c96a5efdb00c1081409444dd49ba9",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/choose-a-city/jeju": {
+      "hash": "47dab46aa2898b3f23c0f5f3d39bae7ab79fc93daef566278c4e43fd0a46b178",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/choose-a-city/jeonju": {
+      "hash": "65c00bcb53189bf3bb2aaf5c57c3641a657fe4716aa141a62ed134fa81b719af",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/choose-a-city/seoul": {
+      "hash": "f127007d8f8ed7c7a4cee80a643fc3a44a80cf5c8e48ce624ac0ed39f30ed891",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/choose-a-city/which-city-fits-you-best": {
+      "hash": "088b92d841fae7ea226d1b03c0e6dbbd1ea4f243b668aa1075b12c132b2529a8",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/getting-around-korea/is-getting-around-hard": {
+      "hash": "9435244553aceb3634bd0f1a7c166a0573682230a41e5031aee32615966af3a8",
+      "updatedIso": "2026-02-18T00:00:00.000Z"
+    },
+    "en:/getting-around-korea/renting-a-car": {
+      "hash": "1b1d66ce21fb39436f8bef462b16bc33c879618538529ef55c533c3ef8fc8b2f",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/getting-around-korea/saving-on-transport": {
+      "hash": "6a1a67cf960588e3d0edde49525b5056f9b3f7194a6b236e5a11e9c82c6de140",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/getting-around-korea/taking-the-bus": {
+      "hash": "61a44dd0277426ba439539495ceec449279e5f9477c0bab5f07b4847a3c02ff7",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/getting-around-korea/transfers-explained": {
+      "hash": "d69dd2fa9dad9c09d3ecf3fa74656689e9971e9117430ea4e1dfece3e11209f7",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/getting-around-korea/transportation-cards": {
+      "hash": "9d04f457587997e2d6d50834d42d71c1f2f13812d2095cd27475090ae0f160c0",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/getting-around-korea/using-taxis": {
+      "hash": "93e978dea931de0e65a65b41b97694b7c4aba13590468976dc17b4f26deee3d2",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/getting-around-korea/using-the-subway": {
+      "hash": "3e6ba33c93463fce4485ccf9df82355b025d1b349ecd582185afdbaf752ee863",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/korea-now-and-more": {
+      "hash": "d1f8734773fddf1176ba0e76db56d5c8f411db8fee586213096eb83636c78a7c",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/latest-travel-updates-for-korea": {
+      "hash": "061961c34e7f58c2013855de9272f6a450b99969b20713195ce8646821202a58",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/plan-your-trip/1-month-in-korea": {
+      "hash": "35151cc3fe89ef7eab7052bc5fe9841fb0b56a32b791b1f56ebebbb2e2ec2b58",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/plan-your-trip/2-weeks-in-korea": {
+      "hash": "12d73c0e790b7494bff2b721683d1b2fc2303994fb25bebc46ff97c8a7d87cdc",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/plan-your-trip/7-days-in-korea": {
+      "hash": "21057c0a1fc94e9fcf1a66ecc67348beb3269cc6565d2d6d2fdf4c7401fca32c",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/plan-your-trip/been-here-before": {
+      "hash": "6faec25dd6f722c8d7c749769c8ad4c645ac2079dbefa943c51d10a77a552bd0",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/plan-your-trip/first-time-in-korea": {
+      "hash": "2d120570b3625a093797d891e2e5781b440f0c30ded1b37c37b5b9da78fd73a1",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/shopping-and-deals/how-to-get-discounts": {
+      "hash": "395f373d50b664e5ba01f246ad29e842362fc72cc044e9f16eff5bd67ef5cb33",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/shopping-and-deals/is-shopping-cheap-in-korea": {
+      "hash": "09c57e3c9ac783bfed9d42edcce5d6833e0a0ff20a019e42dd69b35e600e8d0f",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/shopping-and-deals/shopping-in-busan": {
+      "hash": "643d0f499e156aa42da35c156a3c4f3dac7e58bc2287f2ddc3d06460c627822c",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/shopping-and-deals/shopping-in-seoul": {
+      "hash": "784059747e87aff0e957f2d80974d319495eda48594f091d3a4fddad3d7d38b0",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/shopping-and-deals/tax-refund-explained": {
+      "hash": "81a77450c3f3968b0855cf0a307d08e939919643412c88bbef5f4f3b21cc4469",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/things-to-do/discount-passes": {
+      "hash": "2308de76fb4c0a217acd3105401d30e64af392fd5bf3b29a91ace0df9e9947f1",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/things-to-do/good-places-without-crowds": {
+      "hash": "aa61aeef78d2eac07ab1703503d3ec4fd168dff003bff73b362fc40c7fe9813f",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/things-to-do/how-much-does-it-cost": {
+      "hash": "5bfc01b5d8a526197fcde1c67d33df0eb590f2f20afb34495b1a96e58d06b98e",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/things-to-do/must-see-for-first-timers": {
+      "hash": "ac5302a5cce971f7f94d880b752fc6e99bedb798c24549e2742ef2dcac2fc58d",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/things-to-do/top-places-by-city": {
+      "hash": "3a0b158132cd8a5596d171bbd8604b3922faa7f5f33903aa55e076b78caf79e5",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/this-week-in-korea": {
+      "hash": "5c4dee915e2dc34871280325b811385febb39c5dea2e41a1120a11be5d1672db",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/travel-basics/how-to-pay-in-korea": {
+      "hash": "c1f5fb0b4fb26a2e2df678323d1b652fab012fddc69dae5d404a1863308d6ae5",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/travel-basics/in-case-of-emergency": {
+      "hash": "03c4c5b9715c233a36b9e030ab60b243afc8a96209385dc9994760f52a1d6325",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/travel-basics/is-korea-safe": {
+      "hash": "f53ca5ea7c519dba4eff54f6988a44c798d3ff0d86e1f7db1ba5068cbb47498b",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/travel-basics/sim-or-esim": {
+      "hash": "a938e7afa4d241c0c8fdf34732314eb8322374a7b92f3ac9864e3054dcfc3608",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/travel-basics/solo-travel-safety": {
+      "hash": "3d913057cabd1a5cc132ca6afa0e3d414fad61ab8fdceaaeae3ce95500376ba7",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/travel-basics/travel-insurance-for-korea": {
+      "hash": "78cc096df9689262222b8a534c8ed2bfcb6a798796648a35d12dc7a1c44f2b1d",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/what-to-eat/finding-good-restaurants": {
+      "hash": "bd7732c648a833a4126ab4ce631cdc51810dc4e5a1cdbc3b030f9b780c51b46e",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/what-to-eat/food-for-first-timers": {
+      "hash": "a98e2e091417b3b33b5eb72cda03516b0db06ce3d84a7704a67aa93a8e0f1f81",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/what-to-eat/food-to-be-careful-with": {
+      "hash": "29db8817334d98204ea555b1c88759c4a8ec14271ecb1399991bffd184ff8668",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/what-to-eat/what-should-i-try-first": {
+      "hash": "aefaf15f47d274cbc023ebda5bf7d735dc93f3f7b52ede0535c41df060e8b844",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/where-to-stay/best-value-places": {
+      "hash": "2a01ea816a8d013c826bc465289fc6613d75470f49dc060d491eac1d8772c39b",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/where-to-stay/budget-stays": {
+      "hash": "72878127fcaa9674151dc21e59bc00b2eb1e7db27d2630e9ebb6eb1ce82c15c0",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/where-to-stay/luxury-hotels": {
+      "hash": "703ec2d7dfbad8f65a8caa4281c6022e5da1bad4dc2a263f7f850767c225c2a8",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/where-to-stay/where-to-stay-in-busan": {
+      "hash": "d88349ae6e27cae6bc3aa4796fc8f9ab4f2ca5f2d8b9f326a5a6a82d97f451cf",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "en:/where-to-stay/where-to-stay-in-seoul": {
+      "hash": "b3794c2ba1614fe3f2b9a11f4d12961df750b6b1f987325b3b91c574a51b2e84",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/before-you-go/basic-korean-etiquette": {
+      "hash": "ba7581d6ff5877ea66bea2c708a050535dc55133e8e0f565c079194d4c8ae73a",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/before-you-go/from-airport-to-city": {
+      "hash": "cfdc704f004b96e7fd08cabd6a77fa13bf6c3f90708e9545c29c717689f981d1",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/before-you-go/immigration-process": {
+      "hash": "788bf6105a9877a17525e5dedbc0e3b60f2b70b7161fd7f6b4844cf8c997cb61",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/before-you-go/what-is-k-eta": {
+      "hash": "7c974724847f2185481e000e98ef1e3db0c3554db0f0f80d3217fec84044431c",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/before-you-go/what-should-i-prepare": {
+      "hash": "37f77c4004212c0aecf4dd1f0a6258ee55e0567355e5ca9d965a48eb40476f3c",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/choose-a-city/busan": {
+      "hash": "dad9d673c157199dcc67e61b48eeeec068e1ec8fa6f97127dfdb00e81249b3a7",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/choose-a-city/gyeongju": {
+      "hash": "84d713de0193937b160378bd4296cf9e8b6c96a5efdb00c1081409444dd49ba9",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/choose-a-city/jeju": {
+      "hash": "47dab46aa2898b3f23c0f5f3d39bae7ab79fc93daef566278c4e43fd0a46b178",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/choose-a-city/jeonju": {
+      "hash": "65c00bcb53189bf3bb2aaf5c57c3641a657fe4716aa141a62ed134fa81b719af",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/choose-a-city/seoul": {
+      "hash": "f127007d8f8ed7c7a4cee80a643fc3a44a80cf5c8e48ce624ac0ed39f30ed891",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/choose-a-city/which-city-fits-you-best": {
+      "hash": "088b92d841fae7ea226d1b03c0e6dbbd1ea4f243b668aa1075b12c132b2529a8",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/getting-around-korea/is-getting-around-hard": {
+      "hash": "fffe999f214861ee55ff22fd7fbe8bff3d415f49af64db3f04fdba8a89e51631",
+      "updatedIso": "2026-02-18T00:00:00.000Z"
+    },
+    "es:/getting-around-korea/renting-a-car": {
+      "hash": "1b1d66ce21fb39436f8bef462b16bc33c879618538529ef55c533c3ef8fc8b2f",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/getting-around-korea/saving-on-transport": {
+      "hash": "6a1a67cf960588e3d0edde49525b5056f9b3f7194a6b236e5a11e9c82c6de140",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/getting-around-korea/taking-the-bus": {
+      "hash": "61a44dd0277426ba439539495ceec449279e5f9477c0bab5f07b4847a3c02ff7",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/getting-around-korea/transfers-explained": {
+      "hash": "d69dd2fa9dad9c09d3ecf3fa74656689e9971e9117430ea4e1dfece3e11209f7",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/getting-around-korea/transportation-cards": {
+      "hash": "9d04f457587997e2d6d50834d42d71c1f2f13812d2095cd27475090ae0f160c0",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/getting-around-korea/using-taxis": {
+      "hash": "93e978dea931de0e65a65b41b97694b7c4aba13590468976dc17b4f26deee3d2",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/getting-around-korea/using-the-subway": {
+      "hash": "3e6ba33c93463fce4485ccf9df82355b025d1b349ecd582185afdbaf752ee863",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/korea-now-and-more": {
+      "hash": "d1f8734773fddf1176ba0e76db56d5c8f411db8fee586213096eb83636c78a7c",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/latest-travel-updates-for-korea": {
+      "hash": "061961c34e7f58c2013855de9272f6a450b99969b20713195ce8646821202a58",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/plan-your-trip/1-month-in-korea": {
+      "hash": "35151cc3fe89ef7eab7052bc5fe9841fb0b56a32b791b1f56ebebbb2e2ec2b58",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/plan-your-trip/2-weeks-in-korea": {
+      "hash": "12d73c0e790b7494bff2b721683d1b2fc2303994fb25bebc46ff97c8a7d87cdc",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/plan-your-trip/7-days-in-korea": {
+      "hash": "21057c0a1fc94e9fcf1a66ecc67348beb3269cc6565d2d6d2fdf4c7401fca32c",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/plan-your-trip/been-here-before": {
+      "hash": "6faec25dd6f722c8d7c749769c8ad4c645ac2079dbefa943c51d10a77a552bd0",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/plan-your-trip/first-time-in-korea": {
+      "hash": "2d120570b3625a093797d891e2e5781b440f0c30ded1b37c37b5b9da78fd73a1",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/shopping-and-deals/how-to-get-discounts": {
+      "hash": "395f373d50b664e5ba01f246ad29e842362fc72cc044e9f16eff5bd67ef5cb33",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/shopping-and-deals/is-shopping-cheap-in-korea": {
+      "hash": "09c57e3c9ac783bfed9d42edcce5d6833e0a0ff20a019e42dd69b35e600e8d0f",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/shopping-and-deals/shopping-in-busan": {
+      "hash": "643d0f499e156aa42da35c156a3c4f3dac7e58bc2287f2ddc3d06460c627822c",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/shopping-and-deals/shopping-in-seoul": {
+      "hash": "784059747e87aff0e957f2d80974d319495eda48594f091d3a4fddad3d7d38b0",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/shopping-and-deals/tax-refund-explained": {
+      "hash": "81a77450c3f3968b0855cf0a307d08e939919643412c88bbef5f4f3b21cc4469",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/things-to-do/discount-passes": {
+      "hash": "2308de76fb4c0a217acd3105401d30e64af392fd5bf3b29a91ace0df9e9947f1",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/things-to-do/good-places-without-crowds": {
+      "hash": "aa61aeef78d2eac07ab1703503d3ec4fd168dff003bff73b362fc40c7fe9813f",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/things-to-do/how-much-does-it-cost": {
+      "hash": "5bfc01b5d8a526197fcde1c67d33df0eb590f2f20afb34495b1a96e58d06b98e",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/things-to-do/must-see-for-first-timers": {
+      "hash": "ac5302a5cce971f7f94d880b752fc6e99bedb798c24549e2742ef2dcac2fc58d",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/things-to-do/top-places-by-city": {
+      "hash": "3a0b158132cd8a5596d171bbd8604b3922faa7f5f33903aa55e076b78caf79e5",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/this-week-in-korea": {
+      "hash": "5c4dee915e2dc34871280325b811385febb39c5dea2e41a1120a11be5d1672db",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/travel-basics/how-to-pay-in-korea": {
+      "hash": "ccc12f6468bcd51d2ee889b27b38d228513cb5806dc882993964fbabda069048",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/travel-basics/in-case-of-emergency": {
+      "hash": "b42e81bdec67a0737e3b0599c464006eda48625bdcd5ad39819df92babfb735f",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/travel-basics/is-korea-safe": {
+      "hash": "de820693d5d1384a40cc6c4b955f1b71fb3311794b8c5c488d5ac3784eaa912f",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/travel-basics/sim-or-esim": {
+      "hash": "f3aa0b3ab94c25f59e41462dc9ec6675caf1441b3f2b61c9b603e36b6549c276",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/travel-basics/solo-travel-safety": {
+      "hash": "8ed905027c0b19e30416c4376d40fe603a1c92f67d97f254e3e71623235ad84f",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/travel-basics/travel-insurance-for-korea": {
+      "hash": "97774c6d9732c613ac054f3069deee12de4617cb55429c3bc4dc733087125864",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/what-to-eat/finding-good-restaurants": {
+      "hash": "bd7732c648a833a4126ab4ce631cdc51810dc4e5a1cdbc3b030f9b780c51b46e",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/what-to-eat/food-for-first-timers": {
+      "hash": "a98e2e091417b3b33b5eb72cda03516b0db06ce3d84a7704a67aa93a8e0f1f81",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/what-to-eat/food-to-be-careful-with": {
+      "hash": "29db8817334d98204ea555b1c88759c4a8ec14271ecb1399991bffd184ff8668",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/what-to-eat/what-should-i-try-first": {
+      "hash": "aefaf15f47d274cbc023ebda5bf7d735dc93f3f7b52ede0535c41df060e8b844",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/where-to-stay/best-value-places": {
+      "hash": "2a01ea816a8d013c826bc465289fc6613d75470f49dc060d491eac1d8772c39b",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/where-to-stay/budget-stays": {
+      "hash": "72878127fcaa9674151dc21e59bc00b2eb1e7db27d2630e9ebb6eb1ce82c15c0",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/where-to-stay/luxury-hotels": {
+      "hash": "703ec2d7dfbad8f65a8caa4281c6022e5da1bad4dc2a263f7f850767c225c2a8",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/where-to-stay/where-to-stay-in-busan": {
+      "hash": "d88349ae6e27cae6bc3aa4796fc8f9ab4f2ca5f2d8b9f326a5a6a82d97f451cf",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    },
+    "es:/where-to-stay/where-to-stay-in-seoul": {
+      "hash": "b3794c2ba1614fe3f2b9a11f4d12961df750b6b1f987325b3b91c574a51b2e84",
+      "updatedIso": "2026-02-15T00:00:00.000Z"
+    }
+  }
+}

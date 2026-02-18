@@ -4,7 +4,9 @@ import TreePage from "../components/TreePage.astro";
 import { findNodeBySegments, getPathForNode, siteTree } from "../data/siteTree";
 import { buildCollectionSchemaNodes, buildLeafSchemaNodes } from "../lib/geo";
 import { withLang } from "../lib/i18n";
+import { getPageUpdatedIso } from "../lib/page-updates";
 import { absoluteUrl } from "../lib/site";
+import type { TreeNode } from "../data/siteTree";
 export const getStaticPaths = () => {
   const paths: string[] = [];
   const walk = (node: TreeNode, prefix: string[] = []) => {
@@ -99,18 +101,24 @@ const pageTitle = node
   : `${t.notFound} | ${t.siteName}`;
 
 const bodyClass = node ? (node.children && node.children.length > 0 ? "page--sub" : "page--leaf") : "page--sub";
+const nodeForRender = node
+  ? {
+      ...node,
+      updatedIso: getPageUpdatedIso(routePath, lang, node.updatedIso),
+    }
+  : undefined;
 const schemaNodes = node
-  ? node.children && node.children.length > 0
+  ? nodeForRender!.children && nodeForRender!.children.length > 0
     ? buildCollectionSchemaNodes({
         canonicalUrl,
         routePath,
-        node,
+        node: nodeForRender!,
         lang,
         description: pageDescription,
       })
     : buildLeafSchemaNodes({
         canonicalUrl,
-        node,
+        node: nodeForRender!,
         lang,
         description: pageDescription,
         segments,
@@ -129,10 +137,10 @@ const schemaNodes = node
     alternateEsUrl={alternateEsUrl}
     breadcrumbs={breadcrumbs}
     schemaNodes={schemaNodes}
-    updatedIso={node.updatedIso}
+    updatedIso={nodeForRender.updatedIso}
   >
     <TreePage
-      node={node}
+      node={nodeForRender}
       segments={segments}
       parentPath={withLang(parentPath, lang)}
       isHome={segments.length === 0}

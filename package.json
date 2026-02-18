@@ -4,11 +4,12 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "prebuild": "npm run images:optimize",
+    "prebuild": "npm run page-updates:sync && npm run images:optimize",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "images:optimize": "node scripts/optimize-card-images.mjs"
+    "images:optimize": "node scripts/optimize-card-images.mjs",
+    "page-updates:sync": "node scripts/sync-page-updates.mjs"
   },
   "dependencies": {
     "astro": "^5.17.1"

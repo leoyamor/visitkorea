@@ -267,6 +267,15 @@ const keywordLinks: Record<string, string> = {
   "Ministry of Foreign Affairs": "https://www.mofa.go.kr",
   "Global Tax Free Korea": "https://www.globaltaxfree.com",
   "Korea Customs Service": "https://www.customs.go.kr",
+  ...(lang === "en"
+    ? {
+        "travel insurance for Korea": "/travel-basics/travel-insurance-for-korea/",
+        "hospital costs in Korea": "/travel-basics/travel-insurance-for-korea/",
+      }
+    : {
+        "seguro de viaje para Corea": "/es/travel-basics/travel-insurance-for-korea/",
+        "costos hospitalarios en Corea": "/es/travel-basics/travel-insurance-for-korea/",
+      }),
 };
 
 const getUrlLabel = (url: string) => {
@@ -277,6 +286,8 @@ const getUrlLabel = (url: string) => {
     return url;
   }
 };
+
+const isAbsoluteHttpUrl = (url: string) => /^https?:\/\//i.test(url);
 
 const linkify = (text: string) => {
   const escaped = escapeHtml(text);
@@ -298,6 +309,9 @@ const linkify = (text: string) => {
       let next = part;
       for (const [keyword, href] of Object.entries(keywordLinks)) {
         const safeHref = href.replace(/"/g, "&quot;");
+        const externalAttrs = isAbsoluteHttpUrl(href)
+          ? ` target="_blank" rel="noopener noreferrer"`
+          : "";
         // Keep "Name: https://..." patterns readable by linking only the URL label.
         const pattern = new RegExp(
           `\\b${keyword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b(?!\\s*:)`,
@@ -305,7 +319,7 @@ const linkify = (text: string) => {
         );
         next = next.replace(
           pattern,
-          `<a href="${safeHref}" target="_blank" rel="noopener noreferrer">${keyword}</a>`
+          `<a href="${safeHref}"${externalAttrs}>${keyword}</a>`
         );
       }
       return next;

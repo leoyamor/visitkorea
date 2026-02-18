@@ -3859,6 +3859,7 @@ export const siteTree: TreeNode = {
                 "Save emergency numbers",
                 "Screenshot your hotel address",
                 "Carry travel insurance info",
+                "Check hospital costs in Korea before your trip so out-of-pocket risk is clearer.",
               ],
             },
             {
@@ -5183,6 +5184,7 @@ export const siteTree: TreeNode = {
           bullets: [
             "Use these official sources to confirm current rules and conditions.",
             "Double-check entry requirements, weather, transport, and airports before departure.",
+            "Before booking non-refundable plans, review travel insurance for Korea.",
           ],
         },
       ],

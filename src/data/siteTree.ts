@@ -5106,9 +5106,9 @@ export const siteTree: TreeNode = {
             "Entry rules and authorization depend on your nationality and can change without notice.",
           body: "Always confirm your entry status before departure.",
           bullets: [
-            "➤ K-ETA (Official Authorization System) — Apply before departure if visa exempt. https://www.k-eta.go.kr/portal/apply/index.do?locale=EN",
-            "➤ e-Arrival Card (Online Arrival Form) — Online arrival declaration (submit within 3 days before arrival). https://www.e-arrivalcard.go.kr/portal/main/index.do?locale=EN",
-            "➤ Arrival / Immigration Procedures – Incheon Airport: https://www.airport.kr/ap_en/1439/subview.do",
+            "K-ETA (Official Authorization System) — Apply before departure if visa exempt. https://www.k-eta.go.kr/portal/apply/index.do?locale=EN",
+            "e-Arrival Card (Online Arrival Form) — Online arrival declaration (submit within 3 days before arrival). https://www.e-arrivalcard.go.kr/portal/main/index.do?locale=EN",
+            "Arrival / Immigration Procedures – Incheon Airport: https://www.airport.kr/ap_en/1439/subview.do",
           ],
         },
         {
@@ -5119,12 +5119,12 @@ export const siteTree: TreeNode = {
           body:
             "Train schedules, airport procedures, and transit prices may vary during holidays and peak seasons.",
           bullets: [
-            "➤ Incheon International Airport (English) — Arrival procedures, terminal info, transport options. https://www.airport.kr/sites/ap_en/index.do",
-            "➤ Seoul — Getting to Seoul From Incheon Airport (Official) — Official transport options from airport to Seoul (including AREX & limousines). https://english.seoul.go.kr/service/entry/getting-to-seoul-from-incheon-airport/",
-            "➤ Korail — High-Speed & Regional Trains (KTX) — National train schedules, routes & tickets. https://www.korail.com/global/eng/intro",
-            "➤ AREX (Airport Railroad Express) — Airport rail link between Incheon and Seoul. https://www.arex.or.kr (English UI available)",
-            "➤ Seoul Public Transportation (Official English page) — Seoul city transport information. https://english.seoul.go.kr/service/movement/public-transportation/",
-            "➤ Busan Public Transportation (Official English page) — Busan city transport information. https://www.busan.go.kr/eng/public-transportation",
+            "Incheon International Airport (English) — Arrival procedures, terminal info, transport options. https://www.airport.kr/sites/ap_en/index.do",
+            "Seoul — Getting to Seoul From Incheon Airport (Official) — Official transport options from airport to Seoul (including AREX & limousines). https://english.seoul.go.kr/service/entry/getting-to-seoul-from-incheon-airport/",
+            "Korail — High-Speed & Regional Trains (KTX) — National train schedules, routes & tickets. https://www.korail.com/global/eng/intro",
+            "AREX (Airport Railroad Express) — Airport rail link between Incheon and Seoul. https://www.arex.or.kr (English UI available)",
+            "Seoul Public Transportation (Official English page) — Seoul city transport information. https://english.seoul.go.kr/service/movement/public-transportation/",
+            "Busan Public Transportation (Official English page) — Busan city transport information. https://www.busan.go.kr/eng/public-transportation",
           ],
         },
         {
@@ -5135,7 +5135,7 @@ export const siteTree: TreeNode = {
           body:
             "Weather significantly affects travel plans — especially in summer and winter.",
           bullets: [
-            "➤ Korea Meteorological Administration — English. Official weather forecasts and severe weather alerts. https://www.kma.go.kr/neng/index.do",
+            "Korea Meteorological Administration — English. Official weather forecasts and severe weather alerts. https://www.kma.go.kr/neng/index.do",
           ],
         },
         {
@@ -5144,12 +5144,12 @@ export const siteTree: TreeNode = {
           emphasis: "Updated attraction hours, festivals, and closures for cities.",
           body: "Updated attraction hours, festivals, and closures for cities.",
           bullets: [
-            "➤ Korea Tourism Organization — National tourism info and planning. https://english.visitkorea.or.kr/svc/main/index.do",
-            "➤ Seoul Tourism Organization (Official English site) — City attractions, neighborhoods, food & shopping. https://english.visitseoul.net",
-            "➤ Busan Tourism Organization — City information and travel tips. https://english.busan.go.kr",
-            "➤ Jeju Tourism Organization — Jeju Island attractions and events. https://www.visitjeju.net/en",
-            "➤ Gyeongju Tourism — Historic sites and cultural heritage information. https://www.gyeongju.go.kr/tour/index.do",
-            "➤ Jeonju Tourism — Official Jeonju tourism info & culture. https://tour.jeonju.go.kr/eng",
+            "Korea Tourism Organization — National tourism info and planning. https://english.visitkorea.or.kr/svc/main/index.do",
+            "Seoul Tourism Organization (Official English site) — City attractions, neighborhoods, food & shopping. https://english.visitseoul.net",
+            "Busan Tourism Organization — City information and travel tips. https://english.busan.go.kr",
+            "Jeju Tourism Organization — Jeju Island attractions and events. https://www.visitjeju.net/en",
+            "Gyeongju Tourism — Historic sites and cultural heritage information. https://www.gyeongju.go.kr/tour/index.do",
+            "Jeonju Tourism — Official Jeonju tourism info & culture. https://tour.jeonju.go.kr/eng",
           ],
         },
         {
@@ -5159,8 +5159,8 @@ export const siteTree: TreeNode = {
             "South Korea is generally very safe, but official guides help you stay informed.",
           body: "Emergency Numbers (24/7): Police 112, Fire / Ambulance 119",
           bullets: [
-            "➤ Ministry of Foreign Affairs – Travel Notices (English) — Official advisories and updates. https://www.mofa.go.kr/eng/index.do",
-            "➤ Korea Travel Hotline (1330) — Official tourism support hotline (English available when dialed in Korea): 1330",
+            "Ministry of Foreign Affairs – Travel Notices (English) — Official advisories and updates. https://www.mofa.go.kr/eng/index.do",
+            "Korea Travel Hotline (1330) — Official tourism support hotline (English available when dialed in Korea): 1330",
             "Also check your own country’s embassy website in Korea for consular support.",
           ],
         },
@@ -5170,8 +5170,8 @@ export const siteTree: TreeNode = {
           emphasis: "Tax refund rules and payment methods vary by store and location.",
           body: "Tax refund rules and payment methods vary by store and location.",
           bullets: [
-            "➤ Global Tax Free Korea — Participating stores and refund procedures. https://www.global-taxfree.com/?lang=en#1",
-            "➤ Korea Customs Service — English. Duty-free limits and customs declaration rules. https://www.customs.go.kr/english/main.do",
+            "Global Tax Free Korea — Participating stores and refund procedures. https://www.global-taxfree.com/?lang=en#1",
+            "Korea Customs Service — English. Duty-free limits and customs declaration rules. https://www.customs.go.kr/english/main.do",
           ],
         },
         {

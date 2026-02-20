@@ -1,10 +1,73 @@
-  name: SEO GEO Daily Ops
+name: SEO GEO Daily Ops
 
-  'on':
-    workflow_dispatch:
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 2 * * *"
 
-  jobs:
-    test:
-      runs-on: ubuntu-latest
-      steps:
-        - run: echo "ok"
+jobs:
+  submit-sitemap:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      GSC_SITE_URL: ${{ vars.GSC_SITE_URL }}
+      GSC_SITEMAP_URL: ${{ vars.GSC_SITEMAP_URL }}
+      GSC_SERVICE_ACCOUNT_KEY_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_KEY_JSON }}
+
+    steps:
+      - name: Check required settings
+        id: check
+        shell: bash
+        run: |
+          if [ -z "$GSC_SITE_URL" ] || [ -z "$GSC_SERVICE_ACCOUNT_KEY_JSON" ]; then
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Authenticate to Google
+        if: steps.check.outputs.run == "true"
+        id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ env.GSC_SERVICE_ACCOUNT_KEY_JSON }}
+          token_format: access_token
+          scopes: https://www.googleapis.com/auth/webmasters
+
+      - name: Submit sitemap
+        if: steps.check.outputs.run == "true"
+        shell: bash
+        env:
+          ACCESS_TOKEN: ${{ steps.auth.outputs.access_token }}
+        run: |
+          python3 - <<PY
+          import os, urllib.parse, urllib.request
+          site = (os.environ.get("GSC_SITE_URL") or "").strip()
+          sitemap = (os.environ.get("GSC_SITEMAP_URL") or "").strip()
+
+          if not site:
+              raise SystemExit("GSC_SITE_URL is empty")
+
+          if not sitemap:
+              if site.startswith("sc-domain:"):
+                  raise SystemExit("Set GSC_SITEMAP_URL for sc-domain")
+              sitemap = urllib.parse.urljoin(site if site.endswith("/") else site + "/", "sitemap.xml")
+
+          url = "https://www.googleapis.com/webmasters/v3/sites/" + urllib.parse.quote(site, safe="") + "/sitemaps/" +
+  urllib.parse.quote(sitemap, safe="")
+
+          req = urllib.request.Request(
+              url,
+              method="PUT",
+              headers={"Authorization": "Bearer " + os.environ["ACCESS_TOKEN"]},
+          )
+
+          with urllib.request.urlopen(req) as r:
+              print("[gsc-submit] status={}".format(r.status))
+          print("[gsc-submit] submitted {} for {}".format(sitemap, site))
+          PY
+
+      - name: Skip reason
+        if: steps.check.outputs.run != "true"
+        run: echo "Skipped. Set GSC_SITE_URL and GSC_SERVICE_ACCOUNT_KEY_JSON."

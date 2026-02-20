@@ -35,15 +35,31 @@
         - name: Build
           run: npm run build
 
-        - name: SEO GEO lint
-          run: node scripts/seo-geo-lint.mjs
+        - name: SEO GEO lint (optional)
+          run: |
+            if [ -f scripts/seo-geo-lint.mjs ]; then
+              node scripts/seo-geo-lint.mjs
+            else
+              echo "skip: scripts/seo-geo-lint.mjs not found"
+            fi
 
-        - name: Source watch snapshot refresh
-          run: node scripts/source-watch.mjs --write --report src/data/source-watch-report.md
+        - name: Source watch snapshot refresh (optional)
+          run: |
+            if [ -f scripts/source-watch.mjs ]; then
+              node scripts/source-watch.mjs --write --report src/data/source-watch-report.md
+            else
+              echo "skip: scripts/source-watch.mjs not found"
+            fi
 
-        - name: Submit sitemap to Google Search Console
-          if: ${{ env.GSC_SITE_URL != '' && env.GSC_SERVICE_ACCOUNT_KEY_JSON != '' }}
-          run: node scripts/gsc-submit-sitemap.mjs
+        - name: Submit sitemap to Google Search Console (optional)
+          run: |
+            if [ -z "$GSC_SITE_URL" ] || [ -z "$GSC_SERVICE_ACCOUNT_KEY_JSON" ]; then
+              echo "skip: GSC vars/secrets not configured"
+            elif [ ! -f scripts/gsc-submit-sitemap.mjs ]; then
+              echo "skip: scripts/gsc-submit-sitemap.mjs not found"
+            else
+              node scripts/gsc-submit-sitemap.mjs
+            fi
 
         - name: Create maintenance pull request
           uses: peter-evans/create-pull-request@v6

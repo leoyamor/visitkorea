@@ -1,16 +1,22 @@
-  name: SEO GEO Daily Ops
+  name: Submit Sitemap On Real Lastmod Change
 
   on:
-    schedule:
-      - cron: "17 2 * * 1"
+    push:
+      branches:
+        - main
+      paths:
+        - "src/data/siteTree.ts"
+        - "src/pages/**"
+        - "src/pages/es/**"
+        - "src/data/page-updates.json"
+        - "scripts/sync-page-updates.mjs"
     workflow_dispatch:
 
   permissions:
-    contents: write
-    pull-requests: write
+    contents: read
 
   jobs:
-    daily-ops:
+    submit-if-lastmod-changed:
       runs-on: ubuntu-latest
       env:
         GSC_SITE_URL: ${{ vars.GSC_SITE_URL }}
@@ -21,7 +27,7 @@
         - name: Checkout
           uses: actions/checkout@v4
           with:
-            fetch-depth: 0
+            fetch-depth: 2
 
         - name: Setup Node
           uses: actions/setup-node@v4
@@ -32,45 +38,48 @@
         - name: Install dependencies
           run: npm ci
 
-        - name: Build
-          run: npm run build
+        - name: Sync page updates
+          run: npm run page-updates:sync
 
-        - name: SEO GEO lint (optional)
+        - name: Detect page lastmod change
+          id: detect
+          shell: bash
           run: |
-            if [ -f scripts/seo-geo-lint.mjs ]; then
-              node scripts/seo-geo-lint.mjs
-            else
-              echo "skip: scripts/seo-geo-lint.mjs not found"
+            set -euo pipefail
+
+            changed_generated=false
+            if ! git diff --quiet -- src/data/page-updates.json; then
+              changed_generated=true
             fi
 
-        - name: Source watch snapshot refresh (internal path)
-          run: |
-            if [ -f scripts/source-watch.mjs ]; then
-              node scripts/source-watch.mjs --write --snapshot .ops/source-watch-snapshot.json --report .ops/source-watch-report.md
-            else
-              echo "skip: scripts/source-watch.mjs not found"
+            changed_in_push=false
+            if [ "${{ github.event_name }}" = "push" ]; then
+              before_sha="${{ github.event.before }}"
+              if [ -n "$before_sha" ] && [ "$before_sha" != "0000000000000000000000000000000000000000" ]; then
+                if ! git diff --quiet "$before_sha" "${{ github.sha }}" -- src/data/page-updates.json; then
+                  changed_in_push=true
+                fi
+              fi
             fi
 
-        - name: Submit sitemap to Google Search Console (optional)
-          run: |
-            if [ -z "$GSC_SITE_URL" ] || [ -z "$GSC_SERVICE_ACCOUNT_KEY_JSON" ]; then
-              echo "skip: GSC vars/secrets not configured"
-            elif [ ! -f scripts/gsc-submit-sitemap.mjs ]; then
-              echo "skip: scripts/gsc-submit-sitemap.mjs not found"
+            if [ "$changed_generated" = "true" ] || [ "$changed_in_push" = "true" ]; then
+              echo "should_submit=true" >> "$GITHUB_OUTPUT"
+              echo "lastmod changed -> submit sitemap"
             else
+              echo "should_submit=false" >> "$GITHUB_OUTPUT"
+              echo "no lastmod changes -> skip sitemap submit"
+            fi
+
+        - name: Submit sitemap to Google Search Console
+          if: ${{ steps.detect.outputs.should_submit == 'true' && env.GSC_SITE_URL != '' && env.GSC_SERVICE_ACCOUNT_KEY_JSON != '' }}
+          shell: bash
+          run: |
+            if [ -f scripts/gsc-submit-sitemap.mjs ]; then
               node scripts/gsc-submit-sitemap.mjs
+            else
+              echo "skip: scripts/gsc-submit-sitemap.mjs not found"
             fi
 
-        - name: Create maintenance pull request
-          uses: peter-evans/create-pull-request@v6
-          with:
-            commit-message: "chore(seo-geo): automated refresh"
-            branch: "chore/seo-geo-daily"
-            delete-branch: true
-            title: "chore(seo-geo): automated refresh"
-            body: |
-              Automated maintenance for SEO/GEO reliability.
-            labels: |
-              automation
-              seo
-              geo
+        - name: Skip submit (no changes or missing secrets)
+          if: ${{ steps.detect.outputs.should_submit != 'true' || env.GSC_SITE_URL == '' || env.GSC_SERVICE_ACCOUNT_KEY_JSON == '' }}
+          run: echo "skip: no lastmod change or GSC settings missing"

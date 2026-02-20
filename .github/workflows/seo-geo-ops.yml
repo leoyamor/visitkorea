@@ -1,27 +1,28 @@
-name: SEO GEO Daily Ops
+ name: SEO GEO Daily Ops
 
-  on:
-    workflow_dispatch:
-    schedule:
-      - cron: "17 2 * * *"
+  'on':
+  workflow_dispatch:
+  schedule:
+  - cron: '17 2 * * *'
 
   jobs:
-    submit-sitemap:
-      runs-on: ubuntu-latest
-      permissions:
-        contents: read
-      env:
-        GSC_SITE_URL: ${{ vars.GSC_SITE_URL }}
-        GSC_SITEMAP_URL: ${{ vars.GSC_SITEMAP_URL }}
-        GSC_SERVICE_ACCOUNT_KEY_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_KEY_JSON }}
+  submit-sitemap:
+  runs-on: ubuntu-latest
+  permissions:
+  contents: read
+  env:
+  GSC_SITE_URL: ${{ vars.GSC_SITE_URL }}
+  GSC_SITEMAP_URL: ${{ vars.GSC_SITEMAP_URL }}
+  GSC_SERVICE_ACCOUNT_KEY_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_KEY_JSON }}
 
       steps:
         - name: Check required settings
           id: check
+          shell: bash
           run: |
-            if [ -z "${GSC_SITE_URL}" ] || [ -z "${GSC_SERVICE_ACCOUNT_KEY_JSON}" ]; then
+            if [ -z "$GSC_SITE_URL" ] || [ -z "$GSC_SERVICE_ACCOUNT_KEY_JSON" ]; then
               echo "run=false" >> "$GITHUB_OUTPUT"
-              echo "Missing GSC_SITE_URL or GSC_SERVICE_ACCOUNT_KEY_JSON. Skipping sitemap submit."
+              echo "Missing settings."
             else
               echo "run=true" >> "$GITHUB_OUTPUT"
             fi
@@ -35,14 +36,14 @@ name: SEO GEO Daily Ops
             token_format: access_token
             scopes: https://www.googleapis.com/auth/webmasters
 
-        - name: Submit sitemap to Search Console
+        - name: Submit sitemap
           if: steps.check.outputs.run == 'true'
+          shell: bash
           env:
             ACCESS_TOKEN: ${{ steps.auth.outputs.access_token }}
           run: |
             python3 - <<'PY'
             import os, urllib.parse, urllib.request
-
             site = (os.environ.get("GSC_SITE_URL") or "").strip()
             sitemap = (os.environ.get("GSC_SITEMAP_URL") or "").strip()
 
@@ -51,7 +52,7 @@ name: SEO GEO Daily Ops
 
             if not sitemap:
                 if site.startswith("sc-domain:"):
-                    raise SystemExit("Set GSC_SITEMAP_URL when using sc-domain property.")
+                    raise SystemExit("Set GSC_SITEMAP_URL for sc-domain")
                 sitemap = urllib.parse.urljoin(site if site.endswith("/") else site + "/", "sitemap.xml")
 
             url = (
@@ -74,5 +75,4 @@ name: SEO GEO Daily Ops
 
         - name: Skip reason
           if: steps.check.outputs.run != 'true'
-          run: |
-            echo "Workflow skipped: set both GSC_SITE_URL (Variable) and GSC_SERVICE_ACCOUNT_KEY_JSON (Secret)."
+          run: echo "Skipped. Set GSC_SITE_URL variable and GSC_SERVICE_ACCOUNT_KEY_JSON secret."

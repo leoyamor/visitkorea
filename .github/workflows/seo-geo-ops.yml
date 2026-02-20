@@ -1,73 +1,65 @@
 name: SEO GEO Daily Ops
 
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: "17 2 * * *"
+  on:
+    schedule:
+      - cron: "17 2 * * *"
+    workflow_dispatch:
 
-jobs:
-  submit-sitemap:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-    env:
-      GSC_SITE_URL: ${{ vars.GSC_SITE_URL }}
-      GSC_SITEMAP_URL: ${{ vars.GSC_SITEMAP_URL }}
-      GSC_SERVICE_ACCOUNT_KEY_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_KEY_JSON }}
+  permissions:
+    contents: write
+    pull-requests: write
 
-    steps:
-      - name: Check required settings
-        id: check
-        shell: bash
-        run: |
-          if [ -z "$GSC_SITE_URL" ] || [ -z "$GSC_SERVICE_ACCOUNT_KEY_JSON" ]; then
-            echo "run=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "run=true" >> "$GITHUB_OUTPUT"
-          fi
+  jobs:
+    daily-ops:
+      runs-on: ubuntu-latest
+      env:
+        GSC_SITE_URL: ${{ vars.GSC_SITE_URL }}
+        GSC_SERVICE_ACCOUNT_KEY_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_KEY_JSON }}
+        GSC_SITEMAP_URL: ${{ vars.GSC_SITEMAP_URL }}
 
-      - name: Authenticate to Google
-        if: steps.check.outputs.run == "true"
-        id: auth
-        uses: google-github-actions/auth@v2
-        with:
-          credentials_json: ${{ env.GSC_SERVICE_ACCOUNT_KEY_JSON }}
-          token_format: access_token
-          scopes: https://www.googleapis.com/auth/webmasters
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+          with:
+            fetch-depth: 0
 
-      - name: Submit sitemap
-        if: steps.check.outputs.run == "true"
-        shell: bash
-        env:
-          ACCESS_TOKEN: ${{ steps.auth.outputs.access_token }}
-        run: |
-          python3 - <<PY
-          import os, urllib.parse, urllib.request
-          site = (os.environ.get("GSC_SITE_URL") or "").strip()
-          sitemap = (os.environ.get("GSC_SITEMAP_URL") or "").strip()
+        - name: Setup Node
+          uses: actions/setup-node@v4
+          with:
+            node-version: "20"
+            cache: npm
 
-          if not site:
-              raise SystemExit("GSC_SITE_URL is empty")
+        - name: Install dependencies
+          run: npm ci
 
-          if not sitemap:
-              if site.startswith("sc-domain:"):
-                  raise SystemExit("Set GSC_SITEMAP_URL for sc-domain")
-              sitemap = urllib.parse.urljoin(site if site.endswith("/") else site + "/", "sitemap.xml")
+        - name: Build
+          run: npm run build
 
-          url = "https://www.googleapis.com/webmasters/v3/sites/" + urllib.parse.quote(site, safe="") + "/sitemaps/" +
-  urllib.parse.quote(sitemap, safe="")
+        - name: SEO GEO lint
+          run: npm run seo:lint
 
-          req = urllib.request.Request(
-              url,
-              method="PUT",
-              headers={"Authorization": "Bearer " + os.environ["ACCESS_TOKEN"]},
-          )
+        - name: Source watch snapshot refresh
+          run: npm run source:watch:write -- --report src/data/source-watch-report.md
 
-          with urllib.request.urlopen(req) as r:
-              print("[gsc-submit] status={}".format(r.status))
-          print("[gsc-submit] submitted {} for {}".format(sitemap, site))
-          PY
+        - name: Submit sitemap to Google Search Console
+          if: ${{ env.GSC_SITE_URL != '' && env.GSC_SERVICE_ACCOUNT_KEY_JSON != '' }}
+          run: node scripts/gsc-submit-sitemap.mjs
 
-      - name: Skip reason
-        if: steps.check.outputs.run != "true"
-        run: echo "Skipped. Set GSC_SITE_URL and GSC_SERVICE_ACCOUNT_KEY_JSON."
+        - name: Create maintenance pull request
+          uses: peter-evans/create-pull-request@v6
+          with:
+            commit-message: "chore(seo-geo): daily automated refresh"
+            branch: "chore/seo-geo-daily"
+            delete-branch: true
+            title: "chore(seo-geo): daily automated refresh"
+            body: |
+              Automated maintenance for SEO/GEO reliability.
+
+              Updates include:
+              - source watch snapshot refresh
+              - source watch report refresh
+              - build + SEO/GEO lint verification
+            labels: |
+              automation
+              seo
+              geo

@@ -2,7 +2,7 @@
 
   on:
     schedule:
-      - cron: "17 2 * * *"
+      - cron: "17 2 * * 1"
     workflow_dispatch:
 
   permissions:
@@ -43,10 +43,10 @@
               echo "skip: scripts/seo-geo-lint.mjs not found"
             fi
 
-        - name: Source watch snapshot refresh (optional)
+        - name: Source watch snapshot refresh (internal path)
           run: |
             if [ -f scripts/source-watch.mjs ]; then
-              node scripts/source-watch.mjs --write --report src/data/source-watch-report.md
+              node scripts/source-watch.mjs --write --snapshot .ops/source-watch-snapshot.json --report .ops/source-watch-report.md
             else
               echo "skip: scripts/source-watch.mjs not found"
             fi
@@ -64,17 +64,12 @@
         - name: Create maintenance pull request
           uses: peter-evans/create-pull-request@v6
           with:
-            commit-message: "chore(seo-geo): daily automated refresh"
+            commit-message: "chore(seo-geo): automated refresh"
             branch: "chore/seo-geo-daily"
             delete-branch: true
-            title: "chore(seo-geo): daily automated refresh"
+            title: "chore(seo-geo): automated refresh"
             body: |
               Automated maintenance for SEO/GEO reliability.
-
-              Updates include:
-              - source watch snapshot refresh
-              - source watch report refresh
-              - build + SEO/GEO lint verification
             labels: |
               automation
               seo

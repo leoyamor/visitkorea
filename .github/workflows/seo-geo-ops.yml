@@ -5,11 +5,11 @@
       branches:
         - main
       paths:
-        - "src/data/siteTree.ts"
-        - "src/pages/**"
-        - "src/pages/es/**"
-        - "src/data/page-updates.json"
-        - "scripts/sync-page-updates.mjs"
+        - src/data/siteTree.ts
+        - src/pages/**
+        - src/pages/es/**
+        - src/data/page-updates.json
+        - scripts/sync-page-updates.mjs
     workflow_dispatch:
 
   permissions:
@@ -46,45 +46,32 @@
           shell: bash
           run: |
             set -euo pipefail
-
-            changed_generated=false
-            if ! git diff --quiet -- src/data/page-updates.json; then
-              changed_generated=true
-            fi
-
-            changed_in_push=false
-            if [ "${{ github.event_name }}" = "push" ]; then
-              before_sha="${{ github.event.before }}"
-              if [ -n "$before_sha" ] && [ "$before_sha" != "0000000000000000000000000000000000000000" ]; then
-                if ! git diff --quiet "$before_sha" "${{ github.sha }}" -- src/data/page-updates.json; then
-                  changed_in_push=true
-                fi
-              fi
-            fi
-
-            if [ "$changed_generated" = "true" ] || [ "$changed_in_push" = "true" ]; then
-              echo "should_submit=true" >> "$GITHUB_OUTPUT"
-              echo "lastmod changed -> submit sitemap"
-            else
+            if git diff --quiet -- src/data/page-updates.json; then
               echo "should_submit=false" >> "$GITHUB_OUTPUT"
-              echo "no lastmod changes -> skip sitemap submit"
+              echo "no lastmod changes"
+            else
+              echo "should_submit=true" >> "$GITHUB_OUTPUT"
+              echo "lastmod changed"
             fi
 
-        - name: Submit sitemap to Google Search Console
-          if: ${{ steps.detect.outputs.should_submit == 'true' }}
+        - name: Submit sitemap when needed
           shell: bash
           run: |
+            set -euo pipefail
+
+            if [ "${{ steps.detect.outputs.should_submit }}" != "true" ]; then
+              echo "skip: no lastmod change"
+              exit 0
+            fi
+
             if [ -z "$GSC_SITE_URL" ] || [ -z "$GSC_SERVICE_ACCOUNT_KEY_JSON" ]; then
               echo "skip: GSC settings missing"
               exit 0
             fi
 
-            if [ -f scripts/gsc-submit-sitemap.mjs ]; then
-              node scripts/gsc-submit-sitemap.mjs
-            else
+            if [ ! -f scripts/gsc-submit-sitemap.mjs ]; then
               echo "skip: scripts/gsc-submit-sitemap.mjs not found"
+              exit 0
             fi
 
-        - name: Skip submit (no changes)
-          if: ${{ steps.detect.outputs.should_submit != 'true' }}
-          run: echo "skip: no lastmod change"
+            node scripts/gsc-submit-sitemap.mjs

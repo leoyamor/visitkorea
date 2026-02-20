@@ -1,4 +1,4 @@
-﻿  name: SEO GEO Daily Ops
+﻿name: SEO GEO Daily Ops
 
   on:
     schedule:
@@ -36,10 +36,10 @@
           run: npm run build
 
         - name: SEO GEO lint
-          run: npm run seo:lint
+          run: node scripts/seo-geo-lint.mjs
 
         - name: Source watch snapshot refresh
-          run: npm run source:watch:write -- --report src/data/source-watch-report.md
+          run: node scripts/source-watch.mjs --write --report src/data/source-watch-report.md
 
         - name: Submit sitemap to Google Search Console
           if: ${{ env.GSC_SITE_URL != '' && env.GSC_SERVICE_ACCOUNT_KEY_JSON != '' }}

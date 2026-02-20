@@ -1,4 +1,4 @@
-name: SEO GEO Daily Ops
+  name: SEO GEO Daily Ops
 
   'on':
     workflow_dispatch:

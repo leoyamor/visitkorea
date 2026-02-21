@@ -114,7 +114,7 @@ export const siteTree: TreeNode = {
             {
               title: "Option 1-1: Why Choose Busan",
               body:
-                "Within Option 1, Busan works well if you want:",
+                "Busan works well if you want:",
               bullets: [
                 "Ocean views within a city setting",
                 "Beach access without renting a car",
@@ -124,7 +124,7 @@ export const siteTree: TreeNode = {
             {
               title: "Option 1-2: Practical Considerations",
               body:
-                "For Option 1, keep these logistics in mind:",
+                "Keep these logistics in mind:",
               bullets: [
                 "High-speed KTX from Seoul: about 2.5 hours",
                 "One-way fare: roughly $45-50",
@@ -134,7 +134,7 @@ export const siteTree: TreeNode = {
             {
               title: "Option 1-3: Example Three-Day Flow",
               body:
-                "Within Option 1, a balanced 3-day Busan flow may look like this:",
+                "A balanced 3-day Busan flow may look like this:",
               bullets: [
                 "One beach-focused afternoon",
                 "One seafood market and harbor exploration",
@@ -151,7 +151,7 @@ export const siteTree: TreeNode = {
             {
               title: "Option 2-1: Why Choose Jeju",
               body:
-                "Within Option 2, Jeju is ideal if you prefer:",
+                "Jeju is ideal if you prefer:",
               bullets: [
                 "Volcanic landscapes",
                 "Waterfalls and coastal cliffs",
@@ -162,7 +162,7 @@ export const siteTree: TreeNode = {
             {
               title: "Option 2-2: Practical Realities",
               body:
-                "For Option 2, these logistics matter:",
+                "These logistics matter:",
               bullets: [
                 "Flight from Seoul: about 1 hour plus airport procedures",
                 "Rental car strongly recommended",
@@ -172,7 +172,7 @@ export const siteTree: TreeNode = {
             {
               title: "Option 2-3: Example Three-Day Structure",
               body:
-                "Within Option 2, a typical 3-day Jeju structure may include:",
+                "A typical 3-day Jeju structure may include:",
               bullets: [
                 "One coastal scenic drive",
                 "One volcanic or hiking site",

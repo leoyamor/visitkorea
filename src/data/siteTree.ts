@@ -266,15 +266,13 @@ export const siteTree: TreeNode = {
             "This page helps you plan a two-week Korea trip with more variety and less stress.",
           content: [
             {
-              title: "Introduction",
-              icon: "spark",
+              title: "🌟 Introduction",
               emphasis: "Two weeks is the easiest way to enjoy Korea.",
               body:
                 "With fourteen days, you have enough time to explore multiple regions without feeling rushed. You can see more than just highlights. You can slow down. You can stay longer in places that feel right. This guide focuses on structure, not filling every hour.",
             },
             {
-              title: "Why Two Weeks Works So Well",
-              icon: "spark",
+              title: "💡 Why Two Weeks Works So Well",
               emphasis: "Core Idea",
               body: "With two weeks, you can:",
               bullets: [
@@ -285,8 +283,7 @@ export const siteTree: TreeNode = {
               ],
             },
             {
-              title: "The Simple Rule for Two Weeks",
-              icon: "route",
+              title: "🧭 The Simple Rule for Two Weeks",
               emphasis: "Planning Principle",
               body: "Think in three blocks.",
               bullets: [
@@ -297,15 +294,13 @@ export const siteTree: TreeNode = {
               ],
             },
             {
-              title: "First Block: Seoul (5–6 Days)",
-              icon: "city",
+              title: "🏙️ First Block: Seoul (5–6 Days)",
               emphasis: "Why Seoul Deserves Time",
               body:
                 "Seoul is more than a capital city. It is a collection of neighborhoods, each with its own character. Five to six days allows you to explore historic areas, modern districts, markets, and at least one day trip without rushing.",
             },
             {
-              title: "A Realistic Structure",
-              icon: "checklist",
+              title: "🗺️ A Realistic Structure",
               body: "A balanced Seoul stay may include:",
               bullets: [
                 "Two days focused on historic palaces and traditional neighborhoods",
@@ -317,15 +312,13 @@ export const siteTree: TreeNode = {
               ],
             },
             {
-              title: "Second Block: Busan (3–4 Days)",
-              icon: "beach",
+              title: "🌊 Second Block: Busan (3–4 Days)",
               emphasis: "Why Add Busan",
               body:
                 "Busan provides contrast. After Seoul, Busan offers coastal views, seafood markets, and a slower evening atmosphere. Three to four days usually feels right.",
             },
             {
-              title: "What to Expect",
-              icon: "route",
+              title: "📍 What to Expect",
               body: "A simple Busan structure may include:",
               bullets: [
                 "A beach afternoon",
@@ -336,33 +329,28 @@ export const siteTree: TreeNode = {
               ],
             },
             {
-              title: "Third Block: A Slower Region (3–4 Days)",
-              icon: "leaf",
+              title: "🌿 Third Block: A Slower Region (3–4 Days)",
               emphasis: "Purpose of the Final Segment",
               body:
                 "This final block should feel different and more relaxed. Choose based on your travel style. The goal of this third block is balance, not intensity.",
             },
             {
-              title: "Option 1: Jeju Island",
-              icon: "leaf",
+              title: "🏝️ Option 1: Jeju Island",
               body:
                 "Jeju suits travelers who prefer nature and open landscapes. Volcanic terrain, waterfalls, and coastal drives define the experience. A rental car is typically recommended. Three to four days allows for scenic drives and outdoor exploration at a slower pace.",
             },
             {
-              title: "Option 2: Gyeongju",
-              icon: "temple",
+              title: "🏛️ Option 2: Gyeongju",
               body:
                 "Gyeongju is historic and calm. It works well for travelers who enjoy walking between heritage sites in a quieter setting.",
             },
             {
-              title: "Option 3: A Smaller Regional City",
-              icon: "city",
+              title: "🏘️ Option 3: A Smaller Regional City",
               body:
                 "Some travelers prefer finishing their trip in a smaller city with a more local atmosphere.",
             },
             {
-              title: "What Often Goes Wrong",
-              icon: "alert",
+              title: "⚠️ What Often Goes Wrong",
               emphasis: "Common Mistakes",
               body: "Even with two weeks, travelers sometimes:",
               bullets: [
@@ -374,8 +362,7 @@ export const siteTree: TreeNode = {
               ],
             },
             {
-              title: "Transport Reality",
-              icon: "route",
+              title: "🚄 Transport Reality",
               emphasis: "Practical Timing",
               body:
                 "Korea's transport system is efficient, but frequent transfers reduce exploration time. Planning in regional blocks reduces unnecessary travel days.",
@@ -387,8 +374,7 @@ export const siteTree: TreeNode = {
               ],
             },
             {
-              title: "Budget Expectations",
-              icon: "wallet",
+              title: "💸 Budget Expectations",
               emphasis: "General Range",
               body:
                 "Costs vary by style and season, but frequent movement increases expenses. Longer stays in one place help control costs.",
@@ -401,8 +387,7 @@ export const siteTree: TreeNode = {
               ],
             },
             {
-              title: "What You Do Not Need to Decide Immediately",
-              icon: "checklist",
+              title: "📝 What You Do Not Need to Decide Immediately",
               body: "Two weeks allows flexibility. You do not need:",
               bullets: [
                 "Detailed restaurant lists in advance",
@@ -412,8 +397,7 @@ export const siteTree: TreeNode = {
               ],
             },
             {
-              title: "When This Plan Works Best",
-              icon: "compass",
+              title: "✅ When This Plan Works Best",
               body: "This structure works well if:",
               bullets: [
                 "It is your first visit",
@@ -424,14 +408,12 @@ export const siteTree: TreeNode = {
               ],
             },
             {
-              title: "Need Current Information?",
-              icon: "shield",
+              title: "🔎 Need Current Information?",
               body:
                 "Transport schedules, seasonal events, and policies may change. Confirm official sources before final booking decisions.",
             },
             {
-              title: "Bottom Line",
-              icon: "spark",
+              title: "✨ Bottom Line",
               emphasis: "Full, not busy.",
               body:
                 "Three regions. One base per region. No backtracking. If you finish your two weeks feeling relaxed rather than exhausted, your plan was structured correctly.",

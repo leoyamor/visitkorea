@@ -900,7 +900,12 @@ export const siteTree: TreeNode = {
                 "Walk along Cheonggyecheon Stream",
                 "Dine in a modern restaurant district",
                 "The variety is compact. Planning geographically keeps travel time short.",
-                "Seoul works especially well if you:",
+              ],
+            },
+            {
+              title: "✅ Who Seoul Fits Best",
+              body: "Seoul works especially well if you:",
+              bullets: [
                 "Enjoy food culture",
                 "Prefer public transport over driving",
                 "Want both traditional and modern experiences",

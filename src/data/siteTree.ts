@@ -266,95 +266,175 @@ export const siteTree: TreeNode = {
             "This page helps you plan a two-week Korea trip with more variety and less stress.",
           content: [
             {
-              title: "2 Weeks in Korea",
-              icon: "calendar",
+              title: "Introduction",
+              icon: "spark",
               emphasis: "Two weeks is the easiest way to enjoy Korea.",
               body:
-                "You have time to see more than highlights without feeling rushed or exhausted. This guide helps you choose a smart structure, not fill every day.",
+                "With fourteen days, you have enough time to explore multiple regions without feeling rushed. You can see more than just highlights. You can slow down. You can stay longer in places that feel right. This guide focuses on structure, not filling every hour.",
             },
             {
-              title: "Why two weeks works so well",
+              title: "Why Two Weeks Works So Well",
               icon: "spark",
-              emphasis: "Structure beats more planning.",
+              emphasis: "Core Idea",
               body: "With two weeks, you can:",
               bullets: [
-                "Visit more than one region",
-                "Add rest days naturally",
-                "Enjoy food and neighborhoods, not just sights",
+                "Visit more than one region without constant transfers",
+                "Add natural rest days",
+                "Enjoy neighborhoods and food, not just major sights",
+                "More time should mean deeper experiences, not more cities.",
               ],
             },
             {
-              title: "The simple rule for 2 weeks",
+              title: "The Simple Rule for Two Weeks",
               icon: "route",
-              emphasis: "Think in three blocks.",
-              body:
-                "Three regions. One main base per region. No backtracking. That's all you need.",
-            },
-            {
-              title: "First: Seoul (5-6 days)",
-              icon: "city",
-              emphasis: "Seoul deserves time.",
-              body:
-                "Transport is easy, neighborhoods are varied, and day trips are simple. Rushing Seoul usually leads to fatigue.",
-            },
-            {
-              title: "Second: Busan (3-4 days)",
-              icon: "beach",
-              emphasis: "Busan adds contrast.",
-              body:
-                "Beaches, fresh seafood, slower evenings, and a relaxed coastal vibe. If you’re spending two weeks in Korea, allocating 3–4 days to Busan usually feels just right.",
-            },
-            {
-              title: "Third: One place to slow down (3–4 days)",
-              icon: "leaf",
-              emphasis: "Keep this part relaxed and flexible.",
-              body: "Choose one based on your style:",
+              emphasis: "Planning Principle",
+              body: "Think in three blocks.",
               bullets: [
-                "Jeju -> nature and driving",
-                "Gyeongju -> history and calm walks",
-                "Smaller city -> local atmosphere",
+                "Three regions.",
+                "One main base per region.",
+                "No backtracking.",
+                "This keeps your route efficient and your energy stable.",
               ],
             },
             {
-              title: "What often goes wrong",
+              title: "First Block: Seoul (5–6 Days)",
+              icon: "city",
+              emphasis: "Why Seoul Deserves Time",
+              body:
+                "Seoul is more than a capital city. It is a collection of neighborhoods, each with its own character. Five to six days allows you to explore historic areas, modern districts, markets, and at least one day trip without rushing.",
+            },
+            {
+              title: "A Realistic Structure",
+              icon: "checklist",
+              body: "A balanced Seoul stay may include:",
+              bullets: [
+                "Two days focused on historic palaces and traditional neighborhoods",
+                "One or two days exploring modern districts and shopping areas",
+                "One evening dedicated to street food and night views",
+                "One organized day trip outside the city",
+                "One flexible day for slower exploration",
+                "Staying in one hotel during this block keeps the experience smooth.",
+              ],
+            },
+            {
+              title: "Second Block: Busan (3–4 Days)",
+              icon: "beach",
+              emphasis: "Why Add Busan",
+              body:
+                "Busan provides contrast. After Seoul, Busan offers coastal views, seafood markets, and a slower evening atmosphere. Three to four days usually feels right.",
+            },
+            {
+              title: "What to Expect",
+              icon: "route",
+              body: "A simple Busan structure may include:",
+              bullets: [
+                "A beach afternoon",
+                "A seafood market or harbor visit",
+                "A scenic or cultural neighborhood",
+                "Relaxed evenings without strict scheduling",
+                "The high-speed train from Seoul takes about 2.5 hours, making Busan a practical second region.",
+              ],
+            },
+            {
+              title: "Third Block: A Slower Region (3–4 Days)",
+              icon: "leaf",
+              emphasis: "Purpose of the Final Segment",
+              body:
+                "This final block should feel different and more relaxed. Choose based on your travel style. The goal of this third block is balance, not intensity.",
+            },
+            {
+              title: "Option 1: Jeju Island",
+              icon: "leaf",
+              body:
+                "Jeju suits travelers who prefer nature and open landscapes. Volcanic terrain, waterfalls, and coastal drives define the experience. A rental car is typically recommended. Three to four days allows for scenic drives and outdoor exploration at a slower pace.",
+            },
+            {
+              title: "Option 2: Gyeongju",
+              icon: "temple",
+              body:
+                "Gyeongju is historic and calm. It works well for travelers who enjoy walking between heritage sites in a quieter setting.",
+            },
+            {
+              title: "Option 3: A Smaller Regional City",
+              icon: "city",
+              body:
+                "Some travelers prefer finishing their trip in a smaller city with a more local atmosphere.",
+            },
+            {
+              title: "What Often Goes Wrong",
               icon: "alert",
-              emphasis: "More time does not mean more cities.",
-              body: "Even with two weeks, travelers still:",
+              emphasis: "Common Mistakes",
+              body: "Even with two weeks, travelers sometimes:",
               bullets: [
                 "Add too many cities",
-                "Change hotels too often",
-                "Travel back and forth unnecessarily",
+                "Change hotels frequently",
+                "Travel back and forth between regions",
+                "Schedule every day tightly",
+                "Two weeks works best when movement is limited and stays are longer.",
               ],
             },
             {
-              title: "What you don't need to decide yet",
+              title: "Transport Reality",
+              icon: "route",
+              emphasis: "Practical Timing",
+              body:
+                "Korea's transport system is efficient, but frequent transfers reduce exploration time. Planning in regional blocks reduces unnecessary travel days.",
+              bullets: [
+                "Typical travel times:",
+                "Seoul to Busan by high-speed train: about 2.5 hours",
+                "Seoul to Jeju by flight: about 1 hour plus airport procedures",
+                "Airport to central Seoul: roughly 45-60 minutes",
+              ],
+            },
+            {
+              title: "Budget Expectations",
+              icon: "wallet",
+              emphasis: "General Range",
+              body:
+                "Costs vary by style and season, but frequent movement increases expenses. Longer stays in one place help control costs.",
+              bullets: [
+                "Typical mid-range estimates:",
+                "Hotels: approximately $80-180 per night",
+                "High-speed train: about $45-50 one way",
+                "Flights to Jeju: seasonal variation",
+                "Food: flexible based on preference",
+              ],
+            },
+            {
+              title: "What You Do Not Need to Decide Immediately",
               icon: "checklist",
-              emphasis: "Decide as you go.",
-              body: "Two weeks gives you room to choose later.",
+              body: "Two weeks allows flexibility. You do not need:",
               bullets: [
-                "Exact attractions",
-                "Restaurant lists",
-                "Daily schedules",
+                "Detailed restaurant lists in advance",
+                "Exact daily attraction schedules",
+                "Hour-by-hour plans",
+                "Set your regional structure first. Refine details later.",
               ],
             },
             {
-              title: "Need current details?",
+              title: "When This Plan Works Best",
+              icon: "compass",
+              body: "This structure works well if:",
+              bullets: [
+                "It is your first visit",
+                "You prefer balance over speed",
+                "You value rest between travel days",
+                "You want depth rather than constant movement",
+                "Two weeks should feel full, not packed.",
+              ],
+            },
+            {
+              title: "Need Current Information?",
               icon: "shield",
-              emphasis: "Always confirm with official sources.",
               body:
-                "Transport routes, schedules, and prices can change. Use this site to decide, then confirm with official sources.",
-              bullets: [
-                "Official transport websites",
-                "City tourism offices",
-                "Airport or government pages",
-              ],
+                "Transport schedules, seasonal events, and policies may change. Confirm official sources before final booking decisions.",
             },
             {
-              title: "Bottom line",
+              title: "Bottom Line",
               icon: "spark",
-              emphasis: "Full, not packed.",
+              emphasis: "Full, not busy.",
               body:
-                "Two weeks feels best when the trip is full, not busy. If you finish relaxed, you planned it right.",
+                "Three regions. One base per region. No backtracking. If you finish your two weeks feeling relaxed rather than exhausted, your plan was structured correctly.",
             },
           ],
         },

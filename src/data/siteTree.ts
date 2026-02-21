@@ -37,78 +37,156 @@ export const siteTree: TreeNode = {
           image: "planning",
           description: "A one-week travel plan that actually works.",
           quickAnswer:
-            "This page helps you decide how to spend one week in Korea without rushing or overplanning.",
+            "This page helps you structure a smart 7-day Korea trip with two bases, less stress, and better balance.",
           content: [
             {
-              title: "7 Days in Korea",
-              icon: "calendar",
-              emphasis: "Seven days is short. That's okay.",
+              title: "🗓️ 7 Days in Korea",
+              emphasis: "Seven days is short. That's fine.",
               body:
-                "You cannot see all of Korea in one week. A great trip is not about more stops. It is about better choices.",
+                "You cannot see all of Korea in one week. The goal is not to see everything. The goal is to travel well. A good 7-day trip is about smart structure, not maximum stops.",
             },
             {
-              title: "The decision that saves your entire trip",
-              icon: "spark",
+              title: "🎯 The decision that saves your trip",
               emphasis: "Choose two places. Not three.",
               body:
-                "Pick one main city and one contrast city. More stops mean rushing, packing, and higher costs with less joy.",
+                "Pick one main city and one contrast destination. More stops mean more packing, more transport time, and more hotel changes. In one week, that usually leads to stress. Two bases give you balance and breathing room.",
+              bullets: ["One main city", "One contrast destination"],
             },
             {
-              title: "Days 1-4: Seoul (stay in one hotel)",
-              icon: "city",
-              emphasis: "Stay in one area. Explore by neighborhood.",
+              title: "🏙️ Days 1-4: Seoul (Stay in One Hotel)",
+              emphasis: "Seoul is the easiest first base for international travelers.",
               body:
-                "Seoul is the easiest first base. Airport access is simple, transit is excellent, and food, culture, shopping, and day trips are all close. Move around the city, not your hotel.",
-            },
-            {
-              title: "Days 5-7: Pick ONE contrast city",
-              icon: "route",
-              emphasis: "City comfort or nature?",
-              body:
-                "City + beach + food -> Busan. Nature + driving + wide views -> Jeju. Pick one. Trying to fit both in one week usually backfires.",
-            },
-            {
-              title: "What usually goes wrong (avoid this)",
-              icon: "alert",
-              emphasis: "Looks good online. Feels bad in real life.",
-              body: "These are the usual traps:",
+                "Stay in one neighborhood. Move around the city, not your suitcase.",
               bullets: [
-                "Seoul + Busan + Jeju in 7 days",
+                "Direct airport train from Incheon (AREX)",
+                "Clear English signage",
+                "Excellent public transportation",
+                "Huge range of food options",
+                "Easy day trips",
+              ],
+            },
+            {
+              title: "📍 Good base areas in Seoul",
+              emphasis: "Pick one area and settle in.",
+              body: "These neighborhoods are practical for first-time visitors:",
+              bullets: ["Myeongdong (central, convenient)", "Hongdae (younger vibe)", "Insadong (traditional atmosphere)", "Gangnam (modern and spacious)"],
+            },
+            {
+              title: "🗺️ What 4 days in Seoul can include",
+              emphasis: "Plan by area, not by minute.",
+              body:
+                "Four days lets you explore at a relaxed pace. You do not need to schedule every hour.",
+              bullets: [
+                "Historic palaces and traditional neighborhoods",
+                "Modern shopping districts",
+                "Street food and local restaurants",
+                "A possible DMZ or nearby day trip",
+              ],
+            },
+            {
+              title: "🧭 Days 5-7: Pick ONE Contrast Destination",
+              emphasis: "Now choose your second base.",
+              body:
+                "Choose either Busan or Jeju. Trying to do Seoul + Busan + Jeju in 7 days usually backfires because travel time eats your trip.",
+            },
+            {
+              title: "🌊 Option 1: Busan",
+              emphasis: "City + Beach + Seafood",
+              body:
+                "Busan works well if you want a different city feel, beach walks without renting a car, and urban convenience with ocean views.",
+              bullets: [
+                "Best for coastal views and a relaxed city atmosphere",
+                "Great seafood markets and easy beach access",
+                "KTX connection from Seoul is about 2.5 hours",
+              ],
+            },
+            {
+              title: "🌿 Option 2: Jeju Island",
+              emphasis: "Nature + Scenic Drives + Open Space",
+              body:
+                "Jeju works well if you prefer nature over cities, are comfortable driving abroad, and want wide open scenery.",
+              bullets: [
+                "Best for volcanic landscapes, waterfalls, and cliffs",
+                "Good fit for a slower pace and outdoor activities",
+                "Usually needs a rental car (public transport is limited)",
+                "Domestic flight from Seoul is about 1 hour (plus airport time)",
+              ],
+            },
+            {
+              title: "⚠️ What Usually Goes Wrong",
+              emphasis: "More plans do not mean a better trip.",
+              body: "These are common mistakes first-time visitors make:",
+              bullets: [
+                "Too many cities in one week",
                 "Changing hotels every 1-2 nights",
-                "Planning every hour instead of every day",
-                "More plans don't mean a better trip",
+                "Planning hour-by-hour schedules",
+                "Underestimating travel time between regions",
+                "Ignoring jet lag on arrival day",
               ],
             },
             {
-              title: "What you don't need to decide yet",
-              icon: "checklist",
-              emphasis: "Skip the micro-planning.",
+              title: "📝 What You Don't Need to Decide Yet",
+              emphasis: "Decide the structure first.",
               body:
-                "Decide the shape of your trip first. Details can wait.",
+                "Before booking, decide the structure. Details can come later.",
               bullets: [
-                "Exact attractions",
-                "Restaurant lists",
-                "Hour-by-hour schedules",
+                "You do not need full restaurant lists, exact attraction schedules, or hour-by-hour plans",
+                "First choose 2 bases",
+                "Set a rough day allocation",
+                "Plan transport between them",
               ],
             },
             {
-              title: "Need updated information?",
-              icon: "shield",
+              title: "🚄 Transport Reality Check",
+              emphasis: "Travel is efficient, but not instant.",
+              body:
+                "Every transfer day reduces sightseeing time. Keep transfers minimal.",
+              bullets: [
+                "Seoul -> Busan: High-speed train about 2.5 hours",
+                "Seoul -> Jeju: About 1 hour flight plus airport time",
+                "Airport arrival -> city center: about 45-60 minutes",
+              ],
+            },
+            {
+              title: "💸 Budget Expectations (Rough Guide)",
+              emphasis: "Mid-range costs add up fast with extra moves.",
+              body:
+                "Spreading your stay across too many cities increases transport and hotel costs.",
+              bullets: [
+                "Hotels: $80-180 per night (city average)",
+                "Intercity train: $50-70 one way (KTX)",
+                "Domestic flight to Jeju: varies by season",
+                "Daily food: flexible (street food to fine dining)",
+              ],
+            },
+            {
+              title: "✅ When This 7-Day Plan Works Best",
+              emphasis: "This structure is ideal if:",
+              body: "It works especially well for first-time visitors.",
+              bullets: [
+                "It's your first time in Korea",
+                "You want balance, not exhaustion",
+                "You prefer depth over speed",
+                "You value comfort and flexibility",
+              ],
+            },
+            {
+              title: "🔎 Need Updated Information?",
               emphasis: "Always confirm with official sources.",
               body:
-                "Schedules, prices, and seasonal options can change. Use this site to decide, then confirm with official sources.",
+                "Transport schedules, seasonal festivals, and ticket prices can change. Use this guide to decide the structure, then confirm details before booking.",
               bullets: [
-                "Official transport websites",
+                "Official railway website",
+                "Airline websites",
+                "Airport information pages",
                 "City tourism offices",
-                "Airport or government pages",
               ],
             },
             {
-              title: "Bottom line",
-              icon: "spark",
+              title: "✨ Bottom Line",
               emphasis: "Balanced beats busy.",
               body:
-                "A great 7-day trip feels calm and flexible. If you finish relaxed, you planned it right.",
+                "Two bases. One clear plan. Enough flexibility. Seven days is short, but if structured well, it's more than enough for a meaningful first trip to Korea. If you finish your trip feeling relaxed, you planned it correctly.",
             },
           ],
         },

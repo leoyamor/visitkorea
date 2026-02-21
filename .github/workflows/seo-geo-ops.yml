@@ -1,0 +1,86 @@
+name: Submit Sitemap On Real Lastmod Change
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "src/data/siteTree.ts"
+      - "src/pages/**"
+      - "src/pages/es/**"
+      - "src/data/page-updates.json"
+      - "scripts/sync-page-updates.mjs"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  submit-if-lastmod-changed:
+    if: ${{ vars.AUTO_SITEMAP_SUBMIT_ENABLED == 'true' }}
+    runs-on: ubuntu-latest
+    env:
+      GSC_SITE_URL: ${{ vars.GSC_SITE_URL }}
+      GSC_SERVICE_ACCOUNT_KEY_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_KEY_JSON }}
+      GSC_SITEMAP_URL: ${{ vars.GSC_SITEMAP_URL }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Sync page updates
+        run: npm run page-updates:sync
+
+      - name: Detect page lastmod change
+        id: detect
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          changed_generated=false
+          if ! git diff --quiet -- src/data/page-updates.json; then
+            changed_generated=true
+          fi
+
+          changed_in_push=false
+          if [ "${{ github.event_name }}" = "push" ]; then
+            before_sha="${{ github.event.before }}"
+            if [ -n "$before_sha" ] && [ "$before_sha" != "0000000000000000000000000000000000000000" ]; then
+              if ! git diff --quiet "$before_sha" "${{ github.sha }}" -- src/data/page-updates.json; then
+                changed_in_push=true
+              fi
+            fi
+          fi
+
+          if [ "$changed_generated" = "true" ] || [ "$changed_in_push" = "true" ]; then
+            echo "should_submit=true" >> "$GITHUB_OUTPUT"
+            echo "lastmod changed -> submit sitemap"
+          else
+            echo "should_submit=false" >> "$GITHUB_OUTPUT"
+            echo "no lastmod changes -> skip sitemap submit"
+          fi
+
+      - name: Submit sitemap to Google Search Console
+        if: steps.detect.outputs.should_submit == 'true' && env.GSC_SITE_URL != '' && env.GSC_SERVICE_ACCOUNT_KEY_JSON != ''
+        shell: bash
+        run: |
+          if [ -f scripts/gsc-submit-sitemap.mjs ]; then
+            node scripts/gsc-submit-sitemap.mjs
+          else
+            echo "skip: scripts/gsc-submit-sitemap.mjs not found"
+          fi
+
+      - name: Skip submit (no changes or missing secrets)
+        if: steps.detect.outputs.should_submit != 'true' || env.GSC_SITE_URL == '' || env.GSC_SERVICE_ACCOUNT_KEY_JSON == ''
+        run: echo "skip: no lastmod change or GSC settings missing"

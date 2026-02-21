@@ -40,10 +40,9 @@ export const siteTree: TreeNode = {
             "This page helps you build a balanced 7-day Korea trip with two bases, realistic pacing, and minimal hotel changes.",
           content: [
             {
-              title: "7 Days in Korea",
-              emphasis: "Seven days is short. That is not a problem.",
+              title: "Seven days is short. That is not a problem.",
               body:
-                "You cannot see all of Korea in one week. The goal is not to see everything. The goal is to structure your time so the trip feels balanced, manageable, and realistic. A successful 7-day trip in Korea depends on structure, not speed.",
+                "You cannot see all of Korea in one week. The goal is not to see everything. The goal is to structure your time so the trip feels balanced, manageable, and realistic. If this is your first visit, you may want to review the basics in First Time in Korea. A successful 7-day trip in Korea depends on structure, not speed.",
               bullets: [
                 "First Time in Korea: https://planmykorea.com/plan-your-trip/first-time-in-korea/",
               ],
@@ -54,6 +53,7 @@ export const siteTree: TreeNode = {
               body:
                 "Many first-time visitors attempt Seoul + Busan + Jeju in one week. On a map, it looks efficient. In reality, it creates repeated packing, lost hours in transit, and reduced exploration time. In seven days, every transfer day costs you part of the experience.",
               bullets: [
+                "The structure that consistently works:",
                 "One main city",
                 "One contrast destination",
                 "This gives you depth without exhaustion.",
@@ -65,6 +65,7 @@ export const siteTree: TreeNode = {
               body:
                 "Stay in one neighborhood for four nights. Move around the city - not your luggage. Public transportation is simple to use.",
               bullets: [
+                "It offers:",
                 "Direct airport rail from Incheon (AREX)",
                 "Clear English signage",
                 "Extensive and reliable subway coverage",
@@ -99,13 +100,14 @@ export const siteTree: TreeNode = {
                 "One organized day trip (DMZ or a nearby city)",
                 "One flexible half-day for unplanned discovery",
                 "Must-See for First Timers: https://planmykorea.com/things-to-do/must-see-for-first-timers/",
+                "You do not need hour-by-hour scheduling. Seoul rewards structured flexibility.",
               ],
             },
             {
               title: "Days 5-7: Choose One Contrast Destination",
               emphasis: "After Seoul, select one contrasting environment.",
               body:
-                "The two most practical options are Busan and Jeju Island. Trying to include both within seven days usually reduces overall enjoyment.",
+                "The two most practical options are Busan and Jeju Island. If you are still deciding, compare cities in Which City Fits You Best?. Trying to include both within seven days usually reduces overall enjoyment.",
               bullets: [
                 "Which City Fits You Best?: https://planmykorea.com/choose-a-city/which-city-fits-you-best/",
               ],
@@ -114,28 +116,45 @@ export const siteTree: TreeNode = {
               title: "Option 1: Busan",
               emphasis: "City, coast, and seafood",
               body:
-                "Busan works well if you want ocean views within a city setting, beach access without renting a car, and a relaxed atmosphere with urban convenience. Busan provides contrast without complicated logistics.",
+                "Busan works well if you want:",
               bullets: [
+                "Ocean views within a city setting",
+                "Beach access without renting a car",
+                "A relaxed atmosphere with urban convenience",
                 "Busan City Guide: https://planmykorea.com/choose-a-city/busan/",
+                "Practical considerations:",
                 "High-speed KTX from Seoul: about 2.5 hours",
-                "Typical one-way fare: roughly $45-50",
+                "Typical one-way fare: roughly $50-70",
                 "Beaches and major attractions reachable by public transport",
                 "Where to Stay in Busan: https://planmykorea.com/where-to-stay/where-to-stay-in-busan/",
-                "A simple 3-day Busan flow: one beach-focused afternoon, one seafood market and harbor exploration, one cultural or scenic neighborhood visit",
+                "A simple 3-day Busan flow might include:",
+                "One beach-focused afternoon",
+                "One seafood market and harbor exploration",
+                "One cultural or scenic neighborhood visit",
+                "Busan provides contrast without complicated logistics.",
               ],
             },
             {
               title: "Option 2: Jeju Island",
               emphasis: "Nature and open landscapes",
               body:
-                "Jeju is ideal if you prefer volcanic landscapes, waterfalls, coastal cliffs, outdoor exploration, and a slower pace. Jeju works best for travelers comfortable driving abroad and planning flexible days.",
+                "Jeju is ideal if you prefer:",
               bullets: [
+                "Volcanic landscapes",
+                "Waterfalls and coastal cliffs",
+                "Outdoor exploration",
+                "A slower pace",
                 "Jeju City Guide: https://planmykorea.com/choose-a-city/jeju/",
+                "Practical realities:",
                 "Flight from Seoul: about 1 hour plus airport procedures",
                 "Rental car strongly recommended",
                 "Public transport limited outside main towns",
                 "Renting a Car in Korea: https://planmykorea.com/getting-around-korea/renting-a-car/",
-                "A typical 3-day Jeju structure: one coastal scenic drive, one volcanic or hiking site, one waterfall or cliff area",
+                "A typical 3-day Jeju structure may include:",
+                "One coastal scenic drive",
+                "One volcanic or hiking site",
+                "One waterfall or cliff area",
+                "Jeju works best for travelers comfortable driving abroad and planning flexible days.",
               ],
             },
             {
@@ -146,7 +165,7 @@ export const siteTree: TreeNode = {
                 "Visiting three cities in one week",
                 "Changing hotels every one or two nights",
                 "Over-scheduling arrival day",
-                "Ignoring jet lag on arrival day",
+                "Ignoring jet lag",
                 "Underestimating regional transfer time",
                 "Efficiency improves experience quality.",
               ],
@@ -157,6 +176,7 @@ export const siteTree: TreeNode = {
               body:
                 "Plan transfer days as partial sightseeing days.",
               bullets: [
+                "Approximate travel times:",
                 "Incheon Airport to central Seoul: 45-60 minutes",
                 "Seoul to Busan by KTX: about 2.5 hours",
                 "Seoul to Jeju: 1 hour flight plus airport procedures",
@@ -168,11 +188,13 @@ export const siteTree: TreeNode = {
               body:
                 "The hidden cost of a 7-day trip is usually over-moving, not meals.",
               bullets: [
+                "Mid-range accommodation averages:",
                 "Seoul: approximately $80-180 per night",
                 "Busan: similar range",
                 "Jeju: varies by season and rental car needs",
                 "How Much Does It Cost?: https://planmykorea.com/things-to-do/how-much-does-it-cost/",
-                "KTX one way: about $45-50",
+                "Intercity transport:",
+                "KTX one way: about $50-70",
                 "Domestic flight to Jeju: seasonal variation",
                 "Food spending is flexible, from inexpensive street food to premium dining",
                 "Food for First Timers: https://planmykorea.com/what-to-eat/food-for-first-timers/",

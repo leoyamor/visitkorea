@@ -40,13 +40,13 @@ export const siteTree: TreeNode = {
             "This page helps you build a balanced 7-day Korea trip with two bases, realistic pacing, and minimal hotel changes.",
           content: [
             {
-              title: "Introduction",
+              title: "🌟 Introduction",
               emphasis: "Seven days is short. That is not a problem.",
               body:
                 "You cannot see all of Korea in one week. The goal is not to see everything. The goal is to travel well. A strong 7-day trip is built on structure, not speed.",
             },
             {
-              title: "The Decision That Saves Your Trip",
+              title: "🎯 The Decision That Saves Your Trip",
               emphasis: "Core Principle",
               body:
                 "Choose two places. Not three. Many first-time visitors try to fit Seoul, Busan, and Jeju into one week. On a map, it looks efficient. In practice, it creates repeated packing, transfer days, and reduced exploration time. In seven days, every move costs you part of the experience.",
@@ -62,7 +62,7 @@ export const siteTree: TreeNode = {
               ],
             },
             {
-              title: "Days 1–4: Seoul (Stay in One Hotel)",
+              title: "🏙️ Days 1–4: Seoul (Stay in One Hotel)",
               emphasis: "Why Start in Seoul",
               body:
                 "Seoul is the most practical starting point for international travelers. Stay in one neighborhood for four nights. Move around the city, not your suitcase. Public transportation is extensive and easy to use. Changing hotels within Seoul rarely improves your trip. Seoul offers:",
@@ -75,7 +75,7 @@ export const siteTree: TreeNode = {
               ],
             },
             {
-              title: "Practical Areas to Stay",
+              title: "📍 Practical Areas to Stay",
               emphasis: "Choose one base and remain there.",
               body:
                 "Pick one. Stay there. Explore outward.",
@@ -87,7 +87,7 @@ export const siteTree: TreeNode = {
               ],
             },
             {
-              title: "What Four Days Can Realistically Include",
+              title: "🗺️ What Four Days Can Realistically Include",
               emphasis: "Plan by area, not by minute.",
               body:
                 "Four days allows exploration at a balanced pace. You do not need hour-by-hour scheduling.",
@@ -100,13 +100,13 @@ export const siteTree: TreeNode = {
               ],
             },
             {
-              title: "Days 5–7: Choose One Contrast Destination",
+              title: "🧭 Days 5–7: Choose One Contrast Destination",
               emphasis: "After Seoul, select one contrasting environment.",
               body:
                 "The two most practical options are Busan and Jeju Island. Including both within seven days usually reduces overall enjoyment due to travel time.",
             },
             {
-              title: "Option 1: Busan",
+              title: "🌊 Option 1: Busan",
               emphasis: "Overview",
               body:
                 "Busan combines city energy with coastal scenery.",
@@ -143,7 +143,7 @@ export const siteTree: TreeNode = {
               ],
             },
             {
-              title: "Option 2: Jeju Island",
+              title: "🏝️ Option 2: Jeju Island",
               emphasis: "Overview",
               body:
                 "Jeju offers natural landscapes and open space.",
@@ -181,7 +181,7 @@ export const siteTree: TreeNode = {
               ],
             },
             {
-              title: "What Usually Goes Wrong",
+              title: "⚠️ What Usually Goes Wrong",
               emphasis: "More plans do not mean a better trip.",
               body: "Common first-time mistakes include:",
               bullets: [
@@ -194,7 +194,7 @@ export const siteTree: TreeNode = {
               ],
             },
             {
-              title: "Transport Reality Check",
+              title: "🚄 Transport Reality Check",
               emphasis: "Korea's transport system is efficient, but not instant.",
               body:
                 "Every transfer day reduces sightseeing time. Plan transfer days as partial sightseeing days.",
@@ -206,7 +206,7 @@ export const siteTree: TreeNode = {
               ],
             },
             {
-              title: "Budget Expectations (Rough Guide)",
+              title: "💸 Budget Expectations (Rough Guide)",
               emphasis: "Frequent movement increases costs.",
               body:
                 "The hidden cost of a one-week trip is usually over-moving, not meals.",
@@ -219,7 +219,7 @@ export const siteTree: TreeNode = {
               ],
             },
             {
-              title: "Decide Structure First",
+              title: "📝 Decide Structure First",
               emphasis: "Framework first. Details later.",
               body:
                 "Before booking:",
@@ -232,7 +232,7 @@ export const siteTree: TreeNode = {
               ],
             },
             {
-              title: "When This Plan Works Best",
+              title: "✅ When This Plan Works Best",
               emphasis: "This structure is ideal if:",
               body:
                 "Seven days is short, but structured correctly, it is enough.",
@@ -249,7 +249,7 @@ export const siteTree: TreeNode = {
                 "Transport schedules and policies may change. Confirm official sources before final booking decisions.",
             },
             {
-              title: "Bottom Line",
+              title: "✨ Bottom Line",
               emphasis: "Balanced beats busy.",
               body:
                 "Two bases. One clear structure. Minimal hotel changes. If you return home feeling rested instead of rushed, your 7-day Korea trip was structured correctly.",

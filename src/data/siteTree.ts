@@ -430,93 +430,169 @@ export const siteTree: TreeNode = {
             "This page helps you decide how to slow down and enjoy Korea during a long stay.",
           content: [
             {
-              title: "1 Month in Korea",
-              icon: "calendar",
-              emphasis: "A month is about living better, not seeing more.",
+              title: "🌟 Introduction",
+              emphasis: "A month in Korea is about living better, not seeing more.",
               body:
-                "This guide helps you use a month comfortably without turning your trip into a long to-do list.",
+                "With four weeks, your trip stops feeling like a checklist and begins to feel like temporary daily life. This guide helps you structure a long stay comfortably, without turning it into an extended to-do list.",
             },
             {
-              title: "The key mindset for a 1-month trip",
-              icon: "spark",
-              emphasis: "Stop thinking in days. Start thinking in weeks.",
-              body: "A good long stay has:",
+              title: "🧠 The Key Mindset for a One-Month Trip",
+              emphasis: "Core Perspective",
+              body:
+                "Stop thinking in days. Start thinking in weeks. Short trips reward tight scheduling. A month rewards rhythm and familiarity. A well-structured long stay usually includes:",
               bullets: [
                 "Fewer cities",
-                "Longer stays",
-                "Repeated routines",
+                "Longer stays in each location",
+                "Repeated daily routines",
+                "Built-in flexibility",
+                "The goal is comfort, not constant novelty.",
               ],
             },
             {
-              title: "The simple rule that works",
-              icon: "route",
-              emphasis: "Pick 2 or 3 home bases.",
+              title: "🧭 The Simple Rule That Works",
+              emphasis: "Planning Principle",
               body:
-                "Stay long enough to feel familiar. Anything more usually leads to fatigue.",
+                "Pick two or three home bases. Stay long enough in each location to recognize streets, cafes, and transport routes. Anything more than three bases in a month often creates unnecessary fatigue. Longer stays reduce decision stress and increase comfort.",
             },
             {
-              title: "Weeks 1-2: Seoul",
-              icon: "city",
-              emphasis: "Seoul is the best long-stay base.",
+              title: "🏙️ Weeks 1–2: Seoul as Your Main Base",
+              emphasis: "Why Seoul Works for Long Stays",
               body:
-                "Daily life is easy, public transport is efficient, and the neighborhoods feel almost endless. After two weeks, the city begins to feel familiar rather than overwhelming.",
+                "Seoul is the most practical long-stay base. Daily life is easy. Public transport is efficient. Neighborhoods are diverse and well connected. After two weeks, the city feels familiar rather than overwhelming.",
             },
             {
-              title: "Week 3: One nature or coastal city",
-              icon: "leaf",
-              emphasis: "Change the rhythm.",
-              body: "This week is about space, not sightseeing.",
+              title: "🗓️ How to Use Two Weeks in Seoul",
+              body: "Fourteen days allows you to:",
               bullets: [
-                "Busan -> sea, walks, slower evenings",
-                "Jeju -> nature, driving, quiet mornings",
+                "Explore historic districts at a relaxed pace",
+                "Spend time in modern neighborhoods without rushing",
+                "Revisit areas you enjoy",
+                "Include one or two day trips",
+                "Add genuine rest days",
+                "The repetition of daily routines transforms the experience from tourism into temporary living.",
               ],
             },
             {
-              title: "Week 4: One smaller or calmer city",
-              icon: "temple",
-              emphasis: "Finish somewhere relaxed.",
-              body: "Fewer plans. More comfort.",
+              title: "🌿 Week 3: Change the Rhythm",
+              emphasis: "Purpose of the Third Week",
+              body:
+                "After two weeks in the capital, shift to space and slower surroundings. This week is about atmosphere rather than maximizing attractions.",
+            },
+            {
+              title: "🌊 Option 1: Busan",
+              body:
+                "Busan offers sea views, coastal walks, and calmer evenings. It maintains city comfort while changing the setting. A week here might include:",
               bullets: [
-                "Gyeongju -> history and bike-friendly paths",
-                "Jeonju -> food and traditional streets",
-                "Smaller regional city -> local pace",
+                "Morning beach walks",
+                "Casual market visits",
+                "Neighborhood exploration",
+                "Evenings without fixed plans",
+                "The pace naturally softens.",
               ],
             },
             {
-              title: "What often goes wrong",
-              icon: "alert",
-              emphasis: "Treating a long stay like a tour leads to burnout.",
-              body: "Even with a month, travelers:",
+              title: "🏝️ Option 2: Jeju Island",
+              body:
+                "Jeju suits travelers who prefer open landscapes and quiet mornings. A rental car is typically recommended, allowing flexible exploration. This week can focus on:",
               bullets: [
-                "Move cities too often",
-                "Plan sightseeing every day",
-                "Treat a long stay like a tour",
+                "Scenic coastal drives",
+                "Light outdoor activities",
+                "Unstructured afternoons",
+                "The change in environment resets your energy.",
               ],
             },
             {
-              title: "What you don't need to plan early",
-              icon: "checklist",
-              emphasis: "Long trips work best with flexibility.",
-              body: "You don’t need to lock in:",
+              title: "🧘 Week 4: Finish Somewhere Calmer",
+              emphasis: "Ending the Trip Comfortably",
+              body:
+                "The final week should feel lighter than the previous ones. Choose a location that simplifies daily life and reduces stimulation.",
+            },
+            {
+              title: "🏛️ Option 1: Gyeongju",
+              body:
+                "Gyeongju is compact and historic, suitable for relaxed walks and bike-friendly exploration.",
+            },
+            {
+              title: "🍲 Option 2: Jeonju",
+              body:
+                "Jeonju offers food culture and traditional streets in a manageable setting.",
+            },
+            {
+              title: "🏘️ Option 3: A Smaller Regional City",
+              body:
+                "Finishing in a lesser-known city often creates a more local and restorative final week. The purpose of this final block is comfort, not intensity.",
+            },
+            {
+              title: "⚠️ What Often Goes Wrong",
+              emphasis: "Common Long-Stay Mistakes",
+              body:
+                "Treating a one-month stay like a long tour leads to burnout. Even with four weeks, travelers sometimes:",
+              bullets: [
+                "Move cities too frequently",
+                "Schedule sightseeing every day",
+                "Treat each week as a separate short trip",
+                "Change accommodations too often",
+                "Stability improves experience quality.",
+              ],
+            },
+            {
+              title: "☕ Daily Life Considerations",
+              emphasis: "Living, Not Touring",
+              body:
+                "Long stays introduce practical routines. You may begin to think about:",
+              bullets: [
+                "Laundry and grocery habits",
+                "Regular cafes or workspaces",
+                "Familiar transport routes",
+                "Weekly neighborhood patterns",
+                "These small routines shape the quality of a month more than additional attractions.",
+              ],
+            },
+            {
+              title: "💸 Budget Perspective",
+              emphasis: "General Expectations",
+              body:
+                "Costs depend on lifestyle and season, but fewer transfers reduce overall expenses. Typical considerations include:",
+              bullets: [
+                "Accommodation rates varying by city and duration",
+                "Transportation costs decreasing with fewer regional moves",
+                "Flexible food spending based on daily habits",
+                "The hidden cost of a long trip is excessive movement, not everyday living.",
+              ],
+            },
+            {
+              title: "📝 What You Do Not Need to Plan Early",
+              emphasis: "Leave Space for Flexibility",
+              body: "You do not need:",
               bullets: [
                 "Detailed daily schedules",
-                "A full list of attractions",
-                "Restaurant reservations for every day",
+                "A complete list of attractions",
+                "Reservations for every evening",
+                "Final decisions for every weekend",
+                "Choose your main bases first. Allow plans to evolve naturally once you settle in.",
               ],
             },
             {
-              title: "Need current details?",
-              icon: "shield",
-              emphasis: "Always confirm before booking.",
-              body:
-                "Accommodation rules, prices, and options can change. Always confirm long-stay details through official or up-to-date sources before booking.",
+              title: "✅ When a One-Month Trip Works Best",
+              body: "A month in Korea works well if:",
+              bullets: [
+                "You prefer slow travel",
+                "You value routine alongside exploration",
+                "You are comfortable with flexible planning",
+                "You want to experience daily life",
+                "The experience should gradually feel normal.",
+              ],
             },
             {
-              title: "Bottom line",
-              icon: "spark",
+              title: "🔎 Need Current Information?",
+              body:
+                "Accommodation policies, pricing, and long-stay options can change. Confirm up-to-date information through official or reliable sources before final bookings.",
+            },
+            {
+              title: "✨ Bottom Line",
               emphasis: "Calm beats busy.",
               body:
-                "A good month in Korea feels calm, not busy. If your days start to feel normal, you planned it right.",
+                "Two or three home bases. Longer stays. Fewer transfers. A good month in Korea feels steady and comfortable. When your days begin to feel ordinary in a positive way, your long stay is structured correctly.",
             },
           ],
         },

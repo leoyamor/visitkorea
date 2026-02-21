@@ -4,10 +4,14 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "prebuild": "npm run page-updates:sync && npm run images:optimize",
+    "prebuild": "sh -c 'if [ \"$AUTO_PAGE_UPDATES_SYNC_ACTIVE\" = \"true\" ]; then npm run page-updates:sync; else echo \"[page-updates] skipped (set AUTO_PAGE_UPDATES_SYNC_ACTIVE=true to enable)\"; fi' && npm run images:optimize",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "seo:lint": "node scripts/seo-geo-lint.mjs",
+    "source:watch": "node scripts/source-watch.mjs",
+    "source:watch:write": "node scripts/source-watch.mjs --write",
+    "ops:daily": "npm run build && npm run seo:lint && npm run source:watch:write -- --report src/data/source-watch-report.md",
     "images:optimize": "node scripts/optimize-card-images.mjs",
     "page-updates:sync": "node scripts/sync-page-updates.mjs"
   },

@@ -17,7 +17,7 @@ permissions:
 
 jobs:
   submit-if-lastmod-changed:
-    if: ${{ vars.AUTO_SITEMAP_SUBMIT_ENABLED == 'true' }}
+    if: ${{ vars.AUTO_SITEMAP_SUBMIT_ACTIVE == 'true' }}
     runs-on: ubuntu-latest
     env:
       GSC_SITE_URL: ${{ vars.GSC_SITE_URL }}

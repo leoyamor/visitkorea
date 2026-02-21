@@ -246,14 +246,8 @@ export const siteTree: TreeNode = {
             },
             {
               title: "Need Updated Information?",
-              emphasis: "Transport schedules and policies may change.",
               body:
-                "Confirm official sources before final booking decisions.",
-              bullets: [
-                "Immigration Process Guide",
-                "What Is K-ETA?",
-                "Latest Travel Updates for Korea",
-              ],
+                "Transport schedules and policies may change. Confirm official sources before final booking decisions.",
             },
             {
               title: "Bottom Line",

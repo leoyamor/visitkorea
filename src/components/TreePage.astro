@@ -290,6 +290,9 @@ const getUrlLabel = (url: string) => {
 const isAbsoluteHttpUrl = (url: string) => /^https?:\/\//i.test(url);
 const EMPTY_EXCLUDED_KEYWORDS = new Set<string>();
 const KEYWORD_LINK_EXCLUSIONS_BY_PATH: Record<string, Set<string>> = {
+  "/plan-your-trip/7-days-in-korea": new Set([
+    "K-ETA",
+  ]),
   "/getting-around-korea/is-getting-around-hard": new Set([
     "Korail",
     "Incheon International Airport",

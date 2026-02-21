@@ -40,94 +40,103 @@ export const siteTree: TreeNode = {
             "This page helps you build a balanced 7-day Korea trip with two bases, realistic pacing, and minimal hotel changes.",
           content: [
             {
-              title: "Seven days is short. That is not a problem.",
+              title: "Introduction",
+              emphasis: "Seven days is short. That is not a problem.",
               body:
-                "You cannot see all of Korea in one week. The goal is not to see everything. The goal is to structure your time so the trip feels balanced, manageable, and realistic. If this is your first visit, you may want to review the basics in First Time in Korea. A successful 7-day trip in Korea depends on structure, not speed.",
-              bullets: [
-                "First Time in Korea: https://planmykorea.com/plan-your-trip/first-time-in-korea/",
-              ],
+                "You cannot see all of Korea in one week. The goal is not to see everything. The goal is to travel well. A strong 7-day trip is built on structure, not speed.",
             },
             {
               title: "The Decision That Saves Your Trip",
-              emphasis: "Choose two places. Not three.",
+              emphasis: "Core Principle",
               body:
-                "Many first-time visitors attempt Seoul + Busan + Jeju in one week. On a map, it looks efficient. In reality, it creates repeated packing, lost hours in transit, and reduced exploration time. In seven days, every transfer day costs you part of the experience.",
+                "Choose two places. Not three. Many first-time visitors try to fit Seoul, Busan, and Jeju into one week. On a map, it looks efficient. In practice, it creates repeated packing, transfer days, and reduced exploration time. In seven days, every move costs you part of the experience.",
+            },
+            {
+              title: "Recommended Structure",
+              body:
+                "The structure that works most consistently:",
               bullets: [
-                "The structure that consistently works:",
                 "One main city",
                 "One contrast destination",
-                "This gives you depth without exhaustion.",
+                "This creates depth without exhaustion.",
               ],
             },
             {
-              title: "Days 1-4: Seoul (Stay in One Hotel)",
-              emphasis: "Seoul is the most practical starting point for international travelers.",
+              title: "Days 1–4: Seoul (Stay in One Hotel)",
+              emphasis: "Why Start in Seoul",
               body:
-                "Stay in one neighborhood for four nights. Move around the city - not your luggage. Public transportation is simple to use.",
+                "Seoul is the most practical starting point for international travelers. Stay in one neighborhood for four nights. Move around the city, not your suitcase. Public transportation is extensive and easy to use. Changing hotels within Seoul rarely improves your trip.",
               bullets: [
-                "It offers:",
-                "Direct airport rail from Incheon (AREX)",
+                "Seoul offers:",
+                "Direct airport rail connection from Incheon (AREX)",
                 "Clear English signage",
-                "Extensive and reliable subway coverage",
-                "Wide accommodation choices across price ranges",
-                "Easy access to structured day trips",
-                "Where to Stay in Seoul: https://planmykorea.com/where-to-stay/where-to-stay-in-seoul/",
-                "Using the Subway in Korea: https://planmykorea.com/getting-around-korea/using-the-subway/",
-                "Transportation Cards Explained: https://planmykorea.com/getting-around-korea/transportation-cards/",
+                "Reliable subway coverage",
+                "Wide accommodation choices",
+                "Easy access to day trips",
               ],
             },
             {
-              title: "Practical Areas to Stay in Seoul",
+              title: "Practical Areas to Stay",
               emphasis: "Choose one base and remain there.",
               body:
-                "Seoul's subway system makes cross-city travel simple. Changing hotels inside the city rarely improves your trip.",
+                "Pick one. Stay there. Explore outward.",
               bullets: [
-                "Myeongdong: Central, convenient, easy airport access.",
-                "Hongdae: Younger atmosphere, cafes, nightlife.",
-                "Insadong: Traditional streets and historic surroundings.",
-                "Gangnam: Modern, spacious, business-friendly hotels.",
+                "Myeongdong - Central and convenient",
+                "Hongdae - Younger atmosphere and nightlife",
+                "Insadong - Traditional streets and historic surroundings",
+                "Gangnam - Modern and spacious",
               ],
             },
             {
-              title: "What 4 Days in Seoul Can Realistically Include",
-              emphasis: "Four days allows exploration without rushing.",
+              title: "What Four Days Can Realistically Include",
+              emphasis: "Plan by area, not by minute.",
               body:
-                "A balanced flow could look like this:",
+                "Four days allows exploration at a balanced pace. You do not need hour-by-hour scheduling.",
               bullets: [
                 "One day focused on historic palaces and traditional neighborhoods",
                 "One day in a modern shopping and dining district",
-                "One evening dedicated to street food exploration",
-                "One organized day trip (DMZ or a nearby city)",
-                "One flexible half-day for unplanned discovery",
-                "Must-See for First Timers: https://planmykorea.com/things-to-do/must-see-for-first-timers/",
-                "You do not need hour-by-hour scheduling. Seoul rewards structured flexibility.",
+                "One evening dedicated to street food",
+                "One organized day trip (such as the DMZ or a nearby city)",
+                "Seoul rewards structured flexibility.",
               ],
             },
             {
-              title: "Days 5-7: Choose One Contrast Destination",
+              title: "Days 5–7: Choose One Contrast Destination",
               emphasis: "After Seoul, select one contrasting environment.",
               body:
-                "The two most practical options are Busan and Jeju Island. If you are still deciding, compare cities in Which City Fits You Best?. Trying to include both within seven days usually reduces overall enjoyment.",
-              bullets: [
-                "Which City Fits You Best?: https://planmykorea.com/choose-a-city/which-city-fits-you-best/",
-              ],
+                "The two most practical options are Busan and Jeju Island. Including both within seven days usually reduces overall enjoyment due to travel time.",
             },
             {
               title: "Option 1: Busan",
-              emphasis: "City, coast, and seafood",
+              emphasis: "Overview",
+              body:
+                "Busan combines city energy with coastal scenery.",
+            },
+            {
+              title: "Why Choose Busan",
               body:
                 "Busan works well if you want:",
               bullets: [
                 "Ocean views within a city setting",
                 "Beach access without renting a car",
                 "A relaxed atmosphere with urban convenience",
-                "Busan City Guide: https://planmykorea.com/choose-a-city/busan/",
-                "Practical considerations:",
+              ],
+            },
+            {
+              title: "Practical Considerations",
+              body:
+                "Busan is straightforward to include in a one-week structure.",
+              bullets: [
                 "High-speed KTX from Seoul: about 2.5 hours",
-                "Typical one-way fare: roughly $50-70",
-                "Beaches and major attractions reachable by public transport",
-                "Where to Stay in Busan: https://planmykorea.com/where-to-stay/where-to-stay-in-busan/",
-                "A simple 3-day Busan flow might include:",
+                "One-way fare: roughly $45-50",
+                "Major areas accessible by public transport",
+              ],
+            },
+            {
+              title: "Example Three-Day Flow",
+              body:
+                "A balanced 3-day Busan structure may look like this:",
+              bullets: [
                 "One beach-focused afternoon",
                 "One seafood market and harbor exploration",
                 "One cultural or scenic neighborhood visit",
@@ -136,7 +145,12 @@ export const siteTree: TreeNode = {
             },
             {
               title: "Option 2: Jeju Island",
-              emphasis: "Nature and open landscapes",
+              emphasis: "Overview",
+              body:
+                "Jeju offers natural landscapes and open space.",
+            },
+            {
+              title: "Why Choose Jeju",
               body:
                 "Jeju is ideal if you prefer:",
               bullets: [
@@ -144,13 +158,23 @@ export const siteTree: TreeNode = {
                 "Waterfalls and coastal cliffs",
                 "Outdoor exploration",
                 "A slower pace",
-                "Jeju City Guide: https://planmykorea.com/choose-a-city/jeju/",
-                "Practical realities:",
+              ],
+            },
+            {
+              title: "Practical Realities",
+              body:
+                "Jeju can be excellent, but logistics matter more than many travelers expect.",
+              bullets: [
                 "Flight from Seoul: about 1 hour plus airport procedures",
                 "Rental car strongly recommended",
                 "Public transport limited outside main towns",
-                "Renting a Car in Korea: https://planmykorea.com/getting-around-korea/renting-a-car/",
+              ],
+            },
+            {
+              title: "Example Three-Day Structure",
+              body:
                 "A typical 3-day Jeju structure may include:",
+              bullets: [
                 "One coastal scenic drive",
                 "One volcanic or hiking site",
                 "One waterfall or cliff area",
@@ -166,7 +190,7 @@ export const siteTree: TreeNode = {
                 "Changing hotels every one or two nights",
                 "Over-scheduling arrival day",
                 "Ignoring jet lag",
-                "Underestimating regional transfer time",
+                "Underestimating transfer time",
                 "Efficiency improves experience quality.",
               ],
             },
@@ -174,7 +198,7 @@ export const siteTree: TreeNode = {
               title: "Transport Reality Check",
               emphasis: "Korea's transport system is efficient, but not instant.",
               body:
-                "Plan transfer days as partial sightseeing days.",
+                "Every transfer day reduces sightseeing time. Plan transfer days as partial sightseeing days.",
               bullets: [
                 "Approximate travel times:",
                 "Incheon Airport to central Seoul: 45-60 minutes",
@@ -186,18 +210,13 @@ export const siteTree: TreeNode = {
               title: "Budget Expectations (Rough Guide)",
               emphasis: "Frequent movement increases costs.",
               body:
-                "The hidden cost of a 7-day trip is usually over-moving, not meals.",
+                "The hidden cost of a one-week trip is usually over-moving, not meals.",
               bullets: [
-                "Mid-range accommodation averages:",
-                "Seoul: approximately $80-180 per night",
-                "Busan: similar range",
-                "Jeju: varies by season and rental car needs",
-                "How Much Does It Cost?: https://planmykorea.com/things-to-do/how-much-does-it-cost/",
-                "Intercity transport:",
-                "KTX one way: about $50-70",
-                "Domestic flight to Jeju: seasonal variation",
-                "Food spending is flexible, from inexpensive street food to premium dining",
-                "Food for First Timers: https://planmykorea.com/what-to-eat/food-for-first-timers/",
+                "Typical mid-range costs:",
+                "Hotels: approximately $80-180 per night",
+                "KTX one way: about $45-50",
+                "Domestic flight to Jeju: varies by season",
+                "Food: flexible, from street food to premium dining",
               ],
             },
             {
@@ -209,13 +228,15 @@ export const siteTree: TreeNode = {
                 "Choose two bases",
                 "Allocate days (4 + 3 works well)",
                 "Confirm transfer timing",
-                "Book accommodation in practical locations",
+                "Book practical accommodation",
+                "Structure determines experience.",
               ],
             },
             {
               title: "When This Plan Works Best",
-              emphasis: "This structure works well if:",
-              body: "Seven days is short, but structured correctly, it is enough.",
+              emphasis: "This structure is ideal if:",
+              body:
+                "Seven days is short, but structured correctly, it is enough.",
               bullets: [
                 "It is your first visit",
                 "You prefer balance over speed",
@@ -225,13 +246,13 @@ export const siteTree: TreeNode = {
             },
             {
               title: "Need Updated Information?",
-              emphasis: "Transport schedules and policies can change.",
+              emphasis: "Transport schedules and policies may change.",
               body:
-                "Before booking, confirm with:",
+                "Confirm official sources before final booking decisions.",
               bullets: [
-                "Immigration Process Guide: https://planmykorea.com/before-you-go/immigration-process/",
-                "What Is K-ETA?: https://planmykorea.com/before-you-go/what-is-k-eta/",
-                "Latest Travel Updates for Korea: https://planmykorea.com/latest-travel-updates-for-korea/",
+                "Immigration Process Guide",
+                "What Is K-ETA?",
+                "Latest Travel Updates for Korea",
               ],
             },
             {

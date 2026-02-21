@@ -65,9 +65,8 @@ export const siteTree: TreeNode = {
               title: "Days 1–4: Seoul (Stay in One Hotel)",
               emphasis: "Why Start in Seoul",
               body:
-                "Seoul is the most practical starting point for international travelers. Stay in one neighborhood for four nights. Move around the city, not your suitcase. Public transportation is extensive and easy to use. Changing hotels within Seoul rarely improves your trip.",
+                "Seoul is the most practical starting point for international travelers. Stay in one neighborhood for four nights. Move around the city, not your suitcase. Public transportation is extensive and easy to use. Changing hotels within Seoul rarely improves your trip. Seoul offers:",
               bullets: [
-                "Seoul offers:",
                 "Direct airport rail connection from Incheon (AREX)",
                 "Clear English signage",
                 "Reliable subway coverage",
@@ -113,9 +112,9 @@ export const siteTree: TreeNode = {
                 "Busan combines city energy with coastal scenery.",
             },
             {
-              title: "Why Choose Busan",
+              title: "Option 1-1: Why Choose Busan",
               body:
-                "Busan works well if you want:",
+                "Within Option 1, Busan works well if you want:",
               bullets: [
                 "Ocean views within a city setting",
                 "Beach access without renting a car",
@@ -123,9 +122,9 @@ export const siteTree: TreeNode = {
               ],
             },
             {
-              title: "Practical Considerations",
+              title: "Option 1-2: Practical Considerations",
               body:
-                "Busan is straightforward to include in a one-week structure.",
+                "For Option 1, keep these logistics in mind:",
               bullets: [
                 "High-speed KTX from Seoul: about 2.5 hours",
                 "One-way fare: roughly $45-50",
@@ -133,9 +132,9 @@ export const siteTree: TreeNode = {
               ],
             },
             {
-              title: "Example Three-Day Flow",
+              title: "Option 1-3: Example Three-Day Flow",
               body:
-                "A balanced 3-day Busan structure may look like this:",
+                "Within Option 1, a balanced 3-day Busan flow may look like this:",
               bullets: [
                 "One beach-focused afternoon",
                 "One seafood market and harbor exploration",
@@ -150,9 +149,9 @@ export const siteTree: TreeNode = {
                 "Jeju offers natural landscapes and open space.",
             },
             {
-              title: "Why Choose Jeju",
+              title: "Option 2-1: Why Choose Jeju",
               body:
-                "Jeju is ideal if you prefer:",
+                "Within Option 2, Jeju is ideal if you prefer:",
               bullets: [
                 "Volcanic landscapes",
                 "Waterfalls and coastal cliffs",
@@ -161,9 +160,9 @@ export const siteTree: TreeNode = {
               ],
             },
             {
-              title: "Practical Realities",
+              title: "Option 2-2: Practical Realities",
               body:
-                "Jeju can be excellent, but logistics matter more than many travelers expect.",
+                "For Option 2, these logistics matter:",
               bullets: [
                 "Flight from Seoul: about 1 hour plus airport procedures",
                 "Rental car strongly recommended",
@@ -171,9 +170,9 @@ export const siteTree: TreeNode = {
               ],
             },
             {
-              title: "Example Three-Day Structure",
+              title: "Option 2-3: Example Three-Day Structure",
               body:
-                "A typical 3-day Jeju structure may include:",
+                "Within Option 2, a typical 3-day Jeju structure may include:",
               bullets: [
                 "One coastal scenic drive",
                 "One volcanic or hiking site",

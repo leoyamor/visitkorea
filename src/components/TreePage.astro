@@ -1013,7 +1013,9 @@ const breadcrumb = breadcrumbs;
               <div class="content-subsections">
                 {section.subsections.map((subsection) => (
                   <div class="content-subsection">
-                    <p class="content-subtitle">{subsection.title}</p>
+                    <p class:list={["content-subtitle", subsection.plainTitle && "content-subtitle--plain"]}>
+                      {subsection.title}
+                    </p>
                     {subsection.bullets && subsection.bullets.length > 0 && (
                       <ul class="content-sublist">
                         {subsection.bullets.map((bullet) => (
@@ -2091,6 +2093,15 @@ const breadcrumb = breadcrumbs;
     font-weight: 700;
     line-height: 1.35;
     color: var(--ink-strong) !important;
+  }
+
+  .content-subtitle--plain {
+    margin: 0 0 8px !important;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: var(--ink-soft) !important;
   }
 
   .content-sublist {

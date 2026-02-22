@@ -14,6 +14,7 @@ export type TreeNode = {
       title: string;
       bullets?: string[];
       tail?: string;
+      plainTitle?: boolean;
     }[];
     tail?: string;
     icon?: string;
@@ -2035,6 +2036,7 @@ export const siteTree: TreeNode = {
               subsections: [
                 {
                   title: "It works for:",
+                  plainTitle: true,
                   bullets: [
                     "Subways",
                     "City buses",
@@ -2046,6 +2048,7 @@ export const siteTree: TreeNode = {
                 },
                 {
                   title: "Cards are available at:",
+                  plainTitle: true,
                   bullets: [
                     "Airport convenience stores",
                     "Subway station machines",

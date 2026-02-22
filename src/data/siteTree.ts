@@ -2368,90 +2368,182 @@ export const siteTree: TreeNode = {
       description: "Know what to try first — and what to skip.",
       children: [
         {
-          title: "What Should I Try First?",
+          title: "What Should I Eat First in Korea?",
           slug: "what-should-i-try-first",
           icon: "bowl",
           image: "food",
-          description: "Easy Korean food for beginners.",
+          description:
+            "Beginner-friendly Korean dishes, realistic prices by region, and how to choose confidently.",
           quickAnswer:
             "This page helps you choose beginner-friendly Korean food with confidence.",
           content: [
             {
-              title: "What Should I Try First?",
-              icon: "bowl",
-              emphasis: "Start simple.",
+              title: "🍽️ Introduction",
               body:
-                "You don't need the most famous dish on day one. Choose something familiar, balanced, and easy to enjoy. Your first Korean meal should feel comfortable - and make you excited to explore more tomorrow.",
+                "Your first Korean meal should feel comfortable, not overwhelming. You do not need the spiciest or most traditional dish on day one. Start with balanced, widely loved dishes that are easy to understand - both in flavor and price. Below are beginner-friendly options, with realistic price ranges based on major travel regions in Korea.",
             },
             {
-              title: "The Best First Dishes to Start With",
-              icon: "spark",
-              emphasis: "Beginner-friendly and widely available.",
+              title: "🥘 Beginner-Friendly Dishes (By Region & Budget)",
               body:
-                "If this is your first Korean meal, start with dishes that are approachable and flexible:",
-              bullets: [
-                "Bibimbap - A rice bowl with vegetables and sauce on the side. You control how much sauce you mix in.",
-                "Bulgogi - Sweet, marinated grilled beef with a familiar, comforting flavor.",
-                "Korean fried chicken - Try soy-garlic or plain before exploring spicy versions.",
-                "Mandu - Steamed or fried dumplings that are easy, filling, and not overwhelming.",
-                "These dishes are popular, easy to find, and rarely too spicy.",
+                "These dishes are widely available, generally mild, and easy for first-time visitors.",
+              subsections: [
+                {
+                  title: "1️⃣ Bibimbap (Mixed Rice Bowl)",
+                  bullets: [
+                    "What it is: Rice topped with vegetables, meat, egg, and chili paste served separately.",
+                    "Why it is good first: You control how much sauce you mix in. Balanced and customizable.",
+                    "Typical price range:",
+                    "Seoul: ₩10,000-₩20,000",
+                    "Jeonju (famous for bibimbap): around ₩12,000+",
+                    "Other cities: ₩9,000-₩15,000",
+                  ],
+                  tail:
+                    "A safe and structured introduction to Korean flavors.",
+                },
+                {
+                  title: "2️⃣ Bulgogi (Marinated Beef)",
+                  bullets: [
+                    "What it is: Sweet soy-marinated grilled beef.",
+                    "Why it is good first: Familiar flavor profile. Mild and approachable.",
+                    "Typical price range:",
+                    "Seoul: ₩15,000-₩25,000",
+                    "Other major cities: ₩12,000-₩20,000",
+                  ],
+                  tail: "Often served with rice and side dishes.",
+                },
+                {
+                  title: "3️⃣ Pork Soup / Local Signature Soups",
+                  bullets: [
+                    "Busan - Dwaeji Gukbap (Pork Soup with Rice)",
+                    "A Busan specialty and very beginner-friendly.",
+                    "Typical price range: ₩9,000-₩12,000",
+                    "Rich but not spicy. Easy to eat and filling.",
+                    "Seolleongtang / Gomtang (Beef Broth Soup)",
+                    "Found in Seoul and other cities.",
+                    "Typical price range: ₩10,000-₩15,000",
+                    "Clear broth, mild taste. Very comfortable first meal.",
+                  ],
+                },
+                {
+                  title: "4️⃣ Jeju Black Pork (If You are in Jeju)",
+                  bullets: [
+                    "What it is: Grilled pork, usually ordered in 200g portions.",
+                    "Typical price example: About ₩20,000 per 200g (varies by restaurant)",
+                  ],
+                  tail:
+                    "Jeju black pork is famous but more expensive than mainland pork. Good for sharing rather than solo dining.",
+                },
+                {
+                  title: "5️⃣ Japchae (Glass Noodles)",
+                  bullets: [
+                    "Lightly sweet stir-fried noodles with vegetables and beef.",
+                    "Typical price range: ₩12,000-₩18,000",
+                  ],
+                  tail: "Mild and easy to enjoy.",
+                },
+                {
+                  title: "6️⃣ Kimbap (Casual & Budget-Friendly)",
+                  bullets: [
+                    "Rice rolls wrapped in seaweed.",
+                    "Typical price range (nationwide): ₩3,000-₩6,000",
+                  ],
+                  tail:
+                    "Good for a light meal or snack. Ask for non-spicy fillings.",
+                },
+                {
+                  title: "7️⃣ Korean Fried Chicken (Soy-Garlic or Original)",
+                  bullets: [
+                    "Usually shared.",
+                    "Typical price range: ₩18,000-₩25,000 per whole chicken",
+                  ],
+                  tail:
+                    "Choose soy-garlic or original before trying spicy versions.",
+                },
               ],
             },
             {
-              title: "About Spicy Food",
-              icon: "chili",
-              emphasis: "Not everything in Korea is spicy.",
+              title: "🥟 Street Food & Casual Snacks",
+              body: "If you prefer something very simple:",
+              bullets: [
+                "Tteokbokki (rice cakes): around ₩4,000-₩6,000 in markets",
+                "Kimbap: ₩3,000-₩6,000",
+                "Hotteok (sweet pancake): around ₩2,000-₩3,000",
+              ],
+              tail:
+                "Markets in Seoul (like Gwangjang), Busan, and other cities offer beginner-friendly options at low cost.",
+            },
+            {
+              title: "🌶️ Understanding Spice (Without Fear)",
               body:
-                "While Korean cuisine has a spicy reputation, many dishes are mild. If you prefer less heat, simply say:",
+                "Korean food has a spicy reputation, but many beginner dishes are mild.",
               bullets: [
-                "\"Not spicy, please.\"",
-                "Red color does not always mean very spicy.",
-                "Some dishes are lightly seasoned rather than hot.",
-                "When unsure, ask the staff before ordering.",
+                "Red color does not always mean extremely spicy.",
+                "Sauce is often served separately.",
+                "\"Not spicy, please\" is commonly understood.",
+                "Asking \"Is this spicy?\" is normal.",
+                "You are not expected to tolerate strong heat.",
               ],
             },
             {
-              title: "What You Don't Need to Decide Yet",
-              icon: "hand",
-              emphasis: "Let your taste adjust naturally.",
-              body: "On your first day, you don't need to:",
+              title: "⏭️ Dishes to Try Later (After You Build Confidence)",
+              body: "Explore these after your comfort level grows:",
               bullets: [
-                "Memorize Korean dish names",
-                "Plan every restaurant in advance",
-                "Order the most \"authentic\" option",
-                "Start with comfort. Try new things gradually.",
+                "Very spicy tteokbokki",
+                "Strong fermented dishes",
+                "Raw seafood (hoe)",
+                "Extremely spicy stews",
               ],
+              tail: "Explore gradually.",
             },
             {
-              title: "How to Pick a Good Place to Eat",
-              icon: "pin",
-              emphasis: "Keep the decision simple.",
-              body: "A reliable rule:",
+              title: "💸 Realistic First-Meal Budget Planning",
+              body: "If you are budgeting per person:",
               bullets: [
-                "A short, focused menu",
-                "Local customers dining there",
-                "Busy during lunch or dinner hours",
-                "If locals are eating comfortably, it's usually a safe choice.",
+                "Casual snack: ₩3,000-₩7,000",
+                "Regular restaurant meal: ₩10,000-₩15,000",
+                "BBQ or specialty dish: ₩20,000+",
+                "Premium dining: ₩100,000+",
               ],
+              tail:
+                "This range works across Seoul, Busan, Jeju, Jeonju, and Gyeongju, though tourist zones may be slightly higher.",
             },
             {
-              title: "Common Beginner Mistakes",
-              icon: "alert",
-              emphasis: "No pressure.",
+              title: "🧭 How to Choose a Good First Restaurant",
+              body: "Keep it simple:",
+              bullets: [
+                "Short, focused menu",
+                "Local customers inside",
+                "Busy at meal times",
+                "Clear pricing displayed",
+              ],
+              tail:
+                "Neighborhood restaurants often offer better value than highly tourist-focused areas.",
+            },
+            {
+              title: "⚠️ Common Beginner Mistakes",
               body: "Avoid:",
               bullets: [
                 "Ordering too many dishes at once",
-                "Choosing the spiciest option just to be adventurous",
-                "Feeling obligated to try something you're unsure about",
-                "You can always explore more later.",
+                "Choosing the spiciest dish to \"be adventurous\"",
+                "Feeling pressured to try something unfamiliar immediately",
               ],
+              tail: "Start with one or two dishes. Add more next meal.",
             },
             {
-              title: "Bottom Line",
-              icon: "spark",
-              emphasis: "Start easy. Build confidence.",
+              title: "✅ Why Starting Mild Works",
               body:
-                "Your first Korean meals should feel enjoyable, not intimidating. Begin with familiar flavors, stay curious, and let your comfort grow naturally.",
+                "When your first meals feel balanced and enjoyable:",
+              bullets: [
+                "You understand flavor combinations",
+                "You gain ordering confidence",
+                "You become curious rather than cautious",
+              ],
+              tail: "Comfort builds curiosity.",
+            },
+            {
+              title: "✅ Bottom Line",
+              body:
+                "You do not need extreme spice or rare specialties to experience authentic Korean food. Start with mild, structured, widely loved dishes. Use realistic regional price expectations. Build confidence step by step. Korean cuisine becomes more exciting as your comfort grows.",
             },
           ],
         },

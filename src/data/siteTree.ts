@@ -2136,7 +2136,7 @@ export const siteTree: TreeNode = {
               body:
                 "If you use one card, tap correctly, and transfer within the time window, Korea's public transport becomes predictable and cost-efficient - even for first-time visitors.",
               tail:
-                "If you want a broader overview of how public transportation works in major cities, see our guide on Getting Around South Korea.",
+                "If you want a broader overview of how public transportation works in major cities, see our guide on Getting Around Korea.",
             },
           ],
         },

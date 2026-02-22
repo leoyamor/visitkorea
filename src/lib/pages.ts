@@ -189,7 +189,6 @@ const subpages = [
   { category: 'transportation', slug: 'taking-the-bus', title: 'Taking the Bus', description: 'Simple steps for local buses and express routes.' },
   { category: 'transportation', slug: 'using-taxis', title: 'Using Taxis', description: 'When taxis are worth it and how to pay.' },
   { category: 'transportation', slug: 'transportation-cards', title: 'Transportation Cards', description: 'Which transit card to buy and how to top up.' },
-  { category: 'transportation', slug: 'transfers-explained', title: 'Transfers Explained', description: 'Move between trains, buses, and airports smoothly.' },
   { category: 'transportation', slug: 'save-on-transport', title: 'Save on Transport', description: 'Small habits that lower your daily travel cost.' },
   { category: 'transportation', slug: 'renting-a-car', title: 'Renting a Car', description: 'When driving makes sense and what to prepare.' },
 

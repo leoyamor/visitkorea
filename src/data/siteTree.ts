@@ -1348,62 +1348,80 @@ export const siteTree: TreeNode = {
             "This page helps you decide if Jeonju is the right stop for food and traditional streets.",
           content: [
             {
-              title: "Jeonju",
-              icon: "bowl",
+              title: "🏮 Jeonju",
               emphasis: "Traditional streets. Local food. Hanok village charm.",
               body:
-                "Jeonju is famous for Jeonju Hanok Village and its reputation as Korea's food capital. It's a compact, walkable city where traditional houses, street snacks, and regional restaurants are all within a short distance.",
+                "Jeonju is best known for Jeonju Hanok Village and its reputation as one of Korea's most food-focused cities. Unlike large metropolitan areas, Jeonju feels compact and manageable. Traditional houses, street snacks, and regional restaurants are concentrated within a walkable area. If you want traditional atmosphere without complex transport planning, Jeonju is a practical stop.",
             },
             {
-              title: "Why Jeonju Works Well in a Korea Trip",
-              icon: "spark",
-              emphasis:
-                "Jeonju fits naturally between Seoul and Busan and is easy to explore in one area.",
-              body: "Key places:",
+              title: "🚶 Why Jeonju Works Well in a Korea Trip",
+              body:
+                "Jeonju fits naturally between Seoul and Busan and is easy to explore within a single district. Most major sites are located around the Hanok Village area, which reduces commuting time. Key places include:",
               bullets: [
-                "Jeonju Hanok Village - Korea's largest traditional hanok district",
-                "Gyeonggijeon Shrine - Historic royal shrine from the Joseon era",
+                "Jeonju Hanok Village - The largest concentration of traditional hanok houses in Korea",
+                "Gyeonggijeon Shrine - A Joseon-era shrine dedicated to the royal lineage",
                 "Nambu Market - Local street food and traditional market stalls",
-                "Omokdae Viewpoint - Elevated views over hanok rooftops",
+                "Omokdae Viewpoint - Elevated views across the hanok rooftops",
                 "Jeondong Cathedral - Historic cathedral beside the village",
-                "Everything is close together, so you spend more time exploring and less time commuting.",
+                "Everything is within short walking distance. You spend more time exploring and less time navigating.",
               ],
             },
             {
-              title: "How Much Time Do You Need?",
-              icon: "calendar",
+              title: "⏳ How Much Time Do You Need?",
               emphasis:
                 "Jeonju works best as a short cultural and food-focused stop.",
-              body: "Plan by length:",
+              body: "Plan by pace:",
               bullets: [
-                "1 night - Walk the hanok streets, try bibimbap, and see the area after sunset.",
-                "2 days - Add markets, viewpoints, and slower cafe stops.",
+                "1 night - Walk the hanok streets, try bibimbap, and experience the area after sunset",
+                "2 days - Add markets, viewpoints, museums, and relaxed cafe time",
+                "Jeonju is not designed for rushed half-day visits. Staying overnight improves the atmosphere.",
               ],
             },
             {
-              title: "What Jeonju Is Known For",
-              icon: "bowl",
-              emphasis: "The flavors are balanced and easy to enjoy.",
-              body: "Known for:",
+              title: "🍲 What Jeonju Is Known For",
+              body:
+                "Jeonju's reputation is strongly tied to food and traditional architecture. The city is known for:",
               bullets: [
                 "Bibimbap and regional Korean cuisine",
-                "Traditional hanok architecture",
-                "Street snacks and market food",
+                "Street snacks within Hanok Village",
+                "Traditional tea houses",
+                "Preserved hanok architecture",
+                "Compared to larger cities, dining here often focuses on local specialties rather than global restaurant chains.",
               ],
             },
             {
-              title: "Best Way to Explore",
-              icon: "route",
-              emphasis: "Walk.",
-              body: "Most highlights are within 15-20 minutes on foot.",
+              title: "🌇 What Makes Jeonju Different",
+              body:
+                "Jeonju is less dense than Seoul and less coastal than Busan. Instead of skyline views, you experience:",
+              bullets: [
+                "Low traditional rooftops",
+                "Narrow pedestrian streets",
+                "Local restaurants clustered within small blocks",
+                "The city feels intimate rather than expansive.",
+              ],
             },
             {
-              title: "Bottom Line",
-              icon: "spark",
-              emphasis:
-                "Jeonju offers traditional streets and regional food in one easy-to-navigate city.",
+              title: "🗺️ Best Way to Explore",
+              emphasis: "Walk.",
               body:
-                "If your trip needs good food and a slower rhythm, Jeonju is a smart addition.",
+                "Most highlights are within 15-20 minutes on foot inside the central district. For sites slightly outside the core area, short taxi rides are simple and inexpensive. Because of the compact layout, complicated transport planning is rarely necessary.",
+            },
+            {
+              title: "📝 Practical Travel Notes",
+              body: "Checking opening hours in advance prevents frustration.",
+              bullets: [
+                "Weekends can be busy around Hanok Village",
+                "Evening visits offer softer lighting and fewer tour groups",
+                "Summer can be hot; spring and autumn are more comfortable for walking",
+                "Many small restaurants close between lunch and dinner service",
+              ],
+            },
+            {
+              title: "✨ Bottom Line",
+              emphasis:
+                "Jeonju offers traditional streets and regional food in one compact, easy-to-navigate city.",
+              body:
+                "If your itinerary needs good food, walkable neighborhoods, and a slower rhythm, Jeonju is a practical and balanced addition.",
             },
           ],
         },

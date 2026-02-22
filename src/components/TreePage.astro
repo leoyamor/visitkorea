@@ -1009,6 +1009,25 @@ const breadcrumb = breadcrumbs;
               <p class="content-emphasis">{section.emphasis}</p>
             )}
             <p set:html={linkify(section.body)} />
+            {section.subsections && section.subsections.length > 0 && (
+              <div class="content-subsections">
+                {section.subsections.map((subsection) => (
+                  <div class="content-subsection">
+                    <p class="content-subtitle">{subsection.title}</p>
+                    {subsection.bullets && subsection.bullets.length > 0 && (
+                      <ul class="content-sublist">
+                        {subsection.bullets.map((bullet) => (
+                          <li set:html={linkify(bullet)} />
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
+            {section.tail && (
+              <p class="content-tail" set:html={linkify(section.tail)} />
+            )}
             {section.bullets && (
               <ul>
                 {section.bullets.map((bullet) => (
@@ -2052,6 +2071,31 @@ const breadcrumb = breadcrumbs;
     padding-left: 18px;
     color: var(--ink-soft);
     line-height: 1.6;
+  }
+
+  .content-subsections {
+    margin: 2px 0 8px;
+  }
+
+  .content-subsection + .content-subsection {
+    margin-top: 8px;
+  }
+
+  .content-subtitle {
+    margin: 0 0 4px !important;
+    font-family: "Plus Jakarta Sans", "Work Sans", system-ui, sans-serif;
+    font-size: 1.02rem;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--ink-strong) !important;
+  }
+
+  .content-sublist {
+    margin: 0;
+  }
+
+  .content-tail {
+    margin-top: 6px !important;
   }
 
   .content-block {

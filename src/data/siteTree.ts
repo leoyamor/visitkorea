@@ -10,6 +10,11 @@ export type TreeNode = {
     title: string;
     body: string;
     bullets?: string[];
+    subsections?: {
+      title: string;
+      bullets?: string[];
+    }[];
+    tail?: string;
     icon?: string;
     emphasis?: string;
   }[];
@@ -1617,28 +1622,25 @@ export const siteTree: TreeNode = {
               title: "✈️ Airport to City Options",
               body:
                 "If you arrive at Incheon International Airport, you generally choose between rail, bus, or taxi.",
-            },
-            {
-              title: "🚆 AREX (Airport Railroad Express)",
-              body: " ",
-              bullets: [
-                "All-stop train reaches central Seoul in about 1 hour",
-                "Express train is faster but more expensive",
-                "Travel time is predictable because it is not affected by traffic",
+              subsections: [
+                {
+                  title: "AREX (Airport Railroad Express)",
+                  bullets: [
+                    "All-stop train reaches central Seoul in about 1 hour",
+                    "Express train is faster but more expensive",
+                    "Travel time is predictable because it is not affected by traffic",
+                  ],
+                },
+                {
+                  title: "Airport Limousine Bus",
+                  bullets: [
+                    "Direct routes to many districts",
+                    "Useful if your accommodation is far from a subway station",
+                    "Travel time depends on traffic conditions",
+                  ],
+                },
               ],
-            },
-            {
-              title: "🚌 Airport Limousine Bus",
-              body: " ",
-              bullets: [
-                "Direct routes to many districts",
-                "Useful if your accommodation is far from a subway station",
-                "Travel time depends on traffic conditions",
-              ],
-            },
-            {
-              title: "✅ Practical Default",
-              body:
+              tail:
                 "For many solo travelers, rail is the most predictable default option.",
             },
             {

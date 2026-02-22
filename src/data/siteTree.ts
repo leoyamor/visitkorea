@@ -1764,9 +1764,8 @@ export const siteTree: TreeNode = {
             {
               title: "😬 What First-Time Riders Usually Worry About",
               body:
-                "Many visitors worry about taking the wrong train.",
+                "Many visitors worry about taking the wrong train. In practice:",
               bullets: [
-                "In practice:",
                 "Subway lines are color-coded",
                 "Stations are numbered",
                 "Direction signs clearly show terminal stations",

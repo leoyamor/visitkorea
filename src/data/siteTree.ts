@@ -12,6 +12,7 @@ export type TreeNode = {
     bullets?: string[];
     subsections?: {
       title: string;
+      lead?: string[];
       bullets?: string[];
       tail?: string;
       plainTitle?: boolean;
@@ -2389,13 +2390,15 @@ export const siteTree: TreeNode = {
               subsections: [
                 {
                   title: "1️⃣ Bibimbap (Mixed Rice Bowl)",
-                  bullets: [
+                  lead: [
                     "What it is: Rice topped with vegetables, meat, egg, and chili paste served separately.",
                     "Why it is good first: You control how much sauce you mix in. Balanced and customizable.",
                     "Typical price range:",
-                    "- Seoul: ₩10,000-₩20,000",
-                    "- Jeonju (famous for bibimbap): around ₩12,000+",
-                    "- Other cities: ₩9,000-₩15,000",
+                  ],
+                  bullets: [
+                    "Seoul: ₩10,000-₩20,000",
+                    "Jeonju (famous for bibimbap): around ₩12,000+",
+                    "Other cities: ₩9,000-₩15,000",
                   ],
                   tail:
                     "A safe and structured introduction to Korean flavors.",
@@ -2413,15 +2416,23 @@ export const siteTree: TreeNode = {
                 },
                 {
                   title: "3️⃣ Pork Soup / Local Signature Soups",
+                },
+                {
+                  title: "Busan - Dwaeji Gukbap (Pork Soup with Rice)",
+                  plainTitle: true,
                   bullets: [
-                    "Busan - Dwaeji Gukbap (Pork Soup with Rice)",
-                    "- A Busan specialty and very beginner-friendly.",
-                    "- Typical price range: ₩9,000-₩12,000",
-                    "- Rich but not spicy. Easy to eat and filling.",
-                    "Seolleongtang / Gomtang (Beef Broth Soup)",
-                    "- Found in Seoul and other cities.",
-                    "- Typical price range: ₩10,000-₩15,000",
-                    "- Clear broth, mild taste. Very comfortable first meal.",
+                    "A Busan specialty and very beginner-friendly.",
+                    "Typical price range: ₩9,000-₩12,000",
+                    "Rich but not spicy. Easy to eat and filling.",
+                  ],
+                },
+                {
+                  title: "Seolleongtang / Gomtang (Beef Broth Soup)",
+                  plainTitle: true,
+                  bullets: [
+                    "Found in Seoul and other cities.",
+                    "Typical price range: ₩10,000-₩15,000",
+                    "Clear broth, mild taste. Very comfortable first meal.",
                   ],
                 },
                 {

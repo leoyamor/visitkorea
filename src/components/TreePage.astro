@@ -1017,6 +1017,13 @@ const breadcrumb = breadcrumbs;
                     <p class:list={["content-subtitle", subsection.plainTitle && "content-subtitle--plain"]}>
                       {subsection.title}
                     </p>
+                    {subsection.lead && subsection.lead.length > 0 && (
+                      <div>
+                        {subsection.lead.map((line) => (
+                          <p class="content-sublead" set:html={linkify(line)} />
+                        ))}
+                      </div>
+                    )}
                     {subsection.bullets && subsection.bullets.length > 0 && (
                       <ul class="content-sublist">
                         {subsection.bullets.map((bullet) => (
@@ -2107,6 +2114,12 @@ const breadcrumb = breadcrumbs;
 
   .content-sublist {
     margin: 0;
+  }
+
+  .content-sublead {
+    margin: 0 0 6px !important;
+    color: var(--ink-soft) !important;
+    line-height: 1.7;
   }
 
   .content-tail {

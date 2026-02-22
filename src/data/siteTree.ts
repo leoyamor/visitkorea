@@ -2229,106 +2229,132 @@ export const siteTree: TreeNode = {
             "This page helps you decide if renting a car in Korea is actually worth it.",
           content: [
             {
-              title: "Renting a Car in Korea",
-              icon: "car",
-              emphasis: "Useful when it truly adds value.",
+              title: "🚗 Introduction",
               body:
-                "In many trips, you do not need a car in Korea. Public transport is modern, affordable, and reliable. But in specific regions, renting a car can make your trip smoother and more flexible. This guide helps you decide clearly - not emotionally.",
+                "Korea is one of the easiest countries to travel without a car - especially in Seoul and other big cities. But in a few specific cases, renting a car can make your trip smoother and more flexible. This guide helps you decide based on route reality, cost, and requirements - not \"just in case\" thinking.",
             },
             {
-              title: "First, the Honest Reality",
-              icon: "alert",
-              emphasis: "Cities are built for trains and buses.",
-              body: "In major cities like Seoul and Busan:",
+              title: "🏙️ The Honest Reality in Major Cities",
+              body:
+                "In cities like Seoul and Busan, public transport is built for daily commuting:",
               bullets: [
-                "Subways are fast and extensive",
-                "Buses fill the gaps",
-                "Parking is limited and expensive",
+                "Subways and buses cover most tourist routes efficiently",
+                "Parking is limited (and often expensive)",
                 "Traffic can be heavy during peak hours",
-                "For most city-based travel, a car adds cost and stress.",
               ],
+              tail:
+                "For most city-based itineraries, a rental car usually adds cost + friction rather than convenience.",
             },
             {
-              title: "When Renting a Car Makes Sense",
-              icon: "spark",
-              emphasis: "Best for islands and rural routes.",
-              body: "A car is useful if:",
+              title: "✅ When Renting a Car Makes Sense",
+              body: "Renting a car is most useful when it clearly adds value:",
               bullets: [
-                "You are visiting Jeju Island",
-                "You plan to explore coastal or mountain areas",
-                "You want to visit multiple remote spots in one day",
-                "Your accommodation is outside city centers",
-                "In these situations, public transport can be limited. A car gives you control over your schedule.",
+                "Jeju Island (more flexibility, easier multi-stop days)",
+                "Coastal / mountain routes with limited direct public transport",
+                "Multiple remote spots in one day (photo spots, small villages, trailheads)",
+                "Accommodation outside city centers (or you want late-night flexibility)",
               ],
+              tail:
+                "If your day plan is \"many stops + rural gaps,\" a car often saves time and energy.",
             },
             {
-              title: "When It Usually Doesn't Make Sense",
-              icon: "alert",
-              emphasis: "City trips rarely require it.",
-              body: "Skip renting a car if:",
+              title: "🚫 When It Usually Does NOT Make Sense",
+              body: "Skip the car if your trip is mostly:",
               bullets: [
-                "You are staying mainly in Seoul",
-                "You are traveling between cities by KTX",
-                "Your hotel is near a subway station",
-                "You prefer low-effort, stress-free travel",
-                "Trains are often faster than driving between major cities.",
+                "Seoul-focused sightseeing (central areas)",
+                "Intercity travel by KTX and local public transport",
+                "Hotel near a subway station + you prefer low-effort movement",
+              ],
+              tail:
+                "In many cases, trains are faster and more predictable than driving between major cities.",
+            },
+            {
+              title: "💰 Realistic Cost Expectations",
+              body:
+                "Prices move a lot by season, booking timing, and pickup location - but these give you a realistic frame.",
+              subsections: [
+                {
+                  title: "Jeju (car rental search averages)",
+                  plainTitle: true,
+                  bullets: [
+                    "Many searches show an average around ₩69,900/day.",
+                  ],
+                },
+                {
+                  title: "Seoul (car rental search averages)",
+                  plainTitle: true,
+                  bullets: [
+                    "Many searches show an average around ₩71,000/day.",
+                  ],
+                },
+              ],
+              tail:
+                "Use these as \"planning ranges,\" not guarantees. Weekends, holidays, and peak seasons can push prices up.",
+            },
+            {
+              title: "🪪 What You Need to Rent and Drive Legally",
+              body: "For most foreign visitors, the key requirement is:",
+              subsections: [
+                {
+                  title: "Key requirement",
+                  plainTitle: true,
+                  bullets: [
+                    "International Driving Permit (IDP) + your original license + passport.",
+                  ],
+                  tail:
+                    "Korean legal guidance notes that driving on an overseas license generally requires an IDP under the Geneva Convention (1949) or Vienna Convention (1968), and it is typically valid for a limited period after entry (often referenced as up to 1 year).",
+                },
+                {
+                  title: "Also expect common rental desk policies such as:",
+                  plainTitle: true,
+                  bullets: [
+                    "Minimum age (often 21+)",
+                    "License held for at least 1 year (common condition)",
+                  ],
+                  tail:
+                    "Because requirements can vary by company and vehicle class, always verify the exact checklist on the rental listing you book.",
+                },
               ],
             },
             {
-              title: "The Most Common Mistake",
-              icon: "hand",
-              emphasis: "Renting \"just in case.\"",
-              body: "Many visitors rent a car without a clear plan. This can lead to:",
+              title: "🛡️ Insurance: The Part Travelers Underestimate",
+              body:
+                "Most rentals include basic coverage, but it may not remove your financial risk.",
+              bullets: [
+                "What the included insurance actually covers",
+                "Whether CDW / full coverage is available and what the deductible is",
+                "Whether tires, glass, underbody, and single-vehicle incidents are excluded",
+              ],
+              tail:
+                "If you are not confident driving in unfamiliar roads, full coverage often reduces stress more than any \"perfect route plan.\"",
+            },
+            {
+              title: "⚠️ The Most Common Mistake",
+              body: "Renting \"just in case.\"",
               bullets: [
                 "Paying for unused rental days",
-                "Extra parking fees",
-                "Driving stress in unfamiliar traffic",
-                "Only rent when you clearly benefit from it.",
+                "Parking fees you did not plan for",
+                "Stress in dense city traffic",
+                "A trip that becomes less efficient, not more",
               ],
+              tail: "Rent only when your itinerary clearly benefits.",
             },
             {
-              title: "What You Need to Rent",
-              icon: "passport",
-              emphasis: "Prepare these documents.",
-              body: "Most rental companies in Korea require:",
+              title: "✅ Decision Checklist (Fast and Practical)",
+              body: "Rent a car only if most answers are \"yes\":",
               bullets: [
-                "An International Driving Permit (IDP) (1949 or 1968 format)",
-                "Your original, valid home-country driver's license",
-                "Your passport",
-                "A credit card in the driver's name for the security deposit",
+                "Are you going to Jeju or rural/coastal areas with gaps in transit?",
+                "Will you do multiple stops in one day where buses/trains add big detours?",
+                "Is parking straightforward at your accommodation?",
+                "Do you have an IDP and feel comfortable driving?",
               ],
+              tail:
+                "If not, public transport is usually the smarter default.",
             },
             {
-              title: "Important",
-              icon: "shield",
-              emphasis: "Confirm details before booking.",
-              body: "Before booking, check these points:",
-              bullets: [
-                "The IDP must be presented together with your original license",
-                "Most companies require drivers to be at least 21 years old and to have held a license for 1 year or more",
-                "Basic insurance is included, but consider full coverage (CDW) to reduce risk",
-                "Policies may vary by company, vehicle type, and season",
-                "Always confirm exact requirements, insurance coverage, and payment rules directly with the rental company",
-              ],
-            },
-            {
-              title: "You Can Decide Later",
-              icon: "checklist",
-              emphasis: "Start simple.",
-              body: "You do not have to rent a car on arrival. Many travelers:",
-              bullets: [
-                "Use public transport first",
-                "Rent a car only for Jeju or rural segments",
-                "Book for specific days instead of the entire trip",
-                "Flexibility reduces unnecessary costs.",
-              ],
-            },
-            {
-              title: "Bottom Line",
-              icon: "spark",
-              emphasis: "Freedom when it fits. Skip it when it doesn't.",
+              title: "✅ Bottom Line",
               body:
-                "In Korea, a car is a practical tool - not a default choice. If it clearly saves time and effort, rent one. If not, public transport will likely serve you better.",
+                "In Korea, a car is a tool, not a default. If it clearly saves time and effort (Jeju / rural multi-stop days), rent one. If not, you will usually travel faster - and with less stress - by public transportation.",
             },
           ],
         },

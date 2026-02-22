@@ -190,7 +190,7 @@ const subpages = [
   { category: 'transportation', slug: 'using-taxis', title: 'Using Taxis', description: 'Costs, when to use them, taxi apps, and practical payment tips for visitors.' },
   { category: 'transportation', slug: 'transportation-cards', title: 'Transportation Cards', description: 'Which transit card to buy and how to top up.' },
   { category: 'transportation', slug: 'save-on-transport', title: 'Save on Transport', description: 'Small habits that lower your daily travel cost.' },
-  { category: 'transportation', slug: 'renting-a-car', title: 'Renting a Car', description: 'When driving makes sense and what to prepare.' },
+  { category: 'transportation', slug: 'renting-a-car', title: 'Renting a Car', description: 'When it makes sense (and when it does not).' },
 
   { category: 'accommodation', slug: 'budget-stays', title: 'Budget Stays', description: 'Clean, simple stays that keep your budget happy.' },
   { category: 'accommodation', slug: 'best-value-hotels', title: 'Best-Value Hotels', description: 'Comfortable hotels with good locations and fair prices.' },

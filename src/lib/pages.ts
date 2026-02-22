@@ -186,7 +186,7 @@ const subpages = [
   { category: 'cities', slug: 'which-city-fits-you-best', title: 'Which City Fits You Best?', description: 'Match your travel style to the right destination.' },
 
   { category: 'transportation', slug: 'using-the-subway', title: 'Using the Subway', description: 'Tickets, transportation cards, fares, and what first-time riders should expect.' },
-  { category: 'transportation', slug: 'taking-the-bus', title: 'Taking the Bus', description: 'Simple steps for local buses and express routes.' },
+  { category: 'transportation', slug: 'taking-the-bus', title: 'Taking the Bus', description: 'How buses work, how to pay, and when they are the better choice for daily travel.' },
   { category: 'transportation', slug: 'using-taxis', title: 'Using Taxis', description: 'When taxis are worth it and how to pay.' },
   { category: 'transportation', slug: 'transportation-cards', title: 'Transportation Cards', description: 'Which transit card to buy and how to top up.' },
   { category: 'transportation', slug: 'save-on-transport', title: 'Save on Transport', description: 'Small habits that lower your daily travel cost.' },

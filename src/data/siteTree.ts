@@ -1829,109 +1829,142 @@ export const siteTree: TreeNode = {
           slug: "taking-the-bus",
           icon: "bus",
           image: "transport",
-          description: "How buses work and when to use them.",
+          description:
+            "How buses work, how to pay, and when they are the better choice for daily travel.",
           quickAnswer:
             "This page helps you know when and how to use buses without confusion.",
           content: [
             {
-              title: "Taking the Bus",
-              icon: "bus",
-              emphasis: "More than just a backup plan.",
+              title: "🚌 Introduction",
               body:
-                "In Korea, buses are a core part of the public transport system. They connect neighborhoods, attractions, and areas the subway doesn't cover. Once you understand the routes and payment system, buses are simple, efficient, and reliable.",
+                "In South Korea, buses are not a backup option. They are a core part of daily transportation. They connect residential neighborhoods, tourist attractions, and areas that subway lines do not reach directly. In many situations, a single bus ride is faster and more practical than multiple subway transfers. Once you understand payment and how stops are announced, buses become predictable and easy to use.",
             },
             {
-              title: "When Should You Take the Bus?",
-              icon: "route",
-              emphasis: "When it saves time and steps.",
+              title: "🎯 When the Bus Is the Smarter Option",
               body: "Choose the bus when:",
               bullets: [
-                "Your destination is not near a subway station",
+                "Your destination is not close to a subway station",
                 "The subway route requires multiple transfers",
-                "You want to avoid long underground walking",
-                "A map app shows a faster direct route by bus",
-                "If one bus gets you there without changing lines, it is often the most efficient choice.",
+                "The subway station involves long underground walking",
+                "A map app shows a direct bus route",
               ],
+              tail:
+                "If one bus takes you directly to your stop without changing lines, it is often the most efficient option.",
             },
             {
-              title: "How to Pay on Korean Buses",
-              icon: "card",
-              emphasis: "Same card, simple system.",
+              title: "💳 How to Pay on Korean Buses",
+              emphasis: "Simple and Consistent Payment",
               body:
-                "You use the same transportation card as the subway (such as T-money).",
+                "Use a rechargeable transportation card (such as T-money).",
               bullets: [
-                "Tap once when you get on",
-                "Tap again when you get off",
-                "The system automatically calculates distance and transfers",
-                "There is no need to calculate fares manually. Just remember to tap out.",
+                "Tap when boarding",
+                "Tap again when exiting",
+                "The fare is calculated automatically based on distance.",
+                "If you transfer to or from the subway within the allowed time window, the system applies a reduced combined fare - as long as you use the same card.",
               ],
+              tail: "There is no need to calculate fares manually.",
             },
             {
-              title: "Common Concerns for First-Time Visitors",
-              icon: "alert",
-              emphasis: "Clear and manageable.",
-              body: "Many travelers worry about:",
+              title: "✅ The Most Important Rule",
+              body: "Always tap when exiting.",
+              bullets: [
+                "If you forget to tap out:",
+                "You may lose your transfer discount",
+                "Your next ride can be treated as a new full fare",
+              ],
+              tail:
+                "Many unexpected fare increases happen because of a missed tap-out, not because buses are expensive.",
+            },
+            {
+              title: "🎨 Understanding Bus Types",
+              body: "In major cities like Seoul, buses are color-coded:",
+              bullets: [
+                "Blue: Main routes connecting districts",
+                "Green: Local neighborhood routes",
+                "Red: Express routes between city centers and suburbs",
+                "Yellow: Circular downtown routes",
+              ],
+              tail:
+                "You do not need to memorize the system, but knowing that red buses are usually longer-distance express routes can help when checking directions.",
+            },
+            {
+              title: "😬 What First-Time Visitors Worry About",
+              body: "Common concerns include:",
               bullets: [
                 "Getting on the wrong bus",
                 "Missing their stop",
                 "Not knowing when to exit",
-                "In practice, buses are easy to follow using a map app and the onboard screens.",
               ],
             },
             {
-              title: "What You'll Notice on the Bus",
-              icon: "shield",
-              emphasis: "Visible, trackable, predictable.",
+              title: "🔍 What Actually Happens",
               body: "In practice:",
               bullets: [
-                "Bus numbers and final destinations are clearly displayed",
-                "Stops are announced and shown on digital screens",
-                "Google Maps or Naver Map tracks your location in real time",
+                "Bus numbers and final destinations are displayed clearly",
+                "Stops are announced in Korean and usually English",
+                "Digital screens show the next stop",
+                "Map apps (Google Maps, Naver Map) track your location in real time",
                 "You can see exactly how many stops remain before yours.",
               ],
             },
             {
-              title: "Why Buses Feel Different",
-              icon: "pin",
-              emphasis: "You see the city.",
-              body: "Unlike the subway, buses travel above ground. You:",
+              title: "🧭 When Buses Feel Easier Than Subways",
+              body: "Unlike subways, buses travel above ground. You:",
               bullets: [
-                "See streets and neighborhoods",
-                "Understand distances better",
-                "Stay oriented more easily",
-                "For many visitors, this makes travel feel more intuitive.",
+                "See street names",
+                "Recognize landmarks",
+                "Stay oriented visually",
               ],
+              tail:
+                "For many visitors, this makes travel feel more intuitive, especially in unfamiliar neighborhoods.",
             },
             {
-              title: "A Common Mistake to Avoid",
-              icon: "alert",
-              emphasis: "Do not default to taxis.",
-              body: "Some travelers:",
+              title: "⏰ Rush Hour Considerations",
+              body:
+                "Buses operate throughout the day, but traffic affects travel time.",
               bullets: [
-                "Avoid buses completely",
-                "Use taxis instead for short trips",
-                "Overuse the subway even when it is indirect",
-                "Often, the bus is cheaper than a taxi and more direct than the subway.",
+                "Weekday peak hours (roughly 7:30-9:00 AM and 5:30-7:00 PM) can slow bus routes significantly in busy areas.",
               ],
+              tail:
+                "If your route depends heavily on road traffic, check estimated arrival times in your map app before boarding.",
             },
             {
-              title: "What You Don't Need to Master",
-              icon: "hand",
-              emphasis: "It is simpler than it looks.",
+              title: "🚫 When Not to Choose the Bus",
+              body: "The bus may not be ideal when:",
+              bullets: [
+                "You are traveling long cross-city distances where the subway is faster",
+                "Traffic conditions are heavy",
+                "You are unsure of the route and a subway line is more direct",
+              ],
+              tail:
+                "In many cases, the best strategy is a combination of subway and bus.",
+            },
+            {
+              title: "⚠️ Common Mistakes",
+              body: "Common mistakes include:",
+              bullets: [
+                "Defaulting to taxis for short trips",
+                "Avoiding buses entirely out of uncertainty",
+                "Ignoring direct bus routes suggested by map apps",
+              ],
+              tail:
+                "Often, a single bus ride is cheaper than a taxi and more direct than an indirect subway route.",
+            },
+            {
+              title: "🧠 What You Do Not Need to Master",
               body: "You do not need:",
               bullets: [
                 "To memorize bus routes",
-                "To deeply understand the color system",
+                "To understand every color system detail",
                 "To speak Korean fluently",
-                "If you can follow numbers and use a map app, you can use Korean buses confidently.",
               ],
+              tail:
+                "If you can follow numbers and use a map app, you can use Korean buses confidently.",
             },
             {
-              title: "Bottom Line",
-              icon: "spark",
-              emphasis: "Practical and reliable.",
+              title: "✅ Bottom Line",
               body:
-                "When the subway gets you close, the bus often gets you exactly there. Use it when it clearly saves time, transfers, or walking.",
+                "In South Korea, buses are practical, structured, and reliable. When the subway gets you close, the bus often gets you exactly there. Use buses when they clearly reduce transfers, walking distance, or total travel time.",
             },
           ],
         },

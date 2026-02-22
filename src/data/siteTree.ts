@@ -2110,7 +2110,7 @@ export const siteTree: TreeNode = {
                 "A transportation card and a few basic rules make public transport in Korea straightforward. You do not need complex passes or tourist bundles. Most visitors only need one rechargeable transportation card and an understanding of how transfer time windows work.",
             },
             {
-              title: "🪪 Step 1 - Get One Transportation Card (Day One)",
+              title: "🪪 Get One Transportation Card (Day One)",
               body: "Buy a rechargeable transportation card as soon as possible after arrival.",
               subsections: [
                 {

@@ -1571,111 +1571,106 @@ export const siteTree: TreeNode = {
       description: "Learn how to use buses, subways, and taxis with confidence.",
       children: [
         {
-          title: "Is Getting Around Hard in South Korea?",
+          title: "Getting Around South Korea",
           slug: "is-getting-around-hard",
           updatedIso: "2026-02-18T00:00:00.000Z",
           icon: "route",
           image: "transport",
           description:
-            "How easy public transportation really is in South Korea.",
+            "How public transportation actually works - costs, airport options, and when to choose subway, bus, or taxi.",
           quickAnswer:
             "This page explains why getting around South Korea is easy, even for first-time visitors.",
           content: [
             {
-              title: "Is Getting Around Hard in South Korea?",
-              icon: "train",
-              emphasis: "For most travelers, it’s much easier than expected.",
-              body:
-                "South Korea has one of the most efficient public transportation systems in Asia. Trains, subways, and buses are clean, punctual, and built for daily commuters — which means they run frequently, all day, every day.",
-            },
-            {
-              title: "The Short Answer",
-              icon: "spark",
-              emphasis: "No. It’s simple, reliable, and tourist-friendly.",
-              body: "Most visitors quickly notice:",
-              bullets: [
-                "Subway trains every 2–5 minutes in major cities like Seoul and Busan",
-                "Clear English station names and numbered exits",
-                "Affordable, distance-based fares (automatically calculated)",
-                "Easy transfers between subway and bus",
-                "No need for a rental car in large cities",
-                "If you’re staying in a central area, public transportation is usually faster and more predictable than driving.",
-              ],
-            },
-            {
-              title: "Why Transportation in Korea Works So Well",
-              icon: "route",
-              emphasis: "Everything is connected under one system.",
-              body:
-                "Subways, city buses, airport rail, and regional trains use an integrated fare network. A rechargeable T-money card works nationwide — on subways, buses, many taxis, and even at convenience stores.",
-              bullets: [
-                "For intercity travel, KTX (Korea Train Express) — operated by Korail — connects major cities quickly. You can travel from Seoul to Busan in about 2.5 hours.",
-                "For airport transfers, the AREX (Airport Railroad Express) links downtown Seoul directly to Incheon International Airport. It’s fast, reliable, and easy to use after a long flight.",
-              ],
-            },
-            {
-              title: "What First-Time Visitors Usually Worry About",
-              icon: "alert",
+              title: "🚇 Introduction",
               emphasis:
-                "The good news: the system is designed with international visitors in mind.",
-              body: "These concerns are common:",
-              bullets: [
-                "“What if I can’t read Korean?”",
-                "“What if I get on the wrong train?”",
-                "“What if I get lost underground?”",
-              ],
-            },
-            {
-              title: "What Actually Happens",
-              icon: "shield",
-              emphasis: "Mistakes are easy to fix.",
-              body: "In real life:",
-              bullets: [
-                "Subway lines are color-coded and numbered",
-                "Stations display English names clearly",
-                "Announcements are in Korean and English (often Chinese and Japanese too)",
-                "If you take the wrong direction, simply get off at the next stop and switch platforms",
-                "For navigation, Naver Map and KakaoMap provide accurate real-time transit routes. Google Maps works for subways, but local apps are more detailed for buses and transfers.",
-              ],
-            },
-            {
-              title: "How Most Travelers Get Around",
-              icon: "train",
-              emphasis: "A simple mix of transport works best.",
-              body: "Most visitors use:",
-              bullets: [
-                "Subways for major attractions and long distances",
-                "City buses for neighborhood routes",
-                "Taxis late at night or when carrying heavy luggage",
-                "Taxis in Korea are affordable compared to many Western countries. Drivers rely on navigation systems, so you can show your destination in Korean from your map app.",
-              ],
-            },
-            {
-              title: "What You Don’t Need",
-              icon: "hand",
-              emphasis: "Download a transit app, get a T-money card, and you’re ready.",
-              body: "You don’t need:",
-              bullets: [
-                "Fluent Korean",
-                "Printed paper maps",
-                "A rental car in Seoul or Busan",
-                "Complicated route planning",
-              ],
-            },
-            {
-              title: "A Common Mistake",
-              icon: "alert",
-              emphasis: "Overthinking transportation.",
+                "For most visitors, transportation in South Korea is structured, frequent, and predictable.",
               body:
-                "Some first-time visitors rely too much on taxis because they assume public transit is confusing. In reality, subways are often faster — especially during rush hour when traffic slows cars significantly.",
+                "Public transportation in cities like Seoul and Busan is designed for daily commuters. That means routes follow clear logic, trains run often, and payment works consistently across the system. If you stay in a central area, you usually do not need a rental car. Parking is limited, traffic builds quickly during peak hours, and subways are often faster.",
             },
             {
-              title: "Bottom Line",
-              icon: "spark",
+              title: "✅ The Short Answer",
+              emphasis: "Getting around South Korea is usually simple.",
+              body: "In major cities, you can expect:",
+              bullets: [
+                "Subway trains every 2-5 minutes during core daytime hours",
+                "Color-coded lines and numbered stations",
+                "English signage inside stations",
+                "Distance-based fares calculated automatically when you tap",
+                "Straightforward transfers between subway and bus",
+                "Most travelers adjust after their first subway ride.",
+              ],
+            },
+            {
+              title: "💳 How Fares Work",
+              emphasis: "Public transport operates on a base fare plus distance system.",
+              body: "As of recent fare updates:",
+              bullets: [
+                "Seoul subway (transportation card): from about 1,550 KRW",
+                "Busan subway (transportation card): from about 1,600 KRW",
+                "Seoul regular taxi base fare: from about 4,800 KRW",
+                "Subway fares increase mainly by distance. Transfers do not normally restart a full base fare if you transfer within the allowed time window using the same card.",
+                "Taxi rides may feel affordable at first, but repeated short trips increase daily costs quickly.",
+              ],
+            },
+            {
+              title: "✈️ Airport to City Options",
+              body:
+                "If you arrive at Incheon International Airport, you generally choose between rail, bus, or taxi.",
+              bullets: [
+                "AREX (Airport Railroad Express): all-stop train reaches central Seoul in about 1 hour.",
+                "AREX (Airport Railroad Express): express train is faster but more expensive.",
+                "AREX (Airport Railroad Express): travel time is predictable because it is not affected by traffic.",
+                "Airport Limousine Bus: direct routes to many districts.",
+                "Airport Limousine Bus: useful if your accommodation is far from a subway station.",
+                "Airport Limousine Bus: travel time depends on traffic conditions.",
+                "For many solo travelers, rail is the most predictable default option.",
+              ],
+            },
+            {
+              title: "❓ What First-Time Visitors Worry About",
+              body: "Concern: \"What if I get lost underground?\" In practice:",
+              bullets: [
+                "Stations are numbered",
+                "Exits are numbered",
+                "Signs include English",
+                "If you go the wrong direction, you exit at the next stop and switch platforms",
+                "The system is built for millions of daily commuters. It is repetitive and structured rather than confusing.",
+              ],
+            },
+            {
+              title: "⏰ Rush Hour Reality",
+              body: "Weekday peak times are typically:",
+              bullets: [
+                "Morning: 7:30-9:00 AM",
+                "Evening: 5:30-7:00 PM",
+                "Trains run frequently, but they can be crowded. If possible, plan longer cross-city trips outside these windows for a more comfortable experience.",
+              ],
+            },
+            {
+              title: "🚕 When a Taxi Makes Sense",
+              body:
+                "Public transport is usually the default option. However, a taxi may be practical when:",
+              bullets: [
+                "Subway service has ended (often around midnight, depending on the line)",
+                "You are carrying large luggage",
+                "Weather conditions are severe",
+                "You are traveling with several people and splitting the fare",
+                "The key is using taxis strategically rather than automatically.",
+              ],
+            },
+            {
+              title: "⚠️ Common Mistake",
+              emphasis: "Assuming the system is complicated and avoiding it entirely.",
+              body:
+                "Many first-time visitors rely heavily on taxis out of uncertainty. After trying the subway once, most realize the system is structured and manageable.",
+            },
+            {
+              title: "✨ Bottom Line",
               emphasis:
-                "Getting around South Korea is one of the easiest parts of your trip.",
+                "Transportation in South Korea is not difficult.",
               body:
-                "After your first subway ride, the system feels clear and routine. For most travelers, transportation quickly becomes one of the least stressful — and most efficient — parts of visiting Korea.",
+                "If you follow three principles - tap your card, follow line numbers, and allow extra time during rush hour - moving around becomes routine. For most travelers, public transportation quickly becomes one of the least stressful parts of the trip.",
             },
           ],
         },

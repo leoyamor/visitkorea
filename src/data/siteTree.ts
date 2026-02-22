@@ -1718,7 +1718,7 @@ export const siteTree: TreeNode = {
                     "You can purchase a single-use ticket from machines inside subway stations.",
                     "Pay per ride",
                     "Slightly higher fare compared to transportation cards",
-                    "Less convenient for transfers",
+                    "Transfers are not eligible for a transfer discount",
                   ],
                   tail:
                     "This option works for occasional rides, but it becomes inefficient if you use the subway multiple times per day.",

@@ -1617,15 +1617,29 @@ export const siteTree: TreeNode = {
               title: "✈️ Airport to City Options",
               body:
                 "If you arrive at Incheon International Airport, you generally choose between rail, bus, or taxi.",
+            },
+            {
+              title: "🚆 AREX (Airport Railroad Express)",
+              body: " ",
               bullets: [
-                "AREX (Airport Railroad Express): all-stop train reaches central Seoul in about 1 hour.",
-                "AREX (Airport Railroad Express): express train is faster but more expensive.",
-                "AREX (Airport Railroad Express): travel time is predictable because it is not affected by traffic.",
-                "Airport Limousine Bus: direct routes to many districts.",
-                "Airport Limousine Bus: useful if your accommodation is far from a subway station.",
-                "Airport Limousine Bus: travel time depends on traffic conditions.",
-                "For many solo travelers, rail is the most predictable default option.",
+                "All-stop train reaches central Seoul in about 1 hour",
+                "Express train is faster but more expensive",
+                "Travel time is predictable because it is not affected by traffic",
               ],
+            },
+            {
+              title: "🚌 Airport Limousine Bus",
+              body: " ",
+              bullets: [
+                "Direct routes to many districts",
+                "Useful if your accommodation is far from a subway station",
+                "Travel time depends on traffic conditions",
+              ],
+            },
+            {
+              title: "✅ Practical Default",
+              body:
+                "For many solo travelers, rail is the most predictable default option.",
             },
             {
               title: "❓ What First-Time Visitors Worry About",

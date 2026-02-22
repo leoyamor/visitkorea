@@ -1697,94 +1697,131 @@ export const siteTree: TreeNode = {
           slug: "using-the-subway",
           icon: "train",
           image: "transport",
-          description: "Tickets, cards, and how to pay.",
+          description:
+            "Tickets, transportation cards, fares, and what first-time riders should expect.",
           quickAnswer:
             "This page helps you use the Korean subway with confidence from day one.",
           content: [
             {
-              title: "Using the Subway",
-              icon: "train",
-              emphasis: "Simple. Clear. Reliable.",
+              title: "🚇 Introduction",
               body:
-                "If you've used a subway in any major city, you can use it in Korea. Korea's subway system is fast, clean, affordable, and designed for everyday commuters. That's exactly why it works so well for visitors. Most travelers feel comfortable after just one ride.",
+                "Using the subway in South Korea is usually straightforward, even for first-time visitors. Major cities such as Seoul and Busan operate structured, commuter-based systems. Trains run frequently, stations are clearly numbered, and payment follows a consistent distance-based model. Once you understand how to pay and how fares are calculated, the rest becomes routine.",
             },
             {
-              title: "The One Thing You Need to Know",
-              icon: "card",
-              emphasis: "Get a transportation card.",
+              title: "💳 Step 1 - Choose How You Pay",
               body:
-                "You can buy a rechargeable transit card (such as T-money) at convenience stores or subway stations. Tap once when you enter. Tap once when you exit. That's it.",
-              bullets: [
-                "You don't need paper tickets.",
-                "You don't need to calculate fares.",
+                "There are two main ways to pay for a subway ride:",
+              subsections: [
+                {
+                  title: "Option 1: Single-Use Ticket",
+                  bullets: [
+                    "You can purchase a single-use ticket from machines inside subway stations.",
+                    "Pay per ride",
+                    "Slightly higher fare compared to transportation cards",
+                    "Less convenient for transfers",
+                  ],
+                  tail:
+                    "This option works for occasional rides, but it becomes inefficient if you use the subway multiple times per day.",
+                },
+                {
+                  title: "Option 2: Transportation Card",
+                  bullets: [
+                    "A rechargeable transportation card works across:",
+                    "Subways",
+                    "City buses",
+                    "Many taxis",
+                    "You tap when entering and tap again when exiting. The system calculates your fare automatically.",
+                  ],
+                  tail:
+                    "For most travelers staying more than one day, this is the more practical option.",
+                },
               ],
             },
             {
-              title: "How Payment Works",
-              icon: "wallet",
-              emphasis: "It's automatic.",
+              title: "💸 How Subway Fares Work",
               body:
-                "You don't need to understand zones or complicated fare systems.",
+                "Subway fares are based on distance.",
               bullets: [
-                "Add credit to your card",
-                "Fares are calculated by distance",
-                "Transfers between buses and subways are discounted automatically",
+                "As of current fare structures in major cities:",
+                "Base fare in Seoul starts around 1,550 KRW when using a transportation card",
+                "Fares increase gradually depending on total distance traveled",
+                "Transfers within the allowed time window usually do not restart a full base fare, as long as you use the same card.",
               ],
+              tail:
+                "You do not need to calculate the price manually. The system processes it when you tap.",
             },
             {
-              title: "What Stations Are Like",
-              icon: "pin",
-              emphasis: "Clear and traveler-friendly.",
+              title: "🚉 Entering and Exiting the System",
+              body: "The process is consistent across stations.",
+              bullets: [
+                "Tap your card or scan your ticket at the entrance gate",
+                "Ride your train",
+                "Tap again at the exit gate",
+              ],
+              tail:
+                "If your balance is too low, the gate will not open. Recharge machines are located inside stations.",
+            },
+            {
+              title: "😬 What First-Time Riders Usually Worry About",
               body:
-                "In most cases, following the line number and exit number is enough.",
+                "Many visitors worry about taking the wrong train.",
               bullets: [
-                "Lines are color-coded and numbered",
-                "Station names are shown in English",
-                "Major stations include English announcements",
-                "Exit numbers guide you directly to streets and landmarks",
+                "In practice:",
+                "Subway lines are color-coded",
+                "Stations are numbered",
+                "Direction signs clearly show terminal stations",
+                "English station names are displayed",
               ],
+              tail:
+                "If you board in the wrong direction, exit at the next stop and switch platforms. Mistakes typically cost a few minutes, not significant money.",
             },
             {
-              title: "What First-Time Riders Worry About",
-              icon: "alert",
-              emphasis: "Mistakes are easy to fix.",
-              body: "Common concerns:",
+              title: "⏰ Rush Hour Reality",
+              body: "Weekday peak hours in large cities are typically:",
               bullets: [
-                "What if I take the wrong direction?",
-                "What if I can't read Korean?",
-                "What if I tap incorrectly?",
-                "Signs are consistent and easy to follow",
-                "If you go the wrong way, get off at the next station and switch",
-                "If there's a payment issue, the gate won't open - so you'll know immediately",
+                "7:30-9:00 AM",
+                "5:30-7:00 PM",
+                "Trains operate frequently, but they can be crowded during these times.",
               ],
+              tail:
+                "If your schedule allows, plan longer cross-city trips outside peak hours for a more comfortable ride.",
             },
             {
-              title: "What You Don't Need to Worry About",
-              icon: "hand",
-              emphasis: "A transit app and basic station signs are usually enough.",
-              body: "You don't need:",
+              title: "🧳 When the Subway May Not Be Ideal",
+              body: "The subway may not be the best option if:",
               bullets: [
-                "Fluent Korean",
-                "A rental car in major cities",
-                "Complex route memorization",
-                "Taxis for short distances",
+                "Service has ended (often around midnight, depending on the line)",
+                "You are carrying very large luggage",
+                "Your destination is far from any station",
               ],
+              tail: "In those cases, buses or taxis may be more practical.",
             },
             {
-              title: "A Helpful Tip",
-              icon: "route",
-              emphasis:
-                "Don't default to taxis just because you feel uncertain.",
+              title: "⚠️ Common Mistakes to Avoid",
+              body: "Common mistakes include:",
+              bullets: [
+                "Buying single-use tickets repeatedly instead of using one transportation card",
+                "Not checking train direction before boarding",
+                "Assuming taxis are always easier",
+              ],
+              tail: "Most confusion disappears after one or two rides.",
+            },
+            {
+              title: "🧠 What the Subway Is NOT",
               body:
-                "In cities like Seoul or Busan, the subway is often faster, more predictable, and cheaper than driving.",
+                "The subway system in Korea is not:",
+              bullets: [
+                "Complicated",
+                "Tourist-only",
+                "Unpredictable",
+              ],
+              tail:
+                "It is a structured commuter network used daily by millions of residents.",
             },
             {
-              title: "Bottom Line",
-              icon: "spark",
-              emphasis:
-                "Korea's subway system is one of the easiest parts of your trip.",
+              title: "✅ Bottom Line",
               body:
-                "Once you ride it once, it quickly feels routine - not something to stress about.",
+                "Using the subway in South Korea is manageable once you understand how payment works. Choose a transportation card, tap correctly, check train direction before boarding, and allow extra time during peak hours. For most visitors, the subway becomes one of the fastest and most reliable ways to move around the city.",
             },
           ],
         },

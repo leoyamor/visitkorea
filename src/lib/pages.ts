@@ -185,7 +185,7 @@ const subpages = [
   { category: 'cities', slug: 'jeonju', title: 'Jeonju', description: 'Hanok lanes, food streets, and calm vibes.' },
   { category: 'cities', slug: 'which-city-fits-you-best', title: 'Which City Fits You Best?', description: 'Match your travel style to the right destination.' },
 
-  { category: 'transportation', slug: 'using-the-subway', title: 'Using the Subway', description: 'How to ride the metro without confusion.' },
+  { category: 'transportation', slug: 'using-the-subway', title: 'Using the Subway', description: 'Tickets, transportation cards, fares, and what first-time riders should expect.' },
   { category: 'transportation', slug: 'taking-the-bus', title: 'Taking the Bus', description: 'Simple steps for local buses and express routes.' },
   { category: 'transportation', slug: 'using-taxis', title: 'Using Taxis', description: 'When taxis are worth it and how to pay.' },
   { category: 'transportation', slug: 'transportation-cards', title: 'Transportation Cards', description: 'Which transit card to buy and how to top up.' },

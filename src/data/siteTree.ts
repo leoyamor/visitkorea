@@ -1571,7 +1571,7 @@ export const siteTree: TreeNode = {
       description: "Learn how to use buses, subways, and taxis with confidence.",
       children: [
         {
-          title: "Getting Around South Korea",
+          title: "Is Getting Around Hard in South Korea?",
           slug: "is-getting-around-hard",
           updatedIso: "2026-02-18T00:00:00.000Z",
           icon: "route",

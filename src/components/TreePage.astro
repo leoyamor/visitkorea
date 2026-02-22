@@ -1021,12 +1021,12 @@ const breadcrumb = breadcrumbs;
                         ))}
                       </ul>
                     )}
+                    {subsection.tail && (
+                      <p class="content-tail" set:html={linkify(subsection.tail)} />
+                    )}
                   </div>
                 ))}
               </div>
-            )}
-            {section.tail && (
-              <p class="content-tail" set:html={linkify(section.tail)} />
             )}
             {section.bullets && (
               <ul>
@@ -1034,6 +1034,9 @@ const breadcrumb = breadcrumbs;
                   <li set:html={linkify(bullet)} />
                 ))}
               </ul>
+            )}
+            {section.tail && (
+              <p class="content-tail" set:html={linkify(section.tail)} />
             )}
           </div>
           {isLeafPage && index === 0 && (

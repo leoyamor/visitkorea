@@ -13,6 +13,7 @@ export type TreeNode = {
     subsections?: {
       title: string;
       bullets?: string[];
+      tail?: string;
     }[];
     tail?: string;
     icon?: string;
@@ -2031,13 +2032,26 @@ export const siteTree: TreeNode = {
             {
               title: "🪪 Step 1 - Get One Transportation Card (Day One)",
               body: "Buy a rechargeable transportation card as soon as possible after arrival.",
-              bullets: [
-                "It works for: subways.",
-                "It works for: city buses.",
-                "It works for: many taxis.",
-                "It works for: convenience stores (small purchases).",
-                "You do not need a special tourist edition. If it works on both buses and subways, it is sufficient for most travelers.",
-                "Cards are available at: airport convenience stores, subway station machines, and major convenience store chains.",
+              subsections: [
+                {
+                  title: "It works for:",
+                  bullets: [
+                    "Subways",
+                    "City buses",
+                    "Many taxis",
+                    "Convenience stores (small purchases)",
+                  ],
+                  tail:
+                    "You do not need a special tourist edition. If it works on both buses and subways, it is sufficient for most travelers.",
+                },
+                {
+                  title: "Cards are available at:",
+                  bullets: [
+                    "Airport convenience stores",
+                    "Subway station machines",
+                    "Major convenience store chains",
+                  ],
+                },
               ],
             },
             {
@@ -2047,8 +2061,8 @@ export const siteTree: TreeNode = {
                 "Tap when entering the subway",
                 "Tap when boarding a bus",
                 "Tap again when exiting",
-                "The fare is calculated automatically based on distance.",
               ],
+              tail: "The fare is calculated automatically based on distance.",
             },
             {
               title: "⚠️ Important Bus Rule",
@@ -2056,8 +2070,8 @@ export const siteTree: TreeNode = {
               bullets: [
                 "You may lose your transfer discount",
                 "The system may treat your next ride as a new full fare",
-                "This is one of the most common reasons travelers pay more than expected.",
               ],
+              tail: "This is one of the most common reasons travelers pay more than expected.",
             },
             {
               title: "🔄 How Transfers Actually Work",
@@ -2067,8 +2081,9 @@ export const siteTree: TreeNode = {
               bullets: [
                 "Seoul metropolitan area: 30 minutes during the day, 60 minutes late at night",
                 "Busan: 30 minutes",
-                "Transfer limits (how many rides count as one connected journey) vary slightly by city. The most important rule is consistency: use the same card and tap correctly each time.",
               ],
+              tail:
+                "Transfer limits (how many rides count as one connected journey) vary slightly by city. The most important rule is consistency: use the same card and tap correctly each time.",
             },
             {
               title: "💡 The Biggest Cost Saver",
@@ -2081,20 +2096,26 @@ export const siteTree: TreeNode = {
               body: "For typical sightseeing days in major cities:",
               bullets: [
                 "Daily public transport spending often falls between 5,000-10,000 KRW, depending on distance and number of rides.",
-                "You do not need to preload large balances. Recharge when needed. There is no price advantage to loading a large amount at once.",
               ],
+              tail:
+                "You do not need to preload large balances. Recharge when needed. There is no price advantage to loading a large amount at once.",
             },
             {
               title: "🧠 Easy Habits That Lower Costs",
-              body: "You do not need special passes to spend less. Simple habits work:",
-              bullets: [
-                "Group attractions by neighborhood",
-                "Combine bus and subway within one transfer window",
-                "Walk short distances between nearby stops",
-                "Check your route once before riding",
-                "Use taxis strategically (late night, heavy luggage, severe weather)",
-                "Efficiency reduces costs naturally.",
+              body: "You do not need special passes to spend less.",
+              subsections: [
+                {
+                  title: "Simple habits work:",
+                  bullets: [
+                    "Group attractions by neighborhood",
+                    "Combine bus and subway within one transfer window",
+                    "Walk short distances between nearby stops",
+                    "Check your route once before riding",
+                    "Use taxis strategically (late night, heavy luggage, severe weather)",
+                  ],
+                },
               ],
+              tail: "Efficiency reduces costs naturally.",
             },
             {
               title: "🏷️ What a Transportation Card Is NOT",
@@ -2104,13 +2125,15 @@ export const siteTree: TreeNode = {
                 "A sightseeing pass",
                 "A bundled tourist discount package",
                 "Something you need to optimize obsessively",
-                "It is simply the fastest and most consistent way to pay for daily transport.",
               ],
+              tail: "It is simply the fastest and most consistent way to pay for daily transport.",
             },
             {
               title: "✨ Bottom Line",
               body:
-                "If you use one card, tap correctly, and transfer within the time window, Korea's public transport becomes predictable and cost-efficient - even for first-time visitors. If you want a broader overview of how public transportation works in major cities, see our guide on Getting Around Korea.",
+                "If you use one card, tap correctly, and transfer within the time window, Korea's public transport becomes predictable and cost-efficient - even for first-time visitors.",
+              tail:
+                "If you want a broader overview of how public transportation works in major cities, see our guide on Getting Around South Korea.",
             },
           ],
         },

@@ -1708,7 +1708,7 @@ export const siteTree: TreeNode = {
                 "Using the subway in South Korea is usually straightforward, even for first-time visitors. Major cities such as Seoul and Busan operate structured, commuter-based systems. Trains run frequently, stations are clearly numbered, and payment follows a consistent distance-based model. Once you understand how to pay and how fares are calculated, the rest becomes routine.",
             },
             {
-              title: "💳 Step 1 - Choose How You Pay",
+              title: "💳 Choose How You Pay",
               body:
                 "There are two main ways to pay for a subway ride:",
               subsections: [

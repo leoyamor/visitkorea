@@ -2405,10 +2405,12 @@ export const siteTree: TreeNode = {
                 },
                 {
                   title: "2️⃣ Bulgogi (Marinated Beef)",
-                  bullets: [
+                  lead: [
                     "What it is: Sweet soy-marinated grilled beef.",
                     "Why it is good first: Familiar flavor profile. Mild and approachable.",
                     "Typical price range:",
+                  ],
+                  bullets: [
                     "Seoul: ₩15,000-₩25,000",
                     "Other major cities: ₩12,000-₩20,000",
                   ],

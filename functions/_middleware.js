@@ -11,6 +11,8 @@ const BLOCKED_PATHS = new Set([
   "/getting-around-korea/transfers-explained",
   "/es/getting-around-korea/saving-on-transport",
   "/es/getting-around-korea/transfers-explained",
+  "/what-to-eat/food-for-first-timers",
+  "/es/what-to-eat/food-for-first-timers",
 ]);
 
 export async function onRequest(context) {

@@ -20,5 +20,9 @@ http://www.visitingkorea.pages.dev/* https://planmykorea.com/:splat 301
 /es/getting-around-korea/saving-on-transport/ /es/404/index.html 404!
 /es/getting-around-korea/transfers-explained /es/404/index.html 404!
 /es/getting-around-korea/transfers-explained/ /es/404/index.html 404!
+/what-to-eat/food-for-first-timers /404.html 404!
+/what-to-eat/food-for-first-timers/ /404.html 404!
+/es/what-to-eat/food-for-first-timers /es/404/index.html 404!
+/es/what-to-eat/food-for-first-timers/ /es/404/index.html 404!
 /es/* /es/404/index.html 404
 /* /404.html 404

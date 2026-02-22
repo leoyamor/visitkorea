@@ -1973,114 +1973,124 @@ export const siteTree: TreeNode = {
           slug: "using-taxis",
           icon: "taxi",
           image: "transport",
-          description: "Costs, apps, and payment tips.",
+          description:
+            "Costs, when to use them, taxi apps, and practical payment tips for visitors.",
           quickAnswer:
             "This page helps you decide when taxis make sense and how to use them safely.",
           content: [
             {
-              title: "Using Taxis",
-              icon: "taxi",
-              emphasis: "Easy when used strategically.",
+              title: "🚕 Introduction",
               body:
-                "Taxis in Korea are safe, regulated, and widely available. They are best for short distances, late nights, or when public transport is inconvenient. If you know when to use them, taxis are straightforward and reliable.",
+                "Taxis in South Korea are regulated, safe, and widely available in major cities. They are not always the cheapest option, but they are reliable when used strategically. Knowing when to choose a taxi - and when not to - helps control both time and budget.",
             },
             {
-              title: "When Should You Take a Taxi?",
-              icon: "alert",
-              emphasis: "Use it when it clearly saves effort.",
-              body: "A taxi makes sense when:",
+              title: "✅ When a Taxi Makes Sense",
+              body: "A taxi is often the better choice when:",
               bullets: [
-                "The subway has stopped running (usually around midnight)",
+                "The subway has stopped running (many lines end around midnight)",
                 "You are carrying heavy luggage",
                 "You are traveling in a group and can split the fare",
-                "The weather is bad (rain, snow, extreme heat)",
+                "Weather conditions are poor (rain, snow, extreme heat)",
                 "Your destination is far from the nearest station",
-                "If public transport requires multiple transfers and long walking, a taxi can save both time and energy.",
+              ],
+              tail:
+                "If public transport requires multiple transfers and long walking, a taxi can reduce both effort and stress.",
+            },
+            {
+              title: "💸 How Expensive Are Taxis?",
+              body:
+                "Taxi fares are government-regulated and standardized.",
+              subsections: [
+                {
+                  title: "As of recent fare structures in Seoul:",
+                  plainTitle: true,
+                  bullets: [
+                    "Base fare starts around 4,800 KRW",
+                    "Additional distance and time increase the fare",
+                    "Heavy traffic raises the price because time is included in the calculation",
+                  ],
+                  tail:
+                    "Short rides are usually affordable. Long cross-city trips can become significantly more expensive.",
+                },
+              ],
+              bullets: [
+                "If a direct subway or bus route exists, it is often cheaper.",
+                "If convenience matters more than cost, a taxi may be reasonable.",
               ],
             },
             {
-              title: "How Expensive Are Taxis in Korea?",
-              icon: "wallet",
-              emphasis: "Affordable for short distances.",
+              title: "🚦 Traffic Considerations",
               body:
-                "Taxi fares in Korea are regulated and generally reasonable compared to many major cities worldwide.",
+                "Unlike subways, taxis are affected by road traffic.",
               bullets: [
-                "Short rides are usually cost-effective",
-                "Long cross-city rides can become expensive",
-                "Heavy traffic increases the fare because time is included",
-                "If a direct subway or bus route is available, it is often cheaper. If convenience matters more, a taxi may be worth it.",
+                "Weekday peak hours (approximately 7:30-9:00 AM and 5:30-7:00 PM) can slow travel times and increase fares.",
               ],
+              tail:
+                "Before booking, check estimated travel time in a map app. In some cases, the subway may be faster and more predictable.",
             },
             {
-              title: "Using Taxi Apps",
-              icon: "sim",
-              emphasis: "No Korean needed.",
-              body:
-                "Taxi apps such as Kakao T make the process simple. You can:",
+              title: "📱 Using Taxi Apps",
+              body: "Taxi apps make the process simpler for visitors.",
               bullets: [
+                "Apps such as Kakao T allow you to:",
                 "Set your pickup location precisely",
                 "Enter your destination in English",
                 "See estimated fares",
-                "Reduce communication issues",
-                "This is the easiest option for first-time visitors.",
+                "Reduce communication barriers",
               ],
+              tail:
+                "For first-time visitors, using an app is often easier than street-hailing.",
             },
             {
-              title: "Payment Options",
-              icon: "card",
-              emphasis: "Card is standard.",
+              title: "💳 Payment Methods",
               body: "Most taxis accept:",
               bullets: [
                 "International credit cards",
                 "Mobile payments",
                 "In some cases, transportation cards",
-                "Carrying a small amount of cash is still a good backup.",
               ],
+              tail:
+                "Carrying a small amount of cash is still advisable as a backup. If paying by card, confirm with the driver before departure if you are unsure.",
             },
             {
-              title: "When Taxis Are the Best Option",
-              icon: "spark",
-              emphasis: "Comfort over complexity.",
+              title: "🧳 When Taxis Improve the Experience",
               body: "Taxis are especially useful for:",
               bullets: [
-                "Late-night returns to your hotel",
+                "Late-night returns to your accommodation",
                 "Early morning airport transfers",
-                "Traveling with suitcases",
-                "Reaching areas not well connected by subway",
-                "In these situations, the extra cost often improves your overall travel experience.",
+                "Traveling with multiple suitcases",
+                "Visiting locations not well connected by subway",
               ],
+              tail:
+                "In these situations, the additional cost may improve overall comfort and efficiency.",
             },
             {
-              title: "Common Taxi Mistakes to Avoid",
-              icon: "alert",
-              emphasis: "Plan before you ride.",
-              body: "Avoid:",
+              title: "⚠️ Common Mistakes to Avoid",
+              body: "Common mistakes include:",
               bullets: [
-                "Taking taxis during rush hour traffic",
-                "Using taxis for every short distance",
+                "Taking taxis during heavy rush hour without checking traffic",
+                "Using taxis for every short distance without comparing routes",
                 "Entering the wrong pickup location in an app",
-                "Assuming payment methods without checking",
-                "A quick route comparison in a map app can prevent unnecessary expenses.",
+                "Assuming all payment methods are accepted without confirmation",
               ],
+              tail:
+                "A quick comparison in a map app can prevent unnecessary expenses.",
             },
             {
-              title: "Quick Decision Guide",
-              icon: "checklist",
-              emphasis: "Ask yourself:",
-              body: "Check these before booking:",
+              title: "🧠 Quick Decision Check",
+              body: "Before choosing a taxi, ask:",
               bullets: [
-                "Is public transport direct and easy?",
-                "Will traffic make a taxi slower?",
+                "Is public transport direct and simple?",
+                "Will traffic significantly increase travel time?",
                 "Does this ride save meaningful time or effort?",
-                "If the answer is yes, take the taxi. If not, public transport may be smarter.",
               ],
+              tail:
+                "If the answer is yes, a taxi may be justified. If not, public transport is often more cost-efficient.",
             },
             {
-              title: "Bottom Line",
-              icon: "spark",
-              emphasis: "Smart use makes taxis valuable.",
+              title: "✅ Bottom Line",
               body:
-                "Taxis in Korea are safe, reliable, and easy to use. When chosen strategically, they add comfort and flexibility to your trip. When overused, they simply increase your travel budget.",
+                "Taxis in South Korea are safe, regulated, and easy to use. When chosen strategically, they add flexibility and comfort to your trip. When overused, they increase your daily transportation budget without saving much time. Understanding the trade-off between cost and convenience helps you decide wisely.",
             },
           ],
         },

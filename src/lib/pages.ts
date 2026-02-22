@@ -187,7 +187,7 @@ const subpages = [
 
   { category: 'transportation', slug: 'using-the-subway', title: 'Using the Subway', description: 'Tickets, transportation cards, fares, and what first-time riders should expect.' },
   { category: 'transportation', slug: 'taking-the-bus', title: 'Taking the Bus', description: 'How buses work, how to pay, and when they are the better choice for daily travel.' },
-  { category: 'transportation', slug: 'using-taxis', title: 'Using Taxis', description: 'When taxis are worth it and how to pay.' },
+  { category: 'transportation', slug: 'using-taxis', title: 'Using Taxis', description: 'Costs, when to use them, taxi apps, and practical payment tips for visitors.' },
   { category: 'transportation', slug: 'transportation-cards', title: 'Transportation Cards', description: 'Which transit card to buy and how to top up.' },
   { category: 'transportation', slug: 'save-on-transport', title: 'Save on Transport', description: 'Small habits that lower your daily travel cost.' },
   { category: 'transportation', slug: 'renting-a-car', title: 'Renting a Car', description: 'When driving makes sense and what to prepare.' },

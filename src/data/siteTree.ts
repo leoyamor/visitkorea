@@ -3983,7 +3983,7 @@ export const siteTree: TreeNode = {
         },
         {
           title: "Discount Passes",
-          slug: "discount-passes",
+          slug: "attraction-passes-discounts",
           icon: "card",
           image: "shopping",
           description: "When passes actually save money.",

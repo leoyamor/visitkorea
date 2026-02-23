@@ -3745,7 +3745,7 @@ export const siteTree: TreeNode = {
           title: "Explore Korea Your Way",
           slug: "explore-korea",
           icon: "pin",
-          image: "city",
+          image: "/leaf%20images/Top%20Places%20by%20City.webp",
           description:
             "Go beyond the basics and choose places that truly add depth to your second trip — culturally, historically, and geographically.",
           quickAnswer:

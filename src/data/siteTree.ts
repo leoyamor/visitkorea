@@ -3742,101 +3742,242 @@ export const siteTree: TreeNode = {
           ],
         },
         {
-          title: "Top Places by City",
+          title: "Explore Korea Your Way",
           slug: "explore-korea",
           icon: "pin",
           image: "city",
-          description: "Highlights for each city.",
+          description:
+            "Go beyond the basics and choose places that truly add depth to your second trip — culturally, historically, and geographically.",
           quickAnswer:
-            "This page helps you plan activities by city without jumping around too much.",
+            "Your second trip should add clarity — not just more stops.",
           content: [
             {
-              title: "Top Places by City",
-              icon: "pin",
-              emphasis: "See less, enjoy more.",
+              title: "🧭 Explore Korea Your Way",
               body:
-                "Every Korean city offers plenty to see. Instead of rushing, focus on a few well-chosen highlights that match your travel style.",
+                "Your second trip should add clarity — not just more stops.",
+              tail:
+                "If your first visit covered major palaces, skyline views, and famous districts, your next trip should focus on places that help you understand Korea more deeply. This page highlights meaningful second-trip anchors — not just popular spots.",
             },
             {
-              title: "How to Use This Guide",
-              icon: "checklist",
-              emphasis: "Choose one main area per day.",
+              title: "🏛️ 1) Seoul — Historical & Political Foundations",
               body:
-                "Stay within one district instead of crossing the entire city. This saves time, reduces stress, and makes your trip more enjoyable.",
-            },
-            {
-              title: "Incheon - Port History & Modern Skyline",
-              icon: "city",
-              emphasis: "A mix of old trading streets and futuristic city views.",
-              body: "Best approach: Combine one historic area with one waterfront walk.",
-              bullets: [
-                "Chinatown - Korea's oldest Chinatown and the birthplace of jajangmyeon.",
-                "Songdo Central Park - Skyscrapers, canals, and a modern waterfront walk.",
-                "Wolmido - Casual seaside walks and small amusement rides.",
-                "Open Port Street - Historic buildings from Korea's early modernization period.",
+                "Instead of repeating palace complexes, consider places that explain Korea's philosophical and modern structure.",
+              subsections: [
+                {
+                  title: "Jongmyo Shrine",
+                  lead: [
+                    "UNESCO World Heritage site dedicated to royal ancestral rites.",
+                    "Why it matters:",
+                  ],
+                  bullets: [
+                    "Physical expression of Confucian state ideology",
+                    "More ritual-focused than decorative",
+                    "Still used for ceremonial traditions",
+                    "Admission: ₩1,000 (Adult, general admission)",
+                    "Special guided programs or combined tickets may vary.",
+                  ],
+                },
+                {
+                  title: "National Museum of Korea",
+                  lead: [
+                    "The largest museum in Korea.",
+                    "Why it matters:",
+                  ],
+                  bullets: [
+                    "Chronological overview of Korean civilization",
+                    "English-supported displays",
+                    "Strong cultural context for second-time visitors",
+                    "Admission: Permanent exhibition: Free",
+                    "Special exhibitions: Separate ticket (varies by exhibition)",
+                  ],
+                },
+                {
+                  title: "War Memorial of Korea",
+                  lead: [
+                    "Comprehensive overview of modern Korean military history.",
+                    "Why it matters:",
+                  ],
+                  bullets: [
+                    "Structured explanation of the Korean War",
+                    "Adds geopolitical context to later DMZ visits",
+                    "Admission: Permanent exhibition: Free",
+                    "Some special exhibitions may be ticketed.",
+                  ],
+                },
               ],
             },
             {
-              title: "Ulsan - Coast & Nature",
-              icon: "beach",
-              emphasis: "Wide ocean views and open landscapes.",
-              body: "Best approach: Focus on one coastal route and take your time.",
-              bullets: [
-                "Taehwagang National Garden - Large ecological garden in the city center.",
-                "Ganjeolgot - Famous sunrise spot on Korea's east coast.",
-                "Daewangam Park - Dramatic coastal rock formations and walking trails.",
-                "Jangsaengpo Whale Culture Village - Learn about Ulsan's whale industry history.",
-              ],
-            },
-            {
-              title: "Daegu - Views & Local Life",
-              icon: "city",
-              emphasis: "A city surrounded by mountains.",
-              body: "Best approach: Pair one viewpoint with one food or shopping area.",
-              bullets: [
-                "Apsan Observatory - Panoramic city views.",
-                "Seomun Market - Traditional street food and local shopping.",
-                "Dongseongno - Youth culture and shopping district.",
-                "83 Tower - Central observation tower for skyline views.",
-              ],
-            },
-            {
-              title: "Daejeon - Science & Relaxation",
-              icon: "spark",
-              emphasis: "Known as Korea's science hub.",
-              body: "Best approach: Combine one park with one relaxation activity.",
-              bullets: [
-                "Hanbat Arboretum - Spacious urban garden.",
-                "Expo Science Park - Landmark of Korea's science identity.",
-                "Yuseong Hot Springs - Historic hot spring district.",
-                "Gyejoksan Red Clay Trail - Unique barefoot forest walking path.",
-              ],
-            },
-            {
-              title: "Gwangju - Culture & Modern History",
-              icon: "temple",
-              emphasis: "A key city in Korea's democratic movement.",
-              body: "Best approach: Balance one cultural site with one outdoor walk.",
-              bullets: [
-                "May 18th National Cemetery - Memorial site of the 1980 uprising.",
-                "Asia Culture Center - Modern exhibitions and performances.",
-                "Mudeungsan - Easy-access mountain hiking.",
-                "Yangdong Market - Traditional market with regional food.",
-              ],
-            },
-            {
-              title: "Travel Smart",
-              icon: "alert",
-              emphasis: "Do not rank cities by \"importance.\"",
+              title: "🏯 2) One Deep Heritage City (Choose One)",
               body:
-                "There is no universal must-see list. The right city depends on your interests - history, food, nature, or modern culture.",
+                "Rather than repeating multiple royal sites, choose one historic capital and explore it thoroughly.",
+              subsections: [
+                {
+                  title: "Gyeongju — Former Silla Capital",
+                  lead: [
+                    "Why it matters:",
+                  ],
+                  bullets: [
+                    "Royal tomb complexes integrated into the city",
+                    "UNESCO-listed heritage",
+                    "Strong night atmosphere around Donggung & Wolji",
+                    "Donggung Palace and Wolji Pond — Admission: ₩3,000 (Adult)",
+                    "Bulguksa Temple — Admission: Free (Currently free following temple heritage fee abolition policy)",
+                  ],
+                },
+                {
+                  title: "Hahoe Folk Village",
+                  lead: [
+                    "Traditional Confucian clan village.",
+                    "Why it matters:",
+                  ],
+                  bullets: [
+                    "Preserved elite village structure",
+                    "Living cultural landscape",
+                    "Admission: ₩5,000 (Adult)",
+                  ],
+                },
+                {
+                  title: "Hwaseong Haenggung",
+                  lead: [
+                    "Part of the Suwon Hwaseong fortress complex.",
+                    "Why it matters:",
+                  ],
+                  bullets: [
+                    "Late Joseon reform-era urban fortress",
+                    "Walkable city wall experience",
+                    "Admission: ₩2,000 (Adult)",
+                  ],
+                },
+              ],
             },
             {
-              title: "Bottom Line",
-              icon: "spark",
-              emphasis: "Match the city to your pace, not the hype.",
+              title: "🌿 3) Add One Strong Nature Anchor",
               body:
-                "Choose fewer places, stay longer in each area, and your Korea trip will feel more relaxed and more memorable.",
+                "Geography shapes Korean identity. A second trip benefits from one major natural landscape.",
+              subsections: [
+                {
+                  title: "Seoraksan National Park",
+                  lead: [
+                    "Granite peaks and dramatic seasonal scenery.",
+                    "Why it matters:",
+                  ],
+                  bullets: [
+                    "Strongest mountain skyline on the mainland",
+                    "Compact but visually powerful",
+                    "Seorak Cable Car — Admission: ₩15,000 (Adult, round trip)",
+                    "Park entry areas are generally free.",
+                  ],
+                },
+                {
+                  title: "Seongsan Ilchulbong",
+                  lead: [
+                    "UNESCO-listed volcanic crater.",
+                    "Why it matters:",
+                  ],
+                  bullets: [
+                    "Coastal volcanic formation",
+                    "Sunrise viewpoint",
+                    "Admission: ₩5,000 (Adult)",
+                  ],
+                },
+              ],
+              tail:
+                "Jeju works best when planned as a theme (oreum hiking, coastal walking, scenic driving).",
+            },
+            {
+              title: "🌊 4) Busan — Coastal Geography Beyond the Headline Beach",
+              body:
+                "If your first visit included Haeundae and Gamcheon, expand outward.",
+              subsections: [
+                {
+                  title: "Huinnyeoul Culture Village",
+                  lead: [
+                    "Cliffside walking district in Yeongdo.",
+                    "Why it matters:",
+                  ],
+                  bullets: [
+                    "Coastal geology + residential texture",
+                    "Less commercial density",
+                    "Admission: Free",
+                  ],
+                },
+                {
+                  title: "Gwangalli Beach",
+                  lead: [
+                    "Evening skyline and bridge views.",
+                  ],
+                  bullets: [
+                    "Admission: Free",
+                  ],
+                },
+                {
+                  title: "Taejongdae Park",
+                  lead: [
+                    "Rocky coastal promontory.",
+                  ],
+                  bullets: [
+                    "Admission: Free",
+                    "(Danubi train inside the park requires a separate ticket.)",
+                  ],
+                },
+              ],
+            },
+            {
+              title: "🛂 5) Political Context — DMZ Experience",
+              body:
+                "For travelers seeking modern historical understanding:",
+              subsections: [
+                {
+                  title: "Third Tunnel of Aggression",
+                  lead: [
+                    "Part of the DMZ tour circuit.",
+                    "Why it matters:",
+                  ],
+                  bullets: [
+                    "Direct experience of division history",
+                    "Educational rather than entertainment-focused",
+                    "Admission (within tour structure): Approximately ₩9,000-12,000 depending on walking vs. monorail access.",
+                    "Passport required.",
+                  ],
+                },
+              ],
+            },
+            {
+              title: "🗺️ Planning Structure That Works",
+              body:
+                "A strong second-trip framework often includes:",
+              bullets: [
+                "One deeper Seoul foundation site",
+                "One historic capital city",
+                "One major nature destination",
+                "One contextual site (museum or DMZ)",
+              ],
+              tail:
+                "This prevents repetition and adds dimension.",
+            },
+            {
+              title: "💸 Budget Perspective",
+              body:
+                "Many meaningful second-trip experiences are free:",
+              bullets: [
+                "National museums (permanent exhibitions)",
+                "Coastal districts",
+                "Parks and fortress walls",
+              ],
+              tail:
+                "Paid heritage and nature sites remain modest compared to many global destinations. Depth usually depends more on time than cost.",
+            },
+            {
+              title: "🏁 Bottom Line",
+              body:
+                "Your first trip showed you Korea's highlights.",
+              bullets: [
+                "how philosophy shaped architecture",
+                "how geography shaped settlement",
+                "how history shapes modern politics",
+              ],
+              tail:
+                "Choose depth over volume. Move slower. Let structure guide your planning.",
             },
           ],
         },

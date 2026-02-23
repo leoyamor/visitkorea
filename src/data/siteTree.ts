@@ -3498,81 +3498,246 @@ export const siteTree: TreeNode = {
           slug: "must-see-for-first-timers",
           icon: "spark",
           image: "basics",
-          description: "Explore key spots that truly represent Korea.",
+          description:
+            "Explore the places that truly represent Korea — history, modern life, and unforgettable scenery in a balanced first trip.",
           quickAnswer:
-            "This guide helps you choose places that are truly worth your time.",
+            "Focus on a balanced mix of history, modern life, and one unforgettable view instead of trying to see everything.",
           content: [
             {
-              title: "Must-See for First Timers",
-              icon: "spark",
-              emphasis: "Explore key spots that truly represent Korea.",
+              title: "🌟 Introduction",
               body:
-                "When time is limited, focus on a few highlights instead of trying to see everything. This guide helps you choose places that are truly worth your time.",
+                "Your first trip to Korea should feel clear, not overwhelming.",
+              tail:
+                "Instead of trying to see everything, focus on a small number of places that explain the country properly. A balanced mix of history, daily life, and one strong scenic moment will give you a much better first impression than rushing through a long checklist.",
             },
             {
-              title: "What Makes a Place \"Must-See\"?",
-              icon: "checklist",
-              emphasis: "A must-see place should:",
-              body: "A must-see place should:",
-              bullets: [
-                "Show Korea's history and traditions",
-                "Reflect modern Korean culture",
-                "Be easy to reach by public transportation",
-              ],
-            },
-            {
-              title: "Top Places First-Time Visitors Love",
-              icon: "spark",
-              emphasis: "A balanced mix of history, local life, and scenery.",
-              body: "Use these categories to build your first-timer list:",
-            },
-            {
-              title: "Historical Highlights",
-              icon: "temple",
-              emphasis: "Classic places that explain Korea's past.",
-              body: "Top picks:",
-              bullets: [
-                "Gyeongbokgung Palace - Korea's most famous royal palace with a guard changing ceremony.",
-                "Changdeokgung Palace & Secret Garden - UNESCO-listed palace with a peaceful royal garden.",
-                "Bukchon Hanok Village - Traditional Korean houses with scenic city views.",
-              ],
-            },
-            {
-              title: "Lively Local Areas",
-              icon: "tag",
-              emphasis: "Food, shopping, and everyday energy.",
-              body: "Top picks:",
-              bullets: [
-                "Myeongdong - Street food, K-beauty shopping, and global brands.",
-                "Insadong - Traditional tea houses, crafts, and cultural souvenirs.",
-              ],
-            },
-            {
-              title: "Scenic & Fun Experiences",
-              icon: "spark",
-              emphasis: "Views, nature, and memorable activities.",
-              body: "Top picks:",
-              bullets: [
-                "N Seoul Tower - Panoramic city views, especially at sunset.",
-                "Gamcheon Culture Village (Busan) - Colorful hillside houses and photo spots.",
-                "Jeju Island - Volcanic landscapes, beaches, and waterfalls.",
-                "Nami Island - Beautiful tree-lined paths, perfect for seasonal visits.",
-                "Everland - Korea's largest theme park.",
-              ],
-            },
-            {
-              title: "Smart Travel Tip",
-              icon: "route",
-              emphasis: "Pick 2-3 highlights per city.",
+              title: "✅ What Makes a Place \"Must-See\"?",
               body:
-                "Avoid planning too many stops in one day. Travel time adds up quickly.",
+                "Not every famous place is essential for a first visit. A true must-see usually does at least two of the following:",
+              bullets: [
+                "Explains Korea's historical background",
+                "Reflects modern Korean city life",
+                "Feels culturally distinct and difficult to replace",
+                "Is realistic to visit without complicated logistics",
+              ],
+              tail:
+                "If a place takes half a day in transportation but adds little understanding, it's better saved for a future trip.",
             },
             {
-              title: "Bottom Line",
-              icon: "spark",
-              emphasis: "You don't need to see everything.",
+              title: "🧭 The Smart First-Timer Structure",
+              body: "Most successful first trips follow this order:",
+              bullets: [
+                "Seoul — Understand Korea's past and present",
+                "Busan or Jeju — Add coastal scenery or natural contrast",
+                "Gyeongju or Jeonju — Experience concentrated traditional heritage",
+              ],
+              tail:
+                "This structure prevents overplanning while still giving a complete picture of the country.",
+            },
+            {
+              title: "🏙️ Seoul: The Essential Foundation",
               body:
-                "Choose a balanced mix of history, culture, and scenery. If you end your day inspired instead of exhausted, you've chosen the right must-see places in Korea.",
+                "Seoul is not just the capital — it is the fastest way to understand Korea.",
+              subsections: [
+                {
+                  title: "Historical Highlights",
+                  plainTitle: true,
+                },
+                {
+                  title: "Gyeongbokgung Palace",
+                  lead: [
+                    "Korea's most recognized royal palace and an ideal starting point.",
+                  ],
+                  bullets: [
+                    "Admission: ₩3,000 (Adults 19-64), free for under 18 and 65+",
+                    "Time needed: 1.5-2.5 hours",
+                    "Best paired with Gwanghwamun Square and Insadong.",
+                  ],
+                },
+                {
+                  title: "Changdeokgung Palace",
+                  lead: [
+                    "A UNESCO-listed palace known for its natural layout.",
+                  ],
+                  bullets: [
+                    "Admission: ₩3,000 (Adult)",
+                    "Secret Garden (Huwon): additional ₩5,000 (timed entry required)",
+                    "Plan extra time if visiting the Secret Garden.",
+                  ],
+                },
+                {
+                  title: "Bukchon Hanok Village",
+                  lead: [
+                    "Traditional Korean houses with city views.",
+                    "Visit respectfully, as it is a residential neighborhood.",
+                  ],
+                },
+                {
+                  title: "Modern & Lively Districts",
+                  plainTitle: true,
+                },
+                {
+                  title: "Myeongdong",
+                  lead: [
+                    "Street food, K-beauty, and global brands.",
+                    "Best for first-time shopping convenience.",
+                  ],
+                },
+                {
+                  title: "Insadong",
+                  lead: [
+                    "Traditional tea houses, crafts, and cultural souvenirs.",
+                    "Compact and easy to combine with palace visits.",
+                  ],
+                },
+                {
+                  title: "Scenic Perspective",
+                  plainTitle: true,
+                },
+                {
+                  title: "N Seoul Tower",
+                  lead: [
+                    "Panoramic skyline views of the city.",
+                  ],
+                  bullets: [
+                    "Admission (Observatory): ₩21,000-₩26,000 (adult, varies by season and promotion)",
+                    "Note: The tower area itself is free to visit. Only the observatory requires a ticket.",
+                    "Best visited near sunset.",
+                  ],
+                },
+              ],
+            },
+            {
+              title: "🌊 Busan: Coastal Energy and Market Culture",
+              body:
+                "Busan offers ocean views without sacrificing urban convenience.",
+              subsections: [
+                {
+                  title: "Coastal Highlights",
+                  plainTitle: true,
+                },
+                {
+                  title: "Haeundae Beach",
+                  lead: [
+                    "Iconic urban beach with easy subway access.",
+                  ],
+                },
+                {
+                  title: "Gamcheon Culture Village",
+                  lead: [
+                    "Colorful hillside streets and photo spots.",
+                  ],
+                  bullets: [
+                    "Optional map/stamp experience: around ₩2,000 (not required)",
+                  ],
+                },
+                {
+                  title: "Local Market Experience",
+                  plainTitle: true,
+                },
+                {
+                  title: "Jagalchi Market",
+                  lead: [
+                    "Seafood market and harbor district atmosphere.",
+                  ],
+                },
+              ],
+            },
+            {
+              title: "🍃 Jeju: Nature as the Main Experience",
+              body:
+                "Jeju is ideal if your trip needs landscapes more than shopping.",
+              subsections: [
+                {
+                  title: "Natural Highlights",
+                  plainTitle: true,
+                },
+                {
+                  title: "Seongsan Ilchulbong",
+                  lead: [
+                    "Iconic volcanic crater and sunrise viewpoint.",
+                    "One of Korea's most recognizable natural landmarks.",
+                  ],
+                  bullets: [
+                    "Admission: ₩5,000 (Adult)",
+                  ],
+                },
+              ],
+            },
+            {
+              title: "🏛️ Gyeongju: High-Density History",
+              body:
+                "Gyeongju concentrates historical heritage in one compact city.",
+              subsections: [
+                {
+                  title: "Bulguksa Temple",
+                  lead: [
+                    "Historic Buddhist temple complex.",
+                    "(Admission currently free following nationwide temple entrance fee removal policy.)",
+                  ],
+                },
+                {
+                  title: "Donggung Palace and Wolji Pond",
+                  lead: [
+                    "Popular evening site with illuminated reflections.",
+                  ],
+                  bullets: [
+                    "Admission: ₩3,000 (Adult)",
+                  ],
+                },
+              ],
+            },
+            {
+              title: "🍲 Jeonju: Traditional Streets and Food Culture",
+              body: "Jeonju is compact and walkable.",
+              subsections: [
+                {
+                  title: "Jeonju Hanok Village",
+                  lead: [
+                    "Large traditional neighborhood ideal for slow exploration.",
+                  ],
+                },
+                {
+                  title: "Gyeonggijeon Shrine",
+                  lead: [
+                    "Historic shrine within walking distance of the Hanok Village.",
+                  ],
+                  bullets: [
+                    "Admission: ₩3,000 (Adult)",
+                  ],
+                },
+              ],
+            },
+            {
+              title: "🗺️ How to Choose Without Overplanning",
+              body: "Per city, aim for:",
+              bullets: [
+                "1 major historical site",
+                "1 lively district",
+                "1 scenic viewpoint",
+              ],
+              tail:
+                "Avoid scheduling more than 2-3 major stops per day. Travel time and walking distances add up faster than expected.",
+            },
+            {
+              title: "💸 Budget Reality for Must-See Planning",
+              body: "Many meaningful experiences in Korea are completely free:",
+              bullets: [
+                "Traditional neighborhoods",
+                "Markets",
+                "Beaches",
+                "Temple complexes",
+                "Hanok districts",
+              ],
+              tail:
+                "Paid sites are generally modest compared to many global destinations. A simple budgeting rule: Free district + One paid highlight per day.",
+            },
+            {
+              title: "🏁 Bottom Line",
+              body:
+                "You don't need to see everything to understand Korea.",
+              tail:
+                "A balanced mix of history, modern life, and one unforgettable view will give you a complete first impression. If your days end inspired rather than exhausted, you chose the right must-see places.",
             },
           ],
         },

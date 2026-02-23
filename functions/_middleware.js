@@ -13,6 +13,10 @@ const BLOCKED_PATHS = new Set([
   "/es/getting-around-korea/transfers-explained",
   "/what-to-eat/food-for-first-timers",
   "/es/what-to-eat/food-for-first-timers",
+  "/where-to-stay/where-to-stay-in-seoul",
+  "/where-to-stay/where-to-stay-in-busan",
+  "/es/where-to-stay/where-to-stay-in-seoul",
+  "/es/where-to-stay/where-to-stay-in-busan",
 ]);
 
 export async function onRequest(context) {

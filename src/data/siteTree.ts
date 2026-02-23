@@ -3340,87 +3340,147 @@ export const siteTree: TreeNode = {
           icon: "spark",
           image: "stay",
           description: "Worth it when chosen wisely.",
-          quickAnswer:
-            "Opt for luxury when it truly adds value to your stay.",
+          quickAnswer: "Worth it when chosen wisely.",
           content: [
             {
-              title: "Luxury Hotels",
-              icon: "spark",
-              emphasis: "Worth it when chosen wisely.",
-              body:
-                "Luxury hotels in Korea offer exceptional experiences, but they should enhance your trip, not just your room. Opt for luxury when it truly adds value to your stay.",
+              title: "🌟 Luxury Hotels",
+              body: "Worth it when chosen wisely.",
+              bodyLead: true,
+              tail:
+                "Luxury hotels in Korea can elevate your trip — but only when they genuinely improve comfort, save time, or create a memorable experience. Luxury should support your itinerary, not replace it. Prices vary by season, demand, and availability, so always confirm the total cost for your specific dates before booking.",
             },
             {
-              title: "When Luxury Makes Sense",
-              icon: "spark",
-              emphasis: "A highlight, not the whole trip.",
-              body: "Luxury is perfect for:",
-              bullets: [
-                "Special occasions",
-                "Stunning views and easy transport access",
-                "Exceptional service without stress",
-                "A night or two of pure comfort",
+              title: "💎 When Luxury Makes Sense",
+              body: "A highlight, not the whole trip.",
+              bodyLead: true,
+              subsections: [
+                {
+                  title: "It often makes sense for:",
+                  plainTitle: true,
+                  lead: [
+                    "Luxury works best when it delivers practical value.",
+                  ],
+                  bullets: [
+                    "Special occasions (anniversaries, celebrations)",
+                    "A recovery night after a long flight",
+                    "A stay with meaningful views (city skyline or oceanfront)",
+                    "Reducing transport stress in busy districts",
+                  ],
+                },
               ],
+              tail:
+                "If the hotel improves your sleep, convenience, or overall flow, the premium can be justified.",
             },
             {
-              title: "The Smartest Way to Enjoy Luxury",
-              icon: "route",
-              emphasis: "One splurge night.",
-              body: "Best approach:",
-              bullets: [
-                "Splurge on one night of luxury",
-                "Choose mid-range options for the rest",
-                "Save on accommodation and spend more on food and experiences",
+              title: "🧠 A Smart Strategy",
+              body: "One intentional splurge night.",
+              bodyLead: true,
+              subsections: [
+                {
+                  title: "Many experienced travelers use a balanced approach:",
+                  plainTitle: true,
+                  bullets: [
+                    "Choose one or two nights of luxury",
+                    "Stay mid-range for the rest",
+                    "Allocate savings toward food, activities, or local experiences",
+                  ],
+                },
               ],
+              tail:
+                "One well-timed luxury night often feels more satisfying than an expensive stay every night.",
             },
             {
-              title: "What to Look for Beyond Price",
-              icon: "checklist",
-              emphasis: "Value > Brand.",
-              body: "Before booking, check:",
-              bullets: [
-                "Convenient location near subway lines",
-                "Real views, not just pictures",
-                "Lounge or breakfast value",
-                "Room size compared to price",
+              title: "🔍 What to Evaluate Beyond Price",
+              body: "Value matters more than brand.",
+              bodyLead: true,
+              subsections: [
+                {
+                  title: "Before booking, consider:",
+                  plainTitle: true,
+                  bullets: [
+                    "Location relative to where you will spend most of your time",
+                    "Proximity to major subway lines",
+                    "Room size compared to price",
+                    "Whether the advertised view is guaranteed by room category",
+                    "What is included (breakfast, lounge access, spa/sauna facilities)",
+                  ],
+                },
               ],
+              tail:
+                "Luxury is defined by convenience and comfort, not just a famous name.",
             },
             {
-              title: "Where Luxury Shines in Korea",
-              icon: "pin",
-              emphasis: "Ideal for specific situations.",
-              body: "Luxury is best for:",
-              bullets: [
-                "Seoul: City views and walking districts",
-                "Busan: Beachfront with ocean views",
-                "Special nights like anniversaries",
+              title: "🧾 Hidden Costs to Check",
+              body: "Details can change the real total.",
+              bodyLead: true,
+              subsections: [
+                {
+                  title: "Luxury hotels may involve additional costs that affect value:",
+                  plainTitle: true,
+                  bullets: [
+                    "Taxes and service charges",
+                    "Breakfast fees if not included",
+                    "Spa or sauna facility policies",
+                    "Parking or valet fees",
+                    "View upgrades",
+                    "Peak-season cancellation penalties",
+                  ],
+                },
               ],
+              tail:
+                "Always compare the total price including taxes and fees, not just the starting rate.",
             },
             {
-              title: "Common Mistakes to Avoid",
-              icon: "alert",
-              emphasis: "Luxury should complement your trip.",
-              body: "Many travelers regret:",
-              bullets: [
-                "Booking luxury far from transport",
-                "Paying for unused amenities",
-                "Choosing luxury every night, missing out on experiences",
-                "Prioritizing brand over location",
+              title: "📍 Where Luxury Delivers Strong Value",
+              body: "When location matches your purpose.",
+              bodyLead: true,
+              subsections: [
+                {
+                  title: "Luxury tends to provide the most benefit in:",
+                  plainTitle: true,
+                  bullets: [
+                    "Central Seoul districts with walkable attractions",
+                    "Busan beachfront areas with ocean views",
+                    "Celebration nights or final-night stays",
+                    "Trips where comfort and recovery are priorities",
+                  ],
+                },
               ],
+              tail:
+                "Choose luxury where it enhances movement and atmosphere, not where it complicates logistics.",
             },
             {
-              title: "What You Don’t Need to Decide Now",
-              icon: "hand",
-              emphasis: "Make decisions when your plan is set.",
-              body:
-                "This guide helps you understand if luxury fits your plans, but prices and availability often change, so wait until your dates are firm.",
+              title: "🚫 Common Mistakes to Avoid",
+              body: "Luxury should complement your plan.",
+              bodyLead: true,
+              subsections: [
+                {
+                  title: "Travelers often regret luxury bookings when they:",
+                  plainTitle: true,
+                  bullets: [
+                    "Stay far from major transport routes",
+                    "Pay for amenities they never use",
+                    "Choose luxury every night and limit experiences",
+                    "Focus on brand reputation instead of practical location",
+                  ],
+                },
+              ],
+              tail:
+                "A thoughtful decision leads to better overall satisfaction.",
             },
             {
-              title: "Bottom Line",
-              icon: "spark",
-              emphasis: "One great night beats seven expensive ones.",
-              body:
-                "Luxury hotels are a smart choice when used intentionally. If they enhance comfort, save time, or create lasting memories, they’re worth it.",
+              title: "🗓️ When to Finalize Your Booking",
+              body: "Decide after your itinerary is clear.",
+              bodyLead: true,
+              tail:
+                "Luxury rates fluctuate frequently. It is wiser to confirm your travel dates and daily plans first, then determine whether a luxury stay meaningfully improves your trip.",
+            },
+            {
+              title: "🏁 Bottom Line",
+              body: "One great night beats seven expensive ones.",
+              bodyLead: true,
+              tail:
+                "Luxury hotels in Korea are worth it when used intentionally. If they enhance comfort, reduce stress, or create a lasting memory, they are a smart choice. Before booking, compare at least two platforms and confirm the total cost including taxes and fees.",
             },
           ],
         },

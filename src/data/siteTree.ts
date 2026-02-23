@@ -3258,7 +3258,6 @@ export const siteTree: TreeNode = {
               subsections: [
                 {
                   title: "Seoul",
-                  plainTitle: true,
                   lead: [
                     "Safe budget base areas:",
                   ],
@@ -3272,7 +3271,6 @@ export const siteTree: TreeNode = {
                 },
                 {
                   title: "Busan",
-                  plainTitle: true,
                   lead: [
                     "Choose based on purpose:",
                   ],

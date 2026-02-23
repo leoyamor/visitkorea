@@ -1009,7 +1009,10 @@ const breadcrumb = breadcrumbs;
             {section.emphasis && (
               <p class="content-emphasis">{section.emphasis}</p>
             )}
-            <p set:html={linkify(section.body)} />
+            <p
+              class:list={["content-body", section.bodyLead && "content-body--lead"]}
+              set:html={linkify(section.body)}
+            />
             {section.subsections && section.subsections.length > 0 && (
               <div class="content-subsections">
                 {section.subsections.map((subsection) => (
@@ -2077,6 +2080,15 @@ const breadcrumb = breadcrumbs;
     margin: 0 0 8px;
     color: var(--ink-soft);
     line-height: 1.7;
+  }
+
+  .content-body--lead {
+    font-family: "Plus Jakarta Sans", "Work Sans", system-ui, sans-serif;
+    font-size: 1.02rem;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink-strong) !important;
+    margin-bottom: 10px !important;
   }
 
   .content-block ul {

@@ -9,6 +9,7 @@ export type TreeNode = {
   content?: {
     title: string;
     body: string;
+    bodyLead?: boolean;
     bullets?: string[];
     subsections?: {
       title: string;
@@ -2733,18 +2734,21 @@ export const siteTree: TreeNode = {
             {
               title: "🍽️ Food to Be Careful With",
               body: "Start smart, not extreme.",
+              bodyLead: true,
               tail:
                 "Some Korean dishes are bold in spice, fermentation, or texture. They are authentic and loved locally — but they may not be the best choice for your first few meals. This guide shows what to delay, why it matters, and how to try it later without turning your meal into a test.",
             },
             {
               title: "🧭 Why This Matters for First-Time Visitors",
               body: "Your first meals set your baseline.",
+              bodyLead: true,
               tail:
                 "If your early meals feel overwhelming (too spicy, too strong-smelling, too unfamiliar in texture), many travelers become cautious and stop exploring. Starting with comfortable dishes first helps you build confidence — then bold dishes become exciting instead of stressful.",
             },
             {
               title: "🌶️ Spicy in Korea Can Surprise You",
               body: "It’s not always “immediate heat.”",
+              bodyLead: true,
               subsections: [
                 {
                   title: "Korean spice often feels different from what many visitors expect",
@@ -2757,7 +2761,6 @@ export const siteTree: TreeNode = {
                 },
                 {
                   title: "Useful phrases (simple and effective)",
-                  plainTitle: true,
                   lead: [
                     "If you are unsure, ask directly before ordering.",
                   ],

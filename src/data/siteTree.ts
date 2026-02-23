@@ -3140,95 +3140,199 @@ export const siteTree: TreeNode = {
           slug: "budget-stays",
           icon: "wallet",
           image: "stay",
-          description: "Affordable and Comfortable",
+          description: "Affordable and comfortable without unnecessary risk.",
           quickAnswer:
-            "This guide helps you find practical, stress-free options that fit your budget.",
+            "Affordable and comfortable without unnecessary risk.",
           content: [
             {
-              title: "Budget Stays",
-              icon: "wallet",
-              emphasis: "Affordable and Comfortable",
+              title: "🌟 Introduction",
+              body: "Budget does not mean unsafe or uncomfortable.",
+              bodyLead: true,
+              tail:
+                "In Korea, budget stays can be clean, convenient, and reliable — if you know how to filter properly. The key is not choosing the cheapest option, but choosing the safest option within your budget.",
+            },
+            {
+              title: "⚡ Quick Answer",
+              body: "How to find a safe budget stay in Korea.",
+              bodyLead: true,
+              subsections: [
+                {
+                  title: "Look for:",
+                  plainTitle: true,
+                  bullets: [
+                    "Rating 8.0+",
+                    "200+ reviews (recent reviews within 3–6 months)",
+                    "Within 7 minutes walking distance of a subway station",
+                    "Clear check-in instructions",
+                    "Total price including taxes visible",
+                  ],
+                },
+              ],
+              tail:
+                "For most travelers, this means choosing a well-reviewed hostel, guesthouse, or budget business hotel — not the absolute lowest price available.",
+            },
+            {
+              title: "💸 Realistic Budget Price Bands",
               body:
-                "In Korea, budget stays can be both clean and safe when you know what to look for. This guide helps you find practical, stress-free options that fit your budget.",
+                "Prices vary by season, weekends, and events. Use price bands instead of chasing the lowest number.",
+              subsections: [
+                {
+                  title: "Seoul (Seoul)",
+                  plainTitle: true,
+                  bullets: [
+                    "Dormitory bed: $10–$30",
+                    "Private room (guesthouse/hostel): $45–$90",
+                    "Budget business hotel: ₩70,000–₩120,000",
+                  ],
+                  tail:
+                    "During cherry blossom season, holidays, or major concerts, prices can increase significantly.",
+                },
+                {
+                  title: "Busan (Busan)",
+                  plainTitle: true,
+                  bullets: [
+                    "Dormitory bed: $10–$25",
+                    "Private room: $40–$85",
+                    "Budget hotel: ₩60,000–₩110,000",
+                  ],
+                  tail:
+                    "(Haeundae and beach areas increase during summer.)",
+                },
+              ],
+              tail:
+                "Always compare the grand total including taxes and service charges before booking.",
             },
             {
-              title: "What Budget Stays Offer",
-              icon: "bed",
-              emphasis: "Simple, No Frills, but Safe",
-              body: "Budget accommodations usually include:",
-              bullets: [
-                "Guesthouses",
-                "Small hotels",
-                "Basic business hotels",
+              title: "⚠️ Hidden Costs That Break a Budget",
+              body:
+                "The most common mistake is focusing only on the displayed minimum price.",
+              subsections: [
+                {
+                  title: "In some cases:",
+                  plainTitle: true,
+                  bullets: [
+                    "10% VAT + 10% service charge may apply",
+                    "Additional fees may appear at check-in",
+                    "Early check-in or late arrival may require booking the previous night",
+                  ],
+                },
+              ],
+              tail:
+                "Always compare total cost across at least two platforms.",
+            },
+            {
+              title: "🔍 How to Verify Condition (Most Important Step)",
+              body: "Budget stays have greater variation in quality.",
+              subsections: [
+                {
+                  title: "Set these filters:",
+                  plainTitle: true,
+                  bullets: [
+                    "Rating 8.0+",
+                    "200+ reviews",
+                    "Sort reviews by “Newest”",
+                    "Non-smoking preference",
+                    "Private bathroom if required",
+                  ],
+                },
+                {
+                  title:
+                    "Scan the latest 20 reviews for repeated warning signs:",
+                  plainTitle: true,
+                  bullets: [
+                    "Noise → thin walls, noisy",
+                    "Smell → smoke, mold",
+                    "Cleanliness → dirty, hair, dust",
+                    "Bathroom → drain issues, flooding",
+                    "Photos → smaller than expected",
+                  ],
+                },
+              ],
+              tail:
+                "Repeated mentions usually indicate real problems.",
+            },
+            {
+              title: "📍 Location Strategy: Why Distance Matters",
+              body:
+                "A cheaper room far from transit can cost more in time and energy.",
+              subsections: [
+                {
+                  title: "Seoul",
+                  plainTitle: true,
+                  lead: [
+                    "Safe budget base areas:",
+                  ],
+                  bullets: [
+                    "Myeongdong / Euljiro / City Hall (easy for first-time visitors)",
+                    "Hongdae / Hapjeong (good airport rail access, many hostels)",
+                    "Jongno / Insadong (walkable cultural area)",
+                  ],
+                  tail:
+                    "Avoid places requiring multiple subway transfers for daily sightseeing.",
+                },
+                {
+                  title: "Busan",
+                  plainTitle: true,
+                  lead: [
+                    "Choose based on purpose:",
+                  ],
+                  bullets: [
+                    "Seomyeon → transport hub",
+                    "Haeundae → beach access (higher in summer)",
+                    "Busan Station / Nampo → convenient for KTX and markets",
+                  ],
+                },
               ],
             },
             {
-              title: "What to Check Before Booking",
-              icon: "checklist",
-              emphasis: "Focus on the essentials.",
-              body: "A great budget stay should provide:",
-              bullets: [
-                "A private bed in a quiet room",
-                "Clean bathrooms (shared or private)",
-                "Clear check-in instructions",
-                "Recent, positive reviews from guests",
-              ],
-            },
-            {
-              title: "Location is Key",
-              icon: "pin",
-              emphasis: "Distance can cost more than you think.",
-              body: "Look for places that are:",
-              bullets: [
-                "Within walking distance of a subway station",
-                "On a main subway line (no multiple transfers)",
-                "Close to shops and food options",
-              ],
-            },
-            {
-              title: "When Budget Stays Work Best",
-              icon: "route",
-              emphasis: "Sleep, Rest, Explore",
+              title: "✅ When Budget Stays Work Best",
               body: "Budget stays are ideal when:",
               bullets: [
                 "You spend most of your day exploring",
-                "You need a place just to rest and sleep",
-                "You don't require extra space",
+                "You mainly need a clean place to sleep",
+                "You travel light",
               ],
             },
             {
-              title: "When to Rethink Budget Stays",
-              icon: "alert",
-              emphasis: "Know your comfort level.",
-              body: "You may want to reconsider if:",
+              title: "🚩 When to Reconsider",
+              body: "You may want to upgrade if:",
               bullets: [
-                "You're a light sleeper",
-                "You have large luggage",
-                "You need more personal space",
+                "You are a very light sleeper",
+                "You carry large luggage",
+                "You need strong soundproofing",
+                "You arrive very late at night without confirmed 24-hour reception",
               ],
             },
             {
-              title: "Common Mistake: Cheapest Isn't Always Best",
-              icon: "alert",
-              body: "Many travelers:",
+              title: "🌙 Late Arrival Warning",
+              body: "For early morning flights:",
+              bodyLead: true,
               bullets: [
-                "Choose the absolute cheapest option",
-                "Ignore location and noise reviews",
-                "End up feeling exhausted after a few nights",
+                "Confirm 24-hour reception",
+                "Confirm real self check-in availability",
+                "If unsure, book the previous night",
+              ],
+              tail:
+                "Many budget travelers overlook this and face check-in problems.",
+            },
+            {
+              title: "📝 5-Minute Booking Checklist",
+              body: "Before confirming:",
+              bullets: [
+                "Is it within 7 minutes of a subway station?",
+                "Did you read the latest 20 reviews?",
+                "Any repeated complaints about noise or cleanliness?",
+                "Are taxes and fees included in the total price?",
+                "Is the reception available at your arrival time?",
+                "Did you confirm the property type (hostel, motel, hotel)?",
               ],
             },
             {
-              title: "How This Page Helps You",
-              icon: "spark",
-              emphasis: "Is this place a good fit for your style?",
-              body: "If it checks the essential boxes, it's likely a great budget choice.",
-            },
-            {
-              title: "Bottom Line",
-              icon: "spark",
-              emphasis: "Focus on the basics.",
+              title: "🏁 Bottom Line",
               body:
-                "Budget stays in Korea can be clean, safe, and convenient. You don't need luxury to have a great trip.",
+                "Budget stays in Korea can be clean, safe, and convenient — but only if you verify properly.",
+              tail:
+                "Affordable does not mean careless. Focus on location, condition, and total price — not just the lowest number you see.",
             },
           ],
         },

@@ -32,5 +32,9 @@ http://www.visitingkorea.pages.dev/* https://planmykorea.com/:splat 301
 /es/where-to-stay/where-to-stay-in-seoul/ /es/404/index.html 404!
 /es/where-to-stay/where-to-stay-in-busan /es/404/index.html 404!
 /es/where-to-stay/where-to-stay-in-busan/ /es/404/index.html 404!
+/things-to-do/good-places-without-crowds /404.html 404!
+/things-to-do/good-places-without-crowds/ /404.html 404!
+/es/things-to-do/good-places-without-crowds /es/404/index.html 404!
+/es/things-to-do/good-places-without-crowds/ /es/404/index.html 404!
 /es/* /es/404/index.html 404
 /* /404.html 404

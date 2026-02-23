@@ -2561,110 +2561,162 @@ export const siteTree: TreeNode = {
           ],
         },
         {
-          title: "Finding Good Restaurants",
+          title: "Finding Good & Affordable Restaurants in Korea",
           slug: "finding-good-restaurants",
           icon: "pin",
           image: "food",
-          description: "How locals choose places to eat.",
+          description:
+            "Practical methods to choose well, avoid common mistakes, and understand real value when eating out in Korea.",
           quickAnswer:
-            "This page helps you spot good local restaurants without relying on reviews.",
+            "Practical methods to choose well, avoid common mistakes, and understand real value when eating out in Korea.",
           content: [
             {
-              title: "Finding Good Restaurants",
-              icon: "pin",
-              emphasis: "Look for local patterns, not loud marketing.",
+              title: "🌟 Introduction",
               body:
-                "In Korea, the best restaurants are often discovered by observing small, practical signals - not by chasing viral trends or famous names. Once you understand what locals look for, choosing where to eat becomes faster, easier, and far less stressful.",
+                "Good decisions reduce travel stress.",
+              tail:
+                "Finding a good restaurant in Korea is not about luck or viral trends. It is about using practical signals to reduce uncertainty. Many visitors choose based only on review counts or social media popularity. That often leads to long waits, unclear pricing rules, or disappointment. This guide explains how to choose confidently using structured, realistic steps.",
             },
             {
-              title: "The First Rule Locals Follow",
-              icon: "spark",
-              emphasis: "Consistency beats hype.",
-              body: "Locals tend to choose restaurants that:",
-              bullets: [
-                "Focus on one main dish",
-                "Stay busy at regular meal times",
-                "Have operated steadily for years",
-                "In Korea, many excellent restaurants are specialists. A place that does one thing well usually does it very well.",
-              ],
-            },
-            {
-              title: "The Strongest Quality Signal",
-              icon: "bowl",
-              emphasis: "Look at the menu.",
-              body: "Reliable local spots often have:",
-              bullets: [
-                "A short, focused menu",
-                "One clear specialty",
-                "Simple presentation instead of flashy advertising",
-                "If a restaurant offers dozens of unrelated dishes, quality can be inconsistent. A narrow menu often signals confidence and expertise.",
-              ],
-            },
-            {
-              title: "Timing Reveals Everything",
-              icon: "calendar",
-              emphasis: "Watch who eats there - and when.",
-              body: "Strong signs include:",
-              bullets: [
-                "Busy lunch hours (around 12:00-1:00 PM)",
-                "Steady dinner crowds",
-                "Office workers, families, or older locals dining comfortably",
-                "In Korea, repeat local customers are one of the most trustworthy indicators of quality.",
-              ],
-            },
-            {
-              title: "Why a Short Line Is Often Good",
-              icon: "route",
-              emphasis: "A small queue usually means:",
-              body: "In busy areas, a short wait is often a better sign than an empty dining room.",
-              bullets: [
-                "High turnover",
-                "Freshly prepared food",
-                "Consistent demand",
-              ],
-            },
-            {
-              title: "How Locals Avoid Tourist Traps",
-              icon: "hand",
-              emphasis: "Step slightly away from landmarks.",
-              body: "Locals rarely:",
-              bullets: [
-                "Eat directly next to major tourist attractions",
-                "Choose restaurants covered with large photo boards",
-                "Rely on \"Top 10\" tourist signs",
-                "Walking one or two side streets away often improves both taste and value.",
-              ],
-            },
-            {
-              title: "Using Review Apps the Smart Way",
-              icon: "sim",
-              emphasis: "Recent activity matters more than high ratings.",
-              body: "Instead of focusing only on star scores, check:",
-              bullets: [
-                "Recent photos",
-                "Comments from local customers",
-                "Current busy times",
-                "Active, recent engagement is more reliable than old viral popularity.",
-              ],
-            },
-            {
-              title: "A Common Visitor Mistake",
-              icon: "alert",
-              emphasis: "Viral does not always mean better.",
-              body: "Many travelers:",
-              bullets: [
-                "Follow influencer trends without context",
-                "Wait in long lines unnecessarily",
-                "Overlook small neighborhood restaurants",
-                "Quiet, consistently busy places often deliver better everyday quality.",
-              ],
-            },
-            {
-              title: "Bottom Line",
-              icon: "spark",
-              emphasis: "Follow the right crowd.",
+              title: "🔎 1. Search the Right Way",
               body:
-                "In Korea, strong restaurants rarely rely on hype. If locals are eating there regularly, the menu is focused, and the turnover is steady, you've likely found a dependable place.",
+                "Use neighborhood-based keywords. In Korea, restaurants are strongly tied to specific districts. Instead of searching only in English, combine: Neighborhood + Dish name.",
+              subsections: [
+                {
+                  title: "Examples",
+                  plainTitle: true,
+                  bullets: [
+                    "Hongdae kalguksu",
+                    "Seomyeon dwaeji gukbap",
+                    "Jeonju bibimbap",
+                    "Jeju black pork",
+                  ],
+                },
+              ],
+              tail:
+                "Searching this way increases accuracy and reduces tourist-only results. Korean cities operate around local commercial zones. Precision improves outcomes.",
+            },
+            {
+              title: "📸 2. Check Menu Photos Before Ratings",
+              body:
+                "Price transparency is the strongest signal. High ratings alone do not guarantee good value. Before choosing, check:",
+              bullets: [
+                "Clear menu board photos with prices",
+                "Portion size references (especially meat in grams)",
+                "Recent reviews mentioning waiting time",
+                "Rules such as \"one order per person\"",
+              ],
+              tail:
+                "If price and portion are clearly visible, risk decreases significantly.",
+            },
+            {
+              title: "📍 3. Understand Regional Price Differences",
+              body: "Location influences cost.",
+              subsections: [
+                {
+                  title: "In areas such as",
+                  plainTitle: true,
+                  bullets: [
+                    "Myeongdong (Seoul)",
+                    "Haeundae (Busan)",
+                    "Hanok Village (Jeonju)",
+                  ],
+                },
+              ],
+              tail:
+                "Prices may include a location premium. Walking one block away can reduce both cost and waiting time. Tourist convenience often carries a pricing layer.",
+            },
+            {
+              title: "⏱️ 4. Consider Time as Part of the Cost",
+              body:
+                "Waiting time affects real value. A meal that costs ₩12,000 but requires a 90-minute wait may not be efficient during a short trip.",
+              subsections: [
+                {
+                  title: "Peak hours in major cities",
+                  plainTitle: true,
+                  bullets: [
+                    "19:00–20:30 dinner peak",
+                    "12:00–13:30 lunch peak",
+                  ],
+                },
+              ],
+              tail:
+                "Choosing slightly earlier or later time slots improves success rates. Time is part of your budget.",
+            },
+            {
+              title: "💰 5. Set a Personal Budget Baseline",
+              body: "Compare within the same category.",
+              subsections: [
+                {
+                  title: "General reference ranges (may vary by region)",
+                  plainTitle: true,
+                  bullets: [
+                    "Standard local meal: ₩10,000–₩15,000",
+                    "Barbecue or specialty meal: ₩20,000+ per person",
+                    "Market snacks: a few thousand won",
+                  ],
+                },
+              ],
+              tail:
+                "Do not compare barbecue pricing to noodle pricing. Compare like with like. Clarity prevents misjudgment.",
+            },
+            {
+              title: "🚫 6. Watch for Common Visitor Mistakes",
+              body: "Small details matter. Avoid:",
+              bullets: [
+                "Choosing only by review count",
+                "Ignoring minimum order rules",
+                "Not checking meat portion (grams)",
+                "Ordering too many dishes at once",
+                "Assuming red dishes are always extremely spicy",
+              ],
+              tail:
+                "Most food-related disappointment comes from skipped details.",
+            },
+            {
+              title: "📲 7. Use Reservation Systems When Necessary",
+              body:
+                "Popular does not always mean accessible. In cities like Seoul and Busan, highly rated restaurants may require:",
+              subsections: [
+                {
+                  title: "Reservation methods",
+                  plainTitle: true,
+                  bullets: [
+                    "Online reservations",
+                    "App-based waiting registration",
+                    "On-site queue registration",
+                  ],
+                },
+              ],
+              tail:
+                "Check availability before traveling across the city. This reduces wasted time.",
+            },
+            {
+              title: "🗺️ 8. Regional Context Matters",
+              body: "Korea is not uniform.",
+              bullets: [
+                "Seoul: wide variety, strong reservation culture",
+                "Busan: seafood and pork specialties, peak-hour crowding",
+                "Jeju: black pork and seafood, rental car often needed",
+                "Jeonju: traditional set meals and bibimbap focus",
+                "Gyeongju: traditional cuisine and fixed-menu restaurants",
+              ],
+              tail:
+                "Understanding the local context improves decision quality.",
+            },
+            {
+              title: "✅ Bottom Line",
+              body:
+                "Structure improves enjoyment. Good restaurants in Korea are not difficult to find. But good decisions require structure.",
+              bullets: [
+                "Search by district.",
+                "Check menu photos.",
+                "Confirm pricing rules.",
+                "Account for waiting time.",
+                "Set a budget baseline.",
+              ],
+              tail:
+                "When you approach it methodically, you reduce risk — and increase enjoyment.",
             },
           ],
         },

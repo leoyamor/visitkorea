@@ -2908,88 +2908,230 @@ export const siteTree: TreeNode = {
           slug: "best-value-places",
           icon: "bed",
           image: "stay",
-          description: "Comfort without overpaying.",
-          quickAnswer:
-            "This page helps you find comfortable places to stay without overpaying.",
+          description: "Comfort without overspending.",
+          quickAnswer: "Comfort without overspending.",
           content: [
             {
-              title: "Best Value Places",
-              icon: "bed",
-              emphasis: "Comfort without overspending.",
-              body:
-                "The best value accommodations make your trip enjoyable without straining your budget. You don't have to settle for the cheapest or splurge on luxury. Choose a place that offers both comfort and convenience at a reasonable price.",
+              title: "🌟 Introduction",
+              body: "Comfort without unnecessary expense.",
+              bodyLead: true,
+              tail:
+                "Finding the best value accommodation in Korea is not about choosing the cheapest room. It is about reducing stress, saving time, and avoiding hidden costs while staying comfortable. A true value stay should make your trip easier every day.",
             },
             {
-              title: "What Best Value Really Means",
-              icon: "spark",
-              emphasis: "Location over luxury.",
-              body: "In Korea, value is typically defined by:",
-              bullets: [
-                "A great location, not just a large room",
-                "Easy access to transport, rather than luxury amenities",
-                "Clean, well-maintained properties",
+              title: "⚡ Quick Answer",
+              body: "What “best value” usually means in Korea.",
+              bodyLead: true,
+              subsections: [
+                {
+                  title: "In practical terms, a best value place is:",
+                  plainTitle: true,
+                  bullets: [
+                    "Within 5–7 minutes of a subway station",
+                    "Rated 8.0+ with at least 200 reviews",
+                    "On a convenient transport line",
+                    "Clean, private bathroom, non-smoking",
+                    "Priced in a realistic mid-range band",
+                  ],
+                },
+              ],
+              tail:
+                "For most visitors, this means choosing a well-located mid-range hotel instead of the absolute cheapest option.",
+            },
+            {
+              title: "🧭 What Best Value Really Means",
+              body: "Location matters more than room size.",
+              bodyLead: true,
+              tail:
+                "In Korea, transportation efficiency directly affects your experience. A slightly more expensive hotel near a major subway station can save daily taxi costs, 30–60 minutes of commuting, and physical fatigue from transfers and hills. Value is about total trip efficiency — not just the nightly rate.",
+            },
+            {
+              title: "💸 Realistic Price Bands",
+              body: "Understanding accommodation pricing in Korea.",
+              subsections: [
+                {
+                  title: "Instead of focusing on the lowest number shown online, use price bands:",
+                  plainTitle: true,
+                  bullets: [
+                    "Budget: ₩30,000–₩80,000",
+                    "Mid-range: ₩80,000–₩150,000",
+                    "Luxury: ₩150,000–₩500,000+",
+                  ],
+                },
+              ],
+              tail:
+                "Prices vary by city, season, and weekends. For first-time visitors in Seoul or Busan, the ₩90,000–₩130,000 range often offers the best balance of comfort and location. Always compare the total price including taxes and fees, not just the advertised minimum rate.",
+            },
+            {
+              title: "🏨 Where Value-Focused Travelers Stay",
+              body: "Common accommodation types that balance comfort and cost.",
+              subsections: [
+                {
+                  title: "Most travelers find the best balance in:",
+                  plainTitle: true,
+                  bullets: [
+                    "Mid-range hotels",
+                    "Serviced apartments (especially for 4+ nights)",
+                    "Well-reviewed business hotels",
+                  ],
+                },
+                {
+                  title: "These properties typically provide:",
+                  plainTitle: true,
+                  bullets: [
+                    "Reliable cleanliness",
+                    "Private bathrooms",
+                    "Elevators",
+                    "24-hour reception",
+                  ],
+                },
               ],
             },
             {
-              title: "Where Value-Focused Travelers Stay",
-              icon: "bed",
-              emphasis: "Mid-range options are usually best.",
-              body: "Most visitors prefer:",
-              bullets: [
-                "Mid-range hotels",
-                "Serviced apartments",
-                "Well-reviewed business hotels",
-                "A great location beats a luxurious room. Look for accommodations that are:",
-                "Within 5 minutes of a subway station",
-                "On a main line (without needing multiple transfers)",
-                "Surrounded by convenience stores and cafes",
+              title: "🛡️ How to Filter for Safe Value",
+              body: "A practical method to avoid common problems.",
+              subsections: [
+                {
+                  title:
+                    "When searching on Booking, Agoda, Expedia, or Google Hotels, apply these filters:",
+                  plainTitle: true,
+                  bullets: [
+                    "Rating 8.0+",
+                    "200+ reviews (500+ preferred)",
+                    "Recent reviews within 3–6 months",
+                    "Walking distance to subway (under 7 minutes)",
+                    "Private bathroom",
+                    "Non-smoking",
+                  ],
+                },
+                {
+                  title:
+                    "Then check recent reviews for repeated warning signs:",
+                  plainTitle: true,
+                  bullets: [
+                    "Noise -> “thin walls”, “noisy”",
+                    "Smell -> “smoke”, “mold”",
+                    "Cleanliness -> “dirty”, “hair”, “dust”",
+                    "Bathroom -> “drain”, “flooding”",
+                    "Photos -> “smaller than expected”, “not like photos”",
+                  ],
+                },
               ],
+              tail:
+                "Repeated complaints usually signal real issues.",
             },
             {
-              title: "Why Cheaper Isn't Always Better",
-              icon: "alert",
-              emphasis: "Hidden costs can quickly add up.",
-              body: "Very cheap places can sometimes mean:",
-              bullets: [
-                "Long walks, especially late at night",
-                "Poor soundproofing",
-                "Complicated check-in processes",
+              title: "⚠️ Why Cheaper Isn’t Always Better",
+              body: "Low prices can hide higher total costs.",
+              subsections: [
+                {
+                  title: "Very cheap accommodations may involve:",
+                  plainTitle: true,
+                  bullets: [
+                    "Long uphill walks",
+                    "Poor soundproofing",
+                    "Late-night check-in complications",
+                    "Smaller rooms than expected",
+                  ],
+                },
+                {
+                  title: "Saving ₩20,000 per night can cost more in:",
+                  plainTitle: true,
+                  bullets: [
+                    "Extra taxi rides",
+                    "Lost sightseeing time",
+                    "Travel fatigue",
+                  ],
+                },
               ],
+              tail:
+                "True value balances comfort, location, and logistics.",
             },
             {
-              title: "Balancing Comfort and Cost",
-              icon: "route",
-              emphasis: "One solid base works best.",
-              body: "Many travelers:",
-              bullets: [
-                "Choose one hotel for the entire stay",
-                "Stay longer instead of switching accommodations",
-                "Use savings for food or local experiences",
+              title: "🏙️ Location Strategy: Seoul",
+              body: "Choose your base based on your travel style.",
+              subsections: [
+                {
+                  title: "Myeongdong / Euljiro / City Hall",
+                  plainTitle: true,
+                  lead: [
+                    "Easy airport access, central location, low navigation stress.",
+                  ],
+                },
+                {
+                  title: "Hongdae / Hapjeong",
+                  plainTitle: true,
+                  lead: [
+                    "More mid-range options, lively atmosphere.",
+                    "(Check noise reviews for weekends.)",
+                  ],
+                },
+                {
+                  title: "Jongno / Insadong",
+                  plainTitle: true,
+                  lead: [
+                    "Walkable cultural area near palaces and museums.",
+                  ],
+                },
+                {
+                  title: "Gangnam / Jamsil",
+                  plainTitle: true,
+                  lead: [
+                    "Efficient only if most activities are in southern Seoul.",
+                  ],
+                },
               ],
+              tail:
+                "Avoid properties requiring multiple transfers for daily sightseeing.",
             },
             {
-              title: "A Common Mistake to Avoid",
-              icon: "alert",
-              emphasis: "Cheap locations can cost more in the end.",
-              body: "Some travelers:",
+              title: "🌊 Location Strategy: Busan",
+              body: "Value depends on purpose.",
               bullets: [
-                "Book accommodations far from the city center to save money",
-                "End up spending more on taxis or public transport",
-                "Feel tired from long commutes",
+                "Haeundae -> Beach and relaxation",
+                "Seomyeon -> Central transport hub",
+                "Busan Station / Nampo -> Efficient for KTX and day tours",
               ],
+              tail:
+                "Choose the area based on where you will spend most of your time.",
             },
             {
-              title: "How This Page Helps You",
-              icon: "checklist",
-              emphasis: "Will this place make my trip easier?",
-              body: "If the answer is yes, it's likely a good value.",
+              title: "🚫 Common Mistake to Avoid",
+              body: "Saving money in the wrong place.",
+              bodyLead: true,
+              subsections: [
+                {
+                  title:
+                    "Booking far outside main areas just to reduce price often results in:",
+                  plainTitle: true,
+                  bullets: [
+                    "Longer commuting",
+                    "Higher transport spending",
+                    "Reduced daily energy",
+                  ],
+                },
+              ],
+              tail:
+                "A centrally located ₩120,000 hotel can be cheaper overall than a ₩70,000 hotel far away.",
             },
             {
-              title: "Bottom Line",
-              icon: "spark",
-              emphasis: "Comfort is key to a great trip.",
-              body:
-                "The best value stay should be clean, well-located, and easy to live with - making your journey more enjoyable.",
+              title: "✅ 5-Minute Reservation Checklist",
+              body: "Quick checks before confirming your booking.",
+              bullets: [
+                "Sort reviews by “Newest”",
+                "Read the latest 20 reviews",
+                "Confirm 24-hour reception if arriving late",
+                "Check the walking route on the map (hills? major road noise?)",
+                "Confirm property type (hotel, motel, guesthouse, residence)",
+              ],
+              tail:
+                "For motels especially, recent reviews are critical due to quality variation.",
+            },
+            {
+              title: "🏁 Bottom Line",
+              body: "Comfort improves your entire trip.",
+              tail:
+                "Best value is not about being cheap. It is about reducing friction and improving your daily travel experience. Before booking, compare at least two platforms and always check the total price including taxes.",
             },
           ],
         },

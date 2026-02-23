@@ -203,7 +203,7 @@ const subpages = [
   { category: 'food', slug: 'must-try-dishes', title: 'Must-Try Dishes', description: 'Classic meals to try on your first trip.' },
   { category: 'food', slug: 'finding-good-restaurants', title: 'Finding Good & Affordable Restaurants in Korea', description: 'Practical methods to choose well, avoid common mistakes, and understand real value when eating out in Korea.' },
   { category: 'food', slug: 'street-food-guide', title: 'Street Food Guide', description: 'What to eat at markets and night streets.' },
-  { category: 'food', slug: 'foods-to-be-careful-with', title: 'Foods to Be Careful With', description: 'Tips for spice, allergies, and sensitive stomachs.' },
+  { category: 'food', slug: 'foods-to-be-careful-with', title: 'Food to Be Careful With', description: 'Very spicy or unfamiliar dishes — what to delay, why it matters, and how to try them safely later.' },
   { category: 'food', slug: 'city-food-guides', title: 'City Food Guides', description: 'Quick food themes by city.' },
 
   { category: 'attractions', slug: 'top-places-in-korea', title: 'Top Places in Korea', description: 'Big highlights that most travelers enjoy.' },

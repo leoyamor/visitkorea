@@ -2725,97 +2725,169 @@ export const siteTree: TreeNode = {
           slug: "food-to-be-careful-with",
           icon: "chili",
           image: "food",
-          description: "Very spicy or unfamiliar dishes.",
+          description:
+            "Very spicy or unfamiliar dishes — what to delay, why it matters, and how to try them safely later.",
           quickAnswer:
-            "This page helps you avoid food choices that often surprise first-time visitors.",
+            "Very spicy or unfamiliar dishes — what to delay, why it matters, and how to try them safely later.",
           content: [
             {
-              title: "Food to Be Careful With",
-              icon: "chili",
-              emphasis: "Start smart, not extreme.",
+              title: "🍽️ Food to Be Careful With",
+              body: "Start smart, not extreme.",
+              tail:
+                "Some Korean dishes are bold in spice, fermentation, or texture. They are authentic and loved locally — but they may not be the best choice for your first few meals. This guide shows what to delay, why it matters, and how to try it later without turning your meal into a test.",
+            },
+            {
+              title: "🧭 Why This Matters for First-Time Visitors",
+              body: "Your first meals set your baseline.",
+              tail:
+                "If your early meals feel overwhelming (too spicy, too strong-smelling, too unfamiliar in texture), many travelers become cautious and stop exploring. Starting with comfortable dishes first helps you build confidence — then bold dishes become exciting instead of stressful.",
+            },
+            {
+              title: "🌶️ Spicy in Korea Can Surprise You",
+              body: "It’s not always “immediate heat.”",
+              subsections: [
+                {
+                  title: "Korean spice often feels different from what many visitors expect",
+                  plainTitle: true,
+                  bullets: [
+                    "Mild at first, then stronger after a minute",
+                    "Sweet or savory before the heat kicks in",
+                    "Lingering heat that lasts longer than expected",
+                  ],
+                },
+                {
+                  title: "Useful phrases (simple and effective)",
+                  plainTitle: true,
+                  lead: [
+                    "If you are unsure, ask directly before ordering.",
+                  ],
+                  bullets: [
+                    "“Is this spicy?”",
+                    "“Not spicy, please.”",
+                    "“Make it mild, please.”",
+                    "“Sauce on the side, please.”",
+                  ],
+                },
+              ],
+            },
+            {
+              title: "⚠️ Dishes Many Visitors Should Save for Later",
               body:
-                "Some Korean dishes are bold in spice, fermentation, or texture. They are authentic and loved locally - but may not be the best choice for your first few meals. This guide helps you pick the right time to try them so you can enjoy them fully.",
+                "Popular, but not beginner-friendly. These dishes are not “bad” — they just depend heavily on your tolerance for spice, fermentation, or texture:",
+              subsections: [
+                {
+                  title: "Very spicy dishes",
+                  plainTitle: true,
+                  bullets: [
+                    "Extra-spicy tteokbokki (spicy rice cakes)",
+                    "“Fire-level” spicy chicken dishes (very high heat)",
+                  ],
+                },
+                {
+                  title: "Strong fermentation / strong aroma",
+                  plainTitle: true,
+                  bullets: [
+                    "Very strong fermented foods (some kimchi stews / soybean-based stews can feel intense)",
+                    "Fermented skate (very strong ammonia-like aroma)",
+                  ],
+                },
+                {
+                  title: "Raw or “very textured” foods",
+                  plainTitle: true,
+                  bullets: [
+                    "Raw or heavily marinated seafood",
+                    "Live octopus (sannakji) (texture can be shocking for first-timers)",
+                  ],
+                },
+                {
+                  title: "Organ meats and intense textures",
+                  plainTitle: true,
+                  bullets: [
+                    "Gopchang (intestines) and other organ-based dishes",
+                  ],
+                },
+                {
+                  title: "Unfamiliar snack experiences",
+                  plainTitle: true,
+                  bullets: [
+                    "Beondegi (silkworm larvae)",
+                  ],
+                },
+              ],
+              tail:
+                "Simple rule: if a dish is famous for being extreme, don’t make it your first impression of Korean food.",
             },
             {
-              title: "Spicy Doesn't Always Mean \"A Little Hot\"",
-              icon: "alert",
-              emphasis: "Korean spice is different from what you might expect.",
-              body: "It can be:",
-              bullets: [
-                "Mild at first, then gradually more intense",
-                "Slightly sweet before the heat kicks in",
-                "A lingering heat that lasts longer than you'd expect",
-                "It's layered, slow, and often not just immediate heat.",
+              title: "🧩 4 Things Visitors Commonly Miss",
+              body: "These cause most “first meal regrets.”",
+              subsections: [
+                {
+                  title: "1) Hidden seafood in broths and kimchi",
+                  plainTitle: true,
+                  lead: [
+                    "Even dishes that don’t look “seafood-based” may use anchovy or shellfish-based broth, or salted seafood in kimchi.",
+                  ],
+                },
+                {
+                  title: "2) Hidden pork in soups and sauces",
+                  plainTitle: true,
+                  lead: [
+                    "If you avoid pork for religious or dietary reasons, confirm carefully — pork can appear in broths, dumplings, and stews.",
+                  ],
+                },
+                {
+                  title: "3) Allergens that hide in sauces and side dishes",
+                  plainTitle: true,
+                  lead: [
+                    "Common “hidden” triggers include peanuts/nuts, soy, wheat, and shellfish.",
+                    "If you have a serious allergy, ask about cross-contamination (shared oil / shared cooking tools).",
+                    "Helpful allergy phrases:",
+                  ],
+                  bullets: [
+                    "“I have a ___ allergy. Is it in this dish?”",
+                    "“Is this cooked in the same oil or on the same grill?”",
+                  ],
+                },
+                {
+                  title: "4) Raw foods are better after your stomach adapts",
+                  plainTitle: true,
+                  lead: [
+                    "If you are sensitive, keep raw seafood and raw-meat dishes for later in the trip — especially if you’re jet-lagged or your stomach is not settled yet.",
+                  ],
+                },
               ],
             },
             {
-              title: "Dishes That Can Feel Intense at First",
-              icon: "chili",
-              emphasis: "Popular but challenging for newcomers.",
-              body: "Many first-time visitors find these dishes strong:",
+              title: "🥢 How Locals Enjoy Strong Food",
+              body: "Balance, not bravado.",
               bullets: [
-                "Extra-spicy tteokbokki (rice cakes)",
-                "\"Fire-level\" chicken dishes",
-                "Raw or heavily marinated seafood",
-                "Strong fermented foods (e.g., kimchi or soybean stews)",
-                "Fermented skate with a strong ammonia-like aroma",
-                "Insect snacks like beondegi (silkworm larvae)",
-                "Raw live octopus (sannakji)",
-                "Organ meats like gopchang (intestines)",
-                "These dishes are not \"bad\" choices, but they rely heavily on your tolerance for spice, texture, or strong flavors.",
+                "Pair spicy dishes with mild sides",
+                "Eat strong flavors in small portions",
+                "Share intense dishes instead of eating a full portion alone",
+                "Adjust their choices based on mood and tolerance",
               ],
+              tail:
+                "Strong food is usually part of a balanced meal — not a challenge.",
             },
             {
-              title: "Why Your First Meals Matter",
-              icon: "spark",
-              emphasis: "Early meals set your comfort level.",
+              title: "✅ A Smarter Way to Try Bold Dishes",
               body:
-                "If your first meal is too overwhelming in flavor or spice, it could make you hesitant to try more. Starting with balanced, mild dishes helps build confidence and keeps your curiosity alive for later.",
-            },
-            {
-              title: "How Locals Handle Strong Flavors",
-              icon: "hand",
-              emphasis: "Balance, not a test.",
-              body: "Locals often:",
+                "You can still enjoy them — just time it better. If a dish sounds intense, use this approach:",
               bullets: [
-                "Pair spicy dishes with mild side dishes",
-                "Eat strong-flavored foods in small portions",
-                "Gradually adjust spice levels to their liking",
-                "Know their limits",
-                "Strong flavors are usually enjoyed as part of a well-balanced meal, not as a challenge.",
+                "Save it for later (after a few comfortable meals)",
+                "Share one portion instead of ordering a full serving alone",
+                "Ask: “Is this very spicy?” before ordering",
+                "Take a small bite first, then decide",
+                "If you’re sensitive: keep a mild backup (rice, soup, dumplings)",
               ],
+              tail:
+                "This keeps the experience enjoyable and lowers the risk of ruining the meal.",
             },
             {
-              title: "A Common Visitor Mistake",
-              icon: "alert",
-              emphasis: "Turning food into a test.",
-              body: "Some visitors:",
-              bullets: [
-                "Order the spiciest dish \"for the experience\"",
-                "Try extreme dishes just for the story",
-                "End up losing their appetite after one overwhelming meal",
-                "Food should be enjoyable, not a survival experiment.",
-              ],
-            },
-            {
-              title: "A Smarter Way to Try Bold Dishes",
-              icon: "checklist",
-              emphasis: "Take it slow.",
-              body: "If a dish sounds intense:",
-              bullets: [
-                "Save it for later in your trip",
-                "Share one portion with others",
-                "Ask about spice level before ordering",
-                "Try a small bite first rather than a full portion",
-                "This way, you can enjoy the experience without the stress.",
-              ],
-            },
-            {
-              title: "Bottom Line",
-              icon: "spark",
-              emphasis: "Korean food rewards patience.",
-              body:
-                "Start with comfort, build up your familiarity, and save the boldest flavors for when you're truly ready to appreciate them - not just survive them.",
+              title: "🏁 Bottom Line",
+              body: "Korean food rewards patience.",
+              tail:
+                "Start with comfortable, balanced dishes first. Then explore the boldest flavors when you’re ready to appreciate them — not just survive them. If you want safe first-dish ideas before trying bold flavors, see\nWhat Should I Eat First in Korea?: https://planmykorea.com/what-to-eat/what-should-i-try-first/",
             },
           ],
         },

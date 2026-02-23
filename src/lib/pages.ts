@@ -195,8 +195,6 @@ const subpages = [
   { category: 'accommodation', slug: 'budget-stays', title: 'Budget Stays', description: 'Clean, simple stays that keep your budget happy.' },
   { category: 'accommodation', slug: 'best-value-hotels', title: 'Best-Value Hotels', description: 'Comfortable hotels with good locations and fair prices.' },
   { category: 'accommodation', slug: 'luxury-hotels', title: 'Luxury Hotels', description: 'Upscale stays for a special trip or anniversary.' },
-  { category: 'accommodation', slug: 'where-to-stay-in-seoul', title: 'Where to Stay in Seoul', description: 'Neighborhoods that match your travel style.' },
-  { category: 'accommodation', slug: 'where-to-stay-in-busan', title: 'Where to Stay in Busan', description: 'Pick between beach views or market access.' },
   { category: 'accommodation', slug: 'hotel-or-guesthouse', title: 'Hotel or Guesthouse?', description: 'Pick the stay type that fits your pace.' },
 
   { category: 'food', slug: 'korean-food-for-beginners', title: 'Korean Food for Beginners', description: 'Start with easy favorites that are not too spicy.' },

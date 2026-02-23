@@ -12,6 +12,10 @@ http://www.visitingkorea.pages.dev/* https://planmykorea.com/:splat 301
 /latest-travel-updates/ /latest-travel-updates-for-korea/ 301
 /latest-travel-updates-for-koreas /latest-travel-updates-for-korea 301
 /latest-travel-updates-for-koreas/ /latest-travel-updates-for-korea/ 301
+/things-to-do/top-places-by-city /things-to-do/explore-korea 301
+/things-to-do/top-places-by-city/ /things-to-do/explore-korea/ 301
+/es/things-to-do/top-places-by-city /es/things-to-do/explore-korea 301
+/es/things-to-do/top-places-by-city/ /es/things-to-do/explore-korea/ 301
 /getting-around-korea/saving-on-transport /404.html 404!
 /getting-around-korea/saving-on-transport/ /404.html 404!
 /getting-around-korea/transfers-explained /404.html 404!

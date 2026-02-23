@@ -3578,7 +3578,7 @@ export const siteTree: TreeNode = {
         },
         {
           title: "Top Places by City",
-          slug: "top-places-by-city",
+          slug: "explore-korea",
           icon: "pin",
           image: "city",
           description: "Highlights for each city.",

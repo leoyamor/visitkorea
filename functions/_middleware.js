@@ -19,6 +19,10 @@ const BLOCKED_PATHS = new Set([
   "/es/where-to-stay/where-to-stay-in-busan",
   "/things-to-do/good-places-without-crowds",
   "/es/things-to-do/good-places-without-crowds",
+  "/travel-basics/solo-travel-safety",
+  "/travel-basics/in-case-of-emergency",
+  "/es/travel-basics/solo-travel-safety",
+  "/es/travel-basics/in-case-of-emergency",
 ]);
 
 export async function onRequest(context) {

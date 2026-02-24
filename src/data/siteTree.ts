@@ -4222,116 +4222,184 @@ export const siteTree: TreeNode = {
         "Focus on 3 essentials first: internet, payments, and safety. In about 5 minutes, you can decide what matters most and avoid common arrival mistakes.",
       children: [
         {
-          title: "Basic Korean Etiquette",
+          title: "Basic Korean Etiquette: Simple Rules for Travelers",
           slug: "basic-korean-etiquette",
           icon: "hand",
           image: "/leaf%20images/Basic%20Korean.webp?v=20260209",
-          description: "Simple rules to avoid awkward moments.",
+          description:
+            "Practical Korean etiquette for visitors. Learn the small habits that prevent awkward moments - greetings, public-space manners, dining basics, and cultural \"unspoken rules.\"",
           quickAnswer:
-            "This page helps you avoid awkward moments with simple local etiquette.",
+            "Korean etiquette is about respect and situational awareness, not perfection. Focus on a few key habits to avoid common misunderstandings.",
           content: [
             {
-              title: "Basic Korean Etiquette",
-              icon: "hand",
-              emphasis: "Respect matters more than perfection.",
+              title: "🧭 Quick Overview",
               body:
-                "You don't need to master every detail of Korean culture. Simple, respectful habits will make your interactions smoother and more pleasant.",
+                "Korean etiquette is less about \"strict rules\" and more about respect, quiet consideration, and reading the situation.",
+              tail:
+                "You do not need to be perfect. You just need to avoid the most common misunderstandings.",
             },
             {
-              title: "Politeness Matters More Than Perfection",
-              icon: "spark",
-              emphasis: "A little effort goes a long way.",
-              body: "You don't need to:",
+              title: "👋 1. Greetings and First Impressions",
+              body: "A small gesture makes interactions smoother.",
               bullets: [
-                "Speak fluent Korean",
-                "Bow perfectly",
-                "Know every custom",
+                "A light nod or small bow is normal when you meet someone for the first time.",
+                "A light nod or small bow is normal when you say thank you.",
+                "A light nod or small bow is normal when you interact with staff in shops, hotels, and restaurants.",
+                "You do not need a deep bow. A brief, respectful nod is enough.",
               ],
             },
             {
-              title: "Using Two Hands (When It Matters)",
-              icon: "hand",
-              emphasis: "It's about intention, not technique.",
-              body: "Use two hands when:",
-              bullets: [
-                "Giving or receiving business cards",
-                "Handing over money",
-                "Offering small items in formal settings",
-              ],
-            },
-            {
-              title: "Inside Voices in Public Spaces",
-              icon: "alert",
-              emphasis: "Koreans appreciate quieter environments.",
-              body: "Keep your voice lower in:",
-              bullets: [
-                "Subways",
-                "Buses",
-                "Elevators",
-              ],
-            },
-            {
-              title: "Shoes Off Means Shoes Off",
-              icon: "bag",
-              emphasis: "Look for signs to remove your shoes.",
-              body: "You may need to take off your shoes in:",
-              bullets: [
-                "Traditional accommodations",
-                "Some restaurants",
-                "Certain homes",
-              ],
-            },
-            {
-              title: "Personal Space and Touching",
-              icon: "hand",
-              emphasis: "Respecting personal space is key.",
-              body: "Less common behaviors include:",
-              bullets: [
-                "Casual touching of strangers",
-                "Hugging or back-patting people you've just met",
-              ],
-            },
-            {
-              title: "Dining Manners",
-              icon: "bowl",
-              emphasis: "Keep it simple, keep it polite.",
-              body: "Remember:",
-              bullets: [
-                "Wait a moment before starting your meal",
-                "Don't stick chopsticks straight into rice",
-                "Slurping noodles is okay",
-                "Tipping is not expected",
-                "\"Thank you\" (감사합니다) is enough",
-              ],
-            },
-            {
-              title: "Tipping in Korea",
-              icon: "wallet",
-              emphasis: "Tipping is not common in Korea.",
-              body: "In Korea:",
-              bullets: [
-                "Service charges are usually included",
-                "Staff may feel uncomfortable if you try to tip",
-              ],
-            },
-            {
-              title: "What Visitors Often Worry About",
-              icon: "spark",
-              emphasis: "Calm and polite is better than perfect.",
-              body: "Most locals don't expect foreigners to know everything.",
-            },
-            {
-              title: "One Phrase That Always Helps",
-              icon: "spark",
-              emphasis: "감사합니다 (gam-sa-ham-ni-da) - \"Thank you\" goes a long way.",
-              body: "Thank you goes a long way.",
-            },
-            {
-              title: "Final Thought",
-              icon: "spark",
-              emphasis: "Be considerate, not perfect.",
+              title: "🏷️ 2. Names, Titles, and How to Address People",
               body:
-                "If you show respect, you're already doing great in Korea.",
+                "Names are handled differently than in many Western cultures.",
+              lead: [
+                "Koreans usually avoid calling someone by name alone (especially early on).",
+                "A safe, common pattern is:",
+              ],
+              bullets: [
+                "First name + \"씨\" (ssi)",
+                "First name + \"님\" (nim)",
+                "If you are unsure, it is also fine to avoid names entirely and use \"Excuse me\" with a polite tone.",
+                "If you are unsure, it is also fine to use \"Thank you\" (감사합니다).",
+              ],
+              tail:
+                "This is more important in formal settings or first meetings.",
+            },
+            {
+              title: "🚇 3. Public Space Etiquette",
+              body: "Quiet and order are strongly valued.",
+              subsections: [
+                {
+                  title: "🔉 In Public Spaces",
+                  lead: ["In public spaces (especially transport), it is best to:"],
+                  bullets: [
+                    "Keep your voice low",
+                    "Avoid loud videos on speaker",
+                    "Keep calls short",
+                  ],
+                },
+                {
+                  title: "🧍 Line Culture",
+                  body: "Line culture is strict and clear in Korea:",
+                  bullets: [
+                    "Buses, checkout counters, elevators, popular cafes",
+                    "Cutting in line is usually viewed very negatively.",
+                  ],
+                },
+                {
+                  title: "🛗 Escalator Etiquette",
+                  body: "Escalator etiquette varies by area, but a common pattern is:",
+                  bullets: [
+                    "Stand to one side, leave the other side open",
+                    "Some areas now promote \"stand only,\" so follow local signs and the crowd.",
+                  ],
+                },
+              ],
+            },
+            {
+              title: "🍽️ 4. Dining Etiquette",
+              body:
+                "Simple habits prevent the most common awkward moments.",
+              subsections: [
+                {
+                  title: "🥢 The Basics",
+                  body: "The basics:",
+                  bullets: [
+                    "If older people are at the table, wait a moment before starting",
+                    "Do not stick chopsticks vertically into rice (ritual symbolism)",
+                    "Shared side dishes are normal in Korea",
+                    "Water is usually free, often self-serve",
+                    "Many restaurants use a table call button (no need to wave)",
+                  ],
+                },
+                {
+                  title: "💳 Payment Culture",
+                  body:
+                    "Payment culture often differs from table-service countries:",
+                  bullets: ["Paying at the counter is common"],
+                },
+              ],
+            },
+            {
+              title: "👟 5. Shoes and Indoor Culture",
+              body: "If locals remove shoes, you should too.",
+              lead: ["You may need to take off shoes in:"],
+              bullets: [
+                "Homes",
+                "Some traditional restaurants",
+                "Hanok stays and some guesthouses",
+              ],
+              tail:
+                "If you see shoe racks or people in socks indoors, that is your signal.",
+            },
+            {
+              title: "♻️ 6. Trash, Recycling, and Street Habits",
+              body:
+                "Korea can feel clean, but trash bins are surprisingly limited.",
+              lead: ["It is normal to:"],
+              bullets: [
+                "Carry small trash until you find a bin",
+                "Dispose of it at convenience stores or your accommodation",
+                "Recycling rules are relatively strict",
+              ],
+              tail:
+                "As a visitor, just follow the labels on public bins when available.",
+            },
+            {
+              title: "📸 7. Photo and Privacy Etiquette",
+              body: "Be careful with strangers' faces.",
+              bullets: [
+                "Avoid casually filming or photographing strangers up close.",
+                "Inside shops or cafes, it is safer to ask before taking photos.",
+                "Some military-related areas or government-sensitive locations may have photo restrictions.",
+              ],
+            },
+            {
+              title: "💳 8. Money, Payment, and Tipping",
+              body: "Tipping is not expected in Korea.",
+              lead: ["In most cases:"],
+              bullets: [
+                "Service charges are already included",
+                "Tipping can make staff uncomfortable",
+                "Card payment is extremely common, even for small purchases.",
+              ],
+            },
+            {
+              title: "🧘 9. Emotional Tone and Conflict Style",
+              body: "Korea generally avoids public confrontation.",
+              lead: ["If something goes wrong, it is usually best to:"],
+              bullets: [
+                "Speak calmly",
+                "Ask staff quietly",
+                "Avoid raising your voice in public",
+              ],
+              tail: "Polite and steady communication tends to get better help.",
+            },
+            {
+              title: "⚠️ 10. Sensitive Topics to Avoid",
+              body: "Some topics can become uncomfortable quickly.",
+              lead: ["It is safer to avoid:"],
+              bullets: [
+                "Jokes about North Korea",
+                "Casual comments about military service",
+                "Heated political debates",
+                "Sensitive historical disputes",
+              ],
+              tail:
+                "Even if people do discuss them, visitors should approach carefully.",
+            },
+            {
+              title: "✅ Final Advice",
+              body:
+                "You do not need to \"perform\" Korean culture.",
+              lead: ["If you remember three principles, you will be fine:"],
+              bullets: [
+                "Be quieter than you think you need to be",
+                "Follow lines and shared-space norms",
+                "Show respect through small gestures",
+              ],
+              tail:
+                "Most locals do not expect tourists to know everything. They notice effort more than perfection.",
             },
           ],
         },

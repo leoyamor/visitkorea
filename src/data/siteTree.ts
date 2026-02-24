@@ -4244,7 +4244,6 @@ export const siteTree: TreeNode = {
             },
             {
               title: "📱 Why Mobile Data Matters in Korea",
-              emphasis: "Explanation",
               body:
                 "Korea's travel environment is highly digital. Many essential services depend on real-time mobile access.",
               subsections: [
@@ -4265,7 +4264,6 @@ export const siteTree: TreeNode = {
             },
             {
               title: "💸 How Much Should You Budget?",
-              emphasis: "Explanation",
               body:
                 "Exact prices change depending on provider and promotions. However, understanding the typical range helps with planning.",
               subsections: [
@@ -4299,7 +4297,6 @@ export const siteTree: TreeNode = {
                 {
                   title: "eSIM (Digital SIM)",
                   lead: [
-                    "Explanation",
                     "Best for travelers who want immediate connectivity after landing.",
                     "Suitable if",
                   ],
@@ -4327,7 +4324,6 @@ export const siteTree: TreeNode = {
                 {
                   title: "Physical SIM Card",
                   lead: [
-                    "Explanation",
                     "Best for travelers who prefer in-person assistance.",
                     "Suitable if",
                   ],
@@ -4343,7 +4339,6 @@ export const siteTree: TreeNode = {
             },
             {
               title: "📊 What \"Unlimited Data\" Usually Means",
-              emphasis: "Explanation",
               body: "\"Unlimited\" rarely means unlimited high-speed data all day.",
               subsections: [
                 {
@@ -4360,7 +4355,6 @@ export const siteTree: TreeNode = {
             },
             {
               title: "⏱️ When Does the Plan Start?",
-              emphasis: "Explanation",
               body:
                 "Usage timing affects how many real travel days you receive.",
               tail:
@@ -4473,114 +4467,6 @@ export const siteTree: TreeNode = {
               ],
               tail:
                 "A few minutes of preparation can prevent hours of inconvenience.",
-            },
-          ],
-        },
-        {
-          title: "How to Pay in Korea",
-          slug: "how-to-pay-in-korea",
-          icon: "wallet",
-          image: "basics",
-          description: "Card, cash, and what really works.",
-          quickAnswer:
-            "This page helps you understand what payment methods actually work in Korea.",
-          content: [
-            {
-              title: "How to Pay in Korea",
-              icon: "wallet",
-              emphasis: "Cards are widely accepted, but cash is still useful.",
-              body:
-                "You do not need to worry about payment methods. Paying in Korea is simple: use cards for most things, and keep some cash as a backup.",
-            },
-            {
-              title: "Cards: What Works Best",
-              icon: "card",
-              emphasis: "Cards are the go-to option.",
-              body: "You can use cards for:",
-              bullets: [
-                "Hotels and accommodations",
-                "Restaurants and cafes",
-                "Shopping malls and convenience stores",
-                "Public transportation (T-money, etc.)",
-              ],
-            },
-            {
-              title: "Pro Tip",
-              icon: "spark",
-              emphasis: "Credit cards tend to be more widely accepted and work smoothly.",
-              body: "If you have both, bring both, but expect credit to be your main tool.",
-            },
-            {
-              title: "What Might Surprise You",
-              icon: "alert",
-              emphasis: "Some places only accept cash.",
-              body: "This typically happens at:",
-              bullets: [
-                "Small local restaurants",
-                "Traditional markets",
-                "Street food stalls",
-              ],
-            },
-            {
-              title: "How Much Cash Do You Really Need?",
-              icon: "wallet",
-              emphasis: "A small amount is usually enough.",
-              body: "Cash is mainly for:",
-              bullets: [
-                "Street food",
-                "Markets",
-                "Small shops",
-              ],
-            },
-            {
-              title: "Where to Get Cash",
-              icon: "pin",
-              emphasis: "ATMs are easy to find.",
-              body: "You'll find ATMs at:",
-              bullets: [
-                "Convenience stores",
-                "Subway stations",
-                "Banks in major city areas",
-              ],
-            },
-            {
-              title: "What You Don't Need to Worry About",
-              icon: "hand",
-              emphasis: "Keep it simple.",
-              body: "You do not need:",
-              bullets: [
-                "Special local bank accounts",
-                "Complex payment apps",
-                "Large amounts of cash",
-              ],
-            },
-            {
-              title: "Common Payment Mistakes to Avoid",
-              icon: "alert",
-              emphasis: "Balance is key.",
-              body: "Many travelers:",
-              bullets: [
-                "Rely only on cash",
-                "Carry more cash than needed",
-                "Assume foreign debit cards are accepted everywhere",
-              ],
-            },
-            {
-              title: "The Smart, Low-Stress Setup",
-              icon: "checklist",
-              emphasis: "Card + Small Cash",
-              body: "For most travelers:",
-              bullets: [
-                "Use one international credit card for main payments",
-                "Keep a small amount of cash as backup",
-              ],
-            },
-            {
-              title: "Bottom Line",
-              icon: "spark",
-              emphasis: "If you're not thinking about money, you're doing it right.",
-              body:
-                "Paying in Korea is easy once you're here. Keep it simple and stress-free!",
             },
           ],
         },

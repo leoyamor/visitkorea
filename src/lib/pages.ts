@@ -223,7 +223,6 @@ const subpages = [
   { category: 'immigration', slug: 'what-is-k-eta', title: 'What Is K-ETA?', description: 'A simple guide to Korea Electronic Travel Authorization.' },
   { category: 'immigration', slug: 'do-you-need-a-visa', title: 'Do You Need a Visa?', description: 'How to check if a visa is required for you.' },
   { category: 'immigration', slug: 'documents-to-prepare', title: 'Documents to Prepare', description: 'Keep these ready to speed up entry.' },
-  { category: 'immigration', slug: 'from-airport-to-city', title: 'From Airport to City', description: 'Fast ways to reach your hotel after arrival.' },
 
   { category: 'shopping', slug: 'shopping-in-seoul', title: 'Shopping in Seoul', description: 'From markets to malls, where to start.' },
   { category: 'shopping', slug: 'shopping-in-busan', title: 'Shopping in Busan', description: 'Coastal shopping spots and local finds.' },

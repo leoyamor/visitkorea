@@ -797,15 +797,7 @@ const nextLeaf =
   siblingLeaves.length > 1 && currentLeafIndex >= 0
     ? siblingLeaves[(currentLeafIndex + 1) % siblingLeaves.length]
     : undefined;
-const leafNextOverrides: Record<string, { path: string; label: string }> = {
-  "travel-insurance-for-korea": {
-    path: withLang("/before-you-go/what-should-i-prepare", lang),
-    label:
-      lang === "es"
-        ? "Checklist antes de viajar (5 min)"
-        : "Before You Go Checklist (5 min)",
-  },
-};
+const leafNextOverrides: Record<string, { path: string; label: string }> = {};
 const nextOverride = leafNextOverrides[node.slug ?? ""];
 const nextDecisionPath =
   nextOverride?.path ??

@@ -3993,7 +3993,6 @@ export const siteTree: TreeNode = {
           content: [
             {
               title: "✨ Introduction",
-              icon: "spark",
               emphasis:
                 "Some passes can significantly reduce costs. Others only make sense for specific travel styles.",
               body:
@@ -4003,7 +4002,6 @@ export const siteTree: TreeNode = {
             },
             {
               title: "🚆 Nationwide Transportation Savings",
-              icon: "train",
               emphasis: "KORAIL PASS (Foreign Visitors Only)",
               body:
                 "Region: Nationwide (Korail-operated trains including KTX). Type: Rail pass for intercity travel.",
@@ -4039,7 +4037,6 @@ export const siteTree: TreeNode = {
             },
             {
               title: "🏙️ Seoul",
-              icon: "city",
               emphasis: "Discover Seoul Pass",
               body: "Region: Seoul. Format: Time-based (48 / 72 / 120 hours).",
               subsections: [
@@ -4077,7 +4074,6 @@ export const siteTree: TreeNode = {
             },
             {
               title: "🌊 Busan",
-              icon: "beach",
               emphasis: "VISIT BUSAN PASS",
               body: "Region: Busan. Format: 24-hour / 48-hour time-based pass.",
               subsections: [
@@ -4117,7 +4113,6 @@ export const siteTree: TreeNode = {
             },
             {
               title: "🌿 Gyeonggi Province (Near Seoul)",
-              icon: "route",
               emphasis: "Gyeonggi Tour Pass",
               body:
                 "Region: Gyeonggi-do (Suwon, Gapyeong and surrounding areas). Format: 24h / 48h / 72h / 120h time-based options.",
@@ -4147,7 +4142,6 @@ export const siteTree: TreeNode = {
             },
             {
               title: "🗺️ Regional Tour Pass Programs",
-              icon: "pin",
               body:
                 "Several provinces operate official regional passes (examples include Jeonbuk and Gyeongbuk).",
               bullets: [
@@ -4160,7 +4154,6 @@ export const siteTree: TreeNode = {
             },
             {
               title: "✅ When Attraction Passes Actually Save Money",
-              icon: "checklist",
               body: "A pass usually makes financial sense if:",
               bullets: [
                 "You visit 3+ paid attractions in one day",
@@ -4172,7 +4165,6 @@ export const siteTree: TreeNode = {
             },
             {
               title: "⚠️ When They Do Not",
-              icon: "hand",
               body: "Passes usually do not help if:",
               bullets: [
                 "You enjoy relaxed mornings",
@@ -4184,7 +4176,6 @@ export const siteTree: TreeNode = {
             },
             {
               title: "🧭 The Most Common Tourist Mistake",
-              icon: "alert",
               emphasis: "Buying before planning.",
               body: "Many travelers:",
               bullets: [
@@ -4197,7 +4188,6 @@ export const siteTree: TreeNode = {
             },
             {
               title: "🧮 A Simple Decision Formula",
-              icon: "wallet",
               body:
                 "Ask yourself: How many paid attractions will I realistically visit within the pass time window?",
               bullets: [
@@ -4209,7 +4199,6 @@ export const siteTree: TreeNode = {
             },
             {
               title: "🏁 Final Advice",
-              icon: "spark",
               body: "Korea is generally affordable for sightseeing.",
               bullets: [
                 "Many historic sites have low entrance fees.",

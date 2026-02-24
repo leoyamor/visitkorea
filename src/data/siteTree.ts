@@ -3985,7 +3985,7 @@ export const siteTree: TreeNode = {
           title: "Korea Attraction Passes & Discounts",
           slug: "attraction-passes-discounts",
           icon: "card",
-          image: "shopping",
+          image: "/leaf%20images/Discount%20Passes.webp",
           description:
             "Official attraction passes, regional discount cards, and when they genuinely reduce your travel costs in Korea.",
           quickAnswer:

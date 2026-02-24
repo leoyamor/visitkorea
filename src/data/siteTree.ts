@@ -5107,7 +5107,7 @@ export const siteTree: TreeNode = {
           title: "K-ETA & Immigration Process: Official Entry Guide to Korea (2026 Update)",
           slug: "korea-entry-requirements",
           icon: "passport",
-          image: "airport",
+          image: "/leaf%20images/Immigration%20Process.webp",
           description:
             "Understand whether you need K-ETA, when to submit the e-Arrival Card, and the exact arrival procedure at Korean airports. Based on official 2026 guidance, structured clearly for international visitors.",
           quickAnswer:

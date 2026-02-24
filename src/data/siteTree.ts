@@ -4775,7 +4775,7 @@ export const siteTree: TreeNode = {
             "Use this practical guide to evaluate real value first, then apply VAT refunds and discount programs correctly before you buy.",
           content: [
             {
-              title: "Quick Overview",
+              title: "📌 Quick Overview",
               icon: "checklist",
               body:
                 "Shopping in Korea can feel very affordable - or unexpectedly expensive.",
@@ -4787,7 +4787,7 @@ export const siteTree: TreeNode = {
               tail: "Smart travelers evaluate value first and apply discounts second.",
             },
             {
-              title: "Is Shopping Cheap in Korea? The Honest Answer",
+              title: "💬 Is Shopping Cheap in Korea? The Honest Answer",
               icon: "wallet",
               emphasis: "Sometimes yes. Sometimes no.",
               body:
@@ -4808,7 +4808,7 @@ export const siteTree: TreeNode = {
                 "These products are often competitively priced and practical to carry home.",
             },
             {
-              title: "What Is Often Not a Bargain",
+              title: "⚠️ What Is Often Not a Bargain",
               icon: "alert",
               emphasis: "Compare Carefully Before Buying",
               body: "Items that are not consistently cheaper:",
@@ -4822,7 +4822,7 @@ export const siteTree: TreeNode = {
                 "Luxury goods may appear discounted due to exchange rates or tax refund eligibility, but final savings vary. Always compare prices before assuming something is a deal.",
             },
             {
-              title: "How Discounts Actually Work in Korea",
+              title: "🧩 How Discounts Actually Work in Korea",
               icon: "tag",
               body: "Discounts in Korea generally fall into four categories:",
               subsections: [
@@ -4847,7 +4847,7 @@ export const siteTree: TreeNode = {
                 "Understanding which type you are using prevents unrealistic expectations.",
             },
             {
-              title: "VAT Refund (Tax Refund) - The Most Reliable System",
+              title: "🧾 VAT Refund (Tax Refund) - The Most Reliable System",
               icon: "card",
               emphasis: "Official Immediate Tax Refund Rules",
               body:
@@ -4874,7 +4874,7 @@ export const siteTree: TreeNode = {
                     "Avoid assuming \"10% back\" automatically. Always confirm the actual refund amount shown at payment.",
                 },
                 {
-                  title: "✅ Practical VAT Checklist",
+                  title: "Practical VAT Checklist",
                   lead: ["Before paying:"],
                   bullets: [
                     "Confirm the store displays \"Tax Free\" or \"Tax Refund\" signage",

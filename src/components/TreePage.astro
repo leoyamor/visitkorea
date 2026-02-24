@@ -21,7 +21,9 @@ const { node, segments, parentPath, isHome = false, breadcrumbs = [], lang = "en
   Astro.props as Props;
 
 const basePath = segments.length ? `/${segments.join("/")}` : "";
-const children = node.children ?? [];
+const children = (node.children ?? []).filter(
+  (child) => !(isHome && child.slug === "shopping-and-deals")
+);
 const hasChildren = children.length > 0;
 const FEEDBACK_FORM_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLSf93xq-USyR4GWOJxyEjMaY8z4VidA7_zvLons-Xsm1tZ97gw/viewform?usp=publish-editor";

@@ -9,11 +9,15 @@ import { absoluteUrl } from "../lib/site";
 import type { TreeNode } from "../data/siteTree";
 export const getStaticPaths = () => {
   const paths: string[] = [];
+  const HIDDEN_HUBS = new Set(["shopping-and-deals"]);
   const walk = (node: TreeNode, prefix: string[] = []) => {
     if (!node.children) return;
     for (const child of node.children) {
       const next = [...prefix, child.slug];
-      paths.push(next.join("/"));
+      const nextPath = next.join("/");
+      if (!HIDDEN_HUBS.has(nextPath)) {
+        paths.push(nextPath);
+      }
       walk(child, next);
     }
   };

@@ -270,12 +270,12 @@ const keywordLinks: Record<string, string> = {
   "Getting Around Korea": "/getting-around-korea/",
   ...(lang === "en"
     ? {
-        "travel insurance for Korea": "/travel-basics/travel-insurance-for-korea/",
-        "hospital costs in Korea": "/travel-basics/travel-insurance-for-korea/",
+        "travel insurance for Korea": "/before-you-go/travel-insurance-for-korea/",
+        "hospital costs in Korea": "/before-you-go/travel-insurance-for-korea/",
       }
     : {
-        "seguro de viaje para Corea": "/es/travel-basics/travel-insurance-for-korea/",
-        "costos hospitalarios en Corea": "/es/travel-basics/travel-insurance-for-korea/",
+        "seguro de viaje para Corea": "/es/before-you-go/travel-insurance-for-korea/",
+        "costos hospitalarios en Corea": "/es/before-you-go/travel-insurance-for-korea/",
       }),
 };
 
@@ -1129,7 +1129,7 @@ const breadcrumb = breadcrumbs;
     </div>
     <div class="pill-row">
       <a class="pill" href={withLang("/plan-your-trip/7-days-in-korea", lang)} data-kpi-section="home_pill_days">{t.pillDays}</a>
-      <a class="pill" href={withLang("/travel-basics/sim-or-esim", lang)} data-kpi-section="home_pill_sim">{t.pillSim}</a>
+      <a class="pill" href={withLang("/before-you-go/sim-or-esim", lang)} data-kpi-section="home_pill_sim">{t.pillSim}</a>
       <a class="pill" href={withLang("/getting-around-korea/using-the-subway", lang)} data-kpi-section="home_pill_subway">{t.pillSubway}</a>
       <a class="pill" href={withLang("/choose-a-city/which-city-fits-you-best", lang)} data-kpi-section="home_pill_city">{t.pillCityFit}</a>
       <a class="pill" href={nowMorePath} data-kpi-section="home_pill_now_more">{t.pillNowMore}</a>

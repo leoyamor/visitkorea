@@ -4222,6 +4222,515 @@ export const siteTree: TreeNode = {
         "Focus on 3 essentials first: internet, payments, and safety. In about 5 minutes, you can decide what matters most and avoid common arrival mistakes.",
       children: [
         {
+          title: "Basic Korean Etiquette",
+          slug: "basic-korean-etiquette",
+          icon: "hand",
+          image: "/leaf%20images/Basic%20Korean.webp?v=20260209",
+          description: "Simple rules to avoid awkward moments.",
+          quickAnswer:
+            "This page helps you avoid awkward moments with simple local etiquette.",
+          content: [
+            {
+              title: "Basic Korean Etiquette",
+              icon: "hand",
+              emphasis: "Respect matters more than perfection.",
+              body:
+                "You don't need to master every detail of Korean culture. Simple, respectful habits will make your interactions smoother and more pleasant.",
+            },
+            {
+              title: "Politeness Matters More Than Perfection",
+              icon: "spark",
+              emphasis: "A little effort goes a long way.",
+              body: "You don't need to:",
+              bullets: [
+                "Speak fluent Korean",
+                "Bow perfectly",
+                "Know every custom",
+              ],
+            },
+            {
+              title: "Using Two Hands (When It Matters)",
+              icon: "hand",
+              emphasis: "It's about intention, not technique.",
+              body: "Use two hands when:",
+              bullets: [
+                "Giving or receiving business cards",
+                "Handing over money",
+                "Offering small items in formal settings",
+              ],
+            },
+            {
+              title: "Inside Voices in Public Spaces",
+              icon: "alert",
+              emphasis: "Koreans appreciate quieter environments.",
+              body: "Keep your voice lower in:",
+              bullets: [
+                "Subways",
+                "Buses",
+                "Elevators",
+              ],
+            },
+            {
+              title: "Shoes Off Means Shoes Off",
+              icon: "bag",
+              emphasis: "Look for signs to remove your shoes.",
+              body: "You may need to take off your shoes in:",
+              bullets: [
+                "Traditional accommodations",
+                "Some restaurants",
+                "Certain homes",
+              ],
+            },
+            {
+              title: "Personal Space and Touching",
+              icon: "hand",
+              emphasis: "Respecting personal space is key.",
+              body: "Less common behaviors include:",
+              bullets: [
+                "Casual touching of strangers",
+                "Hugging or back-patting people you've just met",
+              ],
+            },
+            {
+              title: "Dining Manners",
+              icon: "bowl",
+              emphasis: "Keep it simple, keep it polite.",
+              body: "Remember:",
+              bullets: [
+                "Wait a moment before starting your meal",
+                "Don't stick chopsticks straight into rice",
+                "Slurping noodles is okay",
+                "Tipping is not expected",
+                "\"Thank you\" (감사합니다) is enough",
+              ],
+            },
+            {
+              title: "Tipping in Korea",
+              icon: "wallet",
+              emphasis: "Tipping is not common in Korea.",
+              body: "In Korea:",
+              bullets: [
+                "Service charges are usually included",
+                "Staff may feel uncomfortable if you try to tip",
+              ],
+            },
+            {
+              title: "What Visitors Often Worry About",
+              icon: "spark",
+              emphasis: "Calm and polite is better than perfect.",
+              body: "Most locals don't expect foreigners to know everything.",
+            },
+            {
+              title: "One Phrase That Always Helps",
+              icon: "spark",
+              emphasis: "감사합니다 (gam-sa-ham-ni-da) - \"Thank you\" goes a long way.",
+              body: "Thank you goes a long way.",
+            },
+            {
+              title: "Final Thought",
+              icon: "spark",
+              emphasis: "Be considerate, not perfect.",
+              body:
+                "If you show respect, you're already doing great in Korea.",
+            },
+          ],
+        },
+        {
+          title: "Safety in Korea: What Travelers Should Know",
+          slug: "korea-travel-safety",
+          icon: "shield",
+          image: "/leaf%20images/Is%20Korea%20Safe.webp",
+          description:
+            "How safe Korea is, what solo travelers should expect, and what to do in an emergency.",
+          quickAnswer:
+            "Korea is very safe for visitors, including solo travelers, but awareness and basic emergency preparation still matter.",
+          content: [
+            {
+              title: "✨ Introduction",
+              body:
+                "Korea is widely considered one of the safest countries for travelers.",
+              tail:
+                "Violent crime is rare in tourist areas, public transport is reliable, and streets remain active late into the night. However, \"safe\" does not mean \"careless.\" Understanding basic awareness makes your trip smoother and more confident.",
+            },
+            {
+              title: "🛡️ 1. General Safety Overview",
+              emphasis: "What Most Visitors Notice",
+              body: "Many travelers quickly observe:",
+              bullets: [
+                "People walking alone late at night",
+                "Well-lit streets in major cities",
+                "Active late-night food areas",
+                "Organized and reliable public transportation",
+              ],
+              tail: "Serious incidents involving tourists are uncommon.",
+            },
+            {
+              title: "🧍 2. Solo Travel Safety",
+              emphasis: "Traveling Alone in Korea",
+              body: "Solo travel is common and socially accepted.",
+              subsections: [
+                {
+                  title: "Practical Advantages",
+                  bullets: [
+                    "Clear subway systems",
+                    "Easy-to-follow signage",
+                    "Convenience stores everywhere",
+                    "Dining alone is normal",
+                  ],
+                  tail:
+                    "Even first-time solo travelers usually feel comfortable within a few days.",
+                },
+                {
+                  title: "Dining Alone",
+                  lead: ["In Korea:"],
+                  bullets: [
+                    "Cafes and most restaurants welcome solo diners",
+                    "Convenience store meals are widely used and socially normal",
+                    "Some traditional BBQ restaurants prefer groups, but alternatives are abundant",
+                  ],
+                  tail:
+                    "There is no social pressure to avoid eating alone.",
+                },
+              ],
+            },
+            {
+              title: "🌆 3. Day and Night Movement",
+              body: "Main streets remain active in Korea's major cities.",
+              subsections: [
+                {
+                  title: "During the Day",
+                  bullets: [
+                    "Public transport is safe and monitored",
+                    "Tourist districts are busy and visible",
+                    "Walking alone feels comfortable in major cities",
+                  ],
+                },
+                {
+                  title: "At Night",
+                  bullets: [
+                    "Subways and buses operate safely",
+                    "Taxis are reliable and regulated",
+                    "Late-night dining streets are busy",
+                  ],
+                  tail:
+                    "Basic rule: stay on well-lit main streets and avoid empty alleys.",
+                },
+              ],
+            },
+            {
+              title: "⚠️ 4. Situations That Require Awareness",
+              body: "Even in safe countries, awareness matters.",
+              bullets: [
+                "Drink heavily",
+                "Stay out extremely late in nightlife areas",
+                "Feel tired or disoriented",
+                "Carry valuables in crowded subways",
+              ],
+              tail:
+                "Crowded areas can lead to minor issues such as pickpocketing, though it is not widespread.",
+            },
+            {
+              title: "🧭 5. Cultural Differences (Not Safety Risks)",
+              body: "Some behaviors may feel unfamiliar:",
+              bullets: [
+                "People may stare out of curiosity",
+                "Public transport is quiet",
+                "Strangers do not engage in small talk",
+              ],
+              tail: "These are cultural norms, not warning signs.",
+            },
+            {
+              title: "🚨 6. Emergency Information",
+              body:
+                "Emergencies are rare, but preparation reduces stress.",
+              subsections: [
+                {
+                  title: "Emergency Numbers",
+                  bullets: ["Police: 112", "Fire / Ambulance: 119"],
+                  tail:
+                    "These numbers work from mobile phones and public phones. English assistance is commonly available.",
+                },
+                {
+                  title: "Medical Situations",
+                  lead: [
+                    "For serious issues:",
+                    "Call 119.",
+                    "For non-urgent care:",
+                  ],
+                  bullets: [
+                    "Visit a hospital",
+                    "Ask hotel staff for assistance",
+                    "Use a pharmacy for minor issues",
+                  ],
+                  tail:
+                    "Hospitals in major cities often provide English-language support.",
+                },
+                {
+                  title: "Lost Items",
+                  lead: [
+                    "Korea has a strong lost-and-found system.",
+                    "If you lose something:",
+                  ],
+                  bullets: [
+                    "Visit the nearest police station",
+                    "Ask hotel staff for help",
+                    "File a report",
+                  ],
+                  tail: "Lost items are frequently returned.",
+                },
+              ],
+            },
+            {
+              title: "✅ 7. Simple Preparation Checklist",
+              body: "Before your trip:",
+              bullets: [
+                "Save 112 and 119 in your phone",
+                "Screenshot your hotel address",
+                "Carry travel insurance information",
+                "Keep a portable charger",
+              ],
+              tail: "These small steps increase confidence.",
+            },
+            {
+              title: "💬 Final Thought",
+              body:
+                "Korea is very safe for visitors, including solo travelers.",
+              bullets: [
+                "Most trips pass without incident.",
+                "Stay aware, not anxious.",
+              ],
+              tail:
+                "Prepared travelers feel relaxed - and relaxation makes travel better.",
+            },
+          ],
+        },
+        {
+          title:
+            "Is Shopping Cheap in Korea? A Practical Guide to Value, VAT Refunds, and Real Discounts",
+          slug: "shopping-and-discounts",
+          icon: "wallet",
+          image: "/leaf%20images/Is%20Shopping%20Cheap%20in%20Korea.webp",
+          description:
+            "Clear, fact-based guidance on what is truly worth buying in Korea and how official VAT refunds and major discount programs actually work. Understand key numbers, conditions, and common mistakes before you spend.",
+          quickAnswer:
+            "Use this practical guide to evaluate real value first, then apply VAT refunds and discount programs correctly before you buy.",
+          content: [
+            {
+              title: "📌 Quick Overview",
+              icon: "checklist",
+              body:
+                "Shopping in Korea can feel very affordable - or unexpectedly expensive.",
+              bullets: [
+                "What you buy",
+                "Where you buy",
+                "Whether a discount truly reduces your total cost",
+              ],
+              tail: "Smart travelers evaluate value first and apply discounts second.",
+            },
+            {
+              title: "💬 Is Shopping Cheap in Korea? The Honest Answer",
+              icon: "wallet",
+              emphasis: "Sometimes yes. Sometimes no.",
+              body:
+                "Korea offers strong value in specific categories, but not everything is cheaper than overseas. Perceived affordability often depends on category, exchange rate, tax refund eligibility, and planning.",
+            },
+            {
+              title: "🛍️ What Is Usually Worth Buying",
+              icon: "spark",
+              emphasis: "Categories with Consistent Value",
+              body: "Many visitors find reliable value in:",
+              bullets: [
+                "Korean skincare and cosmetics",
+                "Local snacks and food gifts",
+                "Small lifestyle items like stationery and accessories",
+                "Trend-driven Korean fashion brands (not global luxury brands)",
+              ],
+              tail:
+                "These products are often competitively priced and practical to carry home.",
+            },
+            {
+              title: "⚠️ What Is Often Not a Bargain",
+              icon: "alert",
+              emphasis: "Compare Carefully Before Buying",
+              body: "Items that are not consistently cheaper:",
+              bullets: [
+                "International luxury brands",
+                "Imported electronics",
+                "Large or heavy products",
+                "Impulse purchases in tourist-heavy areas",
+              ],
+              tail:
+                "Luxury goods may appear discounted due to exchange rates or tax refund eligibility, but final savings vary. Always compare prices before assuming something is a deal.",
+            },
+            {
+              title: "🧩 How Discounts Actually Work in Korea",
+              icon: "tag",
+              body: "Discounts in Korea generally fall into four categories:",
+              subsections: [
+                {
+                  title: "Tax-based (legal system)",
+                  lead: ["VAT refund"],
+                },
+                {
+                  title: "Retail chain programs",
+                  lead: ["Tourist membership cards"],
+                },
+                {
+                  title: "National campaigns",
+                  lead: ["Korea Grand Sale"],
+                },
+                {
+                  title: "Duty-free structures",
+                  lead: ["Membership + coupon systems"],
+                },
+              ],
+              tail:
+                "Understanding which type you are using prevents unrealistic expectations.",
+            },
+            {
+              title: "🧾 VAT Refund (Tax Refund) - The Most Reliable System",
+              icon: "card",
+              emphasis: "Official Immediate Tax Refund Rules",
+              body:
+                "The following key figures are based on official tourism guidance for 2025-2026 and may be updated:",
+              subsections: [
+                {
+                  title: "Official Immediate Tax Refund Rules",
+                  bullets: [
+                    "Minimum purchase per receipt: ₩15,000 or more",
+                    "Immediate refund applies when a single purchase is under ₩1,000,000",
+                    "Total cumulative purchases during the trip: ₩5,000,000 limit",
+                    "These three numbers are the most important to remember: ₩15,000 / ₩1,000,000 / ₩5,000,000",
+                  ],
+                  tail:
+                    "If your purchase exceeds the immediate refund threshold, standard airport refund procedures may apply instead.",
+                },
+                {
+                  title: "Important Clarification About Refund Amount",
+                  lead: [
+                    "Korean VAT is 10%.",
+                    "However, the refunded amount may not always equal the full 10%, depending on processing methods and service fees.",
+                  ],
+                  tail:
+                    "Avoid assuming \"10% back\" automatically. Always confirm the actual refund amount shown at payment.",
+                },
+                {
+                  title: "Practical VAT Checklist",
+                  lead: ["Before paying:"],
+                  bullets: [
+                    "Confirm the store displays \"Tax Free\" or \"Tax Refund\" signage",
+                    "Present your passport at checkout",
+                    "Confirm whether the refund is immediate or processed at departure",
+                  ],
+                  tail:
+                    "Failure to check these steps is one of the most common tourist mistakes.",
+                },
+              ],
+            },
+            {
+              title: "Department Store Tourist Membership Programs",
+              icon: "bag",
+              body:
+                "Some large retail groups operate tourist-specific membership systems.",
+              bullets: [
+                "Lotte Department Store: around 5%",
+                "Lotte Duty Free: up to 10%",
+                "Seven-Eleven: around 10%",
+                "Lotte Mart: around 7%",
+              ],
+              tail:
+                "These benefits are corporate programs and may vary by location, promotional period, brand exclusions, or stacking limits. Always confirm current conditions at the store information desk.",
+            },
+            {
+              title: "🎉 Korea Grand Sale (Seasonal Campaign)",
+              icon: "spark",
+              body:
+                "Korea Grand Sale is a government-supported national shopping campaign.",
+              bullets: [
+                "Discount tier upgrades",
+                "Shopping vouchers",
+                "Payment-based cashback (for example, up to 15% with certain payment platforms during specific periods)",
+              ],
+              tail:
+                "Important: \"Up to\" percentages reflect maximum promotional benefits, not guaranteed savings across all stores or products. Campaign periods, participating merchants, and stacking rules may change. Always verify official sources before purchase.",
+            },
+            {
+              title: "🛫 Duty-Free Shopping",
+              icon: "plane",
+              body: "Duty-free stores typically combine:",
+              bullets: [
+                "Membership tier discounts",
+                "Fixed-amount coupons",
+                "Brand-specific restrictions",
+              ],
+              tail:
+                "Some brands exclude additional discounts, and multiple promotions are often subject to stacking limitations. Duty-free does not automatically guarantee the lowest price.",
+            },
+            {
+              title: "🎟️ Tourist Attraction Passes",
+              icon: "spark",
+              body: "Passes are useful only when:",
+              bullets: [
+                "You visit multiple paid attractions within 1-2 days",
+                "Those attractions were already part of your plan",
+                "The total pass cost is lower than buying individual tickets",
+              ],
+              tail:
+                "Buying passes \"just in case\" often reduces flexibility without meaningful savings.",
+            },
+            {
+              title: "🚫 Common Shopping and Discount Mistakes",
+              icon: "alert",
+              body: "Avoid:",
+              bullets: [
+                "Assuming every discount equals real savings",
+                "Ignoring immediate refund thresholds",
+                "Exceeding cumulative VAT limits without realizing",
+                "Forgetting your passport",
+                "Traveling across the city for minor price differences",
+                "Believing promotional \"maximum discount\" applies to all items",
+              ],
+              tail:
+                "Overspending usually comes from misunderstanding rules, not from base prices alone.",
+            },
+            {
+              title: "🧠 A Simple Decision Framework",
+              icon: "checklist",
+              body: "Before making a purchase, ask:",
+              bullets: [
+                "Was this already part of my plan?",
+                "Do I understand which VAT rule applies?",
+                "Am I within the ₩1,000,000 immediate refund limit?",
+                "Did I verify campaign or stacking conditions?",
+                "Would I still buy this without the discount?",
+              ],
+              tail:
+                "If the answers are clear and realistic, the purchase is likely justified.",
+            },
+            {
+              title: "✅ Final Advice",
+              icon: "spark",
+              body: "Plan first. Evaluate value second. Apply discounts third.",
+              bullets: [
+                "You focus on categories with genuine value",
+                "You understand official VAT rules",
+                "You treat promotional discounts as conditional benefits rather than automatic savings",
+              ],
+              tail:
+                "The smartest savings come from informed decisions, not from chasing every promotion. Return home with items you genuinely use and enjoy. That is the real measure of smart shopping.",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      title: "Before You Go",
+      slug: "before-you-go",
+      icon: "passport",
+      image: "/Before%20You%20Go.webp",
+      description: "Prepare for arrival, rules, and local customs.",
+      children: [
+        {
           title: "SIM or eSIM for Korea? A Practical Guide for Travelers",
           slug: "sim-or-esim",
           icon: "sim",
@@ -4462,175 +4971,6 @@ export const siteTree: TreeNode = {
           ],
         },
         {
-          title: "Safety in Korea: What Travelers Should Know",
-          slug: "korea-travel-safety",
-          icon: "shield",
-          image: "/leaf%20images/Is%20Korea%20Safe.webp",
-          description:
-            "How safe Korea is, what solo travelers should expect, and what to do in an emergency.",
-          quickAnswer:
-            "Korea is very safe for visitors, including solo travelers, but awareness and basic emergency preparation still matter.",
-          content: [
-            {
-              title: "✨ Introduction",
-              body:
-                "Korea is widely considered one of the safest countries for travelers.",
-              tail:
-                "Violent crime is rare in tourist areas, public transport is reliable, and streets remain active late into the night. However, \"safe\" does not mean \"careless.\" Understanding basic awareness makes your trip smoother and more confident.",
-            },
-            {
-              title: "🛡️ 1. General Safety Overview",
-              emphasis: "What Most Visitors Notice",
-              body: "Many travelers quickly observe:",
-              bullets: [
-                "People walking alone late at night",
-                "Well-lit streets in major cities",
-                "Active late-night food areas",
-                "Organized and reliable public transportation",
-              ],
-              tail: "Serious incidents involving tourists are uncommon.",
-            },
-            {
-              title: "🧍 2. Solo Travel Safety",
-              emphasis: "Traveling Alone in Korea",
-              body: "Solo travel is common and socially accepted.",
-              subsections: [
-                {
-                  title: "Practical Advantages",
-                  bullets: [
-                    "Clear subway systems",
-                    "Easy-to-follow signage",
-                    "Convenience stores everywhere",
-                    "Dining alone is normal",
-                  ],
-                  tail:
-                    "Even first-time solo travelers usually feel comfortable within a few days.",
-                },
-                {
-                  title: "Dining Alone",
-                  lead: ["In Korea:"],
-                  bullets: [
-                    "Cafes and most restaurants welcome solo diners",
-                    "Convenience store meals are widely used and socially normal",
-                    "Some traditional BBQ restaurants prefer groups, but alternatives are abundant",
-                  ],
-                  tail:
-                    "There is no social pressure to avoid eating alone.",
-                },
-              ],
-            },
-            {
-              title: "🌆 3. Day and Night Movement",
-              body: "Main streets remain active in Korea's major cities.",
-              subsections: [
-                {
-                  title: "During the Day",
-                  bullets: [
-                    "Public transport is safe and monitored",
-                    "Tourist districts are busy and visible",
-                    "Walking alone feels comfortable in major cities",
-                  ],
-                },
-                {
-                  title: "At Night",
-                  bullets: [
-                    "Subways and buses operate safely",
-                    "Taxis are reliable and regulated",
-                    "Late-night dining streets are busy",
-                  ],
-                  tail:
-                    "Basic rule: stay on well-lit main streets and avoid empty alleys.",
-                },
-              ],
-            },
-            {
-              title: "⚠️ 4. Situations That Require Awareness",
-              body: "Even in safe countries, awareness matters.",
-              bullets: [
-                "Drink heavily",
-                "Stay out extremely late in nightlife areas",
-                "Feel tired or disoriented",
-                "Carry valuables in crowded subways",
-              ],
-              tail:
-                "Crowded areas can lead to minor issues such as pickpocketing, though it is not widespread.",
-            },
-            {
-              title: "🧭 5. Cultural Differences (Not Safety Risks)",
-              body: "Some behaviors may feel unfamiliar:",
-              bullets: [
-                "People may stare out of curiosity",
-                "Public transport is quiet",
-                "Strangers do not engage in small talk",
-              ],
-              tail: "These are cultural norms, not warning signs.",
-            },
-            {
-              title: "🚨 6. Emergency Information",
-              body:
-                "Emergencies are rare, but preparation reduces stress.",
-              subsections: [
-                {
-                  title: "Emergency Numbers",
-                  bullets: ["Police: 112", "Fire / Ambulance: 119"],
-                  tail:
-                    "These numbers work from mobile phones and public phones. English assistance is commonly available.",
-                },
-                {
-                  title: "Medical Situations",
-                  lead: [
-                    "For serious issues:",
-                    "Call 119.",
-                    "For non-urgent care:",
-                  ],
-                  bullets: [
-                    "Visit a hospital",
-                    "Ask hotel staff for assistance",
-                    "Use a pharmacy for minor issues",
-                  ],
-                  tail:
-                    "Hospitals in major cities often provide English-language support.",
-                },
-                {
-                  title: "Lost Items",
-                  lead: [
-                    "Korea has a strong lost-and-found system.",
-                    "If you lose something:",
-                  ],
-                  bullets: [
-                    "Visit the nearest police station",
-                    "Ask hotel staff for help",
-                    "File a report",
-                  ],
-                  tail: "Lost items are frequently returned.",
-                },
-              ],
-            },
-            {
-              title: "✅ 7. Simple Preparation Checklist",
-              body: "Before your trip:",
-              bullets: [
-                "Save 112 and 119 in your phone",
-                "Screenshot your hotel address",
-                "Carry travel insurance information",
-                "Keep a portable charger",
-              ],
-              tail: "These small steps increase confidence.",
-            },
-            {
-              title: "💬 Final Thought",
-              body:
-                "Korea is very safe for visitors, including solo travelers.",
-              bullets: [
-                "Most trips pass without incident.",
-                "Stay aware, not anxious.",
-              ],
-              tail:
-                "Prepared travelers feel relaxed - and relaxation makes travel better.",
-            },
-          ],
-        },
-        {
           title: "Do I Need Travel Insurance for South Korea? (2026 Guide)",
           slug: "travel-insurance-for-korea",
           icon: "shield",
@@ -4763,346 +5103,6 @@ export const siteTree: TreeNode = {
           ],
         },
 
-        {
-          title:
-            "Is Shopping Cheap in Korea? A Practical Guide to Value, VAT Refunds, and Real Discounts",
-          slug: "shopping-and-discounts",
-          icon: "wallet",
-          image: "/leaf%20images/Is%20Shopping%20Cheap%20in%20Korea.webp",
-          description:
-            "Clear, fact-based guidance on what is truly worth buying in Korea and how official VAT refunds and major discount programs actually work. Understand key numbers, conditions, and common mistakes before you spend.",
-          quickAnswer:
-            "Use this practical guide to evaluate real value first, then apply VAT refunds and discount programs correctly before you buy.",
-          content: [
-            {
-              title: "📌 Quick Overview",
-              icon: "checklist",
-              body:
-                "Shopping in Korea can feel very affordable - or unexpectedly expensive.",
-              bullets: [
-                "What you buy",
-                "Where you buy",
-                "Whether a discount truly reduces your total cost",
-              ],
-              tail: "Smart travelers evaluate value first and apply discounts second.",
-            },
-            {
-              title: "💬 Is Shopping Cheap in Korea? The Honest Answer",
-              icon: "wallet",
-              emphasis: "Sometimes yes. Sometimes no.",
-              body:
-                "Korea offers strong value in specific categories, but not everything is cheaper than overseas. Perceived affordability often depends on category, exchange rate, tax refund eligibility, and planning.",
-            },
-            {
-              title: "🛍️ What Is Usually Worth Buying",
-              icon: "spark",
-              emphasis: "Categories with Consistent Value",
-              body: "Many visitors find reliable value in:",
-              bullets: [
-                "Korean skincare and cosmetics",
-                "Local snacks and food gifts",
-                "Small lifestyle items like stationery and accessories",
-                "Trend-driven Korean fashion brands (not global luxury brands)",
-              ],
-              tail:
-                "These products are often competitively priced and practical to carry home.",
-            },
-            {
-              title: "⚠️ What Is Often Not a Bargain",
-              icon: "alert",
-              emphasis: "Compare Carefully Before Buying",
-              body: "Items that are not consistently cheaper:",
-              bullets: [
-                "International luxury brands",
-                "Imported electronics",
-                "Large or heavy products",
-                "Impulse purchases in tourist-heavy areas",
-              ],
-              tail:
-                "Luxury goods may appear discounted due to exchange rates or tax refund eligibility, but final savings vary. Always compare prices before assuming something is a deal.",
-            },
-            {
-              title: "🧩 How Discounts Actually Work in Korea",
-              icon: "tag",
-              body: "Discounts in Korea generally fall into four categories:",
-              subsections: [
-                {
-                  title: "Tax-based (legal system)",
-                  lead: ["VAT refund"],
-                },
-                {
-                  title: "Retail chain programs",
-                  lead: ["Tourist membership cards"],
-                },
-                {
-                  title: "National campaigns",
-                  lead: ["Korea Grand Sale"],
-                },
-                {
-                  title: "Duty-free structures",
-                  lead: ["Membership + coupon systems"],
-                },
-              ],
-              tail:
-                "Understanding which type you are using prevents unrealistic expectations.",
-            },
-            {
-              title: "🧾 VAT Refund (Tax Refund) - The Most Reliable System",
-              icon: "card",
-              emphasis: "Official Immediate Tax Refund Rules",
-              body:
-                "The following key figures are based on official tourism guidance for 2025-2026 and may be updated:",
-              subsections: [
-                {
-                  title: "Official Immediate Tax Refund Rules",
-                  bullets: [
-                    "Minimum purchase per receipt: ₩15,000 or more",
-                    "Immediate refund applies when a single purchase is under ₩1,000,000",
-                    "Total cumulative purchases during the trip: ₩5,000,000 limit",
-                    "These three numbers are the most important to remember: ₩15,000 / ₩1,000,000 / ₩5,000,000",
-                  ],
-                  tail:
-                    "If your purchase exceeds the immediate refund threshold, standard airport refund procedures may apply instead.",
-                },
-                {
-                  title: "Important Clarification About Refund Amount",
-                  lead: [
-                    "Korean VAT is 10%.",
-                    "However, the refunded amount may not always equal the full 10%, depending on processing methods and service fees.",
-                  ],
-                  tail:
-                    "Avoid assuming \"10% back\" automatically. Always confirm the actual refund amount shown at payment.",
-                },
-                {
-                  title: "Practical VAT Checklist",
-                  lead: ["Before paying:"],
-                  bullets: [
-                    "Confirm the store displays \"Tax Free\" or \"Tax Refund\" signage",
-                    "Present your passport at checkout",
-                    "Confirm whether the refund is immediate or processed at departure",
-                  ],
-                  tail:
-                    "Failure to check these steps is one of the most common tourist mistakes.",
-                },
-              ],
-            },
-            {
-              title: "Department Store Tourist Membership Programs",
-              icon: "bag",
-              body:
-                "Some large retail groups operate tourist-specific membership systems.",
-              bullets: [
-                "Lotte Department Store: around 5%",
-                "Lotte Duty Free: up to 10%",
-                "Seven-Eleven: around 10%",
-                "Lotte Mart: around 7%",
-              ],
-              tail:
-                "These benefits are corporate programs and may vary by location, promotional period, brand exclusions, or stacking limits. Always confirm current conditions at the store information desk.",
-            },
-            {
-              title: "🎉 Korea Grand Sale (Seasonal Campaign)",
-              icon: "spark",
-              body:
-                "Korea Grand Sale is a government-supported national shopping campaign.",
-              bullets: [
-                "Discount tier upgrades",
-                "Shopping vouchers",
-                "Payment-based cashback (for example, up to 15% with certain payment platforms during specific periods)",
-              ],
-              tail:
-                "Important: \"Up to\" percentages reflect maximum promotional benefits, not guaranteed savings across all stores or products. Campaign periods, participating merchants, and stacking rules may change. Always verify official sources before purchase.",
-            },
-            {
-              title: "🛫 Duty-Free Shopping",
-              icon: "plane",
-              body: "Duty-free stores typically combine:",
-              bullets: [
-                "Membership tier discounts",
-                "Fixed-amount coupons",
-                "Brand-specific restrictions",
-              ],
-              tail:
-                "Some brands exclude additional discounts, and multiple promotions are often subject to stacking limitations. Duty-free does not automatically guarantee the lowest price.",
-            },
-            {
-              title: "🎟️ Tourist Attraction Passes",
-              icon: "spark",
-              body: "Passes are useful only when:",
-              bullets: [
-                "You visit multiple paid attractions within 1-2 days",
-                "Those attractions were already part of your plan",
-                "The total pass cost is lower than buying individual tickets",
-              ],
-              tail:
-                "Buying passes \"just in case\" often reduces flexibility without meaningful savings.",
-            },
-            {
-              title: "🚫 Common Shopping and Discount Mistakes",
-              icon: "alert",
-              body: "Avoid:",
-              bullets: [
-                "Assuming every discount equals real savings",
-                "Ignoring immediate refund thresholds",
-                "Exceeding cumulative VAT limits without realizing",
-                "Forgetting your passport",
-                "Traveling across the city for minor price differences",
-                "Believing promotional \"maximum discount\" applies to all items",
-              ],
-              tail:
-                "Overspending usually comes from misunderstanding rules, not from base prices alone.",
-            },
-            {
-              title: "🧠 A Simple Decision Framework",
-              icon: "checklist",
-              body: "Before making a purchase, ask:",
-              bullets: [
-                "Was this already part of my plan?",
-                "Do I understand which VAT rule applies?",
-                "Am I within the ₩1,000,000 immediate refund limit?",
-                "Did I verify campaign or stacking conditions?",
-                "Would I still buy this without the discount?",
-              ],
-              tail:
-                "If the answers are clear and realistic, the purchase is likely justified.",
-            },
-            {
-              title: "✅ Final Advice",
-              icon: "spark",
-              body: "Plan first. Evaluate value second. Apply discounts third.",
-              bullets: [
-                "You focus on categories with genuine value",
-                "You understand official VAT rules",
-                "You treat promotional discounts as conditional benefits rather than automatic savings",
-              ],
-              tail:
-                "The smartest savings come from informed decisions, not from chasing every promotion. Return home with items you genuinely use and enjoy. That is the real measure of smart shopping.",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      title: "Before You Go",
-      slug: "before-you-go",
-      icon: "passport",
-      image: "/Before%20You%20Go.webp",
-      description: "Prepare for arrival, rules, and local customs.",
-      children: [
-        {
-          title: "Basic Korean Etiquette",
-          slug: "basic-korean-etiquette",
-          icon: "hand",
-          image: "/leaf%20images/Basic%20Korean.webp?v=20260209",
-          description: "Simple rules to avoid awkward moments.",
-          quickAnswer:
-            "This page helps you avoid awkward moments with simple local etiquette.",
-          content: [
-            {
-              title: "Basic Korean Etiquette",
-              icon: "hand",
-              emphasis: "Respect matters more than perfection.",
-              body:
-                "You don't need to master every detail of Korean culture. Simple, respectful habits will make your interactions smoother and more pleasant.",
-            },
-            {
-              title: "Politeness Matters More Than Perfection",
-              icon: "spark",
-              emphasis: "A little effort goes a long way.",
-              body: "You don't need to:",
-              bullets: [
-                "Speak fluent Korean",
-                "Bow perfectly",
-                "Know every custom",
-              ],
-            },
-            {
-              title: "Using Two Hands (When It Matters)",
-              icon: "hand",
-              emphasis: "It's about intention, not technique.",
-              body: "Use two hands when:",
-              bullets: [
-                "Giving or receiving business cards",
-                "Handing over money",
-                "Offering small items in formal settings",
-              ],
-            },
-            {
-              title: "Inside Voices in Public Spaces",
-              icon: "alert",
-              emphasis: "Koreans appreciate quieter environments.",
-              body: "Keep your voice lower in:",
-              bullets: [
-                "Subways",
-                "Buses",
-                "Elevators",
-              ],
-            },
-            {
-              title: "Shoes Off Means Shoes Off",
-              icon: "bag",
-              emphasis: "Look for signs to remove your shoes.",
-              body: "You may need to take off your shoes in:",
-              bullets: [
-                "Traditional accommodations",
-                "Some restaurants",
-                "Certain homes",
-              ],
-            },
-            {
-              title: "Personal Space and Touching",
-              icon: "hand",
-              emphasis: "Respecting personal space is key.",
-              body: "Less common behaviors include:",
-              bullets: [
-                "Casual touching of strangers",
-                "Hugging or back-patting people you've just met",
-              ],
-            },
-            {
-              title: "Dining Manners",
-              icon: "bowl",
-              emphasis: "Keep it simple, keep it polite.",
-              body: "Remember:",
-              bullets: [
-                "Wait a moment before starting your meal",
-                "Don't stick chopsticks straight into rice",
-                "Slurping noodles is okay",
-                "Tipping is not expected",
-                "\"Thank you\" (감사합니다) is enough",
-              ],
-            },
-            {
-              title: "Tipping in Korea",
-              icon: "wallet",
-              emphasis: "Tipping is not common in Korea.",
-              body: "In Korea:",
-              bullets: [
-                "Service charges are usually included",
-                "Staff may feel uncomfortable if you try to tip",
-              ],
-            },
-            {
-              title: "What Visitors Often Worry About",
-              icon: "spark",
-              emphasis: "Calm and polite is better than perfect.",
-              body: "Most locals don't expect foreigners to know everything.",
-            },
-            {
-              title: "One Phrase That Always Helps",
-              icon: "spark",
-              emphasis: "감사합니다 (gam-sa-ham-ni-da) - \"Thank you\" goes a long way.",
-              body: "Thank you goes a long way.",
-            },
-            {
-              title: "Final Thought",
-              icon: "spark",
-              emphasis: "Be considerate, not perfect.",
-              body:
-                "If you show respect, you're already doing great in Korea.",
-            },
-          ],
-        },
         {
           title: "Immigration Process",
           slug: "immigration-process",

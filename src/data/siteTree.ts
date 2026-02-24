@@ -4222,103 +4222,207 @@ export const siteTree: TreeNode = {
         "Focus on 3 essentials first: internet, payments, and safety. In about 5 minutes, you can decide what matters most and avoid common arrival mistakes.",
       children: [
         {
-          title: "SIM or eSIM?",
+          title: "SIM or eSIM for Korea? A Practical Guide for Travelers",
           slug: "sim-or-esim",
           icon: "sim",
           image: "basics",
-          description: "Internet options explained simply.",
+          description:
+            "How to choose the right mobile data option before arriving in Korea. Clear comparisons, real usage rules, common mistakes, and a simple decision checklist.",
           quickAnswer:
-            "This page helps you choose the simplest internet option for your phone.",
+            "For most travelers, eSIM is the easiest choice if your phone supports it and is unlocked. If not, a physical SIM at the airport is the safest alternative.",
           content: [
             {
-              title: "SIM or eSIM?",
-              icon: "sim",
-              emphasis: "Korea is known for its fast and reliable internet.",
+              title: "✅ Quick Answer",
               body:
-                "You'll need a good connection for maps, transport, payments, and translations. The key is choosing the option that works best for you.",
-            },
-            {
-              title: "Quick Answer",
-              icon: "checklist",
-              emphasis: "One choice solves most of it.",
-              body: "If your phone supports eSIM, go for eSIM. If not, stick with a physical SIM.",
-            },
-            {
-              title: "What is an eSIM?",
-              icon: "sim",
-              emphasis: "Digital, simple, and fast.",
-              body: "Why travelers like it:",
+                "For most travelers, eSIM is the easiest choice - if your phone supports it and is unlocked.",
               bullets: [
-                "Set it up before you arrive",
-                "No need to visit a shop at the airport",
-                "Keep your home SIM active for messages or banking",
+                "Install before departure, switch on after landing, and you are connected immediately.",
+                "If your phone does not support eSIM, a physical SIM at the airport is the safest alternative.",
+              ],
+              tail:
+                "Korea is highly digital. Reliable data significantly reduces arrival stress.",
+            },
+            {
+              title: "📱 Why Mobile Data Matters in Korea",
+              emphasis: "Korea Is a Digital Travel Environment",
+              body: "Travel in Korea depends heavily on mobile connectivity.",
+              subsections: [
+                {
+                  title: "Most visitors use data for:",
+                  bullets: [
+                    "Navigation (walking + bus + subway transfers)",
+                    "Translation apps",
+                    "QR-based tickets and passes",
+                    "Taxi apps",
+                    "Searching exact entrances of buildings",
+                  ],
+                },
+              ],
+              tail:
+                "Public Wi-Fi exists, but it is not stable while moving between locations. A stable data connection improves both convenience and confidence.",
+            },
+            {
+              title: "🔍 SIM vs eSIM - What's the Real Difference?",
+              body: "Choose based on device compatibility and arrival experience.",
+              subsections: [
+                {
+                  title: "eSIM (Digital SIM)",
+                  lead: ["Best for immediate connection after landing.", "Suitable if:"],
+                  bullets: [
+                    "Your phone supports eSIM",
+                    "Your device is carrier-unlocked",
+                    "You want to avoid airport lines",
+                    "You prefer not to swap physical SIM cards",
+                  ],
+                },
+                {
+                  title: "Advantages",
+                  bullets: [
+                    "Purchase online",
+                    "Install via QR code",
+                    "Activate upon arrival",
+                    "Keep your home SIM active if needed",
+                  ],
+                },
+                {
+                  title: "Important caution",
+                  tail:
+                    "Many tourist eSIM products cannot be restored if deleted. Install carefully and avoid removing it during your trip.",
+                },
+                {
+                  title: "Physical SIM (Plastic SIM Card)",
+                  lead: ["Best if you prefer in-person assistance.", "Suitable if:"],
+                  bullets: [
+                    "Your phone does not support eSIM",
+                    "You prefer manual installation",
+                    "You want staff assistance at airport counters",
+                  ],
+                  tail:
+                    "Airport pickup options are widely available at major airports.",
+                },
               ],
             },
             {
-              title: "When a Physical SIM Makes More Sense",
-              icon: "card",
-              emphasis: "Compatibility and support.",
-              body: "A physical SIM is better if:",
+              title: "📊 What \"Unlimited Data\" Usually Means",
+              emphasis: "High-Speed + Speed Reduction Structure",
+              body: "Most tourist plans follow this pattern:",
               bullets: [
-                "Your phone is older",
-                "You're unsure about eSIM compatibility",
-                "You prefer in-person help",
-                "You want to buy at the airport or telecom counters",
+                "A daily high-speed allowance (for example, 3GB per day)",
+                "After that, reduced speed until midnight reset",
               ],
+              tail:
+                "Reduced speed is usually still usable for maps and messaging. Heavy streaming and hotspot use may feel slower. Always check the data policy before purchasing.",
             },
             {
-              title: "What You Actually Need",
-              icon: "spark",
-              emphasis: "Data first.",
-              body: "For most travelers:",
-              bullets: [
-                "Data-only plans are usually enough",
-                "Unlimited data is more comfortable",
-                "Calling minutes are rarely needed",
-              ],
-            },
-            {
-              title: "Pricing Details (SIM & eSIM Plans in Korea)",
-              icon: "wallet",
-              emphasis: "Typical ranges for travelers.",
-              body: "Physical SIM Card and eSIM Plan:",
-              bullets: [
-                "Physical SIM Card - Price: Around 20,000-30,000 KRW (5GB-10GB data)",
-                "Physical SIM Card - Where to buy: Available at airports, major stores, and telecom counters",
-                "Physical SIM Card - Providers: SK Telecom, KT, LG U+",
-                "eSIM Plan - Price: Around 15,000-25,000 KRW (5GB-10GB data)",
-                "eSIM Plan - Where to buy: Set up online before arrival and activate it upon landing",
-                "eSIM Plan - Providers: SK Telecom, KT",
-              ],
-            },
-            {
-              title: "Common Mistakes to Avoid",
-              icon: "alert",
-              emphasis: "Check compatibility first.",
-              body: "Before purchasing, confirm:",
-              bullets: [
-                "Your phone model",
-                "eSIM support",
-                "Network compatibility",
-              ],
-            },
-            {
-              title: "Do You Need to Decide Everything Now?",
-              icon: "checklist",
-              emphasis: "Decide which option works best for you, and confirm details later.",
-              body: "Prices and plans can change. Always double-check on:",
-              bullets: [
-                "Official telecom websites",
-                "Airport telecom counters",
-                "Authorized sellers",
-              ],
-            },
-            {
-              title: "Bottom Line",
-              icon: "spark",
-              emphasis: "Either way, staying connected is key.",
+              title: "⏱️ When Does Your Plan Start?",
+              emphasis: "Usage Timing Matters",
               body:
-                "Choose eSIM for speed and simplicity. Choose physical SIM for compatibility and in-person support.",
+                "Some plans begin counting from the first time data is used - not from purchase time.",
+              tail:
+                "This allows you to install before departure and activate only after landing. Always confirm how the usage period is calculated before buying.",
+            },
+            {
+              title: "☎️ Do You Need a Korean Phone Number?",
+              body: "Not everyone needs a voice-capable plan.",
+              subsections: [
+                {
+                  title: "Data Only",
+                  tail:
+                    "Most travelers only need data for apps, bookings, and navigation.",
+                },
+                {
+                  title: "Data + Voice",
+                  lead: ["Useful if you expect to:"],
+                  bullets: ["Make local calls", "Receive local calls easily"],
+                  tail:
+                    "However, even with a Korean number, many tourist SIM/eSIM products cannot be used for Korean identity verification services. Buy voice options only if you truly need calling capability.",
+                },
+              ],
+            },
+            {
+              title: "🛬 Buying Before or After Arrival",
+              body: "There are three common buying patterns.",
+              subsections: [
+                {
+                  title: "Option 1 - Buy Before Departure (Recommended)",
+                  bullets: [
+                    "Confirm eSIM support and phone unlock status",
+                    "Purchase online",
+                    "Install before flying",
+                    "Activate after landing",
+                  ],
+                  tail:
+                    "This is the least stressful method for first-time visitors.",
+                },
+                {
+                  title: "Option 2 - Airport Pickup SIM",
+                  bullets: [
+                    "Reserve online",
+                    "Select airport pickup",
+                    "Show passport",
+                    "Staff assist with installation",
+                  ],
+                  tail:
+                    "Suitable if you prefer face-to-face support.",
+                },
+                {
+                  title: "Option 3 - Buy After Arrival",
+                  tail:
+                    "Possible, but less convenient for first-time visitors. Your first hour may become unnecessarily complicated.",
+                },
+              ],
+            },
+            {
+              title: "⚠️ The Most Common Mistakes to Avoid",
+              body: "Avoid these common errors:",
+              bullets: [
+                "Phone is carrier-locked",
+                "Device does not support eSIM",
+                "Deleting eSIM during the trip",
+                "Assuming \"unlimited\" means unlimited high speed",
+                "Expecting tourist SIM to support Korean identity verification",
+                "Not checking when the plan timer starts",
+              ],
+              tail:
+                "Avoiding these prevents most connectivity problems.",
+            },
+            {
+              title: "🧾 Simple Decision Checklist",
+              body: "Use this checklist before purchasing.",
+              subsections: [
+                {
+                  title: "Choose eSIM if:",
+                  bullets: [
+                    "Your phone supports eSIM",
+                    "Your phone is unlocked",
+                    "You want data immediately after landing",
+                    "You prefer no airport queues",
+                  ],
+                },
+                {
+                  title: "Choose Physical SIM if:",
+                  bullets: [
+                    "Your phone does not support eSIM",
+                    "You want in-person assistance",
+                    "You prefer physical installation",
+                  ],
+                },
+              ],
+            },
+            {
+              title: "💬 Final Advice",
+              body:
+                "Reliable data is not just a technical choice. It affects your first hour, your transportation decisions, and your overall travel comfort.",
+              bullets: [
+                "Choose based on your device compatibility, arrival situation, and personal preference.",
+                "Before purchasing, always verify:",
+                "Device compatibility",
+                "Unlock status",
+                "Data policy",
+                "Start timing rules",
+              ],
+              tail:
+                "A few minutes of checking can prevent hours of inconvenience.",
             },
           ],
         },

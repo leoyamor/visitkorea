@@ -5104,231 +5104,220 @@ export const siteTree: TreeNode = {
         },
 
         {
-          title: "Immigration Process",
+          title: "K-ETA & Immigration Process: Official Entry Guide to Korea (2026 Update)",
           slug: "korea-entry-requirements",
           icon: "passport",
           image: "airport",
-          description: "What happens at the airport.",
+          description:
+            "Understand whether you need K-ETA, when to submit the e-Arrival Card, and the exact arrival procedure at Korean airports. Based on official 2026 guidance, structured clearly for international visitors.",
           quickAnswer:
-            "This page helps you know what to expect when arriving at a Korean airport.",
+            "Check K-ETA and e-Arrival Card requirements before departure, then follow the official arrival order at Korean airports to avoid delays.",
           content: [
             {
-              title: "Immigration Process",
-              icon: "passport",
-              emphasis: "Straightforward and quick.",
-              body:
-                "Entering Korea is easy and efficient. Knowing the basic steps makes the process feel smooth and predictable.",
-            },
-            {
-              title: "After Landing: Follow the Signs",
-              icon: "route",
-              emphasis: "Arrival and Immigration.",
-              body:
-                "Korean airports, like Incheon and Gimpo, have clear English signs. Just follow the crowd, and you'll be on the right track.",
-            },
-            {
-              title: "Step 1: Arrival",
-              icon: "route",
-              emphasis: "Terminal flow is simple.",
-              body:
-                "Terminal 1 and Terminal 2 passengers will enter through the boarding gate on the 2nd floor.",
+              title: "🧭 Quick Overview",
+              body: "Entering Korea involves two stages:",
               bullets: [
-                "Passengers arriving at the concourse will take the shuttle train to the terminal.",
+                "Before departure - Check visa status and K-ETA requirement.",
+                "After landing - Follow the official airport entry procedure.",
+                "The correct airport arrival order is:",
+                "Arrival -> (If applicable) Quarantine -> Immigration -> Baggage Claim -> Customs -> Arrival Hall",
+              ],
+              tail: "Understanding this sequence prevents confusion and delays.",
+            },
+            {
+              title: "🛂 Part 1: K-ETA (Pre-Travel Authorization)",
+              body: "K-ETA rules determine whether pre-travel authorization is required.",
+              subsections: [
+                {
+                  title: "📘 What K-ETA Is",
+                  body: "K-ETA (Korea Electronic Travel Authorization):",
+                  bullets: [
+                    "Is an electronic travel authorization system",
+                    "Applies to certain visa-exempt passport holders",
+                    "Is not a visa",
+                    "Does not guarantee entry (final decision rests with immigration officers)",
+                  ],
+                },
+                {
+                  title: "📊 Official Key Figures (2026 기준)",
+                  bullets: [
+                    "Application fee: ₩10,000",
+                    "Payment: Non-refundable, even if denied",
+                    "Processing time: Usually within 72 hours (may exceed during peak periods)",
+                    "Validity: 3 years, or until passport expiration (whichever comes first)",
+                    "No expedited processing available",
+                  ],
+                },
+                {
+                  title: "🗓️ Temporary Exemption (Valid Until 2026-12-31)",
+                  body:
+                    "The Korean government has extended temporary K-ETA exemptions for certain nationalities until December 31, 2026.",
+                  lead: ["Important:"],
+                  bullets: [
+                    "Not all countries are exempt",
+                    "Eligibility depends on nationality",
+                    "Exempt travelers may still voluntarily apply",
+                  ],
+                  tail:
+                    "Official guidance notes that valid K-ETA holders may be exempt from submitting an arrival card. Always confirm your nationality status through official government sources before departure.",
+                },
+                {
+                  title: "🚨 Warning: Unofficial K-ETA Websites",
+                  body: "Korean immigration authorities warn about unofficial websites.",
+                  lead: ["Use only:"],
+                  bullets: [
+                    "Official government website",
+                    "Official government mobile app",
+                    "Unofficial sites may charge additional service fees.",
+                  ],
+                },
               ],
             },
             {
-              title: "Step 2: Information/Declaration",
-              icon: "checklist",
-              emphasis: "Submit declaration details.",
-              body: "Submit your customs declaration for carry-on items at the customs office.",
-            },
-            {
-              title: "Step 3: Immigration",
-              icon: "passport",
-              emphasis: "Arrival card rules depend on traveler status.",
-              body:
-                "Korean citizens and registered foreign nationals do not need to fill out an arrival card.",
-              bullets: [
-                "Only unregistered foreign nationals need to fill out the card.",
+              title: "🧾 Part 2: e-Arrival Card (Electronic Arrival Declaration)",
+              body: "Arrival declaration requirements depend on your traveler status.",
+              subsections: [
+                {
+                  title: "👥 Who Must Submit It?",
+                  body:
+                    "In principle, most foreign nationals entering Korea must submit an arrival declaration (paper or electronic), unless exempt.",
+                },
+                {
+                  title: "📌 Key Rules (2026 기준)",
+                  bullets: [
+                    "Free of charge",
+                    "Can be submitted starting 3 days before arrival (including arrival day, Korea Standard Time)",
+                    "Becomes invalid if you do not enter Korea within 72 hours of submission",
+                  ],
+                },
+                {
+                  title: "✅ Who Is Exempt?",
+                  body: "You generally do NOT need to submit an arrival card if you are:",
+                  bullets: [
+                    "A registered foreign resident in Korea",
+                    "A valid K-ETA holder",
+                    "A group electronic visa holder",
+                    "Airline crew",
+                  ],
+                  tail: "Always verify your status before travel.",
+                },
+                {
+                  title: "🗂️ Information Required",
+                  body: "To complete the e-Arrival Card, prepare:",
+                  bullets: [
+                    "Passport information",
+                    "Email address",
+                    "One representative accommodation address in Korea",
+                    "Contact number",
+                    "Flight number",
+                    "Arrival and departure dates",
+                  ],
+                  tail:
+                    "If staying in multiple locations, listing one primary accommodation is generally sufficient.",
+                },
               ],
             },
             {
-              title: "Step 4: Baggage Claim",
-              icon: "bag",
-              emphasis: "Check the belt screen first.",
-              body:
-                "After clearing immigration, check the baggage belt number on the screen.",
+              title: "🛬 Part 3: Airport Immigration Process (Correct Order)",
+              body: "The standard arrival flow at Korean international airports is:",
               bullets: [
-                "Proceed to the first floor to pick up your luggage.",
+                "Arrival -> (If required) Quarantine -> Immigration -> Baggage Claim -> Customs -> Arrival Hall",
+              ],
+              subsections: [
+                {
+                  title: "1️⃣ Step 1: Arrival",
+                  body: "After landing:",
+                  bullets: [
+                    "Follow signs for Arrivals",
+                    "Passengers arriving at remote concourses may use a shuttle train to reach the main terminal",
+                    "Proceed toward Immigration.",
+                  ],
+                },
+                {
+                  title: "2️⃣ Step 2: Quarantine (If Applicable)",
+                  body: "Health screening may apply depending on:",
+                  bullets: [
+                    "Recent travel to designated quarantine-control regions",
+                    "Symptoms",
+                    "Current public health policies",
+                    "Q-CODE or health reporting may be required under specific conditions.",
+                  ],
+                  tail:
+                    "Q-CODE is not universally required for all travelers. Failure to comply when required may result in penalties under Korean quarantine law. Always check official updates before departure.",
+                },
+                {
+                  title: "3️⃣ Step 3: Immigration (Passport Control)",
+                  body: "You will:",
+                  bullets: [
+                    "Present your passport",
+                    "Provide biometric information if required",
+                    "Answer basic questions about your stay",
+                    "Final entry approval is determined at this stage.",
+                    "Even with valid K-ETA approval, entry is not guaranteed.",
+                  ],
+                },
+                {
+                  title: "4️⃣ Step 4: Baggage Claim",
+                  body: "After immigration clearance:",
+                  bullets: [
+                    "Check monitors for your baggage belt number",
+                    "Collect your luggage",
+                  ],
+                },
+                {
+                  title: "5️⃣ Step 5: Customs",
+                  body: "After collecting your luggage:",
+                  bullets: [
+                    "Choose one lane:",
+                    "Nothing to Declare",
+                    "Goods to Declare",
+                    "Travelers carrying restricted goods or large amounts of currency must declare accordingly.",
+                    "When traveling as a family, one customs declaration may be accepted per family unit.",
+                  ],
+                },
+                {
+                  title: "6️⃣ Step 6: Arrival Hall",
+                  body: "After customs clearance:",
+                  bullets: [
+                    "Exit into the public Arrival Hall",
+                    "Access transportation, SIM counters, exchange services, and pickup areas",
+                  ],
+                },
               ],
             },
             {
-              title: "Step 5: Arrival Hall",
-              icon: "shield",
-              emphasis: "Most travelers pass quickly.",
-              body:
-                "After picking up your baggage, exit through the departure hall into the arrival area.",
-              bullets: [
-                "Most travelers walk through the \"Nothing to Declare\" section. If you're not carrying restricted items or large amounts of cash, it's quick and simple.",
-              ],
-            },
-            {
-              title: "What Might Slow Things Down",
-              icon: "alert",
-              emphasis: "Avoid delays with these tips.",
-              body: "Delays can occur if:",
-              bullets: [
-                "You don't know your hotel's name or address",
-                "You're unsure about your travel purpose",
-                "Your forms are incomplete",
-              ],
-            },
-            {
-              title: "Language Concerns",
-              icon: "hand",
-              emphasis: "Don't worry, help is available.",
-              body:
-                "Officers speak basic English and focus on your documents, so no need to stress about language.",
-            },
-            {
-              title: "How Long Does It Take?",
-              icon: "calendar",
-              emphasis: "Usually under an hour.",
-              body: "Typical times:",
+              title: "⏱️ Typical Processing Time",
+              body: "Under normal conditions:",
               bullets: [
                 "Immigration: 10-30 minutes",
                 "Baggage and customs: 10-20 minutes",
-                "It can take longer during peak times",
+              ],
+              tail: "Processing times may increase during peak travel seasons.",
+            },
+            {
+              title: "🧠 Key Reminders",
+              body: "Remember these essentials before and during entry:",
+              bullets: [
+                "K-ETA is not a visa.",
+                "Entry is decided at immigration.",
+                "e-Arrival Card submission is time-sensitive.",
+                "Health reporting requirements are conditional.",
+                "Always verify official sources before travel.",
               ],
             },
             {
-              title: "First Impression Tip",
-              icon: "spark",
-              emphasis: "Be polite and clear.",
-              body:
-                "Officers may seem serious, but efficiency is key. Clear, concise answers will keep things moving smoothly.",
-            },
-            {
-              title: "Final Thought",
-              icon: "spark",
-              emphasis: "Ready documents and simple answers.",
-              body:
-                "With everything in order and straightforward answers, you'll breeze through the process and be on your way in no time.",
+              title: "✅ Final Advice",
+              body: "Prepare accurately before departure.",
+              bullets: [
+                "Follow the correct airport order after landing.",
+                "Most entry problems occur before boarding, not at arrival.",
+                "Key figures in this guide are based on official 2026 immigration guidance and may be updated.",
+                "Exemption policies and health requirements can change. Always confirm official government notices before departure.",
+              ],
             },
           ],
         },
-        {
-          title: "What is K-ETA?",
-          slug: "what-is-k-eta",
-          icon: "passport",
-          image: "airport",
-          description: "Do you need it or not?",
-          quickAnswer:
-            "This page helps you decide if you need K-ETA before traveling to Korea.",
-          content: [
-            {
-              title: "What is K-ETA?",
-              icon: "passport",
-              emphasis: "A simple yes-or-no question for most travelers.",
-              body:
-                "K-ETA (Korea Electronic Travel Authorization) is an online pre-approval system for travelers from certain countries. This page helps you determine if it applies to you.",
-            },
-            {
-              title: "What K-ETA Actually Is",
-              icon: "checklist",
-              emphasis: "A digital permission to board your flight.",
-              body: "K-ETA is:",
-              bullets: [
-                "A digital permission to board your flight to Korea",
-                "Not a visa",
-                "Not required for everyone",
-              ],
-            },
-            {
-              title: "Do You Need K-ETA?",
-              icon: "spark",
-              emphasis: "Check your passport, not your plans.",
-              body: "Just ask one question:",
-              bullets: [
-                "Does my passport require pre-travel authorization for Korea?",
-                "Yes -> Apply before your flight.",
-                "No -> You don't need K-ETA.",
-              ],
-            },
-            {
-              title: "When K-ETA is Usually Required",
-              icon: "passport",
-              emphasis: "For short-term tourists from listed countries.",
-              body: "You'll likely need K-ETA if:",
-              bullets: [
-                "You're visiting as a tourist.",
-                "Your stay is short-term (under 90 days).",
-                "Your country is on the K-ETA required list.",
-              ],
-            },
-            {
-              title: "When You Might Be Exempt",
-              icon: "hand",
-              emphasis: "Rules change, so always verify.",
-              body: "You may not need K-ETA if:",
-              bullets: [
-                "You're temporarily exempt.",
-                "You hold a long-term visa.",
-                "You're entering under a special agreement (e.g., business or official travel).",
-              ],
-            },
-            {
-              title: "What Happens If You Need K-ETA and Don't Apply",
-              icon: "alert",
-              emphasis: "It can stop you before boarding.",
-              body: "Without K-ETA (if required):",
-              bullets: [
-                "Airlines may refuse to let you board.",
-                "You may face immigration issues before departure.",
-              ],
-            },
-            {
-              title: "What K-ETA does NOT affect",
-              icon: "shield",
-              emphasis: "It does not guarantee entry.",
-              body: "K-ETA does NOT:",
-              bullets: [
-                "Guarantee entry into Korea.",
-                "Replace immigration checks at the airport.",
-                "Control the length of your stay.",
-              ],
-            },
-            {
-              title: "Common Misunderstandings",
-              icon: "alert",
-              emphasis: "Many travelers mistakenly think:",
-              body: "Many travelers mistakenly think:",
-              bullets: [
-                "\"I can do it at the airport.\"",
-                "\"My friend didn't need it, so I don't either.\"",
-                "\"It's the same as a visa.\"",
-              ],
-            },
-            {
-              title: "What to Do Next",
-              icon: "checklist",
-              emphasis: "Keep it simple.",
-              body: "Here's what you should do:",
-              bullets: [
-                "Confirm if your passport needs K-ETA.",
-                "Apply only if necessary.",
-                "Screenshot your approval if you apply.",
-              ],
-            },
-            {
-              title: "Final Thought",
-              icon: "spark",
-              emphasis: "Check once, decide once.",
-              body:
-                "K-ETA isn't difficult, but ignoring it can cause travel disruptions. Make sure to check and apply if needed to avoid any issues before your flight.",
-            },
-          ],
-        },      ],
+      ],
     },
     
     {

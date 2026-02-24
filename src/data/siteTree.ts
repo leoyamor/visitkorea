@@ -4227,182 +4227,229 @@ export const siteTree: TreeNode = {
           icon: "sim",
           image: "basics",
           description:
-            "How to choose the right mobile data option before arriving in Korea. Clear comparisons, real usage rules, common mistakes, and a simple decision checklist.",
+            "Clear, realistic guidance on choosing between SIM and eSIM for Korea. Understand pricing ranges, usage rules, common mistakes, and how to stay connected from the moment you land.",
           quickAnswer:
-            "For most travelers, eSIM is the easiest choice if your phone supports it and is unlocked. If not, a physical SIM at the airport is the safest alternative.",
+            "For most travelers, eSIM is the easiest option if your phone supports it and is unlocked. If your device does not support eSIM, a physical SIM card at the airport is the safest alternative.",
           content: [
             {
               title: "✅ Quick Answer",
               body:
-                "For most travelers, eSIM is the easiest choice - if your phone supports it and is unlocked.",
+                "For most travelers, eSIM is the easiest option - if your phone supports it and is unlocked.",
               bullets: [
-                "Install before departure, switch on after landing, and you are connected immediately.",
-                "If your phone does not support eSIM, a physical SIM at the airport is the safest alternative.",
+                "Install before departure, activate after landing, and you are connected immediately.",
+                "If your device does not support eSIM, a physical SIM card at the airport is the safest alternative.",
               ],
               tail:
-                "Korea is highly digital. Reliable data significantly reduces arrival stress.",
+                "In Korea, reliable mobile data significantly reduces arrival stress.",
             },
             {
               title: "📱 Why Mobile Data Matters in Korea",
-              emphasis: "Korea Is a Digital Travel Environment",
-              body: "Travel in Korea depends heavily on mobile connectivity.",
+              emphasis: "Explanation",
+              body:
+                "Korea's travel environment is highly digital. Many essential services depend on real-time mobile access.",
               subsections: [
                 {
-                  title: "Most visitors use data for:",
+                  title: "Real-World Usage",
+                  lead: ["Visitors commonly use data for:"],
                   bullets: [
-                    "Navigation (walking + bus + subway transfers)",
-                    "Translation apps",
+                    "Real-time navigation and subway transfers",
+                    "Translation apps for menus and signs",
                     "QR-based tickets and passes",
-                    "Taxi apps",
-                    "Searching exact entrances of buildings",
+                    "Taxi booking apps",
+                    "Locating exact building entrances",
                   ],
                 },
               ],
               tail:
-                "Public Wi-Fi exists, but it is not stable while moving between locations. A stable data connection improves both convenience and confidence.",
+                "Public Wi-Fi exists, but it is unstable while moving between locations. Reliable data improves both efficiency and confidence.",
             },
             {
-              title: "🔍 SIM vs eSIM - What's the Real Difference?",
-              body: "Choose based on device compatibility and arrival experience.",
+              title: "💸 How Much Should You Budget?",
+              emphasis: "Explanation",
+              body:
+                "Exact prices change depending on provider and promotions. However, understanding the typical range helps with planning.",
+              subsections: [
+                {
+                  title: "Typical Price Range",
+                  lead: ["Most short-term tourist SIM/eSIM plans generally cost:"],
+                  bullets: [
+                    "₩6,000-₩8,000 per day",
+                    "Around ₩18,000-₩30,000 for 5 days",
+                    "Longer durations reduce the average daily cost",
+                  ],
+                },
+                {
+                  title: "Final pricing depends on:",
+                  bullets: [
+                    "Daily high-speed data allowance",
+                    "Whether voice service is included",
+                    "Airport pickup versus instant eSIM",
+                    "Seasonal promotions",
+                  ],
+                  tail:
+                    "Always verify current pricing on official provider pages before purchasing.",
+                },
+              ],
+            },
+            {
+              title: "🔍 SIM vs eSIM - Practical Differences",
+              body:
+                "Choose based on device compatibility, setup preference, and how quickly you want to connect after landing.",
               subsections: [
                 {
                   title: "eSIM (Digital SIM)",
-                  lead: ["Best for immediate connection after landing.", "Suitable if:"],
+                  lead: [
+                    "Explanation",
+                    "Best for travelers who want immediate connectivity after landing.",
+                    "Suitable if",
+                  ],
                   bullets: [
                     "Your phone supports eSIM",
                     "Your device is carrier-unlocked",
-                    "You want to avoid airport lines",
-                    "You prefer not to swap physical SIM cards",
+                    "You want to avoid airport queues",
+                    "You prefer not to remove your physical SIM",
                   ],
                 },
                 {
                   title: "Advantages",
                   bullets: [
-                    "Purchase online",
-                    "Install via QR code",
-                    "Activate upon arrival",
-                    "Keep your home SIM active if needed",
+                    "Online purchase",
+                    "QR installation",
+                    "Activation upon arrival",
+                    "Keep your home SIM active",
                   ],
                 },
                 {
-                  title: "Important caution",
+                  title: "Important Caution",
                   tail:
                     "Many tourist eSIM products cannot be restored if deleted. Install carefully and avoid removing it during your trip.",
                 },
                 {
-                  title: "Physical SIM (Plastic SIM Card)",
-                  lead: ["Best if you prefer in-person assistance.", "Suitable if:"],
+                  title: "Physical SIM Card",
+                  lead: [
+                    "Explanation",
+                    "Best for travelers who prefer in-person assistance.",
+                    "Suitable if",
+                  ],
                   bullets: [
-                    "Your phone does not support eSIM",
-                    "You prefer manual installation",
+                    "Your device does not support eSIM",
+                    "You prefer manual setup",
                     "You want staff assistance at airport counters",
                   ],
                   tail:
-                    "Airport pickup options are widely available at major airports.",
+                    "Major airports in Korea provide SIM pickup counters with setup support.",
                 },
               ],
             },
             {
               title: "📊 What \"Unlimited Data\" Usually Means",
-              emphasis: "High-Speed + Speed Reduction Structure",
-              body: "Most tourist plans follow this pattern:",
-              bullets: [
-                "A daily high-speed allowance (for example, 3GB per day)",
-                "After that, reduced speed until midnight reset",
+              emphasis: "Explanation",
+              body: "\"Unlimited\" rarely means unlimited high-speed data all day.",
+              subsections: [
+                {
+                  title: "Common Structure",
+                  lead: ["Most tourist plans follow this structure:"],
+                  bullets: [
+                    "A daily high-speed allowance (often around 3GB per day)",
+                    "Reduced speed after the daily limit until midnight reset",
+                  ],
+                },
               ],
               tail:
-                "Reduced speed is usually still usable for maps and messaging. Heavy streaming and hotspot use may feel slower. Always check the data policy before purchasing.",
+                "Reduced speed is typically sufficient for maps, messaging, and basic browsing. Heavy streaming or hotspot use may feel slower. Always check the data policy before buying.",
             },
             {
-              title: "⏱️ When Does Your Plan Start?",
-              emphasis: "Usage Timing Matters",
+              title: "⏱️ When Does the Plan Start?",
+              emphasis: "Explanation",
               body:
-                "Some plans begin counting from the first time data is used - not from purchase time.",
+                "Usage timing affects how many real travel days you receive.",
               tail:
-                "This allows you to install before departure and activate only after landing. Always confirm how the usage period is calculated before buying.",
+                "Some plans begin counting from the moment you first use data - not from purchase time. Installing before departure and activating after landing helps maximize usage. Always confirm the start timing rule before purchasing.",
             },
             {
               title: "☎️ Do You Need a Korean Phone Number?",
-              body: "Not everyone needs a voice-capable plan.",
+              body:
+                "Most travelers can rely on data-only plans, but voice options help in specific situations.",
               subsections: [
                 {
                   title: "Data Only",
                   tail:
-                    "Most travelers only need data for apps, bookings, and navigation.",
+                    "Suitable for most travelers. Apps, bookings, and messaging services work normally without a Korean number.",
                 },
                 {
                   title: "Data + Voice",
-                  lead: ["Useful if you expect to:"],
-                  bullets: ["Make local calls", "Receive local calls easily"],
+                  lead: ["Useful if you plan to:"],
+                  bullets: ["Call local restaurants or hotels", "Receive local calls"],
                   tail:
-                    "However, even with a Korean number, many tourist SIM/eSIM products cannot be used for Korean identity verification services. Buy voice options only if you truly need calling capability.",
+                    "However, many tourist SIM/eSIM products cannot be used for Korean identity verification services. Purchase voice service only if local calling is necessary.",
                 },
               ],
             },
             {
               title: "🛬 Buying Before or After Arrival",
-              body: "There are three common buying patterns.",
+              body:
+                "Choose your purchase timing based on how much setup support you want on arrival day.",
               subsections: [
                 {
-                  title: "Option 1 - Buy Before Departure (Recommended)",
+                  title: "Buy Before Departure (Recommended)",
                   bullets: [
-                    "Confirm eSIM support and phone unlock status",
+                    "Confirm eSIM support",
+                    "Confirm unlock status",
                     "Purchase online",
-                    "Install before flying",
+                    "Install before travel",
                     "Activate after landing",
                   ],
-                  tail:
-                    "This is the least stressful method for first-time visitors.",
+                  tail: "This minimizes arrival stress.",
                 },
                 {
-                  title: "Option 2 - Airport Pickup SIM",
+                  title: "Airport Pickup SIM",
                   bullets: [
                     "Reserve online",
                     "Select airport pickup",
                     "Show passport",
                     "Staff assist with installation",
                   ],
-                  tail:
-                    "Suitable if you prefer face-to-face support.",
+                  tail: "Suitable if you prefer in-person setup.",
                 },
                 {
-                  title: "Option 3 - Buy After Arrival",
+                  title: "Buy After Arrival",
                   tail:
-                    "Possible, but less convenient for first-time visitors. Your first hour may become unnecessarily complicated.",
+                    "Possible, but less convenient for first-time visitors. Arriving without data may complicate navigation and transport arrangements.",
                 },
               ],
             },
             {
-              title: "⚠️ The Most Common Mistakes to Avoid",
-              body: "Avoid these common errors:",
+              title: "⚠️ Common Mistakes to Avoid",
+              body: "Avoid these to prevent most connectivity problems.",
               bullets: [
                 "Phone is carrier-locked",
                 "Device does not support eSIM",
                 "Deleting eSIM during the trip",
                 "Assuming \"unlimited\" means unlimited high speed",
                 "Expecting tourist SIM to support Korean identity verification",
-                "Not checking when the plan timer starts",
+                "Not checking when the usage timer starts",
               ],
               tail:
                 "Avoiding these prevents most connectivity problems.",
             },
             {
               title: "🧾 Simple Decision Checklist",
-              body: "Use this checklist before purchasing.",
+              body:
+                "Use this checklist to choose the option that fits your device and travel style.",
               subsections: [
                 {
-                  title: "Choose eSIM if:",
+                  title: "Choose eSIM if",
                   bullets: [
                     "Your phone supports eSIM",
                     "Your phone is unlocked",
-                    "You want data immediately after landing",
+                    "You want immediate connectivity after landing",
                     "You prefer no airport queues",
                   ],
                 },
                 {
-                  title: "Choose Physical SIM if:",
+                  title: "Choose Physical SIM if",
                   bullets: [
-                    "Your phone does not support eSIM",
+                    "Your device does not support eSIM",
                     "You want in-person assistance",
                     "You prefer physical installation",
                   ],
@@ -4411,18 +4458,21 @@ export const siteTree: TreeNode = {
             },
             {
               title: "💬 Final Advice",
-              body:
-                "Reliable data is not just a technical choice. It affects your first hour, your transportation decisions, and your overall travel comfort.",
+              body: "Reliable mobile data affects:",
               bullets: [
-                "Choose based on your device compatibility, arrival situation, and personal preference.",
-                "Before purchasing, always verify:",
+                "Your first hour after landing",
+                "Transportation decisions",
+                "Flexibility during your trip",
+                "Overall travel comfort",
+                "Before purchasing, verify:",
                 "Device compatibility",
                 "Unlock status",
                 "Data policy",
                 "Start timing rules",
+                "Realistic price range",
               ],
               tail:
-                "A few minutes of checking can prevent hours of inconvenience.",
+                "A few minutes of preparation can prevent hours of inconvenience.",
             },
           ],
         },

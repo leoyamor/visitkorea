@@ -5112,103 +5112,219 @@ export const siteTree: TreeNode = {
           ],
         },
         {
-          title: "Is Shopping Cheap in Korea?",
+          title:
+            "Is Shopping Cheap in Korea? A Practical Guide to Value, VAT Refunds, and Real Discounts",
           slug: "shopping-and-discounts",
           icon: "wallet",
           image: "shopping",
-          description: "What is actually worth buying.",
+          description:
+            "Clear, fact-based guidance on what is truly worth buying in Korea and how official VAT refunds and major discount programs actually work. Understand key numbers, conditions, and common mistakes before you spend.",
           quickAnswer:
-            "This page helps you decide what is actually worth buying in Korea.",
+            "Use this practical guide to evaluate real value first, then apply VAT refunds and discount programs correctly before you buy.",
           content: [
             {
-              title: "Is Shopping Cheap in Korea?",
+              title: "🧭 Quick Overview",
+              icon: "checklist",
+              body:
+                "Shopping in Korea can feel very affordable - or unexpectedly expensive.",
+              bullets: [
+                "What you buy",
+                "Where you buy",
+                "Whether a discount truly reduces your total cost",
+              ],
+              tail: "Smart travelers evaluate value first and apply discounts second.",
+            },
+            {
+              title: "💬 Is Shopping Cheap in Korea? The Honest Answer",
               icon: "wallet",
               emphasis: "Sometimes yes. Sometimes no.",
               body:
-                "Shopping in Korea can feel like a great deal - or surprisingly expensive. It depends on what you buy, where you shop, and whether you compare prices first.",
+                "Korea offers strong value in specific categories, but not everything is cheaper than overseas. Perceived affordability often depends on category, exchange rate, tax refund eligibility, and planning.",
             },
             {
-              title: "What Is Usually Worth Buying",
+              title: "🛍️ What Is Usually Worth Buying",
               icon: "spark",
-              emphasis: "Categories that offer good value.",
-              body: "Many travelers find strong value in:",
+              emphasis: "Categories with Consistent Value",
+              body: "Many visitors find reliable value in:",
               bullets: [
                 "Korean skincare and cosmetics",
                 "Local snacks and food gifts",
                 "Small lifestyle items like stationery and accessories",
-                "Trendy local fashion brands (not global luxury labels)",
-                "These items are often priced competitively compared to overseas markets.",
+                "Trend-driven Korean fashion brands (not global luxury brands)",
               ],
+              tail:
+                "These products are often competitively priced and practical to carry home.",
             },
             {
-              title: "What Is Often Not a Bargain",
+              title: "⚠️ What Is Often Not a Bargain",
               icon: "alert",
-              emphasis: "Looks tempting, but check carefully.",
-              body: "Items that are usually not cheaper:",
+              emphasis: "Compare Carefully Before Buying",
+              body: "Items that are not consistently cheaper:",
               bullets: [
-                "Global luxury or international brand clothing",
+                "International luxury brands",
                 "Imported electronics",
-                "Large or heavy products that increase luggage costs",
-                "Random impulse buys in tourist-heavy areas",
-                "Always compare prices before assuming it's a deal.",
+                "Large or heavy products",
+                "Impulse purchases in tourist-heavy areas",
+              ],
+              tail:
+                "Luxury goods may appear discounted due to exchange rates or tax refund eligibility, but final savings vary. Always compare prices before assuming something is a deal.",
+            },
+            {
+              title: "🧩 How Discounts Actually Work in Korea",
+              icon: "tag",
+              body: "Discounts in Korea generally fall into four categories:",
+              subsections: [
+                {
+                  title: "🧾 Tax-based (legal system)",
+                  lead: ["VAT refund"],
+                },
+                {
+                  title: "🏬 Retail chain programs",
+                  lead: ["Tourist membership cards"],
+                },
+                {
+                  title: "🎉 National campaigns",
+                  lead: ["Korea Grand Sale"],
+                },
+                {
+                  title: "🛫 Duty-free structures",
+                  lead: ["Membership + coupon systems"],
+                },
+              ],
+              tail:
+                "Understanding which type you are using prevents unrealistic expectations.",
+            },
+            {
+              title: "🧾 VAT Refund (Tax Refund) - The Most Reliable System",
+              icon: "card",
+              emphasis: "Official Immediate Tax Refund Rules",
+              body:
+                "The following key figures are based on official tourism guidance for 2025-2026 and may be updated:",
+              subsections: [
+                {
+                  title: "📌 Official Immediate Tax Refund Rules",
+                  bullets: [
+                    "Minimum purchase per receipt: ₩15,000 or more",
+                    "Immediate refund applies when a single purchase is under ₩1,000,000",
+                    "Total cumulative purchases during the trip: ₩5,000,000 limit",
+                    "These three numbers are the most important to remember: ₩15,000 / ₩1,000,000 / ₩5,000,000",
+                  ],
+                  tail:
+                    "If your purchase exceeds the immediate refund threshold, standard airport refund procedures may apply instead.",
+                },
+                {
+                  title: "🔎 Important Clarification About Refund Amount",
+                  lead: [
+                    "Korean VAT is 10%.",
+                    "However, the refunded amount may not always equal the full 10%, depending on processing methods and service fees.",
+                  ],
+                  tail:
+                    "Avoid assuming \"10% back\" automatically. Always confirm the actual refund amount shown at payment.",
+                },
+                {
+                  title: "✅ Practical VAT Checklist",
+                  lead: ["Before paying:"],
+                  bullets: [
+                    "Confirm the store displays \"Tax Free\" or \"Tax Refund\" signage",
+                    "Present your passport at checkout",
+                    "Confirm whether the refund is immediate or processed at departure",
+                  ],
+                  tail:
+                    "Failure to check these steps is one of the most common tourist mistakes.",
+                },
               ],
             },
             {
-              title: "Smart Shopping Strategy",
-              icon: "pin",
-              emphasis: "Simple habits make a difference.",
-              body: "Simple habits make a difference:",
+              title: "🏬 Department Store Tourist Membership Programs",
+              icon: "bag",
+              body:
+                "Some large retail groups operate tourist-specific membership systems.",
               bullets: [
-                "Compare prices in at least two stores",
-                "Check if tax refunds apply",
-                "Look for official discount coupons",
-                "Avoid rushing purchases late at night",
-                "Walking one more street can sometimes mean better prices.",
+                "Lotte Department Store: around 5%",
+                "Lotte Duty Free: up to 10%",
+                "Seven-Eleven: around 10%",
+                "Lotte Mart: around 7%",
               ],
+              tail:
+                "These benefits are corporate programs and may vary by location, promotional period, brand exclusions, or stacking limits. Always confirm current conditions at the store information desk.",
             },
             {
-              title: "Luxury Shopping",
+              title: "🎉 Korea Grand Sale (Seasonal Campaign)",
               icon: "spark",
-              emphasis: "Only if it fits your plan.",
-              body: "Luxury shopping makes sense if:",
+              body:
+                "Korea Grand Sale is a government-supported national shopping campaign.",
               bullets: [
-                "You already planned the purchase",
-                "You qualify for tax refunds",
-                "Exchange rates are favorable",
-                "Never buy luxury items just because they feel \"cheaper than expected.\"",
+                "Discount tier upgrades",
+                "Shopping vouchers",
+                "Payment-based cashback (for example, up to 15% with certain payment platforms during specific periods)",
               ],
+              tail:
+                "Important: \"Up to\" percentages reflect maximum promotional benefits, not guaranteed savings across all stores or products. Campaign periods, participating merchants, and stacking rules may change. Always verify official sources before purchase.",
             },
             {
-              title: "Common Shopping Mistakes",
+              title: "🛫 Duty-Free Shopping",
+              icon: "plane",
+              body: "Duty-free stores typically combine:",
+              bullets: [
+                "Membership tier discounts",
+                "Fixed-amount coupons",
+                "Brand-specific restrictions",
+              ],
+              tail:
+                "Some brands exclude additional discounts, and multiple promotions are often subject to stacking limitations. Duty-free does not automatically guarantee the lowest price.",
+            },
+            {
+              title: "🎟️ Tourist Attraction Passes",
+              icon: "spark",
+              body: "Passes are useful only when:",
+              bullets: [
+                "You visit multiple paid attractions within 1-2 days",
+                "Those attractions were already part of your plan",
+                "The total pass cost is lower than buying individual tickets",
+              ],
+              tail:
+                "Buying passes \"just in case\" often reduces flexibility without meaningful savings.",
+            },
+            {
+              title: "🚫 Common Shopping and Discount Mistakes",
               icon: "alert",
-              emphasis: "Easy to avoid.",
               body: "Avoid:",
               bullets: [
-                "Buying bulky items near the end of your trip",
-                "Assuming \"Made in Korea\" always means low price",
-                "Forgetting to bring your passport for tax refunds",
-                "Not checking return or exchange policies",
+                "Assuming every discount equals real savings",
+                "Ignoring immediate refund thresholds",
+                "Exceeding cumulative VAT limits without realizing",
+                "Forgetting your passport",
+                "Traveling across the city for minor price differences",
+                "Believing promotional \"maximum discount\" applies to all items",
               ],
+              tail:
+                "Overspending usually comes from misunderstanding rules, not from base prices alone.",
             },
             {
-              title: "Where to Verify Prices and Rules",
-              icon: "shield",
-              emphasis: "Use reliable sources.",
-              body: "Check:",
+              title: "🧠 A Simple Decision Framework",
+              icon: "checklist",
+              body: "Before making a purchase, ask:",
               bullets: [
-                "Official tourism information centers",
-                "Department store information desks",
-                "Airport tax refund counters",
-                "Official brand websites",
-                "Avoid relying only on social media posts or outdated blogs.",
+                "Was this already part of my plan?",
+                "Do I understand which VAT rule applies?",
+                "Am I within the ₩1,000,000 immediate refund limit?",
+                "Did I verify campaign or stacking conditions?",
+                "Would I still buy this without the discount?",
               ],
+              tail:
+                "If the answers are clear and realistic, the purchase is likely justified.",
             },
             {
-              title: "Bottom Line",
+              title: "✅ Final Advice",
               icon: "spark",
-              emphasis: "Buy the right things, not everything.",
-              body:
-                "Shopping in Korea is smart when you focus on items that offer real value. If you return home with products you truly use and enjoy, you made the right choices.",
+              body: "Plan first. Evaluate value second. Apply discounts third.",
+              bullets: [
+                "You focus on categories with genuine value",
+                "You understand official VAT rules",
+                "You treat promotional discounts as conditional benefits rather than automatic savings",
+              ],
+              tail:
+                "The smartest savings come from informed decisions, not from chasing every promotion. Return home with items you genuinely use and enjoy. That is the real measure of smart shopping.",
             },
           ],
         },

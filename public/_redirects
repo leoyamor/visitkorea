@@ -36,6 +36,10 @@ http://www.visitingkorea.pages.dev/* https://planmykorea.com/:splat 301
 /es/before-you-go/what-should-i-prepare/ /es/before-you-go/ 301
 /es/before-you-go/from-airport-to-city /es/before-you-go 301
 /es/before-you-go/from-airport-to-city/ /es/before-you-go/ 301
+/before-you-go/immigration-process /before-you-go/korea-entry-requirements 301
+/before-you-go/immigration-process/ /before-you-go/korea-entry-requirements/ 301
+/es/before-you-go/immigration-process /es/before-you-go/korea-entry-requirements 301
+/es/before-you-go/immigration-process/ /es/before-you-go/korea-entry-requirements/ 301
 /travel-basics/sim-or-esim /before-you-go/sim-or-esim 301
 /travel-basics/sim-or-esim/ /before-you-go/sim-or-esim/ 301
 /es/travel-basics/sim-or-esim /es/before-you-go/sim-or-esim 301

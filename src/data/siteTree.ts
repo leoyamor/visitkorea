@@ -5105,7 +5105,7 @@ export const siteTree: TreeNode = {
 
         {
           title: "Immigration Process",
-          slug: "immigration-process",
+          slug: "korea-entry-requirements",
           icon: "passport",
           image: "airport",
           description: "What happens at the airport.",

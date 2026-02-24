@@ -219,7 +219,7 @@ const subpages = [
   { category: 'practical-info', slug: 'emergency-numbers', title: 'Emergency Numbers', description: 'The key numbers you should save.' },
   { category: 'practical-info', slug: 'travel-insurance-for-korea', title: 'Travel Insurance for Korea', description: 'Not required - but highly recommended.' },
 
-  { category: 'immigration', slug: 'immigration-process', title: 'Immigration Process', description: 'What happens when you land in Korea.' },
+  { category: 'immigration', slug: 'korea-entry-requirements', title: 'Immigration Process', description: 'What happens when you land in Korea.' },
   { category: 'immigration', slug: 'what-is-k-eta', title: 'What Is K-ETA?', description: 'A simple guide to Korea Electronic Travel Authorization.' },
   { category: 'immigration', slug: 'do-you-need-a-visa', title: 'Do You Need a Visa?', description: 'How to check if a visa is required for you.' },
   { category: 'immigration', slug: 'documents-to-prepare', title: 'Documents to Prepare', description: 'Keep these ready to speed up entry.' },

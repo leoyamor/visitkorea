@@ -4768,14 +4768,14 @@ export const siteTree: TreeNode = {
             "Is Shopping Cheap in Korea? A Practical Guide to Value, VAT Refunds, and Real Discounts",
           slug: "shopping-and-discounts",
           icon: "wallet",
-          image: "shopping",
+          image: "/leaf%20images/Is%20Shopping%20Cheap%20in%20Korea.webp",
           description:
             "Clear, fact-based guidance on what is truly worth buying in Korea and how official VAT refunds and major discount programs actually work. Understand key numbers, conditions, and common mistakes before you spend.",
           quickAnswer:
             "Use this practical guide to evaluate real value first, then apply VAT refunds and discount programs correctly before you buy.",
           content: [
             {
-              title: "🧭 Quick Overview",
+              title: "Quick Overview",
               icon: "checklist",
               body:
                 "Shopping in Korea can feel very affordable - or unexpectedly expensive.",
@@ -4787,7 +4787,7 @@ export const siteTree: TreeNode = {
               tail: "Smart travelers evaluate value first and apply discounts second.",
             },
             {
-              title: "💬 Is Shopping Cheap in Korea? The Honest Answer",
+              title: "Is Shopping Cheap in Korea? The Honest Answer",
               icon: "wallet",
               emphasis: "Sometimes yes. Sometimes no.",
               body:
@@ -4808,7 +4808,7 @@ export const siteTree: TreeNode = {
                 "These products are often competitively priced and practical to carry home.",
             },
             {
-              title: "⚠️ What Is Often Not a Bargain",
+              title: "What Is Often Not a Bargain",
               icon: "alert",
               emphasis: "Compare Carefully Before Buying",
               body: "Items that are not consistently cheaper:",
@@ -4822,24 +4822,24 @@ export const siteTree: TreeNode = {
                 "Luxury goods may appear discounted due to exchange rates or tax refund eligibility, but final savings vary. Always compare prices before assuming something is a deal.",
             },
             {
-              title: "🧩 How Discounts Actually Work in Korea",
+              title: "How Discounts Actually Work in Korea",
               icon: "tag",
               body: "Discounts in Korea generally fall into four categories:",
               subsections: [
                 {
-                  title: "🧾 Tax-based (legal system)",
+                  title: "Tax-based (legal system)",
                   lead: ["VAT refund"],
                 },
                 {
-                  title: "🏬 Retail chain programs",
+                  title: "Retail chain programs",
                   lead: ["Tourist membership cards"],
                 },
                 {
-                  title: "🎉 National campaigns",
+                  title: "National campaigns",
                   lead: ["Korea Grand Sale"],
                 },
                 {
-                  title: "🛫 Duty-free structures",
+                  title: "Duty-free structures",
                   lead: ["Membership + coupon systems"],
                 },
               ],
@@ -4847,14 +4847,14 @@ export const siteTree: TreeNode = {
                 "Understanding which type you are using prevents unrealistic expectations.",
             },
             {
-              title: "🧾 VAT Refund (Tax Refund) - The Most Reliable System",
+              title: "VAT Refund (Tax Refund) - The Most Reliable System",
               icon: "card",
               emphasis: "Official Immediate Tax Refund Rules",
               body:
                 "The following key figures are based on official tourism guidance for 2025-2026 and may be updated:",
               subsections: [
                 {
-                  title: "📌 Official Immediate Tax Refund Rules",
+                  title: "Official Immediate Tax Refund Rules",
                   bullets: [
                     "Minimum purchase per receipt: ₩15,000 or more",
                     "Immediate refund applies when a single purchase is under ₩1,000,000",
@@ -4865,7 +4865,7 @@ export const siteTree: TreeNode = {
                     "If your purchase exceeds the immediate refund threshold, standard airport refund procedures may apply instead.",
                 },
                 {
-                  title: "🔎 Important Clarification About Refund Amount",
+                  title: "Important Clarification About Refund Amount",
                   lead: [
                     "Korean VAT is 10%.",
                     "However, the refunded amount may not always equal the full 10%, depending on processing methods and service fees.",
@@ -4887,7 +4887,7 @@ export const siteTree: TreeNode = {
               ],
             },
             {
-              title: "🏬 Department Store Tourist Membership Programs",
+              title: "Department Store Tourist Membership Programs",
               icon: "bag",
               body:
                 "Some large retail groups operate tourist-specific membership systems.",

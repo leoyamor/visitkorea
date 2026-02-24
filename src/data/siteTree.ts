@@ -4431,102 +4431,171 @@ export const siteTree: TreeNode = {
           ],
         },
         {
-          title: "Is Korea Safe?",
+          title: "Safety in Korea: What Travelers Should Know",
           slug: "korea-travel-safety",
           icon: "shield",
-          image: "safety",
-          description: "What travelers should know.",
+          image: "/leaf%20images/Is%20Korea%20Safe.webp",
+          description:
+            "How safe Korea is, what solo travelers should expect, and what to do in an emergency.",
           quickAnswer:
-            "This page helps you understand real safety expectations for travelers.",
+            "Korea is very safe for visitors, including solo travelers, but awareness and basic emergency preparation still matter.",
           content: [
             {
-              title: "Is Korea Safe?",
-              icon: "shield",
-              emphasis: "Yes, Korea is generally very safe.",
+              title: "✨ Introduction",
               body:
-                "But \"safe\" doesn't mean you should stop being aware. This guide helps you understand what safety truly means for travelers in Korea.",
+                "Korea is widely considered one of the safest countries for travelers.",
+              tail:
+                "Violent crime is rare in tourist areas, public transport is reliable, and streets remain active late into the night. However, \"safe\" does not mean \"careless.\" Understanding basic awareness makes your trip smoother and more confident.",
             },
             {
-              title: "Why Visitors Feel Safe Right Away",
-              icon: "spark",
-              emphasis: "Comfortable from day one.",
-              body: "Many travelers notice:",
+              title: "🛡️ 1. General Safety Overview",
+              emphasis: "What Most Visitors Notice",
+              body: "Many travelers quickly observe:",
               bullets: [
                 "People walking alone late at night",
-                "Public transport running until late",
-                "Streets that are well-lit and busy",
-                "Rare violent crime in tourist areas",
+                "Well-lit streets in major cities",
+                "Active late-night food areas",
+                "Organized and reliable public transportation",
+              ],
+              tail: "Serious incidents involving tourists are uncommon.",
+            },
+            {
+              title: "🧍 2. Solo Travel Safety",
+              emphasis: "Traveling Alone in Korea",
+              body: "Solo travel is common and socially accepted.",
+              subsections: [
+                {
+                  title: "Practical Advantages",
+                  bullets: [
+                    "Clear subway systems",
+                    "Easy-to-follow signage",
+                    "Convenience stores everywhere",
+                    "Dining alone is normal",
+                  ],
+                  tail:
+                    "Even first-time solo travelers usually feel comfortable within a few days.",
+                },
+                {
+                  title: "Dining Alone",
+                  lead: ["In Korea:"],
+                  bullets: [
+                    "Cafes and most restaurants welcome solo diners",
+                    "Convenience store meals are widely used and socially normal",
+                    "Some traditional BBQ restaurants prefer groups, but alternatives are abundant",
+                  ],
+                  tail:
+                    "There is no social pressure to avoid eating alone.",
+                },
               ],
             },
             {
-              title: "Where to Stay Aware",
-              icon: "alert",
-              emphasis: "Crowded places can still be overwhelming.",
-              body: "Keep basic awareness in:",
-              bullets: [
-                "Crowded subways",
-                "Busy nightlife districts",
-                "Popular tourist shopping streets",
+              title: "🌆 3. Day and Night Movement",
+              body: "Main streets remain active in Korea's major cities.",
+              subsections: [
+                {
+                  title: "During the Day",
+                  bullets: [
+                    "Public transport is safe and monitored",
+                    "Tourist districts are busy and visible",
+                    "Walking alone feels comfortable in major cities",
+                  ],
+                },
+                {
+                  title: "At Night",
+                  bullets: [
+                    "Subways and buses operate safely",
+                    "Taxis are reliable and regulated",
+                    "Late-night dining streets are busy",
+                  ],
+                  tail:
+                    "Basic rule: stay on well-lit main streets and avoid empty alleys.",
+                },
               ],
             },
             {
-              title: "Night Travel: What to Expect",
-              icon: "route",
-              emphasis: "Safe, lively, and reliable.",
-              body: "In reality:",
-              bullets: [
-                "Subways and buses are safe",
-                "Taxis are reliable",
-                "Late-night food streets are bustling",
-                "If you're out late, stick to well-lit areas and stay alert.",
-              ],
-            },
-            {
-              title: "Simple Safety Habits",
-              icon: "hand",
-              emphasis: "Stay comfortable and safe.",
-              body: "Simple habits:",
-              bullets: [
-                "Stick to main streets",
-                "Avoid empty alleys at night",
-                "Take a taxi if you feel uncertain or tired",
-              ],
-            },
-            {
-              title: "Common Worries That Aren't a Problem",
-              icon: "spark",
-              emphasis: "Cultural differences, not danger.",
-              body: "These are perfectly normal in Korea:",
-              bullets: [
-                "People staring (out of curiosity)",
-                "Quietness on public transport",
-                "Fewer visible police than you might expect",
-              ],
-            },
-            {
-              title: "When to Be Extra Careful",
-              icon: "alert",
-              emphasis: "Know your limits.",
-              body: "Be more aware if you:",
+              title: "⚠️ 4. Situations That Require Awareness",
+              body: "Even in safe countries, awareness matters.",
               bullets: [
                 "Drink heavily",
-                "Stay out very late in nightlife zones",
-                "Ignore your surroundings",
+                "Stay out extremely late in nightlife areas",
+                "Feel tired or disoriented",
+                "Carry valuables in crowded subways",
+              ],
+              tail:
+                "Crowded areas can lead to minor issues such as pickpocketing, though it is not widespread.",
+            },
+            {
+              title: "🧭 5. Cultural Differences (Not Safety Risks)",
+              body: "Some behaviors may feel unfamiliar:",
+              bullets: [
+                "People may stare out of curiosity",
+                "Public transport is quiet",
+                "Strangers do not engage in small talk",
+              ],
+              tail: "These are cultural norms, not warning signs.",
+            },
+            {
+              title: "🚨 6. Emergency Information",
+              body:
+                "Emergencies are rare, but preparation reduces stress.",
+              subsections: [
+                {
+                  title: "Emergency Numbers",
+                  bullets: ["Police: 112", "Fire / Ambulance: 119"],
+                  tail:
+                    "These numbers work from mobile phones and public phones. English assistance is commonly available.",
+                },
+                {
+                  title: "Medical Situations",
+                  lead: [
+                    "For serious issues:",
+                    "Call 119.",
+                    "For non-urgent care:",
+                  ],
+                  bullets: [
+                    "Visit a hospital",
+                    "Ask hotel staff for assistance",
+                    "Use a pharmacy for minor issues",
+                  ],
+                  tail:
+                    "Hospitals in major cities often provide English-language support.",
+                },
+                {
+                  title: "Lost Items",
+                  lead: [
+                    "Korea has a strong lost-and-found system.",
+                    "If you lose something:",
+                  ],
+                  bullets: [
+                    "Visit the nearest police station",
+                    "Ask hotel staff for help",
+                    "File a report",
+                  ],
+                  tail: "Lost items are frequently returned.",
+                },
               ],
             },
             {
-              title: "Emergency Help",
-              icon: "shield",
-              emphasis: "Rarely needed, but easy to access.",
-              body:
-                "Emergency services are fast and well-organized. English support is available in many situations.",
+              title: "✅ 7. Simple Preparation Checklist",
+              body: "Before your trip:",
+              bullets: [
+                "Save 112 and 119 in your phone",
+                "Screenshot your hotel address",
+                "Carry travel insurance information",
+                "Keep a portable charger",
+              ],
+              tail: "These small steps increase confidence.",
             },
             {
-              title: "Final Thought",
-              icon: "spark",
-              emphasis: "Stay aware, but don't stress.",
+              title: "💬 Final Thought",
               body:
-                "Korea is so safe that you won't constantly need to worry. A smooth and enjoyable trip starts with feeling relaxed and confident.",
+                "Korea is very safe for visitors, including solo travelers.",
+              bullets: [
+                "Most trips pass without incident.",
+                "Stay aware, not anxious.",
+              ],
+              tail:
+                "Prepared travelers feel relaxed - and relaxation makes travel better.",
             },
           ],
         },

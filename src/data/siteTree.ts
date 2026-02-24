@@ -4308,15 +4308,6 @@ export const siteTree: TreeNode = {
                   ],
                 },
                 {
-                  title: "Advantages",
-                  bullets: [
-                    "Online purchase",
-                    "QR installation",
-                    "Activation upon arrival",
-                    "Keep your home SIM active",
-                  ],
-                },
-                {
                   title: "Important Caution",
                   tail:
                     "Many tourist eSIM products cannot be restored if deleted. Install carefully and avoid removing it during your trip.",

@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "prebuild": "sh -c 'if [ \"$AUTO_PAGE_UPDATES_SYNC_ACTIVE\" = \"true\" ]; then npm run page-updates:sync; else echo \"[page-updates] skipped (set AUTO_PAGE_UPDATES_SYNC_ACTIVE=true to enable)\"; fi' && npm run images:optimize",
+    "prebuild": "npm run page-updates:sync && npm run images:optimize",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",

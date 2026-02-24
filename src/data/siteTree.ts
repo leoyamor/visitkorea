@@ -3982,74 +3982,242 @@ export const siteTree: TreeNode = {
           ],
         },
         {
-          title: "Discount Passes",
+          title: "Korea Attraction Passes & Discounts",
           slug: "attraction-passes-discounts",
           icon: "card",
           image: "shopping",
-          description: "When passes actually save money.",
+          description:
+            "Official attraction passes, regional discount cards, and when they genuinely reduce your travel costs in Korea.",
           quickAnswer:
-            "This page helps you decide if discount passes will actually save you money.",
+            "Compare official passes by region and travel pace to see when they truly save money.",
           content: [
             {
-              title: "Discount Passes",
-              icon: "card",
-              emphasis: "Short answer: sometimes worth it.",
-              body:
-                "Tourist discount passes in Korea can save money - but only if they match your travel style. Most visitors do not automatically need one. Passes work best when your schedule is tight and focused on paid attractions.",
-            },
-            {
-              title: "A Real Example: Discover Seoul Pass",
+              title: "✨ Introduction",
               icon: "spark",
-              emphasis: "One of the most popular options is the Discover Seoul Pass.",
+              emphasis:
+                "Some passes can significantly reduce costs. Others only make sense for specific travel styles.",
               body:
-                "It offers time-based access (24/48/72 hours) to selected attractions such as palaces, museums, and observatories. It makes sense if:",
-              bullets: [
-                "You plan to visit 3 or more paid attractions in one day",
-                "Your itinerary is already planned",
-                "You prefer efficient, fast-paced sightseeing",
-                "It rewards structure and speed.",
+                "Korea offers several official attraction passes and regional discount programs. This page explains where each pass works, what it includes, and when it actually saves money.",
+              tail:
+                "Most visitors do not automatically need a pass. The key is matching the product to your itinerary.",
+            },
+            {
+              title: "🚆 Nationwide Transportation Savings",
+              icon: "train",
+              emphasis: "KORAIL PASS (Foreign Visitors Only)",
+              body:
+                "Region: Nationwide (Korail-operated trains including KTX). Type: Rail pass for intercity travel.",
+              subsections: [
+                {
+                  title: "What It Covers",
+                  bullets: [
+                    "Unlimited travel on Korail-operated trains during selected validity period",
+                    "Useful for multi-city itineraries",
+                  ],
+                },
+                {
+                  title: "When It Makes Sense",
+                  bullets: [
+                    "Seoul ↔ Busan",
+                    "Busan ↔ Gyeongju",
+                    "Seoul ↔ Andong",
+                    "Multiple long-distance KTX rides within a few days",
+                  ],
+                },
+                {
+                  title: "Important Conditions",
+                  bullets: [
+                    "Available only to short-term foreign visitors",
+                    "Seat reservations required",
+                    "Not valid for subways or local metro systems",
+                    "Must follow official reservation rules",
+                  ],
+                },
+              ],
+              tail:
+                "This is a transportation savings tool - not an attraction pass - but it can reduce overall travel costs significantly when moving between cities.",
+            },
+            {
+              title: "🏙️ Seoul",
+              icon: "city",
+              emphasis: "Discover Seoul Pass",
+              body: "Region: Seoul. Format: Time-based (48 / 72 / 120 hours).",
+              subsections: [
+                {
+                  title: "What It Includes",
+                  bullets: [
+                    "Free entry or discounted access to selected attractions",
+                    "Includes a mix of palaces, observatories, museums, and experiences",
+                  ],
+                },
+                {
+                  title: "How It Works",
+                  bullets: [
+                    "The timer begins when you enter your first attraction - not when you purchase it.",
+                  ],
+                },
+                {
+                  title: "When It Saves Money",
+                  bullets: [
+                    "You visit 3 or more paid attractions within the time window",
+                    "You include higher-cost attractions",
+                    "Your schedule is fixed and efficient",
+                  ],
+                },
+                {
+                  title: "When It Does Not",
+                  bullets: [
+                    "You prefer parks, neighborhoods, and free museums",
+                    "You travel slowly and change plans frequently",
+                    "You only visit 1-2 paid sites per day",
+                  ],
+                },
+              ],
+              tail: "Time-based passes reward structured planning.",
+            },
+            {
+              title: "🌊 Busan",
+              icon: "beach",
+              emphasis: "VISIT BUSAN PASS",
+              body: "Region: Busan. Format: 24-hour / 48-hour time-based pass.",
+              subsections: [
+                {
+                  title: "What It Includes",
+                  bullets: [
+                    "Selected attractions free",
+                    "Others discounted",
+                    "Mix of cultural sites and paid experiences",
+                  ],
+                },
+                {
+                  title: "Important Clarification",
+                  bullets: [
+                    "Not all listed partners are free-entry.",
+                    "Some offer discounts only.",
+                    "Always check the official partner list before purchasing.",
+                  ],
+                },
+                {
+                  title: "When It Saves Money",
+                  bullets: [
+                    "You combine multiple paid attractions within one day",
+                    "You plan route order carefully",
+                    "You prioritize higher-cost experiences",
+                  ],
+                },
+                {
+                  title: "When It Does Not",
+                  bullets: [
+                    "You focus mainly on beaches and outdoor areas",
+                    "You travel slowly",
+                    "Your schedule is flexible",
+                  ],
+                },
               ],
             },
             {
-              title: "When a Pass Does NOT Help",
+              title: "🌿 Gyeonggi Province (Near Seoul)",
+              icon: "route",
+              emphasis: "Gyeonggi Tour Pass",
+              body:
+                "Region: Gyeonggi-do (Suwon, Gapyeong and surrounding areas). Format: 24h / 48h / 72h / 120h time-based options.",
+              subsections: [
+                {
+                  title: "What It Includes",
+                  bullets: [
+                    "Entry or discounts at participating attractions",
+                    "Designed for short regional trips outside Seoul",
+                  ],
+                },
+                {
+                  title: "When It Saves Money",
+                  bullets: [
+                    "You plan multiple paid attractions within one province",
+                    "You organize visits geographically",
+                  ],
+                },
+                {
+                  title: "Important Note",
+                  bullets: [
+                    "Coverage depends on current partner list.",
+                    "Always confirm participating attractions before purchase.",
+                  ],
+                },
+              ],
+            },
+            {
+              title: "🗺️ Regional Tour Pass Programs",
+              icon: "pin",
+              body:
+                "Several provinces operate official regional passes (examples include Jeonbuk and Gyeongbuk).",
+              bullets: [
+                "Provide entry or discounts at selected local attractions",
+                "Operate via QR/mobile validation",
+                "Work best when your entire trip stays inside that region",
+              ],
+              tail:
+                "Regional passes are not useful for nationwide itineraries. They are designed for concentrated regional exploration.",
+            },
+            {
+              title: "✅ When Attraction Passes Actually Save Money",
+              icon: "checklist",
+              body: "A pass usually makes financial sense if:",
+              bullets: [
+                "You visit 3+ paid attractions in one day",
+                "The attractions included are mid- to high-priced",
+                "You activate the pass strategically",
+                "Your schedule is fixed",
+              ],
+              tail: "Passes reward efficiency.",
+            },
+            {
+              title: "⚠️ When They Do Not",
               icon: "hand",
-              emphasis: "If your trip is relaxed, paying individually is often cheaper.",
-              body: "Discount passes usually do not save money if:",
+              body: "Passes usually do not help if:",
               bullets: [
-                "You prefer slow mornings and flexible plans",
-                "You spend time in parks, markets, and free museums",
-                "You change plans based on weather or mood",
+                "You enjoy relaxed mornings",
+                "You spend time in markets and neighborhoods",
+                "You focus on free museums and outdoor areas",
+                "You only plan 1-2 ticketed sites per day",
               ],
+              tail: "Time pressure reduces both savings and enjoyment.",
             },
             {
-              title: "The Most Common Mistake",
+              title: "🧭 The Most Common Tourist Mistake",
               icon: "alert",
               emphasis: "Buying before planning.",
               body: "Many travelers:",
               bullets: [
                 "Purchase \"just in case\"",
-                "Feel pressure to use it fully",
-                "Rush between attractions and end up tired",
-                "A pass should support your plan - not control it.",
+                "Activate too early",
+                "Rush between locations",
+                "Feel pressure to maximize value",
               ],
+              tail: "A pass should support your plan - not control it.",
             },
             {
-              title: "How to Decide",
-              icon: "checklist",
-              emphasis: "Ask one question.",
-              body: "How many paid attractions will I realistically visit in one day?",
-              bullets: [
-                "1-2 places -> Skip the pass",
-                "3+ places -> Compare total prices carefully",
-                "Do the math before you buy.",
-              ],
-            },
-            {
-              title: "Final Advice",
-              icon: "spark",
-              emphasis: "Freedom is often the better deal.",
+              title: "🧮 A Simple Decision Formula",
+              icon: "wallet",
               body:
-                "Discount passes like the Discover Seoul Pass work well for fast, structured trips. For relaxed travel, you will usually spend less - and enjoy more - without one.",
+                "Ask yourself: How many paid attractions will I realistically visit within the pass time window?",
+              bullets: [
+                "1-2 -> Pay individually",
+                "3+ -> Compare total ticket prices with pass price",
+              ],
+              tail:
+                "Always check official attraction websites for updated pricing before deciding.",
+            },
+            {
+              title: "🏁 Final Advice",
+              icon: "spark",
+              body: "Korea is generally affordable for sightseeing.",
+              bullets: [
+                "Many historic sites have low entrance fees.",
+                "Many national museums are free.",
+                "Outdoor attractions cost nothing.",
+              ],
+              tail:
+                "Attraction passes can be useful tools - but only when matched to a clear, structured itinerary. In many cases, flexibility provides better value than a pass.",
             },
           ],
         },

@@ -208,7 +208,7 @@ const subpages = [
   { category: 'attractions', slug: 'first-timer-favorites', title: 'First-Timer Favorites', description: 'Easy wins for your first visit.' },
   { category: 'attractions', slug: 'for-repeat-visitors', title: 'For Repeat Visitors', description: 'Fresh ideas if you have been before.' },
   { category: 'attractions', slug: 'entrance-fees', title: 'Entrance Fees', description: 'What to expect and when it is free.' },
-  { category: 'attractions', slug: 'attraction-passes-discounts', title: 'Discount Passes', description: 'When a pass saves money and when it does not.' },
+  { category: 'attractions', slug: 'attraction-passes-discounts', title: 'Korea Attraction Passes & Discounts', description: 'Official attraction passes, regional discount cards, and when they genuinely reduce your travel costs in Korea.' },
   { category: 'attractions', slug: 'is-it-worth-it', title: 'Is It Worth It?', description: 'How to decide before you go.' },
 
   { category: 'practical-info', slug: 'sim-vs-esim-vs-wifi', title: 'SIM vs eSIM vs Wi-Fi', description: 'Pick the best option for your phone and budget.' },

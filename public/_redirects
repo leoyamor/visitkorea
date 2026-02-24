@@ -36,10 +36,10 @@ http://www.visitingkorea.pages.dev/* https://planmykorea.com/:splat 301
 /es/before-you-go/what-should-i-prepare/ /es/before-you-go/ 301
 /es/before-you-go/from-airport-to-city /es/before-you-go 301
 /es/before-you-go/from-airport-to-city/ /es/before-you-go/ 301
-/shopping-and-deals /404.html 404!
-/shopping-and-deals/ /404.html 404!
-/es/shopping-and-deals /es/404/index.html 404!
-/es/shopping-and-deals/ /es/404/index.html 404!
+/shopping-and-deals /travel-basics/shopping-and-discounts 301
+/shopping-and-deals/ /travel-basics/shopping-and-discounts/ 301
+/es/shopping-and-deals /es/travel-basics/shopping-and-discounts 301
+/es/shopping-and-deals/ /es/travel-basics/shopping-and-discounts/ 301
 /before-you-go/immigration-process /before-you-go/korea-entry-requirements 301
 /before-you-go/immigration-process/ /before-you-go/korea-entry-requirements/ 301
 /es/before-you-go/immigration-process /es/before-you-go/korea-entry-requirements 301

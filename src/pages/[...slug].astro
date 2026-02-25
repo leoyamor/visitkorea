@@ -8,19 +8,19 @@ import { getPageUpdatedIso } from "../lib/page-updates";
 import { absoluteUrl } from "../lib/site";
 import type { TreeNode } from "../data/siteTree";
 export const getStaticPaths = () => {
-  const paths: string[] = [];
-  const walk = (node: TreeNode, prefix: string[] = []) => {
-    if (!node.children) return;
-    for (const child of node.children) {
-      const next = [...prefix, child.slug];
-      const nextPath = next.join("/");
-      paths.push(nextPath);
-      walk(child, next);
-    }
+    const paths: string[] = [];
+    const walk = (node: TreeNode, prefix: string[] = []) => {
+      if (!node.children) return;
+      for (const child of node.children) {
+        const next = [...prefix, child.slug];
+        const nextPath = next.join("/");
+        paths.push(nextPath);
+        walk(child, next);
+      }
+    };
+    walk(siteTree);
+    return paths.map((slug) => ({ params: { slug } }));
   };
-  walk(siteTree);
-  return paths.map((slug) => ({ params: { slug } }));
-};
 
 const { slug } = Astro.params;
 const segments = slug ? slug.split("/") : [];

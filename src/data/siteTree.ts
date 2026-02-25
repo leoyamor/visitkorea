@@ -5213,7 +5213,7 @@ export const siteTree: TreeNode = {
                   ],
                 },
                 {
-                  title: "📊 Official Key Figures (2026 기준)",
+                  title: "📊 Official Key Figures (As of 2026)",
                   bullets: [
                     "Application fee: ₩10,000",
                     "Payment: Non-refundable, even if denied",
@@ -5257,7 +5257,7 @@ export const siteTree: TreeNode = {
                     "In principle, most foreign nationals entering Korea must submit an arrival declaration (paper or electronic), unless exempt.",
                 },
                 {
-                  title: "📌 Key Rules (2026 기준)",
+                  title: "📌 Key Rules (As of 2026)",
                   bullets: [
                     "Free of charge",
                     "Can be submitted starting 3 days before arrival (including arrival day, Korea Standard Time)",

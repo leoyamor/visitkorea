@@ -5192,17 +5192,17 @@ export const siteTree: TreeNode = {
               body: "Entering Korea involves two stages:",
               subsections: [
                 {
-                  title: "Before departure – Check visa status and K-ETA requirement.",
+                  title: "",
                   plainTitle: true,
-                },
-                {
-                  title: "After landing – Follow the official airport entry procedure.",
-                  plainTitle: true,
+                  bullets: [
+                    "Before departure – Check visa status and K-ETA requirement.",
+                    "After landing – Follow the official airport entry procedure.",
+                  ],
                 },
                 {
                   title: "The correct airport arrival order is:",
                   plainTitle: true,
-                  lead: [
+                  bullets: [
                     "Arrival → (If applicable) Quarantine → Immigration → Baggage Claim → Customs → Arrival Hall",
                   ],
                 },

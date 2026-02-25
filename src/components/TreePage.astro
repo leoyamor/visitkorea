@@ -1003,9 +1003,11 @@ const breadcrumb = breadcrumbs;
               <div class="content-subsections">
                 {section.subsections.map((subsection) => (
                   <div class="content-subsection">
-                    <p class:list={["content-subtitle", subsection.plainTitle && "content-subtitle--plain"]}>
-                      {subsection.title}
-                    </p>
+                    {subsection.title && (
+                      <p class:list={["content-subtitle", subsection.plainTitle && "content-subtitle--plain"]}>
+                        {subsection.title}
+                      </p>
+                    )}
                     {subsection.lead && subsection.lead.length > 0 && (
                       <div>
                         {subsection.lead.map((line) => (

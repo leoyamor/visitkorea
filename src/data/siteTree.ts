@@ -5190,11 +5190,15 @@ export const siteTree: TreeNode = {
             {
               title: "🧭 Quick Overview",
               body: "Entering Korea involves two stages:",
-              bullets: [
-                "Before departure – Check visa status and K-ETA requirement.",
-                "After landing – Follow the official airport entry procedure.",
-              ],
               subsections: [
+                {
+                  title: "Before departure – Check visa status and K-ETA requirement.",
+                  plainTitle: true,
+                },
+                {
+                  title: "After landing – Follow the official airport entry procedure.",
+                  plainTitle: true,
+                },
                 {
                   title: "The correct airport arrival order is:",
                   plainTitle: true,

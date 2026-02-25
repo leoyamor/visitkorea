@@ -12,8 +12,7 @@ const toSitemapPath = (path: string) => {
 };
 
 const getTreePaths = () => {
-  const paths: string[] = ["/"];
-  const hiddenPaths = new Set(["/shopping-and-deals"]);
+  const paths: string[] = ["/"];
 
   const walk = (slugPrefix: string[], node: typeof siteTree) => {
     if (!node.children || node.children.length === 0) {
@@ -23,9 +22,7 @@ const getTreePaths = () => {
     for (const child of node.children) {
       const nextPrefix = [...slugPrefix, child.slug];
       const nextPath = `/${nextPrefix.join("/")}`;
-      if (!hiddenPaths.has(nextPath)) {
-        paths.push(nextPath);
-      }
+      paths.push(nextPath);
       walk(nextPrefix, child);
     }
   };

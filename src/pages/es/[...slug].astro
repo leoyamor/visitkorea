@@ -994,16 +994,13 @@ const localizeEsLabel = (node: TreeNode): string =>
   ES_LEAF_OVERRIDES[node.slug]?.title ?? node.title;
 
 export const getStaticPaths = () => {
-  const paths: string[] = [];
-  const HIDDEN_HUBS = new Set(["shopping-and-deals"]);
+  const paths: string[] = [];
   const walk = (node: TreeNode, prefix: string[] = []) => {
     if (!node.children) return;
     for (const child of node.children) {
       const next = [...prefix, child.slug];
       const nextPath = next.join("/");
-      if (!HIDDEN_HUBS.has(nextPath)) {
-        paths.push(nextPath);
-      }
+      paths.push(nextPath);
       walk(child, next);
     }
   };
@@ -1054,7 +1051,6 @@ const ROUTE_META_DESCRIPTION_OVERRIDES: Record<string, string> = {
     "SIM/eSIM, tarjeta o efectivo y seguridad en Corea, explicado en 5 minutos. Un plan SIM tipico cuesta aprox. 15,000-30,000 KRW.",
   "/before-you-go":
     "Entrada, documentos y llegada al aeropuerto en 6 minutos. Ten listos 3 basicos: pasaporte, reservas y requisitos de entrada.",
-  "/shopping-and-deals":
     "Zonas de compras, tax refund y descuentos en 6 minutos. La elegibilidad y el monto del reembolso cambian segun tienda y compra.",
   "/latest-travel-updates-for-korea":
     "Actualizado para 2026. Revisa requisitos de entrada, K-ETA, aeropuerto, transporte y clima antes de reservar o volar.",

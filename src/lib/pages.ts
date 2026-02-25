@@ -221,13 +221,9 @@ const subpages = [
 
   { category: 'immigration', slug: 'korea-entry-requirements', title: 'K-ETA & Immigration Process', description: 'Official 2026 entry guidance: K-ETA, e-Arrival Card, and airport procedure.' },
   { category: 'immigration', slug: 'do-you-need-a-visa', title: 'Do You Need a Visa?', description: 'How to check if a visa is required for you.' },
-  { category: 'immigration', slug: 'documents-to-prepare', title: 'Documents to Prepare', description: 'Keep these ready to speed up entry.' },
-
-  { category: 'shopping', slug: 'shopping-in-seoul', title: 'Shopping in Seoul', description: 'From markets to malls, where to start.' },
-  { category: 'shopping', slug: 'shopping-in-busan', title: 'Shopping in Busan', description: 'Coastal shopping spots and local finds.' },
+  { category: 'immigration', slug: 'documents-to-prepare', title: 'Documents to Prepare', description: 'Keep these ready to speed up entry.' },
   { category: 'shopping', slug: 'duty-free-shopping', title: 'Duty-Free Shopping', description: 'How to use airport and downtown duty-free stores.' },
-  { category: 'shopping', slug: 'tax-refund-guide', title: 'Tax Refund Guide', description: 'Simple steps to get your refund.' },
-  { category: 'shopping', slug: 'how-to-get-discounts', title: 'How to Get Discounts', description: 'Easy ways to save without coupon stress.' },
+  { category: 'shopping', slug: 'tax-refund-guide', title: 'Tax Refund Guide', description: 'Simple steps to get your refund.' },
   { category: 'shopping', slug: 'is-korea-cheap-to-shop', title: 'Is Korea Cheap to Shop?', description: 'What is worth buying and what is not.' }
 ] as const;
 

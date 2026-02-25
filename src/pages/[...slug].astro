@@ -5,6 +5,7 @@ import { findNodeBySegments, getPathForNode, siteTree } from "../data/siteTree";
 import { buildCollectionSchemaNodes, buildLeafSchemaNodes } from "../lib/geo";
 import { withLang } from "../lib/i18n";
 import { getPageUpdatedIso } from "../lib/page-updates";
+import { buildLeafQuickAnswer } from "../lib/leafQuickAnswer";
 import { absoluteUrl } from "../lib/site";
 import type { TreeNode } from "../data/siteTree";
 export const getStaticPaths = () => {
@@ -113,6 +114,7 @@ const nodeForRender = node
   ? {
       ...node,
       updatedIso: getPageUpdatedIso(routePath, lang, node.updatedIso),
+      quickAnswer: node.children?.length ? node.quickAnswer : buildLeafQuickAnswer(node, lang),
     }
   : undefined;
 const schemaNodes = node

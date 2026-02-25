@@ -819,14 +819,7 @@ const hubFaqItems = hasChildren && !isHome ? getHubFaqItems(node, lang) : [];
 const leafFaqItems = isLeafPage ? getLeafFaqItems(node, lang) : [];
 const collectionQuickSummary =
   hasChildren && !isHome ? node.quickAnswer ?? getHubQuickSummary(node, lang) : undefined;
-const leafQuickAnswerSeed = (node.quickAnswer ?? node.description ?? t.quickFallback).trim();
-const leafQuickAnswerNeedsSupport =
-  leafQuickAnswerSeed.length < 120 &&
-  (leafQuickAnswerSeed.match(/[.!?](?=\s|$)/g)?.length ?? 0) < 2;
-const leafQuickAnswerText =
-  isLeafPage && leafQuickAnswerNeedsSupport
-    ? `${leafQuickAnswerSeed}${/[.!?]$/.test(leafQuickAnswerSeed) ? "" : "."} ${t.leafQuickSupport}`
-    : leafQuickAnswerSeed;
+const leafQuickAnswerText = (node.quickAnswer ?? node.description ?? t.quickFallback).trim();
 
 const breadcrumb = breadcrumbs;
 ---

@@ -16,6 +16,7 @@
     "page-updates:sync": "node scripts/sync-page-updates.mjs"
   },
   "dependencies": {
-    "astro": "^5.17.1"
+    "astro": "^5.17.1",
+    "sharp": "^0.34.5"
   }
 }

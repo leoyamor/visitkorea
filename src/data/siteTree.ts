@@ -4255,12 +4255,13 @@ export const siteTree: TreeNode = {
               lead: [
                 "Koreans usually avoid calling someone by name alone (especially early on).",
                 "A safe, common pattern is:",
+                "If you are unsure, it is also fine to avoid names entirely and use:",
               ],
               bullets: [
                 "First name + \"씨\" (ssi)",
                 "First name + \"님\" (nim)",
-                "If you are unsure, it is also fine to avoid names entirely and use \"Excuse me\" with a polite tone.",
-                "If you are unsure, it is also fine to use \"Thank you\" (감사합니다).",
+                "\"Excuse me\" + a polite tone",
+                "\"Thank you\" (감사합니다)",
               ],
               tail:
                 "This is more important in formal settings or first meetings.",
@@ -4284,14 +4285,6 @@ export const siteTree: TreeNode = {
                   bullets: [
                     "Buses, checkout counters, elevators, popular cafes",
                     "Cutting in line is usually viewed very negatively.",
-                  ],
-                },
-                {
-                  title: "🛗 Escalator Etiquette",
-                  body: "Escalator etiquette varies by area, but a common pattern is:",
-                  bullets: [
-                    "Stand to one side, leave the other side open",
-                    "Some areas now promote \"stand only,\" so follow local signs and the crowd.",
                   ],
                 },
               ],

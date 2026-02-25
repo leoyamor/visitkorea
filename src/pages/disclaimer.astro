@@ -8,7 +8,7 @@ const alternateEsUrl = absoluteUrl("/es/disclaimer/");
 
 <BaseLayout
   title="Disclaimer | Visit Korea Planner"
-  description="Disclaimer for PlanMyKorea."
+  description="Disclaimer for PlanMyKorea including liability, immigration, and non-affiliation statements."
   bodyClass="page--leaf"
   canonicalUrl={canonicalUrl}
   alternateEnUrl={canonicalUrl}
@@ -17,27 +17,72 @@ const alternateEsUrl = absoluteUrl("/es/disclaimer/");
   <section class="legal-page">
     <h1>Disclaimer</h1>
 
+    <p>Last updated: February 2026 (KST)</p>
+
     <p>
-      The information on this website is provided for general travel guidance
-      only.
+      PlanMyKorea is an independent travel information website for international
+      visitors to South Korea. The information on this website is provided for
+      general informational and travel guidance purposes only.
+    </p>
+
+    <h2>1. Not Official Advice</h2>
+    <p>
+      PlanMyKorea is not a government website and does not provide official
+      guidance, authorization, or professional advice. Nothing on this website
+      should be considered legal, immigration, tax, medical, or financial advice.
+    </p>
+
+    <h2>2. Entry &amp; Immigration Disclaimer</h2>
+    <p>
+      Entry requirements, visa eligibility, and travel authorization rules may
+      vary by nationality and personal circumstances and may change without
+      notice.
+      Final entry approval into the Republic of Korea is determined solely by
+      immigration authorities at the port of entry. PlanMyKorea cannot
+      guarantee eligibility, approval, or entry.
     </p>
     <p>
-      We are an independent travel information website and are not affiliated
-      with the Korean government, immigration authorities, airlines, insurance
-      providers, or official tourism organizations.
+      Visitors are responsible for confirming all entry and immigration
+      requirements through official sources before departure.
     </p>
+
+    <h2>3. Accuracy, Prices, and Updates</h2>
     <p>
-      While we aim to keep information accurate and up to date, travel rules,
-      prices, visa policies, transportation schedules, and insurance terms may
-      change at any time.
+      We make reasonable efforts to keep content accurate and up to date.
+      However, travel rules, prices, operating hours, transportation schedules,
+      and third-party terms (including insurance and telecom plans) may change
+      at any time. We do not guarantee that all information is complete,
+      current, or error-free.
     </p>
+
+    <h2>4. External Links</h2>
     <p>
-      Visitors are responsible for confirming important details with official
-      sources before making travel decisions.
+      This website may contain links to third-party websites. We do not control
+      those sites and are not responsible for their content, policies, pricing,
+      availability, or privacy practices. A link does not imply endorsement.
     </p>
+
+    <h2>5. Advertising &amp; Affiliate Disclosure</h2>
     <p>
-      We are not liable for any loss, inconvenience, or damages resulting from
-      the use of information on this website.
+      This website may display advertising and may include affiliate links.
+      Affiliate relationships do not affect our editorial independence. If an
+      affiliate link is used, there is typically no additional cost to the user.
+    </p>
+
+    <h2>6. Limitation of Liability</h2>
+    <p>
+      To the fullest extent permitted by law, PlanMyKorea is not liable for any
+      loss, inconvenience, or damages arising from the use of, or reliance on,
+      information provided on this website, including travel disruptions, entry
+      denial, or policy changes. Visitors are responsible for their own travel
+      decisions.
+    </p>
+
+    <h2>7. Non-Affiliation Statement</h2>
+    <p>
+      PlanMyKorea is not affiliated with the Korean government, immigration
+      authorities, airports, airlines, insurance providers, telecom providers,
+      or official tourism organizations.
     </p>
   </section>
 </BaseLayout>
@@ -54,7 +99,11 @@ const alternateEsUrl = absoluteUrl("/es/disclaimer/");
     margin: 0 0 20px;
   }
 
+  .legal-page h2 {
+    margin: 24px 0 10px;
+  }
+
   .legal-page p {
-    margin: 0 0 14px;
+    margin: 0 0 12px;
   }
 </style>

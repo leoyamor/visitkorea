@@ -5193,8 +5193,15 @@ export const siteTree: TreeNode = {
               bullets: [
                 "Before departure - Check visa status and K-ETA requirement.",
                 "After landing - Follow the official airport entry procedure.",
-                "The correct airport arrival order is:",
-                "Arrival -> (If applicable) Quarantine -> Immigration -> Baggage Claim -> Customs -> Arrival Hall",
+              ],
+              subsections: [
+                {
+                  title: "The correct airport arrival order is:",
+                  plainTitle: true,
+                  lead: [
+                    "Arrival -> (If applicable) Quarantine -> Immigration -> Baggage Claim -> Customs -> Arrival Hall",
+                  ],
+                },
               ],
               tail: "Understanding this sequence prevents confusion and delays.",
             },

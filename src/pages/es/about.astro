@@ -8,7 +8,7 @@ const alternateEnUrl = absoluteUrl("/about/");
 
 <BaseLayout
   title="Acerca de | Planificador de viaje a Corea"
-  description="Acerca de PlanMyKorea."
+  description="Acerca de PlanMyKorea y de cómo ofrecemos orientación de viaje independiente."
   bodyClass="page--leaf"
   lang="es"
   canonicalUrl={canonicalUrl}
@@ -16,16 +16,113 @@ const alternateEnUrl = absoluteUrl("/about/");
   alternateEsUrl={canonicalUrl}
 >
   <section class="legal-page">
-    <h1>Acerca de</h1>
+    <h1>Acerca de PlanMyKorea</h1>
     <p>
-      PlanMyKorea es un sitio web independiente de información de viajes creado
-      para ayudar a visitantes internacionales a entender y planear su viaje a
-      Corea del Sur.
+      PlanMyKorea es un sitio web independiente de información de viajes,
+      creado para ayudar a visitantes internacionales a planificar viajes más
+      claros y seguros a Corea del Sur.
     </p>
     <p>
-      Este sitio ofrece orientación práctica, explicaciones y recursos
-      seleccionados para viajeros.
+      Este sitio es operado y mantenido de forma independiente por un editor
+      privado. No es un sitio gubernamental y no está afiliado al gobierno
+      coreano, autoridades migratorias, aeropuertos, aerolíneas, proveedores de
+      seguros, empresas de telecomunicaciones ni organizaciones oficiales de
+      turismo.
     </p>
+
+    <h2>Nuestro propósito</h2>
+    <p>El objetivo de PlanMyKorea es simple:</p>
+    <p>
+      Ofrecer orientación de viaje práctica y centrada en decisiones para
+      visitantes internacionales.
+    </p>
+    <p>Nos enfocamos en ayudar a los viajeros a:</p>
+    <ul>
+      <li>Entender lo básico sobre entrada y llegada</li>
+      <li>Navegar el transporte con claridad</li>
+      <li>Estimar costos de viaje realistas</li>
+      <li>Elegir zonas y estilos de viaje que se ajusten a su plan</li>
+      <li>Evitar errores comunes que causan confusión</li>
+    </ul>
+    <p>
+      Priorizamos la claridad por encima de la promoción. Cuando una decisión
+      depende de la temporada, la nacionalidad o el estilo personal de viaje,
+      explicamos las diferencias en lugar de dar una única respuesta genérica.
+    </p>
+
+    <h2>Cómo abordamos la información</h2>
+    <p>Primero, fuentes oficiales.</p>
+    <p>
+      Siempre que sea posible, basamos la guía en fuentes oficiales públicas,
+      como servicios migratorios, aeropuertos, operadores ferroviarios y
+      autoridades de transporte.
+    </p>
+    <p>
+      Las políticas, los precios y los procedimientos de viaje pueden cambiar.
+      En temas importantes, como requisitos de entrada, recomendamos confirmar
+      los detalles finales en anuncios oficiales antes de viajar.
+    </p>
+    <p>
+      Este sitio está diseñado para ayudarte a planificar y comprender, no para
+      reemplazar instrucciones oficiales.
+    </p>
+
+    <h2>Independencia y transparencia de monetización</h2>
+    <p>PlanMyKorea es operado de forma independiente.</p>
+    <p>Para mantener este sitio, podemos usar:</p>
+    <ul>
+      <li>Servicios publicitarios (como Google AdSense)</li>
+      <li>Enlaces de afiliados a servicios relacionados con viajes</li>
+    </ul>
+    <p>Si se usan enlaces de afiliados, no hay costo adicional para ti.</p>
+    <p>
+      La monetización no determina las decisiones editoriales. El contenido se
+      redacta priorizando claridad y utilidad para viajeros.
+    </p>
+
+    <h2>Política de precisión y actualización</h2>
+    <p>
+      Hacemos un esfuerzo de buena fe para mantener la información precisa y
+      actualizada.
+    </p>
+    <ul>
+      <li>Las actualizaciones importantes de contenido se revisan periódicamente.</li>
+      <li>
+        Las páginas relacionadas con políticas relevantes pueden actualizarse
+        cuando se confirman cambios.
+      </li>
+      <li>
+        Las actualizaciones significativas pueden incluir fecha para mayor
+        transparencia.
+      </li>
+    </ul>
+    <p>
+      Sin embargo, requisitos de entrada, precios, horarios de operación y
+      reglas de transporte pueden cambiar sin previo aviso y variar según la
+      nacionalidad o circunstancias personales.
+    </p>
+    <p>
+      Verifica siempre los detalles críticos en fuentes oficiales antes de tomar
+      decisiones finales de viaje.
+    </p>
+
+    <h2>Qué no ofrece este sitio</h2>
+    <p>PlanMyKorea no:</p>
+    <ul>
+      <li>Procesa visas</li>
+      <li>Ofrece servicios de reserva, emisión o ticketing</li>
+      <li>Brinda asesoría legal o migratoria</li>
+      <li>Actúa como autoridad gubernamental o agencia oficial</li>
+    </ul>
+    <p>Este sitio solo proporciona orientación informativa general.</p>
+
+    <h2>Contacto y correcciones</h2>
+    <p>
+      Si detectas errores factuales o información desactualizada, contáctanos a
+      través de la página de Contacto.
+    </p>
+    <p>Las correcciones verificadas se revisan y actualizan cuando corresponde.</p>
+    <p><strong>Última actualización:</strong> Febrero de 2026 (KST)</p>
   </section>
 </BaseLayout>
 
@@ -41,7 +138,20 @@ const alternateEnUrl = absoluteUrl("/about/");
     margin: 0 0 20px;
   }
 
+  .legal-page h2 {
+    margin: 28px 0 10px;
+  }
+
   .legal-page p {
     margin: 0 0 14px;
+  }
+
+  .legal-page ul {
+    margin: 0 0 14px 20px;
+    padding: 0;
+  }
+
+  .legal-page li {
+    margin: 0 0 6px;
   }
 </style>

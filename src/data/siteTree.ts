@@ -4227,76 +4227,85 @@ export const siteTree: TreeNode = {
           icon: "hand",
           image: "/leaf%20images/Basic%20Korean.webp?v=20260209",
           description:
-            "Practical Korean etiquette for visitors. Learn the small habits that prevent awkward moments - greetings, public-space manners, dining basics, and cultural \"unspoken rules.\"",
+            "Practical Korean etiquette for visitors. Learn the small habits that prevent awkward moments — greetings, public-space manners, dining basics, and cultural “unspoken rules.”",
           quickAnswer:
-            "Korean etiquette is about respect and situational awareness, not perfection. Focus on a few key habits to avoid common misunderstandings.",
+            "Korean etiquette is less about \"strict rules\" and more about respect, quiet consideration, and reading the situation. You do not need to be perfect. You just need to avoid the most common misunderstandings.",
           content: [
             {
-              title: "🧭 Quick Overview",
+              title: "Quick Overview",
               body:
                 "Korean etiquette is less about \"strict rules\" and more about respect, quiet consideration, and reading the situation.",
               tail:
                 "You do not need to be perfect. You just need to avoid the most common misunderstandings.",
             },
             {
-              title: "👋 1. Greetings and First Impressions",
-              body: "A small gesture makes interactions smoother.",
+              title: "1. Greetings and First Impressions",
+              body:
+                "A small gesture makes interactions smoother. A light nod or small bow is normal when you:",
               bullets: [
-                "A light nod or small bow is normal when you meet someone for the first time.",
-                "A light nod or small bow is normal when you say thank you.",
-                "A light nod or small bow is normal when you interact with staff in shops, hotels, and restaurants.",
-                "You do not need a deep bow. A brief, respectful nod is enough.",
+                "meet someone for the first time",
+                "say thank you",
+                "interact with staff in shops, hotels, and restaurants",
               ],
+              tail:
+                "You do not need a deep bow. A brief, respectful nod is enough.",
             },
             {
-              title: "🏷️ 2. Names, Titles, and How to Address People",
+              title: "2. Names, Titles, and How to Address People",
               body:
-                "Names are handled differently than in many Western cultures.",
-              lead: [
-                "Koreans usually avoid calling someone by name alone (especially early on).",
-                "A safe, common pattern is:",
-                "If you are unsure, it is also fine to avoid names entirely and use:",
-              ],
-              bullets: [
-                "First name + \"씨\" (ssi)",
-                "First name + \"님\" (nim)",
-                "\"Excuse me\" + a polite tone",
-                "\"Thank you\" (감사합니다)",
+                "Names are handled differently than in many Western cultures. Koreans usually avoid calling someone by name alone (especially early on).",
+              subsections: [
+                {
+                  title: "A safe, common pattern is:",
+                  plainTitle: true,
+                  bullets: [
+                    "First name + \"씨\" (ssi)",
+                    "First name + \"님\" (nim)",
+                  ],
+                },
+                {
+                  title: "If you are unsure, it is also fine to avoid names entirely and use:",
+                  plainTitle: true,
+                  bullets: [
+                    "\"Excuse me\" + a polite tone",
+                    "\"Thank you\" (감사합니다)",
+                  ],
+                },
               ],
               tail:
                 "This is more important in formal settings or first meetings.",
             },
             {
-              title: "🚇 3. Public Space Etiquette",
+              title: "3. Public Space Etiquette",
               body: "Quiet and order are strongly valued.",
               subsections: [
                 {
-                  title: "🔉 In Public Spaces",
-                  lead: ["In public spaces (especially transport), it is best to:"],
+                  title: "In public spaces (especially transport), it is best to:",
+                  plainTitle: true,
                   bullets: [
-                    "Keep your voice low",
-                    "Avoid loud videos on speaker",
-                    "Keep calls short",
+                    "keep your voice low",
+                    "avoid loud videos on speaker",
+                    "keep calls short",
                   ],
                 },
                 {
-                  title: "🧍 Line Culture",
-                  body: "Line culture is strict and clear in Korea:",
+                  title: "Line culture is strict and clear in Korea:",
+                  plainTitle: true,
                   bullets: [
-                    "Buses, checkout counters, elevators, popular cafes",
+                    "buses, checkout counters, elevators, popular cafes",
                     "Cutting in line is usually viewed very negatively.",
                   ],
                 },
               ],
             },
             {
-              title: "🍽️ 4. Dining Etiquette",
+              title: "4. Dining Etiquette",
               body:
                 "Simple habits prevent the most common awkward moments.",
               subsections: [
                 {
-                  title: "🥢 The Basics",
-                  body: "The basics:",
+                  title: "The basics:",
+                  plainTitle: true,
                   bullets: [
                     "If older people are at the table, wait a moment before starting",
                     "Do not stick chopsticks vertically into rice (ritual symbolism)",
@@ -4306,90 +4315,119 @@ export const siteTree: TreeNode = {
                   ],
                 },
                 {
-                  title: "💳 Payment Culture",
-                  body:
-                    "Payment culture often differs from table-service countries:",
+                  title: "Payment culture often differs from table-service countries:",
+                  plainTitle: true,
                   bullets: ["Paying at the counter is common"],
                 },
               ],
             },
             {
-              title: "👟 5. Shoes and Indoor Culture",
+              title: "5. Shoes and Indoor Culture",
               body: "If locals remove shoes, you should too.",
-              lead: ["You may need to take off shoes in:"],
-              bullets: [
-                "Homes",
-                "Some traditional restaurants",
-                "Hanok stays and some guesthouses",
+              subsections: [
+                {
+                  title: "You may need to take off shoes in:",
+                  plainTitle: true,
+                  bullets: [
+                    "homes",
+                    "some traditional restaurants",
+                    "hanok stays and some guesthouses",
+                  ],
+                },
               ],
               tail:
                 "If you see shoe racks or people in socks indoors, that is your signal.",
             },
             {
-              title: "♻️ 6. Trash, Recycling, and Street Habits",
+              title: "6. Trash, Recycling, and Street Habits",
               body:
                 "Korea can feel clean, but trash bins are surprisingly limited.",
-              lead: ["It is normal to:"],
-              bullets: [
-                "Carry small trash until you find a bin",
-                "Dispose of it at convenience stores or your accommodation",
-                "Recycling rules are relatively strict",
+              subsections: [
+                {
+                  title: "It is normal to:",
+                  plainTitle: true,
+                  bullets: [
+                    "carry small trash until you find a bin",
+                    "dispose of it at convenience stores or your accommodation",
+                  ],
+                },
               ],
               tail:
-                "As a visitor, just follow the labels on public bins when available.",
+                "Recycling rules are relatively strict. As a visitor, just follow the labels on public bins when available.",
             },
             {
-              title: "📸 7. Photo and Privacy Etiquette",
+              title: "7. Photo and Privacy Etiquette",
               body: "Be careful with strangers' faces.",
               bullets: [
                 "Avoid casually filming or photographing strangers up close.",
                 "Inside shops or cafes, it is safer to ask before taking photos.",
-                "Some military-related areas or government-sensitive locations may have photo restrictions.",
               ],
+              tail:
+                "Also note: Some military-related areas or government-sensitive locations may have photo restrictions.",
             },
             {
-              title: "💳 8. Money, Payment, and Tipping",
+              title: "8. Money, Payment, and Tipping",
               body: "Tipping is not expected in Korea.",
-              lead: ["In most cases:"],
-              bullets: [
-                "Service charges are already included",
-                "Tipping can make staff uncomfortable",
-                "Card payment is extremely common, even for small purchases.",
+              subsections: [
+                {
+                  title: "In most cases:",
+                  plainTitle: true,
+                  bullets: [
+                    "service charges are already included",
+                    "tipping can make staff uncomfortable",
+                    "Card payment is extremely common, even for small purchases.",
+                  ],
+                },
               ],
             },
             {
-              title: "🧘 9. Emotional Tone and Conflict Style",
+              title: "9. Emotional Tone and Conflict Style",
               body: "Korea generally avoids public confrontation.",
-              lead: ["If something goes wrong, it is usually best to:"],
-              bullets: [
-                "Speak calmly",
-                "Ask staff quietly",
-                "Avoid raising your voice in public",
+              subsections: [
+                {
+                  title: "If something goes wrong, it is usually best to:",
+                  plainTitle: true,
+                  bullets: [
+                    "speak calmly",
+                    "ask staff quietly",
+                    "avoid raising your voice in public",
+                  ],
+                },
               ],
               tail: "Polite and steady communication tends to get better help.",
             },
             {
-              title: "⚠️ 10. Sensitive Topics to Avoid",
+              title: "10. Sensitive Topics to Avoid",
               body: "Some topics can become uncomfortable quickly.",
-              lead: ["It is safer to avoid:"],
-              bullets: [
-                "Jokes about North Korea",
-                "Casual comments about military service",
-                "Heated political debates",
-                "Sensitive historical disputes",
+              subsections: [
+                {
+                  title: "It is safer to avoid:",
+                  plainTitle: true,
+                  bullets: [
+                    "jokes about North Korea",
+                    "casual comments about military service",
+                    "heated political debates",
+                    "sensitive historical disputes",
+                  ],
+                },
               ],
               tail:
                 "Even if people do discuss them, visitors should approach carefully.",
             },
             {
-              title: "✅ Final Advice",
+              title: "Final Advice",
               body:
                 "You do not need to \"perform\" Korean culture.",
-              lead: ["If you remember three principles, you will be fine:"],
-              bullets: [
-                "Be quieter than you think you need to be",
-                "Follow lines and shared-space norms",
-                "Show respect through small gestures",
+              subsections: [
+                {
+                  title: "If you remember three principles, you will be fine:",
+                  plainTitle: true,
+                  bullets: [
+                    "be quieter than you think you need to be",
+                    "follow lines and shared-space norms",
+                    "show respect through small gestures",
+                  ],
+                },
               ],
               tail:
                 "Most locals do not expect tourists to know everything. They notice effort more than perfection.",

@@ -4584,7 +4584,7 @@ export const siteTree: TreeNode = {
             "Use this practical guide to evaluate real value first, then apply VAT refunds and discount programs correctly before you buy.",
           content: [
             {
-              title: "📌 Quick Overview",
+              title: "Quick Overview",
               icon: "checklist",
               body:
                 "Shopping in Korea can feel very affordable - or unexpectedly expensive.",
@@ -4596,14 +4596,14 @@ export const siteTree: TreeNode = {
               tail: "Smart travelers evaluate value first and apply discounts second.",
             },
             {
-              title: "💬 Is Shopping Cheap in Korea? The Honest Answer",
+              title: "Is Shopping Cheap in Korea? The Honest Answer",
               icon: "wallet",
               emphasis: "Sometimes yes. Sometimes no.",
               body:
                 "Korea offers strong value in specific categories, but not everything is cheaper than overseas. Perceived affordability often depends on category, exchange rate, tax refund eligibility, and planning.",
             },
             {
-              title: "🛍️ What Is Usually Worth Buying",
+              title: "What Is Usually Worth Buying",
               icon: "spark",
               emphasis: "Categories with Consistent Value",
               body: "Many visitors find reliable value in:",
@@ -4617,7 +4617,7 @@ export const siteTree: TreeNode = {
                 "These products are often competitively priced and practical to carry home.",
             },
             {
-              title: "⚠️ What Is Often Not a Bargain",
+              title: "What Is Often Not a Bargain",
               icon: "alert",
               emphasis: "Compare Carefully Before Buying",
               body: "Items that are not consistently cheaper:",
@@ -4631,7 +4631,7 @@ export const siteTree: TreeNode = {
                 "Luxury goods may appear discounted due to exchange rates or tax refund eligibility, but final savings vary. Always compare prices before assuming something is a deal.",
             },
             {
-              title: "🧩 How Discounts Actually Work in Korea",
+              title: "How Discounts Actually Work in Korea",
               icon: "tag",
               body: "Discounts in Korea generally fall into four categories:",
               subsections: [
@@ -4656,7 +4656,7 @@ export const siteTree: TreeNode = {
                 "Understanding which type you are using prevents unrealistic expectations.",
             },
             {
-              title: "🧾 VAT Refund (Tax Refund) - The Most Reliable System",
+              title: "VAT Refund (Tax Refund) - The Most Reliable System",
               icon: "card",
               emphasis: "Official Immediate Tax Refund Rules",
               body:
@@ -4710,7 +4710,7 @@ export const siteTree: TreeNode = {
                 "These benefits are corporate programs and may vary by location, promotional period, brand exclusions, or stacking limits. Always confirm current conditions at the store information desk.",
             },
             {
-              title: "🎉 Korea Grand Sale (Seasonal Campaign)",
+              title: "Korea Grand Sale (Seasonal Campaign)",
               icon: "spark",
               body:
                 "Korea Grand Sale is a government-supported national shopping campaign.",
@@ -4723,7 +4723,7 @@ export const siteTree: TreeNode = {
                 "Important: \"Up to\" percentages reflect maximum promotional benefits, not guaranteed savings across all stores or products. Campaign periods, participating merchants, and stacking rules may change. Always verify official sources before purchase.",
             },
             {
-              title: "🛫 Duty-Free Shopping",
+              title: "Duty-Free Shopping",
               icon: "plane",
               body: "Duty-free stores typically combine:",
               bullets: [
@@ -4735,7 +4735,7 @@ export const siteTree: TreeNode = {
                 "Some brands exclude additional discounts, and multiple promotions are often subject to stacking limitations. Duty-free does not automatically guarantee the lowest price.",
             },
             {
-              title: "🎟️ Tourist Attraction Passes",
+              title: "Tourist Attraction Passes",
               icon: "spark",
               body: "Passes are useful only when:",
               bullets: [
@@ -4747,7 +4747,7 @@ export const siteTree: TreeNode = {
                 "Buying passes \"just in case\" often reduces flexibility without meaningful savings.",
             },
             {
-              title: "🚫 Common Shopping and Discount Mistakes",
+              title: "Common Shopping and Discount Mistakes",
               icon: "alert",
               body: "Avoid:",
               bullets: [
@@ -4762,7 +4762,7 @@ export const siteTree: TreeNode = {
                 "Overspending usually comes from misunderstanding rules, not from base prices alone.",
             },
             {
-              title: "🧠 A Simple Decision Framework",
+              title: "A Simple Decision Framework",
               icon: "checklist",
               body: "Before making a purchase, ask:",
               bullets: [
@@ -4776,7 +4776,7 @@ export const siteTree: TreeNode = {
                 "If the answers are clear and realistic, the purchase is likely justified.",
             },
             {
-              title: "✅ Final Advice",
+              title: "Final Advice",
               icon: "spark",
               body: "Plan first. Evaluate value second. Apply discounts third.",
               bullets: [

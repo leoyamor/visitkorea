@@ -5191,15 +5191,15 @@ export const siteTree: TreeNode = {
               title: "🧭 Quick Overview",
               body: "Entering Korea involves two stages:",
               bullets: [
-                "Before departure - Check visa status and K-ETA requirement.",
-                "After landing - Follow the official airport entry procedure.",
+                "Before departure – Check visa status and K-ETA requirement.",
+                "After landing – Follow the official airport entry procedure.",
               ],
               subsections: [
                 {
                   title: "The correct airport arrival order is:",
                   plainTitle: true,
                   lead: [
-                    "Arrival -> (If applicable) Quarantine -> Immigration -> Baggage Claim -> Customs -> Arrival Hall",
+                    "Arrival → (If applicable) Quarantine → Immigration → Baggage Claim → Customs → Arrival Hall",
                   ],
                 },
               ],
@@ -5211,11 +5211,10 @@ export const siteTree: TreeNode = {
               subsections: [
                 {
                   title: "📘 What K-ETA Is",
-                  body: "K-ETA (Korea Electronic Travel Authorization):",
                   bullets: [
-                    "Is an electronic travel authorization system",
+                    "An electronic travel authorization system",
                     "Applies to certain visa-exempt passport holders",
-                    "Is not a visa",
+                    "Not a visa",
                     "Does not guarantee entry (final decision rests with immigration officers)",
                   ],
                 },
@@ -5230,27 +5229,35 @@ export const siteTree: TreeNode = {
                   ],
                 },
                 {
-                  title: "🗓️ Temporary Exemption (Valid Until 2026-12-31)",
-                  body:
-                    "The Korean government has extended temporary K-ETA exemptions for certain nationalities until December 31, 2026.",
-                  lead: ["Important:"],
+                  title: "🗓️ Temporary K-ETA Exemption",
+                  lead: ["(Valid Until 2026-12-31)"],
                   bullets: [
+                    "This exemption applies only to the K-ETA application requirement",
                     "Not all countries are exempt",
                     "Eligibility depends on nationality",
-                    "Exempt travelers may still voluntarily apply",
+                    "Eligible travelers are not required to apply during the exemption period",
+                    "Exempt travelers may still apply voluntarily",
+                    "This temporary measure does not remove visa requirements or immigration inspection.",
+                  ],
+                },
+                {
+                  title: "⚠️ Separate rule:",
+                  plainTitle: true,
+                  lead: [
+                    "Travelers who already hold a valid K-ETA generally do not need to submit a separate paper arrival card.",
+                    "This is not part of the temporary exemption and operates under standard entry policy.",
                   ],
                   tail:
-                    "Official guidance notes that valid K-ETA holders may be exempt from submitting an arrival card. Always confirm your nationality status through official government sources before departure.",
+                    "Always confirm your nationality status through official government sources before departure.",
                 },
                 {
                   title: "🚨 Warning: Unofficial K-ETA Websites",
-                  body: "Korean immigration authorities warn about unofficial websites.",
                   lead: ["Use only:"],
                   bullets: [
                     "Official government website",
                     "Official government mobile app",
-                    "Unofficial sites may charge additional service fees.",
                   ],
+                  tail: "Unofficial sites may charge excessive service fees.",
                 },
               ],
             },
@@ -5259,32 +5266,25 @@ export const siteTree: TreeNode = {
               body: "Arrival declaration requirements depend on your traveler status.",
               subsections: [
                 {
-                  title: "👥 Who Must Submit It?",
-                  body:
-                    "In principle, most foreign nationals entering Korea must submit an arrival declaration (paper or electronic), unless exempt.",
-                },
-                {
                   title: "📌 Key Rules (As of 2026)",
                   bullets: [
                     "Free of charge",
-                    "Can be submitted starting 3 days before arrival (including arrival day, Korea Standard Time)",
+                    "Can be submitted starting 3 days before arrival (including arrival day, KST)",
                     "Becomes invalid if you do not enter Korea within 72 hours of submission",
                   ],
                 },
                 {
-                  title: "✅ Who Is Exempt?",
-                  body: "You generally do NOT need to submit an arrival card if you are:",
+                  title: "👥 Who Is Generally Exempt?",
                   bullets: [
-                    "A registered foreign resident in Korea",
-                    "A valid K-ETA holder",
-                    "A group electronic visa holder",
+                    "Registered foreign residents in Korea",
+                    "Valid K-ETA holders",
+                    "Group electronic visa holders",
                     "Airline crew",
                   ],
                   tail: "Always verify your status before travel.",
                 },
                 {
                   title: "🗂️ Information Required",
-                  body: "To complete the e-Arrival Card, prepare:",
                   bullets: [
                     "Passport information",
                     "Email address",
@@ -5301,64 +5301,60 @@ export const siteTree: TreeNode = {
             {
               title: "🛬 Part 3: Airport Immigration Process (Correct Order)",
               body: "The standard arrival flow at Korean international airports is:",
-              bullets: [
-                "Arrival -> (If required) Quarantine -> Immigration -> Baggage Claim -> Customs -> Arrival Hall",
-              ],
               subsections: [
                 {
-                  title: "1️⃣ Step 1: Arrival",
-                  body: "After landing:",
+                  title:
+                    "Arrival → (If applicable) Quarantine → Immigration → Baggage Claim → Customs → Arrival Hall",
+                  plainTitle: true,
+                },
+                {
+                  title: "1️⃣ Arrival",
                   bullets: [
                     "Follow signs for Arrivals",
-                    "Passengers arriving at remote concourses may use a shuttle train to reach the main terminal",
-                    "Proceed toward Immigration.",
+                    "Shuttle train may be required at some terminals",
+                    "Proceed toward Immigration",
                   ],
                 },
                 {
-                  title: "2️⃣ Step 2: Quarantine (If Applicable)",
-                  body: "Health screening may apply depending on:",
+                  title: "2️⃣ Quarantine (If Applicable)",
+                  lead: ["May apply depending on:"],
                   bullets: [
                     "Recent travel to designated quarantine-control regions",
                     "Symptoms",
-                    "Current public health policies",
-                    "Q-CODE or health reporting may be required under specific conditions.",
+                    "Current public health policy",
                   ],
                   tail:
-                    "Q-CODE is not universally required for all travelers. Failure to comply when required may result in penalties under Korean quarantine law. Always check official updates before departure.",
+                    "Q-CODE or health reporting may be required under specific conditions. Q-CODE is not universally required. Failure to comply (when required) may result in penalties under Korean quarantine law.",
                 },
                 {
-                  title: "3️⃣ Step 3: Immigration (Passport Control)",
-                  body: "You will:",
+                  title: "3️⃣ Immigration (Passport Control)",
                   bullets: [
-                    "Present your passport",
-                    "Provide biometric information if required",
-                    "Answer basic questions about your stay",
+                    "Present passport",
+                    "Provide biometric data if required",
+                    "Answer basic travel questions",
                     "Final entry approval is determined at this stage.",
-                    "Even with valid K-ETA approval, entry is not guaranteed.",
+                    "Even with K-ETA approval, entry is not guaranteed.",
                   ],
                 },
                 {
-                  title: "4️⃣ Step 4: Baggage Claim",
-                  body: "After immigration clearance:",
+                  title: "4️⃣ Baggage Claim",
                   bullets: [
-                    "Check monitors for your baggage belt number",
-                    "Collect your luggage",
+                    "Check monitors for baggage belt number",
+                    "Collect luggage",
                   ],
                 },
                 {
-                  title: "5️⃣ Step 5: Customs",
-                  body: "After collecting your luggage:",
+                  title: "5️⃣ Customs",
+                  lead: ["Choose one lane:"],
                   bullets: [
-                    "Choose one lane:",
                     "Nothing to Declare",
                     "Goods to Declare",
-                    "Travelers carrying restricted goods or large amounts of currency must declare accordingly.",
-                    "When traveling as a family, one customs declaration may be accepted per family unit.",
                   ],
+                  tail:
+                    "Travelers carrying restricted goods or large amounts of currency must declare accordingly. Families may submit one customs declaration per family unit (subject to current policy).",
                 },
                 {
-                  title: "6️⃣ Step 6: Arrival Hall",
-                  body: "After customs clearance:",
+                  title: "6️⃣ Arrival Hall",
                   bullets: [
                     "Exit into the public Arrival Hall",
                     "Access transportation, SIM counters, exchange services, and pickup areas",
@@ -5370,16 +5366,15 @@ export const siteTree: TreeNode = {
               title: "⏱️ Typical Processing Time",
               body: "Under normal conditions:",
               bullets: [
-                "Immigration: 10-30 minutes",
-                "Baggage and customs: 10-20 minutes",
+                "Immigration: 10–30 minutes",
+                "Baggage and customs: 10–20 minutes",
               ],
-              tail: "Processing times may increase during peak travel seasons.",
+              tail: "Times may increase during peak travel seasons.",
             },
             {
               title: "🧠 Key Reminders",
-              body: "Remember these essentials before and during entry:",
+              body: "K-ETA is not a visa.",
               bullets: [
-                "K-ETA is not a visa.",
                 "Entry is decided at immigration.",
                 "e-Arrival Card submission is time-sensitive.",
                 "Health reporting requirements are conditional.",
@@ -5391,10 +5386,9 @@ export const siteTree: TreeNode = {
               body: "Prepare accurately before departure.",
               bullets: [
                 "Follow the correct airport order after landing.",
-                "Most entry problems occur before boarding, not at arrival.",
-                "Key figures in this guide are based on official 2026 immigration guidance and may be updated.",
-                "Exemption policies and health requirements can change. Always confirm official government notices before departure.",
               ],
+              tail:
+                "Most entry problems occur before boarding — not after arrival. Key figures in this guide are based on official 2026 immigration guidance and may be updated. Exemption policies and health requirements can change. Always confirm official government notices before departure.",
             },
           ],
         },

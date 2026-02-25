@@ -8,7 +8,7 @@ const alternateEnUrl = absoluteUrl("/contact/");
 
 <BaseLayout
   title="Contacto | Planificador de viaje a Corea"
-  description="Contacto de PlanMyKorea."
+  description="Cómo contactar con PlanMyKorea para preguntas, correcciones y colaboraciones."
   bodyClass="page--leaf"
   lang="es"
   canonicalUrl={canonicalUrl}
@@ -17,11 +17,70 @@ const alternateEnUrl = absoluteUrl("/contact/");
 >
   <section class="legal-page">
     <h1>Contacto</h1>
+
+    <p>Gracias por visitar PlanMyKorea.</p>
+
     <p>
-      Si tienes preguntas o encuentras información desactualizada, no dudes en
-      contactarnos.
+      Si tienes preguntas sobre nuestro contenido, detectas información
+      desactualizada o quieres contactarnos por consultas de colaboración, usa
+      los datos de contacto a continuación.
     </p>
+
+    <h2>1) Preguntas generales (sobre el contenido)</h2>
+    <p>Para preguntas generales relacionadas con la información de este sitio:</p>
     <p>Email: bayernmc@gmail.com</p>
+    <p>
+      Ten en cuenta: PlanMyKorea proporciona solo información general de viaje.
+      Es posible que no podamos ofrecer planificación de viaje personalizada,
+      consulta de visado o asesoramiento migratorio individual.
+    </p>
+
+    <h2>2) Reportar un error / información desactualizada</h2>
+    <p>
+      Si encuentras un error factual o detalles desactualizados, agradecemos tu
+      ayuda.
+    </p>
+    <p>Al reportar un problema, incluye:</p>
+    <ul>
+      <li>La URL de la página</li>
+      <li>La sección o frase que necesita actualización</li>
+      <li>La fuente de la corrección (enlace oficial si está disponible)</li>
+    </ul>
+    <p>Si se verifica, actualizaremos la página cuando corresponda.</p>
+
+    <h2>3) Consultas comerciales / alianzas</h2>
+    <p>Para consultas de medios, colaboración o alianzas:</p>
+    <p>Email: bayernmc@gmail.com</p>
+    <p>
+      Cualquier contenido patrocinado o inserción pagada (si se acepta) se
+      divulgará claramente.
+    </p>
+
+    <h2>Aviso importante</h2>
+    <p>
+      PlanMyKorea es un sitio web independiente de información de viaje y no
+      está afiliado con el gobierno coreano, autoridades migratorias, aerolíneas,
+      aeropuertos ni otras organizaciones oficiales.
+    </p>
+    <p>
+      No podemos tomar decisiones sobre visados, aprobación de entrada ni
+      documentación oficial. Para asuntos urgentes de inmigración o visado,
+      contacta directamente con la autoridad gubernamental correspondiente.
+    </p>
+
+    <h2>Privacidad</h2>
+    <p>
+      Cualquier información que envíes por correo electrónico se usará solo
+      para responder a tu consulta.
+    </p>
+    <p>
+      Por favor, no envíes información personal sensible (por ejemplo, números
+      de pasaporte, datos de pago o identificaciones gubernamentales).
+    </p>
+    <p>
+      Para más detalles, revisa nuestra
+      <a href="https://planmykorea.com/es/privacy-policy/">Política de privacidad</a>.
+    </p>
   </section>
 </BaseLayout>
 
@@ -37,7 +96,16 @@ const alternateEnUrl = absoluteUrl("/contact/");
     margin: 0 0 20px;
   }
 
+  .legal-page h2 {
+    margin: 24px 0 10px;
+  }
+
   .legal-page p {
     margin: 0 0 12px;
+  }
+
+  .legal-page ul {
+    margin: 0 0 12px 20px;
+    padding: 0;
   }
 </style>

@@ -2,7 +2,7 @@
 import AdSenseSafeSlot from "./AdSenseSafeSlot.astro";
 import { findNodeBySegments, siteTree, type TreeNode } from "../data/siteTree";
 import { getEditorialMeta } from "../lib/editorial";
-import { getHubFaqItems, getHubQuickSummary } from "../lib/hubFaq";
+import { getHomeQuickSummary, getHubFaqItems, getHubQuickSummary } from "../lib/hubFaq";
 import { getLeafFaqItems } from "../lib/leafFaq";
 import { getHomeLeafTickerItems } from "../lib/leafUpdates";
 import type { SupportedLang } from "../lib/i18n";
@@ -817,6 +817,7 @@ const showHomeUpdateBar = isHome && segments.length === 0 && !node.slug;
 const homeUpdateTickerItems = showHomeUpdateBar ? await getHomeLeafTickerItems(siteTree) : [];
 const hubFaqItems = hasChildren && !isHome ? getHubFaqItems(node, lang) : [];
 const leafFaqItems = isLeafPage ? getLeafFaqItems(node, lang) : [];
+const homeQuickSummary = isHome ? getHomeQuickSummary(node, lang) : "";
 const collectionQuickSummary =
   hasChildren && !isHome ? node.quickAnswer ?? getHubQuickSummary(node, lang) : undefined;
 const leafQuickAnswerText = (node.quickAnswer ?? node.description ?? t.quickFallback).trim();
@@ -870,7 +871,7 @@ const breadcrumb = breadcrumbs;
     <h2 class="t-section">{isHome ? t.startHere : hasChildren ? t.pickSub : t.quickAnswer}</h2>
     <p>
       {isHome
-        ? t.homeSectionDesc
+        ? homeQuickSummary || t.homeSectionDesc
         : hasChildren
         ? collectionQuickSummary ?? t.subSectionDesc
         : leafQuickAnswerText}

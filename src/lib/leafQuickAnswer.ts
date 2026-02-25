@@ -5,7 +5,7 @@ type LeafContentBlock = NonNullable<TreeNode["content"]>[number];
 
 const compact = (value?: string) => (value ?? "").replace(/\s+/g, " ").trim();
 
-const truncate = (value: string, max = 260) => {
+const truncate = (value: string, max = 320) => {
   const text = compact(value);
   if (text.length <= max) return text;
   return `${text.slice(0, max).trimEnd()}...`;
@@ -34,6 +34,16 @@ const cleanTitle = (value?: string) =>
   );
 
 const unique = (items: string[]) => [...new Set(items)];
+const hasConditionSignal = (value: string) =>
+  /\b(depends on|varies by|not required|required|under current rules|may change|most travelers)\b/i.test(
+    compact(value)
+  );
+const hasMostTravelersSignal = (value: string) => /\bmost travelers\b/i.test(compact(value));
+
+const isPolicyHeavyTopic = (node: TreeNode, value: string) =>
+  /\b(visa|entry|immigration|k-eta|arrival|tax|refund|insurance|requirement|document)\b/i.test(
+    `${node.slug} ${node.title} ${value}`
+  );
 
 const joinItems = (items: string[], lang: SupportedLang) => {
   if (items.length <= 1) return items[0] ?? "";
@@ -105,6 +115,30 @@ const buildSupport = (topics: string[], bullet: string, lang: SupportedLang) => 
   return "";
 };
 
+const buildConditionLine = (node: TreeNode, current: string, lang: SupportedLang) => {
+  if (hasConditionSignal(current)) return "";
+  if (isPolicyHeavyTopic(node, current)) {
+    return lang === "es"
+      ? "Las reglas pueden variar por nacionalidad y actualizaciones de politica."
+      : "Rules may vary by nationality and current policy updates.";
+  }
+  return lang === "es"
+    ? "Los detalles pueden variar por temporada, ubicacion y estilo de viaje."
+    : "Details may vary by season, location, and travel style.";
+};
+
+const buildDecisionLine = (node: TreeNode, current: string, lang: SupportedLang) => {
+  if (hasMostTravelersSignal(current)) return "";
+  if (isPolicyHeavyTopic(node, current)) {
+    return lang === "es"
+      ? "La mayoria de viajeros vuelve a revisar avisos oficiales poco antes de salir."
+      : "Most travelers recheck official notices shortly before departure.";
+  }
+  return lang === "es"
+    ? "La mayoria de viajeros compara tiempo, costo y flexibilidad antes de decidir."
+    : "Most travelers compare time, cost, and flexibility before deciding.";
+};
+
 export const buildLeafQuickAnswer = (node: TreeNode, lang: SupportedLang) => {
   if (node.children?.length) return compact(node.quickAnswer ?? node.description);
 
@@ -128,12 +162,25 @@ export const buildLeafQuickAnswer = (node: TreeNode, lang: SupportedLang) => {
   const keyBullet = pickBullet(sections);
   const support = buildSupport(topics, keyBullet, lang);
 
-  if (!support) return truncate(baseSentence);
+  if (!support) {
+    const conditionLine = baseSentence.length <= 250 ? buildConditionLine(node, baseSentence, lang) : "";
+    const decisionLine =
+      baseSentence.length + conditionLine.length <= 230
+        ? buildDecisionLine(node, `${baseSentence} ${conditionLine}`, lang)
+        : "";
+    return truncate([baseSentence, conditionLine, decisionLine].filter(Boolean).join(" "));
+  }
 
   const normalizedBase = normalize(baseSentence);
   const hasTopicInBase = topics.some((topic) => normalizedBase.includes(normalize(topic)));
   const hasBulletInBase = keyBullet && normalizedBase.includes(normalize(keyBullet).slice(0, 24));
   const shouldAppendSupport = !hasBulletInBase && (!hasTopicInBase || baseSentence.length < 140);
 
-  return truncate(shouldAppendSupport ? `${baseSentence} ${support}` : baseSentence);
+  const candidate = shouldAppendSupport ? `${baseSentence} ${support}` : baseSentence;
+  const conditionLine = candidate.length <= 250 ? buildConditionLine(node, candidate, lang) : "";
+  const decisionLine =
+    candidate.length + conditionLine.length <= 230
+      ? buildDecisionLine(node, `${candidate} ${conditionLine}`, lang)
+      : "";
+  return truncate([candidate, conditionLine, decisionLine].filter(Boolean).join(" "));
 };

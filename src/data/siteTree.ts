@@ -4232,14 +4232,14 @@ export const siteTree: TreeNode = {
             "Korean etiquette is less about \"strict rules\" and more about respect, quiet consideration, and reading the situation. You do not need to be perfect. You just need to avoid the most common misunderstandings.",
           content: [
             {
-              title: "Quick Overview",
+              title: "🧭 Quick Overview",
               body:
                 "Korean etiquette is less about \"strict rules\" and more about respect, quiet consideration, and reading the situation.",
               tail:
                 "You do not need to be perfect. You just need to avoid the most common misunderstandings.",
             },
             {
-              title: "1. Greetings and First Impressions",
+              title: "👋 1. Greetings and First Impressions",
               body:
                 "A small gesture makes interactions smoother. A light nod or small bow is normal when you:",
               bullets: [
@@ -4251,7 +4251,7 @@ export const siteTree: TreeNode = {
                 "You do not need a deep bow. A brief, respectful nod is enough.",
             },
             {
-              title: "2. Names, Titles, and How to Address People",
+              title: "🏷️ 2. Names, Titles, and How to Address People",
               body:
                 "Names are handled differently than in many Western cultures. Koreans usually avoid calling someone by name alone (especially early on).",
               subsections: [
@@ -4276,7 +4276,7 @@ export const siteTree: TreeNode = {
                 "This is more important in formal settings or first meetings.",
             },
             {
-              title: "3. Public Space Etiquette",
+              title: "🚇 3. Public Space Etiquette",
               body: "Quiet and order are strongly valued.",
               subsections: [
                 {
@@ -4299,7 +4299,7 @@ export const siteTree: TreeNode = {
               ],
             },
             {
-              title: "4. Dining Etiquette",
+              title: "🍽️ 4. Dining Etiquette",
               body:
                 "Simple habits prevent the most common awkward moments.",
               subsections: [
@@ -4322,7 +4322,7 @@ export const siteTree: TreeNode = {
               ],
             },
             {
-              title: "5. Shoes and Indoor Culture",
+              title: "👟 5. Shoes and Indoor Culture",
               body: "If locals remove shoes, you should too.",
               subsections: [
                 {
@@ -4339,7 +4339,7 @@ export const siteTree: TreeNode = {
                 "If you see shoe racks or people in socks indoors, that is your signal.",
             },
             {
-              title: "6. Trash, Recycling, and Street Habits",
+              title: "♻️ 6. Trash, Recycling, and Street Habits",
               body:
                 "Korea can feel clean, but trash bins are surprisingly limited.",
               subsections: [
@@ -4356,7 +4356,7 @@ export const siteTree: TreeNode = {
                 "Recycling rules are relatively strict. As a visitor, just follow the labels on public bins when available.",
             },
             {
-              title: "7. Photo and Privacy Etiquette",
+              title: "📸 7. Photo and Privacy Etiquette",
               body: "Be careful with strangers' faces.",
               bullets: [
                 "Avoid casually filming or photographing strangers up close.",
@@ -4366,7 +4366,7 @@ export const siteTree: TreeNode = {
                 "Also note: Some military-related areas or government-sensitive locations may have photo restrictions.",
             },
             {
-              title: "8. Money, Payment, and Tipping",
+              title: "💳 8. Money, Payment, and Tipping",
               body: "Tipping is not expected in Korea.",
               subsections: [
                 {
@@ -4381,7 +4381,7 @@ export const siteTree: TreeNode = {
               ],
             },
             {
-              title: "9. Emotional Tone and Conflict Style",
+              title: "🧘 9. Emotional Tone and Conflict Style",
               body: "Korea generally avoids public confrontation.",
               subsections: [
                 {
@@ -4397,7 +4397,7 @@ export const siteTree: TreeNode = {
               tail: "Polite and steady communication tends to get better help.",
             },
             {
-              title: "10. Sensitive Topics to Avoid",
+              title: "⚠️ 10. Sensitive Topics to Avoid",
               body: "Some topics can become uncomfortable quickly.",
               subsections: [
                 {
@@ -4415,7 +4415,7 @@ export const siteTree: TreeNode = {
                 "Even if people do discuss them, visitors should approach carefully.",
             },
             {
-              title: "Final Advice",
+              title: "✅ Final Advice",
               body:
                 "You do not need to \"perform\" Korean culture.",
               subsections: [

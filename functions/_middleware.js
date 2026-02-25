@@ -23,6 +23,14 @@ const BLOCKED_PATHS = new Set([
   "/travel-basics/in-case-of-emergency",
   "/es/travel-basics/solo-travel-safety",
   "/es/travel-basics/in-case-of-emergency",
+    "/shopping-and-deals/shopping-in-seoul",
+    "/shopping-and-deals/shopping-in-busan",
+    "/shopping-and-deals/how-to-get-discounts",
+    "/shopping-and-deals/tax-refund-explained",
+    "/es/shopping-and-deals/shopping-in-seoul",
+    "/es/shopping-and-deals/shopping-in-busan",
+    "/es/shopping-and-deals/how-to-get-discounts",
+    "/es/shopping-and-deals/tax-refund-explained",
 ]);
 
 export async function onRequest(context) {
@@ -49,3 +57,4 @@ export async function onRequest(context) {
 
   return context.next();
 }
+

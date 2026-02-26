@@ -6,55 +6,14 @@ const REDIRECT_HOSTS = new Set([
   "www.visitingkorea.pages.dev",
 ]);
 
-const BLOCKED_PATHS = new Set([
-  "/getting-around-korea/saving-on-transport",
-  "/getting-around-korea/transfers-explained",
-  "/es/getting-around-korea/saving-on-transport",
-  "/es/getting-around-korea/transfers-explained",
-  "/what-to-eat/food-for-first-timers",
-  "/es/what-to-eat/food-for-first-timers",
-  "/where-to-stay/where-to-stay-in-seoul",
-  "/where-to-stay/where-to-stay-in-busan",
-  "/es/where-to-stay/where-to-stay-in-seoul",
-  "/es/where-to-stay/where-to-stay-in-busan",
-  "/things-to-do/good-places-without-crowds",
-  "/es/things-to-do/good-places-without-crowds",
-  "/travel-basics/solo-travel-safety",
-  "/travel-basics/in-case-of-emergency",
-  "/es/travel-basics/solo-travel-safety",
-  "/es/travel-basics/in-case-of-emergency",
-    "/shopping-and-deals/shopping-in-seoul",
-    "/shopping-and-deals/shopping-in-busan",
-    "/shopping-and-deals/how-to-get-discounts",
-    "/shopping-and-deals/tax-refund-explained",
-    "/es/shopping-and-deals/shopping-in-seoul",
-    "/es/shopping-and-deals/shopping-in-busan",
-    "/es/shopping-and-deals/how-to-get-discounts",
-    "/es/shopping-and-deals/tax-refund-explained",
-]);
-
 export async function onRequest(context) {
   const url = new URL(context.request.url);
   const host = url.hostname.toLowerCase();
-  const pathname = url.pathname.replace(/\/+$/, "") || "/";
-
   if (REDIRECT_HOSTS.has(host)) {
     url.protocol = "https:";
     url.hostname = "planmykorea.com";
     return Response.redirect(url.toString(), 301);
   }
 
-  if (BLOCKED_PATHS.has(pathname)) {
-    return new Response("Not Found", {
-      status: 404,
-      headers: {
-        "cache-control": "no-store",
-        "content-type": "text/plain; charset=utf-8",
-        "x-robots-tag": "noindex",
-      },
-    });
-  }
-
   return context.next();
 }
-

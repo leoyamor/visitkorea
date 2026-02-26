@@ -1155,6 +1155,13 @@ const breadcrumb = breadcrumbs;
       if (!pathname) return "/";
       return pathname.startsWith("/") ? pathname : `/${pathname}`;
     };
+    const hasFileExtension = (pathname) => /\/[^/]+\.[^/]+$/.test(pathname);
+    const withTrailingSlash = (pathname) => {
+      if (pathname === "/" || hasFileExtension(pathname) || pathname.endsWith("/")) {
+        return pathname;
+      }
+      return `${pathname}/`;
+    };
     const stripEsPrefix = (pathname) => {
       const normalized = normalizePath(pathname);
       if (normalized === "/es") return "/";
@@ -1166,10 +1173,13 @@ const breadcrumb = breadcrumbs;
     };
     const toLangPath = (pathname, targetLang) => {
       const base = stripEsPrefix(pathname);
-      if (targetLang === "es") {
-        return base === "/" ? "/es" : `/es${base}`;
-      }
-      return base;
+      const localizedPath =
+        targetLang === "es"
+          ? base === "/"
+            ? "/es/"
+            : `/es${base}`
+          : base;
+      return withTrailingSlash(localizedPath);
     };
     const isSpanishPath = (pathname) => {
       const normalized = normalizePath(pathname);

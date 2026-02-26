@@ -15,6 +15,15 @@ const normalizePathname = (pathname: string) => {
   return pathname.startsWith("/") ? pathname : `/${pathname}`;
 };
 
+const hasFileExtension = (pathname: string) => /\/[^/]+\.[^/]+$/.test(pathname);
+
+const withTrailingSlash = (pathname: string) => {
+  if (pathname === "/" || hasFileExtension(pathname) || pathname.endsWith("/")) {
+    return pathname;
+  }
+  return `${pathname}/`;
+};
+
 export const isSpanishPath = (pathname: string) => {
   const normalized = normalizePathname(pathname);
   return normalized === LANG_PREFIX || normalized.startsWith(`${LANG_PREFIX}/`);
@@ -44,12 +53,13 @@ export const withLang = (path: string, lang: SupportedLang): string => {
 
   const [pathname = "/", queryString = ""] = withoutHash.split("?");
   const basePath = stripLangPrefix(pathname);
-  const localizedPath =
+  const localizedPath = withTrailingSlash(
     lang === "es"
       ? basePath === "/"
-        ? "/es"
+        ? "/es/"
         : `/es${basePath}`
-      : basePath;
+      : basePath
+  );
 
   const params = new URLSearchParams(queryString);
   params.delete("lang");

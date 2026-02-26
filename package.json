@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "prebuild": "npm run page-updates:sync && npm run images:optimize",
+    "prebuild": "npm run images:optimize",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",

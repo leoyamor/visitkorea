@@ -1,15 +1,6 @@
 name: Submit Sitemap On Real Lastmod Change
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - "src/data/siteTree.ts"
-      - "src/pages/**"
-      - "src/pages/es/**"
-      - "src/data/page-updates.json"
-      - "scripts/sync-page-updates.mjs"
   workflow_dispatch:
 
 permissions:

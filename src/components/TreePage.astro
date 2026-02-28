@@ -783,6 +783,49 @@ const defaultChecklist = [
   "I saved this page for quick access during my trip."
 ];
 
+type PageUiFlags = {
+  showHubFaq: boolean;
+  showLeafFaq: boolean;
+  showChecklist: boolean;
+  showNextDecision: boolean;
+};
+
+const defaultPageUi: PageUiFlags = {
+  showHubFaq: hasChildren && !isHome,
+  showLeafFaq: isLeafPage,
+  showChecklist: isLeafPage,
+  showNextDecision: isLeafPage,
+};
+
+const defaultsByType: Record<NonNullable<TreeNode["pageType"]>, NonNullable<TreeNode["overrides"]>> = {
+  hub: {
+    showHubFaq: true,
+    showLeafFaq: false,
+    showChecklist: false,
+    showNextDecision: false,
+  },
+  actionLeaf: {
+    showHubFaq: false,
+    showLeafFaq: true,
+    showChecklist: true,
+    showNextDecision: true,
+  },
+  policyLeaf: {
+    showHubFaq: false,
+    showLeafFaq: true,
+    showChecklist: true,
+    showNextDecision: false,
+  },
+};
+
+const pageUi: PageUiFlags = node.pageType
+  ? {
+      ...defaultPageUi,
+      ...defaultsByType[node.pageType],
+      ...node.overrides,
+    }
+  : defaultPageUi;
+
 const leafChecklist = checklistByRoot[rootSlug] ?? defaultChecklist;
 
 const joinPath = (base: string, slug: string) => {
@@ -813,8 +856,8 @@ const middleContentIndex =
   contentBlockCount > 0 ? Math.max(1, Math.floor((contentBlockCount - 1) / 2)) : -1;
 const showHomeUpdateBar = isHome && segments.length === 0 && !node.slug;
 const homeUpdateTickerItems = showHomeUpdateBar ? await getHomeLeafTickerItems(siteTree) : [];
-const hubFaqItems = hasChildren && !isHome ? getHubFaqItems(node, lang) : [];
-const leafFaqItems = isLeafPage ? getLeafFaqItems(node, lang) : [];
+const hubFaqItems = pageUi.showHubFaq && hasChildren && !isHome ? getHubFaqItems(node, lang) : [];
+const leafFaqItems = pageUi.showLeafFaq && isLeafPage ? getLeafFaqItems(node, lang) : [];
 const collectionQuickSummary = hasChildren && !isHome ? node.quickAnswer : undefined;
 const leafQuickAnswerText = (node.quickAnswer ?? node.description ?? t.quickFallback).trim();
 
@@ -941,7 +984,7 @@ const breadcrumb = breadcrumbs;
           <AdSenseSafeSlot zone="hub_after_grid" className="ad-safe-spacing ad-safe-spacing--hub" />
         </div>
       )}
-      {hubFaqItems.length > 0 && (
+      {pageUi.showHubFaq && hubFaqItems.length > 0 && (
         <div class="hub-faq" data-kpi-section={`collection_${node.slug ?? "root"}_faq`}>
           <h3 class="t-section">{t.hubFaqTitle}</h3>
           <div class="hub-faq-list">
@@ -1052,7 +1095,7 @@ const breadcrumb = breadcrumbs;
       {isLeafPage && (
         <AdSenseSafeSlot zone="leaf_end_content" className="ad-safe-spacing ad-safe-spacing--end" />
       )}
-      {isLeafPage && leafFaqItems.length > 0 && (
+      {isLeafPage && pageUi.showLeafFaq && leafFaqItems.length > 0 && (
         <div class="leaf-faq" data-kpi-section="leaf_faq">
           <h3 class="t-section">{t.leafFaqTitle}</h3>
           <div class="leaf-faq-list">
@@ -1076,14 +1119,16 @@ const breadcrumb = breadcrumbs;
             </p>
           )}
 
-          <div class="leaf-next">
-            <p class="leaf-tools-label">{t.nextDecision}</p>
-            <a class="leaf-next-link" href={nextDecisionPath} data-kpi-section="leaf_next_decision">
-              <span class="leaf-next-prefix">{t.nextPrefix}</span>
-              <strong>{nextDecisionLabel}</strong>
-            </a>
-            <p class="leaf-next-hint">{t.nextDecisionHint}</p>
-          </div>
+          {pageUi.showNextDecision && (
+            <div class="leaf-next">
+              <p class="leaf-tools-label">{t.nextDecision}</p>
+              <a class="leaf-next-link" href={nextDecisionPath} data-kpi-section="leaf_next_decision">
+                <span class="leaf-next-prefix">{t.nextPrefix}</span>
+                <strong>{nextDecisionLabel}</strong>
+              </a>
+              <p class="leaf-next-hint">{t.nextDecisionHint}</p>
+            </div>
+          )}
 
           <div class="leaf-return">
             <p class="leaf-tools-label">{t.returnCheckpoints}</p>
@@ -1094,21 +1139,23 @@ const breadcrumb = breadcrumbs;
             </div>
           </div>
 
-          <div class="leaf-checklist-wrap">
-            <p class="leaf-tools-label">{t.quickChecklist}</p>
-            <p class="leaf-checklist-hint">{t.checklistHint}</p>
-            <ul class="leaf-checklist-list" data-leaf-checklist data-checklist-key={checklistStorageKey}>
-              {leafChecklist.map((item, index) => (
-                <li>
-                  <label>
-                    <input type="checkbox" data-checklist-item={index} />
-                    <span>{item}</span>
-                  </label>
-                </li>
-              ))}
-            </ul>
-            <p class="leaf-bookmark-tip">{t.bookmarkTip}</p>
-          </div>
+          {pageUi.showChecklist && (
+            <div class="leaf-checklist-wrap">
+              <p class="leaf-tools-label">{t.quickChecklist}</p>
+              <p class="leaf-checklist-hint">{t.checklistHint}</p>
+              <ul class="leaf-checklist-list" data-leaf-checklist data-checklist-key={checklistStorageKey}>
+                {leafChecklist.map((item, index) => (
+                  <li>
+                    <label>
+                      <input type="checkbox" data-checklist-item={index} />
+                      <span>{item}</span>
+                    </label>
+                  </li>
+                ))}
+              </ul>
+              <p class="leaf-bookmark-tip">{t.bookmarkTip}</p>
+            </div>
+          )}
         </div>
       )}
     </div>

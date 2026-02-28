@@ -1,3 +1,12 @@
+export type PageType = "hub" | "actionLeaf" | "policyLeaf";
+
+export type PageBlockOverrides = {
+  showHubFaq?: boolean;
+  showLeafFaq?: boolean;
+  showChecklist?: boolean;
+  showNextDecision?: boolean;
+};
+
 export type TreeNode = {
   title: string;
   slug: string;
@@ -6,6 +15,8 @@ export type TreeNode = {
   updatedIso?: string;
   icon?: string;
   image?: string;
+  pageType?: PageType;
+  overrides?: PageBlockOverrides;
   content?: {
     title: string;
     body: string;
@@ -37,6 +48,10 @@ export const siteTree: TreeNode = {
       slug: "plan-your-trip",
       icon: "calendar",
       image: "/Plan%20Your%20Trip.webp",
+      pageType: "hub",
+      overrides: {
+        showHubFaq: false,
+      },
       description: "Plan your days realistically, without overpacking your schedule.",
       children: [
         {
@@ -4809,6 +4824,7 @@ export const siteTree: TreeNode = {
           slug: "sim-or-esim",
           icon: "sim",
           image: "basics",
+          pageType: "actionLeaf",
           description:
             "Clear, realistic guidance on choosing between SIM and eSIM for Korea. Understand pricing ranges, usage rules, common mistakes, and how to stay connected from the moment you land.",
           quickAnswer:
@@ -5182,6 +5198,7 @@ export const siteTree: TreeNode = {
           slug: "korea-entry-requirements",
           icon: "passport",
           image: "/leaf%20images/Immigration%20Process.webp",
+          pageType: "policyLeaf",
           description:
             "Understand whether you need K-ETA, when to submit the e-Arrival Card, and the exact arrival procedure at Korean airports. Based on official 2026 guidance, structured clearly for international visitors.",
           quickAnswer:

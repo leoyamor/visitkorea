@@ -47,6 +47,38 @@ const t = {
     leafFaqTitle: "Quick FAQ",
     hubFaqTitle: "Top questions",
     homeSectionDesc: "Start with a category, then come back for update checks and Korea insights.",
+    homeGuideBlocks: [
+      {
+        icon: "spark",
+        title: "Why This Site Exists",
+        body: "Most Korea travel pages dump information. This homepage is built to narrow your next decision first.",
+        bullets: [
+          "Start with the choice you need to make now, not every possible guide.",
+          "Use timely updates only when rules, weather, or closures can change your plan.",
+          "Come back by trip stage so the guidance stays practical instead of overwhelming.",
+        ],
+      },
+      {
+        icon: "alert",
+        title: "3 Mistakes",
+        body: "Travelers usually lose time when they research in the wrong order.",
+        bullets: [
+          "Comparing cities, transport, and bookings before deciding the immediate next step.",
+          "Trusting old forum threads or social posts like they are still current.",
+          "Opening too many tabs before locking one decision and moving on.",
+        ],
+      },
+      {
+        icon: "compass",
+        title: "How to Use",
+        body: "Treat the homepage like a route map, not a portal of random links.",
+        bullets: [
+          "Pick the card that matches the question blocking your plan right now.",
+          "Solve one decision inside that guide, then follow the next step on the page.",
+          "Check the weekly update bar again before booking or travel-day moves.",
+        ],
+      },
+    ],
     subSectionDesc: "Each card opens a focused guide.",
     quickFallback: "Here is the short description, with more detail to be added later.",
     cardFallback: "Short summary coming soon.",
@@ -103,6 +135,38 @@ const t = {
     hubFaqTitle: "Preguntas clave",
     homeSectionDesc:
       "Empieza con una categoria y vuelve para revisar actualizaciones y conocer mejor Corea.",
+    homeGuideBlocks: [
+      {
+        icon: "spark",
+        title: "Por que existe este sitio",
+        body: "Muchas paginas sobre Corea solo acumulan datos. Esta portada existe para reducir primero tu siguiente decision.",
+        bullets: [
+          "Empieza con la eleccion que necesitas resolver ahora, no con todas las guias posibles.",
+          "Usa las actualizaciones solo cuando reglas, clima o cierres puedan cambiar tu plan.",
+          "Vuelve segun la etapa del viaje para mantener la guia practica y no abrumadora.",
+        ],
+      },
+      {
+        icon: "alert",
+        title: "3 errores",
+        body: "La mayoria pierde tiempo cuando investiga en el orden equivocado.",
+        bullets: [
+          "Comparar ciudades, transporte y reservas antes de definir el siguiente paso inmediato.",
+          "Tomar foros antiguos o publicaciones sociales como si siguieran vigentes.",
+          "Abrir demasiadas pestanas antes de cerrar una decision y avanzar.",
+        ],
+      },
+      {
+        icon: "compass",
+        title: "Como usarlo",
+        body: "Usa la portada como un mapa de ruta, no como un portal de enlaces sueltos.",
+        bullets: [
+          "Elige la tarjeta que coincide con la pregunta que hoy frena tu plan.",
+          "Resuelve una decision dentro de esa guia y luego sigue el siguiente paso sugerido.",
+          "Revisa otra vez la barra semanal antes de reservar o mover algo el dia del viaje.",
+        ],
+      },
+    ],
     subSectionDesc: "Cada tarjeta abre una guia enfocada.",
     quickFallback: "Aqui tienes una descripcion breve; agregaremos mas detalle mas adelante.",
     cardFallback: "Resumen breve proximamente.",
@@ -139,6 +203,8 @@ const t = {
     feedbackNote: "Abre el formulario de Google en una pestana nueva.",
   },
 }[lang];
+
+const homeGuideBlocks = isHome ? t.homeGuideBlocks : [];
 
 const getInitials = (title: string) => {
   const words = title.replace(/[?]/g, "").split(" ").filter(Boolean);
@@ -916,6 +982,24 @@ const breadcrumb = breadcrumbs;
         : leafQuickAnswerText}
     </p>
   </div>
+  {isHome && homeGuideBlocks.length > 0 && (
+    <div class="home-guide-rail" data-kpi-section="home_decision_guide">
+      {homeGuideBlocks.map((block, index) => (
+        <article class="home-guide-card" data-kpi-section={`home_guide_block_${index + 1}`}>
+          <div class="home-guide-head">
+            <span class="home-guide-icon" aria-hidden="true" set:html={renderIcon(block.icon)} />
+            <h3>{block.title}</h3>
+          </div>
+          <p class="home-guide-body">{block.body}</p>
+          <ul class="home-guide-list">
+            {block.bullets.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </article>
+      ))}
+    </div>
+  )}
   {showHomeUpdateBar && homeUpdateTickerItems.length > 0 && (
     <div class="home-update-bar" data-update-bar>
       <p class="home-update-label">{t.updateTickerLabel}</p>
@@ -933,11 +1017,6 @@ const breadcrumb = breadcrumbs;
           </a>
         ))}
       </div>
-    </div>
-  )}
-  {isHome && showHomeUpdateBar && homeUpdateTickerItems.length > 0 && (
-    <div data-kpi-section="home_ad_after_updates">
-      <AdSenseSafeSlot zone="home_after_update_bar" className="ad-safe-spacing ad-safe-spacing--home" />
     </div>
   )}
 
@@ -979,6 +1058,11 @@ const breadcrumb = breadcrumbs;
           );
         })}
       </div>
+      {isHome && showHomeUpdateBar && homeUpdateTickerItems.length > 0 && (
+        <div data-kpi-section="home_ad_after_grid">
+          <AdSenseSafeSlot zone="home_after_update_bar" className="ad-safe-spacing ad-safe-spacing--home" />
+        </div>
+      )}
       {!isHome && (
         <div data-kpi-section={`collection_${node.slug ?? "root"}_ad_after_grid`}>
           <AdSenseSafeSlot zone="hub_after_grid" className="ad-safe-spacing ad-safe-spacing--hub" />
@@ -1795,6 +1879,81 @@ const breadcrumb = breadcrumbs;
     color: var(--ink-soft);
   }
 
+  .home-guide-rail {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 22px;
+  }
+
+  .home-guide-card {
+    display: grid;
+    gap: 12px;
+    padding: 18px;
+    border-radius: 18px;
+    border: 1px solid var(--border-paper);
+    background:
+      linear-gradient(180deg, color-mix(in srgb, var(--paper) 90%, #ffffff 10%), var(--paper)),
+      var(--paper);
+    box-shadow: var(--shadow-1);
+  }
+
+  .home-guide-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .home-guide-icon {
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    color: var(--ink-strong);
+    background: color-mix(in srgb, var(--paper-2) 72%, #f8dcc2 28%);
+    border: 1px solid color-mix(in srgb, var(--border-paper) 72%, #d8b38f 28%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  }
+
+  .home-guide-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .home-guide-card h3 {
+    margin: 2px 0 0;
+    font-family: "Fraunces", serif;
+    font-size: 1.05rem;
+    line-height: 1.3;
+    color: var(--ink-strong);
+  }
+
+  .home-guide-body {
+    margin: 0;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+
+  .home-guide-list {
+    margin: 0;
+    padding-left: 18px;
+    display: grid;
+    gap: 8px;
+    color: var(--ink-soft);
+  }
+
+  .home-guide-list li::marker {
+    color: color-mix(in srgb, var(--accent) 62%, #7d4b2e 38%);
+  }
+
   .feedback-cta {
     margin-top: 22px;
     padding-top: 20px;
@@ -2560,6 +2719,12 @@ const breadcrumb = breadcrumbs;
       gap: 18px;
     }
 
+    .home-guide-rail {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
     .hub-faq {
       margin-top: 20px;
       padding: 16px;
@@ -2626,7 +2791,8 @@ const breadcrumb = breadcrumbs;
 
   @media (max-width: 600px) {
     .hero {
-      padding: 22px 16px;
+      padding: 22px 16px 20px;
+      margin-bottom: 30px;
     }
 
     h1 {
@@ -2642,6 +2808,42 @@ const breadcrumb = breadcrumbs;
     .lang-option {
       min-width: 74px;
       padding: 8px 12px;
+    }
+
+    .nav-links {
+      flex-wrap: wrap;
+      justify-content: center;
+      row-gap: 6px;
+    }
+
+    .home-guide-rail {
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .home-guide-card {
+      padding: 16px;
+      gap: 10px;
+    }
+
+    .home-guide-head {
+      gap: 10px;
+    }
+
+    .home-guide-icon {
+      width: 36px;
+      height: 36px;
+      flex-basis: 36px;
+      border-radius: 12px;
+    }
+
+    .home-guide-card h3 {
+      font-size: 1rem;
+    }
+
+    .home-guide-list {
+      gap: 6px;
     }
 
     .grid {
@@ -2668,6 +2870,15 @@ const breadcrumb = breadcrumbs;
     .feedback-cta {
       margin-top: 18px;
       padding-top: 16px;
+    }
+
+    .pill-row {
+      gap: 10px;
+    }
+
+    .pill {
+      padding: 9px 14px;
+      line-height: 1.35;
     }
   }
 </style>

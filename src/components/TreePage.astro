@@ -17,6 +17,15 @@ type Props = {
   lang?: SupportedLang;
 };
 
+type HomeGuideBlock = {
+  badge: string;
+  tone: string;
+  title: string;
+  body: string[];
+  bullets: string[];
+  tail?: string[];
+};
+
 const { node, segments, parentPath, isHome = false, breadcrumbs = [], lang = "en" } =
   Astro.props as Props;
 
@@ -49,36 +58,51 @@ const t = {
     homeSectionDesc: "Start with a category, then come back for update checks and Korea insights.",
     homeGuideBlocks: [
       {
-        icon: "spark",
+        badge: "✨",
+        tone: "gold",
         title: "Why This Site Exists",
-        body: "Most Korea travel pages dump information. This homepage is built to narrow your next decision first.",
+        body: [
+          "Most Korea travel sites give you everything at once. That usually makes planning harder, not easier.",
+          "This homepage is designed to help you focus on the next decision that actually matters. Not every option. Not every city. Just the step that moves your plan forward.",
+        ],
         bullets: [
-          "Start with the choice you need to make now, not every possible guide.",
-          "Use timely updates only when rules, weather, or closures can change your plan.",
-          "Come back by trip stage so the guidance stays practical instead of overwhelming.",
+          "Start with what you need right now, whether that's choosing a city, sorting out transport, or deciding on mobile data.",
+          "Use updates only when something can realistically affect your trip.",
+          "Come back at each stage of planning so the guidance stays useful instead of overwhelming.",
         ],
       },
       {
-        icon: "alert",
+        badge: "🚧",
+        tone: "coral",
         title: "3 Mistakes",
-        body: "Travelers usually lose time when they research in the wrong order.",
-        bullets: [
-          "Comparing cities, transport, and bookings before deciding the immediate next step.",
-          "Trusting old forum threads or social posts like they are still current.",
-          "Opening too many tabs before locking one decision and moving on.",
+        body: [
+          "Travel plans usually go wrong because people try to solve everything at once.",
         ],
+        bullets: [
+          "Comparing cities, transport, hotels, and flights before deciding the very next step.",
+          "Relying on old forum posts or social media threads that may no longer be accurate.",
+          "Opening ten tabs and researching for hours without locking in a single clear decision.",
+        ],
+        tail: ["Planning works better when you move one step at a time."],
       },
       {
-        icon: "compass",
+        badge: "🧭",
+        tone: "sky",
         title: "How to Use",
-        body: "Treat the homepage like a route map, not a portal of random links.",
+        body: [
+          "Think of this homepage as a route map, not a collection of random links.",
+        ],
         bullets: [
-          "Pick the card that matches the question blocking your plan right now.",
-          "Solve one decision inside that guide, then follow the next step on the page.",
-          "Check the weekly update bar again before booking or travel-day moves.",
+          "Choose the section that answers the question blocking your trip right now.",
+          "Solve that one decision inside the guide.",
+          "Then follow the suggested next step instead of jumping around.",
+        ],
+        tail: [
+          "Before you book or make travel-day moves, quickly check the weekly update bar in case rules or schedules have changed.",
+          "Keep it simple. Decide. Move forward. Repeat.",
         ],
       },
-    ],
+    ] satisfies HomeGuideBlock[],
     subSectionDesc: "Each card opens a focused guide.",
     quickFallback: "Here is the short description, with more detail to be added later.",
     cardFallback: "Short summary coming soon.",
@@ -137,36 +161,51 @@ const t = {
       "Empieza con una categoria y vuelve para revisar actualizaciones y conocer mejor Corea.",
     homeGuideBlocks: [
       {
-        icon: "spark",
+        badge: "✨",
+        tone: "gold",
         title: "Por que existe este sitio",
-        body: "Muchas paginas sobre Corea solo acumulan datos. Esta portada existe para reducir primero tu siguiente decision.",
+        body: [
+          "La mayoria de los sitios sobre viajes a Corea te muestran todo a la vez. Eso suele hacer que planear sea mas dificil, no mas facil.",
+          "Esta pagina principal esta hecha para ayudarte a enfocarte en la siguiente decision que de verdad importa. No todas las opciones. No todas las ciudades. Solo el paso que hace avanzar tu plan.",
+        ],
         bullets: [
-          "Empieza con la eleccion que necesitas resolver ahora, no con todas las guias posibles.",
-          "Usa las actualizaciones solo cuando reglas, clima o cierres puedan cambiar tu plan.",
-          "Vuelve segun la etapa del viaje para mantener la guia practica y no abrumadora.",
+          "Empieza con lo que necesitas ahora, ya sea elegir una ciudad, resolver el transporte o decidir tus datos moviles.",
+          "Usa las actualizaciones solo cuando algo pueda afectar de forma realista tu viaje.",
+          "Vuelve en cada etapa de la planificacion para que la guia siga siendo util y no abrumadora.",
         ],
       },
       {
-        icon: "alert",
+        badge: "🚧",
+        tone: "coral",
         title: "3 errores",
-        body: "La mayoria pierde tiempo cuando investiga en el orden equivocado.",
-        bullets: [
-          "Comparar ciudades, transporte y reservas antes de definir el siguiente paso inmediato.",
-          "Tomar foros antiguos o publicaciones sociales como si siguieran vigentes.",
-          "Abrir demasiadas pestanas antes de cerrar una decision y avanzar.",
+        body: [
+          "Los planes de viaje suelen salir mal porque la gente intenta resolverlo todo al mismo tiempo.",
         ],
+        bullets: [
+          "Comparar ciudades, transporte, hoteles y vuelos antes de decidir el siguiente paso de verdad.",
+          "Confiar en foros antiguos o hilos de redes sociales que quizas ya no sean precisos.",
+          "Abrir diez pestanas y pasar horas investigando sin cerrar una sola decision clara.",
+        ],
+        tail: ["Planear funciona mejor cuando avanzas paso a paso."],
       },
       {
-        icon: "compass",
+        badge: "🧭",
+        tone: "sky",
         title: "Como usarlo",
-        body: "Usa la portada como un mapa de ruta, no como un portal de enlaces sueltos.",
+        body: [
+          "Piensa en esta pagina principal como un mapa de ruta, no como una coleccion de enlaces al azar.",
+        ],
         bullets: [
-          "Elige la tarjeta que coincide con la pregunta que hoy frena tu plan.",
-          "Resuelve una decision dentro de esa guia y luego sigue el siguiente paso sugerido.",
-          "Revisa otra vez la barra semanal antes de reservar o mover algo el dia del viaje.",
+          "Elige la seccion que responda la pregunta que hoy esta bloqueando tu viaje.",
+          "Resuelve esa unica decision dentro de la guia.",
+          "Luego sigue el siguiente paso sugerido en lugar de saltar de un lado a otro.",
+        ],
+        tail: [
+          "Antes de reservar o mover algo el dia del viaje, revisa rapido la barra semanal por si cambiaron reglas u horarios.",
+          "Mantenlo simple. Decide. Avanza. Repite.",
         ],
       },
-    ],
+    ] satisfies HomeGuideBlock[],
     subSectionDesc: "Cada tarjeta abre una guia enfocada.",
     quickFallback: "Aqui tienes una descripcion breve; agregaremos mas detalle mas adelante.",
     cardFallback: "Resumen breve proximamente.",
@@ -204,7 +243,7 @@ const t = {
   },
 }[lang];
 
-const homeGuideBlocks = isHome ? t.homeGuideBlocks : [];
+const homeGuideBlocks: HomeGuideBlock[] = isHome ? t.homeGuideBlocks : [];
 
 const getInitials = (title: string) => {
   const words = title.replace(/[?]/g, "").split(" ").filter(Boolean);
@@ -987,15 +1026,26 @@ const breadcrumb = breadcrumbs;
       {homeGuideBlocks.map((block, index) => (
         <article class="home-guide-card" data-kpi-section={`home_guide_block_${index + 1}`}>
           <div class="home-guide-head">
-            <span class="home-guide-icon" aria-hidden="true" set:html={renderIcon(block.icon)} />
+            <span class="home-guide-icon" data-tone={block.tone} aria-hidden="true">{block.badge}</span>
             <h3>{block.title}</h3>
           </div>
-          <p class="home-guide-body">{block.body}</p>
+          <div class="home-guide-copy">
+            {block.body.map((item) => (
+              <p class="home-guide-body">{item}</p>
+            ))}
+          </div>
           <ul class="home-guide-list">
             {block.bullets.map((item) => (
               <li>{item}</li>
             ))}
           </ul>
+          {block.tail && (
+            <div class="home-guide-tail-wrap">
+              {block.tail.map((item) => (
+                <p class="home-guide-tail">{item}</p>
+              ))}
+            </div>
+          )}
         </article>
       ))}
     </div>
@@ -1912,20 +1962,24 @@ const breadcrumb = breadcrumbs;
     align-items: center;
     justify-content: center;
     border-radius: 14px;
-    color: var(--ink-strong);
-    background: color-mix(in srgb, var(--paper-2) 72%, #f8dcc2 28%);
-    border: 1px solid color-mix(in srgb, var(--border-paper) 72%, #d8b38f 28%);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);
+    font-size: 1.18rem;
+    line-height: 1;
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.48),
+      0 10px 20px rgba(35, 37, 45, 0.14);
   }
 
-  .home-guide-icon svg {
-    width: 20px;
-    height: 20px;
-    stroke: currentColor;
-    fill: none;
-    stroke-width: 1.8;
-    stroke-linecap: round;
-    stroke-linejoin: round;
+  .home-guide-icon[data-tone="gold"] {
+    background: linear-gradient(180deg, #fff1be, #ffc96b);
+  }
+
+  .home-guide-icon[data-tone="coral"] {
+    background: linear-gradient(180deg, #ffd7ca, #ff9b82);
+  }
+
+  .home-guide-icon[data-tone="sky"] {
+    background: linear-gradient(180deg, #d7f1ff, #8ed2ff);
   }
 
   .home-guide-card h3 {
@@ -1942,6 +1996,12 @@ const breadcrumb = breadcrumbs;
     line-height: 1.55;
   }
 
+  .home-guide-copy,
+  .home-guide-tail-wrap {
+    display: grid;
+    gap: 8px;
+  }
+
   .home-guide-list {
     margin: 0;
     padding-left: 18px;
@@ -1952,6 +2012,13 @@ const breadcrumb = breadcrumbs;
 
   .home-guide-list li::marker {
     color: color-mix(in srgb, var(--accent) 62%, #7d4b2e 38%);
+  }
+
+  .home-guide-tail {
+    margin: 0;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    font-weight: 500;
   }
 
   .feedback-cta {

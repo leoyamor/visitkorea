@@ -54,48 +54,48 @@ export const siteTree: TreeNode = {
       },
       description: "Plan your days realistically, without overpacking your schedule.",
       quickAnswer:
-        "Start with three filters: trip length, how often you want to move hotels, and how much fast transit days drain you. That tells you whether you need a short, balanced, or slower Korea plan.",
+        "Start with three simple filters: how long you're staying, how often you're willing to change hotels, and how much long transit days drain your energy. Those three factors usually determine whether your Korea plan should be compact, balanced, or slower-paced.",
       content: [
         {
           title: "🗺️ Start with one decision question",
           icon: "compass",
-          emphasis: "Do you want to see more places, or protect time and energy between moves?",
+          emphasis: "Do you want to see more places - or protect your time and energy between moves?",
           body:
-            "This hub works best when you decide your pace before you decide your city list. The right plan is usually the one you can still enjoy on day 5, not the one that looks most efficient on a map.",
+            "This hub works best when you choose your pace before choosing your city list. The right plan is usually the one you can still enjoy on day five, not the one that looks the most efficient on a map.",
           bullets: [
-            "Trip length: 7 days rewards one main base and one contrast stop; longer trips can absorb one slower region.",
-            "Move frequency: every hotel change adds packing, check-in friction, and partial transfer-day loss.",
-            "Energy and stamina: if early starts and long transit days wear you down, depth beats extra city count.",
+            "Trip length: Seven days usually works best with one main base and one contrasting stop. Longer trips can absorb a slower regional stay.",
+            "Move frequency: Every hotel change adds packing time, check-in friction, and partial sightseeing loss on transfer days.",
+            "Energy and stamina: If early mornings and long travel days wear you down, depth often works better than adding another city.",
           ],
         },
         {
-          title: "🚧 What travelers misread first",
+          title: "🚧 What travelers misjudge first",
           icon: "alert",
-          body: "Two mistakes create most pacing problems:",
+          body: "Most pacing problems come from two assumptions:",
           bullets: [
-            "Copying a list of cities before checking how many hours disappear into trains, flights, and hotel changes.",
-            "Treating arrival days and transfer days like full sightseeing days.",
+            "Copying a list of cities before calculating how many hours disappear into trains, flights, and check-ins.",
+            "Treating arrival days and transfer days as if they were full sightseeing days.",
           ],
         },
         {
-          title: "🛠️ Adjust the advice when your trip changes",
+          title: "🛠️ Adjust when your trip context changes",
           icon: "calendar",
-          body: "Your plan should change when your travel context changes:",
+          body: "Your plan should shift when your travel context shifts.",
           bullets: [
-            "If this is your first Korea trip, anchor the plan around Seoul and add only one contrasting stop.",
-            "If you have been before or want a calmer rhythm, remove one transfer and add recovery time or a slower regional base.",
+            "If this is your first Korea trip, anchor your schedule around Seoul and add only one contrasting destination.",
+            "If you've been before, or prefer a calmer rhythm, remove one transfer and replace it with recovery time or a slower regional base.",
           ],
         },
         {
-          title: "🧩 Start with the page that matches your trip",
+          title: "🧩 Start with the page that fits your trip",
           icon: "spark",
           body:
-            "Use the links below as the meaningful next read, not as a checklist. Each one answers a different planning question.",
+            "Use the links below as your next meaningful step, not as a checklist. Each page answers a different planning question.",
           bullets: [
-            "7 Days in Korea works best when you only want one major move.",
-            "2 Weeks in Korea fits travelers who want Seoul plus one city and one slower region.",
-            "1 Month in Korea is for travelers who can plan around rhythm, not constant movement.",
-            "First Time in Korea keeps the first trip simpler and lower-friction.",
+            "7 Days in Korea works best if you want one major move and clear structure.",
+            "2 Weeks in Korea suits travelers who want Seoul plus one city and one slower region.",
+            "1 Month in Korea is ideal if you can plan around rhythm instead of constant movement.",
+            "First Time in Korea keeps your first visit simpler and lower-friction.",
             "Been Here Before helps you trade familiar highlights for better pacing and fresher ideas.",
           ],
         },

@@ -2059,6 +2059,7 @@ const breadcrumb = breadcrumbs;
                   {section.tail && (
                     <p class="content-tail" set:html={linkify(section.tail)} />
                   )}
+                  <div class="hub-card-fill" aria-hidden="true"></div>
                 </div>
               ))}
             </div>
@@ -3027,11 +3028,17 @@ const breadcrumb = breadcrumbs;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
-    align-items: start;
+    align-items: stretch;
   }
 
   .content-block--hub {
-    height: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hub-card-fill {
+    margin-top: auto;
   }
 
   .feedback-cta {

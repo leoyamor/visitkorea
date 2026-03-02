@@ -373,6 +373,11 @@ const keywordLinks: Record<string, string> = {
   "Global Tax Free Korea": "https://www.globaltaxfree.com",
   "Korea Customs Service": "https://www.customs.go.kr",
   "Getting Around Korea": "/getting-around-korea/",
+  "7 Days in Korea": withLang("/plan-your-trip/7-days-in-korea", lang),
+  "2 Weeks in Korea": withLang("/plan-your-trip/2-weeks-in-korea", lang),
+  "1 Month in Korea": withLang("/plan-your-trip/1-month-in-korea", lang),
+  "First Time in Korea": withLang("/plan-your-trip/first-time-in-korea", lang),
+  "Been Here Before": withLang("/plan-your-trip/been-here-before", lang),
   ...(lang === "en"
     ? {
         "travel insurance for Korea": "/before-you-go/travel-insurance-for-korea/",
@@ -964,6 +969,7 @@ const homeUpdateTickerItems = showHomeUpdateBar ? await getHomeLeafTickerItems(s
 const hubFaqItems = pageUi.showHubFaq && hasChildren && !isHome ? getHubFaqItems(node, lang) : [];
 const leafFaqItems = pageUi.showLeafFaq && isLeafPage ? getLeafFaqItems(node, lang) : [];
 const collectionQuickSummary = hasChildren && !isHome ? node.quickAnswer : undefined;
+const collectionGuideSections = hasChildren && !isHome ? node.content ?? [] : [];
 const leafQuickAnswerText = (node.quickAnswer ?? node.description ?? t.quickFallback).trim();
 
 const breadcrumb = breadcrumbs;
@@ -1072,6 +1078,71 @@ const breadcrumb = breadcrumbs;
 
   {hasChildren ? (
     <>
+      {collectionGuideSections.length > 0 && (
+        <div class="hub-guide-rail" data-kpi-section={`collection_${node.slug ?? "root"}_guide`}>
+          {collectionGuideSections.map((section) => (
+            <div
+              class="content-block content-block--hub"
+              data-tone={getTone(section.icon)}
+              data-icon-align={centerCardIconForPage ? "center" : undefined}
+            >
+              <div class="content-title">
+                {section.icon && (
+                  <span class="content-icon" set:html={renderIcon(section.icon)} />
+                )}
+                <h4 class="t-section">{section.title}</h4>
+              </div>
+              {section.emphasis && (
+                <p class="content-emphasis">{section.emphasis}</p>
+              )}
+              <p
+                class:list={["content-body", section.bodyLead && "content-body--lead"]}
+                set:html={linkify(section.body)}
+              />
+              {section.subsections && section.subsections.length > 0 && (
+                <div class="content-subsections">
+                  {section.subsections.map((subsection) => (
+                    <div class="content-subsection">
+                      {subsection.title && (
+                        <p class:list={["content-subtitle", subsection.plainTitle && "content-subtitle--plain"]}>
+                          {subsection.title}
+                        </p>
+                      )}
+                      {subsection.lead && subsection.lead.length > 0 && (
+                        <div>
+                          {subsection.lead.map((line) => (
+                            <p class="content-sublead" set:html={linkify(line)} />
+                          ))}
+                        </div>
+                      )}
+                      {subsection.bullets && subsection.bullets.length > 0 && (
+                        <ul class="content-sublist">
+                          {subsection.bullets.map((bullet) => (
+                            <li set:html={linkify(bullet)} />
+                          ))}
+                        </ul>
+                      )}
+                      {subsection.tail && (
+                        <p class="content-tail" set:html={linkify(subsection.tail)} />
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+              {section.bullets && (
+                <ul>
+                  {section.bullets.map((bullet) => (
+                    <li set:html={linkify(bullet)} />
+                  ))}
+                </ul>
+              )}
+              {section.tail && (
+                <p class="content-tail" set:html={linkify(section.tail)} />
+              )}
+            </div>
+          ))}
+        </div>
+      )}
       <div class="grid" data-orphans={children.length % 3}>
         {children.map((child, index) => {
           const cardImage = getResponsiveImage(child.image ?? child.icon, child.title, child.slug);
@@ -1090,7 +1161,7 @@ const breadcrumb = breadcrumbs;
                   src={cardImage.src}
                   srcset={cardImage.srcSet}
                   alt={child.title}
-                  loading={isHome ? (index === 0 ? "eager" : "lazy") : index < 2 ? "eager" : "lazy"}
+                  loading={isHome ? (index === 0 ? "eager" : "lazy") : index === 0 ? "eager" : "lazy"}
                   fetchpriority={isHome ? (index === 0 ? "high" : "low") : index === 0 ? "high" : "auto"}
                   decoding="async"
                   width="360"
@@ -2021,6 +2092,17 @@ const breadcrumb = breadcrumbs;
     font-weight: 500;
   }
 
+  .hub-guide-rail {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin: 4px 0 28px;
+  }
+
+  .content-block--hub {
+    height: 100%;
+  }
+
   .feedback-cta {
     margin-top: 22px;
     padding-top: 20px;
@@ -2209,6 +2291,7 @@ const breadcrumb = breadcrumbs;
     margin: 0;
     color: var(--ink-soft);
     text-decoration: none;
+    line-height: 1.58;
   }
 
   .hub-faq {
@@ -2786,6 +2869,12 @@ const breadcrumb = breadcrumbs;
       gap: 18px;
     }
 
+    .hub-guide-rail {
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
     .home-guide-rail {
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 14px;
@@ -2872,6 +2961,15 @@ const breadcrumb = breadcrumbs;
       padding: 0 12px;
     }
 
+    .section-header {
+      margin-bottom: 20px;
+    }
+
+    .section-header p {
+      font-size: 0.96rem;
+      line-height: 1.68;
+    }
+
     .lang-option {
       min-width: 74px;
       padding: 8px 12px;
@@ -2915,11 +3013,11 @@ const breadcrumb = breadcrumbs;
 
     .grid {
       grid-template-columns: 1fr;
-      gap: 16px;
+      gap: 18px;
     }
 
     .card {
-      padding: 18px 18px;
+      padding: 18px 16px;
     }
 
     .thumb {

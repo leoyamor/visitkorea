@@ -57,7 +57,7 @@ export const siteTree: TreeNode = {
         "Start with three filters: trip length, how often you want to move hotels, and how much fast transit days drain you. That tells you whether you need a short, balanced, or slower Korea plan.",
       content: [
         {
-          title: "🧭 Start with one decision question",
+          title: "🗺️ Start with one decision question",
           icon: "compass",
           emphasis: "Do you want to see more places, or protect time and energy between moves?",
           body:
@@ -69,7 +69,7 @@ export const siteTree: TreeNode = {
           ],
         },
         {
-          title: "⚠️ What travelers misread first",
+          title: "🚧 What travelers misread first",
           icon: "alert",
           body: "Two mistakes create most pacing problems:",
           bullets: [
@@ -78,7 +78,7 @@ export const siteTree: TreeNode = {
           ],
         },
         {
-          title: "🔄 Adjust the advice when your trip changes",
+          title: "🛠️ Adjust the advice when your trip changes",
           icon: "calendar",
           body: "Your plan should change when your travel context changes:",
           bullets: [
@@ -87,7 +87,7 @@ export const siteTree: TreeNode = {
           ],
         },
         {
-          title: "🔗 Start with the page that matches your trip",
+          title: "🧩 Start with the page that matches your trip",
           icon: "spark",
           body:
             "Use the links below as the meaningful next read, not as a checklist. Each one answers a different planning question.",

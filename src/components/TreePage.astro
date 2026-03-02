@@ -3012,13 +3012,11 @@ const breadcrumb = breadcrumbs;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
-    align-items: start;
     margin: 4px 0 0;
   }
 
   .content-block--hub {
-    height: auto;
-    align-self: start;
+    height: 100%;
   }
 
   .hub-grid-spacer {
@@ -3792,7 +3790,7 @@ const breadcrumb = breadcrumbs;
     }
 
     .hub-guide-rail {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 18px;
     }
 
@@ -3913,6 +3911,7 @@ const breadcrumb = breadcrumbs;
     }
 
     .hub-guide-rail {
+      grid-template-columns: 1fr;
       gap: 18px;
     }
 

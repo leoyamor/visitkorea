@@ -26,6 +26,14 @@ type HomeGuideBlock = {
   tail?: string[];
 };
 
+type LocalizedCollectionCopy = {
+  title?: string;
+  description?: string;
+  quickAnswer?: string;
+  content?: NonNullable<TreeNode["content"]>;
+  children?: Record<string, { title?: string; description?: string }>;
+};
+
 const { node, segments, parentPath, isHome = false, breadcrumbs = [], lang = "en" } =
   Astro.props as Props;
 
@@ -244,6 +252,82 @@ const t = {
 }[lang];
 
 const homeGuideBlocks: HomeGuideBlock[] = isHome ? t.homeGuideBlocks : [];
+const localizedCollectionCopy: LocalizedCollectionCopy | undefined =
+  !isHome && hasChildren && lang === "es" && basePath === "/plan-your-trip"
+    ? {
+        title: "Planifica tu viaje",
+        description: "Planifica tus dias con un ritmo realista, sin llenar demasiado el itinerario.",
+        quickAnswer:
+          "Empieza con tres filtros: la duracion del viaje, con que frecuencia quieres cambiar de hotel y cuanto te desgastan los dias de traslado rapido. Eso te dira si necesitas un plan corto, equilibrado o mas pausado en Corea.",
+        content: [
+          {
+            title: "🧭 Empieza con una sola pregunta",
+            icon: "compass",
+            emphasis: "Quieres ver mas lugares o proteger tu tiempo y energia entre traslados?",
+            body:
+              "Este hub funciona mejor cuando decides el ritmo antes de decidir la lista de ciudades. El plan correcto suele ser el que todavia disfrutas en el dia 5, no el que parece mas eficiente en un mapa.",
+            bullets: [
+              "Duracion del viaje: 7 dias premian una base principal y una parada de contraste; los viajes mas largos pueden absorber una region mas lenta.",
+              "Frecuencia de cambios: cada cambio de hotel agrega equipaje, check-in y perdida parcial del dia de traslado.",
+              "Energia y resistencia: si los madrugones y los traslados largos te agotan, la profundidad vale mas que sumar ciudades.",
+            ],
+          },
+          {
+            title: "⚠️ Lo que mas se malinterpreta",
+            icon: "alert",
+            body: "Dos errores crean la mayoria de los problemas de ritmo:",
+            bullets: [
+              "Copiar una lista de ciudades antes de revisar cuantas horas se van en trenes, vuelos y cambios de hotel.",
+              "Tratar el dia de llegada y el dia de traslado como si fueran dias completos de turismo.",
+            ],
+          },
+          {
+            title: "🔄 Ajusta el consejo segun cambie tu viaje",
+            icon: "calendar",
+            body: "Tu plan deberia cambiar cuando cambie tu contexto de viaje:",
+            bullets: [
+              "Si es tu primer viaje a Corea, arma el plan alrededor de Seul y agrega solo una parada de contraste.",
+              "Si ya viniste antes o quieres un ritmo mas tranquilo, elimina un traslado y agrega tiempo de recuperacion o una base regional mas calmada.",
+            ],
+          },
+          {
+            title: "🔗 Empieza por la pagina que coincide con tu viaje",
+            icon: "spark",
+            body:
+              "Usa los enlaces de abajo como la siguiente lectura con sentido, no como una lista de control. Cada uno responde una pregunta distinta de planificacion.",
+            bullets: [
+              "7 dias en Corea funciona mejor si solo quieres un gran traslado.",
+              "2 semanas en Corea encaja si quieres Seul, una ciudad adicional y una region mas lenta.",
+              "1 mes en Corea es para viajeros que pueden planear por ritmo, no por movimiento constante.",
+              "Primera vez en Corea mantiene el primer viaje mas simple y con menos friccion.",
+              "Ya estuviste en Corea te ayuda a cambiar lo conocido por un mejor ritmo y nuevas ideas.",
+            ],
+          },
+        ],
+        children: {
+          "7-days-in-korea": {
+            title: "7 dias en Corea",
+            description: "Un plan de una semana que de verdad funciona.",
+          },
+          "2-weeks-in-korea": {
+            title: "2 semanas en Corea",
+            description: "Como ver mas sin ir con prisa.",
+          },
+          "1-month-in-korea": {
+            title: "1 mes en Corea",
+            description: "Ideas para viajar despacio y quedarte mas tiempo.",
+          },
+          "first-time-in-korea": {
+            title: "Primera vez en Corea",
+            description: "Que esperar y que preparar.",
+          },
+          "been-here-before": {
+            title: "Ya estuviste en Corea?",
+            description: "Ideas mas alla de la ruta turistica tipica.",
+          },
+        },
+      }
+    : undefined;
 
 const getInitials = (title: string) => {
   const words = title.replace(/[?]/g, "").split(" ").filter(Boolean);
@@ -378,6 +462,15 @@ const keywordLinks: Record<string, string> = {
   "1 Month in Korea": withLang("/plan-your-trip/1-month-in-korea", lang),
   "First Time in Korea": withLang("/plan-your-trip/first-time-in-korea", lang),
   "Been Here Before": withLang("/plan-your-trip/been-here-before", lang),
+  ...(lang === "es"
+    ? {
+        "7 dias en Corea": withLang("/plan-your-trip/7-days-in-korea", lang),
+        "2 semanas en Corea": withLang("/plan-your-trip/2-weeks-in-korea", lang),
+        "1 mes en Corea": withLang("/plan-your-trip/1-month-in-korea", lang),
+        "Primera vez en Corea": withLang("/plan-your-trip/first-time-in-korea", lang),
+        "Ya estuviste en Corea": withLang("/plan-your-trip/been-here-before", lang),
+      }
+    : {}),
   ...(lang === "en"
     ? {
         "travel insurance for Korea": "/before-you-go/travel-insurance-for-korea/",
@@ -968,8 +1061,13 @@ const showHomeUpdateBar = isHome && segments.length === 0 && !node.slug;
 const homeUpdateTickerItems = showHomeUpdateBar ? await getHomeLeafTickerItems(siteTree) : [];
 const hubFaqItems = pageUi.showHubFaq && hasChildren && !isHome ? getHubFaqItems(node, lang) : [];
 const leafFaqItems = pageUi.showLeafFaq && isLeafPage ? getLeafFaqItems(node, lang) : [];
-const collectionQuickSummary = hasChildren && !isHome ? node.quickAnswer : undefined;
-const collectionGuideSections = hasChildren && !isHome ? node.content ?? [] : [];
+const displayTitle = localizedCollectionCopy?.title ?? node.title;
+const displayDescription = localizedCollectionCopy?.description ?? node.description;
+const collectionQuickSummary =
+  hasChildren && !isHome ? localizedCollectionCopy?.quickAnswer ?? node.quickAnswer : undefined;
+const collectionGuideSections =
+  hasChildren && !isHome ? localizedCollectionCopy?.content ?? node.content ?? [] : [];
+const collectionChildCopy = localizedCollectionCopy?.children ?? {};
 const leafQuickAnswerText = (node.quickAnswer ?? node.description ?? t.quickFallback).trim();
 
 const breadcrumb = breadcrumbs;
@@ -995,7 +1093,7 @@ const breadcrumb = breadcrumbs;
       </div>
     </div>
     <p class="eyebrow">{t.plannerName}</p>
-    <h1 class="t-h1">{isHome ? t.homeTitle : node.title}</h1>
+    <h1 class="t-h1">{isHome ? t.homeTitle : displayTitle}</h1>
     {!isHome && (
       <div class="nav-links">
         <a href={withLang(parentPath, lang)} aria-label={t.backAria}>← {t.back}</a>
@@ -1007,7 +1105,7 @@ const breadcrumb = breadcrumbs;
       {isHome ? (
         t.homeLead
       ) : (
-        node.description ?? t.nextSet
+        displayDescription ?? t.nextSet
       )}
     </p>
   </div>
@@ -1146,6 +1244,9 @@ const breadcrumb = breadcrumbs;
       <div class="grid" data-orphans={children.length % 3}>
         {children.map((child, index) => {
           const cardImage = getResponsiveImage(child.image ?? child.icon, child.title, child.slug);
+          const localizedCard = collectionChildCopy[child.slug] ?? {};
+          const cardTitle = localizedCard.title ?? child.title;
+          const cardDescription = localizedCard.description ?? child.description ?? t.cardFallback;
 
           return (
             <a
@@ -1160,7 +1261,7 @@ const breadcrumb = breadcrumbs;
                 <img
                   src={cardImage.src}
                   srcset={cardImage.srcSet}
-                  alt={child.title}
+                  alt={cardTitle}
                   loading={isHome ? (index === 0 ? "eager" : "lazy") : index === 0 ? "eager" : "lazy"}
                   fetchpriority={isHome ? (index === 0 ? "high" : "low") : index === 0 ? "high" : "auto"}
                   decoding="async"
@@ -1169,12 +1270,12 @@ const breadcrumb = breadcrumbs;
                 />
                 <span class="thumb-mask" aria-hidden="true"></span>
               </div>
-              <div class="card-body">
-                <div>
-                  <h3 class="t-card-title">{child.title}</h3>
-                  <p class="t-card-desc">{child.description ?? t.cardFallback}</p>
+                <div class="card-body">
+                  <div>
+                  <h3 class="t-card-title">{cardTitle}</h3>
+                  <p class="t-card-desc">{cardDescription}</p>
+                  </div>
                 </div>
-              </div>
             </a>
           );
         })}

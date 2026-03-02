@@ -1992,66 +1992,69 @@ const breadcrumb = breadcrumbs;
   {hasChildren ? (
     <>
       {collectionGuideSections.length > 0 && (
-        <div class="hub-guide-rail" data-kpi-section={`collection_${node.slug ?? "root"}_guide`}>
-          {collectionGuideSections.map((section) => (
-            <div
-              class="content-block content-block--hub"
-              data-tone={getTone(section.icon)}
-              data-icon-align={centerCardIconForPage ? "center" : undefined}
-            >
-              <div class="content-title">
-                <h4 class="t-section">{section.title}</h4>
-              </div>
-              {section.emphasis && (
-                <p class="content-emphasis">{section.emphasis}</p>
-              )}
-              <p
-                class:list={["content-body", section.bodyLead && "content-body--lead"]}
-                set:html={linkify(section.body)}
-              />
-              {section.subsections && section.subsections.length > 0 && (
-                <div class="content-subsections">
-                  {section.subsections.map((subsection) => (
-                    <div class="content-subsection">
-                      {subsection.title && (
-                        <p class:list={["content-subtitle", subsection.plainTitle && "content-subtitle--plain"]}>
-                          {subsection.title}
-                        </p>
-                      )}
-                      {subsection.lead && subsection.lead.length > 0 && (
-                        <div>
-                          {subsection.lead.map((line) => (
-                            <p class="content-sublead" set:html={linkify(line)} />
-                          ))}
-                        </div>
-                      )}
-                      {subsection.bullets && subsection.bullets.length > 0 && (
-                        <ul class="content-sublist">
-                          {subsection.bullets.map((bullet) => (
-                            <li set:html={linkify(bullet)} />
-                          ))}
-                        </ul>
-                      )}
-                      {subsection.tail && (
-                        <p class="content-tail" set:html={linkify(subsection.tail)} />
-                      )}
-                    </div>
-                  ))}
+        <>
+          <div class="hub-guide-rail" data-kpi-section={`collection_${node.slug ?? "root"}_guide`}>
+            {collectionGuideSections.map((section) => (
+              <div
+                class="content-block content-block--hub"
+                data-tone={getTone(section.icon)}
+                data-icon-align={centerCardIconForPage ? "center" : undefined}
+              >
+                <div class="content-title">
+                  <h4 class="t-section">{section.title}</h4>
                 </div>
-              )}
-              {section.bullets && (
-                <ul>
-                  {section.bullets.map((bullet) => (
-                    <li set:html={linkify(bullet)} />
-                  ))}
-                </ul>
-              )}
-              {section.tail && (
-                <p class="content-tail" set:html={linkify(section.tail)} />
-              )}
-            </div>
-          ))}
-        </div>
+                {section.emphasis && (
+                  <p class="content-emphasis">{section.emphasis}</p>
+                )}
+                <p
+                  class:list={["content-body", section.bodyLead && "content-body--lead"]}
+                  set:html={linkify(section.body)}
+                />
+                {section.subsections && section.subsections.length > 0 && (
+                  <div class="content-subsections">
+                    {section.subsections.map((subsection) => (
+                      <div class="content-subsection">
+                        {subsection.title && (
+                          <p class:list={["content-subtitle", subsection.plainTitle && "content-subtitle--plain"]}>
+                            {subsection.title}
+                          </p>
+                        )}
+                        {subsection.lead && subsection.lead.length > 0 && (
+                          <div>
+                            {subsection.lead.map((line) => (
+                              <p class="content-sublead" set:html={linkify(line)} />
+                            ))}
+                          </div>
+                        )}
+                        {subsection.bullets && subsection.bullets.length > 0 && (
+                          <ul class="content-sublist">
+                            {subsection.bullets.map((bullet) => (
+                              <li set:html={linkify(bullet)} />
+                            ))}
+                          </ul>
+                        )}
+                        {subsection.tail && (
+                          <p class="content-tail" set:html={linkify(subsection.tail)} />
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
+                {section.bullets && (
+                  <ul>
+                    {section.bullets.map((bullet) => (
+                      <li set:html={linkify(bullet)} />
+                    ))}
+                  </ul>
+                )}
+                {section.tail && (
+                  <p class="content-tail" set:html={linkify(section.tail)} />
+                )}
+              </div>
+            ))}
+          </div>
+          <div class="hub-grid-spacer" aria-hidden="true"></div>
+        </>
       )}
       <div class="grid" data-orphans={children.length % 3}>
         {children.map((child, index) => {
@@ -3009,11 +3012,15 @@ const breadcrumb = breadcrumbs;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
-    margin: 4px 0 22px;
+    margin: 4px 0 0;
   }
 
   .content-block--hub {
     height: 100%;
+  }
+
+  .hub-grid-spacer {
+    height: 22px;
   }
 
   .feedback-cta {
@@ -3785,7 +3792,10 @@ const breadcrumb = breadcrumbs;
     .hub-guide-rail {
       grid-template-columns: 1fr;
       gap: 14px;
-      margin-bottom: 20px;
+    }
+
+    .hub-grid-spacer {
+      height: 20px;
     }
 
     .home-guide-rail {
@@ -3902,7 +3912,10 @@ const breadcrumb = breadcrumbs;
 
     .hub-guide-rail {
       gap: 12px;
-      margin-bottom: 18px;
+    }
+
+    .hub-grid-spacer {
+      height: 18px;
     }
 
     .home-guide-card {

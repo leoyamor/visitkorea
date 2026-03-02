@@ -69,12 +69,16 @@ export const siteTree: TreeNode = {
           ],
         },
         {
-          title: "🚧 What travelers misjudge first",
-          icon: "alert",
-          body: "Most pacing problems come from two assumptions:",
+          title: "🧩 Start with the page that fits your trip",
+          icon: "spark",
+          body:
+            "Use the links below as your next meaningful step, not as a checklist. Each page answers a different planning question.",
           bullets: [
-            "Copying a list of cities before calculating how many hours disappear into trains, flights, and check-ins.",
-            "Treating arrival days and transfer days as if they were full sightseeing days.",
+            "7 Days in Korea works best if you want one major move and clear structure.",
+            "2 Weeks in Korea suits travelers who want Seoul plus one city and one slower region.",
+            "1 Month in Korea is ideal if you can plan around rhythm instead of constant movement.",
+            "First Time in Korea keeps your first visit simpler and lower-friction.",
+            "Been Here Before helps you trade familiar highlights for better pacing and fresher ideas.",
           ],
         },
         {
@@ -87,16 +91,12 @@ export const siteTree: TreeNode = {
           ],
         },
         {
-          title: "🧩 Start with the page that fits your trip",
-          icon: "spark",
-          body:
-            "Use the links below as your next meaningful step, not as a checklist. Each page answers a different planning question.",
+          title: "🚧 What travelers misjudge first",
+          icon: "alert",
+          body: "Most pacing problems come from two assumptions:",
           bullets: [
-            "7 Days in Korea works best if you want one major move and clear structure.",
-            "2 Weeks in Korea suits travelers who want Seoul plus one city and one slower region.",
-            "1 Month in Korea is ideal if you can plan around rhythm instead of constant movement.",
-            "First Time in Korea keeps your first visit simpler and lower-friction.",
-            "Been Here Before helps you trade familiar highlights for better pacing and fresher ideas.",
+            "Copying a list of cities before calculating how many hours disappear into trains, flights, and check-ins.",
+            "Treating arrival days and transfer days as if they were full sightseeing days.",
           ],
         },
       ],

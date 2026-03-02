@@ -26,7 +26,7 @@ type HomeGuideBlock = {
   tail?: string[];
 };
 
-type LocalizedCollectionCopy = {
+type LocalizedNodeOverride = {
   title?: string;
   description?: string;
   quickAnswer?: string;
@@ -122,7 +122,7 @@ const t = {
     pillSim: "SIM or eSIM?",
     pillSubway: "Using the Subway",
     pillCityFit: "Which City Fits You Best?",
-    pillNowMore: "Korea Now & More",
+    pillNowMore: "Corea ahora y mas",
     nextPrefix: "Next",
     nextDecision: "Next decision",
     nextDecisionHint: "Best next step after this page.",
@@ -132,8 +132,8 @@ const t = {
       "No login needed. Tick what you completed, then screenshot or bookmark this page for later.",
     bookmarkTip: "Pro tip: Save this page to your home screen for quick access during your trip.",
     returnLatest: "Latest Travel Updates",
-    returnNowMore: "Korea Now & More",
-    returnThisWeek: "This Week in Korea",
+    returnNowMore: "Corea ahora y mas",
+    returnThisWeek: "Esta semana en Corea",
     updateTickerLabel: "What changed this week",
     updatedLabel: "Last updated",
     sourceNote: "For final booking decisions, always verify with official sources.",
@@ -237,7 +237,7 @@ const t = {
     bookmarkTip: "Consejo: guarda esta pagina en tu pantalla de inicio para acceder rapido durante tu viaje.",
     returnLatest: "Ultimas actualizaciones de viaje",
     returnNowMore: "Korea Now & More",
-    returnThisWeek: "This Week in Korea",
+    returnThisWeek: "Esta semana en Corea",
     updateTickerLabel: "Novedades de esta semana",
     updatedLabel: "Actualizado",
     sourceNote: "Para decisiones finales de reserva, verifica siempre en fuentes oficiales.",
@@ -252,82 +252,865 @@ const t = {
 }[lang];
 
 const homeGuideBlocks: HomeGuideBlock[] = isHome ? t.homeGuideBlocks : [];
-const localizedCollectionCopy: LocalizedCollectionCopy | undefined =
-  !isHome && hasChildren && lang === "es" && basePath === "/plan-your-trip"
-    ? {
-        title: "Planifica tu viaje",
-        description: "Planifica tus dias con un ritmo realista, sin llenar demasiado el itinerario.",
-        quickAnswer:
-          "Empieza con tres filtros: la duracion del viaje, con que frecuencia quieres cambiar de hotel y cuanto te desgastan los dias de traslado rapido. Eso te dira si necesitas un plan corto, equilibrado o mas pausado en Corea.",
-        content: [
-          {
-            title: "🧭 Empieza con una sola pregunta",
-            icon: "compass",
-            emphasis: "Quieres ver mas lugares o proteger tu tiempo y energia entre traslados?",
-            body:
-              "Este hub funciona mejor cuando decides el ritmo antes de decidir la lista de ciudades. El plan correcto suele ser el que todavia disfrutas en el dia 5, no el que parece mas eficiente en un mapa.",
-            bullets: [
-              "Duracion del viaje: 7 dias premian una base principal y una parada de contraste; los viajes mas largos pueden absorber una region mas lenta.",
-              "Frecuencia de cambios: cada cambio de hotel agrega equipaje, check-in y perdida parcial del dia de traslado.",
-              "Energia y resistencia: si los madrugones y los traslados largos te agotan, la profundidad vale mas que sumar ciudades.",
-            ],
-          },
-          {
-            title: "⚠️ Lo que mas se malinterpreta",
-            icon: "alert",
-            body: "Dos errores crean la mayoria de los problemas de ritmo:",
-            bullets: [
-              "Copiar una lista de ciudades antes de revisar cuantas horas se van en trenes, vuelos y cambios de hotel.",
-              "Tratar el dia de llegada y el dia de traslado como si fueran dias completos de turismo.",
-            ],
-          },
-          {
-            title: "🔄 Ajusta el consejo segun cambie tu viaje",
-            icon: "calendar",
-            body: "Tu plan deberia cambiar cuando cambie tu contexto de viaje:",
-            bullets: [
-              "Si es tu primer viaje a Corea, arma el plan alrededor de Seul y agrega solo una parada de contraste.",
-              "Si ya viniste antes o quieres un ritmo mas tranquilo, elimina un traslado y agrega tiempo de recuperacion o una base regional mas calmada.",
-            ],
-          },
-          {
-            title: "🔗 Empieza por la pagina que coincide con tu viaje",
-            icon: "spark",
-            body:
-              "Usa los enlaces de abajo como la siguiente lectura con sentido, no como una lista de control. Cada uno responde una pregunta distinta de planificacion.",
-            bullets: [
-              "7 dias en Corea funciona mejor si solo quieres un gran traslado.",
-              "2 semanas en Corea encaja si quieres Seul, una ciudad adicional y una region mas lenta.",
-              "1 mes en Corea es para viajeros que pueden planear por ritmo, no por movimiento constante.",
-              "Primera vez en Corea mantiene el primer viaje mas simple y con menos friccion.",
-              "Ya estuviste en Corea te ayuda a cambiar lo conocido por un mejor ritmo y nuevas ideas.",
-            ],
-          },
+const localizedPlanYourTripOverrides: Record<string, LocalizedNodeOverride> = {
+  "/plan-your-trip": {
+    title: "Planifica tu viaje",
+    description: "Planifica tus dias con un ritmo realista, sin llenar demasiado el itinerario.",
+    quickAnswer:
+      "Empieza con tres filtros: la duracion del viaje, con que frecuencia quieres cambiar de hotel y cuanto te desgastan los dias de traslado rapido. Eso te dira si necesitas un plan corto, equilibrado o mas pausado en Corea.",
+    content: [
+      {
+        title: "🧭 Empieza con una sola pregunta",
+        icon: "compass",
+        emphasis: "Quieres ver mas lugares o proteger tu tiempo y energia entre traslados?",
+        body:
+          "Este hub funciona mejor cuando decides el ritmo antes de decidir la lista de ciudades. El plan correcto suele ser el que todavia disfrutas en el dia 5, no el que parece mas eficiente en un mapa.",
+        bullets: [
+          "Duracion del viaje: 7 dias premian una base principal y una parada de contraste; los viajes mas largos pueden absorber una region mas lenta.",
+          "Frecuencia de cambios: cada cambio de hotel agrega equipaje, check-in y perdida parcial del dia de traslado.",
+          "Energia y resistencia: si los madrugones y los traslados largos te agotan, la profundidad vale mas que sumar ciudades.",
         ],
-        children: {
-          "7-days-in-korea": {
-            title: "7 dias en Corea",
-            description: "Un plan de una semana que de verdad funciona.",
-          },
-          "2-weeks-in-korea": {
-            title: "2 semanas en Corea",
-            description: "Como ver mas sin ir con prisa.",
-          },
-          "1-month-in-korea": {
-            title: "1 mes en Corea",
-            description: "Ideas para viajar despacio y quedarte mas tiempo.",
-          },
-          "first-time-in-korea": {
-            title: "Primera vez en Corea",
-            description: "Que esperar y que preparar.",
-          },
-          "been-here-before": {
-            title: "Ya estuviste en Corea?",
-            description: "Ideas mas alla de la ruta turistica tipica.",
-          },
-        },
-      }
-    : undefined;
+      },
+      {
+        title: "⚠️ Lo que mas se malinterpreta",
+        icon: "alert",
+        body: "Dos errores crean la mayoria de los problemas de ritmo:",
+        bullets: [
+          "Copiar una lista de ciudades antes de revisar cuantas horas se van en trenes, vuelos y cambios de hotel.",
+          "Tratar el dia de llegada y el dia de traslado como si fueran dias completos de turismo.",
+        ],
+      },
+      {
+        title: "🔄 Ajusta el consejo segun cambie tu viaje",
+        icon: "calendar",
+        body: "Tu plan deberia cambiar cuando cambie tu contexto de viaje:",
+        bullets: [
+          "Si es tu primer viaje a Corea, arma el plan alrededor de Seul y agrega solo una parada de contraste.",
+          "Si ya viniste antes o quieres un ritmo mas tranquilo, elimina un traslado y agrega tiempo de recuperacion o una base regional mas calmada.",
+        ],
+      },
+      {
+        title: "🔗 Empieza por la pagina que coincide con tu viaje",
+        icon: "spark",
+        body:
+          "Usa los enlaces de abajo como la siguiente lectura con sentido, no como una lista de control. Cada uno responde una pregunta distinta de planificacion.",
+        bullets: [
+          "7 dias en Corea funciona mejor si solo quieres un gran traslado.",
+          "2 semanas en Corea encaja si quieres Seul, una ciudad adicional y una region mas lenta.",
+          "1 mes en Corea es para viajeros que pueden planear por ritmo, no por movimiento constante.",
+          "Primera vez en Corea mantiene el primer viaje mas simple y con menos friccion.",
+          "Ya estuviste en Corea te ayuda a cambiar lo conocido por un mejor ritmo y nuevas ideas.",
+        ],
+      },
+    ],
+    children: {
+      "7-days-in-korea": {
+        title: "7 dias en Corea",
+        description: "Un plan de una semana que de verdad funciona.",
+      },
+      "2-weeks-in-korea": {
+        title: "2 semanas en Corea",
+        description: "Como ver mas sin ir con prisa.",
+      },
+      "1-month-in-korea": {
+        title: "1 mes en Corea",
+        description: "Ideas para viajar despacio y quedarte mas tiempo.",
+      },
+      "first-time-in-korea": {
+        title: "Primera vez en Corea",
+        description: "Que esperar y que preparar.",
+      },
+      "been-here-before": {
+        title: "Ya estuviste en Corea?",
+        description: "Ideas mas alla de la ruta turistica tipica.",
+      },
+    },
+  },
+  "/plan-your-trip/7-days-in-korea": {
+    title: "7 dias en Corea",
+    description: "Un plan de una semana que de verdad funciona.",
+    quickAnswer:
+      "Esta pagina te ayuda a armar un viaje equilibrado de 7 dias por Corea con dos bases, un ritmo realista y cambios minimos de hotel.",
+    content: [
+      {
+        title: "🌟 Introduccion",
+        emphasis: "Siete dias es poco. Eso no es un problema.",
+        body:
+          "No puedes verlo todo en Corea en una semana. Ese no es el objetivo. El objetivo es viajar bien. Un buen viaje de 7 dias se construye con estructura, no con velocidad.",
+      },
+      {
+        title: "🎯 La decision que salva tu viaje",
+        emphasis: "Principio central",
+        body:
+          "Elige dos lugares. No tres. Muchos viajeros en su primera visita intentan meter Seul, Busan y Jeju en una semana. En el mapa parece eficiente. En la practica, crea equipaje repetido, dias de traslado y menos tiempo real para explorar. En siete dias, cada movimiento te cuesta parte de la experiencia.",
+      },
+      {
+        title: "Estructura recomendada",
+        body: "La estructura que mejor funciona de forma constante:",
+        bullets: [
+          "Una ciudad principal",
+          "Un destino de contraste",
+          "Esto crea profundidad sin agotarte.",
+        ],
+      },
+      {
+        title: "🏙️ Dias 1-4: Seul (un solo hotel)",
+        emphasis: "Por que empezar en Seul",
+        body:
+          "Seul es el punto de inicio mas practico para viajeros internacionales. Quedate cuatro noches en un mismo barrio. Mueve tu cuerpo por la ciudad, no tu maleta. El transporte publico es amplio y facil de usar. Cambiar de hotel dentro de Seul rara vez mejora el viaje. Seul ofrece:",
+        bullets: [
+          "Conexion directa desde Incheon por AREX",
+          "Senalizacion clara en ingles",
+          "Buena cobertura de metro",
+          "Muchas opciones de alojamiento",
+          "Acceso facil a excursiones de un dia",
+        ],
+      },
+      {
+        title: "📍 Zonas practicas para alojarte",
+        emphasis: "Elige una base y quedate ahi.",
+        body: "Elige una. Quedate ahi. Explora desde ahi.",
+        bullets: [
+          "Myeongdong - Centrico y conveniente",
+          "Hongdae - Ambiente mas joven y vida nocturna",
+          "Insadong - Calles tradicionales y entorno historico",
+          "Gangnam - Moderno y mas espacioso",
+        ],
+      },
+      {
+        title: "🗺️ Lo que cuatro dias si permiten",
+        emphasis: "Planifica por zonas, no por minutos.",
+        body:
+          "Cuatro dias permiten explorar con un ritmo equilibrado. No necesitas un horario minuto a minuto.",
+        bullets: [
+          "Un dia centrado en palacios historicos y barrios tradicionales",
+          "Un dia en una zona moderna de compras y comida",
+          "Una noche dedicada a comida callejera",
+          "Una excursion organizada de un dia (como la DMZ o una ciudad cercana)",
+          "Seul recompensa la flexibilidad con estructura.",
+        ],
+      },
+      {
+        title: "🧭 Dias 5-7: elige un solo destino de contraste",
+        emphasis: "Despues de Seul, elige un entorno diferente.",
+        body:
+          "Las dos opciones mas practicas son Busan y la isla de Jeju. Incluir ambas en siete dias suele reducir el disfrute total por el tiempo de traslado.",
+      },
+      {
+        title: "🌊 Opcion 1: Busan",
+        emphasis: "Resumen",
+        body: "Busan combina energia urbana con paisaje costero.",
+      },
+      {
+        title: "Opcion 1-1: Por que elegir Busan",
+        body: "Busan funciona bien si quieres:",
+        bullets: [
+          "Vistas al mar dentro de una ciudad",
+          "Acceso a playa sin alquilar coche",
+          "Un ambiente mas relajado con comodidad urbana",
+        ],
+      },
+      {
+        title: "Opcion 1-2: Consideraciones practicas",
+        body: "Ten en cuenta esta logistica:",
+        bullets: [
+          "KTX rapido desde Seul: unas 2.5 horas",
+          "Tarifa de ida: alrededor de 45-50 USD",
+          "Las zonas principales son accesibles en transporte publico",
+        ],
+      },
+      {
+        title: "Opcion 1-3: Ejemplo de flujo de tres dias",
+        body: "Un flujo equilibrado de 3 dias en Busan puede verse asi:",
+        bullets: [
+          "Una tarde centrada en la playa",
+          "Una visita a mercado de mariscos y puerto",
+          "Una visita a un barrio cultural o panoramico",
+          "Busan da contraste sin una logistica complicada.",
+        ],
+      },
+      {
+        title: "🏝️ Opcion 2: Isla de Jeju",
+        emphasis: "Resumen",
+        body: "Jeju ofrece paisajes naturales y mas espacio abierto.",
+      },
+      {
+        title: "Opcion 2-1: Por que elegir Jeju",
+        body: "Jeju es ideal si prefieres:",
+        bullets: [
+          "Paisajes volcanicos",
+          "Cascadas y acantilados costeros",
+          "Actividades al aire libre",
+          "Un ritmo mas lento",
+        ],
+      },
+      {
+        title: "Opcion 2-2: Realidades practicas",
+        body: "Esta logistica importa:",
+        bullets: [
+          "Vuelo desde Seul: alrededor de 1 hora mas tramites de aeropuerto",
+          "Se recomienda alquilar coche",
+          "El transporte publico es limitado fuera de las zonas principales",
+        ],
+      },
+      {
+        title: "Opcion 2-3: Ejemplo de estructura de tres dias",
+        body: "Una estructura tipica de 3 dias en Jeju puede incluir:",
+        bullets: [
+          "Una ruta costera panoramica",
+          "Un sitio volcanico o de senderismo",
+          "Una zona de cascada o acantilado",
+          "Jeju funciona mejor para quienes se sienten comodos conduciendo en el extranjero y planeando dias flexibles.",
+        ],
+      },
+      {
+        title: "⚠️ Lo que suele salir mal",
+        emphasis: "Mas planes no significan un mejor viaje.",
+        body: "Errores comunes en la primera visita:",
+        bullets: [
+          "Visitar tres ciudades en una semana",
+          "Cambiar de hotel cada una o dos noches",
+          "Sobreprogramar el dia de llegada",
+          "Ignorar el jet lag",
+          "Subestimar el tiempo de traslado",
+          "La eficiencia mejora la calidad de la experiencia.",
+        ],
+      },
+      {
+        title: "🚄 Verificacion realista del transporte",
+        emphasis: "El transporte en Corea es eficiente, pero no instantaneo.",
+        body:
+          "Cada dia de traslado reduce el tiempo real de visitas. Trata esos dias como dias parciales de turismo.",
+        bullets: [
+          "Tiempos aproximados:",
+          "Aeropuerto de Incheon al centro de Seul: 45-60 minutos",
+          "Seul a Busan en KTX: unas 2.5 horas",
+          "Seul a Jeju: vuelo de 1 hora mas tramites de aeropuerto",
+        ],
+      },
+      {
+        title: "💸 Presupuesto esperado (guia general)",
+        emphasis: "Moverte demasiado aumenta los costos.",
+        body:
+          "El costo oculto de una semana suele ser moverte de mas, no la comida.",
+        bullets: [
+          "Costos tipicos de rango medio:",
+          "Hoteles: aproximadamente 80-180 USD por noche",
+          "KTX ida: unos 45-50 USD",
+          "Vuelo domestico a Jeju: varia segun la temporada",
+          "Comida: flexible, desde puestos callejeros hasta opciones premium",
+        ],
+      },
+      {
+        title: "📝 Decide la estructura primero",
+        emphasis: "Primero el marco. Despues los detalles.",
+        body: "Antes de reservar:",
+        bullets: [
+          "Elige dos bases",
+          "Asigna los dias (4 + 3 funciona bien)",
+          "Confirma el momento del traslado",
+          "Reserva alojamiento practico",
+          "La estructura define la experiencia.",
+        ],
+      },
+      {
+        title: "✅ Cuando este plan funciona mejor",
+        emphasis: "Esta estructura es ideal si:",
+        body:
+          "Siete dias es poco, pero con buena estructura es suficiente.",
+        bullets: [
+          "Es tu primera visita",
+          "Prefieres equilibrio antes que velocidad",
+          "Quieres profundidad sin agotarte",
+          "Valoras comodidad y flexibilidad",
+        ],
+      },
+      {
+        title: "Necesitas informacion actualizada?",
+        body:
+          "Los horarios y politicas de transporte pueden cambiar. Confirma fuentes oficiales antes de tomar decisiones finales de reserva.",
+      },
+      {
+        title: "✨ Conclusion",
+        emphasis: "El equilibrio gana al exceso.",
+        body:
+          "Dos bases. Una estructura clara. Minimos cambios de hotel. Si vuelves a casa descansado en vez de apurado, tu viaje de 7 dias estuvo bien planteado.",
+      },
+    ],
+  },
+  "/plan-your-trip/2-weeks-in-korea": {
+    title: "2 semanas en Corea",
+    description: "Como ver mas sin ir con prisa.",
+    quickAnswer:
+      "Esta pagina te ayuda a planear un viaje de dos semanas por Corea con mas variedad y menos estres.",
+    content: [
+      {
+        title: "🌟 Introduccion",
+        emphasis: "Dos semanas es la forma mas facil de disfrutar Corea.",
+        body:
+          "Con catorce dias, tienes tiempo suficiente para explorar varias regiones sin sentirte apurado. Puedes ver mas que solo los lugares principales. Puedes bajar el ritmo. Puedes quedarte mas tiempo en los lugares que te encajan. Esta guia se centra en la estructura, no en llenar cada hora.",
+      },
+      {
+        title: "💡 Por que dos semanas funciona tan bien",
+        emphasis: "Idea central",
+        body: "Con dos semanas puedes:",
+        bullets: [
+          "Visitar mas de una region sin traslados constantes",
+          "Anadir dias reales de descanso",
+          "Disfrutar barrios y comida, no solo los grandes puntos turisticos",
+          "Mas tiempo deberia darte mas profundidad, no mas ciudades.",
+        ],
+      },
+      {
+        title: "🧭 La regla simple para dos semanas",
+        emphasis: "Principio de planificacion",
+        body: "Piensa en tres bloques.",
+        bullets: [
+          "Tres regiones",
+          "Una base principal por region",
+          "Sin retroceder",
+          "Eso mantiene la ruta eficiente y tu energia estable.",
+        ],
+      },
+      {
+        title: "🏙️ Primer bloque: Seul (5-6 dias)",
+        emphasis: "Por que Seul merece tiempo",
+        body:
+          "Seul es mas que una capital. Es un conjunto de barrios, cada uno con su propio caracter. Cinco o seis dias te permiten explorar zonas historicas, distritos modernos, mercados y al menos una excursion de un dia sin correr.",
+      },
+      {
+        title: "🗺️ Una estructura realista",
+        body: "Una estancia equilibrada en Seul puede incluir:",
+        bullets: [
+          "Dos dias centrados en palacios historicos y barrios tradicionales",
+          "Uno o dos dias explorando distritos modernos y zonas de compras",
+          "Una noche dedicada a comida callejera y vistas nocturnas",
+          "Una excursion organizada fuera de la ciudad",
+          "Un dia flexible para explorar con mas calma",
+          "Quedarte en un solo hotel durante este bloque mantiene el viaje mas fluido.",
+        ],
+      },
+      {
+        title: "🌊 Segundo bloque: Busan (3-4 dias)",
+        emphasis: "Por que sumar Busan",
+        body:
+          "Busan aporta contraste. Despues de Seul, Busan ofrece vistas costeras, mercados de mariscos y un ambiente mas relajado por la noche. Tres o cuatro dias suele ser lo correcto.",
+      },
+      {
+        title: "📍 Que esperar",
+        body: "Una estructura simple en Busan puede incluir:",
+        bullets: [
+          "Una tarde de playa",
+          "Una visita a un mercado de mariscos o al puerto",
+          "Un barrio panoramico o cultural",
+          "Noches relajadas sin horarios estrictos",
+          "El tren rapido desde Seul tarda unas 2.5 horas, asi que Busan es una segunda region muy practica.",
+        ],
+      },
+      {
+        title: "🌿 Tercer bloque: una region mas tranquila (3-4 dias)",
+        emphasis: "Objetivo del tramo final",
+        body:
+          "Este bloque final debe sentirse diferente y mas relajado. Elige segun tu estilo de viaje. El objetivo es el equilibrio, no la intensidad.",
+      },
+      {
+        title: "🏝️ Opcion 1: Isla de Jeju",
+        body:
+          "Jeju encaja con viajeros que prefieren naturaleza y paisajes abiertos. Terreno volcanico, cascadas y rutas costeras marcan la experiencia. Normalmente se recomienda alquilar coche. Tres o cuatro dias permiten conducir con calma y explorar al aire libre a un ritmo mas lento.",
+      },
+      {
+        title: "🏛️ Opcion 2: Gyeongju",
+        body:
+          "Gyeongju es historico y tranquilo. Funciona bien para viajeros que disfrutan caminar entre sitios patrimoniales en un entorno mas calmado.",
+      },
+      {
+        title: "🏘️ Opcion 3: una ciudad regional mas pequena",
+        body:
+          "Algunos viajeros prefieren terminar el viaje en una ciudad mas pequena y con ambiente mas local.",
+      },
+      {
+        title: "⚠️ Lo que suele salir mal",
+        emphasis: "Errores comunes",
+        body: "Incluso con dos semanas, a veces los viajeros:",
+        bullets: [
+          "Anaden demasiadas ciudades",
+          "Cambian de hotel con demasiada frecuencia",
+          "Van y vienen entre regiones",
+          "Programan cada dia al maximo",
+          "Dos semanas funciona mejor cuando limitas los traslados y alargas las estancias.",
+        ],
+      },
+      {
+        title: "🚄 Realidad del transporte",
+        emphasis: "Tiempo practico",
+        body:
+          "El sistema de transporte en Corea es eficiente, pero los traslados frecuentes reducen el tiempo real para explorar. Planificar por bloques regionales reduce dias de viaje innecesarios.",
+        bullets: [
+          "Tiempos tipicos:",
+          "Seul a Busan en tren rapido: unas 2.5 horas",
+          "Seul a Jeju en vuelo: alrededor de 1 hora mas tramites de aeropuerto",
+          "Aeropuerto al centro de Seul: unos 45-60 minutos",
+        ],
+      },
+      {
+        title: "💸 Presupuesto esperado",
+        emphasis: "Rango general",
+        body:
+          "Los costos cambian segun estilo y temporada, pero moverte demasiado encarece el viaje. Quedarte mas tiempo en un sitio ayuda a controlar el gasto.",
+        bullets: [
+          "Estimaciones tipicas de rango medio:",
+          "Hoteles: aproximadamente 80-180 USD por noche",
+          "Tren rapido: unos 45-50 USD por trayecto",
+          "Vuelos a Jeju: variacion segun temporada",
+          "Comida: flexible segun preferencias",
+        ],
+      },
+      {
+        title: "📝 Lo que no necesitas decidir de inmediato",
+        body: "Dos semanas te permiten flexibilidad. No necesitas:",
+        bullets: [
+          "Listas detalladas de restaurantes por adelantado",
+          "Horarios exactos de atracciones para cada dia",
+          "Planes hora por hora",
+          "Primero define la estructura regional. Luego afina los detalles.",
+        ],
+      },
+      {
+        title: "✅ Cuando este plan funciona mejor",
+        body: "Esta estructura funciona bien si:",
+        bullets: [
+          "Es tu primera visita",
+          "Prefieres equilibrio antes que velocidad",
+          "Valoras descanso entre dias de traslado",
+          "Quieres profundidad en lugar de movimiento constante",
+          "Dos semanas deberian sentirse llenas, no saturadas.",
+        ],
+      },
+      {
+        title: "🔎 Necesitas informacion actual?",
+        body:
+          "Los horarios de transporte, los eventos de temporada y algunas politicas pueden cambiar. Confirma fuentes oficiales antes de reservar definitivamente.",
+      },
+      {
+        title: "✨ Conclusion",
+        emphasis: "Lleno, no saturado.",
+        body:
+          "Tres regiones. Una base por region. Sin retroceder. Si terminas tus dos semanas relajado en vez de agotado, tu plan estuvo bien estructurado.",
+      },
+    ],
+  },
+  "/plan-your-trip/1-month-in-korea": {
+    title: "1 mes en Corea",
+    description: "Ideas para viajar despacio y quedarte mas tiempo.",
+    quickAnswer:
+      "Esta pagina te ayuda a decidir como bajar el ritmo y disfrutar Corea durante una estancia larga.",
+    content: [
+      {
+        title: "🌟 Introduccion",
+        emphasis: "Un mes en Corea es vivir mejor, no ver mas.",
+        body:
+          "Con cuatro semanas, tu viaje deja de sentirse como una lista de tareas y empieza a parecerse a una vida diaria temporal. Esta guia te ayuda a estructurar una estancia larga con comodidad, sin convertirla en una lista infinita de cosas por hacer.",
+      },
+      {
+        title: "🧠 La mentalidad clave para un viaje de un mes",
+        emphasis: "Perspectiva central",
+        body:
+          "Deja de pensar en dias. Empieza a pensar en semanas. Los viajes cortos premian horarios ajustados. Un mes premia el ritmo y la familiaridad. Una buena estancia larga suele incluir:",
+        bullets: [
+          "Menos ciudades",
+          "Estancias mas largas en cada lugar",
+          "Rutinas diarias repetidas",
+          "Flexibilidad incorporada",
+          "La meta es la comodidad, no la novedad constante.",
+        ],
+      },
+      {
+        title: "🧭 La regla simple que funciona",
+        emphasis: "Principio de planificacion",
+        body:
+          "Elige dos o tres bases. Quedate el tiempo suficiente en cada lugar como para reconocer calles, cafeterias y rutas de transporte. Mas de tres bases en un mes suele crear cansancio innecesario. Las estancias largas reducen el estres de decidir y aumentan la comodidad.",
+      },
+      {
+        title: "🏙️ Semanas 1-2: Seul como base principal",
+        emphasis: "Por que Seul funciona para estancias largas",
+        body:
+          "Seul es la base mas practica para una estancia larga. La vida diaria es facil. El transporte publico es eficiente. Los barrios son variados y estan bien conectados. Despues de dos semanas, la ciudad se siente familiar en vez de abrumadora.",
+      },
+      {
+        title: "🗓️ Como usar dos semanas en Seul",
+        body: "Catorce dias te permiten:",
+        bullets: [
+          "Explorar distritos historicos a ritmo relajado",
+          "Pasar tiempo en barrios modernos sin correr",
+          "Volver a zonas que te gusten",
+          "Incluir una o dos excursiones de un dia",
+          "Anadir dias de descanso reales",
+          "La repeticion de rutinas diarias transforma la experiencia de turismo en vida temporal.",
+        ],
+      },
+      {
+        title: "🌿 Semana 3: cambia el ritmo",
+        emphasis: "Objetivo de la tercera semana",
+        body:
+          "Despues de dos semanas en la capital, cambia hacia mas espacio y un entorno mas lento. Esta semana trata mas de atmosfera que de maximizar atracciones.",
+      },
+      {
+        title: "🌊 Opcion 1: Busan",
+        body:
+          "Busan ofrece vistas al mar, paseos costeros y noches mas tranquilas. Mantiene la comodidad urbana mientras cambia el entorno. Una semana aqui puede incluir:",
+        bullets: [
+          "Paseos matutinos por la playa",
+          "Visitas casuales a mercados",
+          "Exploracion de barrios",
+          "Noches sin planes fijos",
+          "El ritmo se suaviza de forma natural.",
+        ],
+      },
+      {
+        title: "🏝️ Opcion 2: Isla de Jeju",
+        body:
+          "Jeju encaja con viajeros que prefieren paisajes abiertos y mananas tranquilas. Normalmente se recomienda alquilar coche para explorar con flexibilidad. Esta semana puede centrarse en:",
+        bullets: [
+          "Rutas costeras panoramicas",
+          "Actividades suaves al aire libre",
+          "Tardes sin estructura",
+          "El cambio de entorno reinicia tu energia.",
+        ],
+      },
+      {
+        title: "🧘 Semana 4: termina en un lugar mas calmado",
+        emphasis: "Cerrar el viaje con comodidad",
+        body:
+          "La semana final deberia sentirse mas ligera que las anteriores. Elige un lugar que simplifique la vida diaria y reduzca el estimulo.",
+      },
+      {
+        title: "🏛️ Opcion 1: Gyeongju",
+        body:
+          "Gyeongju es compacto e historico, ideal para caminatas relajadas y recorridos en bici.",
+      },
+      {
+        title: "🍲 Opcion 2: Jeonju",
+        body:
+          "Jeonju ofrece cultura gastronomica y calles tradicionales en un entorno manejable.",
+      },
+      {
+        title: "🏘️ Opcion 3: una ciudad regional mas pequena",
+        body:
+          "Terminar en una ciudad menos conocida suele crear una ultima semana mas local y reparadora. El objetivo de este bloque final es la comodidad, no la intensidad.",
+      },
+      {
+        title: "⚠️ Lo que suele salir mal",
+        emphasis: "Errores comunes en estancias largas",
+        body:
+          "Tratar una estancia de un mes como un tour largo termina agotando. Incluso con cuatro semanas, a veces los viajeros:",
+        bullets: [
+          "Cambian de ciudad con demasiada frecuencia",
+          "Programan turismo todos los dias",
+          "Tratan cada semana como un viaje corto separado",
+          "Cambian de alojamiento demasiadas veces",
+          "La estabilidad mejora la calidad de la experiencia.",
+        ],
+      },
+      {
+        title: "☕ Consideraciones de vida diaria",
+        emphasis: "Vivir, no solo hacer turismo",
+        body:
+          "Las estancias largas introducen rutinas practicas. Puedes empezar a pensar en:",
+        bullets: [
+          "Lavanderia y compras de supermercado",
+          "Cafeterias o espacios de trabajo habituales",
+          "Rutas de transporte que ya te resultan familiares",
+          "Patrones semanales del barrio",
+          "Estas pequenas rutinas influyen mas en la calidad de un mes que sumar atracciones.",
+        ],
+      },
+      {
+        title: "💸 Perspectiva de presupuesto",
+        emphasis: "Expectativas generales",
+        body:
+          "Los costos dependen del estilo de vida y de la temporada, pero menos traslados reducen el gasto total. Suele importar:",
+        bullets: [
+          "Tarifas de alojamiento segun ciudad y duracion",
+          "Costos de transporte mas bajos cuando haces menos cambios regionales",
+          "Gasto en comida flexible segun tus rutinas diarias",
+          "El costo oculto de un viaje largo es moverte de mas, no la vida cotidiana.",
+        ],
+      },
+      {
+        title: "📝 Lo que no necesitas planear al principio",
+        emphasis: "Deja espacio para la flexibilidad",
+        body: "No necesitas:",
+        bullets: [
+          "Horarios diarios detallados",
+          "Una lista completa de atracciones",
+          "Reservas para cada noche",
+          "Decisiones finales para cada fin de semana",
+          "Elige primero tus bases principales. Deja que el plan evolucione cuando ya estes instalado.",
+        ],
+      },
+      {
+        title: "✅ Cuando un viaje de un mes funciona mejor",
+        body: "Un mes en Corea funciona bien si:",
+        bullets: [
+          "Prefieres viajar despacio",
+          "Valoras la rutina junto con la exploracion",
+          "Te sientes comodo con una planificacion flexible",
+          "Quieres experimentar la vida diaria",
+          "La experiencia deberia sentirse cada vez mas normal, en el buen sentido.",
+        ],
+      },
+      {
+        title: "🔎 Necesitas informacion actual?",
+        body:
+          "Las politicas de alojamiento, los precios y las opciones de larga estancia pueden cambiar. Confirma informacion actualizada en fuentes oficiales o fiables antes de reservar definitivamente.",
+      },
+      {
+        title: "✨ Conclusion",
+        emphasis: "La calma gana al exceso.",
+        body:
+          "Dos o tres bases. Estancias largas. Menos traslados. Un buen mes en Corea se siente estable y comodo. Cuando tus dias empiezan a sentirse normales de una manera positiva, tu estancia larga esta bien estructurada.",
+      },
+    ],
+  },
+  "/plan-your-trip/first-time-in-korea": {
+    title: "Primera vez en Corea",
+    description: "Que esperar y que preparar.",
+    quickAnswer:
+      "Esta pagina te ayuda a entender que importa de verdad antes de tu primer viaje a Corea.",
+    content: [
+      {
+        title: "🌟 Introduccion",
+        emphasis: "A la mayoria de los viajeros les sorprende lo facil que se siente Corea.",
+        body:
+          "Si es tu primera visita, no necesitas sentir ansiedad. Corea es moderna, organizada y esta pensada de una forma que hace manejable el viaje de corta estancia, incluso para visitantes que no hablan el idioma. Esta guia explica que esperar y que preparar sin abrumarte.",
+      },
+      {
+        title: "👀 Lo que suelen notar quienes vienen por primera vez",
+        emphasis: "Impresion general",
+        body:
+          "No necesitas habilidades de supervivencia. Muchos visitantes esperan confusion o dificultad. En cambio, suelen notar lo estructurada y eficiente que se siente la vida diaria. Corea es:",
+        bullets: [
+          "Muy segura, incluso tarde por la noche",
+          "Limpia y bien organizada",
+          "Facil de recorrer con transporte publico fiable",
+          "Llena de tiendas de conveniencia y comida casi en todas partes",
+          "Los sistemas funcionan con constancia, y eso reduce el estres en la primera visita.",
+        ],
+      },
+      {
+        title: "🧩 Lo que puede sentirse poco familiar al principio",
+        emphasis: "Ajustes pequenos, no problemas reales",
+        body:
+          "Los desafios principales son menores y temporales. En una primera visita a veces aparece:",
+        bullets: [
+          "La diferencia de idioma fuera de las zonas turisticas principales",
+          "Dudas sobre que apps usar para mapas o taxis",
+          "Preguntas sobre rutinas diarias, como pedir comida o separar basura",
+          "Estos ajustes suelen sentirse normales en pocos dias.",
+        ],
+      },
+      {
+        title: "🧳 Que preparar antes de llegar",
+        emphasis: "Mantenlo practico",
+        body:
+          "Prepararte no tiene por que ser complicado. Antes del vuelo, confirma que tienes:",
+        bullets: [
+          "Un telefono que funcione internacionalmente o un plan de conectividad",
+          "Al menos un metodo de pago internacional",
+          "Los datos de tu alojamiento para la primera noche",
+          "Una idea basica de como ir del aeropuerto a tu alojamiento",
+          "Unas primeras 24 horas fluidas reducen casi toda la ansiedad del viaje.",
+        ],
+      },
+      {
+        title: "✨ Lo que sorprende a muchos primerizos",
+        emphasis: "Mas facil de lo esperado",
+        body:
+          "Varias cosas suelen sorprender de forma positiva:",
+        bullets: [
+          "Las tarjetas se aceptan en la mayoria de lugares",
+          "El efectivo sigue siendo util en tiendas pequenas o mercados",
+          "Los taxis son seguros y regulados",
+          "Aunque el ingles sea limitado, mucha gente intenta ayudar",
+          "La vida diaria puede sentirse mas simple de lo que esperabas.",
+        ],
+      },
+      {
+        title: "⚠️ Errores comunes que debes evitar",
+        emphasis: "Una preparacion simple marca la diferencia",
+        body: "Evita estos errores comunes:",
+        bullets: [
+          "Sobreplanear los primeros dias",
+          "Depender solo de taxis en vez de aprender el transporte publico",
+          "Esperar que todo funcione exactamente como en casa",
+          "No preparar nada porque parece facil",
+          "Equilibra preparacion con flexibilidad.",
+        ],
+      },
+      {
+        title: "📝 Lo que todavia no necesitas decidir",
+        emphasis: "Deja espacio para la flexibilidad",
+        body: "No necesitas:",
+        bullets: [
+          "Una lista completa de atracciones",
+          "Horarios diarios hora por hora",
+          "Reservas de restaurantes para cada comida",
+          "Algunas de las mejores experiencias ocurren cuando dejas espacio al plan.",
+        ],
+      },
+      {
+        title: "🤝 Ajuste cultural",
+        emphasis: "Entender las diferencias del dia a dia",
+        body: "Algunas diferencias pueden llamar la atencion:",
+        bullets: [
+          "Los espacios publicos suelen ser ordenados y tranquilos",
+          "Las interacciones pueden sentirse eficientes y directas",
+          "El espacio personal suele respetarse",
+          "Son patrones culturales, no obstaculos.",
+        ],
+      },
+      {
+        title: "🛡️ Perspectiva de seguridad",
+        emphasis: "Un entorno seguro",
+        body:
+          "Corea se considera ampliamente un destino seguro para viajeros. El transporte nocturno es comun. Las zonas urbanas estan bien iluminadas. Los objetos perdidos suelen devolverse. Siempre conviene una atencion basica, pero una preocupacion excesiva normalmente no hace falta.",
+      },
+      {
+        title: "🔎 Una nota importante",
+        emphasis: "Confirma antes de viajar",
+        body:
+          "Los procesos de entrada, los tramites de aeropuerto y algunas normas pueden cambiar. Antes de salir, confirma la informacion esencial en fuentes oficiales y actualizadas. Estar informado reduce la incertidumbre.",
+      },
+      {
+        title: "✅ Conclusion",
+        emphasis: "Estar comodo gana a ser perfecto.",
+        body:
+          "Tu primer viaje a Corea no necesita ser perfecto. Necesita sentirse manejable y estable. Si llegas relajado en lugar de nervioso, te preparaste bien.",
+      },
+    ],
+  },
+  "/plan-your-trip/been-here-before": {
+    title: "Ya estuviste en Corea?",
+    description: "Ideas mas alla de la ruta turistica tipica.",
+    quickAnswer:
+      "Esta pagina te ayuda a encontrar ideas nuevas mas alla de la ruta turistica habitual en Corea.",
+    content: [
+      {
+        title: "🌟 Introduccion",
+        emphasis: "No mas lugares. Mejores dias.",
+        body:
+          "Si este no es tu primer viaje a Corea, no necesitas otra lista de control. Necesitas un mejor ritmo. Una segunda visita no trata de hacer mas. Trata de viajar con mas inteligencia y mas comodidad.",
+      },
+      {
+        title: "🌿 Como deberia sentirse un segundo viaje",
+        emphasis: "Un ritmo diferente",
+        body: "Tu segundo viaje deberia sentirse:",
+        bullets: [
+          "Mas lento",
+          "Mas profundo",
+          "Mas facil",
+          "Ya sabes como funciona el transporte. Ya reconoces las tiendas de conveniencia. Ya entiendes lo basico. Esa familiaridad es una ventaja.",
+          "Usala.",
+        ],
+      },
+      {
+        title: "🧭 En vez de anadir ciudades, prueba esto",
+        emphasis: "La comodidad no es aburrida. Es eficiente.",
+        body:
+          "Muchos viajeros que regresan asumen que deben ver lugares totalmente nuevos cada vez. No hace falta. En lugar de sumar mas ciudades, piensa en:",
+        bullets: [
+          "Quedarte mas tiempo en un mismo sitio",
+          "Reducir los traslados entre ciudades",
+          "Volver de verdad a un barrio favorito",
+          "La profundidad mejora la experiencia mas que la distancia.",
+        ],
+      },
+      {
+        title: "❓ La pregunta que cambia todo",
+        emphasis: "Como quieres que se sientan tus dias?",
+        body:
+          "Antes de planear rutas, hazte una pregunta: como quiero que se sientan mis dias? Deja que esa respuesta guie la estructura, no las tendencias de redes sociales. Tal vez quieras:",
+        bullets: [
+          "Mananas tranquilas sin alarma",
+          "Tardes centradas en comida",
+          "Barrios caminables en vez de dias largos de transporte",
+          "Pausas de naturaleza entre estancias urbanas",
+          "La estructura sigue a la intencion.",
+        ],
+      },
+      {
+        title: "✅ Lo que mejor funciona en visitas repetidas",
+        emphasis: "Menos movimiento, mas ritmo",
+        body:
+          "Los segundos viajes mejoran cuando te mueves menos. Estrategias que suelen funcionar:",
+        bullets: [
+          "Quedarte dos o tres noches en ciudades pequenas como Gangneung, Jeonju o Tongyeong",
+          "Explorar barrios en vez de solo grandes monumentos",
+          "Anadir un dia centrado en naturaleza cada semana",
+          "Dejar al menos dos mananas sin plan",
+          "La flexibilidad crea espacio.",
+        ],
+      },
+      {
+        title: "🍁 La temporada importa mas que lugares nuevos",
+        emphasis: "El momento cambia todo",
+        body: "Tenlo en cuenta:",
+        bullets: [
+          "En una visita repetida, el momento suele importar mas que la novedad. La misma ciudad puede sentirse totalmente distinta en otra estacion.",
+          "Primavera (abril): cerezos y clima suave",
+          "Otono (octubre-noviembre): follaje y temperaturas comodas",
+          "Verano: ciudades costeras como Busan o Sokcho",
+          "Invierno: viajes centrados en comida, aguas termales y menos gente",
+          "Volver en otra epoca del ano puede sentirse como visitar otro pais.",
+        ],
+      },
+      {
+        title: "⚠️ Lo que suele salir mal",
+        emphasis: "Intentar demostrar algo",
+        body:
+          "Un segundo viaje no trata de demostrar que eres un viajero serio. Incluso visitantes con experiencia a veces:",
+        bullets: [
+          "Repiten exactamente la misma ruta Seul-Busan-Jeju",
+          "Vuelven a anadir demasiadas ciudades",
+          "Persiguen 'joyas ocultas' mientras corren entre ellas",
+          "Una estructura mas tranquila suele dar una mejor experiencia.",
+        ],
+      },
+      {
+        title: "📝 Lo que puedes saltarte sin arrepentirte",
+        emphasis: "Menos checks. Mejores dias.",
+        body: "No necesitas:",
+        bullets: [
+          "Volver a cada gran atraccion",
+          "Seguir listas actualizadas de 'Top 10'",
+          "Comparar este viaje con el anterior",
+          "Tu forma de viajar evoluciona contigo. No necesita repetirse.",
+        ],
+      },
+      {
+        title: "🔎 Un recordatorio rapido",
+        emphasis: "Los detalles cambian.",
+        body:
+          "Aunque ya hayas estado aqui, siempre conviene volver a revisar la informacion practica. Antes de viajar:",
+        bullets: [
+          "Vuelve a confirmar eventos de temporada",
+          "Confirma horarios de apertura",
+          "Verifica horarios de transporte",
+          "Confirma fechas de festivales",
+          "Pequenas actualizaciones evitan estres innecesario.",
+        ],
+      },
+      {
+        title: "✨ Conclusion",
+        emphasis: "La calma gana al exceso.",
+        body:
+          "Si tu segundo viaje se siente equilibrado, familiar pero renovado, lo planeaste bien.",
+      },
+    ],
+  },
+};
+const localizedNodeOverride: LocalizedNodeOverride | undefined =
+  !isHome && lang === "es" ? localizedPlanYourTripOverrides[basePath] : undefined;
 
 const getInitials = (title: string) => {
   const words = title.replace(/[?]/g, "").split(" ").filter(Boolean);
@@ -948,11 +1731,18 @@ const centerCardIconForPage =
 const answerImage = getResponsiveImage(node.image ?? node.icon, node.title, node.slug);
 
 const checklistByRoot: Record<string, string[]> = {
-  "plan-your-trip": [
-    "I chose my trip length and one backup plan.",
-    "I confirmed my first city and first-night stay.",
-    "I bookmarked the latest updates page before booking."
-  ],
+  "plan-your-trip":
+    lang === "es"
+      ? [
+          "Elegi la duracion del viaje y un plan alternativo.",
+          "Confirme mi primera ciudad y donde dormire la primera noche.",
+          "Guarde la pagina de actualizaciones antes de reservar.",
+        ]
+      : [
+          "I chose my trip length and one backup plan.",
+          "I confirmed my first city and first-night stay.",
+          "I bookmarked the latest updates page before booking."
+        ],
   "choose-a-city": [
     "I picked one main city and one optional contrast city.",
     "I checked seasonal weather for my travel dates.",
@@ -980,11 +1770,18 @@ const checklistByRoot: Record<string, string[]> = {
   ],
 };
 
-const defaultChecklist = [
-  "I reviewed the key points on this page.",
-  "I checked the latest travel updates before making decisions.",
-  "I saved this page for quick access during my trip."
-];
+const defaultChecklist =
+  lang === "es"
+    ? [
+        "Revise los puntos clave de esta pagina.",
+        "Revise las ultimas actualizaciones antes de decidir.",
+        "Guarde esta pagina para acceder rapido durante el viaje.",
+      ]
+    : [
+        "I reviewed the key points on this page.",
+        "I checked the latest travel updates before making decisions.",
+        "I saved this page for quick access during my trip."
+      ];
 
 type PageUiFlags = {
   showHubFaq: boolean;
@@ -1048,27 +1845,45 @@ const nextOverride = leafNextOverrides[node.slug ?? ""];
 const nextDecisionPath =
   nextOverride?.path ??
   (nextLeaf ? withLang(joinPath(parentPath, nextLeaf.slug), lang) : latestUpdatesPath);
+const localizedNextLeafTitle =
+  nextLeaf && lang === "es"
+    ? localizedPlanYourTripOverrides[`/plan-your-trip/${nextLeaf.slug}`]?.title
+    : undefined;
 const nextDecisionLabel =
   nextOverride?.label ??
   (nextLeaf
-    ? `${nextLeaf.title} (${lang === "es" ? "guia de 5 min" : "5-min guide"})`
+    ? `${localizedNextLeafTitle ?? nextLeaf.title} (${lang === "es" ? "guia de 5 min" : "5-min guide"})`
     : t.nextFallback);
 const checklistStorageKey = segments.join("/") || node.slug || "leaf";
-const contentBlockCount = node.content?.length ?? 0;
+const displayTitle = localizedNodeOverride?.title ?? node.title;
+const displayDescription = localizedNodeOverride?.description ?? node.description;
+const displayContent = localizedNodeOverride?.content ?? node.content ?? [];
+const contentBlockCount = displayContent.length;
 const middleContentIndex =
   contentBlockCount > 0 ? Math.max(1, Math.floor((contentBlockCount - 1) / 2)) : -1;
 const showHomeUpdateBar = isHome && segments.length === 0 && !node.slug;
 const homeUpdateTickerItems = showHomeUpdateBar ? await getHomeLeafTickerItems(siteTree) : [];
-const hubFaqItems = pageUi.showHubFaq && hasChildren && !isHome ? getHubFaqItems(node, lang) : [];
-const leafFaqItems = pageUi.showLeafFaq && isLeafPage ? getLeafFaqItems(node, lang) : [];
-const displayTitle = localizedCollectionCopy?.title ?? node.title;
-const displayDescription = localizedCollectionCopy?.description ?? node.description;
+const faqNode: TreeNode = localizedNodeOverride
+  ? {
+      ...node,
+      title: displayTitle,
+      description: displayDescription,
+      quickAnswer: localizedNodeOverride.quickAnswer ?? node.quickAnswer,
+      content: displayContent,
+    }
+  : node;
+const hubFaqItems = pageUi.showHubFaq && hasChildren && !isHome ? getHubFaqItems(faqNode, lang) : [];
+const leafFaqItems = pageUi.showLeafFaq && isLeafPage ? getLeafFaqItems(faqNode, lang) : [];
 const collectionQuickSummary =
-  hasChildren && !isHome ? localizedCollectionCopy?.quickAnswer ?? node.quickAnswer : undefined;
-const collectionGuideSections =
-  hasChildren && !isHome ? localizedCollectionCopy?.content ?? node.content ?? [] : [];
-const collectionChildCopy = localizedCollectionCopy?.children ?? {};
-const leafQuickAnswerText = (node.quickAnswer ?? node.description ?? t.quickFallback).trim();
+  hasChildren && !isHome ? localizedNodeOverride?.quickAnswer ?? node.quickAnswer : undefined;
+const collectionGuideSections = hasChildren && !isHome ? displayContent : [];
+const collectionChildCopy = localizedNodeOverride?.children ?? {};
+const leafQuickAnswerText = (
+  localizedNodeOverride?.quickAnswer ??
+  node.quickAnswer ??
+  displayDescription ??
+  t.quickFallback
+).trim();
 
 const breadcrumb = breadcrumbs;
 ---
@@ -1311,7 +2126,7 @@ const breadcrumb = breadcrumbs;
           <img
             src={answerImage.src}
             srcset={answerImage.srcSet}
-            alt={node.title}
+            alt={displayTitle}
             loading="eager"
             fetchpriority="high"
             decoding="async"
@@ -1321,11 +2136,11 @@ const breadcrumb = breadcrumbs;
           <span class="thumb-mask" aria-hidden="true"></span>
         </div>
         <div>
-          <h3 class="t-section">{node.title}</h3>
-          <p class="t-subheading">{node.description ?? t.guidePreparing}</p>
+          <h3 class="t-section">{displayTitle}</h3>
+          <p class="t-subheading">{displayDescription ?? t.guidePreparing}</p>
         </div>
       </div>
-      {node.content?.map((section, index) => (
+      {displayContent.map((section, index) => (
         <Fragment>
           <div
             class="content-block"

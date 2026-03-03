@@ -922,45 +922,65 @@ export const siteTree: TreeNode = {
       },
       description: "Choose the city that fits how you like to travel.",
       quickAnswer:
-        "Choose by energy, transit friction, and season first. Seoul is the easiest all-round base, Busan adds coastal spread, Jeju trades simplicity for nature and driving, and Gyeongju or Jeonju work best when you want a slower rhythm over constant variety.",
+        "Choose your city based on three things first: your travel energy, how much moving around feels stressful, and the season of your trip. Seoul is the easiest all-around base. Busan adds coastal contrast. Jeju offers nature, but requires more planning. Gyeongju or Jeonju work best if you prefer a slower rhythm over constant variety.",
       content: [
         {
           title: "🧭 Start with your travel energy",
           icon: "compass",
           emphasis:
-            "Pick the city you can still enjoy on a tired day, not the one that only looks good in a highlight reel.",
+            "Choose the city you can still enjoy on a tired day - not just the one that looks impressive in photos.",
           body:
-            "The strongest choice is usually the city that matches your stamina, noise tolerance, and willingness to keep moving after day one.",
-          bullets: [
-            "Seoul: Best if you want the most backup options, dense transit, and easy day-by-day adjustments.",
-            "Busan: Best if you want sea plus city contrast and can handle longer cross-city movement.",
-            "Jeju: Best if open space matters more than convenience and you are comfortable with flight or car logistics.",
-            "Gyeongju or Jeonju: Best if you want slower evenings, a smaller radius, and less big-city stimulation.",
+            "The best choice is usually the one that matches your stamina, noise tolerance, and willingness to keep moving after day one.",
+          subsections: [
+            {
+              title: "Seoul",
+              lead: [
+                "Best if you want maximum flexibility, dense public transport, and easy day-by-day adjustments.",
+              ],
+            },
+            {
+              title: "Busan",
+              lead: [
+                "Best if you want sea views plus city life and are comfortable with longer cross-city distances.",
+              ],
+            },
+            {
+              title: "Jeju",
+              lead: [
+                "Best if open space matters more than convenience, and you are comfortable with flights or car rentals.",
+              ],
+            },
+            {
+              title: "Gyeongju or Jeonju",
+              lead: [
+                "Best if you want quieter evenings, a smaller walking radius, and less big-city stimulation.",
+              ],
+            },
           ],
         },
         {
           title: "🚆 Compare movement cost before attractions",
           icon: "train",
-          emphasis: "Transport friction changes your day more than a famous landmark does.",
+          emphasis: "Transport friction shapes your day more than a famous landmark does.",
           body:
-            "A city can look perfect online and still be wrong for your trip if each useful stop costs you time, transfers, or recovery energy.",
+            "A city can look perfect online and still feel wrong if every meaningful stop costs you time, transfers, or recovery energy.",
           subsections: [
             {
-              title: "Lowest-friction base",
+              title: "Lowest friction base",
               lead: [
-                "Seoul is the easiest city for flexible planning because transit is dense, late changes are manageable, and bad weather rarely breaks the whole day.",
+                "Seoul is the most forgiving city for flexible planning. Transport is dense, last-minute changes are manageable, and bad weather rarely ruins the entire day.",
               ],
             },
             {
               title: "Moderate spread",
               lead: [
-                "Busan is workable by subway and taxi, but beach districts, hills, and longer hops make the city feel larger than the map suggests.",
+                "Busan is navigable by subway and taxi, but beaches, hills, and district gaps make it feel larger than the map suggests.",
               ],
             },
             {
               title: "Highest logistics load",
               lead: [
-                "Jeju pays you back with scenery, but only after you accept airport time, driving decisions, or slower bus connections.",
+                "Jeju rewards you with scenery, but only after you accept airport time, driving decisions, or slower bus routes.",
               ],
             },
           ],
@@ -968,26 +988,42 @@ export const siteTree: TreeNode = {
         {
           title: "🌦️ Let the season change the winner",
           icon: "cloud",
-          emphasis: "The same city can feel easy in October and draining in August.",
+          emphasis: "The same city can feel effortless in October and exhausting in August.",
           body:
-            "Weather changes how much walking, waiting, and open-air time feels comfortable, so the right city depends on your actual travel dates.",
-          bullets: [
-            "Summer: Busan and Jeju suit travelers who want coast and can handle heat, humidity, and crowded peak periods.",
-            "Spring or autumn: Gyeongju and Jeonju become easier to enjoy because walking-heavy historic areas feel lighter.",
-            "Winter: Seoul stays the most forgiving because indoor options and transport density make cold days easier to adapt.",
-            "If your trip depends on beaches, foliage, or outdoor hikes, check the season before committing to the city.",
+            "Weather changes how much walking, waiting, and outdoor time feels comfortable. Your actual travel dates matter more than popularity.",
+          subsections: [
+            {
+              title: "Summer",
+              lead: [
+                "Busan and Jeju work well if you want coastal scenery and can handle heat, humidity, and peak crowds.",
+              ],
+            },
+            {
+              title: "Spring or Autumn",
+              lead: [
+                "Gyeongju and Jeonju become easier to enjoy, especially if you plan to walk through historic districts.",
+              ],
+            },
+            {
+              title: "Winter",
+              lead: [
+                "Seoul is usually the most adaptable choice because indoor options and dense transport make cold days easier to adjust.",
+              ],
+            },
           ],
+          tail:
+            "If your trip depends on beaches, foliage, or outdoor hikes, confirm the season before committing to a city.",
         },
         {
           title: "🚫 Do not choose a city just because it is famous",
           icon: "alert",
-          emphasis: "Popularity is not a travel style.",
+          emphasis: "Popularity is not the same as travel fit.",
           body:
-            "A famous city can still be the wrong fit for your pace. Use the city pages below to confirm daily rhythm, transport style, and atmosphere instead of copying the most common itinerary.",
+            "A well-known city can still be the wrong choice for your pace. Use the city pages below to confirm daily rhythm, transport style, and atmosphere - not to copy the most common itinerary.",
           bullets: [
             "Choose the page that solves a real travel need, not the place you feel you are 'supposed' to visit.",
-            "If two cities seem close, choose the one with the lower movement cost for your dates and budget.",
-            "Add a second city only if it gives you a clearly different rhythm, not just another checklist item.",
+            "If two cities seem similar, choose the one with lower movement cost for your dates and budget.",
+            "Add a second city only if it gives you a clearly different rhythm - not just another box to tick.",
           ],
         },
       ],

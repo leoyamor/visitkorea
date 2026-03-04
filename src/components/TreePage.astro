@@ -1,6 +1,5 @@
 ---
 import AdSenseSafeSlot from "./AdSenseSafeSlot.astro";
-import { localizedContentByPath } from "../data/localizedContent";
 import { findNodeBySegments, siteTree, type TreeNode } from "../data/siteTree";
 import { getEditorialMeta } from "../lib/editorial";
 import { getHubFaqItems } from "../lib/hubFaq";
@@ -1110,17 +1109,8 @@ const localizedPlanYourTripOverrides: Record<string, LocalizedNodeOverride> = {
     ],
   },
 };
-const localizedShadowOverride: LocalizedNodeOverride | undefined =
-  !isHome ? localizedContentByPath[basePath]?.[lang] : undefined;
-const legacyLocalizedNodeOverride: LocalizedNodeOverride | undefined =
+const localizedNodeOverride: LocalizedNodeOverride | undefined =
   !isHome && lang === "es" ? localizedPlanYourTripOverrides[basePath] : undefined;
-const localizedNodeOverride: LocalizedNodeOverride | undefined = localizedShadowOverride
-  ? {
-      ...legacyLocalizedNodeOverride,
-      ...localizedShadowOverride,
-      children: localizedShadowOverride.children ?? legacyLocalizedNodeOverride?.children,
-    }
-  : legacyLocalizedNodeOverride;
 
 const getInitials = (title: string) => {
   const words = title.replace(/[?]/g, "").split(" ").filter(Boolean);

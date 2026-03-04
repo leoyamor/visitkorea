@@ -4974,7 +4974,65 @@ export const siteTree: TreeNode = {
       slug: "before-you-go",
       icon: "passport",
       image: "/Before%20You%20Go.webp",
-      description: "Prepare for arrival, rules, and local customs.",
+      pageType: "hub",
+      overrides: {
+        showHubFaq: false,
+      },
+      description:
+        "Lock in entry rules, arrival connectivity, and risk coverage before departure.",
+      quickAnswer:
+        "Use this hub as a final departure check: confirm entry rules first, secure data for landing day second, and decide whether insurance meaningfully reduces the financial risk of your trip.",
+      content: [
+        {
+          title: "🛂 Start with entry certainty",
+          icon: "passport",
+          emphasis:
+            "If your boarding eligibility is unclear, this is the first page to open.",
+          body:
+            "K-ETA, visa status, and e-Arrival Card rules decide whether your trip starts smoothly or turns into a last-minute problem at check-in.",
+          bullets: [
+            "Open Korea Entry Requirements first if you are not fully sure whether your passport still qualifies for visa-free entry or a temporary exemption.",
+            "Use it if you need the exact airport arrival order instead of a generic immigration summary.",
+            "This removes the highest-stakes risk in this hub: being delayed before or after boarding.",
+          ],
+        },
+        {
+          title: "📶 Decide how you will land connected",
+          icon: "sim",
+          emphasis:
+            "SIM or eSIM is not a gadget choice. It is an arrival-friction choice.",
+          body:
+            "Mobile data matters most in your first hour after landing, when maps, airport pickup, translation, and payment apps become practical rather than optional.",
+          bullets: [
+            "Start with SIM or eSIM if you arrive late, travel solo, or rely on navigation immediately after exit.",
+            "This is the highest-ROI page for travelers who want a lower-friction arrival and fewer transport mistakes.",
+            "Choose before departure, not while standing in an airport queue without data.",
+          ],
+        },
+        {
+          title: "🛡️ Buy insurance only when the downside matters",
+          icon: "shield",
+          emphasis: "Insurance is about budget protection, not checking a box.",
+          body:
+            "For many travelers it stays optional, but the decision changes if one clinic visit, missed connection, or lost bag would materially disrupt your trip budget.",
+          bullets: [
+            "Open Travel Insurance first if you are traveling in winter, planning outdoor activities, or carrying a tight non-refundable itinerary.",
+            "Skip panic-buying and compare realistic medical costs, exclusions, and claim limits first.",
+            "This page is for travelers who need to cap downside risk, not for everyone by default.",
+          ],
+        },
+        {
+          title: "⚠️ What creates last-minute problems",
+          icon: "alert",
+          body: "Most departure stress comes from leaving one high-friction decision unresolved.",
+          bullets: [
+            "Assuming visa-free travel means no other pre-departure step applies.",
+            "Waiting until arrival day to solve connectivity.",
+            "Buying insurance without checking exclusions, then assuming you are covered.",
+            "Not rechecking official updates in the final 24 hours before departure.",
+          ],
+        },
+      ],
       children: [
         {
           title: "SIM or eSIM for Korea? A Practical Guide for Travelers",
@@ -4983,7 +5041,7 @@ export const siteTree: TreeNode = {
           image: "basics",
           pageType: "actionLeaf",
           description:
-            "Clear, realistic guidance on choosing between SIM and eSIM for Korea. Understand pricing ranges, usage rules, common mistakes, and how to stay connected from the moment you land.",
+            "Best for travelers who want data working on landing day, rely on maps immediately, or want the lowest-friction arrival.",
           quickAnswer:
             "For most travelers, eSIM is the easiest option if your phone supports it and is unlocked. If your device does not support eSIM, a physical SIM card at the airport is the safest alternative.",
           content: [
@@ -5223,7 +5281,7 @@ export const siteTree: TreeNode = {
           icon: "shield",
           image: "/leaf%20images/travel-insurance-for-korea.webp",
           description:
-            "Travel insurance is not legally required for most short-term visitors in 2026, but it is strongly recommended.",
+            "Best for travelers whose budget would be hit hard by a medical bill, delay, or lost bag, and who want to compare realistic risk.",
           quickAnswer:
             "Travel insurance is not mandatory under visa-free travel or K-ETA, but most travelers buy a basic plan because medical treatment is not free for tourists.",
           content: [
@@ -5357,7 +5415,7 @@ export const siteTree: TreeNode = {
           image: "/leaf%20images/Immigration%20Process.webp",
           pageType: "policyLeaf",
           description:
-            "Understand whether you need K-ETA, when to submit the e-Arrival Card, and the exact arrival procedure at Korean airports. Based on official 2026 guidance, structured clearly for international visitors.",
+            "Start here if you need certainty on K-ETA, the e-Arrival Card, or the exact airport arrival steps tied to your passport.",
           quickAnswer:
             "Check K-ETA and e-Arrival Card requirements before departure, then follow the official arrival order at Korean airports to avoid delays.",
           content: [

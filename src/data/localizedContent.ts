@@ -1,5 +1,6 @@
-import type { TreeNode } from "./siteTree";
 import type { SupportedLang } from "../lib/i18n";
+import type { TreeNode } from "./siteTree";
+import { localizedContentByPath, localizedContentByPathDraft } from "./localizedContentByPath";
 
 type LocalizedContentBlock = NonNullable<TreeNode["content"]>[number];
 
@@ -9,12 +10,18 @@ export const localizedHubPathsPhase1 = [
   "/before-you-go",
 ] as const;
 
+export const localizedShadowReviewPaths = [
+  "/plan-your-trip",
+  "/before-you-go",
+] as const;
+
 export const localizedTranslationFields = [
   "title",
   "description",
   "quickAnswer",
   "content",
-  "hubCardLabel",
+  "children.title",
+  "children.description",
 ] as const;
 
 export const structuralDataBoundary = [
@@ -33,11 +40,24 @@ export const translationDataBoundary = [
   "description",
   "quickAnswer",
   "content",
-  "hubCards.<slug>.label",
+  "children.<slug>.title",
+  "children.<slug>.description",
 ] as const;
 
-export type LocalizedHubCardCopy = {
-  label?: string;
+export const localizedContentPathKeyPattern = /^\/(?:[a-z0-9-]+)(?:\/[a-z0-9-]+)*$/;
+export const localizedContentPathKeyExample = "/plan-your-trip/7-days-in-korea" as const;
+
+export const localizedShadowReviewLangs = ["en", "es"] as const satisfies readonly SupportedLang[];
+export const localizedShadowRequiredFields = [
+  "title",
+  "description",
+  "quickAnswer",
+  "content",
+] as const;
+
+export type LocalizedChildCopy = {
+  title?: string;
+  description?: string;
 };
 
 export type LocalizedPathCopy = {
@@ -45,67 +65,98 @@ export type LocalizedPathCopy = {
   description?: string;
   quickAnswer?: string;
   content?: LocalizedContentBlock[];
-  hubCards?: Record<string, LocalizedHubCardCopy>;
+  children?: Record<string, LocalizedChildCopy>;
 };
 
 export type LocalizedContentByPath = Partial<
   Record<string, Partial<Record<SupportedLang, LocalizedPathCopy>>>
 >;
 
+export type LocalizedShadowRequiredField =
+  (typeof localizedShadowRequiredFields)[number];
+
+export type LocalizedContentReviewIssue = {
+  path: string;
+  lang: SupportedLang;
+  reason: "invalid-path-key" | "missing-required-fields";
+  needsReview: true;
+  missingFields?: LocalizedShadowRequiredField[];
+};
+
 export const localizedContentDesignNotes = {
   defaultSourceOfTruth: "siteTree.ts",
+  shadowDataSource: "localizedContentByPath.ts",
   migrationRule:
-    "Keep routing, hierarchy, page type, and UI toggles in siteTree. Move only translatable copy into localizedContentByPath during the phased migration.",
+    "Keep routing, hierarchy, page type, and UI toggles in siteTree. Mirror only translatable copy into localizedContentByPath during the phased migration.",
   phase1Scope: localizedHubPathsPhase1,
+  buildReviewScope: localizedShadowReviewPaths,
+  requiredLangs: localizedShadowReviewLangs,
   translationFields: localizedTranslationFields,
   structureFields: structuralDataBoundary,
   translationFieldsBoundary: translationDataBoundary,
+  pathKeyRule:
+    "Use absolute content paths with no locale prefix and no trailing slash. Example: /plan-your-trip/7-days-in-korea",
+  missingFieldRule:
+    "If a review-scope path is missing any required field in a required language, it stays in the pre-build review queue until backfilled.",
 } as const;
 
-// Draft only: TreePage still reads inline overrides today. This object locks the target shape
-// and phase-1 path scope without switching the rendering source yet.
-export const localizedContentByPath: LocalizedContentByPath = {
-  "/plan-your-trip": {
-    es: {
-      title: "Planifica tu viaje",
-      description: "Planifica tus dias con un ritmo realista, sin llenar demasiado el itinerario.",
-      quickAnswer:
-        "Empieza con tres filtros simples: cuanto tiempo te quedas, con que frecuencia aceptas cambiar de hotel y cuanto te drenan los dias largos de traslado.",
-      content: [],
-      hubCards: {
-        "7-days-in-korea": { label: "7 dias en Corea" },
-        "2-weeks-in-korea": { label: "2 semanas en Corea" },
-        "1-month-in-korea": { label: "1 mes en Corea" },
-      },
-    },
-  },
-  "/choose-a-city": {
-    es: {
-      title: "Elige una ciudad",
-      description: "Elige la ciudad que mejor encaja con tu forma de viajar.",
-      quickAnswer:
-        "Primero decide por energia, friccion de transporte y temporada; luego compara el tipo de ritmo que quieres sostener cada dia.",
-      content: [],
-      hubCards: {
-        seoul: { label: "Seul" },
-        busan: { label: "Busan" },
-        jeju: { label: "Jeju" },
-        gyeongju: { label: "Gyeongju" },
-        jeonju: { label: "Jeonju" },
-        "which-city-fits-you-best": { label: "Que ciudad te queda mejor?" },
-      },
-    },
-  },
-  "/before-you-go": {
-    es: {
-      title: "Antes de viajar",
-      description: "Cierra los preparativos finales antes de salir.",
-      quickAnswer:
-        "Usa este hub para confirmar entrada, conectividad y comprobaciones finales sin dejar decisiones importantes para el ultimo minuto.",
-      content: [],
-      hubCards: {},
-    },
-  },
+const hasRequiredShadowField = (
+  copy: LocalizedPathCopy | undefined,
+  field: LocalizedShadowRequiredField
+) => {
+  if (!copy) return false;
+  const value = copy[field];
+
+  if (field === "content") {
+    return Array.isArray(value) && value.length > 0;
+  }
+
+  return typeof value === "string" && value.trim().length > 0;
 };
 
-export const localizedContentByPathDraft = localizedContentByPath;
+export const isLocalizedContentPathKey = (path: string) =>
+  localizedContentPathKeyPattern.test(path);
+
+export const getLocalizedContentReviewQueue = (
+  content: LocalizedContentByPath = localizedContentByPath
+): LocalizedContentReviewIssue[] => {
+  const issues: LocalizedContentReviewIssue[] = [];
+
+  for (const path of Object.keys(content)) {
+    if (!isLocalizedContentPathKey(path)) {
+      for (const lang of localizedShadowReviewLangs) {
+        issues.push({
+          path,
+          lang,
+          reason: "invalid-path-key",
+          needsReview: true,
+        });
+      }
+    }
+  }
+
+  for (const path of localizedShadowReviewPaths) {
+    const localizedEntry = content[path];
+
+    for (const lang of localizedShadowReviewLangs) {
+      const copy = localizedEntry?.[lang];
+      const missingFields = localizedShadowRequiredFields.filter(
+        (field) => !hasRequiredShadowField(copy, field)
+      );
+
+      if (missingFields.length > 0) {
+        issues.push({
+          path,
+          lang,
+          reason: "missing-required-fields",
+          missingFields,
+          needsReview: true,
+        });
+      }
+    }
+  }
+
+  return issues;
+};
+
+export { localizedContentByPath, localizedContentByPathDraft };

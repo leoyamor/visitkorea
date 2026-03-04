@@ -1,5 +1,6 @@
 ---
 import AdSenseSafeSlot from "./AdSenseSafeSlot.astro";
+import { localizedContentByPath } from "../data/localizedContent";
 import { findNodeBySegments, siteTree, type TreeNode } from "../data/siteTree";
 import { getEditorialMeta } from "../lib/editorial";
 import { getHubFaqItems } from "../lib/hubFaq";
@@ -1109,8 +1110,17 @@ const localizedPlanYourTripOverrides: Record<string, LocalizedNodeOverride> = {
     ],
   },
 };
-const localizedNodeOverride: LocalizedNodeOverride | undefined =
+const localizedShadowOverride: LocalizedNodeOverride | undefined =
+  !isHome ? localizedContentByPath[basePath]?.[lang] : undefined;
+const legacyLocalizedNodeOverride: LocalizedNodeOverride | undefined =
   !isHome && lang === "es" ? localizedPlanYourTripOverrides[basePath] : undefined;
+const localizedNodeOverride: LocalizedNodeOverride | undefined = localizedShadowOverride
+  ? {
+      ...legacyLocalizedNodeOverride,
+      ...localizedShadowOverride,
+      children: localizedShadowOverride.children ?? legacyLocalizedNodeOverride?.children,
+    }
+  : legacyLocalizedNodeOverride;
 
 const getInitials = (title: string) => {
   const words = title.replace(/[?]/g, "").split(" ").filter(Boolean);
@@ -1885,6 +1895,29 @@ const collectionGuideRows =
         return rows;
       }, [])
     : [];
+const preferredChildOrderByPath: Partial<Record<string, string[]>> = {
+  "/before-you-go": [
+    "korea-entry-requirements",
+    "sim-or-esim",
+    "travel-insurance-for-korea",
+  ],
+};
+const orderedChildren = hasChildren
+  ? (() => {
+      const preferredOrder = preferredChildOrderByPath[basePath];
+      if (!preferredOrder) return children;
+
+      const sortIndex = new Map(
+        preferredOrder.map((slug, index) => [slug, index])
+      );
+
+      return [...children].sort((left, right) => {
+        const leftIndex = sortIndex.get(left.slug) ?? preferredOrder.length;
+        const rightIndex = sortIndex.get(right.slug) ?? preferredOrder.length;
+        return leftIndex - rightIndex;
+      });
+    })()
+  : children;
 const collectionChildCopy = localizedNodeOverride?.children ?? {};
 const leafQuickAnswerText = (
   localizedNodeOverride?.quickAnswer ??
@@ -2066,8 +2099,8 @@ const breadcrumb = breadcrumbs;
           ))}
         </div>
       )}
-      <div class="grid" data-orphans={children.length % 3}>
-        {children.map((child, index) => {
+      <div class:list={["grid", collectionGuideRows.length > 0 && "grid--after-guide"]} data-orphans={orderedChildren.length % 3}>
+        {orderedChildren.map((child, index) => {
           const cardImage = getResponsiveImage(child.image ?? child.icon, child.title, child.slug);
           const localizedCard = collectionChildCopy[child.slug] ?? {};
           const cardTitle = localizedCard.title ?? child.title;
@@ -3108,6 +3141,10 @@ const breadcrumb = breadcrumbs;
     gap: 20px;
   }
 
+  .grid--after-guide {
+    margin-top: 4px;
+  }
+
   @media (min-width: 901px) {
     .grid[data-orphans="1"] .card:last-child {
       grid-column: 2 / 3;
@@ -3804,7 +3841,7 @@ const breadcrumb = breadcrumbs;
 
     .grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
+      gap: 18px;
     }
 
     .hub-guide-rows {
@@ -3930,8 +3967,8 @@ const breadcrumb = breadcrumbs;
     }
 
     .hub-guide-rows {
-      gap: 28px;
-      margin-bottom: 28px;
+      gap: 30px;
+      margin-bottom: 34px;
     }
 
     .hub-guide-row {
@@ -4008,21 +4045,25 @@ const breadcrumb = breadcrumbs;
 
     .grid {
       grid-template-columns: 1fr;
-      gap: 14px;
+      gap: 18px;
     }
 
     .card {
-      gap: 12px;
-      padding: 16px 14px;
+      gap: 14px;
+      padding: 18px 16px;
     }
 
     .thumb {
-      height: 104px;
+      height: 108px;
     }
 
     .card-body {
       display: grid;
-      gap: 12px;
+      gap: 14px;
+    }
+
+    .grid--after-guide {
+      margin-top: 8px;
     }
 
     .answer-hero {

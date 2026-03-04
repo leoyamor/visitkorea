@@ -4981,55 +4981,56 @@ export const siteTree: TreeNode = {
       description:
         "Lock in entry rules, arrival connectivity, and risk coverage before departure.",
       quickAnswer:
-        "Use this hub as a final departure check: confirm entry rules first, secure data for landing day second, and decide whether insurance meaningfully reduces the financial risk of your trip.",
+        "Use this hub as a final pre-departure check. First confirm your entry eligibility, then make sure you can get connected on arrival, and finally decide whether travel insurance meaningfully reduces the financial risk of your trip.",
       content: [
         {
           title: "🛂 Start with entry certainty",
           icon: "passport",
           emphasis:
-            "If your boarding eligibility is unclear, this is the first page to open.",
+            "If your boarding eligibility is unclear, start here.",
           body:
-            "K-ETA, visa status, and e-Arrival Card rules decide whether your trip starts smoothly or turns into a last-minute problem at check-in.",
+            "Visa rules, K-ETA status, and the e-Arrival Card determine whether your trip begins smoothly or becomes a stressful problem at airport check-in.",
           bullets: [
-            "Open Korea Entry Requirements first if you are not fully sure whether your passport still qualifies for visa-free entry or a temporary exemption.",
-            "Use it if you need the exact airport arrival order instead of a generic immigration summary.",
-            "This removes the highest-stakes risk in this hub: being delayed before or after boarding.",
+            "Open Korea Entry Requirements first if you are not fully certain whether your passport still qualifies for visa-free entry or a temporary exemption.",
+            "Use that page if you want the exact arrival process at Korean airports instead of a generic immigration overview.",
+            "Resolving this step removes the highest-stakes risk in this hub: problems before or immediately after boarding.",
           ],
         },
         {
           title: "📶 Decide how you will land connected",
           icon: "sim",
           emphasis:
-            "SIM or eSIM is not a gadget choice. It is an arrival-friction choice.",
+            "SIM or eSIM is not just a tech choice - it's an arrival-friction decision.",
           body:
-            "Mobile data matters most in your first hour after landing, when maps, airport pickup, translation, and payment apps become practical rather than optional.",
+            "Mobile data matters most in the first hour after landing, when maps, airport transfers, translation apps, and payments become essential.",
           bullets: [
-            "Start with SIM or eSIM if you arrive late, travel solo, or rely on navigation immediately after exit.",
-            "This is the highest-ROI page for travelers who want a lower-friction arrival and fewer transport mistakes.",
-            "Choose before departure, not while standing in an airport queue without data.",
+            "Start with SIM or eSIM if you arrive late, travel solo, or expect to rely on navigation right after exiting the airport.",
+            "For many travelers, this is the highest-impact preparation step for avoiding confusion and transport mistakes.",
+            "Choose before departure rather than standing in an airport queue without data.",
           ],
         },
         {
           title: "🛡️ Buy insurance only when the downside matters",
           icon: "shield",
-          emphasis: "Insurance is about budget protection, not checking a box.",
+          emphasis:
+            "Travel insurance is about protecting your budget, not simply checking a box.",
           body:
-            "For many travelers it stays optional, but the decision changes if one clinic visit, missed connection, or lost bag would materially disrupt your trip budget.",
+            "For many trips it remains optional, but the calculation changes if one clinic visit, missed connection, or lost bag would significantly disrupt your plans.",
           bullets: [
-            "Open Travel Insurance first if you are traveling in winter, planning outdoor activities, or carrying a tight non-refundable itinerary.",
-            "Skip panic-buying and compare realistic medical costs, exclusions, and claim limits first.",
-            "This page is for travelers who need to cap downside risk, not for everyone by default.",
+            "Open Travel Insurance first if you are traveling in winter, planning outdoor activities, or following a tight non-refundable itinerary.",
+            "Compare realistic medical costs, coverage limits, and exclusions before deciding.",
+            "This page helps travelers cap downside risk - not everyone needs it by default.",
           ],
         },
         {
-          title: "⚠️ What creates last-minute problems",
+          title: "⚠️ What usually causes last-minute problems",
           icon: "alert",
           body: "Most departure stress comes from leaving one high-friction decision unresolved.",
           bullets: [
-            "Assuming visa-free travel means no other pre-departure step applies.",
+            "Assuming visa-free travel means no other pre-departure steps apply.",
             "Waiting until arrival day to solve connectivity.",
-            "Buying insurance without checking exclusions, then assuming you are covered.",
-            "Not rechecking official updates in the final 24 hours before departure.",
+            "Buying insurance quickly without checking exclusions or coverage limits.",
+            "Forgetting to recheck official updates in the final 24 hours before departure.",
           ],
         },
       ],

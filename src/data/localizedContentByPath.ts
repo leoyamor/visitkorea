@@ -180,57 +180,57 @@ export const localizedContentByPath: LocalizedContentByPath = {
       description:
         "Lock in entry rules, arrival connectivity, and risk coverage before departure.",
       quickAnswer:
-        "Use this hub as a final departure check: confirm entry rules first, secure data for landing day second, and decide whether insurance meaningfully reduces the financial risk of your trip.",
+        "Use this hub as a final pre-departure check. First confirm your entry eligibility, then make sure you can get connected on arrival, and finally decide whether travel insurance meaningfully reduces the financial risk of your trip.",
       content: [
         {
           title: "🛂 Start with entry certainty",
           icon: "passport",
           emphasis:
-            "If your boarding eligibility is unclear, this is the first page to open.",
+            "If your boarding eligibility is unclear, start here.",
           body:
-            "K-ETA, visa status, and e-Arrival Card rules decide whether your trip starts smoothly or turns into a last-minute problem at check-in.",
+            "Visa rules, K-ETA status, and the e-Arrival Card determine whether your trip begins smoothly or becomes a stressful problem at airport check-in.",
           bullets: [
-            "Open Korea Entry Requirements first if you are not fully sure whether your passport still qualifies for visa-free entry or a temporary exemption.",
-            "Use it if you need the exact airport arrival order instead of a generic immigration summary.",
-            "This removes the highest-stakes risk in this hub: being delayed before or after boarding.",
+            "Open Korea Entry Requirements first if you are not fully certain whether your passport still qualifies for visa-free entry or a temporary exemption.",
+            "Use that page if you want the exact arrival process at Korean airports instead of a generic immigration overview.",
+            "Resolving this step removes the highest-stakes risk in this hub: problems before or immediately after boarding.",
           ],
         },
         {
           title: "📶 Decide how you will land connected",
           icon: "sim",
           emphasis:
-            "SIM or eSIM is not a gadget choice. It is an arrival-friction choice.",
+            "SIM or eSIM is not just a tech choice - it's an arrival-friction decision.",
           body:
-            "Mobile data matters most in your first hour after landing, when maps, airport pickup, translation, and payment apps become practical rather than optional.",
+            "Mobile data matters most in the first hour after landing, when maps, airport transfers, translation apps, and payments become essential.",
           bullets: [
-            "Start with SIM or eSIM if you arrive late, travel solo, or rely on navigation immediately after exit.",
-            "This is the highest-ROI page for travelers who want a lower-friction arrival and fewer transport mistakes.",
-            "Choose before departure, not while standing in an airport queue without data.",
+            "Start with SIM or eSIM if you arrive late, travel solo, or expect to rely on navigation right after exiting the airport.",
+            "For many travelers, this is the highest-impact preparation step for avoiding confusion and transport mistakes.",
+            "Choose before departure rather than standing in an airport queue without data.",
           ],
         },
         {
           title: "🛡️ Buy insurance only when the downside matters",
           icon: "shield",
           emphasis:
-            "Insurance is about budget protection, not checking a box.",
+            "Travel insurance is about protecting your budget, not simply checking a box.",
           body:
-            "For many travelers it stays optional, but the decision changes if one clinic visit, missed connection, or lost bag would materially disrupt your trip budget.",
+            "For many trips it remains optional, but the calculation changes if one clinic visit, missed connection, or lost bag would significantly disrupt your plans.",
           bullets: [
-            "Open Travel Insurance first if you are traveling in winter, planning outdoor activities, or carrying a tight non-refundable itinerary.",
-            "Skip panic-buying and compare realistic medical costs, exclusions, and claim limits first.",
-            "This page is for travelers who need to cap downside risk, not for everyone by default.",
+            "Open Travel Insurance first if you are traveling in winter, planning outdoor activities, or following a tight non-refundable itinerary.",
+            "Compare realistic medical costs, coverage limits, and exclusions before deciding.",
+            "This page helps travelers cap downside risk - not everyone needs it by default.",
           ],
         },
         {
-          title: "⚠️ What creates last-minute problems",
+          title: "⚠️ What usually causes last-minute problems",
           icon: "alert",
           body:
             "Most departure stress comes from leaving one high-friction decision unresolved.",
           bullets: [
-            "Assuming visa-free travel means no other pre-departure step applies.",
+            "Assuming visa-free travel means no other pre-departure steps apply.",
             "Waiting until arrival day to solve connectivity.",
-            "Buying insurance without checking exclusions, then assuming you are covered.",
-            "Not rechecking official updates in the final 24 hours before departure.",
+            "Buying insurance quickly without checking exclusions or coverage limits.",
+            "Forgetting to recheck official updates in the final 24 hours before departure.",
           ],
         },
       ],
@@ -258,57 +258,57 @@ export const localizedContentByPath: LocalizedContentByPath = {
       description:
         "Asegura reglas de entrada, conectividad al llegar y cobertura de riesgo antes de salir.",
       quickAnswer:
-        "Usa este hub como tu revision final antes de partir: confirma primero las reglas de entrada, resuelve despues tu conexion movil para el dia de llegada y decide al final si el seguro reduce de verdad el riesgo financiero de tu viaje.",
+        "Usa este hub como una revision final antes de salir. Primero confirma si cumples los requisitos de entrada, despues asegurate de poder conectarte al llegar y, por ultimo, decide si el seguro de viaje reduce de forma real el riesgo financiero de tu viaje.",
       content: [
         {
           title: "🛂 Empieza por la certeza de entrada",
           icon: "passport",
           emphasis:
-            "Si no tienes claro si puedes abordar sin problemas, esta es la primera pagina que debes abrir.",
+            "Si no tienes claro si podras abordar sin problemas, empieza aqui.",
           body:
-            "Las reglas de K-ETA, el estado de visado y la e-Arrival Card definen si tu viaje arranca sin friccion o se convierte en un problema de ultimo minuto en el check-in.",
+            "Las reglas de visado, el estado de K-ETA y la e-Arrival Card determinan si tu viaje empieza sin contratiempos o se convierte en un problema estresante en el check-in del aeropuerto.",
           bullets: [
-            "Abre primero Requisitos de entrada a Corea si no tienes totalmente claro si tu pasaporte sigue entrando en visado exento o en una exencion temporal.",
-            "Usala si necesitas el orden exacto de llegada en el aeropuerto, no un resumen generico de inmigracion.",
-            "Esto elimina el riesgo mas delicado de este hub: retrasarte antes de abordar o justo al entrar.",
+            "Abre primero Requisitos de entrada a Corea si no tienes plena certeza de que tu pasaporte sigue calificando para entrada sin visado o para una exencion temporal.",
+            "Usa esa pagina si quieres ver el proceso exacto de llegada en los aeropuertos coreanos, no un resumen generico de inmigracion.",
+            "Resolver este punto elimina el riesgo mas importante de este hub: problemas antes de abordar o justo despues.",
           ],
         },
         {
           title: "📶 Decide como vas a aterrizar con conexion",
           icon: "sim",
           emphasis:
-            "SIM o eSIM no es una decision de gadget. Es una decision de friccion al llegar.",
+            "SIM o eSIM no es solo una decision tecnica: es una decision sobre la friccion de tu llegada.",
           body:
-            "Los datos moviles importan mas en tu primera hora tras aterrizar, cuando mapas, recogida en aeropuerto, traduccion y apps de pago pasan de ser utiles a ser practicos de verdad.",
+            "Los datos moviles importan mas durante la primera hora despues de aterrizar, cuando mapas, traslados desde el aeropuerto, apps de traduccion y pagos se vuelven esenciales.",
           bullets: [
-            "Empieza por SIM o eSIM si llegas tarde, viajas solo o dependes de la navegacion apenas sales.",
-            "Es la pagina de mayor retorno para quien quiere una llegada con menos friccion y menos errores de transporte.",
-            "Elige antes de salir, no mientras haces fila en el aeropuerto sin datos.",
+            "Empieza por SIM o eSIM si llegas tarde, viajas solo o esperas depender de la navegacion justo al salir del aeropuerto.",
+            "Para muchos viajeros, este es el paso de preparacion con mas impacto para evitar confusion y errores de transporte.",
+            "Decidelo antes de salir, no cuando ya estas haciendo fila en el aeropuerto sin datos.",
           ],
         },
         {
-          title: "🛡️ Compra seguro solo si el coste de caer mal te importa",
+          title: "🛡️ Compra seguro solo cuando el riesgo a la baja importe",
           icon: "shield",
           emphasis:
-            "El seguro trata de proteger presupuesto, no de marcar una casilla.",
+            "El seguro de viaje consiste en proteger tu presupuesto, no en marcar una casilla.",
           body:
-            "Para muchos viajeros sigue siendo opcional, pero la decision cambia si una consulta medica, una conexion perdida o una maleta extraviada alterarian de verdad tu presupuesto.",
+            "En muchos viajes sigue siendo opcional, pero el calculo cambia si una consulta medica, una conexion perdida o una maleta extraviada alterarian de forma importante tus planes.",
           bullets: [
-            "Abre primero Seguro de viaje si viajas en invierno, planeas actividades al aire libre o llevas un itinerario ajustado y no reembolsable.",
-            "Evita comprar por panico y compara antes costes medicos reales, exclusiones y limites de cobertura.",
-            "Esta pagina sirve a quien necesita limitar el riesgo a la baja, no a todo el mundo por defecto.",
+            "Abre primero Seguro de viaje si vas a viajar en invierno, planeas actividades al aire libre o sigues un itinerario ajustado y no reembolsable.",
+            "Compara antes de decidir los costos medicos realistas, los limites de cobertura y las exclusiones.",
+            "Esta pagina ayuda a limitar el riesgo a la baja; no todo el mundo lo necesita por defecto.",
           ],
         },
         {
-          title: "⚠️ Lo que crea problemas de ultimo minuto",
+          title: "⚠️ Que suele causar problemas de ultimo minuto",
           icon: "alert",
           body:
-            "Casi todo el estres antes de salir viene de dejar una decision de alta friccion sin resolver.",
+            "La mayor parte del estres antes de salir viene de dejar sin resolver una decision de alta friccion.",
           bullets: [
             "Asumir que viajar sin visado significa que no aplica ningun otro paso previo.",
             "Esperar al dia de llegada para resolver la conectividad.",
-            "Comprar seguro sin revisar exclusiones y dar por hecho que ya estas cubierto.",
-            "No volver a revisar actualizaciones oficiales en las 24 horas previas a la salida.",
+            "Comprar un seguro rapido sin revisar exclusiones ni limites de cobertura.",
+            "Olvidar volver a revisar las actualizaciones oficiales en las ultimas 24 horas antes de salir.",
           ],
         },
       ],

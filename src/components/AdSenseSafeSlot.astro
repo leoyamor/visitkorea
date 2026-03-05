@@ -163,9 +163,14 @@ const showPlaceholder = import.meta.env.DEV && !isEnabled;
   .ad-safe-slot {
     margin: 18px 0;
     padding: 14px 12px;
+    min-height: 156px;
     border-radius: 14px;
     border: 1px solid rgba(0, 0, 0, 0.08);
     background: rgba(255, 255, 255, 0.72);
+  }
+
+  .adsbygoogle {
+    min-height: 108px;
   }
 
   .ad-safe-slot--placeholder {
@@ -186,6 +191,11 @@ const showPlaceholder = import.meta.env.DEV && !isEnabled;
     .ad-safe-slot {
       margin: 14px 0;
       padding: 12px 10px;
+      min-height: 142px;
+    }
+
+    .adsbygoogle {
+      min-height: 96px;
     }
   }
 </style>

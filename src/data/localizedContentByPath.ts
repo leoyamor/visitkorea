@@ -334,6 +334,14 @@ export const localizedContentByPath: LocalizedContentByPath = {
     },
   },
   "/before-you-go/sim-or-esim": {
+    en: {
+      title: "SIM or eSIM for Korea? A Practical Guide for Travelers",
+      description:
+        "Best for travelers who want data working on landing day, rely on maps immediately, or want the lowest-friction arrival.",
+      quickAnswer:
+        "For most travelers, eSIM is the easiest option if your phone supports it and is unlocked. If your device does not support eSIM, a physical SIM card at the airport is the safest alternative.",
+      content: [],
+    },
     es: {
       title: "SIM o eSIM para Corea? Guia practica para viajeros",
       description:
@@ -578,6 +586,14 @@ export const localizedContentByPath: LocalizedContentByPath = {
     },
   },
   "/before-you-go/travel-insurance-for-korea": {
+    en: {
+      title: "Do I Need Travel Insurance for South Korea? (2026 Guide)",
+      description:
+        "Best for travelers whose budget would be hit hard by a medical bill, delay, or lost bag, and who want to compare realistic risk.",
+      quickAnswer:
+        "Travel insurance is not mandatory under visa-free travel or K-ETA, but most travelers buy a basic plan because medical treatment is not free for tourists.",
+      content: [],
+    },
     es: {
       title: "Necesito seguro de viaje para Corea del Sur? (Guia 2026)",
       description:

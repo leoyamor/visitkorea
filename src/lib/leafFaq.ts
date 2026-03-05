@@ -75,60 +75,104 @@ const LEAF_FAQ_LABELS: Record<
 
 const LEAF_FAQ_BY_LANG: Record<SupportedLang, Record<string, LeafFaqItem[]>> = {
   en: {
+    "sim-or-esim": [
+      {
+        question: "My phone supports eSIM. Should I still buy a physical SIM at the airport?",
+        answer:
+          "Usually no. If your phone is unlocked, install eSIM before departure and activate after landing.",
+      },
+      {
+        question: "I land late at night. What setup is least risky?",
+        answer:
+          "Pre-installed eSIM is usually safest because you can use maps and messages immediately without counter queues.",
+      },
+      {
+        question: "Do I need a Korean number, or is data-only enough?",
+        answer:
+          "Data-only is enough for most trips. Add voice only if you must call local numbers directly.",
+      },
+      {
+        question: "Unusual case: Can I keep my home SIM for OTP while using eSIM data in Korea?",
+        answer:
+          "Yes in many cases with dual-SIM phones. Keep your home SIM active for SMS OTP and route mobile data through the Korea eSIM.",
+      },
+    ],
     "travel-insurance-for-korea": [
       {
-        question: "Is travel insurance required for Korea?",
+        question: "Is travel insurance required for entry to Korea?",
         answer:
-          "Usually no. It is not mandatory for most short-term visitors, but it is strongly recommended.",
+          "Usually no. It is not mandatory for most short-term visitors under visa-free travel or K-ETA.",
       },
       {
-        question: "What can a hospital visit cost without insurance?",
+        question: "When is buying insurance the rational decision?",
         answer:
-          "Emergency care can be expensive for tourists. A single ER visit in Seoul can be a few hundred dollars, and inpatient care can rise quickly.",
+          "Buy it when one medical bill, delay, or lost bag would materially hurt your trip budget.",
       },
       {
-        question: "What coverage is enough for a normal trip?",
+        question: "What minimum coverage should I compare first?",
         answer:
-          "A practical baseline is emergency medical, hospitalization, and trip disruption coverage. Many travelers target at least $50,000-$100,000 USD medical coverage.",
+          "Start with emergency medical and hospitalization, then add delay/cancellation and baggage based on your itinerary.",
       },
       {
-        question: "Do I need adventure coverage too?",
+        question: "Do I need adventure or winter sports coverage?",
         answer:
-          "Only if you plan higher-risk activities like skiing, climbing, or similar sports.",
+          "Yes if you plan skiing, hiking, or similar activities. Standard plans often exclude those unless added.",
       },
       {
-        question: "Why buy insurance if I may never use it?",
+        question: "Unusual case: If I rent a scooter or e-bike for one day, is it covered?",
         answer:
-          "Most travelers never need it, which is ideal. The value is reducing financial risk so one incident does not damage your trip budget.",
+          "Often not by default. Check policy wording for two-wheel vehicle exclusions before assuming coverage.",
       },
     ],
   },
   es: {
+    "sim-or-esim": [
+      {
+        question: "Mi telefono admite eSIM. Aun asi conviene comprar SIM fisica en el aeropuerto?",
+        answer:
+          "Normalmente no. Si tu telefono esta desbloqueado, instala la eSIM antes de salir y activala al aterrizar.",
+      },
+      {
+        question: "Llego tarde por la noche. Que opcion reduce mas riesgo?",
+        answer:
+          "La eSIM preinstalada suele ser la mas segura porque te deja usar mapas y mensajes al instante, sin filas en mostrador.",
+      },
+      {
+        question: "Necesito numero coreano o me alcanza con datos?",
+        answer:
+          "Para la mayoria de viajes alcanza con datos. Agrega voz solo si realmente necesitas llamar a numeros locales.",
+      },
+      {
+        question: "Caso poco comun: puedo mantener mi SIM de origen para OTP y usar datos con eSIM en Corea?",
+        answer:
+          "Si, en muchos moviles dual-SIM. Mantienes tu SIM de origen para SMS OTP y dejas los datos moviles en la eSIM coreana.",
+      },
+    ],
     "travel-insurance-for-korea": [
       {
-        question: "Es obligatorio el seguro de viaje para Corea?",
+        question: "Es obligatorio el seguro para entrar a Corea?",
         answer:
-          "Normalmente no. Para la mayoria de visitas cortas no es obligatorio, pero si es muy recomendable.",
+          "Normalmente no. Para la mayoria de visitas cortas bajo viaje sin visado o K-ETA no es obligatorio.",
       },
       {
-        question: "Cuanto puede costar una atencion medica sin seguro?",
+        question: "Cuando tiene sentido comprarlo?",
         answer:
-          "Para turistas puede ser caro. Una sola visita a urgencias en Seul puede costar cientos de dolares y una hospitalizacion puede subir rapido.",
+          "Cuando una factura medica, un retraso o una maleta perdida golpearia de forma real tu presupuesto.",
       },
       {
-        question: "Que cobertura minima conviene para un viaje normal?",
+        question: "Que cobertura minima conviene comparar primero?",
         answer:
-          "Como base practica, cobertura medica de emergencia, hospitalizacion y problemas del viaje. Muchos viajeros buscan al menos $50,000-$100,000 USD en cobertura medica.",
+          "Empieza por cobertura medica de emergencia y hospitalizacion, y luego agrega retraso/cancelacion y equipaje segun tu itinerario.",
       },
       {
-        question: "Necesito tambien cobertura de aventura?",
+        question: "Necesito cobertura para aventura o deportes de invierno?",
         answer:
-          "Solo si planeas actividades de mayor riesgo como esqui, escalada u otros deportes similares.",
+          "Si planeas esqui, senderismo u otras actividades de riesgo, si. Muchos planes base no lo cubren sin extra.",
       },
       {
-        question: "Por que contratar seguro si quizas no lo use?",
+        question: "Caso poco comun: si alquilo scooter o bici electrica un dia, suele cubrirme?",
         answer:
-          "Lo ideal es no usarlo nunca. Su valor real es reducir el riesgo financiero para que un incidente no arruine tu presupuesto.",
+          "Muchas veces no de forma automatica. Revisa exclusiones de vehiculos de dos ruedas antes de asumir cobertura.",
       },
     ],
   },

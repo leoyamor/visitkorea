@@ -5049,13 +5049,23 @@ export const siteTree: TreeNode = {
             {
               title: "✅ Quick Answer",
               body:
-                "For most travelers, eSIM is the easiest option - if your phone supports it and is unlocked.",
+                "Default choice: use eSIM if your phone supports it and is unlocked. If not, choose airport pickup SIM.",
               bullets: [
                 "Install before departure, activate after landing, and you are connected immediately.",
                 "If your device does not support eSIM, a physical SIM card at the airport is the safest alternative.",
               ],
               tail:
                 "In Korea, reliable mobile data significantly reduces arrival stress.",
+            },
+            {
+              title: "🧪 Scenario Example: Late-Night Arrival",
+              body:
+                "Example: You land at Incheon around midnight, your hotel requires a message before check-in, and you need navigation immediately.",
+              bullets: [
+                "If eSIM is pre-installed, you can message your host and route to the hotel as soon as you clear customs.",
+                "If setup support matters more than speed, reserve airport pickup SIM with staff assistance.",
+                "The right choice is the one that removes your first-hour friction, not the one with the lowest headline price.",
+              ],
             },
             {
               title: "📱 Why Mobile Data Matters in Korea",
@@ -5258,21 +5268,15 @@ export const siteTree: TreeNode = {
             },
             {
               title: "💬 Final Advice",
-              body: "Reliable mobile data affects:",
+              body: "Before you pay, run this 4-point check:",
               bullets: [
-                "Your first hour after landing",
-                "Transportation decisions",
-                "Flexibility during your trip",
-                "Overall travel comfort",
-                "Before purchasing, verify:",
-                "Device compatibility",
-                "Unlock status",
-                "Data policy",
-                "Start timing rules",
-                "Realistic price range",
+                "Confirm exact phone-model eSIM support and unlock status.",
+                "Check when the usage timer starts (purchase time vs first data use).",
+                "Read fair-use rules for throttling and hotspot limits.",
+                "Save activation steps and support contact offline before departure.",
               ],
               tail:
-                "A few minutes of preparation can prevent hours of inconvenience.",
+                "A few focused checks usually prevent most arrival-day connectivity issues.",
             },
           ],
         },
@@ -5287,22 +5291,27 @@ export const siteTree: TreeNode = {
             "Travel insurance is not mandatory under visa-free travel or K-ETA, but most travelers buy a basic plan because medical treatment is not free for tourists.",
           content: [
             {
-              title: "Do I Need Travel Insurance for South Korea? (2026 Guide)",
+              title: "✅ Legal Requirement vs Budget Risk",
               icon: "shield",
               emphasis:
                 "Travel insurance is not legally required for most short-term visitors to South Korea in 2026.",
               body:
-                "However, medical treatment is not free for tourists. If something unexpected happens, you must pay the full cost yourself. South Korea has a modern, high-quality healthcare system. Hospitals are clean, efficient, and well equipped. But without insurance, even a simple emergency visit can become expensive. For most international travelers, basic travel insurance is a practical and affordable safety net.",
+                "The real decision is financial risk tolerance. Medical care is high quality, but tourists pay out of pocket when something goes wrong.",
+              bullets: [
+                "If one emergency bill would disrupt your trip budget, insurance is usually worth it.",
+                "If you are fully flexible and can self-fund disruptions, you may choose to skip it.",
+                "Decide based on downside impact, not on whether insurance is formally required.",
+              ],
             },
             {
-              title: "Quick Answer",
+              title: "🧪 Scenario Example: Should You Buy It?",
               icon: "spark",
-              emphasis: "Travel insurance is not mandatory for entry.",
-              body: "Most travelers still choose to purchase it for financial protection.",
+              emphasis: "Example: 9-day winter trip with two flights and non-refundable hotels.",
+              body: "This profile usually has meaningful downside risk from delay, injury, or baggage disruption.",
               bullets: [
-                "Travel insurance is not mandatory for entry to South Korea under visa-free travel or K-ETA.",
-                "However, most travelers choose to purchase it for financial protection.",
-                "A basic policy usually costs less than a restaurant meal per day and can prevent large unexpected expenses.",
+                "A delayed connection can cascade into missed prepaid stays.",
+                "Icy sidewalks and winter activities raise minor-injury probability.",
+                "In this case, a basic plan is often a rational risk cap.",
               ],
             },
             {

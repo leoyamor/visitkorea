@@ -10,9 +10,19 @@ export const localizedHubPathsPhase1 = [
   "/before-you-go",
 ] as const;
 
+export const localizedLeafShadowPathsPhase1 = [
+  "/before-you-go/sim-or-esim",
+  "/before-you-go/travel-insurance-for-korea",
+] as const;
+
 export const localizedShadowReviewPaths = [
   "/plan-your-trip",
   "/before-you-go",
+] as const;
+
+export const localizedShadowPreparedPaths = [
+  ...localizedShadowReviewPaths,
+  ...localizedLeafShadowPathsPhase1,
 ] as const;
 
 export const localizedTranslationFields = [
@@ -43,6 +53,54 @@ export const translationDataBoundary = [
   "children.<slug>.title",
   "children.<slug>.description",
 ] as const;
+
+export const localizedFieldMappingRules = [
+  {
+    siteTree: "title",
+    localized: "title",
+    note: "Page title copy only. Slug and routing stay in siteTree.",
+  },
+  {
+    siteTree: "description",
+    localized: "description",
+    note: "Leaf lead copy for hero and quick summary.",
+  },
+  {
+    siteTree: "quickAnswer",
+    localized: "quickAnswer",
+    note: "Primary short answer for leaf intro and FAQ fallback.",
+  },
+  {
+    siteTree: "content[]",
+    localized: "content[]",
+    note: "Translatable body blocks only. Icons, slug, and pageType remain structural.",
+  },
+  {
+    siteTree: "children[].title/description",
+    localized: "children.<slug>.title/description",
+    note: "Child card copy is keyed by slug in localized data.",
+  },
+] as const;
+
+export const leafFaqReferencedFields = [
+  "slug",
+  "description",
+  "quickAnswer",
+  "content[].title",
+  "content[].emphasis",
+  "content[].body",
+  "content[].bullets[0]",
+] as const;
+
+export const leafFaqLocalizedNodeDesign = {
+  currentInput: "TreeNode",
+  currentBehavior:
+    "leafFaq receives faqNode from TreePage, where localized override copy is already merged into the node when available.",
+  migrationRule:
+    "Keep getLeafFaqItems signature unchanged. During rollout, pass a localized node shape with the same TreeNode fields.",
+  requiredFields: leafFaqReferencedFields,
+  rendererSwitch: "Not in this phase; live leaf rendering remains siteTree-first.",
+} as const;
 
 export const localizedContentPathKeyPattern = /^\/(?:[a-z0-9-]+)(?:\/[a-z0-9-]+)*$/;
 export const localizedContentPathKeyExample = "/plan-your-trip/7-days-in-korea" as const;
@@ -98,6 +156,10 @@ export const localizedContentDesignNotes = {
     "Use absolute content paths with no locale prefix and no trailing slash. Example: /plan-your-trip/7-days-in-korea",
   missingFieldRule:
     "If a review-scope path is missing any required field in a required language, it stays in the pre-build review queue until backfilled.",
+  shadowPreparedPaths: localizedShadowPreparedPaths,
+  leafShadowPhase1: localizedLeafShadowPathsPhase1,
+  fieldMappingRules: localizedFieldMappingRules,
+  leafFaqContract: leafFaqLocalizedNodeDesign,
 } as const;
 
 const hasRequiredShadowField = (

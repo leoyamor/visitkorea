@@ -133,7 +133,7 @@ const t = {
     bookmarkTip: "Pro tip: Save this page to your home screen for quick access during your trip.",
     returnLatest: "Latest Travel Updates",
     returnNowMore: "Korea Now & More",
-    returnThisWeek: "Esta semana en Corea",
+    returnThisWeek: "This Week in Korea",
     updateTickerLabel: "What changed this week",
     updatedLabel: "Last updated",
     sourceNote: "For final booking decisions, always verify with official sources.",
@@ -1190,6 +1190,25 @@ const renderIcon = (key?: string) => {
   return iconMap[key] ?? "✨";
 };
 
+const headingEmojiPattern =
+  /^((?:\p{Extended_Pictographic}(?:\uFE0F|\uFE0E)?(?:\u200D\p{Extended_Pictographic}(?:\uFE0F|\uFE0E)?)*)|(?:[0-9#*]\uFE0F?\u20E3))\s*/u;
+
+const getHeadingDisplay = (title: string, iconKey?: string) => {
+  const mappedIcon = renderIcon(iconKey);
+  if (mappedIcon) {
+    return { icon: mappedIcon, title };
+  }
+  const match = title.match(headingEmojiPattern);
+  if (!match) {
+    return { icon: null, title };
+  }
+  const cleanTitle = title.slice(match[0].length).trimStart();
+  return {
+    icon: match[1],
+    title: cleanTitle.length > 0 ? cleanTitle : title,
+  };
+};
+
 const escapeHtml = (value: string) =>
   value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
@@ -2228,7 +2247,9 @@ const breadcrumb = breadcrumbs;
           <p class="t-subheading">{displayDescription ?? t.guidePreparing}</p>
         </div>
       </div>
-      {displayContent.map((section, index) => (
+      {displayContent.map((section, index) => {
+        const sectionHeading = getHeadingDisplay(section.title, section.icon);
+        return (
         <Fragment>
           <div
             class="content-block"
@@ -2236,10 +2257,10 @@ const breadcrumb = breadcrumbs;
             data-icon-align={centerCardIconForPage ? "center" : undefined}
           >
             <div class="content-title">
-              {section.icon && (
-                <span class="content-icon" aria-hidden="true">{renderIcon(section.icon)}</span>
+              {sectionHeading.icon && (
+                <span class="content-icon" aria-hidden="true">{sectionHeading.icon}</span>
               )}
-              <h4 class="t-section">{section.title}</h4>
+              <h4 class="t-section">{sectionHeading.title}</h4>
             </div>
             {section.emphasis && (
               <p class="content-emphasis">{section.emphasis}</p>
@@ -2296,7 +2317,8 @@ const breadcrumb = breadcrumbs;
             <AdSenseSafeSlot zone="leaf_mid_content" className="ad-safe-spacing ad-safe-spacing--middle" />
           )}
         </Fragment>
-      ))}
+        );
+      })}
       <div class="content-identity">
         <span class="content-identity-icon" aria-hidden="true">{renderIcon("spark")}</span>
         <span>{t.identity}</span>

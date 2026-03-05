@@ -1782,14 +1782,14 @@ const checklistByRoot: Record<string, string[]> = {
 const checklistByLeaf: Record<string, Partial<Record<SupportedLang, string[]>>> = {
   "sim-or-esim": {
     en: [
-      "I confirmed my exact phone model supports eSIM and is unlocked.",
-      "I chose plan start timing (first-use vs purchase-time) that matches my arrival.",
-      "I saved activation QR/support details offline before departure.",
+      "I confirmed my phone model supports eSIM and is unlocked.",
+      "I chose a plan start time that matches my arrival.",
+      "I saved activation instructions and support contact offline.",
     ],
     es: [
-      "Confirme que mi modelo exacto admite eSIM y esta desbloqueado.",
-      "Elegi un plan con regla de inicio que encaja con mi llegada.",
-      "Guarde offline el QR de activacion y el contacto de soporte.",
+      "Confirme que mi modelo de telefono admite eSIM y esta desbloqueado.",
+      "Elegi una hora de inicio del plan que coincide con mi llegada.",
+      "Guarde offline las instrucciones de activacion y el contacto de soporte.",
     ],
   },
   "travel-insurance-for-korea": {
@@ -1803,6 +1803,13 @@ const checklistByLeaf: Record<string, Partial<Record<SupportedLang, string[]>>> 
       "Compare cobertura medica, hospitalizacion y exclusiones en paralelo.",
       "Verifique cobertura para actividades de aventura o invierno si aplica.",
     ],
+  },
+};
+
+const checklistHintByLeaf: Record<string, Partial<Record<SupportedLang, string>>> = {
+  "sim-or-esim": {
+    en: "No login required. Tick what you have completed and save this page for later reference.",
+    es: "No se requiere inicio de sesion. Marca lo que completaste y guarda esta pagina para consultarla despues.",
   },
 };
 
@@ -1867,6 +1874,10 @@ const leafChecklist =
   checklistByLeaf[node.slug ?? ""]?.en ??
   checklistByRoot[rootSlug] ??
   defaultChecklist;
+const leafChecklistHint =
+  checklistHintByLeaf[node.slug ?? ""]?.[lang] ??
+  checklistHintByLeaf[node.slug ?? ""]?.en ??
+  t.checklistHint;
 
 const joinPath = (base: string, slug: string) => {
   const normalizedBase = base === "/" ? "" : base.replace(/\/+$/, "");
@@ -1882,13 +1893,21 @@ const nextLeaf =
     : undefined;
 const leafNextOverrides: Record<
   string,
-  { path: string; label: Partial<Record<SupportedLang, string>> }
+  {
+    path: string;
+    label: Partial<Record<SupportedLang, string>>;
+    hint?: Partial<Record<SupportedLang, string>>;
+  }
 > = {
   "sim-or-esim": {
     path: "/before-you-go/travel-insurance-for-korea",
     label: {
-      en: "Would one medical incident hurt your trip budget?",
-      es: "Una incidencia medica afectaria tu presupuesto de viaje?",
+      en: "Would one medical incident significantly affect your travel budget?",
+      es: "Una sola incidencia medica afectaria de forma importante tu presupuesto de viaje?",
+    },
+    hint: {
+      en: "-> Travel insurance may be worth considering before departure.",
+      es: "-> El seguro de viaje puede valer la pena antes de salir.",
     },
   },
   "travel-insurance-for-korea": {
@@ -1913,6 +1932,10 @@ const nextDecisionLabel =
   (nextLeaf
     ? `${localizedNextLeafTitle ?? nextLeaf.title} (${lang === "es" ? "guia de 5 min" : "5-min guide"})`
     : t.nextFallback);
+const nextDecisionHint =
+  nextOverride?.hint?.[lang] ??
+  nextOverride?.hint?.en ??
+  t.nextDecisionHint;
 const checklistStorageKey = segments.join("/") || node.slug || "leaf";
 const displayTitle = localizedNodeOverride?.title ?? node.title;
 const displayDescription = localizedNodeOverride?.description ?? node.description;
@@ -2339,7 +2362,7 @@ const breadcrumb = breadcrumbs;
                 <span class="leaf-next-prefix">{t.nextPrefix}</span>
                 <strong>{nextDecisionLabel}</strong>
               </a>
-              <p class="leaf-next-hint">{t.nextDecisionHint}</p>
+              <p class="leaf-next-hint">{nextDecisionHint}</p>
             </div>
           )}
 
@@ -2355,7 +2378,7 @@ const breadcrumb = breadcrumbs;
           {pageUi.showChecklist && (
             <div class="leaf-checklist-wrap">
               <p class="leaf-tools-label">{t.quickChecklist}</p>
-              <p class="leaf-checklist-hint">{t.checklistHint}</p>
+              <p class="leaf-checklist-hint">{leafChecklistHint}</p>
               <ul class="leaf-checklist-list" data-leaf-checklist data-checklist-key={checklistStorageKey}>
                 {leafChecklist.map((item, index) => (
                   <li>

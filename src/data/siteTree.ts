@@ -5047,25 +5047,27 @@ export const siteTree: TreeNode = {
             "For most travelers, eSIM is the easiest option if your phone supports it and is unlocked. If your device does not support eSIM, a physical SIM card at the airport is the safest alternative.",
           content: [
             {
-              title: "✅ Quick Answer",
+              title: "Quick Answer",
               body:
-                "Default choice: use eSIM if your phone supports it and is unlocked. If not, choose airport pickup SIM.",
+                "Default choice: use eSIM if your phone supports it and is unlocked. If not, choose an airport pickup SIM card.",
               bullets: [
-                "Install before departure, activate after landing, and you are connected immediately.",
-                "If your device does not support eSIM, a physical SIM card at the airport is the safest alternative.",
+                "Install the eSIM before departure and activate it after landing. You will have mobile data immediately when you leave the airport.",
+                "If your device does not support eSIM, a physical SIM card picked up at the airport is the safest alternative.",
               ],
               tail:
-                "In Korea, reliable mobile data significantly reduces arrival stress.",
+                "In Korea, having reliable mobile data right after arrival makes a big difference. It helps with navigation, translation apps, messaging, and transport bookings during your first hour in the country.",
             },
             {
-              title: "🧪 Scenario Example: Late-Night Arrival",
+              title: "Scenario Example: Late-Night Arrival",
               body:
-                "Example: You land at Incheon around midnight, your hotel requires a message before check-in, and you need navigation immediately.",
+                "Imagine arriving at Incheon Airport around midnight.",
               bullets: [
-                "If eSIM is pre-installed, you can message your host and route to the hotel as soon as you clear customs.",
-                "If setup support matters more than speed, reserve airport pickup SIM with staff assistance.",
-                "The right choice is the one that removes your first-hour friction, not the one with the lowest headline price.",
+                "Your hotel asks you to send a message before check-in, and you need directions as soon as you leave the airport.",
+                "If your eSIM is already installed, you can connect to data immediately after landing. You can message your hotel, check transit options, and navigate to your accommodation without delay.",
+                "If you prefer in-person help with setup, an airport pickup SIM is a reliable alternative because staff can assist with installation.",
               ],
+              tail:
+                "The best option is not necessarily the cheapest one - it is the one that removes friction during your first hour in Korea.",
             },
             {
               title: "📱 Why Mobile Data Matters in Korea",
@@ -5267,16 +5269,33 @@ export const siteTree: TreeNode = {
               ],
             },
             {
-              title: "💬 Final Advice",
-              body: "Before you pay, run this 4-point check:",
-              bullets: [
-                "Confirm exact phone-model eSIM support and unlock status.",
-                "Check when the usage timer starts (purchase time vs first data use).",
-                "Read fair-use rules for throttling and hotspot limits.",
-                "Save activation steps and support contact offline before departure.",
+              title: "Final Advice",
+              body:
+                "Before purchasing a SIM or eSIM, run through this quick four-point check.",
+              subsections: [
+                {
+                  title: "1️⃣ Confirm device compatibility",
+                  tail:
+                    "Make sure your exact phone model supports eSIM and that the device is carrier-unlocked.",
+                },
+                {
+                  title: "2️⃣ Check when the plan starts",
+                  tail:
+                    "Some plans begin at purchase time, while others start when data is first used.",
+                },
+                {
+                  title: "3️⃣ Review fair-use policies",
+                  tail:
+                    "Unlimited plans may slow down after heavy usage. Also check hotspot limits if you plan to tether.",
+                },
+                {
+                  title: "4️⃣ Save activation instructions offline",
+                  tail:
+                    "Download the QR code, setup guide, and support contact before departure.",
+                },
               ],
               tail:
-                "A few focused checks usually prevent most arrival-day connectivity issues.",
+                "A few quick checks like these usually prevent most connectivity problems on arrival day.",
             },
           ],
         },

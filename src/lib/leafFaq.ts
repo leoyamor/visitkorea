@@ -79,22 +79,22 @@ const LEAF_FAQ_BY_LANG: Record<SupportedLang, Record<string, LeafFaqItem[]>> = {
       {
         question: "My phone supports eSIM. Should I still buy a physical SIM at the airport?",
         answer:
-          "Usually no. If your phone is unlocked, install eSIM before departure and activate after landing.",
+          "Usually no. If your phone is unlocked, installing an eSIM before departure is the simplest option.",
       },
       {
         question: "I land late at night. What setup is least risky?",
         answer:
-          "Pre-installed eSIM is usually safest because you can use maps and messages immediately without counter queues.",
+          "A pre-installed eSIM is often the safest because you can use maps and messaging immediately after landing.",
       },
       {
         question: "Do I need a Korean number, or is data-only enough?",
         answer:
-          "Data-only is enough for most trips. Add voice only if you must call local numbers directly.",
+          "For most travelers, data-only is completely sufficient. Add voice service only if you expect to call Korean numbers directly.",
       },
       {
         question: "Unusual case: Can I keep my home SIM for OTP while using eSIM data in Korea?",
         answer:
-          "Yes in many cases with dual-SIM phones. Keep your home SIM active for SMS OTP and route mobile data through the Korea eSIM.",
+          "Yes. Many dual-SIM phones allow you to keep your home SIM active for SMS verification while using the Korean eSIM for mobile data.",
       },
     ],
     "travel-insurance-for-korea": [
@@ -130,22 +130,22 @@ const LEAF_FAQ_BY_LANG: Record<SupportedLang, Record<string, LeafFaqItem[]>> = {
       {
         question: "Mi telefono admite eSIM. Aun asi conviene comprar SIM fisica en el aeropuerto?",
         answer:
-          "Normalmente no. Si tu telefono esta desbloqueado, instala la eSIM antes de salir y activala al aterrizar.",
+          "Normalmente no. Si tu telefono esta desbloqueado, instalar una eSIM antes de salir suele ser la opcion mas simple.",
       },
       {
         question: "Llego tarde por la noche. Que opcion reduce mas riesgo?",
         answer:
-          "La eSIM preinstalada suele ser la mas segura porque te deja usar mapas y mensajes al instante, sin filas en mostrador.",
+          "Una eSIM preinstalada suele ser la opcion mas segura porque te permite usar mapas y mensajeria justo despues de aterrizar.",
       },
       {
         question: "Necesito numero coreano o me alcanza con datos?",
         answer:
-          "Para la mayoria de viajes alcanza con datos. Agrega voz solo si realmente necesitas llamar a numeros locales.",
+          "Para la mayoria de viajeros, un plan solo de datos es totalmente suficiente. Agrega voz solo si esperas llamar directamente a numeros coreanos.",
       },
       {
         question: "Caso poco comun: puedo mantener mi SIM de origen para OTP y usar datos con eSIM en Corea?",
         answer:
-          "Si, en muchos moviles dual-SIM. Mantienes tu SIM de origen para SMS OTP y dejas los datos moviles en la eSIM coreana.",
+          "Si. Muchos moviles dual-SIM permiten mantener activa tu SIM de origen para SMS de verificacion mientras usas la eSIM coreana para datos moviles.",
       },
     ],
     "travel-insurance-for-korea": [

@@ -87,12 +87,12 @@ const LEAF_FAQ_BY_LANG: Record<SupportedLang, Record<string, LeafFaqItem[]>> = {
           "A pre-installed eSIM is often the safest because you can use maps and messaging immediately after landing.",
       },
       {
-        question: "Do I need a Korean number, or is data-only enough?",
+        question: "Do I need a Korean phone number, or is data-only enough?",
         answer:
           "For most travelers, data-only is completely sufficient. Add voice service only if you expect to call Korean numbers directly.",
       },
       {
-        question: "Unusual case: Can I keep my home SIM for OTP while using eSIM data in Korea?",
+        question: "Unusual case: Can I keep my home SIM for OTP while using a Korea eSIM for data?",
         answer:
           "Yes. Many dual-SIM phones allow you to keep your home SIM active for SMS verification while using the Korean eSIM for mobile data.",
       },

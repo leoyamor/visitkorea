@@ -101,27 +101,27 @@ const LEAF_FAQ_BY_LANG: Record<SupportedLang, Record<string, LeafFaqItem[]>> = {
       {
         question: "Is travel insurance required for entry to Korea?",
         answer:
-          "Usually no. It is not mandatory for most short-term visitors under visa-free travel or K-ETA.",
+          "Usually no. Most short-term visitors entering visa-free or with K-ETA do not need travel insurance for immigration.",
       },
       {
-        question: "When is buying insurance the rational decision?",
+        question: "When is buying insurance the rational choice?",
         answer:
-          "Buy it when one medical bill, delay, or lost bag would materially hurt your trip budget.",
+          "Consider it if one medical bill, flight disruption, or lost bag would noticeably affect your travel budget.",
       },
       {
-        question: "What minimum coverage should I compare first?",
+        question: "What coverage should I compare first?",
         answer:
-          "Start with emergency medical and hospitalization, then add delay/cancellation and baggage based on your itinerary.",
+          "Start with emergency medical treatment and hospitalization coverage. Then consider trip delay, cancellation, and baggage protection depending on your itinerary.",
       },
       {
-        question: "Do I need adventure or winter sports coverage?",
+        question: "Do I need coverage for winter or outdoor activities?",
         answer:
-          "Yes if you plan skiing, hiking, or similar activities. Standard plans often exclude those unless added.",
+          "Yes if you plan activities like skiing, hiking, or similar sports. Standard plans sometimes exclude these unless additional coverage is added.",
       },
       {
         question: "Unusual case: If I rent a scooter or e-bike for one day, is it covered?",
         answer:
-          "Often not by default. Check policy wording for two-wheel vehicle exclusions before assuming coverage.",
+          "Not always. Some policies exclude two-wheel vehicles, so check the wording before assuming you are covered.",
       },
     ],
   },
@@ -152,27 +152,27 @@ const LEAF_FAQ_BY_LANG: Record<SupportedLang, Record<string, LeafFaqItem[]>> = {
       {
         question: "Es obligatorio el seguro para entrar a Corea?",
         answer:
-          "Normalmente no. Para la mayoria de visitas cortas bajo viaje sin visado o K-ETA no es obligatorio.",
+          "Normalmente no. La mayoria de visitantes de corta estancia que entran sin visado o con K-ETA no necesita seguro de viaje para inmigracion.",
       },
       {
-        question: "Cuando tiene sentido comprarlo?",
+        question: "Cuando es una decision racional contratarlo?",
         answer:
-          "Cuando una factura medica, un retraso o una maleta perdida golpearia de forma real tu presupuesto.",
+          "Consideralo si una factura medica, una interrupcion de vuelo o una maleta perdida afectaria de forma visible tu presupuesto de viaje.",
       },
       {
-        question: "Que cobertura minima conviene comparar primero?",
+        question: "Que cobertura conviene comparar primero?",
         answer:
-          "Empieza por cobertura medica de emergencia y hospitalizacion, y luego agrega retraso/cancelacion y equipaje segun tu itinerario.",
+          "Empieza por tratamiento medico de emergencia y hospitalizacion. Luego evalua retrasos, cancelaciones y proteccion de equipaje segun tu itinerario.",
       },
       {
-        question: "Necesito cobertura para aventura o deportes de invierno?",
+        question: "Necesito cobertura para actividades de invierno o al aire libre?",
         answer:
-          "Si planeas esqui, senderismo u otras actividades de riesgo, si. Muchos planes base no lo cubren sin extra.",
+          "Si, si planeas actividades como esqui, senderismo o deportes similares. Los planes estandar a veces las excluyen salvo que agregues cobertura adicional.",
       },
       {
         question: "Caso poco comun: si alquilo scooter o bici electrica un dia, suele cubrirme?",
         answer:
-          "Muchas veces no de forma automatica. Revisa exclusiones de vehiculos de dos ruedas antes de asumir cobertura.",
+          "No siempre. Algunas polizas excluyen vehiculos de dos ruedas, asi que revisa el texto antes de asumir que estas cubierto.",
       },
     ],
   },

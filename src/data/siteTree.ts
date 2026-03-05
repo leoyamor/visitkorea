@@ -5310,28 +5310,32 @@ export const siteTree: TreeNode = {
             "Travel insurance is not mandatory under visa-free travel or K-ETA, but most travelers buy a basic plan because medical treatment is not free for tourists.",
           content: [
             {
-              title: "✅ Legal Requirement vs Budget Risk",
+              title: "Legal Requirement vs Budget Risk",
               icon: "shield",
               emphasis:
                 "Travel insurance is not legally required for most short-term visitors to South Korea in 2026.",
               body:
-                "The real decision is financial risk tolerance. Medical care is high quality, but tourists pay out of pocket when something goes wrong.",
+                "The real question is not legality - it is financial risk.",
               bullets: [
-                "If one emergency bill would disrupt your trip budget, insurance is usually worth it.",
-                "If you are fully flexible and can self-fund disruptions, you may choose to skip it.",
-                "Decide based on downside impact, not on whether insurance is formally required.",
+                "Medical care in Korea is modern and reliable, but tourists usually pay the full cost themselves if something goes wrong.",
+                "If one unexpected medical bill would significantly affect your travel budget, travel insurance is usually worth considering.",
+                "If your plans are flexible and you can comfortably cover unexpected expenses on your own, you may decide to skip it.",
               ],
+              tail:
+                "The practical decision is simple: consider the possible financial impact, not just whether insurance is officially required.",
             },
             {
-              title: "🧪 Scenario Example: Should You Buy It?",
+              title: "Scenario Example: Should You Buy It?",
               icon: "spark",
-              emphasis: "Example: 9-day winter trip with two flights and non-refundable hotels.",
-              body: "This profile usually has meaningful downside risk from delay, injury, or baggage disruption.",
+              emphasis: "Example: a 9-day winter trip with two international flights and prepaid hotels.",
+              body: "In this situation, several things could create meaningful financial risk.",
               bullets: [
-                "A delayed connection can cascade into missed prepaid stays.",
-                "Icy sidewalks and winter activities raise minor-injury probability.",
-                "In this case, a basic plan is often a rational risk cap.",
+                "A flight delay could cause a missed connection or lost prepaid night at a hotel.",
+                "Winter conditions also increase the chance of minor injuries such as slips on icy sidewalks.",
+                "In cases like this, many travelers choose a basic insurance plan to limit the financial downside of unexpected problems.",
               ],
+              tail:
+                "The goal is not to eliminate risk entirely - it is simply to keep a single incident from turning into a large unexpected expense.",
             },
             {
               title: "How Much Does Medical Care Cost in South Korea?",

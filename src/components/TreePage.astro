@@ -1794,14 +1794,14 @@ const checklistByLeaf: Record<string, Partial<Record<SupportedLang, string[]>>> 
   },
   "travel-insurance-for-korea": {
     en: [
-      "I set a personal risk threshold (what unexpected cost I can absorb).",
-      "I compared emergency medical, hospitalization, and exclusions side by side.",
-      "I verified adventure/winter activity coverage if my plan includes them.",
+      "I decided how much unexpected cost I could personally absorb.",
+      "I compared emergency medical and hospitalization coverage across plans.",
+      "I checked exclusions and activity coverage for my itinerary.",
     ],
     es: [
-      "Defini mi umbral de riesgo (que costo imprevisto puedo absorber).",
-      "Compare cobertura medica, hospitalizacion y exclusiones en paralelo.",
-      "Verifique cobertura para actividades de aventura o invierno si aplica.",
+      "Decidi cuanto costo inesperado podria absorber personalmente.",
+      "Compare la cobertura de emergencia medica y hospitalizacion entre planes.",
+      "Revise exclusiones y cobertura de actividades para mi itinerario.",
     ],
   },
 };
@@ -1810,6 +1810,10 @@ const checklistHintByLeaf: Record<string, Partial<Record<SupportedLang, string>>
   "sim-or-esim": {
     en: "No login required. Tick what you have completed and save this page for later reference.",
     es: "No se requiere inicio de sesion. Marca lo que completaste y guarda esta pagina para consultarla despues.",
+  },
+  "travel-insurance-for-korea": {
+    en: "No login required. Tick what you have already confirmed, then save this page for reference later.",
+    es: "No se requiere inicio de sesion. Marca lo que ya confirmaste y guarda esta pagina para consultarla despues.",
   },
 };
 
@@ -1913,8 +1917,8 @@ const leafNextOverrides: Record<
   "travel-insurance-for-korea": {
     path: "/before-you-go/korea-entry-requirements",
     label: {
-      en: "Are entry requirements confirmed for your passport and dates?",
-      es: "Confirmaste requisitos de entrada segun tu pasaporte y fechas?",
+      en: "Have you confirmed the entry requirements for your passport and travel dates?",
+      es: "Confirmaste los requisitos de entrada para tu pasaporte y fechas de viaje?",
     },
   },
 };

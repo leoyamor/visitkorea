@@ -133,19 +133,6 @@ export const siteTree: TreeNode = {
               ],
             },
             {
-              title: "🚫 Who This 7-Day Structure Is Not Ideal For",
-              emphasis: "A two-base week is effective, but not universal.",
-              body: "This structure is usually a poor fit if:",
-              bullets: [
-                "You want three or more destinations in one week.",
-                "You prefer highly spontaneous plans with no fixed transfer timing.",
-                "You need low-mobility pacing with frequent rest windows.",
-                "You want a Jeju-heavy nature trip without renting a car.",
-              ],
-              tail:
-                "If this list sounds like your trip, reduce complexity first and prioritize one base plus day trips.",
-            },
-            {
               title: "🏙️ Days 1–4: Seoul (Stay in One Hotel)",
               emphasis: "Why Start in Seoul",
               body:
@@ -265,19 +252,6 @@ export const siteTree: TreeNode = {
               ],
             },
             {
-              title: "🔁 Better Alternatives If This Feels Tight",
-              body:
-                "If two bases already feels rushed, use one of these lower-friction alternatives instead:",
-              bullets: [
-                "Seoul only + one focused day trip (lowest transfer risk).",
-                "Seoul + Busan for city-coast contrast with rail convenience.",
-                "Seoul + Jeju only if you accept airport transfer overhead.",
-                "Skip any third destination even if flights appear inexpensive.",
-              ],
-              tail:
-                "A calm plan usually creates better memories than an over-optimized route.",
-            },
-            {
               title: "⚠️ What Usually Goes Wrong",
               emphasis: "More plans do not mean a better trip.",
               body: "Common first-time mistakes include:",
@@ -287,7 +261,6 @@ export const siteTree: TreeNode = {
                 "Over-scheduling arrival day",
                 "Ignoring jet lag",
                 "Underestimating transfer time",
-                "Copying social-media itineraries without adjusting for your energy and transfer tolerance",
                 "Efficiency improves experience quality.",
               ],
             },
@@ -1660,19 +1633,6 @@ export const siteTree: TreeNode = {
               ],
             },
             {
-              title: "🚫 Who This Matching Guide Is Not Ideal For",
-              emphasis: "Some trips should choose logistics first, city personality second.",
-              body: "Use a simpler planning path first if:",
-              bullets: [
-                "You have fewer than 3 full days in Korea.",
-                "You are booking around fixed events (concerts, conferences, family visits).",
-                "You need wheelchair-first or limited-mobility routing certainty.",
-                "You are traveling with small children and prioritizing low transfer load.",
-              ],
-              tail:
-                "In these cases, start with trip structure and hotel base logic before comparing city vibes.",
-            },
-            {
               title: "🏙️ If You Prefer Energy, Variety, and Easy Transport",
               emphasis: "Best Fit: Seoul",
               body: "Why it works:",
@@ -1752,18 +1712,6 @@ export const siteTree: TreeNode = {
               ],
             },
             {
-              title: "⚖️ Trade-Offs You Accept With Each Base",
-              body: "Every city choice is a package of strengths and limitations:",
-              bullets: [
-                "Seoul: Maximum variety, but heavier crowd density and longer cross-city movement.",
-                "Jeju: High scenic payoff, but much lower flexibility without a car.",
-                "Gangneung/Yeosu: Easier pacing, but fewer high-variety indoor options in bad weather.",
-                "Gyeongju/Andong: Strong history context, but narrower nightlife and late-night transport.",
-              ],
-              tail:
-                "Choosing consciously by trade-off is better than chasing a single 'best city' headline.",
-            },
-            {
               title: "🧩 How to Narrow It Down",
               body: "Choose based on:",
               bullets: [
@@ -1773,18 +1721,6 @@ export const siteTree: TreeNode = {
                 "Interest focus (food / nature / history / coast)",
                 "Adding one well-matched secondary city often improves a trip more than adding three mismatched ones.",
               ],
-            },
-            {
-              title: "🔁 Safer Default If You Are Still Unsure",
-              body:
-                "If two or three options still feel equal, use this fallback path:",
-              bullets: [
-                "Choose Seoul as your first base.",
-                "Add one contrast city only after checking real transfer time.",
-                "Skip the second city if weather or energy conditions worsen.",
-              ],
-              tail:
-                "A clear default path prevents decision paralysis and over-planning.",
             },
             {
               title: "📝 Practical Planning Reminder",
@@ -4237,20 +4173,6 @@ export const siteTree: TreeNode = {
                 "Most visitors do not automatically need a pass. The key is matching the product to your itinerary.",
             },
             {
-              title: "🧾 Read This Before Buying Any Pass",
-              emphasis: "This page is a filter, not a purchase recommendation.",
-              body:
-                "Passes can help, but they can also reduce flexibility when bought too early.",
-              bullets: [
-                "No pass is a valid decision for many first-time travelers.",
-                "Buying first can create pressure to force extra paid stops.",
-                "Always compare your likely route with individual ticket prices.",
-                "Recheck official pass terms right before payment.",
-              ],
-              tail:
-                "The best outcome is not 'using everything.' It is spending less for the same trip quality.",
-            },
-            {
               title: "🚆 Nationwide Transportation Savings",
               emphasis: "KORAIL PASS (Foreign Visitors Only)",
               body:
@@ -4423,18 +4345,6 @@ export const siteTree: TreeNode = {
                 "You only plan 1-2 ticketed sites per day",
               ],
               tail: "Time pressure reduces both savings and enjoyment.",
-            },
-            {
-              title: "🚫 Who Should Usually Skip Passes",
-              body: "A pass is often the wrong fit if:",
-              bullets: [
-                "You prefer spontaneous neighborhoods over timed attraction runs.",
-                "You plan one or two paid entries per day at most.",
-                "You are unsure which attractions you will actually visit.",
-                "You dislike itinerary pressure once money is prepaid.",
-              ],
-              tail:
-                "In these scenarios, pay-as-you-go is usually cheaper and calmer.",
             },
             {
               title: "🧭 The Most Common Tourist Mistake",
@@ -5148,19 +5058,6 @@ export const siteTree: TreeNode = {
                 "In Korea, having reliable mobile data right after arrival makes a big difference. It helps with navigation, translation apps, messaging, and transport bookings during your first hour in the country.",
             },
             {
-              title: "🚫 Who Should Not Prepay Immediately",
-              emphasis: "Prepaying is not always the safest move.",
-              body: "Pause before purchasing if:",
-              bullets: [
-                "You have not confirmed your exact phone model supports eSIM.",
-                "Your device may still be carrier-locked.",
-                "You need guaranteed local voice calls rather than data-only access.",
-                "You are comparing plans based only on 'unlimited' marketing labels.",
-              ],
-              tail:
-                "When any of these apply, validate device and plan conditions first, then purchase.",
-            },
-            {
               title: "Scenario Example: Late-Night Arrival",
               body:
                 "Imagine arriving at Incheon Airport around midnight.",
@@ -5428,19 +5325,6 @@ export const siteTree: TreeNode = {
                 "The practical decision is simple: consider the possible financial impact, not just whether insurance is officially required.",
             },
             {
-              title: "🚫 Who Can Reasonably Skip Insurance",
-              icon: "alert",
-              emphasis: "Skipping can be rational in specific cases.",
-              body: "It may be reasonable to skip if all of these are true:",
-              bullets: [
-                "You can absorb a moderate emergency bill without destabilizing your trip budget.",
-                "Your itinerary has low activity risk and limited prepaid exposure.",
-                "You fully understand what financial downside you are accepting.",
-              ],
-              tail:
-                "This is a risk-management choice, not a moral choice. Match coverage to downside, not anxiety.",
-            },
-            {
               title: "Scenario Example: Should You Buy It?",
               icon: "spark",
               emphasis: "Example: a 9-day winter trip with two international flights and prepaid hotels.",
@@ -5521,18 +5405,6 @@ export const siteTree: TreeNode = {
                 "Claims without proper documentation",
                 "Non-medical cancellation reasons",
               ],
-            },
-            {
-              title: "⚠️ Avoid Overbuying Coverage",
-              icon: "checklist",
-              body: "A higher premium is not always a better policy. Before buying, confirm:",
-              bullets: [
-                "Medical and hospitalization limits are sufficient for your risk profile.",
-                "Exclusions do not cancel the activities you actually plan.",
-                "Claim requirements are realistic for how you travel.",
-              ],
-              tail:
-                "Buy enough coverage for the downside you cannot absorb, not the most expensive bundle.",
             },
             {
               title: "Common Situations Travelers Face",

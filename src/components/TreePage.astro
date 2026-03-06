@@ -355,19 +355,6 @@ const localizedPlanYourTripOverrides: Record<string, LocalizedNodeOverride> = {
         ],
       },
       {
-        title: "🚫 Para quien no es ideal esta estructura de 7 dias",
-        emphasis: "Dos bases funciona bien, pero no es universal.",
-        body: "Este enfoque suele ser mala opcion si:",
-        bullets: [
-          "Quieres tres o mas destinos en una sola semana.",
-          "Prefieres un plan totalmente espontaneo sin fijar traslados.",
-          "Necesitas un ritmo de baja movilidad con descansos frecuentes.",
-          "Quieres un viaje centrado en Jeju sin alquilar coche.",
-        ],
-        tail:
-          "Si te identificas con esto, reduce complejidad: una base principal y excursiones de un dia.",
-      },
-      {
         title: "🏙️ Dias 1-4: Seul (un solo hotel)",
         emphasis: "Por que empezar en Seul",
         body:
@@ -478,19 +465,6 @@ const localizedPlanYourTripOverrides: Record<string, LocalizedNodeOverride> = {
         ],
       },
       {
-        title: "🔁 Alternativas mas seguras si se siente ajustado",
-        body:
-          "Si dos bases ya te parece justo, usa una de estas opciones de menor friccion:",
-        bullets: [
-          "Solo Seul + una excursion clara de un dia (minimo riesgo de traslados).",
-          "Seul + Busan para contraste ciudad-costa con logistica por tren.",
-          "Seul + Jeju solo si aceptas la carga de traslados de aeropuerto.",
-          "Evita una tercera ciudad aunque encuentres vuelos baratos.",
-        ],
-        tail:
-          "Un plan calmado suele dejar mejores recuerdos que uno hiperoptimizado.",
-      },
-      {
         title: "⚠️ Lo que suele salir mal",
         emphasis: "Mas planes no significan un mejor viaje.",
         body: "Errores comunes en la primera visita:",
@@ -500,7 +474,6 @@ const localizedPlanYourTripOverrides: Record<string, LocalizedNodeOverride> = {
           "Sobreprogramar el dia de llegada",
           "Ignorar el jet lag",
           "Subestimar el tiempo de traslado",
-          "Copiar itinerarios de redes sin ajustar energia y tolerancia a traslados",
           "La eficiencia mejora la calidad de la experiencia.",
         ],
       },
@@ -1988,28 +1961,6 @@ const leafNextOverrides: Record<
     hint?: Partial<Record<SupportedLang, string>>;
   }
 > = {
-  "7-days-in-korea": {
-    path: "/choose-a-city/which-city-fits-you-best",
-    label: {
-      en: "Do you need help choosing the best contrast city for this 7-day structure?",
-      es: "Necesitas ayuda para elegir la mejor ciudad de contraste para esta estructura de 7 dias?",
-    },
-    hint: {
-      en: "-> Compare city fit by movement style before locking transfers.",
-      es: "-> Compara el encaje de ciudad por estilo de movimiento antes de cerrar traslados.",
-    },
-  },
-  "which-city-fits-you-best": {
-    path: "/plan-your-trip/7-days-in-korea",
-    label: {
-      en: "Still unsure? Start from a safer 7-day base structure and adjust city choice later.",
-      es: "Sigues indeciso? Empieza con una estructura de 7 dias mas segura y ajusta ciudad despues.",
-    },
-    hint: {
-      en: "-> Use pace-first planning to avoid overbooking movement.",
-      es: "-> Usa planificacion por ritmo para evitar sobrecargar traslados.",
-    },
-  },
   "sim-or-esim": {
     path: "/before-you-go/travel-insurance-for-korea",
     label: {

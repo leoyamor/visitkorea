@@ -7,6 +7,7 @@ import { getLeafFaqItems } from "../lib/leafFaq";
 import { getHomeLeafTickerItems } from "../lib/leafUpdates";
 import type { SupportedLang } from "../lib/i18n";
 import { withLang } from "../lib/i18n";
+import { localizedContentByPath, type LocalizedPathCopy } from "../data/localizedContent";
 
 type Props = {
   node: TreeNode;
@@ -354,6 +355,19 @@ const localizedPlanYourTripOverrides: Record<string, LocalizedNodeOverride> = {
         ],
       },
       {
+        title: "🚫 Para quien no es ideal esta estructura de 7 dias",
+        emphasis: "Dos bases funciona bien, pero no es universal.",
+        body: "Este enfoque suele ser mala opcion si:",
+        bullets: [
+          "Quieres tres o mas destinos en una sola semana.",
+          "Prefieres un plan totalmente espontaneo sin fijar traslados.",
+          "Necesitas un ritmo de baja movilidad con descansos frecuentes.",
+          "Quieres un viaje centrado en Jeju sin alquilar coche.",
+        ],
+        tail:
+          "Si te identificas con esto, reduce complejidad: una base principal y excursiones de un dia.",
+      },
+      {
         title: "🏙️ Dias 1-4: Seul (un solo hotel)",
         emphasis: "Por que empezar en Seul",
         body:
@@ -464,6 +478,19 @@ const localizedPlanYourTripOverrides: Record<string, LocalizedNodeOverride> = {
         ],
       },
       {
+        title: "🔁 Alternativas mas seguras si se siente ajustado",
+        body:
+          "Si dos bases ya te parece justo, usa una de estas opciones de menor friccion:",
+        bullets: [
+          "Solo Seul + una excursion clara de un dia (minimo riesgo de traslados).",
+          "Seul + Busan para contraste ciudad-costa con logistica por tren.",
+          "Seul + Jeju solo si aceptas la carga de traslados de aeropuerto.",
+          "Evita una tercera ciudad aunque encuentres vuelos baratos.",
+        ],
+        tail:
+          "Un plan calmado suele dejar mejores recuerdos que uno hiperoptimizado.",
+      },
+      {
         title: "⚠️ Lo que suele salir mal",
         emphasis: "Mas planes no significan un mejor viaje.",
         body: "Errores comunes en la primera visita:",
@@ -473,6 +500,7 @@ const localizedPlanYourTripOverrides: Record<string, LocalizedNodeOverride> = {
           "Sobreprogramar el dia de llegada",
           "Ignorar el jet lag",
           "Subestimar el tiempo de traslado",
+          "Copiar itinerarios de redes sin ajustar energia y tolerancia a traslados",
           "La eficiencia mejora la calidad de la experiencia.",
         ],
       },
@@ -1109,8 +1137,45 @@ const localizedPlanYourTripOverrides: Record<string, LocalizedNodeOverride> = {
     ],
   },
 };
-const localizedNodeOverride: LocalizedNodeOverride | undefined =
-  !isHome && lang === "es" ? localizedPlanYourTripOverrides[basePath] : undefined;
+
+const getLocalizedNode = (
+  path: string,
+  targetLang: SupportedLang,
+  currentNode: TreeNode
+): LocalizedNodeOverride | undefined => {
+  const localizedPathEntry = localizedContentByPath[path];
+  const localizedCopy: LocalizedPathCopy | undefined =
+    localizedPathEntry?.[targetLang] ?? localizedPathEntry?.en;
+
+  if (!localizedCopy) return undefined;
+  const hasContent =
+    typeof localizedCopy.title === "string" ||
+    typeof localizedCopy.description === "string" ||
+    typeof localizedCopy.quickAnswer === "string" ||
+    (Array.isArray(localizedCopy.content) && localizedCopy.content.length > 0) ||
+    (localizedCopy.children && Object.keys(localizedCopy.children).length > 0);
+
+  if (!hasContent) return undefined;
+
+  return {
+    title: localizedCopy.title ?? currentNode.title,
+    description: localizedCopy.description ?? currentNode.description,
+    quickAnswer: localizedCopy.quickAnswer ?? currentNode.quickAnswer,
+    content: localizedCopy.content ?? currentNode.content,
+    children: localizedCopy.children,
+  };
+};
+
+// Keep disabled in this phase to preserve live output while shadow data is expanded.
+const ENABLE_LOCALIZED_NODE_COMPOSITION = false;
+const localizedNodeFromPath = !isHome && ENABLE_LOCALIZED_NODE_COMPOSITION
+  ? getLocalizedNode(basePath, lang, node)
+  : undefined;
+const localizedNodeOverride: LocalizedNodeOverride | undefined = !isHome
+  ? lang === "es"
+    ? localizedPlanYourTripOverrides[basePath] ?? localizedNodeFromPath
+    : localizedNodeFromPath
+  : undefined;
 
 const getInitials = (title: string) => {
   const words = title.replace(/[?]/g, "").split(" ").filter(Boolean);
@@ -1768,6 +1833,30 @@ const checklistByRoot: Record<string, string[]> = {
 };
 
 const checklistByLeaf: Record<string, Partial<Record<SupportedLang, string[]>>> = {
+  "7-days-in-korea": {
+    en: [
+      "I confirmed this trip can work with only two bases.",
+      "I removed any optional third city from my first draft.",
+      "I selected one lower-friction backup plan if transfers feel too tight.",
+    ],
+    es: [
+      "Confirme que este viaje puede funcionar con solo dos bases.",
+      "Elimine cualquier tercera ciudad opcional de mi primer borrador.",
+      "Elegi un plan alternativo de menor friccion si los traslados se sienten ajustados.",
+    ],
+  },
+  "which-city-fits-you-best": {
+    en: [
+      "I matched my city choice to movement tolerance, not popularity only.",
+      "I accepted one clear trade-off for the city I picked.",
+      "I prepared a default fallback route in case I stay undecided.",
+    ],
+    es: [
+      "Alinee mi ciudad con tolerancia a traslados, no solo popularidad.",
+      "Acepte un trade-off claro para la ciudad que elegi.",
+      "Prepare una ruta de respaldo por si sigo indeciso.",
+    ],
+  },
   "sim-or-esim": {
     en: [
       "I confirmed my phone model supports eSIM and is unlocked.",
@@ -1795,6 +1884,14 @@ const checklistByLeaf: Record<string, Partial<Record<SupportedLang, string[]>>> 
 };
 
 const checklistHintByLeaf: Record<string, Partial<Record<SupportedLang, string>>> = {
+  "7-days-in-korea": {
+    en: "Use this as a confirmation list, not a booking trigger. Keep the plan realistic before paying.",
+    es: "Usa esto como lista de confirmacion, no como disparador de compra. Mantener el plan realista primero.",
+  },
+  "which-city-fits-you-best": {
+    en: "Confirm fit and trade-offs first, then lock only the first city-level booking.",
+    es: "Confirma encaje y trade-offs primero, y luego cierra solo la primera reserva de nivel ciudad.",
+  },
   "sim-or-esim": {
     en: "No login required. Tick what you have completed and save this page for later reference.",
     es: "No se requiere inicio de sesion. Marca lo que completaste y guarda esta pagina para consultarla despues.",
@@ -1891,6 +1988,28 @@ const leafNextOverrides: Record<
     hint?: Partial<Record<SupportedLang, string>>;
   }
 > = {
+  "7-days-in-korea": {
+    path: "/choose-a-city/which-city-fits-you-best",
+    label: {
+      en: "Do you need help choosing the best contrast city for this 7-day structure?",
+      es: "Necesitas ayuda para elegir la mejor ciudad de contraste para esta estructura de 7 dias?",
+    },
+    hint: {
+      en: "-> Compare city fit by movement style before locking transfers.",
+      es: "-> Compara el encaje de ciudad por estilo de movimiento antes de cerrar traslados.",
+    },
+  },
+  "which-city-fits-you-best": {
+    path: "/plan-your-trip/7-days-in-korea",
+    label: {
+      en: "Still unsure? Start from a safer 7-day base structure and adjust city choice later.",
+      es: "Sigues indeciso? Empieza con una estructura de 7 dias mas segura y ajusta ciudad despues.",
+    },
+    hint: {
+      en: "-> Use pace-first planning to avoid overbooking movement.",
+      es: "-> Usa planificacion por ritmo para evitar sobrecargar traslados.",
+    },
+  },
   "sim-or-esim": {
     path: "/before-you-go/travel-insurance-for-korea",
     label: {
@@ -3600,6 +3719,11 @@ const breadcrumb = breadcrumbs;
     color: var(--ink-soft);
   }
 
+  .leaf-next {
+    display: grid;
+    gap: 8px;
+  }
+
   .leaf-next-link {
     display: inline-flex;
     flex-direction: column;
@@ -3955,6 +4079,19 @@ const breadcrumb = breadcrumbs;
       padding: 14px;
     }
 
+    .leaf-next {
+      gap: 6px;
+    }
+
+    .leaf-next-link {
+      width: 100%;
+      padding: 11px 12px;
+    }
+
+    .leaf-next-hint {
+      margin-top: 4px;
+    }
+
     .leaf-checklist-list label {
       padding: 10px 11px;
     }
@@ -4069,6 +4206,15 @@ const breadcrumb = breadcrumbs;
       padding: 14px 14px 14px 16px;
     }
 
+    .answer {
+      gap: 14px;
+      padding: 18px 14px;
+    }
+
+    .answer-hero {
+      gap: 12px;
+    }
+
     .content-title {
       margin-bottom: 4px;
       gap: 8px;
@@ -4151,8 +4297,19 @@ const breadcrumb = breadcrumbs;
       grid-template-columns: 1fr;
     }
 
+    .leaf-tools {
+      gap: 10px;
+      padding: 12px;
+    }
+
+    .leaf-checklist-list {
+      gap: 8px;
+    }
+
     .leaf-checklist-list label {
-      padding: 11px 12px;
+      padding: 9px 10px;
+      font-size: 0.92rem;
+      line-height: 1.45;
     }
 
     .feedback-cta {

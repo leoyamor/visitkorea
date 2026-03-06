@@ -148,6 +148,20 @@ const ES_LEAF_OVERRIDES: Record<
           "En Corea, tener datos moviles fiables justo al llegar marca una gran diferencia. Te ayuda con navegacion, apps de traduccion, mensajeria y reservas de transporte durante tu primera hora en el pais.",
       },
       {
+        title: "🚫 Quien no deberia prepagar de inmediato",
+        icon: "alert",
+        emphasis: "Pagar rapido no siempre es la opcion mas segura.",
+        body: "Conviene pausar la compra si:",
+        bullets: [
+          "No confirmaste si tu modelo exacto admite eSIM.",
+          "Tu telefono podria seguir bloqueado por operadora.",
+          "Necesitas llamadas locales garantizadas y no solo datos.",
+          "Estas comparando solo por la etiqueta comercial de \"ilimitado\".",
+        ],
+        tail:
+          "Si se cumple alguno de estos puntos, primero valida compatibilidad y condiciones reales del plan.",
+      },
+      {
         title: "Escenario: llegada nocturna",
         icon: "sim",
         body: "Imagina que llegas al Aeropuerto de Incheon cerca de la medianoche.",
@@ -188,6 +202,103 @@ const ES_LEAF_OVERRIDES: Record<
         ],
         tail:
           "Unas pocas comprobaciones como estas suelen evitar la mayoria de problemas de conectividad el dia de llegada.",
+      },
+    ],
+  },
+  "which-city-fits-you-best": {
+    title: "Que ciudad te queda mejor?",
+    description: "Elige ciudad segun como viajas en la practica.",
+    quickAnswer:
+      "No hay una ciudad universalmente mejor. La mejor eleccion es la que encaja con tu ritmo, traslados y energia diaria.",
+    content: [
+      {
+        title: "🎯 Por que esta decision importa",
+        icon: "compass",
+        emphasis: "La base correcta cambia todo el viaje.",
+        body:
+          "En vez de preguntar \"cual es la mejor ciudad\", conviene preguntar \"cual encaja mejor conmigo\". Una buena eleccion reduce friccion, cansancio y cambios innecesarios.",
+      },
+      {
+        title: "🚫 Para quien no es ideal este enfoque",
+        icon: "alert",
+        body: "Primero simplifica la logistica si:",
+        bullets: [
+          "Tienes menos de 3 dias completos en Corea.",
+          "Viajas por un evento fijo (concierto, conferencia, visita familiar).",
+          "Necesitas prioridad de baja movilidad o rutas muy predecibles.",
+          "Viajas con ninos pequenos y quieres minimo cambio de base.",
+        ],
+        tail:
+          "En estos casos, decide primero base y traslados, y despues compara estilo de ciudad.",
+      },
+      {
+        title: "🏙️ Si buscas energia, variedad y transporte facil",
+        icon: "city",
+        emphasis: "Mejor encaje: Seul",
+        body: "Funciona bien porque combina:",
+        bullets: [
+          "Metro amplio con senalizacion en ingles",
+          "Conectividad alta entre barrios",
+          "Gran variedad de comida, museos, compras y vida nocturna",
+        ],
+      },
+      {
+        title: "🌊 Si quieres costa sin depender de coche",
+        icon: "beach",
+        emphasis: "Mejor encaje: Gangneung o Yeosu",
+        body: "Son buenas opciones para ritmo mas tranquilo y vistas costeras.",
+        bullets: [
+          "Gangneung: playas y caminatas relajadas",
+          "Yeosu: ambiente nocturno fuerte alrededor del puerto",
+          "En ambos casos, una o dos noches suele bastar",
+        ],
+      },
+      {
+        title: "🚗 Si te sientes comodo conduciendo",
+        icon: "car",
+        emphasis: "Mejor encaje: Jeju",
+        body:
+          "Jeju ofrece paisajes abiertos y rutas escenicas, pero la flexibilidad real aumenta mucho con coche de alquiler.",
+      },
+      {
+        title: "⚖️ Trade-offs que aceptas con cada ciudad",
+        icon: "checklist",
+        body: "Toda ciudad tiene ventajas y limites:",
+        bullets: [
+          "Seul: maxima variedad, pero mas densidad y desplazamientos largos",
+          "Jeju: alto valor natural, pero menos flexible sin coche",
+          "Gangneung/Yeosu: ritmo facil, pero menos variedad indoor con mal clima",
+          "Ciudades historicas: gran contexto cultural, pero vida nocturna mas acotada",
+        ],
+      },
+      {
+        title: "🔁 Ruta segura si sigues indeciso",
+        icon: "route",
+        body: "Usa este fallback:",
+        bullets: [
+          "Empieza por Seul como base inicial",
+          "Agrega solo una ciudad de contraste",
+          "Si clima o energia empeoran, elimina la segunda ciudad",
+        ],
+        tail:
+          "Un fallback claro evita paralisis y sobreplanificacion.",
+      },
+      {
+        title: "📝 Recordatorio practico",
+        icon: "calendar",
+        body: "Antes de cerrar reservas:",
+        bullets: [
+          "Revisa tiempos reales de traslado",
+          "Confirma clima de temporada",
+          "Verifica horarios y cierres de atracciones",
+        ],
+      },
+      {
+        title: "✨ Conclusiones",
+        icon: "spark",
+        emphasis: "No existe una ciudad perfecta para todos.",
+        body:
+          "Existe la ciudad correcta para tu forma de viajar. Elegir por encaje real suele funcionar mejor que elegir por ranking.",
       },
     ],
   },
@@ -800,6 +911,91 @@ const ES_LEAF_OVERRIDES: Record<
       },
     ],
   },
+  "attraction-passes-discounts": {
+    title: "Pases de atracciones y descuentos en Corea",
+    description:
+      "Cuando un pase realmente ahorra dinero y cuando conviene pagar entradas sueltas.",
+    quickAnswer:
+      "Un pase solo conviene si tu ruta y ritmo encajan con su ventana de uso. En muchos casos, pagar por separado da mas flexibilidad.",
+    content: [
+      {
+        title: "✨ Introduccion",
+        icon: "card",
+        emphasis:
+          "Algunos pases ayudan mucho. Otros solo funcionan para ciertos estilos de viaje.",
+        body:
+          "El objetivo de esta guia no es empujarte a comprar, sino ayudarte a decidir con criterio.",
+      },
+      {
+        title: "🧾 Lee esto antes de comprar cualquier pase",
+        icon: "alert",
+        emphasis: "Esta pagina es un filtro, no una recomendacion de compra.",
+        body: "Un pase puede reducir costos, pero tambien puede quitar flexibilidad si compras demasiado pronto.",
+        bullets: [
+          "No comprar pase es una decision valida para muchos viajeros.",
+          "Comprar primero suele crear presion para meter visitas de mas.",
+          "Compara siempre ruta real vs entradas individuales.",
+          "Revisa condiciones oficiales justo antes de pagar.",
+        ],
+      },
+      {
+        title: "✅ Cuando un pase suele ahorrar",
+        icon: "checklist",
+        body: "Generalmente tiene sentido si:",
+        bullets: [
+          "Haras 3 o mas atracciones pagas en una ventana corta",
+          "Esas atracciones ya estaban en tu plan",
+          "El precio total del pase queda por debajo de las entradas sueltas",
+          "Tu itinerario es ordenado y con poco margen de cambio",
+        ],
+      },
+      {
+        title: "⚠️ Cuando no suele convenir",
+        icon: "alert",
+        body: "Suele ser mala compra si:",
+        bullets: [
+          "Prefieres dias flexibles o ritmos lentos",
+          "Te enfocas en barrios, mercados o sitios gratuitos",
+          "Solo piensas visitar 1-2 lugares pagos por dia",
+        ],
+        tail:
+          "La presion por \"amortizar\" el pase puede bajar la calidad del viaje.",
+      },
+      {
+        title: "🚫 Quien suele estar mejor sin pase",
+        icon: "compass",
+        body: "Normalmente conviene pagar por separado si:",
+        bullets: [
+          "No tienes claro que atracciones haras",
+          "No quieres itinerario rigido por horas",
+          "Priorizas comodidad por encima de exprimir descuentos",
+        ],
+      },
+      {
+        title: "🧭 Error mas comun",
+        icon: "route",
+        emphasis: "Comprar antes de planear.",
+        body:
+          "Muchos viajeros compran \"por si acaso\" y luego fuerzan desplazamientos para justificar un costo hundido.",
+      },
+      {
+        title: "🧮 Formula simple de decision",
+        icon: "receipt",
+        body:
+          "Pregunta clave: cuantas atracciones pagas visitare de forma realista dentro de la ventana del pase?",
+        bullets: [
+          "1-2: normalmente conviene pagar individual",
+          "3 o mas: compara costo total real con el precio del pase",
+        ],
+      },
+      {
+        title: "✨ Consejo final",
+        icon: "spark",
+        body:
+          "Un pase debe apoyar tu plan, no controlarlo. La mejor decision es la que mantiene ahorro y tranquilidad al mismo tiempo.",
+      },
+    ],
+  },
   "travel-insurance-for-korea": {
     title: "Necesito seguro de viaje para Corea del Sur? (Guia 2026)",
     description:
@@ -821,6 +1017,19 @@ const ES_LEAF_OVERRIDES: Record<
         ],
         tail:
           "La decision practica es simple: considera el impacto financiero posible, no solo si el seguro es oficialmente obligatorio.",
+      },
+      {
+        title: "🚫 Cuando puede ser razonable no contratar",
+        icon: "alert",
+        emphasis: "No contratar puede ser racional en casos concretos.",
+        body: "Puede tener sentido si se cumplen todos estos puntos:",
+        bullets: [
+          "Puedes absorber una emergencia medica moderada sin romper tu presupuesto de viaje.",
+          "Tu itinerario tiene baja exposicion (pocos prepagos y bajo riesgo de actividad).",
+          "Entiendes con claridad que riesgo financiero estas aceptando.",
+        ],
+        tail:
+          "Es una decision de gestion de riesgo, no una decision moral.",
       },
       {
         title: "Escenario: deberias contratarlo?",
@@ -904,6 +1113,18 @@ const ES_LEAF_OVERRIDES: Record<
           "Reclamos sin documentacion adecuada",
           "Cancelaciones por motivos no medicos",
         ],
+      },
+      {
+        title: "⚠️ Como evitar sobrecomprar cobertura",
+        icon: "checklist",
+        body: "Una prima mas alta no siempre significa mejor poliza. Antes de pagar, confirma:",
+        bullets: [
+          "Que los limites medicos y de hospitalizacion sean suficientes para tu perfil.",
+          "Que las exclusiones no anulen las actividades que realmente haras.",
+          "Que el proceso de reclamo sea realista para tu forma de viajar.",
+        ],
+        tail:
+          "Compra la cobertura necesaria para el riesgo que no puedes absorber, no el paquete mas caro por defecto.",
       },
       {
         title: "Situaciones comunes que enfrentan los viajeros",

@@ -15,6 +15,11 @@ export const localizedLeafShadowPathsPhase1 = [
   "/before-you-go/travel-insurance-for-korea",
 ] as const;
 
+export const localizedLeafShadowPathsPilot = [
+  "/plan-your-trip/7-days-in-korea",
+  "/choose-a-city/which-city-fits-you-best",
+] as const;
+
 export const localizedShadowReviewPaths = [
   "/plan-your-trip",
   "/before-you-go",
@@ -23,6 +28,7 @@ export const localizedShadowReviewPaths = [
 export const localizedShadowPreparedPaths = [
   ...localizedShadowReviewPaths,
   ...localizedLeafShadowPathsPhase1,
+  ...localizedLeafShadowPathsPilot,
 ] as const;
 
 export const localizedTranslationFields = [
@@ -80,6 +86,13 @@ export const localizedFieldMappingRules = [
     localized: "children.<slug>.title/description",
     note: "Child card copy is keyed by slug in localized data.",
   },
+] as const;
+
+export const localizedParallelManagementRules = [
+  "English copy in siteTree.ts remains the live source of truth during phased rollout.",
+  "Spanish copy in localizedContentByPath.ts is maintained path-by-path as shadow data until composition is enabled.",
+  "When an English leaf changes in siteTree, update the paired Spanish shadow entry in the same change set.",
+  "Shadow paths may be complete or partial, but must keep stable path keys and language branches (en/es).",
 ] as const;
 
 export const leafFaqReferencedFields = [
@@ -158,7 +171,9 @@ export const localizedContentDesignNotes = {
     "If a review-scope path is missing any required field in a required language, it stays in the pre-build review queue until backfilled.",
   shadowPreparedPaths: localizedShadowPreparedPaths,
   leafShadowPhase1: localizedLeafShadowPathsPhase1,
+  leafShadowPilot: localizedLeafShadowPathsPilot,
   fieldMappingRules: localizedFieldMappingRules,
+  parallelManagementRules: localizedParallelManagementRules,
   leafFaqContract: leafFaqLocalizedNodeDesign,
 } as const;
 

@@ -155,6 +155,70 @@ export const localizedContentByPath: LocalizedContentByPath = {
       },
     },
   },
+  "/plan-your-trip/7-days-in-korea": {
+    en: {
+      title: "7 Days in Korea",
+      description: "A one-week travel plan that actually works.",
+      quickAnswer:
+        "Use two bases, not three. This keeps a 7-day Korea trip realistic, less rushed, and easier to enjoy.",
+      content: [
+        {
+          title: "🎯 Core decision",
+          body:
+            "Choose two places. A third destination usually costs more time than it adds value in a one-week trip.",
+        },
+        {
+          title: "🚫 Who this is not ideal for",
+          body: "This structure is often a poor fit if:",
+          bullets: [
+            "You need very low-movement pacing.",
+            "You want zero fixed transfer timing.",
+            "You expect to cover three destinations in one week.",
+          ],
+        },
+        {
+          title: "🔁 Lower-friction alternatives",
+          body: "If this still feels tight, use one of these:",
+          bullets: [
+            "Seoul only plus one day trip.",
+            "Seoul and Busan only.",
+            "Seoul and Jeju only if airport transfer overhead is acceptable.",
+          ],
+        },
+      ],
+    },
+    es: {
+      title: "7 dias en Corea",
+      description: "Un plan de una semana que de verdad funciona.",
+      quickAnswer:
+        "Usa dos bases y no tres. Asi un viaje de 7 dias por Corea es mas realista, menos apurado y mas disfrutable.",
+      content: [
+        {
+          title: "🎯 Decision central",
+          body:
+            "Elige dos lugares. Una tercera ciudad suele costar mas tiempo del que aporta en una semana.",
+        },
+        {
+          title: "🚫 Para quien no es ideal",
+          body: "Este formato suele ser mala opcion si:",
+          bullets: [
+            "Necesitas ritmo de muy poco movimiento.",
+            "No quieres fijar horarios de traslado.",
+            "Esperas cubrir tres destinos en una semana.",
+          ],
+        },
+        {
+          title: "🔁 Alternativas de menor friccion",
+          body: "Si aun se siente ajustado, usa una de estas:",
+          bullets: [
+            "Solo Seoul + una excursion de un dia.",
+            "Solo Seoul y Busan.",
+            "Seoul y Jeju solo si aceptas la carga de traslados de aeropuerto.",
+          ],
+        },
+      ],
+    },
+  },
   "/choose-a-city": {
     es: {
       title: "Elige una ciudad",
@@ -172,6 +236,62 @@ export const localizedContentByPath: LocalizedContentByPath = {
           title: "Que ciudad te queda mejor?",
         },
       },
+    },
+  },
+  "/choose-a-city/which-city-fits-you-best": {
+    en: {
+      title: "Which City Fits You Best?",
+      description: "Pick a city based on how you actually travel.",
+      quickAnswer:
+        "Choose a city by movement tolerance, pace, and transport friction - not by popularity alone.",
+      content: [
+        {
+          title: "🎯 Better decision frame",
+          body:
+            "There is no universal best city. The practical choice is the one that matches your movement style and daily energy.",
+        },
+        {
+          title: "🚫 Who should simplify first",
+          body: "Use a simpler route first if:",
+          bullets: [
+            "You have under 3 full days.",
+            "Your schedule is fixed around one event.",
+            "You need low-mobility-first planning.",
+          ],
+        },
+        {
+          title: "🔁 Safe fallback",
+          body:
+            "If still undecided, start with Seoul and add only one contrast city after checking real transfer time.",
+        },
+      ],
+    },
+    es: {
+      title: "Que ciudad te queda mejor?",
+      description: "Elige ciudad segun como viajas de verdad.",
+      quickAnswer:
+        "Elige por tolerancia a traslados, ritmo y friccion de transporte, no solo por popularidad.",
+      content: [
+        {
+          title: "🎯 Marco de decision",
+          body:
+            "No existe una ciudad universalmente mejor. La opcion practica es la que encaja con tu estilo de movimiento y energia diaria.",
+        },
+        {
+          title: "🚫 Quienes deberian simplificar primero",
+          body: "Usa primero una ruta mas simple si:",
+          bullets: [
+            "Tienes menos de 3 dias completos.",
+            "Tu agenda depende de un evento fijo.",
+            "Necesitas planificacion centrada en baja movilidad.",
+          ],
+        },
+        {
+          title: "🔁 Ruta de respaldo segura",
+          body:
+            "Si sigues indeciso, empieza en Seoul y agrega solo una ciudad de contraste tras validar tiempos reales de traslado.",
+        },
+      ],
     },
   },
   "/before-you-go": {

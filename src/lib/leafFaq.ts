@@ -128,66 +128,66 @@ const LEAF_FAQ_BY_LANG: Record<SupportedLang, Record<string, LeafFaqItem[]>> = {
       {
         question: "Who is this 7-day two-base plan not ideal for?",
         answer:
-          "It is usually a poor fit if you want three cities in one week, need low-mobility pacing, or strongly prefer zero fixed transfer timing.",
+          "It may not work well if you want to visit three cities in one week, need a slower pace with frequent rest time, or strongly prefer completely flexible plans without fixed transfer days.",
       },
       {
         question: "What is the main downside of adding a third destination?",
         answer:
-          "You lose real exploration time to packing, check-ins, and transfers. In a one-week trip, that cost is usually larger than expected.",
+          "You often lose valuable exploration time to packing, check-ins, and transportation. On a one-week trip, those hours usually add up faster than travelers expect.",
       },
       {
         question: "What is the safer alternative if this plan feels tight?",
         answer:
-          "Use one base plus day trips, or keep only Seoul plus one contrast city. Reducing movement usually improves trip quality.",
+          "Use one main base with a few day trips, or keep the plan to Seoul plus one contrasting city. Reducing movement usually creates a more enjoyable week.",
       },
       {
         question: "Should I finalize bookings before checking transport timing?",
         answer:
-          "No. Confirm transfer timing first, then book. A realistic movement plan prevents most one-week itinerary stress.",
+          "No. Always confirm realistic transfer times first, then finalize bookings. Planning movement before reservations helps avoid most one-week itinerary stress.",
       },
     ],
     "which-city-fits-you-best": [
       {
         question: "Who is this city-matching approach not ideal for?",
         answer:
-          "If your trip is under three full days, fixed around one event, or mobility-constrained, prioritize logistics and base convenience first.",
+          "It may not work well if your trip is shorter than three full days, centered around a single event, or requires a slower pace due to mobility limits. In those cases, it is usually better to focus on convenience and choose the easiest base.",
       },
       {
         question: "Can I choose only by popularity rankings?",
         answer:
-          "Not safely. Popularity does not reflect your movement tolerance, weather risk, or daily pace preferences.",
+          "Not reliably. Popular destinations do not always match your travel pace, tolerance for long transfers, or seasonal conditions.",
       },
       {
         question: "What is the safest fallback if I am still undecided?",
         answer:
-          "Use Seoul as the first base, then add only one contrast city after validating real transfer time for your dates.",
+          "Start with Seoul as your main base. Once you confirm realistic transfer times for your travel dates, you can add one contrasting city if it still fits your schedule.",
       },
       {
         question: "What trade-off matters most when choosing a city?",
         answer:
-          "Transport friction. A city that looks attractive online can still feel exhausting if daily movement is high.",
+          "Transport friction. A city may look perfect in photos, but if daily movement requires long transfers, the trip can feel more tiring than expected.",
       },
     ],
     "attraction-passes-discounts": [
       {
         question: "Who should usually skip attraction passes?",
         answer:
-          "Travelers who prefer flexible days, visit only one or two paid sites daily, or dislike time-window pressure usually do better without passes.",
+          "Travelers who prefer flexible schedules, plan to visit only one or two paid attractions per day, or dislike strict time windows often do better without a pass.",
       },
       {
         question: "Is buying a pass always cheaper?",
         answer:
-          "No. It saves money only if your actual paid-entry volume and timing match the pass conditions.",
+          "No. A pass only saves money if the number of attractions you visit and your timing actually match the pass conditions.",
       },
       {
-        question: "What is the common mistake with passes?",
+        question: "What is the most common mistake with attraction passes?",
         answer:
-          "Buying before planning. Many travelers then force rushed attraction runs to justify sunk cost.",
+          "Buying a pass before planning your route. Many travelers then feel pressured to rush through attractions just to \"use the pass enough.\"",
       },
       {
         question: "What is the safer decision rule?",
         answer:
-          "Map your realistic route first, then compare total individual ticket cost against the pass price on official pages.",
+          "Plan your realistic route first. Then compare the total cost of individual tickets with the pass price using official information pages.",
       },
     ],
   },
@@ -245,66 +245,66 @@ const LEAF_FAQ_BY_LANG: Record<SupportedLang, Record<string, LeafFaqItem[]>> = {
       {
         question: "Para quien NO es ideal este plan de 7 dias con dos bases?",
         answer:
-          "Suele ser mala opcion si quieres tres ciudades en una semana, necesitas ritmo de baja movilidad o prefieres no fijar traslados.",
+          "Puede no funcionar bien si quieres visitar tres ciudades en una semana, necesitas un ritmo mas lento con descansos frecuentes, o prefieres planes totalmente flexibles sin dias de traslado fijos.",
       },
       {
         question: "Cual es la principal desventaja de agregar una tercera ciudad?",
         answer:
-          "Pierdes tiempo real de viaje en equipaje, check-in y traslados. En una semana ese costo suele ser mayor de lo que parece.",
+          "A menudo pierdes tiempo valioso de exploracion en equipaje, check-in y transporte. En un viaje de una semana, esas horas suelen acumularse mas rapido de lo que se espera.",
       },
       {
         question: "Cual es la alternativa mas segura si este plan se siente ajustado?",
         answer:
-          "Usa una sola base con excursiones de un dia, o Seoul mas una sola ciudad de contraste. Menos movimiento suele mejorar la experiencia.",
+          "Usa una base principal con algunas excursiones de un dia, o limita el plan a Seoul mas una ciudad de contraste. Reducir desplazamientos suele crear una semana mas disfrutable.",
       },
       {
         question: "Conviene reservar todo antes de validar tiempos de transporte?",
         answer:
-          "No. Primero confirma los tiempos de traslado y luego reserva. Eso evita gran parte del estres de itinerario corto.",
+          "No. Confirma primero tiempos de traslado realistas y luego cierra reservas. Planificar movimientos antes de reservar ayuda a evitar gran parte del estres de un viaje de una semana.",
       },
     ],
     "which-city-fits-you-best": [
       {
         question: "Para quien NO es ideal este enfoque para elegir ciudad?",
         answer:
-          "Si tienes menos de tres dias completos, viaje atado a un evento o restricciones de movilidad, prioriza logistica base primero.",
+          "Puede no funcionar bien si tu viaje dura menos de tres dias completos, gira en torno a un solo evento, o requiere un ritmo mas lento por limites de movilidad. En esos casos, suele ser mejor priorizar la conveniencia y elegir la base mas facil.",
       },
       {
         question: "Puedo elegir solo por rankings de popularidad?",
         answer:
-          "No es lo mas seguro. La popularidad no refleja tu tolerancia a traslados, clima ni ritmo diario.",
+          "No de forma confiable. Los destinos populares no siempre encajan con tu ritmo de viaje, tu tolerancia a traslados largos o las condiciones de temporada.",
       },
       {
         question: "Cual es la opcion mas segura si sigo indeciso?",
         answer:
-          "Empieza por Seoul y agrega solo una ciudad de contraste despues de validar tiempos reales de traslado para tus fechas.",
+          "Empieza con Seoul como base principal. Una vez que confirmes tiempos de traslado realistas para tus fechas, puedes agregar una ciudad de contraste si todavia encaja en tu calendario.",
       },
       {
         question: "Que trade-off pesa mas al elegir ciudad?",
         answer:
-          "La friccion de transporte. Una ciudad atractiva online puede sentirse agotadora si exige mucho movimiento diario.",
+          "La friccion de transporte. Una ciudad puede verse perfecta en fotos, pero si el movimiento diario exige traslados largos, el viaje puede sentirse mas agotador de lo esperado.",
       },
     ],
     "attraction-passes-discounts": [
       {
         question: "Quienes suelen estar mejor sin pases de atracciones?",
         answer:
-          "Quienes prefieren dias flexibles, hacen una o dos entradas pagas por dia o no quieren presion por ventana horaria.",
+          "Quienes prefieren horarios flexibles, planean visitar solo una o dos atracciones pagas por dia, o no quieren ventanas horarias estrictas suelen estar mejor sin pase.",
       },
       {
         question: "Comprar un pase siempre ahorra dinero?",
         answer:
-          "No. Solo ahorra cuando tu volumen real de atracciones pagas y tu ritmo coinciden con las condiciones del pase.",
+          "No. Un pase solo ahorra dinero si la cantidad de atracciones que visitas y tus horarios realmente coinciden con las condiciones del pase.",
       },
       {
-        question: "Cual es el error mas comun con los pases?",
+        question: "Cual es el error mas comun con los pases de atracciones?",
         answer:
-          "Comprar antes de planear. Luego muchos viajeros fuerzan visitas rapidas para justificar el costo hundido.",
+          "Comprar un pase antes de planificar la ruta. Luego muchos viajeros se sienten presionados a recorrer atracciones con prisa solo para \"aprovechar bien el pase\".",
       },
       {
         question: "Cual es la regla mas segura para decidir?",
         answer:
-          "Primero define ruta realista y despues compara el total de entradas sueltas vs el precio del pase en paginas oficiales.",
+          "Primero planifica una ruta realista. Luego compara el costo total de entradas individuales con el precio del pase usando paginas oficiales de informacion.",
       },
     ],
   },

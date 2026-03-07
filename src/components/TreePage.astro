@@ -1141,7 +1141,13 @@ const getLocalizedNode = (
 
 // Frozen on 2026-03-07: keep disabled to preserve siteTree-first live rendering until review is complete.
 const ENABLE_LOCALIZED_NODE_COMPOSITION = false;
-const localizedNodeFromPath = !isHome && ENABLE_LOCALIZED_NODE_COMPOSITION
+const ENABLE_LOCALIZED_NODE_COMPOSITION_PATHS = new Set<string>([
+  "/before-you-go/korea-entry-requirements",
+]);
+const isLocalizedPathCompositionEnabled =
+  ENABLE_LOCALIZED_NODE_COMPOSITION ||
+  (lang === "es" && ENABLE_LOCALIZED_NODE_COMPOSITION_PATHS.has(basePath));
+const localizedNodeFromPath = !isHome && isLocalizedPathCompositionEnabled
   ? getLocalizedNode(basePath, lang, node)
   : undefined;
 const localizedNodeOverride: LocalizedNodeOverride | undefined = !isHome
@@ -1861,9 +1867,9 @@ const checklistByLeaf: Record<string, Partial<Record<SupportedLang, string[]>>> 
       "✔ I saved one official source link to verify entry rules within 24 hours before departure.",
     ],
     es: [
-      "Confirme si K-ETA aplica a mi pasaporte y fechas de viaje.",
-      "Revise si debo presentar la e-Arrival Card y en que momento.",
-      "Guarde un enlace oficial para volver a verificar reglas en las ultimas 24 horas antes de salir.",
+      "✔ Confirme si K-ETA aplica a mi pasaporte y fechas de viaje.",
+      "✔ Revise si debo presentar la e-Arrival Card y en que momento.",
+      "✔ Guarde un enlace oficial para verificar reglas de entrada dentro de las 24 horas previas a la salida.",
     ],
   },
 };
@@ -1887,7 +1893,7 @@ const checklistHintByLeaf: Record<string, Partial<Record<SupportedLang, string>>
   },
   "korea-entry-requirements": {
     en: "Treat this as a departure-readiness check, not legal advice. Always confirm the latest official information before boarding.",
-    es: "Usa esto como verificacion previa a la salida, no como asesoria legal. Reconfirma avisos oficiales antes de embarcar.",
+    es: "Toma esto como una verificacion previa al embarque, no como asesoria legal. Confirma siempre la informacion oficial mas reciente antes de embarcar.",
   },
 };
 

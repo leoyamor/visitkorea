@@ -856,7 +856,7 @@ export const localizedContentByPath: LocalizedContentByPath = {
       description:
         "Empieza aqui si necesitas certeza sobre K-ETA, la e-Arrival Card o los pasos exactos de llegada que aplican a tu pasaporte.",
       quickAnswer:
-        "Comprueba antes de salir si necesitas K-ETA y e-Arrival Card, y sigue despues el orden oficial de llegada en los aeropuertos coreanos para evitar retrasos.",
+        "Antes de salir, confirma si K-ETA aplica a tu pasaporte, presenta la e-Arrival Card solo si corresponde y sigue el proceso oficial de llegada en aeropuertos de Corea para evitar retrasos al entrar al pais.",
       content: [
         {
           title: "🧭 Vista rapida",
@@ -1065,12 +1065,26 @@ export const localizedContentByPath: LocalizedContentByPath = {
         },
         {
           title: "✅ Consejo final",
-          body: "Preparate con precision antes de salir.",
-          bullets: [
-            "Sigue el orden correcto del aeropuerto despues de aterrizar.",
+          body: "Haz esta verificacion rapida antes de embarcar tu vuelo:",
+          subsections: [
+            {
+              title: "1️⃣ Confirma el estado de K-ETA",
+              tail:
+                "Verifica si K-ETA aplica a tu nacionalidad y a tus fechas de viaje.",
+            },
+            {
+              title: "2️⃣ Verifica requisitos de e-Arrival Card",
+              tail:
+                "Presentala solo si corresponde y dentro de la ventana valida de envio.",
+            },
+            {
+              title: "3️⃣ Prepara datos basicos de llegada",
+              tail:
+                "Ten listos tu pasaporte, la direccion de tu primer alojamiento y los datos del vuelo por si inmigracion te los solicita.",
+            },
           ],
           tail:
-            "La mayoria de los problemas de entrada ocurren antes de abordar, no despues de llegar. Las cifras clave de esta guia se basan en orientacion oficial de inmigracion de 2026 y pueden cambiar. Las politicas de exencion y los requisitos sanitarios pueden actualizarse. Confirma siempre los avisos oficiales del gobierno antes de salir.",
+            "La mayoria de los problemas de entrada ocurren antes de embarcar, no despues de llegar. Las cifras clave de esta guia siguen la orientacion oficial de inmigracion de 2026. Como las politicas de entrada pueden cambiar, lo mas seguro es volver a comprobar avisos oficiales del gobierno dentro de las 24 horas previas a la salida.",
         },
       ],
     },

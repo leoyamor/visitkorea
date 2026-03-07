@@ -5450,7 +5450,7 @@ export const siteTree: TreeNode = {
           description:
             "Start here if you need certainty on K-ETA, the e-Arrival Card, or the exact airport arrival steps tied to your passport.",
           quickAnswer:
-            "Check K-ETA and e-Arrival Card requirements before departure, then follow the official arrival order at Korean airports to avoid delays.",
+            "Before departure, confirm whether K-ETA applies to your passport, submit e-Arrival Card only if required within its time window, then follow the official airport arrival order in Korea to reduce entry delays.",
           content: [
             {
               title: "🧭 Quick Overview",
@@ -5652,12 +5652,14 @@ export const siteTree: TreeNode = {
             },
             {
               title: "✅ Final Advice",
-              body: "Prepare accurately before departure.",
+              body: "Run this short pre-boarding check before departure:",
               bullets: [
-                "Follow the correct airport order after landing.",
+                "Confirm whether K-ETA applies to your nationality and travel date.",
+                "Submit e-Arrival Card only if required and within its valid window.",
+                "Keep your passport, first accommodation address, and flight details ready for arrival questions.",
               ],
               tail:
-                "Most entry problems occur before boarding — not after arrival. Key figures in this guide are based on official 2026 immigration guidance and may be updated. Exemption policies and health requirements can change. Always confirm official government notices before departure.",
+                "Most entry problems occur before boarding, not after arrival. Key figures in this guide follow official 2026 immigration guidance and may be updated, so recheck official government notices within 24 hours before departure.",
             },
           ],
         },

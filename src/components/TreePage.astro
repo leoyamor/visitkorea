@@ -1139,7 +1139,7 @@ const getLocalizedNode = (
   };
 };
 
-// Keep disabled in this phase to preserve live output while shadow data is expanded.
+// Frozen on 2026-03-07: keep disabled to preserve siteTree-first live rendering until review is complete.
 const ENABLE_LOCALIZED_NODE_COMPOSITION = false;
 const localizedNodeFromPath = !isHome && ENABLE_LOCALIZED_NODE_COMPOSITION
   ? getLocalizedNode(basePath, lang, node)
@@ -1854,6 +1854,18 @@ const checklistByLeaf: Record<string, Partial<Record<SupportedLang, string[]>>> 
       "Revise exclusiones y cobertura de actividades para mi itinerario.",
     ],
   },
+  "korea-entry-requirements": {
+    en: [
+      "I confirmed if K-ETA is required for my passport and travel dates.",
+      "I checked whether I need to submit an e-Arrival Card and when.",
+      "I saved one official source link to recheck rules within 24 hours of departure.",
+    ],
+    es: [
+      "Confirme si K-ETA aplica a mi pasaporte y fechas de viaje.",
+      "Revise si debo presentar la e-Arrival Card y en que momento.",
+      "Guarde un enlace oficial para volver a verificar reglas en las ultimas 24 horas antes de salir.",
+    ],
+  },
 };
 
 const checklistHintByLeaf: Record<string, Partial<Record<SupportedLang, string>>> = {
@@ -1872,6 +1884,10 @@ const checklistHintByLeaf: Record<string, Partial<Record<SupportedLang, string>>
   "travel-insurance-for-korea": {
     en: "No login required. Tick what you have already confirmed, then save this page for reference later.",
     es: "No se requiere inicio de sesion. Marca lo que ya confirmaste y guarda esta pagina para consultarla despues.",
+  },
+  "korea-entry-requirements": {
+    en: "Treat this as a departure-readiness check, not legal advice. Reconfirm official notices before boarding.",
+    es: "Usa esto como verificacion previa a la salida, no como asesoria legal. Reconfirma avisos oficiales antes de embarcar.",
   },
 };
 
@@ -2005,6 +2021,19 @@ const displayContent = localizedNodeOverride?.content ?? node.content ?? [];
 const contentBlockCount = displayContent.length;
 const middleContentIndex =
   contentBlockCount > 0 ? Math.max(1, Math.floor((contentBlockCount - 1) / 2)) : -1;
+const rawAdsApprovalMode = String(
+  import.meta.env.PUBLIC_ADSENSE_APPROVAL_MODE ?? import.meta.env.PUBLIC_AD_APPROVAL_MODE ?? "locked"
+)
+  .trim()
+  .toLowerCase();
+const adsApprovalMode: "locked" | "flex" = rawAdsApprovalMode === "flex" ? "flex" : "locked";
+const isAdsApprovalLocked = adsApprovalMode === "locked";
+const focusLeafPath = "/before-you-go/korea-entry-requirements";
+const isFocusLeaf = basePath === focusLeafPath;
+const suppressExtraLeafAds = isAdsApprovalLocked || isFocusLeaf;
+const showLeafIntroAd = isLeafPage && !suppressExtraLeafAds;
+const showLeafMidAd = isLeafPage && !suppressExtraLeafAds && contentBlockCount >= 4;
+const showLeafEndAd = isLeafPage;
 const showHomeUpdateBar = isHome && segments.length === 0 && !node.slug;
 const homeUpdateTickerItems = showHomeUpdateBar ? await getHomeLeafTickerItems(siteTree) : [];
 const faqNode: TreeNode = localizedNodeOverride
@@ -2380,10 +2409,10 @@ const breadcrumb = breadcrumbs;
               <p class="content-tail" set:html={linkify(section.tail)} />
             )}
           </div>
-          {isLeafPage && index === 0 && (
+          {showLeafIntroAd && index === 0 && (
             <AdSenseSafeSlot zone="leaf_after_intro" className="ad-safe-spacing ad-safe-spacing--intro" />
           )}
-          {isLeafPage && contentBlockCount >= 4 && index === middleContentIndex && (
+          {showLeafMidAd && index === middleContentIndex && (
             <AdSenseSafeSlot zone="leaf_mid_content" className="ad-safe-spacing ad-safe-spacing--middle" />
           )}
         </Fragment>
@@ -2393,7 +2422,7 @@ const breadcrumb = breadcrumbs;
         <span class="content-identity-icon" aria-hidden="true">{renderIcon("spark")}</span>
         <span>{t.identity}</span>
       </div>
-      {isLeafPage && (
+      {showLeafEndAd && (
         <AdSenseSafeSlot zone="leaf_end_content" className="ad-safe-spacing ad-safe-spacing--end" />
       )}
       {isLeafPage && pageUi.showLeafFaq && leafFaqItems.length > 0 && (
@@ -3753,7 +3782,8 @@ const breadcrumb = breadcrumbs;
     display: flex;
     align-items: flex-start;
     gap: 10px;
-    padding: 10px 12px;
+    min-height: 44px;
+    padding: 11px 12px;
     border-radius: 12px;
     border: 1px solid var(--border-paper);
     background: color-mix(in srgb, var(--paper) 90%, var(--paper-2) 10%);
@@ -3768,7 +3798,10 @@ const breadcrumb = breadcrumbs;
   }
 
   .leaf-checklist-list input[type="checkbox"] {
-    margin-top: 2px;
+    inline-size: 18px;
+    block-size: 18px;
+    margin-top: 1px;
+    flex: 0 0 auto;
     accent-color: var(--accent);
   }
 
@@ -3822,8 +3855,8 @@ const breadcrumb = breadcrumbs;
   }
 
   .ad-safe-spacing--end {
-    margin-top: 14px;
-    margin-bottom: 28px;
+    margin-top: 24px;
+    margin-bottom: 30px;
   }
 
   .ad-safe-spacing--home {
@@ -4044,6 +4077,7 @@ const breadcrumb = breadcrumbs;
     }
 
     .leaf-checklist-list label {
+      min-height: 44px;
       padding: 10px 11px;
     }
 
@@ -4258,7 +4292,8 @@ const breadcrumb = breadcrumbs;
     }
 
     .leaf-checklist-list label {
-      padding: 9px 10px;
+      min-height: 44px;
+      padding: 10px 10px;
       font-size: 0.92rem;
       line-height: 1.45;
     }

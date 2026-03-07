@@ -8,12 +8,30 @@ type Props = {
 
 const { zone, className = "" } = Astro.props as Props;
 const slotId = getAdSlotByZone(zone);
-const isEnabled = Boolean(ADSENSE_CLIENT_ID && slotId);
+const rawApprovalMode = String(
+  import.meta.env.PUBLIC_ADSENSE_APPROVAL_MODE ?? import.meta.env.PUBLIC_AD_APPROVAL_MODE ?? "locked"
+)
+  .trim()
+  .toLowerCase();
+const adsApprovalMode: "locked" | "flex" = rawApprovalMode === "flex" ? "flex" : "locked";
+const lockedZoneAllowlist: readonly AdZone[] = [
+  "home_after_update_bar",
+  "hub_after_grid",
+  "leaf_end_content",
+];
+const isZoneAllowed = adsApprovalMode === "locked" ? lockedZoneAllowlist.includes(zone) : true;
+const isConfigured = Boolean(ADSENSE_CLIENT_ID && slotId);
+const isEnabled = isConfigured && isZoneAllowed;
 const showPlaceholder = import.meta.env.DEV && !isEnabled;
 ---
 
 {isEnabled ? (
-  <div class={`ad-safe-slot ${className}`} data-ad-zone={zone} data-kpi-section="adsense_slot">
+  <div
+    class={`ad-safe-slot ${className}`}
+    data-ad-zone={zone}
+    data-ad-approval-mode={adsApprovalMode}
+    data-kpi-section="adsense_slot"
+  >
     <p class="ad-safe-label">Advertisement</p>
     <ins
       class="adsbygoogle"
@@ -32,6 +50,60 @@ const showPlaceholder = import.meta.env.DEV && !isEnabled;
           currentScript && currentScript.previousElementSibling instanceof HTMLElement
             ? currentScript.previousElementSibling
             : null;
+        const slotContainer =
+          currentScript && currentScript.parentElement instanceof HTMLElement
+            ? currentScript.parentElement
+            : null;
+        const collapsedClassName = "ad-safe-slot--collapsed";
+
+        const setCollapsed = (collapsed) => {
+          if (!slotContainer) return;
+          slotContainer.classList.toggle(collapsedClassName, collapsed);
+          if (collapsed) {
+            slotContainer.setAttribute("data-ad-collapsed", "1");
+            return;
+          }
+          slotContainer.removeAttribute("data-ad-collapsed");
+        };
+
+        const isLikelyFilled = () => {
+          if (!slotEl) return false;
+          const status = slotEl.getAttribute("data-ad-status");
+          if (status === "filled") return true;
+          if (slotEl.querySelector("iframe")) return true;
+          const hasChildren = slotEl.children.length > 0;
+          const hasHeight = slotEl.getBoundingClientRect().height >= 32;
+          return hasChildren && hasHeight;
+        };
+
+        const refreshCollapseState = () => {
+          if (!slotEl) return;
+          if (isLikelyFilled()) {
+            setCollapsed(false);
+            return;
+          }
+          if (slotEl.getAttribute("data-ad-status") === "unfilled") {
+            setCollapsed(true);
+          }
+        };
+
+        const watchFillState = () => {
+          if (!slotEl) return;
+          const observer = new MutationObserver(refreshCollapseState);
+          observer.observe(slotEl, {
+            attributes: true,
+            attributeFilter: ["data-ad-status", "style", "class"],
+            childList: true,
+            subtree: true,
+          });
+
+          window.setTimeout(() => {
+            refreshCollapseState();
+            if (!isLikelyFilled()) {
+              setCollapsed(true);
+            }
+          }, 8000);
+        };
 
         const enqueue = () => {
           if (!slotEl || slotEl.dataset.adsInit === "1") return;
@@ -149,13 +221,19 @@ const showPlaceholder = import.meta.env.DEV && !isEnabled;
           });
         };
 
+        watchFillState();
         Promise.all([waitForStartSignal(), waitForSlotSignal()]).then(scheduleWhenIdle);
       })();
     </script>
   </div>
 ) : showPlaceholder ? (
-  <div class={`ad-safe-slot ad-safe-slot--placeholder ${className}`} data-ad-zone={zone} aria-hidden="true">
-    <p class="ad-safe-label">Ad template: {zone}</p>
+  <div
+    class={`ad-safe-slot ad-safe-slot--placeholder ${className}`}
+    data-ad-zone={zone}
+    data-ad-approval-mode={adsApprovalMode}
+    aria-hidden="true"
+  >
+    <p class="ad-safe-label">Ad template: {zone}{isZoneAllowed ? "" : " (blocked in locked mode)"}</p>
   </div>
 ) : null}
 
@@ -176,6 +254,27 @@ const showPlaceholder = import.meta.env.DEV && !isEnabled;
   .ad-safe-slot--placeholder {
     border-style: dashed;
     background: rgba(255, 255, 255, 0.46);
+  }
+
+  .ad-safe-slot--collapsed {
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: 0 !important;
+    max-height: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .ad-safe-slot--collapsed .ad-safe-label {
+    display: none;
+  }
+
+  .ad-safe-slot--collapsed .adsbygoogle {
+    min-height: 0 !important;
+    height: 0 !important;
   }
 
   .ad-safe-label {

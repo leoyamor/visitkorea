@@ -13,6 +13,7 @@ export const localizedHubPathsPhase1 = [
 export const localizedLeafShadowPathsPhase1 = [
   "/before-you-go/sim-or-esim",
   "/before-you-go/travel-insurance-for-korea",
+  "/before-you-go/korea-entry-requirements",
 ] as const;
 
 export const localizedLeafShadowPathsPilot = [
@@ -38,6 +39,34 @@ export const localizedTranslationFields = [
   "content",
   "children.title",
   "children.description",
+] as const;
+
+export const localizedStructureFreezeDate = "2026-03-07" as const;
+export const localizedStructureFreezeRule =
+  "After 2026-03-07, localizedContentByPath may receive copy additions or edits, but full-page rendering source switches away from siteTree are frozen until AdSense review is complete." as const;
+export const localizedStructureSwitchPolicy = {
+  freezeDate: localizedStructureFreezeDate,
+  liveRenderSource: "siteTree.ts",
+  allowAfterFreeze: [
+    "localizedContentByPath copy additions",
+    "localizedContentByPath copy refinements",
+    "translation QA corrections",
+  ],
+  blockAfterFreeze: [
+    "ENABLE_LOCALIZED_NODE_COMPOSITION=true",
+    "full-page render source migration to localizedContentByPath",
+    "routing or hierarchy ownership transfer out of siteTree",
+  ],
+} as const;
+
+export const localizedStructureMirrorChecklist = [
+  { path: "/plan-your-trip", type: "hub", status: "mirrored-shadow" },
+  { path: "/before-you-go", type: "hub", status: "mirrored-shadow" },
+  { path: "/before-you-go/sim-or-esim", type: "leaf", status: "mirrored-shadow" },
+  { path: "/before-you-go/travel-insurance-for-korea", type: "leaf", status: "mirrored-shadow" },
+  { path: "/before-you-go/korea-entry-requirements", type: "leaf", status: "mirrored-shadow" },
+  { path: "/choose-a-city/which-city-fits-you-best", type: "leaf", status: "defer-after-review" },
+  { path: "/plan-your-trip/7-days-in-korea", type: "leaf", status: "defer-after-review" },
 ] as const;
 
 export const structuralDataBoundary = [
@@ -162,6 +191,10 @@ export const localizedContentDesignNotes = {
   phase1Scope: localizedHubPathsPhase1,
   buildReviewScope: localizedShadowReviewPaths,
   requiredLangs: localizedShadowReviewLangs,
+  structureFreezeDate: localizedStructureFreezeDate,
+  structureFreezeRule: localizedStructureFreezeRule,
+  structureSwitchPolicy: localizedStructureSwitchPolicy,
+  structureMirrorChecklist: localizedStructureMirrorChecklist,
   translationFields: localizedTranslationFields,
   structureFields: structuralDataBoundary,
   translationFieldsBoundary: translationDataBoundary,

@@ -5450,7 +5450,7 @@ export const siteTree: TreeNode = {
           description:
             "Start here if you need certainty on K-ETA, the e-Arrival Card, or the exact airport arrival steps tied to your passport.",
           quickAnswer:
-            "Before departure, confirm whether K-ETA applies to your passport, submit e-Arrival Card only if required within its time window, then follow the official airport arrival order in Korea to reduce entry delays.",
+            "Before departure, confirm whether K-ETA applies to your passport, submit an e-Arrival Card only if it is required, and follow the official airport arrival process in Korea to avoid delays when entering the country.",
           content: [
             {
               title: "🧭 Quick Overview",
@@ -5652,14 +5652,24 @@ export const siteTree: TreeNode = {
             },
             {
               title: "✅ Final Advice",
-              body: "Run this short pre-boarding check before departure:",
-              bullets: [
-                "Confirm whether K-ETA applies to your nationality and travel date.",
-                "Submit e-Arrival Card only if required and within its valid window.",
-                "Keep your passport, first accommodation address, and flight details ready for arrival questions.",
+              body: "Run this quick check before boarding your flight:",
+              subsections: [
+                {
+                  title: "1️⃣ Confirm K-ETA status",
+                  tail: "Check whether K-ETA applies to your nationality and travel dates.",
+                },
+                {
+                  title: "2️⃣ Verify e-Arrival Card requirements",
+                  tail: "Submit it only if it is required and within the valid submission window.",
+                },
+                {
+                  title: "3️⃣ Prepare basic arrival details",
+                  tail:
+                    "Have your passport, first accommodation address, and flight information ready in case immigration officers ask for them.",
+                },
               ],
               tail:
-                "Most entry problems occur before boarding, not after arrival. Key figures in this guide follow official 2026 immigration guidance and may be updated, so recheck official government notices within 24 hours before departure.",
+                "Most entry problems happen before boarding, not after arrival. The key figures in this guide follow official 2026 immigration guidance. Because entry policies can change, it is always safest to recheck official government notices within 24 hours before departure.",
             },
           ],
         },

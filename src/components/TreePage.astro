@@ -1342,7 +1342,7 @@ const KEYWORD_LINK_EXCLUSIONS_BY_PATH: Record<string, Set<string>> = {
 
 const linkify = (text: string) => {
   const excludedKeywords = KEYWORD_LINK_EXCLUSIONS_BY_PATH[basePath] ?? EMPTY_EXCLUDED_KEYWORDS;
-  const escaped = escapeHtml(text);
+  const escaped = escapeHtml(text).replace(/&lt;br\s*\/?&gt;/gi, "<br />");
 
   // Turn "Label: https://example.com" into a link on "Label" only.
   const withNamedUrlLinks = escaped.replace(

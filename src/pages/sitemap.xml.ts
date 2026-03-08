@@ -9,6 +9,7 @@ const staticInfoPaths = ["/about", "/privacy-policy", "/contact", "/disclaimer"]
 // Temporary override: keep only this page at today's date for faster recrawl.
 const temporaryLastmodOverrides: Record<string, string> = {
   "/before-you-go/korea-entry-requirements": "2026-03-08T00:00:00.000Z",
+  "/korea-now-and-more": "2026-03-08T00:00:00.000Z",
 };
 
 const toSitemapPath = (path: string) => {

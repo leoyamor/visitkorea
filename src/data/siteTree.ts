@@ -5792,6 +5792,7 @@ export const siteTree: TreeNode = {
     {
       title: "Korea Now & More",
       slug: "korea-now-and-more",
+      updatedIso: "2026-03-08T00:00:00.000Z",
       icon: "spark",
       image: "/leaf%20images/korea-now-more.webp",
       description:

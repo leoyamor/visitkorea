@@ -5444,6 +5444,7 @@ export const siteTree: TreeNode = {
         {
           title: "K-ETA & Immigration Process: Official Entry Guide to Korea (2026 Update)",
           slug: "korea-entry-requirements",
+          updatedIso: "2026-03-08T00:00:00.000Z",
           icon: "passport",
           image: "/leaf%20images/Immigration%20Process.webp",
           pageType: "policyLeaf",

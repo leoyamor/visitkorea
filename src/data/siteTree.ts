@@ -5795,97 +5795,109 @@ export const siteTree: TreeNode = {
       icon: "spark",
       image: "/leaf%20images/korea-now-more.webp",
       description:
-        "Discover Gangneung 'Gangneung-Gallae' Tour Pass: discounts, conditions, and transport tips for foreign travelers.",
+        "Discover the Gangneung 'Gangneung-Gallae' Tour Pass: discounts, conditions, and transport tips for international visitors.",
       quickAnswer:
-        "Gangneung's 'Gangneung-Gallae' Tour Pass bundles attractions, experiences, cafes, and stays into one ticket with savings promoted up to 55%.",
+        "One pass that combines multiple travel experiences in Gangneung.",
       content: [
         {
           title: "Discover Gangneung 'Gangneung-Gallae' Tour Pass",
           icon: "spark",
-          emphasis: "Save big in one of Korea's top coastal cities.",
+          emphasis: "Save money while exploring one of Korea's most popular coastal cities.",
           body:
-            "Gangneung City launched a discounted tour pass called 'Gangneung-Gallae.' It bundles major sights, experiences, cafes, and even accommodation into one pass for easier and cheaper trip planning.",
+            "Gangneung City introduced the Gangneung-Gallae Tour Pass, a travel pass designed to make sightseeing easier and more affordable for visitors. The pass bundles selected attractions, experiences, cafes, and tourism benefits into a single package.",
+          tail:
+            "Instead of booking everything separately, travelers can access several activities with one pass. The goal is to simplify trip planning and reduce travel costs for people visiting Korea's east coast.",
         },
         {
           title: "TL;DR",
           icon: "checklist",
-          emphasis: "One pass, multiple benefits, major savings.",
+          emphasis: "One pass that combines multiple travel experiences in Gangneung.",
           body:
-            "Travelers can access several Gangneung activities in one package and potentially save up to 55% compared with buying each item separately.",
+            "Travelers can access selected attractions and services through a single purchase and may save up to 55% compared with buying items separately.",
           bullets: [
-            "Pay one fare and unlock multiple activities and benefits in one package.",
-            "Built to reduce travel costs and simplify planning for visitors.",
-            "Includes pass choices by transport style and day type.",
+            "Access to selected attractions and travel experiences.",
+            "Discounts at partner cafes and tourism locations.",
+            "Packages designed for different travel styles.",
+            "Options depending on weekday or weekend visits.",
           ],
         },
         {
           title: "Benefits for Korea Travel Visitors",
           icon: "wallet",
-          emphasis: "Budget and convenience in one product.",
-          body: "This pass is positioned as a high-value option for affordable Korea travel in Gangneung.",
+          emphasis: "Budget and convenience in one travel product.",
+          body:
+            "For travelers visiting Korea's east coast, organizing multiple reservations for attractions, cafes, and experiences can take time. The Gangneung-Gallae Tour Pass simplifies that process by combining several tourism services into one product.",
           bullets: [
-            "Big savings: up to 55% off combined costs of sights, stays, cafes, and experiences.",
-            "Simplified planning: one pass replaces multiple reservations and ticket purchases.",
-            "Flexible options: choose based on public transport vs self-drive and weekday vs weekend plans.",
+            "Potential savings compared with purchasing individual tickets.",
+            "Simpler planning with fewer reservations to manage.",
+            "Flexible options depending on travel schedule or transport style.",
           ],
+          tail:
+            "This type of bundled tourism pass is becoming increasingly common in Korea as cities try to make travel easier for international visitors.",
         },
         {
           title: "Validity of the Offer",
           icon: "calendar",
-          emphasis: "Part of the 2026-2027 Visit Gangneung campaign.",
+          emphasis: "Part of the Visit Gangneung tourism campaign.",
           body:
-            "The pass was introduced within Gangneung's 2026-2027 tourism campaign, so it is publicized as active through 2026 and into 2027.",
+            "The Gangneung-Gallae Tour Pass was introduced as part of the Visit Gangneung 2026-2027 tourism campaign organized by the city.",
           bullets: [
-            "Campaign window: 2026 to 2027.",
-            "Final end date may change as city campaign updates are announced.",
+            "Campaign window: 2026-2027 (subject to updates).",
           ],
+          tail:
+            "The promotion is expected to run during the campaign period, although specific discounts, participating venues, or conditions may change depending on tourism updates. Travelers should always confirm the latest details before purchasing.",
         },
         {
           title: "Conditions to Use It",
           icon: "passport",
-          emphasis: "Simple purchase flow for all visitors.",
+          emphasis: "Simple purchase process for visitors.",
           body:
-            "Buy the pass on the travel platform Frip by searching 'Gangneung-Gallae.' No Korean residency or special eligibility is required.",
+            "The pass can be purchased through the travel activity platform Frip.",
           bullets: [
-            "Purchase channel: Frip (search: Gangneung-Gallae).",
-            "Open to all travelers, including foreign tourists.",
-            "No special status needed beyond a standard purchase.",
-            "Frip: https://www.frip.co.kr/",
+            "Search for: Gangneung-Gallae.",
+            "Available to international travelers.",
+            "No Korean residency requirement.",
+            "Purchase and booking handled through the platform.",
           ],
+          tail:
+            "Availability and specific benefits may vary depending on campaign updates.",
         },
         {
           title: "Where This Happens",
           icon: "pin",
-          emphasis: "Gangneung City, Gangwon Province, Korea.",
+          emphasis: "Gangneung, Gangwon Province, South Korea.",
           body:
-            "Gangneung is a popular coastal destination known for beaches, culture spots, and local food scenes.",
+            "Gangneung is a well-known coastal destination located in Gangwon Province on Korea's east coast. The city is popular for beaches, coffee culture, seafood restaurants, and scenic ocean views.",
           bullets: [
             "Location: Gangneung, Gangwon Province, South Korea.",
-            "Search 'Gangneung' in major map apps for routing and local planning.",
           ],
+          tail:
+            "Most navigation apps such as Google Maps, Naver Map, or KakaoMap can easily provide directions to the city.",
         },
         {
           title: "How to Get There from Incheon International Airport",
           icon: "train",
-          emphasis: "Common and traveler-friendly route in about 3 hours.",
+          emphasis: "A common travel route takes about three hours.",
           body:
-            "A practical route is AREX from Incheon Airport to Seoul Station, then transfer to KTX or ITX-Saemaeul to Gangneung.",
+            "Step 1: Take the AREX airport train from Incheon International Airport to Seoul Station. Travel time: about 1 hour.",
           bullets: [
-            "Step 1: AREX from Incheon Airport to Seoul Station (about 1 hour).",
-            "Step 2: Transfer at Seoul Station to KTX or ITX-Saemaeul to Gangneung (about 2 hours).",
-            "Estimated total travel time: about 3 hours depending on connections.",
+            "Step 2: Transfer at Seoul Station to a KTX high-speed train or ITX-Saemaeul train heading to Gangneung. Travel time: about 2 hours.",
+            "Estimated total travel time: around three hours depending on transfer timing.",
           ],
         },
         {
           title: "Bottom Line for Affordable Korea Trips",
           icon: "spark",
-          emphasis: "Lower cost, lower hassle, better value.",
+          emphasis: "Lower cost, simpler planning.",
           body:
-            "For foreign travelers planning a budget-friendly Korea itinerary, the Gangneung-Gallae Tour Pass can reduce costs and booking friction while covering key Gangneung experiences.",
+            "For travelers planning to visit Korea's east coast, the Gangneung-Gallae Tour Pass may offer a convenient way to combine several travel experiences while potentially reducing costs.",
           bullets: [
-            "Good fit for first-time visitors who want simpler trip logistics.",
-            "Good fit for repeat visitors who want better value from bundled travel products.",
+            "First-time visitors who want easier trip planning.",
+            "Travelers looking for bundled tourism options.",
+            "Visitors exploring Gangneung's beaches, cafes, and attractions.",
           ],
+          tail:
+            "Before making any travel purchase, always confirm the latest conditions and availability through official tourism sources or the purchase platform.",
         },
       ],
     },

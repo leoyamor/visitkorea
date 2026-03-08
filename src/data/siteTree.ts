@@ -5869,9 +5869,6 @@ export const siteTree: TreeNode = {
           emphasis: "Gangneung, Gangwon Province, South Korea.",
           body:
             "Gangneung is a well-known coastal destination located in Gangwon Province on Korea's east coast. The city is popular for beaches, coffee culture, seafood restaurants, and scenic ocean views.",
-          bullets: [
-            "Location: Gangneung, Gangwon Province, South Korea.",
-          ],
           tail:
             "Most navigation apps such as Google Maps, Naver Map, or KakaoMap can easily provide directions to the city.",
         },

@@ -5881,10 +5881,8 @@ export const siteTree: TreeNode = {
           emphasis: "A common travel route takes about three hours.",
           body:
             "Step 1: Take the AREX airport train from Incheon International Airport to Seoul Station. Travel time: about 1 hour.",
-          bullets: [
-            "Step 2: Transfer at Seoul Station to a KTX high-speed train or ITX-Saemaeul train heading to Gangneung. Travel time: about 2 hours.",
-            "Estimated total travel time: around three hours depending on transfer timing.",
-          ],
+          tail:
+            "Step 2: Transfer at Seoul Station to a KTX high-speed train or ITX-Saemaeul train heading to Gangneung. Travel time: about 2 hours. Estimated total travel time: around three hours depending on transfer timing.",
         },
         {
           title: "Bottom Line for Affordable Korea Trips",

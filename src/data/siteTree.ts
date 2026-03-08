@@ -5447,6 +5447,9 @@ export const siteTree: TreeNode = {
           icon: "passport",
           image: "/leaf%20images/Immigration%20Process.webp",
           pageType: "policyLeaf",
+          overrides: {
+            showNextDecision: true,
+          },
           description:
             "Start here if you need certainty on K-ETA, the e-Arrival Card, or the exact airport arrival steps tied to your passport.",
           quickAnswer:

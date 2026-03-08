@@ -6,6 +6,11 @@ import { absoluteUrl } from "../lib/site";
 const utilityPaths = ["/llms.txt", "/llms-full.txt"];
 const staticInfoPaths = ["/about", "/privacy-policy", "/contact", "/disclaimer"];
 
+// Temporary override: keep only this page at today's date for faster recrawl.
+const temporaryLastmodOverrides: Record<string, string> = {
+  "/before-you-go/korea-entry-requirements": "2026-03-08T00:00:00.000Z",
+};
+
 const toSitemapPath = (path: string) => {
   if (path === "/" || path.endsWith(".txt")) return path;
   return `${path.replace(/\/+$/, "")}/`;
@@ -42,10 +47,11 @@ const escapeXml = (value: string) =>
 export const GET = () => {
   const routeSet = new Set<string>([...getTreePaths(), ...utilityPaths, ...staticInfoPaths]);
   const routes = [...routeSet].sort((a, b) => a.localeCompare(b));
-  const lastModified = EDITORIAL_UPDATED_ISO;
+  const defaultLastModified = EDITORIAL_UPDATED_ISO;
 
   const urls = routes
     .map((route) => {
+      const lastModified = temporaryLastmodOverrides[route] ?? defaultLastModified;
       const enUrl = absoluteUrl(toSitemapPath(route));
       const esUrl = absoluteUrl(toSitemapPath(withLang(route, "es")));
       const depth = route === "/" ? 0 : route.split("/").filter(Boolean).length;

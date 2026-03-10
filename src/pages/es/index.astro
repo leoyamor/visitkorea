@@ -1,16 +1,102 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import TreePage from "../../components/TreePage.astro";
-import { siteTree } from "../../data/siteTree";
+import { siteTree, type TreeNode } from "../../data/siteTree";
+import { localizedContentByPath } from "../../data/localizedContent";
 import { buildCollectionSchemaNodes } from "../../lib/geo";
+import { getHomeLeafTickerItems } from "../../lib/leafUpdates";
 import { absoluteUrl } from "../../lib/site";
 
-const node = siteTree;
+const ES_HOME_TITLE = "Planificador de viaje a Corea: guia practica para Corea del Sur";
+const ES_HOME_DESCRIPTION =
+  "Guia practica de viaje por Corea del Sur para primera visita y viajes repetidos: ciudades, transporte, comida, alojamiento, etiqueta y actualizaciones utiles.";
+const ES_HOME_ROOT_TITLE = "Inicio";
+const ES_HOME_CHILD_COPY: Record<string, { title: string; description: string }> = {
+  "plan-your-trip": {
+    title: "Planifica tu viaje",
+    description: "Planifica tus dias con un ritmo realista, sin sobrecargar tu itinerario.",
+  },
+  "choose-a-city": {
+    title: "Elige una ciudad",
+    description: "Elige la ciudad que mejor encaja con tu forma de viajar.",
+  },
+  "getting-around-korea": {
+    title: "Moverse por Corea",
+    description: "Aprende a usar metro, bus y taxi con confianza.",
+  },
+  "what-to-eat": {
+    title: "Que comer",
+    description: "Que probar primero y que conviene evitar.",
+  },
+  "where-to-stay": {
+    title: "Donde alojarte",
+    description: "Encuentra la zona y el alojamiento que mejor se ajustan a tu presupuesto.",
+  },
+  "things-to-do": {
+    title: "Que hacer",
+    description: "Descubre que actividades valen de verdad tu tiempo y dinero.",
+  },
+  "travel-basics": {
+    title: "Basicos de viaje",
+    description: "Internet, pagos y seguridad con menos estres.",
+  },
+  "before-you-go": {
+    title: "Antes de viajar",
+    description: "Confirma entrada, conectividad al llegar y cobertura de riesgo antes de salir.",
+  },
+  "latest-travel-updates-for-korea": {
+    title: "Ultimas actualizaciones de viaje para Corea",
+    description: "Fuentes oficiales para confirmar antes de viajar.",
+  },
+  "korea-now-and-more": {
+    title: "Corea ahora y mas",
+    description:
+      "Descubre el Tour Pass Gangneung-Gallae: descuentos, condiciones y consejos de transporte para visitantes internacionales.",
+  },
+  "this-week-in-korea": {
+    title: "Esta semana en Corea",
+    description:
+      "Seollal 2026: guia para extranjeros con fechas clave, patrones de viaje, cierres y puntos culturales.",
+  },
+};
+const ES_HOME_TICKER_COPY: Record<string, { title: string; detail: string }> = {
+  "/korea-now-and-more": {
+    title: "Corea ahora y mas",
+    detail:
+      "Un solo pase que combina varias experiencias de viaje en Gangneung.",
+  },
+  "/things-to-do/attraction-passes-discounts": {
+    title: "Pases y descuentos de atracciones en Corea",
+    detail:
+      "Compara pases oficiales por region y ritmo de viaje para ver cuando realmente ahorran.",
+  },
+};
+
+const firstSentence = (value?: string) => {
+  if (!value) return "";
+  const normalized = value.replace(/\s+/g, " ").trim();
+  if (!normalized) return "";
+  const match = normalized.match(/^[^.!?]+[.!?]/);
+  return (match ? match[0] : normalized).trim();
+};
+
+const node: TreeNode = {
+  ...siteTree,
+  title: ES_HOME_ROOT_TITLE,
+  children: (siteTree.children ?? []).map((child) => {
+    const localized = ES_HOME_CHILD_COPY[child.slug];
+    if (!localized) return child;
+    return {
+      ...child,
+      title: localized.title,
+      description: localized.description,
+    };
+  }),
+};
 const segments: string[] = [];
 const lang = "es";
-const pageTitle = "Visit Korea Planner: Practical South Korea Travel Guide";
-const pageDescription =
-  "Practical South Korea travel guide for first-time and repeat visitors: city picks, transport, food, stays, etiquette, and regularly updated planning tips.";
+const pageTitle = ES_HOME_TITLE;
+const pageDescription = ES_HOME_DESCRIPTION;
 const canonicalUrl = absoluteUrl("/es/");
 const alternateEnUrl = absoluteUrl("/");
 const alternateEsUrl = canonicalUrl;
@@ -20,6 +106,21 @@ const schemaNodes = buildCollectionSchemaNodes({
   node,
   lang,
   description: pageDescription,
+});
+const homeUpdateTickerItems = (await getHomeLeafTickerItems(siteTree)).map((item) => {
+  const localized = localizedContentByPath[item.path]?.es;
+  const manual = ES_HOME_TICKER_COPY[item.path];
+  const title = localized?.title ?? manual?.title ?? item.leafTitle;
+  const detail =
+    firstSentence(localized?.quickAnswer) ||
+    firstSentence(localized?.description) ||
+    manual?.detail ||
+    item.detail;
+  return {
+    ...item,
+    leafTitle: title,
+    detail,
+  };
 });
 ---
 
@@ -33,5 +134,12 @@ const schemaNodes = buildCollectionSchemaNodes({
   alternateEsUrl={alternateEsUrl}
   schemaNodes={schemaNodes}
 >
-  <TreePage node={node} segments={segments} parentPath="/" isHome lang={lang} />
+  <TreePage
+    node={node}
+    segments={segments}
+    parentPath="/"
+    isHome
+    lang={lang}
+    homeUpdateTickerItems={homeUpdateTickerItems}
+  />
 </BaseLayout>

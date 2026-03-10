@@ -4,7 +4,7 @@ import { findNodeBySegments, siteTree, type TreeNode } from "../data/siteTree";
 import { getEditorialMeta } from "../lib/editorial";
 import { getHubFaqItems } from "../lib/hubFaq";
 import { getLeafFaqItems } from "../lib/leafFaq";
-import { getHomeLeafTickerItems } from "../lib/leafUpdates";
+import { getHomeLeafTickerItems, type LeafTickerItem } from "../lib/leafUpdates";
 import type { SupportedLang } from "../lib/i18n";
 import { withLang } from "../lib/i18n";
 import { localizedContentByPath, type LocalizedPathCopy } from "../data/localizedContent";
@@ -16,6 +16,7 @@ type Props = {
   isHome?: boolean;
   breadcrumbs?: { label: string; path: string }[];
   lang?: SupportedLang;
+  homeUpdateTickerItems?: LeafTickerItem[];
 };
 
 type HomeGuideBlock = {
@@ -35,7 +36,15 @@ type LocalizedNodeOverride = {
   children?: Record<string, { title?: string; description?: string }>;
 };
 
-const { node, segments, parentPath, isHome = false, breadcrumbs = [], lang = "en" } =
+const {
+  node,
+  segments,
+  parentPath,
+  isHome = false,
+  breadcrumbs = [],
+  lang = "en",
+  homeUpdateTickerItems: homeUpdateTickerItemsOverride,
+} =
   Astro.props as Props;
 
 const basePath = segments.length ? `/${segments.join("/")}` : "";
@@ -2052,7 +2061,9 @@ const showLeafIntroAd = isLeafPage && !suppressExtraLeafAds;
 const showLeafMidAd = isLeafPage && !suppressExtraLeafAds && contentBlockCount >= 4;
 const showLeafEndAd = isLeafPage;
 const showHomeUpdateBar = isHome && segments.length === 0 && !node.slug;
-const homeUpdateTickerItems = showHomeUpdateBar ? await getHomeLeafTickerItems(siteTree) : [];
+const homeUpdateTickerItems = showHomeUpdateBar
+  ? homeUpdateTickerItemsOverride ?? (await getHomeLeafTickerItems(siteTree))
+  : [];
 const faqNode: TreeNode = localizedNodeOverride
   ? {
       ...node,

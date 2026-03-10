@@ -190,6 +190,33 @@ const LEAF_FAQ_BY_LANG: Record<SupportedLang, Record<string, LeafFaqItem[]>> = {
           "Plan your realistic route first. Then compare the total cost of individual tickets with the pass price using official information pages.",
       },
     ],
+    "korea-now-and-more": [
+      {
+        question: "Do I need to read this before I finalize plans?",
+        answer:
+          "Not necessarily. This page gives a quick overview of the Gangneung-Gallae Tour Pass, a travel pass that combines several attractions and experiences in Gangneung.",
+      },
+      {
+        question: "What is the key decision on this page?",
+        answer:
+          "Decide whether the Gangneung-Gallae Tour Pass fits your travel style. The TL;DR section explains the main benefits, possible savings, and how the pass works.",
+      },
+      {
+        question: "What common mistake should I avoid?",
+        answer:
+          "Do not assume the pass covers everything automatically. Always check included attractions, conditions, and validity before planning your visit.",
+      },
+      {
+        question: "What should I verify with official sources?",
+        answer:
+          "Before purchasing, confirm the latest prices, participating venues, and conditions through the official tourism campaign or the booking platform.",
+      },
+      {
+        question: "What should I do after reading this page?",
+        answer:
+          "If you plan to visit Gangneung, compare the pass with individual tickets. The Gangneung-Gallae Tour Pass may simplify planning and reduce costs for travelers exploring Korea's east coast.",
+      },
+    ],
     "this-week-in-korea": [
       {
         question: "Do I need to read this before finalizing my plans?",
@@ -332,6 +359,33 @@ const LEAF_FAQ_BY_LANG: Record<SupportedLang, Record<string, LeafFaqItem[]>> = {
         question: "Cual es la regla mas segura para decidir?",
         answer:
           "Primero planifica una ruta realista. Luego compara el costo total de entradas individuales con el precio del pase usando paginas oficiales de informacion.",
+      },
+    ],
+    "korea-now-and-more": [
+      {
+        question: "Necesito leer esto antes de finalizar mi plan?",
+        answer:
+          "No necesariamente. Esta pagina ofrece una vista rapida del Gangneung-Gallae Tour Pass, un pase de viaje que combina varias atracciones y experiencias en Gangneung.",
+      },
+      {
+        question: "Cual es la decision clave en esta pagina?",
+        answer:
+          "Decide si el Gangneung-Gallae Tour Pass encaja con tu estilo de viaje. La seccion TL;DR explica los beneficios principales, el posible ahorro y como funciona el pase.",
+      },
+      {
+        question: "Que error comun debo evitar?",
+        answer:
+          "No asumas que el pase cubre todo automaticamente. Revisa siempre las atracciones incluidas, las condiciones y la validez antes de planear tu visita.",
+      },
+      {
+        question: "Que debo verificar con fuentes oficiales?",
+        answer:
+          "Antes de comprar, confirma los ultimos precios, los lugares participantes y las condiciones en la campana oficial de turismo o en la plataforma de reserva.",
+      },
+      {
+        question: "Que debo hacer despues de leer esta pagina?",
+        answer:
+          "Si planeas visitar Gangneung, compara el pase con los tickets individuales. El Gangneung-Gallae Tour Pass puede simplificar la planificacion y reducir costos para viajeros que exploran la costa este de Corea.",
       },
     ],
     "this-week-in-korea": [

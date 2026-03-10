@@ -190,6 +190,33 @@ const LEAF_FAQ_BY_LANG: Record<SupportedLang, Record<string, LeafFaqItem[]>> = {
           "Plan your realistic route first. Then compare the total cost of individual tickets with the pass price using official information pages.",
       },
     ],
+    "this-week-in-korea": [
+      {
+        question: "Do I need to read this before finalizing my plans?",
+        answer:
+          "Not necessarily. This page gives a quick overview of late March in Korea. The 2026 spring equinox falls on March 20, when Korea usually begins to feel like early spring.",
+      },
+      {
+        question: "What is the key takeaway from this page?",
+        answer:
+          "Late March marks the start of spring, not the peak. Early cherry blossoms usually appear first in Jeju and Busan, while Seoul blooms later.",
+      },
+      {
+        question: "What common mistake should I avoid?",
+        answer:
+          "Do not expect spring to arrive everywhere at the same time. In Korea, seasonal changes move from south to north.",
+      },
+      {
+        question: "What should I verify with official sources?",
+        answer:
+          "Before finalizing plans, check updated information such as blossom forecasts, festival schedules, and transportation updates.",
+      },
+      {
+        question: "What should I do after reading this page?",
+        answer:
+          "Use this guide to understand spring timing in Korea, then plan your itinerary based on where blossoms or seasonal events appear first.",
+      },
+    ],
   },
   es: {
     "sim-or-esim": [
@@ -307,6 +334,33 @@ const LEAF_FAQ_BY_LANG: Record<SupportedLang, Record<string, LeafFaqItem[]>> = {
           "Primero planifica una ruta realista. Luego compara el costo total de entradas individuales con el precio del pase usando paginas oficiales de informacion.",
       },
     ],
+    "this-week-in-korea": [
+      {
+        question: "Necesito leer esta pagina antes de finalizar mi plan?",
+        answer:
+          "No necesariamente. Esta pagina ofrece una vista rapida de finales de marzo en Corea. El equinoccio de primavera de 2026 cae el 20 de marzo, cuando Corea suele empezar a sentirse como inicios de primavera.",
+      },
+      {
+        question: "Cual es la idea clave de esta pagina?",
+        answer:
+          "Finales de marzo marca el inicio de la primavera, no su punto maximo. Los primeros cerezos en flor suelen aparecer antes en Jeju y Busan, mientras Seul florece mas tarde.",
+      },
+      {
+        question: "Que error comun debo evitar?",
+        answer:
+          "No esperes que la primavera llegue a todo el pais al mismo tiempo. En Corea, los cambios estacionales se mueven de sur a norte.",
+      },
+      {
+        question: "Que debo verificar en fuentes oficiales?",
+        answer:
+          "Antes de cerrar tus planes, revisa informacion actualizada como pronosticos de floracion, calendarios de festivales y actualizaciones de transporte.",
+      },
+      {
+        question: "Que debo hacer despues de leer esta pagina?",
+        answer:
+          "Usa esta guia para entender el calendario de primavera en Corea y luego arma tu itinerario segun donde aparezcan primero las flores o eventos estacionales.",
+      },
+    ],
   },
 };
 
@@ -316,6 +370,25 @@ const buildAutoLeafFaqItems = (node: TreeNode, lang: SupportedLang): LeafFaqItem
   const quickSummary = compact(node.quickAnswer) || compact(node.description);
   const topTitles = sections.map((section) => compact(section.title)).filter(Boolean).slice(0, 2);
   const topTitleText = joinItems(topTitles, lang === "es" ? "y" : "and");
+  const topic = compact(node.title).replace(/[.!?]+$/g, "");
+  const topicLabel = truncate(topic, 84);
+  const questionLabels = topicLabel
+    ? lang === "es"
+      ? {
+          overview: `Debo leer esto antes de planear ${topicLabel}?`,
+          decision: `Cual es la decision clave para ${topicLabel}?`,
+          avoid: `Que error comun debo evitar para ${topicLabel}?`,
+          verify: `Que debo verificar en fuentes oficiales para ${topicLabel}?`,
+          next: `Que deberia hacer despues de decidir ${topicLabel}?`,
+        }
+      : {
+          overview: `Should I read this before I plan ${topicLabel}?`,
+          decision: `What is the key decision for ${topicLabel}?`,
+          avoid: `What common mistake should I avoid for ${topicLabel}?`,
+          verify: `What should I verify with official sources for ${topicLabel}?`,
+          next: `What should I do after I decide ${topicLabel}?`,
+        }
+    : labels;
 
   const avoidSection = sections.find((section) =>
     hasPattern(
@@ -367,11 +440,11 @@ const buildAutoLeafFaqItems = (node: TreeNode, lang: SupportedLang): LeafFaqItem
   );
 
   const items: LeafFaqItem[] = [
-    { question: labels.overview, answer: truncate(overviewAnswer) },
-    { question: labels.decision, answer: truncate(decisionAnswer) },
-    { question: labels.avoid, answer: truncate(avoidAnswer) },
-    { question: labels.verify, answer: truncate(verifyAnswer) },
-    { question: labels.next, answer: truncate(nextAnswer) },
+    { question: questionLabels.overview, answer: truncate(overviewAnswer) },
+    { question: questionLabels.decision, answer: truncate(decisionAnswer) },
+    { question: questionLabels.avoid, answer: truncate(avoidAnswer) },
+    { question: questionLabels.verify, answer: truncate(verifyAnswer) },
+    { question: questionLabels.next, answer: truncate(nextAnswer) },
   ];
 
   const seen = new Set<string>();

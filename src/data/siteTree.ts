@@ -5898,80 +5898,176 @@ export const siteTree: TreeNode = {
       ],
     },
     {
-      title: "This Week in Korea",
+      title:
+        "This Week in Korea: Spring Equinox, Cherry Blossoms, and What Travelers Should Know",
       slug: "this-week-in-korea",
       icon: "calendar",
       image: "/leaf%20images/This_Week_in_Korea.webp",
       description:
-        "Seollal 2026: A Foreigner's Guide. Key dates, travel patterns, closures, and cultural highlights.",
+        "Late March marks the start of real spring in Korea. Learn what the spring equinox means, when cherry blossoms begin across the country, and where travelers can enjoy the season this week.",
       quickAnswer:
-        "Seollal in 2026 falls on February 17. Experience one of Korea's most meaningful traditional holidays.",
+        "The 2026 spring equinox in Korea falls on March 20. In Korean, it is called Chunbun, and this week is when Korea often begins to feel like spring rather than winter.",
       content: [
         {
-          title: "Seollal (Korean Lunar New Year): What Foreign Visitors Should Know",
-          icon: "calendar",
-          emphasis: "Korea's most important traditional holiday period.",
+          title: "Late March in Korea",
+          icon: "cloud",
+          emphasis: "When the country begins to feel like spring",
           body:
-            "Seollal is the most significant traditional holiday in Korea. In 2026, Seollal falls on February 17 (Gregorian calendar), which corresponds to Lunar January 1. The holiday period usually lasts three days, including the day before and the day after Seollal. During this time, the pace of daily life across Korea slows noticeably, and that change is exactly what makes Seollal special.",
+            "Late March is when Korea begins to feel noticeably different. Winter has not completely disappeared, but the atmosphere shifts. Days become longer, temperatures start to rise in the afternoon, and people begin spending more time outdoors.",
+          tail:
+            "Parks become livelier, walking streets fill with locals again, and seasonal events slowly return. For travelers, this period marks the transition from winter travel conditions to the beginning of spring travel.",
         },
         {
-          title: "What Is Seollal?",
+          title: "Quick Answer",
           icon: "checklist",
-          emphasis: "A family-centered Korean New Year.",
+          emphasis: "What travelers should know this week",
           body:
-            "Seollal marks the Korean New Year and is deeply focused on family. People return to their hometowns, honor their ancestors, and welcome the new year in a calm, reflective atmosphere.",
+            "The 2026 spring equinox in Korea falls on March 20. In Korean, it is called Chunbun, one of the traditional seasonal divisions marking the midpoint of spring.",
+          tail:
+            "It is not a public holiday, but it signals an important seasonal turning point. Around this time, daylight becomes noticeably longer, the weather gradually warms, and the first cherry blossoms begin appearing in southern regions of Korea. For visitors, this week is often when Korea begins to feel like spring rather than winter.",
         },
         {
-          title: "What People Do During Seollal",
-          icon: "temple",
-          emphasis: "Traditions rooted in family and respect.",
-          body: "Key Seollal traditions include:",
-          bullets: [
-            "Charye (ancestral rites): On the morning of Seollal, families gather to pay respect to their ancestors.",
-            "Sebae (New Year's bow): Younger family members bow to elders and receive blessings and gift money.",
-            "Traditional food: The most important dish is tteokguk (rice cake soup). Eating it symbolically means becoming one year older.",
-          ],
+          title: "What Chunbun Means in Korea",
+          icon: "calendar",
+          emphasis: "The traditional spring equinox",
+          body:
+            "Chunbun refers to the spring equinox in the traditional East Asian seasonal calendar. It is the fourth of the 24 seasonal divisions, a system historically used to track agricultural seasons. The equinox marks the moment when day and night are nearly equal in length.",
+          tail:
+            "While modern Korean life is no longer tied to the agricultural calendar, the concept still represents a cultural signal that winter is ending and spring is beginning. For travelers, it is useful mainly as a seasonal reference point rather than a specific celebration.",
         },
         {
-          title: "What Travelers Will Notice",
-          icon: "alert",
-          emphasis: "Plan for high travel demand and temporary closures.",
-          body: "Visitors usually experience the following changes:",
-          bullets: [
-            "Heavy travel traffic: Trains and highways are extremely busy before and after the holiday.",
-            "Shop closures: Small restaurants and local shops may close for one or two days.",
-            "Tourist attractions remain open: Palaces, folk villages, and museums often operate special Seollal programs.",
-          ],
-        },
-        {
-          title: "Why Seollal Is Special for Foreigners",
+          title: "Why Late March Is a Good Time to Visit",
           icon: "spark",
-          emphasis: "One of the best times to see traditional Korea.",
+          emphasis: "Comfortable weather before peak tourist crowds",
           body:
-            "For international visitors, Seollal can be especially meaningful because cultural experiences are often more accessible.",
+            "Late March can be one of the most comfortable travel periods in Korea. The weather is usually cool but pleasant for walking, and the busiest spring travel crowds have not fully arrived yet.",
           bullets: [
-            "Many people wear hanbok (traditional clothing).",
-            "Visitors can try traditional games such as yutnori.",
-            "Many cultural events are designed so foreigners can participate even without speaking Korean.",
+            "exploring historic neighborhoods",
+            "visiting palaces and cultural sites",
+            "walking along river parks",
+            "discovering seasonal festivals",
+          ],
+          tail:
+            "Early spring sunlight, longer evenings, and outdoor cultural events create a relaxed atmosphere across major cities. For many visitors, this time offers a balanced travel experience before the busiest cherry blossom weeks begin.",
+        },
+        {
+          title: "When Cherry Blossoms Begin in Korea",
+          icon: "calendar",
+          emphasis: "Spring moves from south to north",
+          body:
+            "Cherry blossom season is one of the most famous travel experiences in Korea. Unlike some countries where flowers bloom at the same time nationwide, Korea's blossom season moves gradually from south to north. Southern coastal regions warm earlier, so blossoms appear there first before reaching northern cities.",
+          bullets: [
+            "Jeju Island: around March 25",
+            "Busan: around March 25",
+            "Jeonju and Gyeongju: around March 28",
+            "Gangneung: around April 1",
+            "Seoul: around April 3",
+            "Full bloom usually occurs about one week after the first blossoms appear.",
+          ],
+          tail:
+            "For travelers visiting in late March, southern destinations often provide the best chance of seeing the beginning of the season.",
+        },
+        {
+          title: "Major Cherry Blossom Festivals",
+          icon: "pin",
+          emphasis: "Famous spring events across Korea",
+          body:
+            "Several well-known festivals celebrate the arrival of cherry blossom season.",
+          subsections: [
+            {
+              title: "Jinhae Gunhangje Cherry Blossom Festival",
+              lead: [
+                "Often considered the largest cherry blossom festival in Korea, Jinhae Gunhangje attracts visitors from across the country and overseas.",
+                "The festival usually takes place from late March to early April, and the city becomes covered with millions of cherry blossoms. Two of the most famous viewing spots are Yeojwacheon Stream, where blossoms line a small canal walkway, and Gyeonghwa Station, where cherry trees create a dramatic tunnel over old railway tracks.",
+                "Because of its scale, Jinhae is often the most photographed cherry blossom destination in Korea.",
+              ],
+            },
+            {
+              title: "Yeouido Cherry Blossom Festival (Seoul)",
+              lead: [
+                "Seoul's best-known blossom event takes place along Yeouido's Yunjung-ro road, where rows of cherry trees create one of the most famous spring walking routes in the capital.",
+                "The area typically hosts seasonal performances, food stalls, and evening lighting during the blossom period.",
+                "Even outside the festival dates, the park areas around Yeouido remain one of the easiest places in Seoul to enjoy spring scenery.",
+              ],
+            },
           ],
         },
         {
-          title: "Best Places to Visit During Seollal",
+          title: "Best Places to See Cherry Blossoms",
           icon: "pin",
-          emphasis: "Choose locations with visitor-friendly programs.",
-          body: "Recommended places include:",
-          bullets: [
-            "Folk villages and palaces: Well-organized cultural programs for international visitors.",
-            "City centers: Quieter than usual, making sightseeing more relaxed.",
-            "Seollal festivals: Special events planned for both locals and foreign visitors.",
+          emphasis: "Popular viewing spots for travelers",
+          body:
+            "Beyond official festivals, several locations are well known for spring blossoms.",
+          subsections: [
+            {
+              title: "In Seoul",
+              bullets: [
+                "Yeouido Park",
+                "Seokchon Lake",
+                "Namsan Park",
+                "Seoul Forest",
+              ],
+            },
+            {
+              title: "In Busan",
+              bullets: [
+                "Dalmaji Hill",
+                "Oncheoncheon Stream",
+              ],
+            },
+            {
+              title: "In Jeju",
+              bullets: [
+                "Jeonnong-ro Cherry Blossom Road",
+                "Seogwipo coastal areas",
+              ],
+            },
+          ],
+          tail:
+            "These locations are popular because they combine blossom views with scenic walking routes, city landmarks, or waterfront scenery.",
+        },
+        {
+          title: "Seasonal Events This Week",
+          icon: "spark",
+          emphasis: "A few simple activities travelers may enjoy",
+          body:
+            "Depending on where you are traveling, several seasonal activities may be available.",
+          subsections: [
+            {
+              title: "Seoul",
+              tail:
+                "Some weekends feature special programs where sections of major streets open for walking, cycling, and public activities. These events allow visitors to experience the city in a more relaxed atmosphere.",
+            },
+            {
+              title: "Busan",
+              tail:
+                "The Gwangalli Drone Light Show is one of the city's most popular evening attractions. Hundreds of drones create animated displays above the ocean near Gwangalli Beach.",
+            },
+            {
+              title: "Jeju",
+              lead: [
+                "Jeju Island often hosts early spring cultural festivals and seasonal events celebrating the arrival of warmer weather.",
+                "Travelers already visiting Jeju may find this period particularly interesting for experiencing local traditions and outdoor landscapes.",
+              ],
+            },
           ],
         },
         {
           title: "A Simple Travel Tip",
           icon: "route",
-          emphasis: "Don't avoid Seollal - prepare for it.",
+          emphasis: "Choose destinations based on blossom timing",
           body:
-            "With a bit of advance planning for meals and transportation, Seollal is not a time you need to avoid. For first-time visitors to Korea, it can be one of the most memorable opportunities to experience a slower, more traditional side of the country that is rarely visible during regular travel seasons.",
+            "One common travel mistake is expecting the entire country to experience spring at the same time. Because Korea's climate varies by region, seasonal changes move gradually northward.",
+          tail:
+            "If your main goal is seeing early blossoms in late March, southern destinations such as Jeju or Busan usually provide better chances than Seoul. If your trip takes place in early April, however, Seoul becomes one of the best places to enjoy full cherry blossom scenery. Understanding this timing can help travelers plan routes more effectively.",
+        },
+        {
+          title: "Bottom Line",
+          icon: "spark",
+          emphasis: "The beginning of Korea's spring season",
+          body: "The spring equinox itself is not the main attraction for travelers.",
+          tail:
+            "What matters more is what happens around it. Days grow longer, outdoor activities become more enjoyable, and the first cherry blossoms begin appearing across southern regions of Korea. For visitors arriving in late March, this week often marks the start of Korea's spring atmosphere, a moment when the country slowly shifts from winter into one of its most beautiful travel seasons.",
         },
       ],
     },

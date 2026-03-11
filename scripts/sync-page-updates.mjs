@@ -6,8 +6,11 @@ import vm from "node:vm";
 const ROOT = process.cwd();
 const SITE_TREE_PATH = path.join(ROOT, "src/data/siteTree.ts");
 const ES_SLUG_PAGE_PATH = path.join(ROOT, "src/pages/es/[...slug].astro");
+const TREE_PAGE_PATH = path.join(ROOT, "src/components/TreePage.astro");
+const LEAF_FAQ_PATH = path.join(ROOT, "src/lib/leafFaq.ts");
 const OUTPUT_PATH = path.join(ROOT, "src/data/page-updates.json");
 const DEFAULT_UPDATED_ISO = "2026-02-15T00:00:00.000Z";
+const HASH_SCHEMA_VERSION = 2;
 
 const stableJson = (value) => JSON.stringify(value, Object.keys(value).sort());
 
@@ -93,11 +96,21 @@ const extractObjectLiteral = (sourceText, marker) => {
 
 const evalObjectLiteral = (literal) => vm.runInNewContext(`(${literal})`);
 
-const contentFingerprintPayload = (node) => ({
+const toFaqFingerprint = (faqItems) =>
+  Array.isArray(faqItems)
+    ? faqItems.map((item) => `${item?.question ?? ""}\n${item?.answer ?? ""}`)
+    : [];
+
+const toChecklistFingerprint = (checklistItems) =>
+  Array.isArray(checklistItems) ? checklistItems : [];
+
+const contentFingerprintPayload = (node, extras = {}) => ({
   title: node.title ?? "",
   description: node.description ?? "",
   quickAnswer: node.quickAnswer ?? "",
   content: node.content ?? [],
+  faq: extras.faq ?? [],
+  checklist: extras.checklist ?? [],
 });
 
 const joinPath = (parts) => `/${parts.filter(Boolean).join("/")}`;
@@ -126,15 +139,23 @@ const readJsonSafe = (filePath, fallback) => {
 const main = () => {
   const siteTreeSource = readText(SITE_TREE_PATH);
   const esPageSource = readText(ES_SLUG_PAGE_PATH);
+  const treePageSource = readText(TREE_PAGE_PATH);
+  const leafFaqSource = readText(LEAF_FAQ_PATH);
 
   const siteTreeLiteral = extractObjectLiteral(siteTreeSource, "export const siteTree");
   const esOverridesLiteral = extractObjectLiteral(esPageSource, "const ES_LEAF_OVERRIDES");
+  const checklistByLeafLiteral = extractObjectLiteral(treePageSource, "const checklistByLeaf");
+  const leafFaqByLangLiteral = extractObjectLiteral(leafFaqSource, "const LEAF_FAQ_BY_LANG");
 
   const siteTree = evalObjectLiteral(siteTreeLiteral);
   const esOverrides = evalObjectLiteral(esOverridesLiteral);
+  const checklistByLeaf = evalObjectLiteral(checklistByLeafLiteral);
+  const leafFaqByLang = evalObjectLiteral(leafFaqByLangLiteral);
 
   const leaves = walkLeafNodes(siteTree);
   const prev = readJsonSafe(OUTPUT_PATH, { version: 1, defaultUpdatedIso: DEFAULT_UPDATED_ISO, pages: {} });
+  const prevVersion = Number(prev.version ?? 1);
+  const isSchemaMigration = prevVersion < HASH_SCHEMA_VERSION;
   const prevPages = prev.pages ?? {};
   const nextPages = {};
   const todayIso = toUtcDateIso();
@@ -146,15 +167,20 @@ const main = () => {
     if (!routePath || routePath === "/") continue;
 
     const enKey = `en:${routePath}`;
-    const enPayload = contentFingerprintPayload(node);
+    const enPayload = contentFingerprintPayload(node, {
+      faq: toFaqFingerprint(leafFaqByLang?.en?.[node.slug]),
+      checklist: toChecklistFingerprint(checklistByLeaf?.[node.slug]?.en),
+    });
     const enHash = hashPayload(enPayload);
     const prevEn = prevPages[enKey];
     const enSeedIso = node.updatedIso ?? DEFAULT_UPDATED_ISO;
 
     let enUpdatedIso = prevEn?.updatedIso ?? enSeedIso;
     if (prevEn && prevEn.hash !== enHash) {
-      enUpdatedIso = todayIso;
-      changedCount += 1;
+      if (!isSchemaMigration) {
+        enUpdatedIso = todayIso;
+        changedCount += 1;
+      }
     }
     if (!prevEn) touchedCount += 1;
     nextPages[enKey] = { hash: enHash, updatedIso: enUpdatedIso };
@@ -168,22 +194,27 @@ const main = () => {
         }
       : node;
     const esKey = `es:${routePath}`;
-    const esPayload = contentFingerprintPayload(esNode);
+    const esPayload = contentFingerprintPayload(esNode, {
+      faq: toFaqFingerprint(leafFaqByLang?.es?.[node.slug]),
+      checklist: toChecklistFingerprint(checklistByLeaf?.[node.slug]?.es),
+    });
     const esHash = hashPayload(esPayload);
     const prevEs = prevPages[esKey];
     const esSeedIso = override?.updatedIso ?? node.updatedIso ?? DEFAULT_UPDATED_ISO;
 
     let esUpdatedIso = prevEs?.updatedIso ?? esSeedIso;
     if (prevEs && prevEs.hash !== esHash) {
-      esUpdatedIso = todayIso;
-      changedCount += 1;
+      if (!isSchemaMigration) {
+        esUpdatedIso = todayIso;
+        changedCount += 1;
+      }
     }
     if (!prevEs) touchedCount += 1;
     nextPages[esKey] = { hash: esHash, updatedIso: esUpdatedIso };
   }
 
   const output = {
-    version: 1,
+    version: HASH_SCHEMA_VERSION,
     defaultUpdatedIso: DEFAULT_UPDATED_ISO,
     pages: Object.fromEntries(Object.entries(nextPages).sort(([a], [b]) => a.localeCompare(b))),
   };

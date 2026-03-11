@@ -173,6 +173,33 @@ const LEAF_FAQ_BY_LANG: Record<SupportedLang, Record<string, LeafFaqItem[]>> = {
           "Choose your three regions first, then start planning each block in more detail.",
       },
     ],
+    "1-month-in-korea": [
+      {
+        question: "Should I read this before planning a one-month trip to Korea?",
+        answer:
+          "Yes. This page explains how to structure a long stay so your trip feels comfortable rather than rushed.",
+      },
+      {
+        question: "What is the key decision for a one-month Korea trip?",
+        answer:
+          "Choose two or three home bases first. Longer stays in each place usually create a better long-stay rhythm.",
+      },
+      {
+        question: "What common mistake should I avoid during a one-month stay?",
+        answer:
+          "Moving cities too often. Frequent transfers can turn a relaxed month into a tiring extended tour.",
+      },
+      {
+        question: "What should I verify with official sources before booking long stays?",
+        answer:
+          "Accommodation policies, seasonal conditions, and transport schedules may change.",
+      },
+      {
+        question: "What is the safest structure for a one-month trip to Korea?",
+        answer:
+          "Stay about two weeks in Seoul, then spend one week each in two slower regions such as Busan, Jeju, or Gyeongju.",
+      },
+    ],
     "which-city-fits-you-best": [
       {
         question: "Who is this city-matching approach not ideal for?",
@@ -369,6 +396,33 @@ const LEAF_FAQ_BY_LANG: Record<SupportedLang, Record<string, LeafFaqItem[]>> = {
         question: "Que debo hacer despues de leer esta pagina?",
         answer:
           "Elige primero tus tres regiones y luego empieza a planificar cada bloque con mas detalle.",
+      },
+    ],
+    "1-month-in-korea": [
+      {
+        question: "Debo leer esto antes de planificar un viaje de un mes a Corea?",
+        answer:
+          "Si. Esta pagina explica como estructurar una estancia larga para que el viaje se sienta comodo en lugar de apresurado.",
+      },
+      {
+        question: "Cual es la decision clave para un viaje de un mes por Corea?",
+        answer:
+          "Elige primero dos o tres bases principales. Las estancias mas largas en cada lugar suelen crear un mejor ritmo de larga estancia.",
+      },
+      {
+        question: "Que error comun debo evitar durante una estancia de un mes?",
+        answer:
+          "Cambiar de ciudad con demasiada frecuencia. Los traslados constantes pueden convertir un mes relajado en un tour largo y agotador.",
+      },
+      {
+        question: "Que debo verificar en fuentes oficiales antes de reservar estancias largas?",
+        answer:
+          "Las politicas de alojamiento, las condiciones estacionales y los horarios de transporte pueden cambiar.",
+      },
+      {
+        question: "Cual es la estructura mas segura para un viaje de un mes a Corea?",
+        answer:
+          "Quedate unas dos semanas en Seul y luego pasa una semana en cada una de dos regiones mas tranquilas, como Busan, Jeju o Gyeongju.",
       },
     ],
     "which-city-fits-you-best": [

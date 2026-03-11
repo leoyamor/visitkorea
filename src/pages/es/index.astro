@@ -11,6 +11,7 @@ const ES_HOME_TITLE = "Planificador de viaje a Corea: guia practica para Corea d
 const ES_HOME_DESCRIPTION =
   "Guia practica de viaje por Corea del Sur para primera visita y viajes repetidos: ciudades, transporte, comida, alojamiento, etiqueta y actualizaciones utiles.";
 const ES_HOME_ROOT_TITLE = "Inicio";
+const ES_HOME_UPDATED_ISO = "2026-03-11T00:00:00.000Z";
 const ES_HOME_CHILD_COPY: Record<string, { title: string; description: string }> = {
   "plan-your-trip": {
     title: "Planifica tu viaje",
@@ -60,15 +61,156 @@ const ES_HOME_CHILD_COPY: Record<string, { title: string; description: string }>
   },
 };
 const ES_HOME_TICKER_COPY: Record<string, { title: string; detail: string }> = {
+  "/plan-your-trip/1-month-in-korea": {
+    title: "1 mes en Corea",
+    detail: "Esta pagina te ayuda a organizar una estancia larga en Corea con un ritmo mas comodo.",
+  },
+  "/plan-your-trip/2-weeks-in-korea": {
+    title: "2 semanas en Corea",
+    detail: "Esta pagina te ayuda a planear dos semanas en Corea con mas variedad y menos estres.",
+  },
+  "/plan-your-trip/7-days-in-korea": {
+    title: "7 dias en Corea",
+    detail: "Usa dos bases y no tres.",
+  },
+  "/plan-your-trip/been-here-before": {
+    title: "Ya estuviste aqui?",
+    detail: "Esta pagina te ayuda a encontrar ideas nuevas mas alla de la ruta turistica habitual en Corea.",
+  },
+  "/plan-your-trip/first-time-in-korea": {
+    title: "Primera vez en Corea",
+    detail: "Esta pagina te ayuda a entender que importa de verdad antes de tu primer viaje a Corea.",
+  },
+  "/choose-a-city/busan": {
+    title: "Busan",
+    detail: "Esta pagina te ayuda a decidir si Busan ofrece la mezcla adecuada de playa, comida y vida urbana para ti.",
+  },
+  "/choose-a-city/gyeongju": {
+    title: "Gyeongju",
+    detail: "Esta pagina te ayuda a decidir si Gyeongju merece una parada por su historia y su ritmo mas tranquilo.",
+  },
+  "/choose-a-city/jeju": {
+    title: "Jeju",
+    detail: "Esta pagina te ayuda a decidir si un viaje centrado en naturaleza en Jeju encaja con tu estilo.",
+  },
+  "/choose-a-city/jeonju": {
+    title: "Jeonju",
+    detail: "Esta pagina te ayuda a decidir si Jeonju es la parada adecuada por su comida y sus calles tradicionales.",
+  },
+  "/choose-a-city/seoul": {
+    title: "Seul",
+    detail: "Esta pagina te ayuda a decidir si Seul encaja con tu ritmo, estilo de viaje e intereses.",
+  },
+  "/choose-a-city/which-city-fits-you-best": {
+    title: "Que ciudad te queda mejor?",
+    detail: "Elige por tolerancia a traslados, ritmo y friccion de transporte, no solo por popularidad.",
+  },
+  "/getting-around-korea/is-getting-around-hard": {
+    title: "Es dificil moverse por Corea del Sur?",
+    detail: "Esta pagina explica por que moverse por Corea del Sur es mas facil de lo que muchos viajeros imaginan.",
+  },
+  "/getting-around-korea/renting-a-car": {
+    title: "Alquilar un coche",
+    detail: "Esta pagina te ayuda a decidir si alquilar un coche en Corea realmente vale la pena.",
+  },
+  "/getting-around-korea/taking-the-bus": {
+    title: "Usar el bus",
+    detail: "Esta pagina te ayuda a saber cuando y como usar el bus sin confusion.",
+  },
+  "/getting-around-korea/transportation-cards": {
+    title: "Tarjetas de transporte y transbordos",
+    detail: "Esta pagina te ayuda a elegir la tarjeta adecuada y a usarla correctamente.",
+  },
+  "/getting-around-korea/using-taxis": {
+    title: "Usar taxis",
+    detail: "Esta pagina te ayuda a decidir cuando el taxi tiene sentido y como usarlo con seguridad.",
+  },
+  "/getting-around-korea/using-the-subway": {
+    title: "Usar el metro",
+    detail: "Esta pagina te ayuda a usar el metro coreano con confianza desde el primer dia.",
+  },
   "/korea-now-and-more": {
     title: "Corea ahora y mas",
     detail:
       "Un solo pase que combina varias experiencias de viaje en Gangneung.",
   },
+  "/latest-travel-updates-for-korea": {
+    title: "Ultimas actualizaciones de viaje para Corea",
+    detail: "Usa esta pagina como tu ultimo control antes de reservar o volar.",
+  },
+  "/this-week-in-korea": {
+    title: "Esta semana en Corea: equinoccio y cerezos en flor",
+    detail: "El equinoccio de primavera de 2026 en Corea cae el 20 de marzo.",
+  },
+  "/things-to-do/explore-korea": {
+    title: "Explora Corea a tu manera",
+    detail: "Tu segundo viaje deberia aportar mas claridad, no solo mas paradas.",
+  },
   "/things-to-do/attraction-passes-discounts": {
     title: "Pases y descuentos de atracciones en Corea",
     detail:
       "Compara pases oficiales por region y ritmo de viaje para ver cuando realmente ahorran.",
+  },
+  "/things-to-do/must-see-for-first-timers": {
+    title: "Imprescindibles para la primera visita",
+    detail:
+      "Prioriza un equilibrio entre historia, vida moderna y una vista memorable en lugar de intentar verlo todo.",
+  },
+  "/travel-basics/basic-korean-etiquette": {
+    title: "Etiqueta coreana basica: reglas simples para viajeros",
+    detail:
+      "La etiqueta coreana tiene menos que ver con reglas estrictas y mas con respeto, consideracion y contexto.",
+  },
+  "/travel-basics/korea-travel-safety": {
+    title: "Seguridad en Corea: lo que deben saber los viajeros",
+    detail:
+      "Corea es muy segura para visitantes, incluso para quienes viajan solos, pero la preparacion basica sigue importando.",
+  },
+  "/travel-basics/shopping-and-discounts": {
+    title: "Comprar barato en Corea? Guia practica de valor, VAT refund y descuentos",
+    detail:
+      "Comprar en Corea puede sentirse muy barato o inesperadamente caro, segun lo que compres y donde lo hagas.",
+  },
+  "/before-you-go/korea-entry-requirements": {
+    title: "K-ETA y proceso de inmigracion: guia oficial de entrada a Corea (Actualizacion 2026)",
+    detail:
+      "Antes de salir, confirma si K-ETA aplica a tu pasaporte, presenta la e-Arrival Card solo si corresponde y sigue el proceso oficial de llegada.",
+  },
+  "/before-you-go/sim-or-esim": {
+    title: "SIM o eSIM para Corea? Guia practica para viajeros",
+    detail:
+      "Para la mayoria de los viajeros, eSIM es la opcion mas facil si tu telefono la admite y esta desbloqueado.",
+  },
+  "/before-you-go/travel-insurance-for-korea": {
+    title: "Necesito seguro de viaje para Corea del Sur? (Guia 2026)",
+    detail:
+      "El seguro no es obligatorio para la mayoria, pero muchos viajeros contratan un plan basico porque la atencion medica no es gratuita para turistas.",
+  },
+  "/what-to-eat/finding-good-restaurants": {
+    title: "Como encontrar restaurantes buenos y asequibles en Corea",
+    detail:
+      "Metodos practicos para elegir bien, evitar errores comunes y entender el valor real al comer fuera.",
+  },
+  "/what-to-eat/food-to-be-careful-with": {
+    title: "Comidas con las que conviene tener cuidado",
+    detail:
+      "Platos muy picantes o poco familiares: que conviene dejar para mas tarde y como probarlos con mas seguridad.",
+  },
+  "/what-to-eat/what-should-i-try-first": {
+    title: "Que deberia comer primero en Corea?",
+    detail: "Esta pagina te ayuda a elegir comida coreana facil para principiantes con mas confianza.",
+  },
+  "/where-to-stay/best-value-places": {
+    title: "Lugares con mejor relacion calidad-precio",
+    detail: "Comodidad sin gastar de mas.",
+  },
+  "/where-to-stay/budget-stays": {
+    title: "Alojamientos economicos",
+    detail: "Opciones asequibles y comodas sin asumir riesgos innecesarios.",
+  },
+  "/where-to-stay/luxury-hotels": {
+    title: "Hoteles de lujo",
+    detail: "Valen la pena cuando se eligen con criterio.",
   },
 };
 
@@ -83,6 +225,7 @@ const firstSentence = (value?: string) => {
 const node: TreeNode = {
   ...siteTree,
   title: ES_HOME_ROOT_TITLE,
+  updatedIso: ES_HOME_UPDATED_ISO,
   children: (siteTree.children ?? []).map((child) => {
     const localized = ES_HOME_CHILD_COPY[child.slug];
     if (!localized) return child;
@@ -133,6 +276,7 @@ const homeUpdateTickerItems = (await getHomeLeafTickerItems(siteTree)).map((item
   alternateEnUrl={alternateEnUrl}
   alternateEsUrl={alternateEsUrl}
   schemaNodes={schemaNodes}
+  updatedIso={ES_HOME_UPDATED_ISO}
 >
   <TreePage
     node={node}

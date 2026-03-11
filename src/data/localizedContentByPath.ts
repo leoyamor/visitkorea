@@ -106,7 +106,7 @@ export const localizedContentByPath: LocalizedContentByPath = {
             "Usa los enlaces de abajo como tu siguiente paso con sentido, no como una lista de control. Cada pagina responde una pregunta distinta de planificacion.",
           bullets: [
             "7 dias en Corea funciona mejor si quieres un gran traslado y una estructura clara.",
-            "2 semanas en Corea encaja si quieres Seul, una ciudad adicional y una region mas lenta.",
+            "2 semanas en Corea encaja si quieres Seúl, una ciudad adicional y una region mas lenta.",
             "1 mes en Corea es ideal si puedes planear por ritmo en lugar de movimiento constante.",
             "Primera vez en Corea hace que tu primera visita sea mas simple y con menos friccion.",
             "Ya estuviste en Corea te ayuda a cambiar lo conocido por un mejor ritmo y nuevas ideas.",
@@ -117,7 +117,7 @@ export const localizedContentByPath: LocalizedContentByPath = {
           icon: "calendar",
           body: "Tu plan debe cambiar cuando cambie el contexto de tu viaje.",
           bullets: [
-            "Si es tu primer viaje a Corea, arma tu itinerario alrededor de Seul y agrega solo un destino de contraste.",
+            "Si es tu primer viaje a Corea, arma tu itinerario alrededor de Seúl y agrega solo un destino de contraste.",
             "Si ya viniste antes, o prefieres un ritmo mas calmado, elimina un traslado y cambialo por tiempo de recuperacion o una base regional mas lenta.",
           ],
         },
@@ -211,9 +211,9 @@ export const localizedContentByPath: LocalizedContentByPath = {
           title: "🔁 Alternativas de menor friccion",
           body: "Si aun se siente ajustado, usa una de estas:",
           bullets: [
-            "Solo Seoul + una excursion de un dia.",
-            "Solo Seoul y Busan.",
-            "Seoul y Jeju solo si aceptas la carga de traslados de aeropuerto.",
+            "Solo Seúl + una excursion de un dia.",
+            "Solo Seúl y Busan.",
+            "Seúl y Jeju solo si aceptas la carga de traslados de aeropuerto.",
           ],
         },
       ],
@@ -227,7 +227,7 @@ export const localizedContentByPath: LocalizedContentByPath = {
         "Primero decide por energia, friccion de transporte y temporada; luego compara el tipo de ritmo que quieres sostener cada dia.",
       content: [],
       children: {
-        seoul: { title: "Seul" },
+        seoul: { title: "Seúl" },
         busan: { title: "Busan" },
         jeju: { title: "Jeju" },
         gyeongju: { title: "Gyeongju" },
@@ -289,7 +289,7 @@ export const localizedContentByPath: LocalizedContentByPath = {
         {
           title: "🔁 Ruta de respaldo segura",
           body:
-            "Si sigues indeciso, empieza en Seoul y agrega solo una ciudad de contraste tras validar tiempos reales de traslado.",
+            "Si sigues indeciso, empieza en Seúl y agrega solo una ciudad de contraste tras validar tiempos reales de traslado.",
         },
       ],
     },
@@ -749,7 +749,7 @@ export const localizedContentByPath: LocalizedContentByPath = {
           body: "Gastos habituales de bolsillo en 2026:",
           bullets: [
             "Consulta ambulatoria: 30-80 USD",
-            "Urgencias en Seul: 300-800 USD",
+            "Urgencias en Seúl: 300-800 USD",
             "Hospitalizacion (por noche): 1,000-3,000+ USD",
             "TAC, resonancia, analisis de sangre: cargos adicionales",
             "Servicio de ambulancia: varia segun el caso",

@@ -363,7 +363,7 @@ const LEAF_FAQ_BY_LANG: Record<SupportedLang, Record<string, LeafFaqItem[]>> = {
       {
         question: "Cual es la alternativa mas segura si este plan se siente ajustado?",
         answer:
-          "Usa una base principal con algunas excursiones de un dia, o limita el plan a Seoul mas una ciudad de contraste. Reducir desplazamientos suele crear una semana mas disfrutable.",
+          "Usa una base principal con algunas excursiones de un dia, o limita el plan a Seúl mas una ciudad de contraste. Reducir desplazamientos suele crear una semana mas disfrutable.",
       },
       {
         question: "Conviene reservar todo antes de validar tiempos de transporte?",
@@ -422,7 +422,7 @@ const LEAF_FAQ_BY_LANG: Record<SupportedLang, Record<string, LeafFaqItem[]>> = {
       {
         question: "Cual es la estructura mas segura para un viaje de un mes a Corea?",
         answer:
-          "Quedate unas dos semanas en Seul y luego pasa una semana en cada una de dos regiones mas tranquilas, como Busan, Jeju o Gyeongju.",
+          "Quedate unas dos semanas en Seúl y luego pasa una semana en cada una de dos regiones mas tranquilas, como Busan, Jeju o Gyeongju.",
       },
     ],
     "which-city-fits-you-best": [
@@ -439,7 +439,7 @@ const LEAF_FAQ_BY_LANG: Record<SupportedLang, Record<string, LeafFaqItem[]>> = {
       {
         question: "Cual es la opcion mas segura si sigo indeciso?",
         answer:
-          "Empieza con Seoul como base principal. Una vez que confirmes tiempos de traslado realistas para tus fechas, puedes agregar una ciudad de contraste si todavia encaja en tu calendario.",
+          "Empieza con Seúl como base principal. Una vez que confirmes tiempos de traslado realistas para tus fechas, puedes agregar una ciudad de contraste si todavia encaja en tu calendario.",
       },
       {
         question: "Que trade-off pesa mas al elegir ciudad?",
@@ -505,7 +505,7 @@ const LEAF_FAQ_BY_LANG: Record<SupportedLang, Record<string, LeafFaqItem[]>> = {
       {
         question: "Cual es la idea clave de esta pagina?",
         answer:
-          "Finales de marzo marca el inicio de la primavera, no su punto maximo. Los primeros cerezos en flor suelen aparecer antes en Jeju y Busan, mientras Seul florece mas tarde.",
+          "Finales de marzo marca el inicio de la primavera, no su punto maximo. Los primeros cerezos en flor suelen aparecer antes en Jeju y Busan, mientras Seúl florece mas tarde.",
       },
       {
         question: "Que error comun debo evitar?",

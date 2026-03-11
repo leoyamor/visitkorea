@@ -224,7 +224,7 @@ export const localizedContentByPath: LocalizedContentByPath = {
       title: "Elige una ciudad",
       description: "Elige la ciudad que mejor encaja con tu forma de viajar.",
       quickAnswer:
-        "Primero decide por energia, friccion de transporte y temporada; luego compara el tipo de ritmo que quieres sostener cada dia.",
+        "Elige tu ciudad considerando tres factores: tu energía de viaje, lo estresante que resulta moverse entre lugares y la temporada de tu viaje a Corea. Seúl suele ser la base más fácil, Busan añade contraste costero y Jeju ofrece naturaleza pero requiere más planificación. Gyeongju o Jeonju funcionan mejor si prefieres un ritmo más tranquilo en lugar de cambiar constantemente de lugar.",
       content: [],
       children: {
         seoul: { title: "Seúl" },

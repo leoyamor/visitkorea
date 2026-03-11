@@ -922,7 +922,7 @@ export const siteTree: TreeNode = {
       },
       description: "Choose the city that fits how you like to travel.",
       quickAnswer:
-        "Choose your city based on three things first: your travel energy, how much moving around feels stressful, and the season of your trip. Seoul is the easiest all-around base. Busan adds coastal contrast. Jeju offers nature, but requires more planning. Gyeongju or Jeonju work best if you prefer a slower rhythm over constant variety.",
+        "Choose your city by considering three things first: your travel energy, how stressful moving between places feels, and the season of your trip in Korea. Seoul is the easiest all-around base, Busan adds coastal contrast, and Jeju offers nature but requires more planning. Gyeongju or Jeonju work best if you prefer a slower rhythm over constant variety.",
       content: [
         {
           title: "🧭 Start with your travel energy",

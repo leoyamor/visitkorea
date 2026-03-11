@@ -864,6 +864,61 @@ const schemaJson = JSON.stringify({
           document.body.classList.contains("translated-ltr") ||
           document.body.classList.contains("translated-rtl");
 
+        const applySpanishCityNameFixes = (value) =>
+          value
+            .replace(/\bBusán\b/g, "Busan")
+            .replace(/\bBusa\u0301n\b/g, "Busan")
+            .replace(/\bSeul\b/g, "Seúl")
+            .replace(/\bSeoul\b/g, "Seúl")
+            .replace(/\bEn Solo\b/g, "En Seúl")
+            .replace(/\ben Solo\b/g, "en Seúl")
+            .replace(/\bDe Solo\b/g, "De Seúl")
+            .replace(/\bde Solo\b/g, "de Seúl")
+            .replace(/\bA Solo\b/g, "A Seúl")
+            .replace(/\ba Solo\b/g, "a Seúl");
+
+        const normalizeSpanishCityNames = () => {
+          if (document.documentElement.lang !== "es") return;
+
+          const attrSelectors = "[title],[aria-label],[alt],[data-card-title]";
+          const attrNames = ["title", "aria-label", "alt", "data-card-title"];
+          for (const element of document.querySelectorAll(attrSelectors)) {
+            for (const attr of attrNames) {
+              const current = element.getAttribute(attr);
+              if (!current) continue;
+              const next = applySpanishCityNameFixes(current);
+              if (next !== current) element.setAttribute(attr, next);
+            }
+          }
+
+          const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+            acceptNode: (node) => {
+              if (!node.nodeValue || !node.parentElement) return NodeFilter.FILTER_REJECT;
+              if (node.parentElement.closest("script, style, noscript, textarea")) {
+                return NodeFilter.FILTER_REJECT;
+              }
+              return NodeFilter.FILTER_ACCEPT;
+            },
+          });
+
+          const textNodes = [];
+          while (walker.nextNode()) textNodes.push(walker.currentNode);
+          for (const textNode of textNodes) {
+            const current = textNode.nodeValue;
+            const next = applySpanishCityNameFixes(current);
+            if (next !== current) textNode.nodeValue = next;
+          }
+        };
+
+        let cityNameFixRafId = 0;
+        const scheduleSpanishCityNameNormalization = () => {
+          if (cityNameFixRafId) return;
+          cityNameFixRafId = window.requestAnimationFrame(() => {
+            cityNameFixRafId = 0;
+            normalizeSpanishCityNames();
+          });
+        };
+
         const cookieVariants = [location.hostname, `.${location.hostname}`];
         const setGoogTrans = (value, maxAge = 31536000) => {
           document.cookie = `googtrans=${value};path=/;max-age=${maxAge}`;
@@ -966,11 +1021,22 @@ const schemaJson = JSON.stringify({
         };
         if (activeLang === "es") {
           enforceSpanishRendering();
+          scheduleSpanishCityNameNormalization();
+          const cityNameObserver = new MutationObserver(() => {
+            scheduleSpanishCityNameNormalization();
+          });
+          cityNameObserver.observe(document.body, {
+            childList: true,
+            subtree: true,
+            characterData: true,
+          });
           window.addEventListener("pageshow", () => {
             window.setTimeout(enforceSpanishRendering, 0);
+            scheduleSpanishCityNameNormalization();
           });
           window.addEventListener("popstate", () => {
             window.setTimeout(enforceSpanishRendering, 0);
+            scheduleSpanishCityNameNormalization();
           });
           return;
         }

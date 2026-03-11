@@ -2090,6 +2090,8 @@ const leafNextOverrides: Record<
 const normalizeSeoulTextForDisplay = (value: string): string =>
   lang === "es"
     ? value
+        .replace(/\bBusán\b/g, "Busan")
+        .replace(/\bBusa\u0301n\b/g, "Busan")
         .replace(/\bSeul\b/g, "Seúl")
         .replace(/\bSeoul\b/g, "Seúl")
         .replace(/\bEn Solo\b/g, "En Seúl")

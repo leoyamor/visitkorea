@@ -4399,7 +4399,7 @@ export const siteTree: TreeNode = {
       image: "/Travel%20Basics.webp",
       description: "Handle internet, money, and safety with less stress.",
       quickAnswer:
-        "Focus on 3 essentials first: internet, payments, and safety. In about 5 minutes, you can decide what matters most and avoid common arrival mistakes.",
+        "Start with the travel basics for visiting Korea — simple etiquette, safety expectations for travelers, and practical guidance on shopping value, VAT refunds, and real discounts.",
       children: [
         {
           title: "Basic Korean Etiquette: Simple Rules for Travelers",

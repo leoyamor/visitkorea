@@ -9,7 +9,7 @@ export const localizedContentByPath: LocalizedContentByPath = {
       description:
         "Plan your days realistically, without overpacking your schedule.",
       quickAnswer:
-        "Start with three simple filters: how long you're staying, how often you're willing to change hotels, and how much long transit days drain your energy. Those three factors usually determine whether your Korea plan should be compact, balanced, or slower-paced.",
+        "Start with three simple filters: how long you're staying, how often you're willing to change hotels, and how much long travel days drain your energy. These three factors usually determine whether your Korea trip should be compact, balanced, or slower-paced.",
       content: [
         {
           title: "🗺️ Start with one decision question",
@@ -84,7 +84,7 @@ export const localizedContentByPath: LocalizedContentByPath = {
       description:
         "Planifica tus dias con un ritmo realista, sin llenar demasiado el itinerario.",
       quickAnswer:
-        "Empieza con tres filtros simples: cuanto tiempo te quedas, con que frecuencia aceptas cambiar de hotel y cuanto te drenan los dias largos de traslado. Esos tres factores suelen definir si tu plan por Corea debe ser compacto, equilibrado o mas pausado.",
+        "Empieza con tres filtros simples: cuánto tiempo te quedas, con qué frecuencia estás dispuesto a cambiar de hotel y cuánto te cansan los días largos de traslado. Estos tres factores suelen determinar si tu viaje por Corea debería ser compacto, equilibrado o más relajado.",
       content: [
         {
           title: "🗺️ Empieza con una sola pregunta",

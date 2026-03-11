@@ -54,7 +54,7 @@ export const siteTree: TreeNode = {
       },
       description: "Plan your days realistically, without overpacking your schedule.",
       quickAnswer:
-        "Start with three simple filters: how long you're staying, how often you're willing to change hotels, and how much long transit days drain your energy. Those three factors usually determine whether your Korea plan should be compact, balanced, or slower-paced.",
+        "Start with three simple filters: how long you're staying, how often you're willing to change hotels, and how much long travel days drain your energy. These three factors usually determine whether your Korea trip should be compact, balanced, or slower-paced.",
       content: [
         {
           title: "🗺️ Start with one decision question",

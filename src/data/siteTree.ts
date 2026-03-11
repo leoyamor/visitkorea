@@ -3670,6 +3670,8 @@ export const siteTree: TreeNode = {
       icon: "spark",
       image: "/Things%20to%20Do.webp",
       description: "See what’s truly worth your time and money.",
+      quickAnswer:
+        "Each card opens a focused guide to things to do in Korea — from must-see places for first-time visitors to flexible ways to explore and attraction passes that help you save money.",
       children: [
         {
           title: "Must-See for First Timers",

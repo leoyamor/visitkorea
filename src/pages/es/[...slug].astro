@@ -14,8 +14,167 @@ const ES_LEAF_OVERRIDES: Record<
   string,
   Partial<Pick<TreeNode, "title" | "description" | "quickAnswer" | "updatedIso">> & {
     content?: NodeContentBlock[];
+    children?: Record<string, Partial<Pick<TreeNode, "title" | "description">>>;
   }
 > = {
+  "choose-a-city": {
+    title: "Elige una ciudad",
+    description: "Elige la ciudad que mejor encaja con tu forma de viajar.",
+    quickAnswer:
+      "Elige la ciudad segun tres filtros: energia diaria, friccion de traslados y temporada del viaje. Seul suele ser la base mas facil. Busan da contraste costero. Jeju funciona mejor si aceptas mas logistica.",
+    content: [
+      {
+        title: "🧭 Empieza por tu energia de viaje",
+        emphasis:
+          "Elige la ciudad que puedas disfrutar incluso en un dia cansado.",
+        body:
+          "La mejor base no siempre es la mas famosa. Suele ser la que encaja con tu ritmo, tu tolerancia al ruido y tu disposicion para moverte cada dia.",
+        bullets: [
+          "Seul: maxima flexibilidad y transporte denso.",
+          "Busan: mezcla de ciudad y costa con distancias mas largas.",
+          "Jeju: naturaleza y espacio, con mayor carga logistica.",
+          "Gyeongju o Jeonju: ritmo mas tranquilo y caminatas cortas.",
+        ],
+      },
+      {
+        title: "🚆 Compara friccion de traslado antes de elegir atracciones",
+        emphasis:
+          "La friccion de transporte afecta mas tu dia que una foto famosa.",
+        body:
+          "Una ciudad puede verse perfecta en redes y sentirse agotadora en la practica si cada traslado te consume tiempo y energia.",
+        bullets: [
+          "Base mas facil: Seul.",
+          "Carga media: Busan.",
+          "Carga alta: Jeju (vuelos, coche o buses mas lentos).",
+        ],
+      },
+      {
+        title: "🌦️ Deja que la temporada cambie la mejor opcion",
+        emphasis:
+          "La misma ciudad puede sentirse comoda en octubre y pesada en agosto.",
+        body:
+          "Tus fechas reales importan mas que la popularidad. El clima cambia cuanto puedes caminar, esperar y disfrutar actividades al aire libre.",
+        bullets: [
+          "Verano: Busan y Jeju funcionan bien si aceptas calor y humedad.",
+          "Primavera y otono: Gyeongju y Jeonju suelen ser muy comodos.",
+          "Invierno: Seul suele ser la opcion mas adaptable.",
+        ],
+      },
+      {
+        title: "🚫 No elijas solo por fama",
+        emphasis: "Popular no siempre significa mejor para tu viaje.",
+        body:
+          "Usa las paginas de ciudad para validar ritmo diario, estilo de transporte y atmosfera. No copies una ruta tipica solo porque aparece en todas partes.",
+        bullets: [
+          "Elige la ciudad que resuelve una necesidad real de tu viaje.",
+          "Si dudas entre dos ciudades, prioriza la de menor friccion.",
+          "Agrega segunda ciudad solo si cambia claramente el ritmo.",
+        ],
+      },
+    ],
+    children: {
+      seoul: {
+        title: "Seul",
+        description: "Vida de gran ciudad, comida y cultura.",
+      },
+      busan: {
+        title: "Busan",
+        description: "Playas, mariscos y ambiente relajado.",
+      },
+      jeju: {
+        title: "Jeju",
+        description: "Naturaleza, rutas en coche y ritmo de isla.",
+      },
+      gyeongju: {
+        title: "Gyeongju",
+        description: "Antigua capital, historia al aire libre y lugares caminables.",
+      },
+      jeonju: {
+        title: "Jeonju",
+        description: "Comida local y calles tradicionales.",
+      },
+      "which-city-fits-you-best": {
+        title: "Que ciudad te queda mejor?",
+        description: "Elige ciudad segun como viajas de verdad.",
+      },
+    },
+  },
+  "before-you-go": {
+    title: "Antes de viajar",
+    description:
+      "Asegura reglas de entrada, conectividad al llegar y cobertura de riesgo antes de salir.",
+    quickAnswer:
+      "Usa este hub como revision final antes de salir. Primero confirma entrada, despues conectividad al llegar y por ultimo evalua si el seguro reduce de forma real el riesgo financiero del viaje.",
+    content: [
+      {
+        title: "🛂 Empieza por la certeza de entrada",
+        icon: "passport",
+        emphasis:
+          "Si no tienes claro si podras abordar sin problemas, empieza aqui.",
+        body:
+          "Las reglas de visado, el estado de K-ETA y la e-Arrival Card determinan si tu viaje empieza sin contratiempos o con problemas en el check-in.",
+        bullets: [
+          "Abre Requisitos de entrada a Corea si no tienes plena certeza sobre tu caso.",
+          "Usa esa guia si quieres el orden real de llegada en aeropuertos coreanos.",
+          "Resolver esto elimina el riesgo mas alto de este hub.",
+        ],
+      },
+      {
+        title: "📶 Decide como aterrizar con conexion",
+        icon: "sim",
+        emphasis:
+          "SIM o eSIM no es solo una decision tecnica, es una decision de friccion.",
+        body:
+          "Los datos moviles importan sobre todo en la primera hora: mapas, traslados, traduccion y pagos.",
+        bullets: [
+          "Empieza por SIM o eSIM si llegas tarde o dependes de navegacion desde el minuto uno.",
+          "Para muchos viajeros, este es el paso con mayor impacto practico.",
+          "Decidelo antes de volar, no en una fila sin datos.",
+        ],
+      },
+      {
+        title: "🛡️ Contrata seguro solo cuando el riesgo lo justifique",
+        icon: "shield",
+        emphasis:
+          "El seguro protege presupuesto, no solo una casilla.",
+        body:
+          "Para muchos viajes sigue siendo opcional, pero cambia si una consulta medica, una conexion perdida o una maleta extraviada puede afectar fuerte tu plan.",
+        bullets: [
+          "Abre Seguro de viaje si viajas en invierno, haces actividades al aire libre o tienes reservas no reembolsables.",
+          "Compara cobertura medica, limites y exclusiones antes de decidir.",
+          "No todos lo necesitan, pero para algunos evita costos grandes.",
+        ],
+      },
+      {
+        title: "⚠️ Lo que mas causa problemas de ultima hora",
+        icon: "alert",
+        body:
+          "La mayoria del estres pre-vuelo aparece por dejar una decision critica sin cerrar.",
+        bullets: [
+          "Asumir que viajar sin visa significa no revisar nada mas.",
+          "Dejar la conectividad para el dia de llegada.",
+          "Comprar seguro rapido sin leer exclusiones.",
+          "No revalidar fuentes oficiales en las ultimas 24 horas.",
+        ],
+      },
+    ],
+    children: {
+      "korea-entry-requirements": {
+        title: "Requisitos de entrada a Corea",
+        description:
+          "Empieza aqui si necesitas confirmar K-ETA, e-Arrival Card y el orden real de llegada en aeropuerto.",
+      },
+      "sim-or-esim": {
+        title: "SIM o eSIM?",
+        description: "Opciones de internet explicadas de forma simple.",
+      },
+      "travel-insurance-for-korea": {
+        title: "Necesito seguro de viaje para Corea del Sur? (Guia 2026)",
+        description:
+          "El seguro no es obligatorio para la mayoria de visitas cortas en 2026, pero puede ser muy recomendable.",
+      },
+    },
+  },
   "travel-basics": {
     title: "Basicos de Viaje",
     description: "Internet, pagos y seguridad con menos estres.",
@@ -1222,7 +1381,15 @@ const localizeEsNode = (node?: TreeNode): TreeNode | undefined => {
   if (!node) return undefined;
   const override = ES_LEAF_OVERRIDES[node.slug];
   const children = node.children
-    ? node.children.map((child) => localizeEsNode(child) ?? child)
+    ? node.children.map((child) => {
+        const localizedChild = localizeEsNode(child) ?? child;
+        const childOverride = override?.children?.[child.slug];
+        if (!childOverride) return localizedChild;
+        return {
+          ...localizedChild,
+          ...childOverride,
+        };
+      })
     : undefined;
   if (!override) {
     if (!children) return node;
@@ -1231,10 +1398,11 @@ const localizeEsNode = (node?: TreeNode): TreeNode | undefined => {
       children,
     };
   }
+  const { content, children: _childOverrideMap, ...nodeOverride } = override;
   return {
     ...node,
-    ...override,
-    content: override.content ?? node.content,
+    ...nodeOverride,
+    content: content ?? node.content,
     children,
   };
 };

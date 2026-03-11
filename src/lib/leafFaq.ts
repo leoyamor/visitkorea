@@ -146,6 +146,33 @@ const LEAF_FAQ_BY_LANG: Record<SupportedLang, Record<string, LeafFaqItem[]>> = {
           "No. Always confirm realistic transfer times first, then finalize bookings. Planning movement before reservations helps avoid most one-week itinerary stress.",
       },
     ],
+    "2-weeks-in-korea": [
+      {
+        question: "Should I read this before planning a 2-week trip to Korea?",
+        answer:
+          "Yes. This page helps you understand how to structure two weeks without rushing or changing hotels too often.",
+      },
+      {
+        question: "What is the key decision when planning two weeks in Korea?",
+        answer:
+          "Decide your regional structure first. The simplest approach is three regions with one main base in each.",
+      },
+      {
+        question: "What common mistake should I avoid on a two-week trip?",
+        answer:
+          "Trying to visit too many cities. Even with two weeks, frequent transfers can reduce exploration time.",
+      },
+      {
+        question: "What should I verify with official sources before final bookings?",
+        answer:
+          "Transport schedules, seasonal conditions, and major holiday periods may change.",
+      },
+      {
+        question: "What should I do after reading this page?",
+        answer:
+          "Choose your three regions first, then start planning each block in more detail.",
+      },
+    ],
     "which-city-fits-you-best": [
       {
         question: "Who is this city-matching approach not ideal for?",
@@ -315,6 +342,33 @@ const LEAF_FAQ_BY_LANG: Record<SupportedLang, Record<string, LeafFaqItem[]>> = {
         question: "Conviene reservar todo antes de validar tiempos de transporte?",
         answer:
           "No. Confirma primero tiempos de traslado realistas y luego cierra reservas. Planificar movimientos antes de reservar ayuda a evitar gran parte del estres de un viaje de una semana.",
+      },
+    ],
+    "2-weeks-in-korea": [
+      {
+        question: "Debo leer esto antes de planificar un viaje de 2 semanas a Corea?",
+        answer:
+          "Si. Esta pagina te ayuda a entender como estructurar dos semanas sin ir con prisa ni cambiar de hotel con demasiada frecuencia.",
+      },
+      {
+        question: "Cual es la decision clave al planificar dos semanas en Corea?",
+        answer:
+          "Decide primero tu estructura regional. El enfoque mas simple es usar tres regiones con una base principal en cada una.",
+      },
+      {
+        question: "Que error comun debo evitar en un viaje de dos semanas?",
+        answer:
+          "Intentar visitar demasiadas ciudades. Incluso con dos semanas, los traslados frecuentes pueden reducir el tiempo real de exploracion.",
+      },
+      {
+        question: "Que debo verificar en fuentes oficiales antes de cerrar reservas?",
+        answer:
+          "Los horarios de transporte, las condiciones estacionales y los periodos de festivos importantes pueden cambiar.",
+      },
+      {
+        question: "Que debo hacer despues de leer esta pagina?",
+        answer:
+          "Elige primero tus tres regiones y luego empieza a planificar cada bloque con mas detalle.",
       },
     ],
     "which-city-fits-you-best": [

@@ -1750,6 +1750,8 @@ export const siteTree: TreeNode = {
       icon: "train",
       image: "/Getting%20Around%20Korea.webp",
       description: "Learn how to use buses, subways, and taxis with confidence.",
+      quickAnswer:
+        "Each card opens a focused guide to getting around Korea, covering transport options, routes, and practical travel tips.",
       children: [
         {
           title: "Is Getting Around Hard in South Korea?",

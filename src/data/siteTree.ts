@@ -2542,6 +2542,8 @@ export const siteTree: TreeNode = {
       icon: "bowl",
       image: "/What%20to%20Eat.webp",
       description: "Know what to try first — and what to skip.",
+      quickAnswer:
+        "Each card opens a focused guide to Korean food, including what to try first, how to find good and affordable restaurants, and which dishes travelers should approach with caution.",
       children: [
         {
           title: "What Should I Eat First in Korea?",

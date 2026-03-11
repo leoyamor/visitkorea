@@ -3078,6 +3078,8 @@ export const siteTree: TreeNode = {
       icon: "bed",
       image: "/Where%20to%20Stay.webp",
       description: "Find the right area and hotel for your budget.",
+      quickAnswer:
+        "Each card opens a focused guide on where to stay in Korea, including best value places, budget stays, and luxury hotels for different travel styles.",
       children: [
         {
           title: "Best Value Places",

@@ -4989,7 +4989,7 @@ export const siteTree: TreeNode = {
       description:
         "Lock in entry rules, arrival connectivity, and risk coverage before departure.",
       quickAnswer:
-        "Use this hub as a final pre-departure check. First confirm your entry eligibility, then make sure you can get connected on arrival, and finally decide whether travel insurance meaningfully reduces the financial risk of your trip.",
+        "Use this hub as your final pre-departure check for Korea: confirm your entry requirements, plan how you will stay connected with SIM or eSIM, and decide whether travel insurance helps reduce the financial risk of your trip.",
       content: [
         {
           title: "🛂 Start with entry certainty",

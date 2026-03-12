@@ -1,15 +1,17 @@
 import { siteTree } from "../data/siteTree";
 import { EDITORIAL_UPDATED_ISO } from "../lib/editorial";
 import { withLang } from "../lib/i18n";
+import { getPageUpdatedIso } from "../lib/page-updates";
 import { absoluteUrl } from "../lib/site";
 
 const utilityPaths = ["/llms.txt", "/llms-full.txt"];
 const staticInfoPaths = ["/about", "/privacy-policy", "/contact", "/disclaimer"];
 
-// Temporary override: keep only this page at today's date for faster recrawl.
+// Temporary recrawl boost for URLs that still show unresolved indexing in GSC.
 const temporaryLastmodOverrides: Record<string, string> = {
-  "/before-you-go/korea-entry-requirements": "2026-03-08T00:00:00.000Z",
-  "/korea-now-and-more": "2026-03-08T00:00:00.000Z",
+  "/": "2026-03-11T00:00:00.000Z",
+  "/travel-basics/shopping-and-discounts": "2026-03-11T00:00:00.000Z",
+  "/where-to-stay/best-value-places": "2026-03-10T00:00:00.000Z",
 };
 
 const toSitemapPath = (path: string) => {
@@ -49,10 +51,13 @@ export const GET = () => {
   const routeSet = new Set<string>([...getTreePaths(), ...utilityPaths, ...staticInfoPaths]);
   const routes = [...routeSet].sort((a, b) => a.localeCompare(b));
   const defaultLastModified = EDITORIAL_UPDATED_ISO;
+  const getEffectiveLastModified = (route: string, lang: "en" | "es") =>
+    temporaryLastmodOverrides[route] ?? getPageUpdatedIso(route, lang, defaultLastModified);
 
   const urls = routes
     .map((route) => {
-      const lastModified = temporaryLastmodOverrides[route] ?? defaultLastModified;
+      const enLastModified = getEffectiveLastModified(route, "en");
+      const esLastModified = getEffectiveLastModified(route, "es");
       const enUrl = absoluteUrl(toSitemapPath(route));
       const esUrl = absoluteUrl(toSitemapPath(withLang(route, "es")));
       const depth = route === "/" ? 0 : route.split("/").filter(Boolean).length;
@@ -63,7 +68,7 @@ export const GET = () => {
       const baseNodes = [
         "<url>",
         `<loc>${escapeXml(enUrl)}</loc>`,
-        `<lastmod>${escapeXml(lastModified)}</lastmod>`,
+        `<lastmod>${escapeXml(enLastModified)}</lastmod>`,
         `<changefreq>${changeFreq}</changefreq>`,
         `<priority>${priority}</priority>`,
       ];
@@ -72,7 +77,7 @@ export const GET = () => {
         return [...baseNodes, "</url>"].join("");
       }
 
-      const buildLocalizedEntry = (locUrl: string) =>
+      const buildLocalizedEntry = (locUrl: string, lastModified: string) =>
         [
           "<url>",
           `<loc>${escapeXml(locUrl)}</loc>`,
@@ -85,7 +90,7 @@ export const GET = () => {
           "</url>",
         ].join("");
 
-      return `${buildLocalizedEntry(enUrl)}${buildLocalizedEntry(esUrl)}`;
+      return `${buildLocalizedEntry(enUrl, enLastModified)}${buildLocalizedEntry(esUrl, esLastModified)}`;
     })
     .join("");
 

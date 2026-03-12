@@ -468,29 +468,29 @@ const LEAF_FAQ_BY_LANG: Record<SupportedLang, Record<string, LeafFaqItem[]>> = {
     ],
     "attraction-passes-discounts": [
       {
-        question: "Should every first-time traveler buy an attraction pass in Korea?",
+        question: "Do I need an attraction pass when visiting Korea?",
         answer:
-          "No. A pass is optional and only useful when your real itinerary matches the pass coverage and timing rules.",
+          "Not always. Many attractions are inexpensive or free. Passes only save money if your itinerary includes several paid attractions within a limited time.",
       },
       {
-        question: "When does a pass usually save money?",
+        question: "When does an attraction pass actually save money?",
         answer:
-          "Usually when you will visit several included paid attractions in a short window and would otherwise buy each ticket separately.",
+          "Usually when you visit three or more paid attractions during the pass validity period and plan your route efficiently.",
       },
       {
-        question: "What red flag means I should skip the pass?",
+        question: "What is the most common mistake travelers make with passes?",
         answer:
-          "If your schedule is flexible or uncertain, strict pass windows can create unnecessary pressure and reduce trip quality.",
+          "Buying a pass before planning their itinerary. Time-based passes only work well when attractions are scheduled carefully.",
       },
       {
-        question: "What should I verify before I buy any pass?",
+        question: "What is the difference between the main passes in Korea?",
         answer:
-          "Check included attractions, blackout dates, activation rules, and whether your route can realistically use enough entries.",
+          "KORAIL PASS reduces long-distance train costs, while passes such as Discover Seoul Pass and VISIT BUSAN PASS provide entry or discounts for attractions in specific cities.",
       },
       {
-        question: "What is the safest decision rule?",
+        question: "How should I decide whether to buy a pass?",
         answer:
-          "Build your route first, price individual tickets second, and buy a pass only when the measured savings are clear.",
+          "List the attractions you plan to visit, compare the total ticket cost with the pass price, and check which attractions are free versus discounted.",
       },
     ],
     "korea-now-and-more": [
@@ -945,29 +945,29 @@ const LEAF_FAQ_BY_LANG: Record<SupportedLang, Record<string, LeafFaqItem[]>> = {
     ],
     "attraction-passes-discounts": [
       {
-        question: "Todo viajero primerizo debe comprar un pase de atracciones en Corea?",
+        question: "¿Necesito un pase turístico para visitar Corea?",
         answer:
-          "No. El pase es opcional y solo conviene cuando tu ruta real coincide con la cobertura y las reglas de tiempo del pase.",
+          "No necesariamente. Muchas atracciones tienen precios bajos o incluso son gratuitas. Los pases solo suelen ahorrar dinero si tu itinerario incluye varias atracciones de pago en poco tiempo.",
       },
       {
-        question: "Cuando un pase suele ahorrar dinero?",
+        question: "¿Cuándo realmente vale la pena un pase turístico?",
         answer:
-          "Normalmente cuando vas a visitar varias atracciones pagas incluidas en una ventana corta y, sin pase, comprarias cada entrada por separado.",
+          "Normalmente cuando visitas tres o más atracciones de pago dentro del período de validez del pase y planificas tu ruta con eficiencia.",
       },
       {
-        question: "Que senal indica que deberia evitar el pase?",
+        question: "¿Cuál es el error más común que cometen los viajeros con estos pases?",
         answer:
-          "Si tu agenda es flexible o incierta, las ventanas estrictas del pase pueden meterte presion y bajar la calidad del viaje.",
+          "Comprar el pase antes de planificar el itinerario. Los pases basados en tiempo funcionan mejor cuando las visitas están bien organizadas.",
       },
       {
-        question: "Que debo verificar antes de comprar cualquier pase?",
+        question: "¿Cuál es la diferencia entre los principales pases en Corea?",
         answer:
-          "Revisa atracciones incluidas, fechas bloqueadas, reglas de activacion y si realmente podras usar suficientes entradas en tu ruta.",
+          "El KORAIL PASS reduce el costo de los trenes de larga distancia. En cambio, pases como Discover Seoul Pass o VISIT BUSAN PASS ofrecen entradas gratuitas o descuentos para atracciones dentro de una ciudad específica.",
       },
       {
-        question: "Cual es la regla mas segura para decidir?",
+        question: "¿Cómo debería decidir si comprar un pase o no?",
         answer:
-          "Primero arma la ruta, luego calcula entradas sueltas y compra pase solo si el ahorro real queda claro.",
+          "Haz una lista de las atracciones que planeas visitar, compara el precio total de las entradas individuales con el precio del pase y revisa cuáles atracciones son gratuitas y cuáles solo ofrecen descuento.",
       },
     ],
     "korea-now-and-more": [

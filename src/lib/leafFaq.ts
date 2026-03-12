@@ -200,6 +200,111 @@ const LEAF_FAQ_BY_LANG: Record<SupportedLang, Record<string, LeafFaqItem[]>> = {
           "Stay about two weeks in Seoul, then spend one week each in two slower regions such as Busan, Jeju, or Gyeongju.",
       },
     ],
+    "first-time-in-korea": [
+      {
+        question: "Should I read this before my first trip to Korea?",
+        answer:
+          "Yes. This page explains what first-time visitors usually notice and what preparation actually matters before arrival.",
+      },
+      {
+        question: "What is the most important preparation before visiting Korea?",
+        answer:
+          "Make sure your phone works internationally, confirm your first-night accommodation, and know how you will reach the city from the airport.",
+      },
+      {
+        question: "What common mistake should first-time travelers avoid?",
+        answer:
+          "Overplanning the first few days. Leave space to adjust while you learn how the city works.",
+      },
+      {
+        question: "What should I verify with official sources before departure?",
+        answer: "Entry procedures, airport arrival steps, and travel regulations may change.",
+      },
+      {
+        question: "What should I do after reading this page?",
+        answer:
+          "Prepare the basics for your first 24 hours, then start planning your trip structure.",
+      },
+    ],
+    "been-here-before": [
+      {
+        question: "Should I read this before planning a second trip to Korea?",
+        answer:
+          "Yes. This page helps returning travelers plan a trip that feels slower, deeper, and more comfortable.",
+      },
+      {
+        question: "What is the key decision for a repeat visit to Korea?",
+        answer:
+          "Decide how you want your days to feel first - relaxed, food-focused, nature-oriented, or neighborhood-based.",
+      },
+      {
+        question: "What common mistake should returning travelers avoid?",
+        answer:
+          "Repeating the exact same Seoul-Busan-Jeju route or adding too many cities again.",
+      },
+      {
+        question: "What should I verify with official sources before traveling again?",
+        answer:
+          "Transport schedules, seasonal events, and attraction opening hours may change.",
+      },
+      {
+        question: "What is the safest structure for a second trip to Korea?",
+        answer:
+          "Stay longer in one or two regions, explore neighborhoods in depth, and add one slower city or nature destination.",
+      },
+    ],
+    "basic-korean-etiquette": [
+      {
+        question: "Should I read this before visiting Korea for the first time?",
+        answer:
+          "Yes. This guide explains the everyday etiquette habits that help travelers avoid awkward situations.",
+      },
+      {
+        question: "What is the most important etiquette rule in Korea?",
+        answer:
+          "Show quiet respect in shared spaces. Observing how others behave usually works well.",
+      },
+      {
+        question: "What common mistake should visitors avoid?",
+        answer:
+          "Being too loud in public places such as trains, buses, or cafes.",
+      },
+      {
+        question: "What etiquette rule surprises many travelers?",
+        answer:
+          "Queue culture is very clear in Korea. People usually wait their turn in places like subway platforms, bus stops, and checkout counters.",
+      },
+      {
+        question: "What should I remember after reading this guide?",
+        answer:
+          "You do not need to be perfect. Small gestures of respect matter more than knowing every rule.",
+      },
+    ],
+    "korea-travel-safety": [
+      {
+        question: "Should I read this before traveling to Korea for the first time?",
+        answer:
+          "Yes. This guide explains how safe Korea is and what basic precautions travelers should know.",
+      },
+      {
+        question: "Is Korea safe for tourists and solo travelers?",
+        answer:
+          "Yes. Korea is widely considered a very safe destination, and many travelers feel comfortable moving around even at night.",
+      },
+      {
+        question: "What common safety mistake should visitors avoid?",
+        answer:
+          "Drinking heavily or becoming disoriented late at night in unfamiliar nightlife areas.",
+      },
+      {
+        question: "What emergency information should travelers know in Korea?",
+        answer: "Police: 112\nFire or ambulance: 119",
+      },
+      {
+        question: "What should I remember after reading this guide?",
+        answer: "Stay aware, not anxious. Basic preparation and common sense are usually enough.",
+      },
+    ],
     "which-city-fits-you-best": [
       {
         question: "Who is this city-matching approach not ideal for?",
@@ -423,6 +528,113 @@ const LEAF_FAQ_BY_LANG: Record<SupportedLang, Record<string, LeafFaqItem[]>> = {
         question: "Cual es la estructura mas segura para un viaje de un mes a Corea?",
         answer:
           "Quedate unas dos semanas en Seúl y luego pasa una semana en cada una de dos regiones mas tranquilas, como Busan, Jeju o Gyeongju.",
+      },
+    ],
+    "first-time-in-korea": [
+      {
+        question: "Deberia leer esto antes de mi primer viaje a Corea?",
+        answer:
+          "Si. Esta pagina explica lo que suelen notar quienes visitan Corea por primera vez y que preparacion realmente importa antes de llegar.",
+      },
+      {
+        question: "Cual es la preparacion mas importante antes de visitar Corea?",
+        answer:
+          "Asegurate de que tu telefono funcione internacionalmente, confirma tu alojamiento de la primera noche y ten claro como llegaras desde el aeropuerto a la ciudad.",
+      },
+      {
+        question: "Que error comun deben evitar quienes viajan por primera vez?",
+        answer:
+          "Planificar en exceso los primeros dias. Deja espacio para ajustarte mientras aprendes como funciona la ciudad.",
+      },
+      {
+        question: "Que debo verificar con fuentes oficiales antes de salir?",
+        answer:
+          "Los procedimientos de entrada, los pasos de llegada en aeropuerto y las regulaciones de viaje pueden cambiar.",
+      },
+      {
+        question: "Que debo hacer despues de leer esta pagina?",
+        answer:
+          "Prepara lo basico para tus primeras 24 horas y luego empieza a estructurar tu viaje.",
+      },
+    ],
+    "been-here-before": [
+      {
+        question: "Deberia leer esto antes de planificar un segundo viaje a Corea?",
+        answer:
+          "Si. Esta pagina ayuda a quienes ya viajaron a Corea a planificar un viaje mas pausado, mas profundo y mas comodo.",
+      },
+      {
+        question: "Cual es la decision clave para un viaje repetido a Corea?",
+        answer:
+          "Primero decide como quieres sentir tus dias: relajados, centrados en comida, orientados a naturaleza o basados en barrios.",
+      },
+      {
+        question: "Que error comun deben evitar quienes regresan a Corea?",
+        answer:
+          "Repetir exactamente la misma ruta Seúl-Busan-Jeju o volver a agregar demasiadas ciudades.",
+      },
+      {
+        question: "Que debo verificar con fuentes oficiales antes de viajar otra vez?",
+        answer:
+          "Los horarios de transporte, los eventos de temporada y los horarios de apertura de atracciones pueden cambiar.",
+      },
+      {
+        question: "Cual es la estructura mas segura para un segundo viaje a Corea?",
+        answer:
+          "Quedate mas tiempo en una o dos regiones, explora barrios con mas profundidad y agrega una ciudad mas tranquila o un destino natural.",
+      },
+    ],
+    "basic-korean-etiquette": [
+      {
+        question: "Deberia leer esto antes de visitar Corea por primera vez?",
+        answer:
+          "Si. Esta guia explica habitos cotidianos de etiqueta que ayudan a evitar situaciones incomodas.",
+      },
+      {
+        question: "Cual es la regla de etiqueta mas importante en Corea?",
+        answer:
+          "Muestra respeto silencioso en espacios compartidos. Observar como se comportan los demas suele funcionar bien.",
+      },
+      {
+        question: "Que error comun deben evitar los visitantes?",
+        answer:
+          "Hablar demasiado fuerte en espacios publicos como trenes, buses o cafeterias.",
+      },
+      {
+        question: "Que regla de etiqueta sorprende a muchos viajeros?",
+        answer:
+          "La cultura de hacer fila es muy clara en Corea. La gente suele esperar su turno en lugares como andenes de metro, paradas de bus y cajas de pago.",
+      },
+      {
+        question: "Que debo recordar despues de leer esta guia?",
+        answer:
+          "No necesitas ser perfecto. Los pequenos gestos de respeto importan mas que conocer cada regla.",
+      },
+    ],
+    "korea-travel-safety": [
+      {
+        question: "Deberia leer esto antes de viajar a Corea por primera vez?",
+        answer:
+          "Si. Esta guia explica que tan segura es Corea y que precauciones basicas deben conocer los viajeros.",
+      },
+      {
+        question: "Corea es segura para turistas y viajeros en solitario?",
+        answer:
+          "Si. Corea es considerada ampliamente un destino muy seguro, y muchos viajeros se sienten comodos moviendose incluso de noche.",
+      },
+      {
+        question: "Que error comun de seguridad deben evitar los visitantes?",
+        answer:
+          "Beber en exceso o desorientarse tarde en la noche en zonas de ocio nocturno que no conocen.",
+      },
+      {
+        question: "Que informacion de emergencia deben saber los viajeros en Corea?",
+        answer: "Policia: 112\nBomberos o ambulancia: 119",
+      },
+      {
+        question: "Que debo recordar despues de leer esta guia?",
+        answer:
+          "Mantente atento, no ansioso. La preparacion basica y el sentido comun suelen ser suficientes.",
       },
     ],
     "which-city-fits-you-best": [

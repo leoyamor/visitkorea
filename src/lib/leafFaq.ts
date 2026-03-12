@@ -200,6 +200,113 @@ const LEAF_FAQ_BY_LANG: Record<SupportedLang, Record<string, LeafFaqItem[]>> = {
           "Stay about two weeks in Seoul, then spend one week each in two slower regions such as Busan, Jeju, or Gyeongju.",
       },
     ],
+    "shopping-and-discounts": [
+      {
+        question: "Is shopping in Korea actually cheap?",
+        answer:
+          "Sometimes. Korea offers strong value in categories like cosmetics, snacks, and local fashion, but not everything is cheaper than overseas.",
+      },
+      {
+        question: "What is the most important rule before buying something in Korea?",
+        answer: "Check the real value first. Discounts only matter if the item was already worth buying.",
+      },
+      {
+        question: "What common shopping mistake do travelers make?",
+        answer:
+          "Assuming every discount means real savings. Promotional percentages often have conditions.",
+      },
+      {
+        question: "What VAT refund rule should travelers remember?",
+        answer:
+          "The key numbers are ₩15,000 (minimum purchase), ₩1,000,000 (immediate refund limit), and ₩5,000,000 (trip total limit).",
+      },
+      {
+        question: "What should I do before making a purchase?",
+        answer:
+          "Compare prices, confirm VAT refund eligibility, and check whether discounts actually reduce the final cost.",
+      },
+    ],
+    "korea-entry-requirements": [
+      {
+        question: "Do I need K-ETA to enter Korea?",
+        answer:
+          "It depends on your nationality and the current temporary exemption policy. Some visa-exempt travelers must apply for K-ETA before departure, while others may be temporarily exempt until December 31, 2026.",
+      },
+      {
+        question: "Is K-ETA the same as a visa?",
+        answer:
+          "No. K-ETA is a pre-travel authorization for certain visa-exempt travelers. Final entry permission is always decided by immigration officers at the airport.",
+      },
+      {
+        question: "Do I still need an arrival card if I have K-ETA?",
+        answer:
+          "Usually no. Travelers with a valid K-ETA are generally exempt from submitting a separate arrival declaration, but policies may change and should be confirmed before travel.",
+      },
+      {
+        question: "What is the correct airport arrival order in Korea?",
+        answer:
+          "Arrival -> (If applicable) Quarantine -> Immigration -> Baggage Claim -> Customs -> Arrival Hall.",
+      },
+      {
+        question: "What is the most important thing to check before boarding my flight?",
+        answer:
+          "Confirm your K-ETA status, verify whether an e-Arrival Card is required, and check official government updates within 24 hours before departure.",
+      },
+    ],
+    seoul: [
+      {
+        question: "Is Seoul a good base for a first trip to Korea?",
+        answer:
+          "Yes. Seoul has the most developed transport system, the largest range of accommodation, and easy access from the international airport.",
+      },
+      {
+        question: "How many days should I spend in Seoul?",
+        answer:
+          "Most first-time visitors stay 3–5 days. Shorter trips focus on major districts, while longer stays allow slower neighborhood exploration.",
+      },
+      {
+        question: "Do I need a car to travel around Seoul?",
+        answer:
+          "No. Seoul’s subway system covers most areas, and stations include English signage and clear numbering.",
+      },
+      {
+        question: "What is the easiest way to explore the city?",
+        answer:
+          "Think in districts. Stay in one main area and explore nearby neighborhoods instead of crossing the entire city every day.",
+      },
+      {
+        question: "What mistake do travelers often make in Seoul?",
+        answer:
+          "Trying to visit too many districts in one day. Efficient routing and slower pacing make the city much more enjoyable.",
+      },
+    ],
+    busan: [
+      {
+        question: "Is Busan worth visiting on a first trip to Korea?",
+        answer:
+          "Yes. Busan offers a different atmosphere from Seoul, with beaches, seafood markets, and a more relaxed coastal pace.",
+      },
+      {
+        question: "How many days should I spend in Busan?",
+        answer:
+          "Most visitors stay 2–3 days. This allows time for one beach area, a seafood market, and one cultural district without rushing.",
+      },
+      {
+        question: "What is the easiest way to travel from Seoul to Busan?",
+        answer:
+          "The KTX high-speed train is the most common option and takes about 2.5 hours from Seoul Station.",
+      },
+      {
+        question: "Where should I stay in Busan?",
+        answer:
+          "Choose accommodation near the area you want to explore most, such as Haeundae, Gwangalli, Nampo, or Seomyeon, and stay close to a subway station.",
+      },
+      {
+        question: "What mistake do travelers often make in Busan?",
+        answer:
+          "Trying to visit too many distant districts in one day. Busan is spread along the coast, so planning by area is important.",
+      },
+    ],
     "first-time-in-korea": [
       {
         question: "Should I read this before my first trip to Korea?",
@@ -528,6 +635,114 @@ const LEAF_FAQ_BY_LANG: Record<SupportedLang, Record<string, LeafFaqItem[]>> = {
         question: "Cual es la estructura mas segura para un viaje de un mes a Corea?",
         answer:
           "Quedate unas dos semanas en Seúl y luego pasa una semana en cada una de dos regiones mas tranquilas, como Busan, Jeju o Gyeongju.",
+      },
+    ],
+    "shopping-and-discounts": [
+      {
+        question: "Comprar en Corea realmente es barato?",
+        answer:
+          "A veces. Corea ofrece muy buena relacion valor-precio en categorias como cosmetica, snacks y moda local, pero no todo es mas barato que en el extranjero.",
+      },
+      {
+        question: "Cual es la regla mas importante antes de comprar algo en Corea?",
+        answer:
+          "Primero revisa el valor real. Los descuentos solo importan si el producto ya valia la pena.",
+      },
+      {
+        question: "Que error de compra cometen muchos viajeros?",
+        answer:
+          "Suponer que todo descuento significa ahorro real. Los porcentajes promocionales suelen tener condiciones.",
+      },
+      {
+        question: "Que regla de VAT refund deben recordar los viajeros?",
+        answer:
+          "Los numeros clave son ₩15,000 (compra minima), ₩1,000,000 (limite de reembolso inmediato) y ₩5,000,000 (limite total por viaje).",
+      },
+      {
+        question: "Que debo hacer antes de comprar?",
+        answer:
+          "Compara precios, confirma si aplica el VAT refund y revisa si los descuentos realmente reducen el precio final.",
+      },
+    ],
+    "korea-entry-requirements": [
+      {
+        question: "Necesito K-ETA para entrar a Corea?",
+        answer:
+          "Depende de tu nacionalidad y de la politica temporal de exencion vigente. Algunos viajeros exentos de visa deben solicitar K-ETA antes de salir, mientras que otros pueden estar temporalmente exentos hasta el 31 de diciembre de 2026.",
+      },
+      {
+        question: "K-ETA es lo mismo que una visa?",
+        answer:
+          "No. K-ETA es una autorizacion previa al viaje para ciertos viajeros exentos de visa. El permiso final de entrada siempre lo decide inmigracion en el aeropuerto.",
+      },
+      {
+        question: "Si tengo K-ETA, igual necesito tarjeta de llegada?",
+        answer:
+          "Normalmente no. Quienes tienen un K-ETA valido suelen estar exentos de enviar una declaracion de llegada separada, pero las politicas pueden cambiar y deben confirmarse antes del viaje.",
+      },
+      {
+        question: "Cual es el orden correcto al llegar al aeropuerto en Corea?",
+        answer:
+          "Llegada -> (Si aplica) Cuarentena -> Inmigracion -> Reclamo de equipaje -> Aduanas -> Hall de llegada.",
+      },
+      {
+        question: "Que es lo mas importante que debo revisar antes de abordar mi vuelo?",
+        answer:
+          "Confirma tu estado de K-ETA, verifica si necesitas una e-Arrival Card y revisa actualizaciones oficiales del gobierno dentro de las 24 horas previas a la salida.",
+      },
+    ],
+    seoul: [
+      {
+        question: "Seul es una buena base para un primer viaje a Corea?",
+        answer:
+          "Si. Seul tiene el sistema de transporte mas desarrollado, la mayor variedad de alojamientos y acceso facil desde el aeropuerto internacional.",
+      },
+      {
+        question: "Cuantos dias deberia quedarme en Seul?",
+        answer:
+          "La mayoria de quienes viajan por primera vez se quedan 3-5 dias. Los viajes cortos se enfocan en distritos principales, y las estancias mas largas permiten explorar barrios con un ritmo mas tranquilo.",
+      },
+      {
+        question: "Necesito coche para moverme por Seul?",
+        answer:
+          "No. El metro de Seul cubre la mayor parte de la ciudad, y las estaciones incluyen senalizacion en ingles y numeracion clara.",
+      },
+      {
+        question: "Cual es la forma mas facil de explorar la ciudad?",
+        answer:
+          "Piensa por distritos. Alojate en una zona principal y explora barrios cercanos en lugar de cruzar toda la ciudad cada dia.",
+      },
+      {
+        question: "Que error cometen muchos viajeros en Seul?",
+        answer:
+          "Intentar visitar demasiados distritos en un solo dia. Rutas eficientes y un ritmo mas lento hacen la ciudad mucho mas disfrutable.",
+      },
+    ],
+    busan: [
+      {
+        question: "Vale la pena visitar Busan en un primer viaje a Corea?",
+        answer:
+          "Si. Busan ofrece una atmosfera diferente a Seul, con playas, mercados de mariscos y un ritmo costero mas relajado.",
+      },
+      {
+        question: "Cuantos dias deberia quedarme en Busan?",
+        answer:
+          "La mayoria de visitantes se queda 2-3 dias. Eso permite ver una zona de playa, un mercado de mariscos y un distrito cultural sin ir con prisa.",
+      },
+      {
+        question: "Cual es la forma mas facil de viajar de Seul a Busan?",
+        answer:
+          "El tren de alta velocidad KTX es la opcion mas comun y tarda unas 2.5 horas desde la estacion de Seul.",
+      },
+      {
+        question: "Donde deberia alojarme en Busan?",
+        answer:
+          "Elige alojamiento cerca del area que mas quieras explorar, como Haeundae, Gwangalli, Nampo o Seomyeon, y mantente cerca de una estacion de metro.",
+      },
+      {
+        question: "Que error cometen muchos viajeros en Busan?",
+        answer:
+          "Intentar visitar demasiados distritos lejanos en un solo dia. Busan se extiende por la costa, asi que planificar por zonas es clave.",
       },
     ],
     "first-time-in-korea": [

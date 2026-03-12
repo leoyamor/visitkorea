@@ -7,6 +7,7 @@ import {
 } from "./editorial";
 import { getHubFaqItems } from "./hubFaq";
 import { withLang } from "./i18n";
+import { getLeafFaqItems } from "./leafFaq";
 import { absoluteUrl } from "./site";
 
 export type JsonLdNode = Record<string, unknown>;
@@ -212,7 +213,10 @@ export const buildLeafSchemaNodes = ({
   segments,
 }: LeafSchemaArgs): JsonLdNode[] => {
   const sourceUrls = getNodeSourceUrls(node);
-  const faqItems = buildFaqItems(node, lang);
+  const manualOrAutoFaqItems = getLeafFaqItems(node, lang);
+  const faqItems = manualOrAutoFaqItems.length
+    ? manualOrAutoFaqItems
+    : buildFaqItems(node, lang);
   const keywords = unique(
     [
       node.title,

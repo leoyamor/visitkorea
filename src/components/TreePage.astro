@@ -1949,9 +1949,33 @@ const checklistByLeaf: Record<string, Partial<Record<SupportedLang, string[]>>> 
       "I prepared a default fallback route in case I stay undecided.",
     ],
     es: [
-      "Alinee mi ciudad con tolerancia a traslados, no solo popularidad.",
-      "Acepte un trade-off claro para la ciudad que elegi.",
-      "Prepare una ruta de respaldo por si sigo indeciso.",
+      "Alinee mi ciudad principal con mi tolerancia real a traslados, no solo con popularidad.",
+      "Acepte un trade-off claro para la ciudad que elegi (ritmo, costo o clima).",
+      "Defini una opcion de respaldo simple por si cambian fechas o conexiones.",
+    ],
+  },
+  "what-should-i-try-first": {
+    en: [
+      "I picked three to five starter dishes for my first two days.",
+      "I chose a mild-first order before trying very spicy options.",
+      "I saved one backup dish for low-energy or late-night meals.",
+    ],
+    es: [
+      "Elegi de tres a cinco platos base para mis primeros dos dias.",
+      "Ordene primero opciones suaves antes de probar platos muy picantes.",
+      "Guarde un plato de respaldo para comidas con poco tiempo o poca energia.",
+    ],
+  },
+  "attraction-passes-discounts": {
+    en: [
+      "I compared pass coverage with my real route and timing.",
+      "I checked blackout dates, activation rules, and included attractions.",
+      "I will buy a pass only if measured savings are clear.",
+    ],
+    es: [
+      "Compare la cobertura del pase con mi ruta real y mis horarios.",
+      "Revise fechas bloqueadas, reglas de activacion y atracciones incluidas.",
+      "Comprare pase solo si el ahorro real queda claro.",
     ],
   },
   "sim-or-esim": {
@@ -2059,7 +2083,15 @@ const checklistHintByLeaf: Record<string, Partial<Record<SupportedLang, string>>
   },
   "which-city-fits-you-best": {
     en: "Confirm fit and trade-offs first, then lock only the first city-level booking.",
-    es: "Confirma encaje y trade-offs primero, y luego cierra solo la primera reserva de nivel ciudad.",
+    es: "No necesitas iniciar sesion. Marca lo que completaste y luego guarda una captura o marcador de esta pagina para despues.",
+  },
+  "what-should-i-try-first": {
+    en: "No login needed. Tick what you completed, then screenshot or bookmark this page for later.",
+    es: "No necesitas iniciar sesion. Marca lo que completaste y luego guarda una captura o marcador de esta pagina para despues.",
+  },
+  "attraction-passes-discounts": {
+    en: "No login needed. Tick what you completed, then screenshot or bookmark this page for later.",
+    es: "No necesitas iniciar sesion. Marca lo que completaste y luego guarda una captura o marcador de esta pagina para despues.",
   },
   "sim-or-esim": {
     en: "No login required. Tick what you have completed and save this page for later reference.",
@@ -2169,6 +2201,39 @@ const leafNextOverrides: Record<
     hint?: Partial<Record<SupportedLang, string>>;
   }
 > = {
+  "which-city-fits-you-best": {
+    path: "/what-to-eat/what-should-i-try-first",
+    label: {
+      en: "Which first-food lineup will keep your first two days easy and realistic?",
+      es: "Que seleccion de comida inicial hara tus dos primeros dias mas faciles y realistas?",
+    },
+    hint: {
+      en: "-> Lock your city base first, then build a low-friction food start.",
+      es: "-> Cierra primero tu ciudad base y luego arma un inicio de comida con baja friccion.",
+    },
+  },
+  "what-should-i-try-first": {
+    path: "/things-to-do/attraction-passes-discounts",
+    label: {
+      en: "Will attraction passes actually save money on your current route?",
+      es: "Los pases de atracciones realmente ahorraran dinero en tu ruta actual?",
+    },
+    hint: {
+      en: "-> Compare pass rules with your real schedule before paying.",
+      es: "-> Compara reglas del pase con tu horario real antes de pagar.",
+    },
+  },
+  "attraction-passes-discounts": {
+    path: "/before-you-go/korea-entry-requirements",
+    label: {
+      en: "Are your entry requirements and pre-flight checks fully confirmed?",
+      es: "Tienes totalmente confirmados los requisitos de entrada y chequeos previos al vuelo?",
+    },
+    hint: {
+      en: "-> Finish with official entry checks before final payment decisions.",
+      es: "-> Cierra con verificacion oficial de entrada antes de decisiones finales de pago.",
+    },
+  },
   "sim-or-esim": {
     path: "/before-you-go/travel-insurance-for-korea",
     label: {

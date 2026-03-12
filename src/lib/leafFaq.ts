@@ -414,46 +414,83 @@ const LEAF_FAQ_BY_LANG: Record<SupportedLang, Record<string, LeafFaqItem[]>> = {
     ],
     "which-city-fits-you-best": [
       {
-        question: "Who is this city-matching approach not ideal for?",
+        question: "Should I read this even if I already picked a city?",
         answer:
-          "It may not work well if your trip is shorter than three full days, centered around a single event, or requires a slower pace due to mobility limits. In those cases, it is usually better to focus on convenience and choose the easiest base.",
+          "Yes. This page helps you stress-test your city choice against transfer friction, travel pace, and season before you lock bookings.",
       },
       {
-        question: "Can I choose only by popularity rankings?",
+        question: "What is the first filter when choosing a city in Korea?",
         answer:
-          "Not reliably. Popular destinations do not always match your travel pace, tolerance for long transfers, or seasonal conditions.",
+          "Start with your daily movement tolerance. A city only works if your real transfer load still leaves enough time and energy to enjoy each day.",
       },
       {
-        question: "What is the safest fallback if I am still undecided?",
+        question: "When is Seoul the safest default base?",
         answer:
-          "Start with Seoul as your main base. Once you confirm realistic transfer times for your travel dates, you can add one contrasting city if it still fits your schedule.",
+          "Seoul is usually the safest default for first trips, short itineraries, or undecided plans because transport coverage and accommodation options are strongest.",
       },
       {
-        question: "What trade-off matters most when choosing a city?",
+        question: "What common mistake do travelers make on this decision?",
         answer:
-          "Transport friction. A city may look perfect in photos, but if daily movement requires long transfers, the trip can feel more tiring than expected.",
+          "Choosing by popularity only. A city can look great online but still create tiring day-to-day movement in your actual schedule.",
+      },
+      {
+        question: "What should I do after reading this page?",
+        answer:
+          "Pick one main city that clearly fits your pace, then set one fallback option only if your dates or transfer times change.",
+      },
+    ],
+    "what-should-i-try-first": [
+      {
+        question: "Should I read this before my first meal in Korea?",
+        answer:
+          "Yes. This page gives a practical first-food structure so you can start confidently without over-ordering or choosing only extreme dishes.",
+      },
+      {
+        question: "What is the safest first lineup of Korean food?",
+        answer:
+          "Start with familiar balance: one rice-based meal, one soup or stew, one grilled protein, and one lighter side-focused meal.",
+      },
+      {
+        question: "What common mistake should first-time food travelers avoid?",
+        answer:
+          "Starting with only the spiciest or most unfamiliar dishes. This often causes early fatigue and narrows what you try later.",
+      },
+      {
+        question: "What if I do not handle spicy food well?",
+        answer:
+          "Ask for mild options first and build tolerance gradually. Many Korean menus include non-spicy dishes that still represent local flavor well.",
+      },
+      {
+        question: "What should I do after reading this page?",
+        answer:
+          "Choose three to five starter dishes for your first two days, then expand by neighborhood once you know your comfort range.",
       },
     ],
     "attraction-passes-discounts": [
       {
-        question: "Who should usually skip attraction passes?",
+        question: "Should every first-time traveler buy an attraction pass in Korea?",
         answer:
-          "Travelers who prefer flexible schedules, plan to visit only one or two paid attractions per day, or dislike strict time windows often do better without a pass.",
+          "No. A pass is optional and only useful when your real itinerary matches the pass coverage and timing rules.",
       },
       {
-        question: "Is buying a pass always cheaper?",
+        question: "When does a pass usually save money?",
         answer:
-          "No. A pass only saves money if the number of attractions you visit and your timing actually match the pass conditions.",
+          "Usually when you will visit several included paid attractions in a short window and would otherwise buy each ticket separately.",
       },
       {
-        question: "What is the most common mistake with attraction passes?",
+        question: "What red flag means I should skip the pass?",
         answer:
-          "Buying a pass before planning your route. Many travelers then feel pressured to rush through attractions just to \"use the pass enough.\"",
+          "If your schedule is flexible or uncertain, strict pass windows can create unnecessary pressure and reduce trip quality.",
       },
       {
-        question: "What is the safer decision rule?",
+        question: "What should I verify before I buy any pass?",
         answer:
-          "Plan your realistic route first. Then compare the total cost of individual tickets with the pass price using official information pages.",
+          "Check included attractions, blackout dates, activation rules, and whether your route can realistically use enough entries.",
+      },
+      {
+        question: "What is the safest decision rule?",
+        answer:
+          "Build your route first, price individual tickets second, and buy a pass only when the measured savings are clear.",
       },
     ],
     "korea-now-and-more": [
@@ -854,46 +891,83 @@ const LEAF_FAQ_BY_LANG: Record<SupportedLang, Record<string, LeafFaqItem[]>> = {
     ],
     "which-city-fits-you-best": [
       {
-        question: "Para quien NO es ideal este enfoque para elegir ciudad?",
+        question: "Debo leer esto aunque ya haya elegido ciudad?",
         answer:
-          "Puede no funcionar bien si tu viaje dura menos de tres dias completos, gira en torno a un solo evento, o requiere un ritmo mas lento por limites de movilidad. En esos casos, suele ser mejor priorizar la conveniencia y elegir la base mas facil.",
+          "Si. Esta pagina te ayuda a validar tu eleccion con friccion de traslados, ritmo real y temporada antes de cerrar reservas.",
       },
       {
-        question: "Puedo elegir solo por rankings de popularidad?",
+        question: "Cual es el primer filtro para elegir ciudad en Corea?",
         answer:
-          "No de forma confiable. Los destinos populares no siempre encajan con tu ritmo de viaje, tu tolerancia a traslados largos o las condiciones de temporada.",
+          "Empieza por tu tolerancia diaria a moverte. Una ciudad solo funciona si la carga real de traslados te deja tiempo y energia para disfrutar.",
       },
       {
-        question: "Cual es la opcion mas segura si sigo indeciso?",
+        question: "Cuando Seul es la base mas segura por defecto?",
         answer:
-          "Empieza con Seúl como base principal. Una vez que confirmes tiempos de traslado realistas para tus fechas, puedes agregar una ciudad de contraste si todavia encaja en tu calendario.",
+          "Seul suele ser la opcion mas segura para primer viaje, itinerarios cortos o planes aun indefinidos por su transporte y oferta de alojamiento.",
       },
       {
-        question: "Que trade-off pesa mas al elegir ciudad?",
+        question: "Que error comun cometen los viajeros en esta decision?",
         answer:
-          "La friccion de transporte. Una ciudad puede verse perfecta en fotos, pero si el movimiento diario exige traslados largos, el viaje puede sentirse mas agotador de lo esperado.",
+          "Elegir solo por popularidad. Una ciudad puede verse ideal en redes, pero cansarte en la practica por traslados diarios largos.",
+      },
+      {
+        question: "Que debo hacer despues de leer esta pagina?",
+        answer:
+          "Elige una ciudad principal que encaje con tu ritmo y define solo una opcion de respaldo por si cambian fechas o tiempos reales.",
+      },
+    ],
+    "what-should-i-try-first": [
+      {
+        question: "Debo leer esto antes de mi primera comida en Corea?",
+        answer:
+          "Si. Esta pagina te da una estructura practica para empezar sin pedir de mas ni lanzarte solo a platos extremos.",
+      },
+      {
+        question: "Cual es la seleccion mas segura para empezar con comida coreana?",
+        answer:
+          "Empieza con equilibrio: una comida con arroz, una sopa o guiso, una proteina a la parrilla y una opcion de acompanamientos.",
+      },
+      {
+        question: "Que error comun deben evitar quienes prueban comida coreana por primera vez?",
+        answer:
+          "Empezar solo con platos muy picantes o demasiado intensos. Eso suele cansar temprano y limitar lo que pruebas despues.",
+      },
+      {
+        question: "Que hago si no tolero bien el picante?",
+        answer:
+          "Pide opciones suaves al principio y sube el nivel poco a poco. Hay muchos platos no picantes que representan bien la cocina coreana.",
+      },
+      {
+        question: "Que debo hacer despues de leer esta pagina?",
+        answer:
+          "Elige de tres a cinco platos base para tus dos primeros dias y luego amplia por barrios segun tu nivel de comodidad.",
       },
     ],
     "attraction-passes-discounts": [
       {
-        question: "Quienes suelen estar mejor sin pases de atracciones?",
+        question: "Todo viajero primerizo debe comprar un pase de atracciones en Corea?",
         answer:
-          "Quienes prefieren horarios flexibles, planean visitar solo una o dos atracciones pagas por dia, o no quieren ventanas horarias estrictas suelen estar mejor sin pase.",
+          "No. El pase es opcional y solo conviene cuando tu ruta real coincide con la cobertura y las reglas de tiempo del pase.",
       },
       {
-        question: "Comprar un pase siempre ahorra dinero?",
+        question: "Cuando un pase suele ahorrar dinero?",
         answer:
-          "No. Un pase solo ahorra dinero si la cantidad de atracciones que visitas y tus horarios realmente coinciden con las condiciones del pase.",
+          "Normalmente cuando vas a visitar varias atracciones pagas incluidas en una ventana corta y, sin pase, comprarias cada entrada por separado.",
       },
       {
-        question: "Cual es el error mas comun con los pases de atracciones?",
+        question: "Que senal indica que deberia evitar el pase?",
         answer:
-          "Comprar un pase antes de planificar la ruta. Luego muchos viajeros se sienten presionados a recorrer atracciones con prisa solo para \"aprovechar bien el pase\".",
+          "Si tu agenda es flexible o incierta, las ventanas estrictas del pase pueden meterte presion y bajar la calidad del viaje.",
+      },
+      {
+        question: "Que debo verificar antes de comprar cualquier pase?",
+        answer:
+          "Revisa atracciones incluidas, fechas bloqueadas, reglas de activacion y si realmente podras usar suficientes entradas en tu ruta.",
       },
       {
         question: "Cual es la regla mas segura para decidir?",
         answer:
-          "Primero planifica una ruta realista. Luego compara el costo total de entradas individuales con el precio del pase usando paginas oficiales de informacion.",
+          "Primero arma la ruta, luego calcula entradas sueltas y compra pase solo si el ahorro real queda claro.",
       },
     ],
     "korea-now-and-more": [

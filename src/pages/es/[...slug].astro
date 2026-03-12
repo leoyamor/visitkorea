@@ -99,21 +99,48 @@ const ES_LEAF_OVERRIDES: Record<
       },
     },
   },
+  "which-city-fits-you-best": {
+    title: "Que ciudad de Corea te conviene mas?",
+    description:
+      "Decide entre Seul, Busan, Jeju, Gyeongju y Jeonju segun tu ritmo, traslados y temporada.",
+    quickAnswer:
+      "Empieza por tu ritmo real de viaje. Seul suele ser la base mas facil, Busan aporta contraste costero, Jeju exige mas logistica y Gyeongju o Jeonju funcionan mejor para un ritmo tranquilo.",
+  },
   "getting-around-korea": {
     quickAnswer:
       "Cada tarjeta abre una guía práctica para moverse por Corea, con opciones de transporte, rutas y consejos útiles para viajar.",
   },
   "what-to-eat": {
+    title: "Que comer",
+    description:
+      "Guia practica para elegir que probar primero, como pedir sin estres y como ajustar el picante segun tu nivel.",
     quickAnswer:
       "Cada tarjeta abre una guía clara sobre comida coreana: qué probar primero, cómo encontrar restaurantes buenos y asequibles, y qué platos conviene probar con precaución.",
+  },
+  "what-should-i-try-first": {
+    title: "Que comida probar primero en Corea?",
+    description:
+      "Una ruta simple para tu primera comida coreana: platos base, nivel de picante y orden para probar sin estres.",
+    quickAnswer:
+      "Empieza con 5 a 7 platos base y sube el picante gradualmente. Equilibra arroz, sopa, proteina y un plato picante para encontrar rapido que te gusta sin sobrecargar el estomago.",
   },
   "where-to-stay": {
     quickAnswer:
       "Cada tarjeta abre una guía clara sobre dónde alojarse en Corea, con opciones de mejor relación calidad-precio, alojamientos económicos y hoteles de lujo para distintos estilos de viaje.",
   },
   "things-to-do": {
+    title: "Que hacer",
+    description:
+      "Actividades y atracciones en Corea explicadas por costo, ritmo y ahorro real para que planifiques mejor cada dia.",
     quickAnswer:
       "Cada tarjeta abre una guía clara sobre qué hacer en Corea: desde lugares imprescindibles para quienes visitan por primera vez hasta formas de explorar el país a tu manera y pases de atracciones que ayudan a ahorrar dinero.",
+  },
+  "attraction-passes-discounts": {
+    title: "Pases de atracciones y descuentos en Corea: cuando si valen la pena",
+    description:
+      "Aprende cuando un pase realmente ahorra dinero y cuando conviene pagar entradas sueltas segun ruta, tiempos y condiciones.",
+    quickAnswer:
+      "Un pase solo vale la pena si ya planeas varias atracciones pagas en poco tiempo. Si prefieres flexibilidad, las entradas sueltas suelen dar mejor control y menos presion.",
   },
   "before-you-go": {
     title: "Antes de viajar",
@@ -1509,14 +1536,20 @@ const ROUTE_META_DESCRIPTION_OVERRIDES: Record<string, string> = {
     "Duracion, ritmo y flujo entre ciudades en 7-14 dias. Arma un plan realista para Corea en unos 10 minutos.",
   "/choose-a-city":
     "Compara Seúl, Busan, Jeju y mas en 5 minutos. Elige ciudad segun estilo de viaje, ritmo y traslados.",
+  "/choose-a-city/which-city-fits-you-best":
+    "Decide entre Seúl, Busan, Jeju, Gyeongju y Jeonju segun tu ritmo, la friccion de traslado y la temporada real de viaje.",
   "/getting-around-korea":
     "Metro, bus, taxi y tarjetas de transporte en 7 minutos. Un viaje basico de metro suele empezar cerca de 1,400 KRW.",
   "/what-to-eat":
     "Comida coreana facil para empezar en 5 minutos. Prueba 5-7 platos base antes de elegir opciones picantes.",
+  "/what-to-eat/what-should-i-try-first":
+    "Empieza con 5-7 platos coreanos base, ajusta el picante por etapas y arma tu primera ruta de comida sin estres.",
   "/where-to-stay":
     "Elige zona y tipo de alojamiento en 8 minutos. Un hotel de rango medio suele costar aprox. 80,000-180,000 KRW por noche.",
   "/things-to-do":
     "Atracciones clave, planes por ciudad y costos en 7 minutos. Muchos lugares populares van de gratis a 20,000 KRW.",
+  "/things-to-do/attraction-passes-discounts":
+    "Aprende cuando un pase de atracciones ahorra de verdad y cuando conviene pagar entradas sueltas para mantener flexibilidad.",
   "/travel-basics":
     "SIM/eSIM, tarjeta o efectivo y seguridad en Corea, explicado en 5 minutos. Un plan SIM tipico cuesta aprox. 15,000-30,000 KRW.",
   "/before-you-go":
@@ -1533,6 +1566,12 @@ const ROUTE_META_DESCRIPTION_OVERRIDES: Record<string, string> = {
 const ROUTE_META_TITLE_OVERRIDES: Record<string, string> = {
   "/latest-travel-updates-for-korea":
     "Actualizaciones de Viaje a Corea 2026: Entrada, K-ETA y Aeropuerto",
+  "/choose-a-city/which-city-fits-you-best":
+    "Que ciudad de Corea te conviene mas? Guia rapida 2026",
+  "/what-to-eat/what-should-i-try-first":
+    "Que comer primero en Corea: guia practica para empezar",
+  "/things-to-do/attraction-passes-discounts":
+    "Pases de atracciones en Corea: cuando ahorran de verdad",
 };
 const routePath = segments.length ? `/${segments.join("/")}` : "/";
 const routePathWithSlash = routePath === "/" ? "/" : `${routePath}/`;

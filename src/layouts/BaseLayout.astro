@@ -287,18 +287,18 @@ const schemaJson = JSON.stringify({
     <link
       rel="preload"
       as="style"
-      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Plus+Jakarta+Sans:wght@600;700&family=Work+Sans:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Plus+Jakarta+Sans:wght@600;700&family=Work+Sans:wght@300;400;500;600&display=optional"
     />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Plus+Jakarta+Sans:wght@600;700&family=Work+Sans:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Plus+Jakarta+Sans:wght@600;700&family=Work+Sans:wght@300;400;500;600&display=optional"
       media="print"
       onload="this.media='all'"
     />
     <noscript>
       <link
         rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Plus+Jakarta+Sans:wght@600;700&family=Work+Sans:wght@300;400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Plus+Jakarta+Sans:wght@600;700&family=Work+Sans:wght@300;400;500;600&display=optional"
       />
     </noscript>
     <meta name="description" content={description} />
@@ -323,6 +323,33 @@ const schemaJson = JSON.stringify({
     <script type="application/ld+json" set:html={schemaJson} />
     <title>{title}</title>
     <style>
+      @font-face {
+        font-family: "Work Sans Fallback";
+        src: local("Arial");
+        ascent-override: 92%;
+        descent-override: 24%;
+        line-gap-override: 0%;
+        size-adjust: 102%;
+      }
+
+      @font-face {
+        font-family: "Plus Jakarta Sans Fallback";
+        src: local("Arial");
+        ascent-override: 92%;
+        descent-override: 24%;
+        line-gap-override: 0%;
+        size-adjust: 101%;
+      }
+
+      @font-face {
+        font-family: "Fraunces Fallback";
+        src: local("Georgia");
+        ascent-override: 90%;
+        descent-override: 22%;
+        line-gap-override: 0%;
+        size-adjust: 104%;
+      }
+
       :root {
         color-scheme: dark;
         --bg-0: #120e0b;
@@ -362,7 +389,13 @@ const schemaJson = JSON.stringify({
 
       body {
         margin: 0;
-        font-family: "Work Sans", system-ui, sans-serif;
+        font-family:
+          "Work Sans",
+          "Work Sans Fallback",
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          sans-serif;
         color: var(--text-soft);
         background:
           radial-gradient(1200px 600px at 20% -10%, rgba(255, 255, 255, 0.06), transparent 55%),

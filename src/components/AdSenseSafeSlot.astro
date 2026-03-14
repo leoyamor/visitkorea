@@ -71,9 +71,8 @@ const showPlaceholder = import.meta.env.DEV && !isEnabled;
           const status = slotEl.getAttribute("data-ad-status");
           if (status === "filled") return true;
           if (slotEl.querySelector("iframe")) return true;
-          const hasChildren = slotEl.children.length > 0;
-          const hasHeight = slotEl.getBoundingClientRect().height >= 32;
-          return hasChildren && hasHeight;
+          if (slotEl.querySelector("[data-google-query-id]")) return true;
+          return false;
         };
 
         const refreshCollapseState = () => {
@@ -87,18 +86,27 @@ const showPlaceholder = import.meta.env.DEV && !isEnabled;
           }
         };
 
+        let collapseRefreshRafId = 0;
+        const scheduleCollapseRefresh = () => {
+          if (collapseRefreshRafId) return;
+          collapseRefreshRafId = window.requestAnimationFrame(() => {
+            collapseRefreshRafId = 0;
+            refreshCollapseState();
+          });
+        };
+
         const watchFillState = () => {
           if (!slotEl) return;
-          const observer = new MutationObserver(refreshCollapseState);
+          const observer = new MutationObserver(scheduleCollapseRefresh);
           observer.observe(slotEl, {
             attributes: true,
-            attributeFilter: ["data-ad-status", "style", "class"],
+            attributeFilter: ["data-ad-status"],
             childList: true,
             subtree: true,
           });
 
           window.setTimeout(() => {
-            refreshCollapseState();
+            scheduleCollapseRefresh();
             if (!isLikelyFilled()) {
               setCollapsed(true);
             }

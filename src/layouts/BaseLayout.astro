@@ -878,6 +878,7 @@ const schemaJson = JSON.stringify({
 
         const normalizeSpanishCityNames = () => {
           if (document.documentElement.lang !== "es") return;
+          if (!hasTranslatedClass()) return;
 
           const attrSelectors = "[title],[aria-label],[alt],[data-card-title]";
           const attrNames = ["title", "aria-label", "alt", "data-card-title"];
@@ -910,10 +911,14 @@ const schemaJson = JSON.stringify({
         };
 
         let cityNameFixRafId = 0;
+        let cityNameFixRunCount = 0;
+        const CITY_NAME_FIX_MAX_RUNS = 6;
         const scheduleSpanishCityNameNormalization = () => {
+          if (cityNameFixRunCount >= CITY_NAME_FIX_MAX_RUNS) return;
           if (cityNameFixRafId) return;
           cityNameFixRafId = window.requestAnimationFrame(() => {
             cityNameFixRafId = 0;
+            cityNameFixRunCount += 1;
             normalizeSpanishCityNames();
           });
         };
@@ -963,17 +968,28 @@ const schemaJson = JSON.stringify({
             applyTranslateAccessibilityFixes();
           });
         };
-        let translateA11yObserverStarted = false;
+        let translateA11yObserver = null;
+        let translateA11yObserverStopTimerId = 0;
+        const stopTranslateAccessibilityObserver = () => {
+          if (translateA11yObserver) {
+            translateA11yObserver.disconnect();
+            translateA11yObserver = null;
+          }
+          if (translateA11yObserverStopTimerId) {
+            window.clearTimeout(translateA11yObserverStopTimerId);
+            translateA11yObserverStopTimerId = 0;
+          }
+        };
         const ensureTranslateAccessibilityObserver = () => {
-          if (translateA11yObserverStarted) return;
-          translateA11yObserverStarted = true;
-          const translateA11yObserver = new MutationObserver(() => {
+          if (translateA11yObserver) return;
+          translateA11yObserver = new MutationObserver(() => {
             scheduleTranslateAccessibilityFixes();
           });
           translateA11yObserver.observe(document.body, {
             childList: true,
             subtree: true,
           });
+          translateA11yObserverStopTimerId = window.setTimeout(stopTranslateAccessibilityObserver, 12000);
           scheduleTranslateAccessibilityFixes();
         };
 
@@ -1041,6 +1057,29 @@ const schemaJson = JSON.stringify({
         };
         let spanishTranslateBooted = false;
         let spanishTranslateBootScheduled = false;
+        let cityNameObserver = null;
+        let cityNameObserverStopTimerId = 0;
+        const stopCityNameObserver = () => {
+          if (cityNameObserver) {
+            cityNameObserver.disconnect();
+            cityNameObserver = null;
+          }
+          if (cityNameObserverStopTimerId) {
+            window.clearTimeout(cityNameObserverStopTimerId);
+            cityNameObserverStopTimerId = 0;
+          }
+        };
+        const startCityNameObserver = () => {
+          if (cityNameObserver || !document.body) return;
+          cityNameObserver = new MutationObserver(() => {
+            scheduleSpanishCityNameNormalization();
+          });
+          cityNameObserver.observe(document.body, {
+            childList: true,
+            subtree: true,
+          });
+          cityNameObserverStopTimerId = window.setTimeout(stopCityNameObserver, 12000);
+        };
         const scheduleSpanishTranslateBoot = () => {
           if (spanishTranslateBooted || spanishTranslateBootScheduled) return;
           spanishTranslateBootScheduled = true;
@@ -1115,24 +1154,24 @@ const schemaJson = JSON.stringify({
             clearGoogTrans();
             return;
           }
+          cityNameFixRunCount = 0;
           scheduleSpanishTranslateBoot();
-          const cityNameObserver = new MutationObserver(() => {
-            scheduleSpanishCityNameNormalization();
-          });
-          cityNameObserver.observe(document.body, {
-            childList: true,
-            subtree: true,
-            characterData: true,
-          });
+          startCityNameObserver();
           window.addEventListener("pageshow", () => {
             spanishTranslateBooted = false;
             spanishTranslateBootScheduled = false;
+            cityNameFixRunCount = 0;
+            stopCityNameObserver();
+            startCityNameObserver();
             window.setTimeout(scheduleSpanishTranslateBoot, 0);
             scheduleSpanishCityNameNormalization();
           });
           window.addEventListener("popstate", () => {
             spanishTranslateBooted = false;
             spanishTranslateBootScheduled = false;
+            cityNameFixRunCount = 0;
+            stopCityNameObserver();
+            startCityNameObserver();
             window.setTimeout(scheduleSpanishTranslateBoot, 0);
             scheduleSpanishCityNameNormalization();
           });

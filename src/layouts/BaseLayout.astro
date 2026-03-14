@@ -818,6 +818,10 @@ const schemaJson = JSON.stringify({
           const normalized = normalizePath(pathname);
           return normalized === "/es" || normalized.startsWith("/es/");
         };
+        const isSpanishHomePath = (pathname) => {
+          const normalized = normalizePath(pathname);
+          return normalized === "/es" || normalized === "/es/";
+        };
 
         const normalizeLegacyLangQueryUrl = () => {
           const currentUrl = new URL(window.location.href);
@@ -1106,6 +1110,11 @@ const schemaJson = JSON.stringify({
           }, 260);
         };
         if (activeLang === "es") {
+          if (isSpanishHomePath(window.location.pathname)) {
+            clearEsRecoveryId();
+            clearGoogTrans();
+            return;
+          }
           scheduleSpanishTranslateBoot();
           const cityNameObserver = new MutationObserver(() => {
             scheduleSpanishCityNameNormalization();

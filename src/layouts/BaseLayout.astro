@@ -896,6 +896,25 @@ const schemaJson = JSON.stringify({
           document.body.classList.contains("translated-ltr") ||
           document.body.classList.contains("translated-rtl");
 
+        const isTranslateRelatedNode = (node) => {
+          if (!(node instanceof Element)) return false;
+          return Boolean(
+            node.id === "google_translate_element" ||
+            node.closest("#google_translate_element, .skiptranslate") ||
+            node.matches("iframe.goog-te-banner-frame, iframe.VIpgJd-ZVi9od-ORHb-OEVmcd")
+          );
+        };
+
+        const hasTranslateRelatedMutation = (mutations) => {
+          for (const mutation of mutations) {
+            if (isTranslateRelatedNode(mutation.target)) return true;
+            for (const node of mutation.addedNodes) {
+              if (isTranslateRelatedNode(node)) return true;
+            }
+          }
+          return false;
+        };
+
         const applySpanishCityNameFixes = (value) =>
           value
             .replace(/\bBusán\b/g, "Busan")
@@ -944,16 +963,34 @@ const schemaJson = JSON.stringify({
         };
 
         let cityNameFixRafId = 0;
+        let cityNameFixTimerId = 0;
+        let cityNameFixLastRunAt = 0;
         let cityNameFixRunCount = 0;
         const CITY_NAME_FIX_MAX_RUNS = 6;
+        const CITY_NAME_FIX_MIN_INTERVAL_MS = 700;
         const scheduleSpanishCityNameNormalization = () => {
           if (cityNameFixRunCount >= CITY_NAME_FIX_MAX_RUNS) return;
-          if (cityNameFixRafId) return;
-          cityNameFixRafId = window.requestAnimationFrame(() => {
-            cityNameFixRafId = 0;
-            cityNameFixRunCount += 1;
-            normalizeSpanishCityNames();
-          });
+          if (cityNameFixRafId || cityNameFixTimerId) return;
+
+          const run = () => {
+            cityNameFixRafId = window.requestAnimationFrame(() => {
+              cityNameFixRafId = 0;
+              cityNameFixLastRunAt = performance.now();
+              cityNameFixRunCount += 1;
+              normalizeSpanishCityNames();
+            });
+          };
+
+          const elapsed = performance.now() - cityNameFixLastRunAt;
+          const waitMs = Math.max(0, CITY_NAME_FIX_MIN_INTERVAL_MS - elapsed);
+          if (waitMs === 0) {
+            run();
+            return;
+          }
+          cityNameFixTimerId = window.setTimeout(() => {
+            cityNameFixTimerId = 0;
+            run();
+          }, waitMs);
         };
 
         const cookieVariants = [location.hostname, `.${location.hostname}`];
@@ -977,7 +1014,9 @@ const schemaJson = JSON.stringify({
             const focusableSelector = "a, button, input, select, textarea, [tabindex]";
             for (const node of translateRoot.querySelectorAll(focusableSelector)) {
               if (!(node instanceof HTMLElement)) continue;
-              node.setAttribute("tabindex", "-1");
+              if (node.getAttribute("tabindex") !== "-1") {
+                node.setAttribute("tabindex", "-1");
+              }
             }
           }
 
@@ -1008,6 +1047,10 @@ const schemaJson = JSON.stringify({
             translateA11yObserver.disconnect();
             translateA11yObserver = null;
           }
+          if (translateA11yFixRafId) {
+            window.cancelAnimationFrame(translateA11yFixRafId);
+            translateA11yFixRafId = 0;
+          }
           if (translateA11yObserverStopTimerId) {
             window.clearTimeout(translateA11yObserverStopTimerId);
             translateA11yObserverStopTimerId = 0;
@@ -1015,7 +1058,8 @@ const schemaJson = JSON.stringify({
         };
         const ensureTranslateAccessibilityObserver = () => {
           if (translateA11yObserver) return;
-          translateA11yObserver = new MutationObserver(() => {
+          translateA11yObserver = new MutationObserver((mutations) => {
+            if (!hasTranslateRelatedMutation(mutations)) return;
             scheduleTranslateAccessibilityFixes();
           });
           translateA11yObserver.observe(document.body, {
@@ -1097,6 +1141,14 @@ const schemaJson = JSON.stringify({
             cityNameObserver.disconnect();
             cityNameObserver = null;
           }
+          if (cityNameFixRafId) {
+            window.cancelAnimationFrame(cityNameFixRafId);
+            cityNameFixRafId = 0;
+          }
+          if (cityNameFixTimerId) {
+            window.clearTimeout(cityNameFixTimerId);
+            cityNameFixTimerId = 0;
+          }
           if (cityNameObserverStopTimerId) {
             window.clearTimeout(cityNameObserverStopTimerId);
             cityNameObserverStopTimerId = 0;
@@ -1117,6 +1169,7 @@ const schemaJson = JSON.stringify({
           if (spanishTranslateBooted || spanishTranslateBootScheduled) return;
           spanishTranslateBootScheduled = true;
           let started = false;
+          const AUTO_BOOT_DELAY_MS = 30000;
           const options = { passive: true };
           const cleanup = () => {
             window.removeEventListener("pointerdown", startNow, options);
@@ -1133,27 +1186,12 @@ const schemaJson = JSON.stringify({
             enforceSpanishRendering();
             scheduleSpanishCityNameNormalization();
           };
-          const startWhenIdle = () => {
-            if (started || spanishTranslateBooted) return;
-            if ("requestIdleCallback" in window) {
-              window.requestIdleCallback(startNow, { timeout: 6000 });
-              return;
-            }
-            window.setTimeout(startNow, 2500);
-          };
 
           window.addEventListener("pointerdown", startNow, options);
           window.addEventListener("keydown", startNow, options);
           window.addEventListener("touchstart", startNow, options);
           window.addEventListener("scroll", startNow, options);
-          if (document.readyState === "complete") {
-            window.setTimeout(startWhenIdle, 1200);
-          } else {
-            window.addEventListener("load", () => {
-              window.setTimeout(startWhenIdle, 1200);
-            }, { once: true });
-          }
-          window.setTimeout(startNow, 15000);
+          window.setTimeout(startNow, AUTO_BOOT_DELAY_MS);
         };
         const enforceSpanishRendering = () => {
           if (!isSpanishPath(window.location.pathname)) {

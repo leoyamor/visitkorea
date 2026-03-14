@@ -779,7 +779,7 @@ const schemaJson = JSON.stringify({
   </head>
   <body class={bodyClass}>
     <a href="#content" class="skip-link">Skip to content</a>
-    <div id="google_translate_element" aria-hidden="true"></div>
+    <div id="google_translate_element"></div>
     <main id="content">
       <slot />
     </main>
@@ -938,6 +938,51 @@ const schemaJson = JSON.stringify({
           }
         };
 
+        const TRANSLATE_IFRAME_TITLE = "Google Translate Widget";
+        const applyTranslateAccessibilityFixes = () => {
+          const translateRoot = document.getElementById("google_translate_element");
+          if (translateRoot) {
+            const focusableSelector = "a, button, input, select, textarea, [tabindex]";
+            for (const node of translateRoot.querySelectorAll(focusableSelector)) {
+              if (!(node instanceof HTMLElement)) continue;
+              node.setAttribute("tabindex", "-1");
+            }
+          }
+
+          const iframeSelector = [
+            "iframe.goog-te-banner-frame",
+            "iframe.VIpgJd-ZVi9od-ORHb-OEVmcd",
+            'body > .skiptranslate > iframe[id$=".container"]',
+          ].join(", ");
+          for (const frame of document.querySelectorAll(iframeSelector)) {
+            if (!(frame instanceof HTMLIFrameElement)) continue;
+            if (!frame.getAttribute("title")) {
+              frame.setAttribute("title", TRANSLATE_IFRAME_TITLE);
+            }
+          }
+        };
+        let translateA11yFixRafId = 0;
+        const scheduleTranslateAccessibilityFixes = () => {
+          if (translateA11yFixRafId) return;
+          translateA11yFixRafId = window.requestAnimationFrame(() => {
+            translateA11yFixRafId = 0;
+            applyTranslateAccessibilityFixes();
+          });
+        };
+        let translateA11yObserverStarted = false;
+        const ensureTranslateAccessibilityObserver = () => {
+          if (translateA11yObserverStarted) return;
+          translateA11yObserverStarted = true;
+          const translateA11yObserver = new MutationObserver(() => {
+            scheduleTranslateAccessibilityFixes();
+          });
+          translateA11yObserver.observe(document.body, {
+            childList: true,
+            subtree: true,
+          });
+          scheduleTranslateAccessibilityFixes();
+        };
+
         const initTranslate = () => {
           if (!window.google || !window.google.translate || !window.google.translate.TranslateElement) {
             return false;
@@ -950,10 +995,12 @@ const schemaJson = JSON.stringify({
             },
             "google_translate_element"
           );
+          scheduleTranslateAccessibilityFixes();
           return true;
         };
 
         const ensureSpanishTranslate = () => {
+          ensureTranslateAccessibilityObserver();
           setGoogTrans("/en/es");
           setGoogTrans("/auto/es");
           if (initTranslate()) {

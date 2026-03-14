@@ -166,10 +166,10 @@ const showPlaceholder = import.meta.env.DEV && !isEnabled;
             const startSoft = () => {
               if (started) return;
               if ("requestIdleCallback" in window) {
-                window.requestIdleCallback(startNow, { timeout: 1200 });
+                window.requestIdleCallback(startNow, { timeout: 3000 });
                 return;
               }
-              window.setTimeout(startNow, 500);
+              window.setTimeout(startNow, 1800);
             };
 
             window.addEventListener("pointerdown", startNow, options);
@@ -182,7 +182,7 @@ const showPlaceholder = import.meta.env.DEV && !isEnabled;
             } else {
               window.addEventListener("load", startSoft, { once: true });
             }
-            window.setTimeout(startNow, 3500);
+            window.setTimeout(startNow, 12000);
           });
 
           return window.__visitkoreaAdStartPromise;
@@ -190,10 +190,10 @@ const showPlaceholder = import.meta.env.DEV && !isEnabled;
 
         const scheduleWhenIdle = () => {
           if ("requestIdleCallback" in window) {
-            window.requestIdleCallback(schedule, { timeout: 1200 });
+            window.requestIdleCallback(schedule, { timeout: 3000 });
             return;
           }
-          window.setTimeout(schedule, 300);
+          window.setTimeout(schedule, 900);
         };
 
         const waitForSlotSignal = () => {
@@ -214,10 +214,10 @@ const showPlaceholder = import.meta.env.DEV && !isEnabled;
                 if (!entries.some((entry) => entry.isIntersecting)) return;
                 finish();
               },
-              { rootMargin: "900px 0px" }
+              { rootMargin: "300px 0px" }
             );
             observer.observe(slotEl);
-            window.setTimeout(finish, 4500);
+            window.setTimeout(finish, 12000);
           });
         };
 

@@ -11,7 +11,6 @@ import {
   EDITORIAL_REVIEWER_NAME,
   EDITORIAL_UPDATED_ISO,
 } from "../lib/editorial";
-import { ADSENSE_CLIENT_ID } from "../lib/ads";
 
 type BreadcrumbItem = {
   label: string;
@@ -60,8 +59,6 @@ const homeLabel = lang === "es" ? "Inicio" : "Home";
 const localizedHomePath = withLang("/", lang);
 const HOME_HERO_IMAGE_DESKTOP = "/hanok-hero-home.webp?v=20260210q";
 const HOME_HERO_IMAGE_MOBILE = "/leaf%20images/thumbs/hanok_hero.webp?v=20260211a";
-const adsenseClientId = ADSENSE_CLIENT_ID;
-const adsenseEnabled = adsenseClientId.length > 0;
 const gaMeasurementId = "G-VKP8CHGJKH";
 const gaEnabled = true;
 const footerLinks = [
@@ -180,14 +177,6 @@ const schemaJson = JSON.stringify({
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta name="author" content={siteName} />
     <link rel="icon" href="/favicon.ico" />
-    {adsenseEnabled ? (
-      <script
-        async
-        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClientId}`}
-        crossorigin="anonymous"
-        data-adsense-loader="true"
-      />
-    ) : null}
     {gaEnabled ? (
       <>
         <script is:inline define:vars={{ gaMeasurementId }}>
@@ -295,6 +284,13 @@ const schemaJson = JSON.stringify({
     <link rel="dns-prefetch" href="//fonts.gstatic.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    {lang === "es" ? (
+      <>
+        <link rel="preconnect" href="https://translate.googleapis.com" />
+        <link rel="preconnect" href="https://translate-pa.googleapis.com" crossorigin />
+        <link rel="preconnect" href="https://www.google.com" />
+      </>
+    ) : null}
     <link
       rel="preload"
       as="style"
@@ -1045,6 +1041,20 @@ const schemaJson = JSON.stringify({
             // Ignore session storage failures.
           }
         };
+        let spanishTranslateBooted = false;
+        const scheduleSpanishTranslateBoot = () => {
+          if (spanishTranslateBooted) return;
+          spanishTranslateBooted = true;
+          const start = () => {
+            enforceSpanishRendering();
+            scheduleSpanishCityNameNormalization();
+          };
+          if ("requestIdleCallback" in window) {
+            window.requestIdleCallback(start, { timeout: 1800 });
+            return;
+          }
+          window.setTimeout(start, 450);
+        };
         const enforceSpanishRendering = () => {
           if (!isSpanishPath(window.location.pathname)) {
             return;
@@ -1072,8 +1082,7 @@ const schemaJson = JSON.stringify({
           }, 260);
         };
         if (activeLang === "es") {
-          enforceSpanishRendering();
-          scheduleSpanishCityNameNormalization();
+          scheduleSpanishTranslateBoot();
           const cityNameObserver = new MutationObserver(() => {
             scheduleSpanishCityNameNormalization();
           });
@@ -1083,11 +1092,13 @@ const schemaJson = JSON.stringify({
             characterData: true,
           });
           window.addEventListener("pageshow", () => {
-            window.setTimeout(enforceSpanishRendering, 0);
+            spanishTranslateBooted = false;
+            window.setTimeout(scheduleSpanishTranslateBoot, 0);
             scheduleSpanishCityNameNormalization();
           });
           window.addEventListener("popstate", () => {
-            window.setTimeout(enforceSpanishRendering, 0);
+            spanishTranslateBooted = false;
+            window.setTimeout(scheduleSpanishTranslateBoot, 0);
             scheduleSpanishCityNameNormalization();
           });
           return;

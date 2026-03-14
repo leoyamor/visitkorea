@@ -284,13 +284,6 @@ const schemaJson = JSON.stringify({
     <link rel="dns-prefetch" href="//fonts.gstatic.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    {lang === "es" ? (
-      <>
-        <link rel="preconnect" href="https://translate.googleapis.com" />
-        <link rel="preconnect" href="https://translate-pa.googleapis.com" crossorigin />
-        <link rel="preconnect" href="https://www.google.com" />
-      </>
-    ) : null}
     <link
       rel="preload"
       as="style"
@@ -510,11 +503,6 @@ const schemaJson = JSON.stringify({
         pointer-events: none;
       }
 
-      #google_translate_element img[src*="googlelogo_color_42x16dp.png"] {
-        width: 1px !important;
-        height: 1px !important;
-      }
-
     </style>
     <style is:global>
       .goog-te-banner-frame.skiptranslate,
@@ -528,6 +516,12 @@ const schemaJson = JSON.stringify({
 
       body {
         top: 0 !important;
+      }
+
+      #google_translate_element img[src*="googlelogo_color_42x16dp.png"],
+      .skiptranslate img[src*="googlelogo_color_42x16dp.png"] {
+        width: 1px !important;
+        height: 1px !important;
       }
 
       html.translated-ltr body.home-bg,
@@ -1042,18 +1036,48 @@ const schemaJson = JSON.stringify({
           }
         };
         let spanishTranslateBooted = false;
+        let spanishTranslateBootScheduled = false;
         const scheduleSpanishTranslateBoot = () => {
-          if (spanishTranslateBooted) return;
-          spanishTranslateBooted = true;
-          const start = () => {
+          if (spanishTranslateBooted || spanishTranslateBootScheduled) return;
+          spanishTranslateBootScheduled = true;
+          let started = false;
+          const options = { passive: true };
+          const cleanup = () => {
+            window.removeEventListener("pointerdown", startNow, options);
+            window.removeEventListener("keydown", startNow, options);
+            window.removeEventListener("touchstart", startNow, options);
+            window.removeEventListener("scroll", startNow, options);
+          };
+          const startNow = () => {
+            if (started || spanishTranslateBooted) return;
+            started = true;
+            cleanup();
+            spanishTranslateBootScheduled = false;
+            spanishTranslateBooted = true;
             enforceSpanishRendering();
             scheduleSpanishCityNameNormalization();
           };
-          if ("requestIdleCallback" in window) {
-            window.requestIdleCallback(start, { timeout: 1800 });
-            return;
+          const startWhenIdle = () => {
+            if (started || spanishTranslateBooted) return;
+            if ("requestIdleCallback" in window) {
+              window.requestIdleCallback(startNow, { timeout: 6000 });
+              return;
+            }
+            window.setTimeout(startNow, 2500);
+          };
+
+          window.addEventListener("pointerdown", startNow, options);
+          window.addEventListener("keydown", startNow, options);
+          window.addEventListener("touchstart", startNow, options);
+          window.addEventListener("scroll", startNow, options);
+          if (document.readyState === "complete") {
+            window.setTimeout(startWhenIdle, 1200);
+          } else {
+            window.addEventListener("load", () => {
+              window.setTimeout(startWhenIdle, 1200);
+            }, { once: true });
           }
-          window.setTimeout(start, 450);
+          window.setTimeout(startNow, 15000);
         };
         const enforceSpanishRendering = () => {
           if (!isSpanishPath(window.location.pathname)) {
@@ -1093,11 +1117,13 @@ const schemaJson = JSON.stringify({
           });
           window.addEventListener("pageshow", () => {
             spanishTranslateBooted = false;
+            spanishTranslateBootScheduled = false;
             window.setTimeout(scheduleSpanishTranslateBoot, 0);
             scheduleSpanishCityNameNormalization();
           });
           window.addEventListener("popstate", () => {
             spanishTranslateBooted = false;
+            spanishTranslateBootScheduled = false;
             window.setTimeout(scheduleSpanishTranslateBoot, 0);
             scheduleSpanishCityNameNormalization();
           });

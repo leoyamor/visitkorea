@@ -2815,18 +2815,23 @@ const breadcrumb = breadcrumbs;
       if (!pathname) return "/";
       return pathname.startsWith("/") ? pathname : `/${pathname}`;
     };
+    const ES_PREFIX = "/es/";
     const hasFileExtension = (pathname) => /\/[^/]+\.[^/]+$/.test(pathname);
-    const withTrailingSlash = (pathname) => {
-      if (pathname === "/" || hasFileExtension(pathname) || pathname.endsWith("/")) {
-        return pathname;
+    const withCanonicalTrailingSlash = (pathname) => {
+      const normalized = normalizePath(pathname);
+      if (
+        normalized === "/" ||
+        hasFileExtension(normalized) ||
+        normalized.endsWith("/")
+      ) {
+        return normalized;
       }
-      return `${pathname}/`;
+      return `${normalized}/`;
     };
     const stripEsPrefix = (pathname) => {
-      const normalized = normalizePath(pathname);
-      if (normalized === "/es") return "/";
-      if (normalized.startsWith("/es/")) {
-        const stripped = normalized.slice(3);
+      const normalized = withCanonicalTrailingSlash(pathname);
+      if (normalized.startsWith(ES_PREFIX)) {
+        const stripped = normalized.slice(ES_PREFIX.length - 1);
         return stripped || "/";
       }
       return normalized;
@@ -2836,14 +2841,13 @@ const breadcrumb = breadcrumbs;
       const localizedPath =
         targetLang === "es"
           ? base === "/"
-            ? "/es/"
-            : `/es${base}`
+            ? ES_PREFIX
+            : `${ES_PREFIX}${base.slice(1)}`
           : base;
-      return withTrailingSlash(localizedPath);
+      return withCanonicalTrailingSlash(localizedPath);
     };
     const isSpanishPath = (pathname) => {
-      const normalized = normalizePath(pathname);
-      return normalized === "/es" || normalized.startsWith("/es/");
+      return withCanonicalTrailingSlash(pathname).startsWith(ES_PREFIX);
     };
     const getCurrentLang = () => {
       return isSpanishPath(window.location.pathname) ? "es" : "en";

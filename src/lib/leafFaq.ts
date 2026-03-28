@@ -106,22 +106,22 @@ const LEAF_FAQ_BY_LANG: Record<SupportedLang, Record<string, LeafFaqItem[]>> = {
       {
         question: "When is buying insurance the rational choice?",
         answer:
-          "Consider it if one medical bill, flight disruption, or lost bag would noticeably affect your travel budget.",
+          "If a 300-1,000+ USD unexpected cost would affect your travel budget, insurance is usually worth it.",
       },
       {
         question: "What coverage should I compare first?",
         answer:
-          "Start with emergency medical treatment and hospitalization coverage. Then consider trip delay, cancellation, and baggage protection depending on your itinerary.",
+          "Start with emergency medical treatment and hospitalization, then consider delay and baggage coverage.",
       },
       {
         question: "Do I need coverage for winter or outdoor activities?",
         answer:
-          "Yes if you plan activities like skiing, hiking, or similar sports. Standard plans sometimes exclude these unless additional coverage is added.",
+          "Yes. Activities like skiing or hiking are often excluded unless explicitly covered.",
       },
       {
         question: "Unusual case: If I rent a scooter or e-bike for one day, is it covered?",
         answer:
-          "Not always. Some policies exclude two-wheel vehicles, so check the wording before assuming you are covered.",
+          "Not always. Many policies exclude two-wheel vehicles, so check before assuming coverage.",
       },
     ],
     "7-days-in-korea": [
@@ -575,27 +575,27 @@ const LEAF_FAQ_BY_LANG: Record<SupportedLang, Record<string, LeafFaqItem[]>> = {
       {
         question: "Es obligatorio el seguro para entrar a Corea?",
         answer:
-          "Normalmente no. La mayoria de visitantes de corta estancia que entran sin visado o con K-ETA no necesita seguro de viaje para inmigracion.",
+          "Normalmente no. La mayoria de viajeros con entrada sin visado o K-ETA no lo necesitan.",
       },
       {
-        question: "Cuando es una decision racional contratarlo?",
+        question: "Cuando merece la pena contratarlo?",
         answer:
-          "Consideralo si una factura medica, una interrupcion de vuelo o una maleta perdida afectaria de forma visible tu presupuesto de viaje.",
+          "Cuando un gasto inesperado de 300-1.000 USD o mas afectaria tu presupuesto.",
       },
       {
         question: "Que cobertura conviene comparar primero?",
         answer:
-          "Empieza por tratamiento medico de emergencia y hospitalizacion. Luego evalua retrasos, cancelaciones y proteccion de equipaje segun tu itinerario.",
+          "Empieza por atencion medica y hospitalizacion, luego anade retrasos y equipaje.",
       },
       {
-        question: "Necesito cobertura para actividades de invierno o al aire libre?",
+        question: "Necesito cobertura para actividades como esqui o senderismo?",
         answer:
-          "Si, si planeas actividades como esqui, senderismo o deportes similares. Los planes estandar a veces las excluyen salvo que agregues cobertura adicional.",
+          "Si. Muchas polizas no lo incluyen automaticamente.",
       },
       {
-        question: "Caso poco comun: si alquilo scooter o bici electrica un dia, suele cubrirme?",
+        question: "Caso especial: si alquilo una moto o bicicleta electrica, estoy cubierto?",
         answer:
-          "No siempre. Algunas polizas excluyen vehiculos de dos ruedas, asi que revisa el texto antes de asumir que estas cubierto.",
+          "No siempre. Muchas polizas excluyen vehiculos de dos ruedas.",
       },
     ],
     "7-days-in-korea": [

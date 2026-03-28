@@ -711,7 +711,7 @@ export const localizedContentByPath: LocalizedContentByPath = {
       description:
         "Best for travelers whose budget would be hit hard by a medical bill, delay, or lost bag, and who want to compare realistic risk.",
       quickAnswer:
-        "Travel insurance is not required for most short-term visitors entering South Korea in 2026. You should buy it if one medical bill, delay, or baggage problem would materially hurt your trip budget. You may skip it only if you can comfortably self-fund emergency care and disruption costs, and your visa category does not require insurance. Next decision: confirm entry rules on Korea Entry Requirements and finalize your arrival data setup on SIM or eSIM before choosing a policy.",
+        "Travel insurance for South Korea is not required for most short-term visitors in 2026. You should consider buying it if a 300-1,000+ USD unexpected cost such as a medical visit, trip delay, or lost baggage would affect your travel budget. Medical care in South Korea is high quality but not free, and emergency treatment or hospitalization can still cost hundreds to thousands of dollars without insurance. You may skip insurance only if you can comfortably pay for medical care, delays, and disruptions yourself, and your visa type does not require insurance coverage. Next decision: check your Korea entry requirements (K-ETA, visa, arrival rules) and set up your SIM or eSIM before choosing a policy.",
       content: [],
     },
     es: {
@@ -719,7 +719,7 @@ export const localizedContentByPath: LocalizedContentByPath = {
       description:
         "Ideal para quien podria resentir una factura medica, un retraso o una maleta perdida y quiere comparar riesgo real.",
       quickAnswer:
-        "El seguro de viaje no es obligatorio para la mayoria de visitantes de corta estancia en Corea del Sur en 2026. Deberias contratarlo si una sola factura medica, retraso o problema de equipaje puede afectar de forma importante tu presupuesto. Puedes omitirlo solo si puedes cubrir por tu cuenta atencion de emergencia y costos de interrupcion, y si tu categoria de visado no exige seguro. Siguiente decision: confirma reglas de entrada en Requisitos de entrada a Corea y resuelve tus datos de llegada en SIM o eSIM antes de elegir poliza.",
+        "El seguro de viaje para Corea del Sur no es obligatorio para la mayoria de los visitantes de corta duracion en 2026. Deberias considerar contratarlo si un gasto inesperado de 300-1.000 USD o mas, como una consulta medica, un retraso de vuelo o la perdida de equipaje, podria afectar tu presupuesto de viaje. La atencion medica en Corea del Sur es de alta calidad, pero no es gratuita, y un tratamiento de emergencia o una hospitalizacion pueden costar cientos o miles de dolares sin seguro. Puedes prescindir del seguro solo si puedes pagar sin problema gastos medicos, retrasos e imprevistos, y tu tipo de visado no exige seguro. Siguiente decision: revisa los requisitos de entrada a Corea (K-ETA, visado, normas de llegada) y configura tu SIM o eSIM antes de elegir una poliza.",
       content: [
         {
           title: "Necesito seguro de viaje para Corea del Sur? (Guia 2026)",

@@ -711,7 +711,7 @@ export const localizedContentByPath: LocalizedContentByPath = {
       description:
         "Best for travelers whose budget would be hit hard by a medical bill, delay, or lost bag, and who want to compare realistic risk.",
       quickAnswer:
-        "Travel insurance is not mandatory under visa-free travel or K-ETA, but most travelers buy a basic plan because medical treatment is not free for tourists.",
+        "Travel insurance is not required for most short-term visitors entering South Korea in 2026. You should buy it if one medical bill, delay, or baggage problem would materially hurt your trip budget. You may skip it only if you can comfortably self-fund emergency care and disruption costs, and your visa category does not require insurance. Next decision: confirm entry rules on Korea Entry Requirements and finalize your arrival data setup on SIM or eSIM before choosing a policy.",
       content: [],
     },
     es: {
@@ -719,7 +719,7 @@ export const localizedContentByPath: LocalizedContentByPath = {
       description:
         "Ideal para quien podria resentir una factura medica, un retraso o una maleta perdida y quiere comparar riesgo real.",
       quickAnswer:
-        "El seguro de viaje no es obligatorio bajo viaje sin visado o K-ETA, pero muchos viajeros contratan un plan basico porque la atencion medica no es gratuita para turistas.",
+        "El seguro de viaje no es obligatorio para la mayoria de visitantes de corta estancia en Corea del Sur en 2026. Deberias contratarlo si una sola factura medica, retraso o problema de equipaje puede afectar de forma importante tu presupuesto. Puedes omitirlo solo si puedes cubrir por tu cuenta atencion de emergencia y costos de interrupcion, y si tu categoria de visado no exige seguro. Siguiente decision: confirma reglas de entrada en Requisitos de entrada a Corea y resuelve tus datos de llegada en SIM o eSIM antes de elegir poliza.",
       content: [
         {
           title: "Necesito seguro de viaje para Corea del Sur? (Guia 2026)",

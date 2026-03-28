@@ -5315,136 +5315,77 @@ export const siteTree: TreeNode = {
           description:
             "Best for travelers whose budget would be hit hard by a medical bill, delay, or lost bag, and who want to compare realistic risk.",
           quickAnswer:
-            "Travel insurance is not mandatory under visa-free travel or K-ETA, but most travelers buy a basic plan because medical treatment is not free for tourists.",
+            "Travel insurance is not required for most short-term visitors entering South Korea in 2026. You should buy it if one medical bill, delay, or baggage problem would materially hurt your trip budget. You may skip it only if you can comfortably self-fund emergency care and disruption costs, and your visa category does not require insurance. Next decision: confirm entry rules on Korea Entry Requirements and finalize your arrival data setup on SIM or eSIM before choosing a policy.",
           content: [
             {
-              title: "Legal Requirement vs Budget Risk",
-              icon: "shield",
-              emphasis:
-                "Travel insurance is not legally required for most short-term visitors to South Korea in 2026.",
-              body:
-                "The real question is not legality - it is financial risk.",
-              bullets: [
-                "Medical care in Korea is modern and reliable, but tourists usually pay the full cost themselves if something goes wrong.",
-                "If one unexpected medical bill would significantly affect your travel budget, travel insurance is usually worth considering.",
-                "If your plans are flexible and you can comfortably cover unexpected expenses on your own, you may decide to skip it.",
-              ],
-              tail:
-                "The practical decision is simple: consider the possible financial impact, not just whether insurance is officially required.",
-            },
-            {
-              title: "Scenario Example: Should You Buy It?",
+              title: "Quick Answer",
               icon: "spark",
-              emphasis: "Example: a 9-day winter trip with two international flights and prepaid hotels.",
-              body: "In this situation, several things could create meaningful financial risk.",
+              body:
+                "Default choice for most tourists: buy a basic travel insurance plan with emergency medical, hospitalization, and trip disruption coverage.",
               bullets: [
-                "A flight delay could cause a missed connection or lost prepaid night at a hotel.",
-                "Winter conditions also increase the chance of minor injuries such as slips on icy sidewalks.",
-                "In cases like this, many travelers choose a basic insurance plan to limit the financial downside of unexpected problems.",
+                "Insurance is usually low-cost compared with one emergency room or delay-related loss.",
+                "If your budget cannot absorb a sudden 300-1,000+ USD event, insurance is usually the safer choice.",
               ],
               tail:
-                "The goal is not to eliminate risk entirely - it is simply to keep a single incident from turning into a large unexpected expense.",
+                "This is a risk-control decision, not a legal formality for most visa-free short stays.",
             },
             {
-              title: "How Much Does Medical Care Cost in South Korea?",
-              icon: "wallet",
-              emphasis: "Tourists are not covered by Korea's National Health Insurance system.",
-              body: "Typical out-of-pocket costs in 2026:",
-              bullets: [
-                "Outpatient clinic visit: 30-80 USD",
-                "Emergency room visit in Seoul: 300-800 USD",
-                "Hospital stay (per night): 1,000-3,000+ USD",
-                "CT, MRI, blood tests: additional charges",
-                "Ambulance service: varies by situation",
-                "Private international clinics may charge higher rates than public hospitals.",
-                "These are general estimates. Actual costs depend on location, hospital type, and treatment required.",
-              ],
-            },
-            {
-              title: "When Is Travel Insurance Required?",
-              icon: "passport",
-              emphasis:
-                "For most short-term tourists, travel insurance is not required to enter South Korea.",
-              body: "However, insurance may be required for:",
-              bullets: [
-                "Certain visa categories",
-                "Student or exchange programs",
-                "Working holiday visas",
-                "Some employer-sponsored stays",
-                "Always check the official visa requirements for your nationality before traveling.",
-              ],
-            },
-            {
-              title: "When Is Travel Insurance Recommended?",
+              title: "Condition Branch (Who Needs It / Exception)",
               icon: "checklist",
-              emphasis: "Travel insurance is recommended for most visitors.",
-              body: "It is especially useful if:",
+              body: "Use this branch logic before you compare policies.",
               bullets: [
-                "You are traveling during winter (icy sidewalks increase injury risk)",
-                "You plan hiking, skiing, or outdoor activities",
-                "You have connecting or long-haul flights",
-                "You want protection against trip cancellation or baggage delays",
-                "Even in a safe country like South Korea, unexpected situations can happen.",
+                "Buy now if: your itinerary has prepaid hotels/flights, winter/outdoor activities, tight transfers, or a limited emergency budget.",
+                "Double-check legal requirement if: your visa type, school program, or employer package explicitly asks for insurance proof.",
+                "Consider skipping only if: you can self-pay medical treatment, delays, and baggage disruption without financial stress.",
               ],
+              tail:
+                "If your case sits in the middle, default to a basic plan and avoid overbuying premium extras.",
             },
             {
-              title: "What Should a Good Policy Cover?",
-              icon: "shield",
-              emphasis:
-                "For travel to South Korea in 2026, a practical insurance plan should include:",
-              body: "Look for these essentials:",
-              bullets: [
-                "Emergency medical coverage (at least 50,000-100,000 USD)",
-                "Hospitalization and ambulance coverage",
-                "Trip delay or cancellation coverage",
-                "Lost, stolen, or delayed baggage coverage",
-                "24-hour emergency assistance in English",
-                "If you plan adventure activities, make sure your policy includes winter sports or hiking coverage.",
-              ],
-            },
-            {
-              title: "What Is Usually Not Covered?",
-              icon: "alert",
-              emphasis: "Standard travel insurance policies often exclude:",
-              body: "Always read policy details carefully before purchasing.",
-              bullets: [
-                "Pre-existing medical conditions",
-                "High-risk sports (unless added separately)",
-                "Claims without proper documentation",
-                "Non-medical cancellation reasons",
-              ],
-            },
-            {
-              title: "Common Situations Travelers Face",
-              icon: "spark",
-              emphasis: "Most insurance claims are not major emergencies.",
-              body: "They typically involve:",
-              bullets: [
-                "Food poisoning",
-                "Slipping on icy streets",
-                "Minor traffic accidents",
-                "Severe flu or respiratory infections",
-                "Lost luggage or delayed flights",
-                "These are normal travel issues that can occur anywhere.",
-              ],
-            },
-            {
-              title: "How Much Does Travel Insurance for South Korea Cost?",
+              title: "Evidence (Official Sources)",
               icon: "wallet",
-              emphasis: "Travel insurance is generally affordable.",
-              body: "For healthy travelers aged 20-40:",
+              emphasis: "Use official policy and health-system sources before payment.",
+              body: "Last checked: 2026-03-28",
               bullets: [
-                "1 week: about 15-40 USD",
-                "2 weeks: about 30-70 USD",
-                "Prices vary depending on age, country of residence, trip length, and coverage level.",
+                "Korean Immigration Service: https://www.immigration.go.kr/immigration_eng/index.do",
+                "K-ETA Official Portal: https://www.k-eta.go.kr/portal/apply/index.do",
+                "National Health Insurance Service (NHIS): https://www.nhis.or.kr/nhis/eng/",
+                "Ministry of Foreign Affairs (Korea): https://www.mofa.go.kr/eng/index.do",
               ],
             },
             {
-              title: "Final Thoughts",
-              icon: "spark",
-              emphasis: "South Korea is a safe and highly developed destination.",
+              title: "Best For / Not Ideal",
+              icon: "shield",
+              body: "Use fit, not fear, to choose coverage level.",
+              bullets: [
+                "Best for: first-time visitors, winter travelers, hikers/skiers, tight transfer itineraries, and anyone with high prepaid costs.",
+                "Not ideal for: travelers with strong emergency cash reserves and low prepayment risk who can fully self-insure.",
+              ],
+              tail:
+                "A basic plan is usually enough for most short-term visitors; expensive add-ons are often unnecessary.",
+            },
+            {
+              title: "Common Mistakes",
+              icon: "alert",
+              body: "These mistakes create most claim frustrations.",
+              bullets: [
+                "Buying by price only without checking emergency medical and hospitalization limits.",
+                "Ignoring exclusions for pre-existing conditions or high-risk activities.",
+                "Not reading claim rules for receipts, hospital reports, and delay documents.",
+                "Assuming all visa types follow the same insurance requirement.",
+              ],
+            },
+            {
+              title: "Next Decision",
+              icon: "passport",
               body:
-                "Most travelers never need to use their travel insurance. That is ideal. Travel insurance is simply a way to reduce financial risk. For many visitors, the cost is small compared to the overall trip budget and provides peace of mind from arrival to departure.",
+                "Confirm entry and arrival-readiness first, then finalize policy details.",
+              bullets: [
+                "Check Korea Entry Requirements for your passport and trip dates.",
+                "Set up mobile data on SIM or eSIM so you can access policy and emergency contacts after landing.",
+              ],
+              tail:
+                "After these two checks, compare two to three policies and choose the one with clear medical and claim terms.",
             },
           ],
         },

@@ -703,29 +703,29 @@ const LEAF_FAQ_BY_LANG: Record<SupportedLang, Record<string, LeafFaqItem[]>> = {
     ],
     "korea-entry-requirements": [
       {
-        question: "Los viajeros primerizos y recurrentes tienen reglas diferentes?",
+        question: "Hay diferencias entre viajeros nuevos y recurrentes?",
         answer:
-          "No. Las reglas legales de entrada dependen de la nacionalidad del pasaporte y de las fechas de politica vigentes, no de la experiencia de viaje. Quienes regresan tambien deben volver a comprobar requisitos de K-ETA y de tarjeta de llegada antes de cada viaje.",
+          "No. Depende de nacionalidad y normativa vigente.",
       },
       {
-        question: "Necesito K-ETA para entrar a Corea?",
+        question: "Necesito K-ETA?",
         answer:
-          "Depende de tu nacionalidad y de la politica temporal de exencion vigente. Algunos viajeros exentos de visado deben solicitar K-ETA antes de salir, mientras que otros pueden estar temporalmente exentos hasta el 31 de diciembre de 2026.",
+          "Depende de tu nacionalidad y exencion vigente.",
       },
       {
-        question: "Como gestionar la e-Arrival Card en viajes multi-ciudad?",
+        question: "Como usar e-Arrival Card en viajes multiples?",
         answer:
-          "Usa una direccion principal de alojamiento en tu declaracion y conserva a mano los detalles completos del itinerario. Si tienes K-ETA valida, normalmente quedas exento de una declaracion separada, pero siempre revisa el aviso oficial mas reciente.",
+          "Usa una direccion principal y ten el itinerario listo.",
       },
       {
-        question: "Que cambia entre viajes simples y complejos?",
+        question: "Que cambia en viajes complejos?",
         answer:
-          "Las comprobaciones legales base son las mismas, pero los viajes de varias ciudades requieren mayor preparacion documental: una direccion representativa, ruta completa y reservas de transporte coherentes con tu cronograma de entrada.",
+          "Mayor preparacion documental.",
       },
       {
         question: "Que revisar 24 horas antes del vuelo?",
         answer:
-          "Confirma estado de K-ETA, verifica requisitos de e-Arrival Card y vuelve a comprobar actualizaciones oficiales del gobierno. Luego cierra decisiones de SIM o eSIM y seguro de viaje para simplificar la ejecucion el dia de llegada.",
+          "K-ETA, e-Arrival Card y actualizaciones oficiales.",
       },
     ],
     seoul: [

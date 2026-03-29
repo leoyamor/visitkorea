@@ -1350,7 +1350,8 @@ const KEYWORD_LINK_EXCLUSIONS_BY_PATH: Record<string, Set<string>> = {
   ]),
 };
 
-const linkify = (text: string) => {
+const linkify = (text?: string) => {
+  if (!text) return "";
   const excludedKeywords = KEYWORD_LINK_EXCLUSIONS_BY_PATH[basePath] ?? EMPTY_EXCLUDED_KEYWORDS;
   const escaped = escapeHtml(text).replace(/&lt;br\s*\/?&gt;/gi, "<br />");
 
@@ -2009,9 +2010,9 @@ const checklistByLeaf: Record<string, Partial<Record<SupportedLang, string[]>>> 
       "I saved at least one official immigration source to verify entry rules within 24 hours before departure.",
     ],
     es: [
-      "Confirme si mi nacionalidad de pasaporte requiere K-ETA.",
-      "Revise si debo enviar una e-Arrival Card y la ventana valida de envio.",
-      "Guarde al menos una fuente oficial de inmigracion para verificar reglas de entrada dentro de las 24 horas previas a la salida.",
+      "Confirme si mi nacionalidad requiere K-ETA.",
+      "Verifique si necesito e-Arrival Card y su plazo valido.",
+      "Guarde al menos una fuente oficial para revisar reglas antes del vuelo.",
     ],
   },
   "korea-now-and-more": {
@@ -2103,7 +2104,7 @@ const checklistHintByLeaf: Record<string, Partial<Record<SupportedLang, string>>
   },
   "korea-entry-requirements": {
     en: "Treat this as a departure-readiness check, not legal advice. Always confirm official sources before boarding.",
-    es: "Toma esto como una verificacion de preparacion previa a la salida, no como asesoria legal. Confirma siempre fuentes oficiales antes de embarcar.",
+    es: "Tratelo como una revision antes de viajar, no como asesoramiento legal. Verifica siempre fuentes oficiales.",
   },
   "korea-now-and-more": {
     en: "No login needed. Review these points and save the page if helpful for your trip planning.",
@@ -2330,6 +2331,14 @@ const faqNode: TreeNode = localizedNodeOverride
   : node;
 const hubFaqItems = pageUi.showHubFaq && hasChildren && !isHome ? getHubFaqItems(faqNode, lang) : [];
 const leafFaqItems = pageUi.showLeafFaq && isLeafPage ? getLeafFaqItems(faqNode, lang) : [];
+const leafFaqHeading =
+  lang === "es" && node.slug === "korea-entry-requirements"
+    ? "Preguntas frecuentes"
+    : t.leafFaqTitle;
+const leafChecklistHeading =
+  lang === "es" && node.slug === "korea-entry-requirements"
+    ? "Lista rápida de verificación"
+    : t.quickChecklist;
 const collectionQuickSummary =
   hasChildren && !isHome ? localizedNodeOverride?.quickAnswer ?? node.quickAnswer : undefined;
 const collectionGuideSections = hasChildren && !isHome ? displayContent : [];
@@ -2710,7 +2719,7 @@ const breadcrumb = breadcrumbs;
       )}
       {isLeafPage && pageUi.showLeafFaq && leafFaqItems.length > 0 && (
         <div class="leaf-faq" data-kpi-section="leaf_faq">
-          <h3 class="t-section">{t.leafFaqTitle}</h3>
+          <h3 class="t-section">{leafFaqHeading}</h3>
           <div class="leaf-faq-list">
             {leafFaqItems.map((item) => (
               <article class="leaf-faq-item">
@@ -2754,7 +2763,7 @@ const breadcrumb = breadcrumbs;
 
           {pageUi.showChecklist && (
             <div class="leaf-checklist-wrap">
-              <p class="leaf-tools-label">{t.quickChecklist}</p>
+              <p class="leaf-tools-label">{leafChecklistHeading}</p>
               <p class="leaf-checklist-hint">{leafChecklistHint}</p>
               <ul class="leaf-checklist-list" data-leaf-checklist data-checklist-key={checklistStorageKey}>
                 {leafChecklist.map((item, index) => (

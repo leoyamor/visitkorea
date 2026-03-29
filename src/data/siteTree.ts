@@ -5439,7 +5439,7 @@ export const siteTree: TreeNode = {
           description:
             "Start here if you need certainty on K-ETA, the e-Arrival Card, or the exact airport arrival steps tied to your passport.",
           quickAnswer:
-            "Start with one rule: entry eligibility depends on your passport nationality and travel dates, not on whether you are a first-time or returning traveler. Confirm your K-ETA status first, then submit an e-Arrival Card only when your case requires it. If your trip includes multiple cities, prepare one primary accommodation address plus your full itinerary details. Before boarding, recheck official notices and lock your arrival setup, including SIM or eSIM and Travel Insurance decisions.",
+            "Korea entry requirements in 2026 depend on your passport nationality and travel dates. Some travelers need a K-ETA, while others are temporarily exempt depending on nationality. Always confirm your status first before departure. Most travelers must submit an e-Arrival Card before arrival, unless they are exempt (for example, valid K-ETA holders or registered residents). If your trip includes multiple cities, prepare one primary accommodation address and your full itinerary details for immigration. Before boarding, recheck official notices and make sure your entry documents are ready and consistent.",
           content: [
             {
               title: "🧭 Quick Overview",
@@ -5467,43 +5467,47 @@ export const siteTree: TreeNode = {
               title: "Condition Branch: Pick the Case That Fits Your Trip",
               icon: "checklist",
               body:
-                "Use this branch before filling forms so your entry setup matches your actual travel style.",
+                "Use this branch before filling out any forms so your Korea entry setup matches your actual travel plan.",
               subsections: [
                 {
                   title: "First-time traveler + Single city stay",
                   bullets: [
-                    "Confirm K-ETA eligibility first, then verify whether an e-Arrival Card is required.",
-                    "Prepare one accommodation address, one contact number, and one arrival transport plan.",
-                    "Set up SIM or eSIM before departure so your first airport-to-hotel transfer is low-friction.",
+                    "Confirm your K-ETA status first, then check if you need to submit an e-Arrival Card.",
+                    "Prepare one accommodation address, one contact number, and your basic arrival plan.",
+                    "Set up your SIM or eSIM before departure so your airport transfer and navigation are smooth after landing.",
                   ],
                 },
                 {
                   title: "First-time traveler + Multi-city stay",
                   bullets: [
-                    "Follow the same entry checks as above: K-ETA status, e-Arrival Card requirement, and airport process order.",
-                    "Use one primary accommodation address in your declaration and keep your full city-by-city itinerary available.",
-                    "If your schedule is tight or prepaid costs are high, review Travel Insurance before your flight.",
+                    "Follow the same entry checks: K-ETA status, e-Arrival Card requirement, and arrival process.",
+                    "Use one primary accommodation address for your declaration and keep your full itinerary accessible.",
+                    "If your itinerary is tight or includes prepaid bookings, review travel insurance options before departure.",
                   ],
                 },
                 {
                   title: "Returning traveler + Single city stay",
                   bullets: [
-                    "Do not assume old approvals still apply; confirm K-ETA and e-Arrival Card rules again for current dates.",
-                    "If your passport was renewed, verify all details as if this were a new trip.",
-                    "Use SIM or eSIM if you need policy access and transport apps immediately after landing.",
+                    "Do not rely on previous trips. Reconfirm K-ETA and e-Arrival Card rules based on your current travel dates.",
+                    "If your passport has changed, treat this as a new application and verify all details.",
+                    "Set up SIM or eSIM if you need immediate access to transport apps, bookings, or documents after arrival.",
                   ],
                 },
                 {
                   title: "Returning traveler + Multi-city stay",
                   bullets: [
-                    "Reconfirm entry rules first, then prepare one representative stay address and the complete route.",
-                    "Keep booking confirmations and onward transport details ready in case immigration asks follow-up questions.",
-                    "If cancellation, delay, or baggage risk would hurt your budget, compare Travel Insurance options before departure.",
+                    "Reconfirm all Korea entry requirements first, then prepare one main accommodation address and your full route.",
+                    "Keep booking confirmations and onward transport details ready in case immigration requests them.",
+                    "If delays, cancellations, or baggage issues would affect your budget, compare travel insurance options before departure.",
                   ],
                 },
+                {
+                  title: "Key takeaway",
+                  plainTitle: true,
+                  tail:
+                    "Your legal entry requirements for South Korea depend on your nationality and travel dates, but your trip structure determines what information and documents you should prepare in advance.",
+                },
               ],
-              tail:
-                "Your legal entry rules are tied to nationality and timing, but trip structure changes what details you should prepare in advance.",
             },
             {
               title: "🛂 Part 1: K-ETA (Pre-Travel Authorization)",

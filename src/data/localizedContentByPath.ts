@@ -859,262 +859,288 @@ export const localizedContentByPath: LocalizedContentByPath = {
         "Los requisitos de entrada a Corea del Sur en 2026 dependen de tu nacionalidad (pasaporte) y de las fechas de tu viaje. Algunos viajeros necesitan una K-ETA, mientras que otros estan temporalmente exentos segun su nacionalidad. Debes confirmar tu situacion antes de viajar. La mayoria de los viajeros deben presentar una tarjeta de llegada electronica (e-Arrival Card) antes de entrar, salvo en casos de exencion (por ejemplo, personas con K-ETA valida o residentes registrados). Si tu viaje incluye varias ciudades, prepara una direccion principal de alojamiento y los detalles completos de tu itinerario para inmigracion. Antes de embarcar, revisa las notificaciones oficiales y asegurate de que todos tus documentos de entrada esten correctos y actualizados.",
       content: [
         {
-          title: "Resumen rápido",
-          body: "Entrar en Corea del Sur implica dos etapas:",
+          title: "Resumen rapido",
+          body: "Entrar en Corea implica dos etapas:",
           subsections: [
             {
               title: "",
               plainTitle: true,
               bullets: [
-                "Antes de viajar - Verificar el visado y el requisito de K-ETA.",
-                "Despues de llegar - Seguir el procedimiento oficial de entrada en el aeropuerto.",
+                "Antes de viajar - Verifica el estado de visado y si necesitas K-ETA.",
+                "Despues de aterrizar - Sigue el procedimiento oficial de entrada en el aeropuerto.",
               ],
             },
             {
               title: "El orden correcto al llegar al aeropuerto es:",
               plainTitle: true,
               bullets: [
-                "Llegada -> (Si aplica) Control sanitario -> Inmigracion -> Recogida de equipaje -> Aduanas -> Sala de llegadas",
+                "Llegada -> (Si aplica) Cuarentena -> Inmigracion -> Recogida de equipaje -> Aduanas -> Sala de llegadas",
               ],
             },
           ],
           tail: "Comprender esta secuencia evita confusion y retrasos.",
         },
         {
-          title: "Condición: elige el caso que se ajusta a tu viaje",
+          title: "Condicion: elige el caso que se ajusta a tu viaje",
           body:
-            "Utiliza esta guia antes de completar cualquier formulario para que tu proceso de entrada a Corea del Sur coincida con tu plan real de viaje.",
+            "Usa esta rama antes de completar cualquier formulario para que tu configuracion de entrada a Corea coincida con tu plan real de viaje.",
           subsections: [
             {
-              title: "Viajero primerizo + una sola ciudad",
+              title: "Viajero primerizo + estancia en una sola ciudad",
               bullets: [
-                "Confirma primero tu estado de K-ETA, luego verifica si necesitas presentar la tarjeta de llegada electronica (e-Arrival Card).",
-                "Prepara una direccion de alojamiento, un numero de contacto y un plan basico de llegada.",
-                "Configura tu SIM o eSIM antes de salir para facilitar el traslado desde el aeropuerto.",
+                "Confirma primero tu estado de K-ETA, luego verifica si necesitas enviar una e-Arrival Card.",
+                "Prepara una direccion de alojamiento, un numero de contacto y tu plan basico de llegada.",
+                "Configura tu SIM o eSIM antes de salir para que el traslado desde el aeropuerto y la navegacion sean fluidos al aterrizar.",
               ],
             },
             {
-              title: "Viajero primerizo + varias ciudades",
+              title: "Viajero primerizo + estancia en varias ciudades",
               bullets: [
-                "Sigue los mismos pasos: estado de K-ETA, requisito de e-Arrival Card y proceso de llegada.",
-                "Usa una direccion principal de alojamiento en tu declaracion y ten tu itinerario completo disponible.",
-                "Si tu viaje es ajustado o incluye reservas prepagadas, revisa opciones de seguro de viaje antes de salir.",
+                "Sigue las mismas comprobaciones de entrada: estado de K-ETA, requisito de e-Arrival Card y proceso de llegada.",
+                "Usa una direccion principal de alojamiento para tu declaracion y conserva accesible tu itinerario completo.",
+                "Si tu itinerario es ajustado o incluye reservas prepagadas, revisa opciones de seguro de viaje antes de salir.",
               ],
             },
             {
-              title: "Viajero recurrente + una sola ciudad",
+              title: "Viajero recurrente + estancia en una sola ciudad",
               bullets: [
-                "No asumas que las condiciones anteriores siguen vigentes. Reconfirma K-ETA y e-Arrival Card segun las fechas actuales.",
-                "Si has renovado el pasaporte, verifica todo como si fuera un viaje nuevo.",
-                "Configura SIM o eSIM si necesitas acceso inmediato a transporte o reservas al llegar.",
+                "No te bases en viajes anteriores. Reconfirma las reglas de K-ETA y e-Arrival Card segun tus fechas actuales.",
+                "Si tu pasaporte cambio, tratalo como una solicitud nueva y verifica todos los datos.",
+                "Configura SIM o eSIM si necesitas acceso inmediato a apps de transporte, reservas o documentos al llegar.",
               ],
             },
             {
-              title: "Viajero recurrente + varias ciudades",
+              title: "Viajero recurrente + estancia en varias ciudades",
               bullets: [
-                "Reconfirma primero los requisitos de entrada a Corea del Sur, luego prepara una direccion principal y tu ruta completa.",
-                "Ten a mano confirmaciones de reservas y transporte por si inmigracion las solicita.",
-                "Si retrasos o cancelaciones afectarian tu presupuesto, compara opciones de seguro de viaje antes de salir.",
+                "Reconfirma primero todos los requisitos de entrada a Corea, luego prepara una direccion principal de alojamiento y tu ruta completa.",
+                "Ten listos los comprobantes de reserva y el detalle de transporte de continuidad por si inmigracion lo solicita.",
+                "Si retrasos, cancelaciones o incidencias de equipaje afectarian tu presupuesto, compara opciones de seguro de viaje antes de salir.",
               ],
             },
             {
               title: "Idea clave",
               plainTitle: true,
               tail:
-                "Los requisitos legales de entrada a Corea del Sur dependen de tu nacionalidad y las fechas del viaje, pero la estructura de tu viaje determina que informacion debes preparar.",
+                "Los requisitos legales de entrada a Corea del Sur dependen de tu nacionalidad y tus fechas de viaje, pero la estructura de tu itinerario determina que informacion y documentos debes preparar con antelacion.",
             },
           ],
         },
         {
-          title: "Parte 1: K-ETA (Autorización previa al viaje)",
-          body: "Las normas de K-ETA determinan si necesitas autorizacion antes del viaje.",
+          title: "Parte 1: K-ETA (Autorizacion previa al viaje)",
+          body: "Las reglas de K-ETA determinan si se requiere autorizacion previa al viaje.",
           subsections: [
             {
               title: "Que es K-ETA",
               bullets: [
                 "Un sistema electronico de autorizacion de viaje",
-                "Aplicable a ciertos paises sin visado",
+                "Aplica a ciertos titulares de pasaporte exentos de visado",
                 "No es un visado",
-                "No garantiza la entrada (la decision final la toma inmigracion)",
+                "No garantiza la entrada (la decision final la toman los oficiales de inmigracion)",
               ],
             },
             {
-              title: "Datos oficiales clave (2026)",
+              title: "Cifras oficiales clave (a fecha de 2026)",
               bullets: [
-                "Tarifa: 10,000 KRW",
-                "Pago no reembolsable",
-                "Tiempo de procesamiento: normalmente dentro de 72 horas (puede tardar mas en temporadas altas)",
-                "Validez: 3 anos o hasta que expire el pasaporte",
-                "No existe tramitacion urgente",
+                "Tarifa de solicitud: 10,000 KRW",
+                "Pago no reembolsable, incluso si se deniega",
+                "Tiempo de proceso: normalmente dentro de 72 horas (puede superar ese plazo en periodos de alta demanda)",
+                "Validez: 3 anos, o hasta el vencimiento del pasaporte (lo que ocurra primero)",
+                "No hay tramite urgente disponible",
               ],
             },
             {
               title: "Exencion temporal de K-ETA",
-              lead: ["(Valida hasta el 31-12-2026)"],
+              lead: ["(Valida hasta 2026-12-31)"],
               bullets: [
-                "Aplica solo al requisito de solicitud",
+                "Esta exencion solo aplica al requisito de solicitud de K-ETA",
                 "No todos los paises estan exentos",
-                "Depende de la nacionalidad",
-                "Los viajeros elegibles no necesitan solicitarla durante este periodo",
-                "Aun asi, pueden solicitarla voluntariamente",
+                "La elegibilidad depende de la nacionalidad",
+                "Los viajeros elegibles no estan obligados a solicitarla durante el periodo de exencion",
+                "Los viajeros exentos aun pueden solicitarla voluntariamente",
               ],
-              tail: "Esto no elimina los requisitos de visado ni el control migratorio.",
+              tail:
+                "Esta medida temporal no elimina requisitos de visado ni la inspeccion migratoria.",
             },
             {
-              title: "Regla importante",
+              title: "Regla aparte:",
               plainTitle: true,
               lead: [
-                "Los viajeros con una K-ETA valida normalmente no necesitan presentar una tarjeta de llegada en papel.",
-                "Esta regla forma parte de la politica estandar, no de la exencion temporal.",
+                "Los viajeros que ya tienen una K-ETA valida normalmente no necesitan presentar una tarjeta de llegada en papel por separado.",
+                "Esto no forma parte de la exencion temporal y opera bajo la politica estandar de entrada.",
               ],
-              tail: "Siempre verifica tu situacion en fuentes oficiales.",
+              tail:
+                "Confirma siempre el estado aplicable a tu nacionalidad en fuentes oficiales antes de salir.",
             },
             {
-              title: "Advertencia: paginas no oficiales de K-ETA",
-              lead: ["Utiliza solo:"],
+              title: "Advertencia: sitios no oficiales de K-ETA",
+              lead: ["Usa solo:"],
               bullets: [
                 "Sitio web oficial del gobierno",
-                "Aplicacion oficial",
+                "Aplicacion oficial del gobierno",
               ],
-              tail: "Sitios no oficiales pueden cobrar comisiones elevadas.",
+              tail: "Sitios no oficiales pueden cobrar comisiones de servicio excesivas.",
             },
           ],
         },
         {
-          title: "Parte 2: Tarjeta de llegada electrónica (e-Arrival Card)",
-          body: "El requisito depende del tipo de viajero.",
+          title: "Parte 2: e-Arrival Card (Declaracion electronica de llegada)",
+          body: "El requisito de declaracion de llegada depende de tu condicion de viajero.",
           subsections: [
             {
-              title: "Reglas clave (2026)",
+              title: "Reglas clave (a fecha de 2026)",
               bullets: [
                 "Gratuita",
-                "Se puede enviar desde 3 dias antes de la llegada (incluyendo el dia de llegada, hora de Corea)",
-                "Se invalida si no entras en Corea en 72 horas",
+                "Puede enviarse desde 3 dias antes de la llegada (incluido el dia de llegada, hora de Corea)",
+                "Se invalida si no entras en Corea dentro de las 72 horas posteriores al envio",
               ],
             },
             {
-              title: "Quien suele estar exento",
+              title: "Quienes suelen estar exentos",
               bullets: [
-                "Residentes extranjeros registrados",
-                "Personas con K-ETA valida",
-                "Visados electronicos de grupo",
+                "Residentes extranjeros registrados en Corea",
+                "Titulares de K-ETA valida",
+                "Titulares de visado electronico grupal",
                 "Tripulacion aerea",
               ],
-              tail: "Verifica siempre tu caso antes de viajar.",
+              tail: "Verifica siempre tu estado antes del viaje.",
             },
             {
               title: "Informacion requerida",
               bullets: [
                 "Datos del pasaporte",
                 "Correo electronico",
-                "Una direccion principal de alojamiento",
+                "Una direccion representativa de alojamiento en Corea",
                 "Numero de contacto",
                 "Numero de vuelo",
                 "Fechas de llegada y salida",
               ],
-              tail: "Si visitas varias ciudades, una direccion principal suele ser suficiente.",
+              tail:
+                "Si te alojas en varias ubicaciones, normalmente basta con indicar un alojamiento principal.",
             },
           ],
         },
         {
-          title: "Parte 3: Proceso de entrada en el aeropuerto",
+          title: "Parte 3: Proceso de inmigracion en el aeropuerto (orden correcto)",
           body:
-            "El flujo estandar es: Llegada -> (Si aplica) Control sanitario -> Inmigracion -> Equipaje -> Aduanas -> Sala de llegadas",
+            "El flujo estandar de llegada en aeropuertos internacionales de Corea es:",
           subsections: [
             {
-              title: "1. Llegada",
+              title:
+                "Llegada -> (Si aplica) Cuarentena -> Inmigracion -> Recogida de equipaje -> Aduanas -> Sala de llegadas",
+              plainTitle: true,
+            },
+            {
+              title: "1 Llegada",
               bullets: [
                 "Sigue las senales de Arrivals",
-                "Puede ser necesario un tren interno",
-                "Dirigete a inmigracion",
+                "En algunos terminales puede ser necesario usar tren lanzadera",
+                "Avanza hacia Inmigracion",
               ],
             },
             {
-              title: "2. Control sanitario (si aplica)",
-              lead: ["Depende de:"],
+              title: "2 Cuarentena (si aplica)",
+              lead: ["Puede aplicar segun:"],
               bullets: [
-                "Viajes recientes a zonas de riesgo",
+                "Viajes recientes a regiones designadas de control sanitario",
                 "Sintomas",
-                "Normativa vigente",
+                "Politica sanitaria vigente",
               ],
               tail:
-                "El sistema Q-CODE no es obligatorio en todos los casos. Si es requerido y no se cumple, puede haber sanciones.",
+                "Q-CODE o un reporte sanitario pueden ser requeridos bajo condiciones especificas. Q-CODE no se exige de forma universal. El incumplimiento cuando aplica puede derivar en sanciones segun la ley coreana de cuarentena.",
             },
             {
-              title: "3. Inmigracion",
+              title: "3 Inmigracion (control de pasaporte)",
               bullets: [
                 "Presenta el pasaporte",
-                "Datos biometricos si se solicitan",
-                "Responde preguntas basicas",
+                "Entrega datos biometricos si se requieren",
+                "Responde preguntas basicas de viaje",
+                "La aprobacion final de entrada se decide en esta etapa.",
+                "Incluso con K-ETA aprobada, la entrada no esta garantizada.",
               ],
-              tail: "La decision final se toma aqui, incluso con K-ETA.",
             },
             {
-              title: "4. Equipaje",
+              title: "4 Recogida de equipaje",
               bullets: [
-                "Consulta el numero de cinta",
-                "Recoge tu equipaje",
+                "Revisa los monitores para confirmar el numero de cinta",
+                "Recoge el equipaje",
               ],
             },
             {
-              title: "5. Aduanas",
-              lead: ["Elige:"],
+              title: "5 Aduanas",
+              lead: ["Elige un carril:"],
               bullets: [
                 "Nada que declarar",
-                "Bienes a declarar",
+                "Bienes para declarar",
               ],
-              tail: "Familias pueden presentar una sola declaracion conjunta.",
+              tail:
+                "Viajeros con bienes restringidos o cantidades altas de divisa deben declarar segun corresponda. Las familias pueden presentar una declaracion aduanera por unidad familiar (segun la politica vigente).",
             },
             {
-              title: "6. Sala de llegadas",
-              tail: "Acceso a transporte, SIM, cambio de moneda y recogidas.",
+              title: "6 Sala de llegadas",
+              bullets: [
+                "Sales a la sala publica de llegadas",
+                "Accedes a transporte, mostradores de SIM, cambio de moneda y zonas de recogida",
+              ],
             },
           ],
         },
         {
-          title: "Tiempo estimado",
+          title: "Tiempo de proceso habitual",
+          body: "En condiciones normales:",
           bullets: [
             "Inmigracion: 10-30 minutos",
             "Equipaje y aduanas: 10-20 minutos",
           ],
-          tail: "Puede aumentar en temporada alta.",
+          tail: "Los tiempos pueden aumentar en temporadas de alta demanda.",
         },
         {
           title: "Fuentes oficiales",
-          body: "Consulta fuentes oficiales antes del check-in y embarque.",
+          body: "Usa fuentes oficiales antes del check-in final y el embarque.",
           subsections: [
             {
-              title: "Última revisión: 2026-03-29 (KST)",
+              title: "Ultima revision: 2026-03-29 (KST)",
               plainTitle: true,
               bullets: [
                 "Portal oficial K-ETA: https://www.k-eta.go.kr/portal/newapply/index.do?locale=ES",
-                "Portal oficial de la e-Arrival Card: https://www.e-arrivalcard.go.kr/portal/main/index.do?locale=EN",
+                "Portal oficial de e-Arrival Card: https://www.e-arrivalcard.go.kr/portal/main/index.do?locale=EN",
                 "Servicio de Inmigracion de Corea: https://www.immigration.go.kr/immigration_eng/index.do",
-                "Procedimientos de llegada del Aeropuerto de Incheon: https://www.airport.kr/ap_en/1439/subview.do",
+                "Procedimientos de llegada del Aeropuerto Internacional de Incheon: https://www.airport.kr/ap_en/1439/subview.do",
               ],
             },
           ],
         },
         {
           title: "Recordatorios clave",
+          body: "K-ETA no es un visado.",
           bullets: [
-            "K-ETA no es un visado",
-            "La entrada se decide en inmigracion",
-            "La e-Arrival Card es sensible al tiempo",
-            "Los requisitos sanitarios son condicionales",
-            "Verifica siempre fuentes oficiales",
+            "La decision de entrada se toma en inmigracion.",
+            "El envio de e-Arrival Card es sensible al tiempo.",
+            "Los requisitos de control sanitario son condicionales.",
+            "Verifica siempre fuentes oficiales antes de viajar.",
           ],
         },
         {
           title: "Consejo final",
-          body: "Antes de embarcar:",
-          bullets: [
-            "Confirma tu estado de K-ETA",
-            "Verifica si necesitas e-Arrival Card",
-            "Prepara pasaporte, alojamiento y vuelo",
+          body: "Haz esta verificacion rapida antes de embarcar tu vuelo:",
+          subsections: [
+            {
+              title: "1 Confirma estado de K-ETA",
+              tail:
+                "Verifica si K-ETA aplica a tu nacionalidad y fechas de viaje.",
+            },
+            {
+              title: "2 Verifica requisitos de e-Arrival Card",
+              tail:
+                "Enviala solo si aplica y dentro de la ventana valida de envio.",
+            },
+            {
+              title: "3 Prepara datos basicos de llegada",
+              tail:
+                "Ten listos pasaporte, direccion del primer alojamiento y datos de vuelo por si inmigracion los solicita.",
+            },
           ],
           tail:
-            "La mayoria de problemas ocurren antes del vuelo, no al llegar. Este sitio te ayuda a decidir que se adapta a tu viaje, no solo a informarte.",
+            "La mayoria de los problemas de entrada ocurren antes de embarcar, no despues de llegar. Las cifras clave de esta guia siguen la orientacion oficial de inmigracion de 2026. Como las politicas de entrada pueden cambiar, lo mas seguro es volver a comprobar avisos oficiales del gobierno dentro de las 24 horas previas a la salida.",
         },
       ],
     },

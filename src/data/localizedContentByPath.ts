@@ -859,7 +859,7 @@ export const localizedContentByPath: LocalizedContentByPath = {
         "Los requisitos de entrada a Corea del Sur en 2026 dependen de tu nacionalidad (pasaporte) y de las fechas de tu viaje. Algunos viajeros necesitan una K-ETA, mientras que otros estan temporalmente exentos segun su nacionalidad. Debes confirmar tu situacion antes de viajar. La mayoria de los viajeros deben presentar una tarjeta de llegada electronica (e-Arrival Card) antes de entrar, salvo en casos de exencion (por ejemplo, personas con K-ETA valida o residentes registrados). Si tu viaje incluye varias ciudades, prepara una direccion principal de alojamiento y los detalles completos de tu itinerario para inmigracion. Antes de embarcar, revisa las notificaciones oficiales y asegurate de que todos tus documentos de entrada esten correctos y actualizados.",
       content: [
         {
-          title: "Resumen rápido",
+          title: "🧭 Resumen rápido",
           body: "Entrar en Corea implica dos etapas:",
           subsections: [
             {
@@ -926,11 +926,11 @@ export const localizedContentByPath: LocalizedContentByPath = {
           ],
         },
         {
-          title: "Parte 1: K-ETA (Autorización previa al viaje)",
+          title: "🛂 Parte 1: K-ETA (Autorización previa al viaje)",
           body: "Las reglas de K-ETA determinan si se requiere autorizacion previa al viaje.",
           subsections: [
             {
-              title: "Qué es K-ETA",
+              title: "📘 Qué es K-ETA",
               bullets: [
                 "Un sistema electronico de autorizacion de viaje",
                 "Aplica a ciertos titulares de pasaporte exentos de visado",
@@ -939,7 +939,7 @@ export const localizedContentByPath: LocalizedContentByPath = {
               ],
             },
             {
-              title: "Datos oficiales clave (a fecha de 2026)",
+              title: "📊 Datos oficiales clave (a fecha de 2026)",
               bullets: [
                 "Tarifa de solicitud: 10,000",
                 "Pago no reembolsable, incluso si se deniega",
@@ -949,7 +949,7 @@ export const localizedContentByPath: LocalizedContentByPath = {
               ],
             },
             {
-              title: "Exención temporal de K-ETA",
+              title: "🗓️ Exención temporal de K-ETA",
               lead: ["(Valida hasta 2026-12-31)"],
               bullets: [
                 "Esta exencion aplica solo al requisito de solicitud de K-ETA",
@@ -962,7 +962,7 @@ export const localizedContentByPath: LocalizedContentByPath = {
                 "Esta medida temporal no elimina los requisitos de visado ni la inspeccion migratoria.",
             },
             {
-              title: "Regla separada",
+              title: "⚠️ Regla separada",
               plainTitle: true,
               lead: [
                 "Los viajeros que ya tienen una K-ETA valida generalmente no necesitan presentar una tarjeta de llegada en papel por separado.",
@@ -971,7 +971,7 @@ export const localizedContentByPath: LocalizedContentByPath = {
               tail: "Confirma siempre tu estado segun tu nacionalidad en fuentes oficiales antes de viajar.",
             },
             {
-              title: "Advertencia: sitios no oficiales de K-ETA",
+              title: "🚨 Advertencia: sitios no oficiales de K-ETA",
               lead: ["Usa solo:"],
               bullets: [
                 "Sitio web oficial del gobierno",
@@ -982,11 +982,11 @@ export const localizedContentByPath: LocalizedContentByPath = {
           ],
         },
         {
-          title: "Parte 2: e-Arrival Card (Declaración electrónica de llegada)",
+          title: "🧾 Parte 2: e-Arrival Card (Declaración electrónica de llegada)",
           body: "Los requisitos de declaracion dependen de tu tipo de viajero.",
           subsections: [
             {
-              title: "Reglas clave (a fecha de 2026)",
+              title: "📌 Reglas clave (a fecha de 2026)",
               bullets: [
                 "Gratuita",
                 "Puede enviarse desde 3 dias antes de la llegada (incluido el dia de llegada, hora de Corea)",
@@ -994,7 +994,7 @@ export const localizedContentByPath: LocalizedContentByPath = {
               ],
             },
             {
-              title: "Quién suele estar exento",
+              title: "👥 Quién suele estar exento",
               bullets: [
                 "Residentes extranjeros registrados en Corea",
                 "Titulares de K-ETA valida",
@@ -1004,7 +1004,7 @@ export const localizedContentByPath: LocalizedContentByPath = {
               tail: "Confirma siempre tu situacion antes de viajar.",
             },
             {
-              title: "Información requerida",
+              title: "🗂️ Información requerida",
               bullets: [
                 "Datos del pasaporte",
                 "Correo electronico",
@@ -1019,7 +1019,7 @@ export const localizedContentByPath: LocalizedContentByPath = {
           ],
         },
         {
-          title: "Parte 3: Proceso de inmigración en el aeropuerto (orden correcto)",
+          title: "🛬 Parte 3: Proceso de inmigración en el aeropuerto (orden correcto)",
           body: "El flujo estandar es:",
           subsections: [
             {
@@ -1028,7 +1028,7 @@ export const localizedContentByPath: LocalizedContentByPath = {
               plainTitle: true,
             },
             {
-              title: "1. Llegada",
+              title: "1️⃣ Llegada",
               bullets: [
                 "Sigue las senales de Arrivals",
                 "Puede ser necesario un tren lanzadera en algunos terminales",
@@ -1036,7 +1036,7 @@ export const localizedContentByPath: LocalizedContentByPath = {
               ],
             },
             {
-              title: "2. Cuarentena (si aplica)",
+              title: "2️⃣ Cuarentena (si aplica)",
               lead: ["Puede aplicarse segun:"],
               bullets: [
                 "Viajes recientes a zonas de control sanitario",
@@ -1047,7 +1047,7 @@ export const localizedContentByPath: LocalizedContentByPath = {
                 "Q-CODE u otros informes sanitarios pueden ser requeridos en ciertos casos. No es obligatorio en todos los casos. El incumplimiento, cuando es requerido, puede implicar sanciones.",
             },
             {
-              title: "3. Inmigración",
+              title: "3️⃣ Inmigración",
               bullets: [
                 "Presenta el pasaporte",
                 "Proporciona datos biometricos si se solicitan",
@@ -1057,14 +1057,14 @@ export const localizedContentByPath: LocalizedContentByPath = {
                 "La aprobacion final se decide en esta etapa. Incluso con K-ETA aprobada, la entrada no esta garantizada.",
             },
             {
-              title: "4. Recogida de equipaje",
+              title: "4️⃣ Recogida de equipaje",
               bullets: [
                 "Consulta los monitores para identificar la cinta",
                 "Recoge el equipaje",
               ],
             },
             {
-              title: "5. Aduanas",
+              title: "5️⃣ Aduanas",
               lead: ["Elige un carril:"],
               bullets: [
                 "Nada que declarar",
@@ -1074,13 +1074,13 @@ export const localizedContentByPath: LocalizedContentByPath = {
                 "Los viajeros con bienes restringidos o grandes cantidades de dinero deben declararlo. Las familias pueden presentar una declaracion conjunta.",
             },
             {
-              title: "6. Sala de llegadas",
+              title: "6️⃣ Sala de llegadas",
               tail: "Acceso a transporte, SIM, cambio de moneda y recogidas.",
             },
           ],
         },
         {
-          title: "Tiempo de procesamiento habitual",
+          title: "⏱️ Tiempo de procesamiento habitual",
           body: "En condiciones normales:",
           bullets: [
             "Inmigracion: 10-30 minutos",
@@ -1089,7 +1089,7 @@ export const localizedContentByPath: LocalizedContentByPath = {
           tail: "Puede aumentar en temporadas de alta demanda.",
         },
         {
-          title: "Fuentes oficiales",
+          title: "👛 Fuentes oficiales",
           body: "Usa fuentes oficiales antes del check-in y embarque.",
           subsections: [
             {
@@ -1105,7 +1105,7 @@ export const localizedContentByPath: LocalizedContentByPath = {
           ],
         },
         {
-          title: "Recordatorios clave",
+          title: "🧠 Recordatorios clave",
           bullets: [
             "K-ETA no es un visado",
             "La entrada se decide en inmigracion",
@@ -1115,7 +1115,7 @@ export const localizedContentByPath: LocalizedContentByPath = {
           ],
         },
         {
-          title: "Consejo final",
+          title: "✅ Consejo final",
           body: "Haz esta verificacion antes de embarcar:",
           bullets: [
             "Confirma estado de K-ETA",

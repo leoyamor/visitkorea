@@ -228,29 +228,29 @@ const LEAF_FAQ_BY_LANG: Record<SupportedLang, Record<string, LeafFaqItem[]>> = {
     ],
     "korea-entry-requirements": [
       {
+        question: "Do first-time and returning travelers follow different legal entry rules?",
+        answer:
+          "No. Legal entry rules are based on passport nationality and current policy dates, not on travel experience. Returning travelers should still recheck K-ETA and arrival-card requirements before each trip.",
+      },
+      {
         question: "Do I need K-ETA to enter Korea?",
         answer:
           "It depends on your nationality and the current temporary exemption policy. Some visa-exempt travelers must apply for K-ETA before departure, while others may be temporarily exempt until December 31, 2026.",
       },
       {
-        question: "Is K-ETA the same as a visa?",
+        question: "How should I handle the e-Arrival Card if my trip includes multiple cities?",
         answer:
-          "No. K-ETA is a pre-travel authorization for certain visa-exempt travelers. Final entry permission is always decided by immigration officers at the airport.",
+          "Use one primary accommodation address in your declaration and keep your full itinerary details ready. If you hold a valid K-ETA, you are generally exempt from a separate arrival declaration, but always recheck the latest notice.",
       },
       {
-        question: "Do I still need an arrival card if I have K-ETA?",
+        question: "What changes between single-city and multi-city preparation?",
         answer:
-          "Usually no. Travelers with a valid K-ETA are generally exempt from submitting a separate arrival declaration, but policies may change and should be confirmed before travel.",
+          "Core legal checks are the same, but multi-city trips need better document readiness: one representative stay address, full route details, and transport bookings that match your entry timeline.",
       },
       {
-        question: "What is the correct airport arrival order in Korea?",
+        question: "What should I lock within 24 hours before departure?",
         answer:
-          "Arrival -> (If applicable) Quarantine -> Immigration -> Baggage Claim -> Customs -> Arrival Hall.",
-      },
-      {
-        question: "What is the most important thing to check before boarding my flight?",
-        answer:
-          "Confirm your K-ETA status, verify whether an e-Arrival Card is required, and check official government updates within 24 hours before departure.",
+          "Confirm K-ETA status, verify e-Arrival Card requirements, and recheck official government updates. Then finalize SIM or eSIM and Travel Insurance decisions so arrival-day execution is simple.",
       },
     ],
     seoul: [
@@ -703,29 +703,29 @@ const LEAF_FAQ_BY_LANG: Record<SupportedLang, Record<string, LeafFaqItem[]>> = {
     ],
     "korea-entry-requirements": [
       {
+        question: "Quienes viajan por primera vez y quienes repiten siguen reglas legales distintas?",
+        answer:
+          "No. Las reglas legales de entrada dependen de la nacionalidad del pasaporte y de la politica vigente, no de tu experiencia de viaje. Quienes regresan tambien deben volver a comprobar K-ETA y la tarjeta de llegada antes de cada viaje.",
+      },
+      {
         question: "Necesito K-ETA para entrar a Corea?",
         answer:
           "Depende de tu nacionalidad y de la politica temporal de exencion vigente. Algunos viajeros exentos de visa deben solicitar K-ETA antes de salir, mientras que otros pueden estar temporalmente exentos hasta el 31 de diciembre de 2026.",
       },
       {
-        question: "K-ETA es lo mismo que una visa?",
+        question: "Como debo gestionar la e-Arrival Card si voy a visitar varias ciudades?",
         answer:
-          "No. K-ETA es una autorizacion previa al viaje para ciertos viajeros exentos de visa. El permiso final de entrada siempre lo decide inmigracion en el aeropuerto.",
+          "Usa una direccion principal de alojamiento en la declaracion y conserva a mano el itinerario completo. Si tienes K-ETA valida, normalmente quedas exento de una declaracion separada, pero siempre revisa la actualizacion oficial.",
       },
       {
-        question: "Si tengo K-ETA, igual necesito tarjeta de llegada?",
+        question: "Que cambia entre preparar un viaje de una sola ciudad y uno de varias ciudades?",
         answer:
-          "Normalmente no. Quienes tienen un K-ETA valido suelen estar exentos de enviar una declaracion de llegada separada, pero las politicas pueden cambiar y deben confirmarse antes del viaje.",
+          "Los controles legales son los mismos, pero en viajes de varias ciudades necesitas mejor respaldo documental: una direccion representativa, ruta completa y reservas de transporte coherentes con tu plan de entrada.",
       },
       {
-        question: "Cual es el orden correcto al llegar al aeropuerto en Corea?",
+        question: "Que debo dejar cerrado dentro de las 24 horas previas a la salida?",
         answer:
-          "Llegada -> (Si aplica) Cuarentena -> Inmigracion -> Reclamo de equipaje -> Aduanas -> Hall de llegada.",
-      },
-      {
-        question: "Que es lo mas importante que debo revisar antes de abordar mi vuelo?",
-        answer:
-          "Confirma tu estado de K-ETA, verifica si necesitas una e-Arrival Card y revisa actualizaciones oficiales del gobierno dentro de las 24 horas previas a la salida.",
+          "Confirma estado de K-ETA, verifica requisitos de e-Arrival Card y vuelve a revisar actualizaciones oficiales del gobierno. Despues deja resueltas las decisiones de SIM o eSIM y seguro de viaje.",
       },
     ],
     seoul: [

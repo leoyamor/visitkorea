@@ -5429,7 +5429,7 @@ export const siteTree: TreeNode = {
         {
           title: "K-ETA & Immigration Process: Official Entry Guide to Korea (2026 Update)",
           slug: "korea-entry-requirements",
-          updatedIso: "2026-03-08T00:00:00.000Z",
+          updatedIso: "2026-03-29T00:00:00.000Z",
           icon: "passport",
           image: "/leaf%20images/Immigration%20Process.webp",
           pageType: "policyLeaf",
@@ -5439,7 +5439,7 @@ export const siteTree: TreeNode = {
           description:
             "Start here if you need certainty on K-ETA, the e-Arrival Card, or the exact airport arrival steps tied to your passport.",
           quickAnswer:
-            "Before departure, confirm whether K-ETA applies to your passport, submit an e-Arrival Card only if it is required, and follow the official airport arrival process in Korea to avoid delays when entering the country.",
+            "Start with one rule: entry eligibility depends on your passport nationality and travel dates, not on whether you are a first-time or returning traveler. Confirm your K-ETA status first, then submit an e-Arrival Card only when your case requires it. If your trip includes multiple cities, prepare one primary accommodation address plus your full itinerary details. Before boarding, recheck official notices and lock your arrival setup, including SIM or eSIM and Travel Insurance decisions.",
           content: [
             {
               title: "🧭 Quick Overview",
@@ -5462,6 +5462,48 @@ export const siteTree: TreeNode = {
                 },
               ],
               tail: "Understanding this sequence prevents confusion and delays.",
+            },
+            {
+              title: "Condition Branch: Pick the Case That Fits Your Trip",
+              icon: "checklist",
+              body:
+                "Use this branch before filling forms so your entry setup matches your actual travel style.",
+              subsections: [
+                {
+                  title: "First-time traveler + Single city stay",
+                  bullets: [
+                    "Confirm K-ETA eligibility first, then verify whether an e-Arrival Card is required.",
+                    "Prepare one accommodation address, one contact number, and one arrival transport plan.",
+                    "Set up SIM or eSIM before departure so your first airport-to-hotel transfer is low-friction.",
+                  ],
+                },
+                {
+                  title: "First-time traveler + Multi-city stay",
+                  bullets: [
+                    "Follow the same entry checks as above: K-ETA status, e-Arrival Card requirement, and airport process order.",
+                    "Use one primary accommodation address in your declaration and keep your full city-by-city itinerary available.",
+                    "If your schedule is tight or prepaid costs are high, review Travel Insurance before your flight.",
+                  ],
+                },
+                {
+                  title: "Returning traveler + Single city stay",
+                  bullets: [
+                    "Do not assume old approvals still apply; confirm K-ETA and e-Arrival Card rules again for current dates.",
+                    "If your passport was renewed, verify all details as if this were a new trip.",
+                    "Use SIM or eSIM if you need policy access and transport apps immediately after landing.",
+                  ],
+                },
+                {
+                  title: "Returning traveler + Multi-city stay",
+                  bullets: [
+                    "Reconfirm entry rules first, then prepare one representative stay address and the complete route.",
+                    "Keep booking confirmations and onward transport details ready in case immigration asks follow-up questions.",
+                    "If cancellation, delay, or baggage risk would hurt your budget, compare Travel Insurance options before departure.",
+                  ],
+                },
+              ],
+              tail:
+                "Your legal entry rules are tied to nationality and timing, but trip structure changes what details you should prepare in advance.",
             },
             {
               title: "🛂 Part 1: K-ETA (Pre-Travel Authorization)",
@@ -5628,6 +5670,18 @@ export const siteTree: TreeNode = {
                 "Baggage and customs: 10–20 minutes",
               ],
               tail: "Times may increase during peak travel seasons.",
+            },
+            {
+              title: "Evidence (Official Sources)",
+              icon: "wallet",
+              body: "Use official sources before final check-in and boarding.",
+              bullets: [
+                "Last checked: 2026-03-29 (KST)",
+                "K-ETA Official Portal: https://www.k-eta.go.kr/portal/newapply/index.do?locale=EN",
+                "e-Arrival Card Official Portal: https://www.e-arrivalcard.go.kr/portal/main/index.do?locale=EN",
+                "Korean Immigration Service: https://www.immigration.go.kr/immigration_eng/index.do",
+                "Incheon International Airport Arrival Procedures: https://www.airport.kr/ap_en/1439/subview.do",
+              ],
             },
             {
               title: "🧠 Key Reminders",

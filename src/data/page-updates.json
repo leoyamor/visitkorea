@@ -4,7 +4,7 @@
   "pages": {
     "en:/before-you-go/korea-entry-requirements": {
       "hash": "c1cfb4cd01350095130515a1f3810a5c0ca4d2aed9e1507caea3912227bebed7",
-      "updatedIso": "2026-03-12T00:00:00.000Z"
+      "updatedIso": "2026-03-29T00:00:00.000Z"
     },
     "en:/before-you-go/sim-or-esim": {
       "hash": "07c070423e6897e144667a60aff8bde896ffd849a06e2fdb4674a74a893a5a70",
@@ -12,7 +12,7 @@
     },
     "en:/before-you-go/travel-insurance-for-korea": {
       "hash": "7a48d4c596805eedb49507649666ceee742375d914b900445688c4bb630b00e5",
-      "updatedIso": "2026-02-15T00:00:00.000Z"
+      "updatedIso": "2026-03-28T00:00:00.000Z"
     },
     "en:/choose-a-city/busan": {
       "hash": "1f7b0cb418914fe9c016b68cccdd2d0346689327864b8ca5784f18f5b49ca51e",
@@ -40,7 +40,7 @@
     },
     "en:/getting-around-korea/is-getting-around-hard": {
       "hash": "9eb32fa1874e7bd68c290b3e0f456d4e92b5a1fbb6124e93c2779334eee5df27",
-      "updatedIso": "2026-02-22T00:00:00.000Z"
+      "updatedIso": "2026-03-26T00:00:00.000Z"
     },
     "en:/getting-around-korea/renting-a-car": {
       "hash": "588d11053d6f8c2a3a25cfce0264e1f46f9aa2124cc0b0f69b17754da3d9a21f",
@@ -144,7 +144,7 @@
     },
     "es:/before-you-go/korea-entry-requirements": {
       "hash": "333f089015650c966ffa319cd227a930257bf7f55744345a0bdbb2e9a354eb64",
-      "updatedIso": "2026-03-12T00:00:00.000Z"
+      "updatedIso": "2026-03-29T00:00:00.000Z"
     },
     "es:/before-you-go/sim-or-esim": {
       "hash": "c95210232b9462a491346f7e812849ed92e0d341d7615e8aa3f570527957f6d6",
@@ -180,7 +180,7 @@
     },
     "es:/getting-around-korea/is-getting-around-hard": {
       "hash": "9eb32fa1874e7bd68c290b3e0f456d4e92b5a1fbb6124e93c2779334eee5df27",
-      "updatedIso": "2026-02-18T00:00:00.000Z"
+      "updatedIso": "2026-03-26T00:00:00.000Z"
     },
     "es:/getting-around-korea/renting-a-car": {
       "hash": "588d11053d6f8c2a3a25cfce0264e1f46f9aa2124cc0b0f69b17754da3d9a21f",

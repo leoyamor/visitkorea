@@ -703,27 +703,27 @@ const LEAF_FAQ_BY_LANG: Record<SupportedLang, Record<string, LeafFaqItem[]>> = {
     ],
     "korea-entry-requirements": [
       {
-        question: "Hay diferencias entre viajeros nuevos y recurrentes?",
+        question: "Los viajeros primerizos y recurrentes siguen reglas diferentes?",
         answer:
-          "No. Depende de nacionalidad y normativa vigente.",
+          "No. Dependen de la nacionalidad y la normativa vigente.",
       },
       {
         question: "Necesito K-ETA?",
         answer:
-          "Depende de tu nacionalidad y exencion vigente.",
+          "Depende de tu nacionalidad y la exención vigente.",
       },
       {
-        question: "Como usar e-Arrival Card en viajes multiples?",
+        question: "Cómo gestionar la e-Arrival Card en viajes multiciudad?",
         answer:
-          "Usa una direccion principal y ten el itinerario listo.",
+          "Usa una dirección principal y ten el itinerario disponible.",
       },
       {
-        question: "Que cambia en viajes complejos?",
+        question: "Qué cambia entre viajes simples y complejos?",
         answer:
-          "Mayor preparacion documental.",
+          "La preparación documental.",
       },
       {
-        question: "Que revisar 24 horas antes del vuelo?",
+        question: "Qué revisar 24 horas antes del vuelo?",
         answer:
           "K-ETA, e-Arrival Card y actualizaciones oficiales.",
       },

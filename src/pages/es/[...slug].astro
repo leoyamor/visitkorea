@@ -1,4 +1,4 @@
-﻿---
+---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import TreePage from "../../components/TreePage.astro";
 import type { TreeNode } from "../../data/siteTree";
@@ -609,64 +609,114 @@ const ES_LEAF_OVERRIDES: Record<
     ],
   },
   "sim-or-esim": {
-    title: "SIM o eSIM?",
-    description: "Opciones de internet explicadas de forma simple.",
+    title: "SIM o eSIM para Corea? Guia practica para viajeros",
+    description:
+      "Ideal para viajeros que quieren datos al aterrizar, usar mapas desde el primer minuto y reducir friccion de llegada.",
     quickAnswer:
-      "Esta pagina te ayuda a elegir la opcion de internet mas simple para tu telefono.",
+      "Usa eSIM por defecto si tu telefono admite eSIM y esta desbloqueado por operadora. Elige una SIM fisica con recogida en aeropuerto si tu telefono esta bloqueado o no admite eSIM. Para un viaje de 7 dias en una sola ciudad, normalmente basta un plan basico de datos. Para 14 dias o mas, o rutas con varias ciudades, prioriza cobertura estable, politica de hotspot y recarga sencilla.",
     content: [
       {
-        title: "Respuesta rapida",
-        icon: "sim",
-        body:
-          "Eleccion por defecto: usa eSIM si tu telefono la admite y esta desbloqueado. Si no, elige una SIM fisica con recogida en el aeropuerto.",
-        bullets: [
-          "Instala la eSIM antes de salir y activala despues de aterrizar. Tendras datos moviles de inmediato al salir del aeropuerto.",
-          "Si tu dispositivo no admite eSIM, una SIM fisica recogida en el aeropuerto es la alternativa mas segura.",
-        ],
-        tail:
-          "En Corea, tener datos moviles fiables justo al llegar marca una gran diferencia. Te ayuda con navegacion, apps de traduccion, mensajeria y reservas de transporte durante tu primera hora en el pais.",
-      },
-      {
-        title: "Escenario: llegada nocturna",
-        icon: "sim",
-        body: "Imagina que llegas al Aeropuerto de Incheon cerca de la medianoche.",
-        bullets: [
-          "Tu hotel te pide enviar un mensaje antes del check-in y necesitas indicaciones apenas salgas del aeropuerto.",
-          "Si tu eSIM ya esta instalada, puedes conectarte a datos apenas aterrizas. Puedes avisar al hotel, revisar opciones de transporte y navegar hasta tu alojamiento sin demora.",
-          "Si prefieres ayuda presencial para la configuracion, una SIM con recogida en aeropuerto es una alternativa fiable porque el personal puede ayudarte con la instalacion.",
-        ],
-        tail:
-          "La mejor opcion no siempre es la mas barata: es la que reduce friccion durante tu primera hora en Corea.",
-      },
-      {
-        title: "Consejo final",
+        title: "4 respuestas directas",
         icon: "spark",
         body:
-          "Antes de comprar una SIM o eSIM, revisa este chequeo rapido de cuatro puntos.",
+          "Si quieres decidir rapido, empieza por estas cuatro respuestas.",
+        bullets: [
+          "P1. Cual es la opcion por defecto? R: eSIM, si tu telefono esta desbloqueado y es compatible.",
+          "P2. Cuando conviene una SIM fisica? R: cuando el telefono esta bloqueado o no admite eSIM.",
+          "P3. Que suele bastar para 7 dias? R: un plan turistico simple de datos.",
+          "P4. Que cambia en 14 dias o mas? R: revisa limite de velocidad, hotspot y recarga antes de comprar.",
+        ],
+      },
+      {
+        title: "Condicion de decision (telefono, duracion, ruta)",
+        icon: "checklist",
+        body:
+          "Elige segun tu caso real, no solo por precio.",
         subsections: [
           {
-            title: "1截뤴깵 Confirma compatibilidad del dispositivo",
-            tail:
-              "Asegurate de que tu modelo exacto de telefono admite eSIM y que esta desbloqueado por operadora.",
+            title: "Telefono bloqueado vs desbloqueado",
+            bullets: [
+              "Si tu telefono esta bloqueado por operadora, muchas SIM/eSIM turisticas no funcionaran.",
+              "Si esta desbloqueado y admite eSIM, eSIM suele ser la opcion mas rapida y comoda.",
+            ],
           },
           {
-            title: "2截뤴깵 Revisa cuando empieza el plan",
-            tail:
-              "Algunos planes empiezan en el momento de compra y otros cuando se usa por primera vez.",
+            title: "7 dias vs 14 dias o mas",
+            bullets: [
+              "Para 7 dias, prioriza activacion rapida y datos estables basicos.",
+              "Para 14 dias o mas, revisa reglas de fair-use, hotspot y recarga antes de cerrar compra.",
+            ],
           },
           {
-            title: "3截뤴깵 Revisa la politica de uso justo",
-            tail:
-              "Los planes ilimitados pueden bajar velocidad tras uso intenso. Revisa tambien limites de hotspot si planeas compartir datos.",
-          },
-          {
-            title: "4截뤴깵 Guarda instrucciones de activacion sin conexion",
-            tail:
-              "Descarga el codigo QR, la guia de instalacion y el contacto de soporte antes de salir.",
+            title: "Una ciudad vs varias ciudades",
+            bullets: [
+              "Para una sola ciudad, normalmente basta un plan turistico estandar.",
+              "Para varias ciudades, prioriza cobertura consistente en todo el pais y recarga facil.",
+            ],
           },
         ],
+      },
+      {
+        title: "SIM vs eSIM en la practica",
+        icon: "sim",
+        body:
+          "Ambas opciones sirven. La mejor es la que reduce friccion real en tu dia de llegada.",
+        subsections: [
+          {
+            title: "Elige eSIM si",
+            bullets: [
+              "Tu telefono admite eSIM",
+              "Tu telefono esta desbloqueado",
+              "Quieres datos inmediatos al aterrizar",
+              "Quieres evitar filas en mostradores del aeropuerto",
+            ],
+          },
+          {
+            title: "Elige SIM fisica si",
+            bullets: [
+              "Tu dispositivo no admite eSIM",
+              "Prefieres ayuda presencial de instalacion",
+              "Te sientes mas comodo con instalacion manual",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Best for / Not ideal for",
+        icon: "shield",
+        body: "Decide por encaje real, no por etiquetas de marketing.",
+        bullets: [
+          "Best for: viajeros primerizos que necesitan mapas y mensajeria desde el minuto uno.",
+          "Best for: llegadas nocturnas, traslados ajustados o muchos cambios de hotel.",
+          "Best for: viajes que dependen mucho de navegacion diaria.",
+          "Not ideal for: telefonos bloqueados que no aceptan perfiles de SIM/eSIM extranjera.",
+          "Not ideal for: quien solo usara Wi-Fi ocasional y no necesita conexion inmediata.",
+        ],
+      },
+      {
+        title: "Error comun",
+        icon: "alert",
+        body: "El error mas comun es comprar primero y revisar compatibilidad despues.",
+        bullets: [
+          "No confirmar desbloqueo y compatibilidad eSIM",
+          "Suponer que \"ilimitado\" significa velocidad alta ilimitada",
+          "No revisar cuando empieza a contar el plan",
+        ],
         tail:
-          "Unas pocas comprobaciones como estas suelen evitar la mayoria de problemas de conectividad el dia de llegada.",
+          "Dos minutos de verificacion suelen evitar la mayoria de fallos de conectividad al llegar.",
+      },
+      {
+        title: "Siguiente paso: entrada y seguro",
+        icon: "passport",
+        body:
+          "Antes de comprar, valida estas dos decisiones conectadas.",
+        bullets: [
+          "Abre Requisitos de entrada a Corea si no tienes 100% confirmados K-ETA, visado o e-Arrival.",
+          "Luego revisa Seguro de viaje si un gasto medico, retraso o equipaje perdido afectaria tu presupuesto.",
+          "Despues de esos dos pasos, cierra tu opcion de SIM/eSIM y guarda la activacion sin conexion.",
+        ],
+        tail:
+          "Este orden reduce errores de salida: primero entrada legal, despues riesgo financiero, y luego conectividad.",
       },
     ],
   },

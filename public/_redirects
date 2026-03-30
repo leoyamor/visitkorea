@@ -92,12 +92,12 @@ http://www.visitingkorea.pages.dev/* https://planmykorea.com/:splat 301
 /es/travel-basics/solo-travel-safety/ /es/travel-basics/korea-travel-safety/ 301
 /es/travel-basics/in-case-of-emergency /es/travel-basics/korea-travel-safety/ 301
 /es/travel-basics/in-case-of-emergency/ /es/travel-basics/korea-travel-safety/ 301
-/getting-around-korea/saving-on-transport /404.html 404!
-/getting-around-korea/saving-on-transport/ /404.html 404!
+/getting-around-korea/saving-on-transport /getting-around-korea/ 301
+/getting-around-korea/saving-on-transport/ /getting-around-korea/ 301
 /getting-around-korea/transfers-explained /404.html 404!
 /getting-around-korea/transfers-explained/ /404.html 404!
-/es/getting-around-korea/saving-on-transport /es/404/index.html 404!
-/es/getting-around-korea/saving-on-transport/ /es/404/index.html 404!
+/es/getting-around-korea/saving-on-transport /es/getting-around-korea/ 301
+/es/getting-around-korea/saving-on-transport/ /es/getting-around-korea/ 301
 /es/getting-around-korea/transfers-explained /es/404/index.html 404!
 /es/getting-around-korea/transfers-explained/ /es/404/index.html 404!
 /what-to-eat/food-for-first-timers /what-to-eat/what-should-i-try-first/ 301

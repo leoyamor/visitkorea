@@ -6,14 +6,7 @@ const REDIRECT_HOSTS = new Set([
   "www.visitingkorea.pages.dev",
 ]);
 
-const CANONICAL_TRAILING_SLASH = new Set([
-  "/plan-your-trip/2-weeks-in-korea",
-  "/es/plan-your-trip/2-weeks-in-korea",
-  "/things-to-do",
-  "/es/things-to-do",
-]);
-
-const LEGACY_PATH_REDIRECTS = new Map([
+const LEGACY_PATH_REDIRECT_ENTRIES = [
   ["/shopping-and-deals/shopping-in-seoul", "/travel-basics/shopping-and-discounts/"],
   ["/shopping-and-deals/shopping-in-busan", "/travel-basics/shopping-and-discounts/"],
   ["/shopping-and-deals/tax-refund-explained", "/travel-basics/shopping-and-discounts/"],
@@ -35,33 +28,100 @@ const LEGACY_PATH_REDIRECTS = new Map([
   ["/es/what-to-eat/food-for-first-timers", "/es/what-to-eat/what-should-i-try-first/"],
   ["/things-to-do/good-places-without-crowds", "/things-to-do/explore-korea/"],
   ["/es/things-to-do/good-places-without-crowds", "/es/things-to-do/explore-korea/"],
-]);
+];
 
-function normalizePath(pathname) {
+function hasFileExtension(pathname) {
+  return /\/[^/]+\.[^/]+$/.test(pathname);
+}
+
+function stripTrailingSlash(pathname) {
   if (pathname.length > 1 && pathname.endsWith("/")) {
     return pathname.slice(0, -1);
   }
   return pathname;
 }
 
+function normalizePathLookup(pathname) {
+  return stripTrailingSlash(pathname).toLowerCase();
+}
+
+function normalizeIncomingPath(pathname) {
+  let next = pathname || "/";
+  if (!next.startsWith("/")) {
+    next = `/${next}`;
+  }
+  next = next.replace(/\/{2,}/g, "/");
+
+  if (next !== "/") {
+    next = next.replace(/\/index\.html$/i, "/");
+    next = next.replace(/\/index$/i, "/");
+  }
+
+  if (!hasFileExtension(next)) {
+    next = next.toLowerCase();
+    if (next !== "/" && !next.endsWith("/")) {
+      next = `${next}/`;
+    }
+  }
+
+  return next;
+}
+
+function isSpanishPath(pathname) {
+  return pathname === "/es/" || pathname.startsWith("/es/");
+}
+
+function stripSpanishPrefix(pathname) {
+  if (!isSpanishPath(pathname)) {
+    return pathname;
+  }
+  if (pathname === "/es/") {
+    return "/";
+  }
+  return pathname.slice(3);
+}
+
+function withLang(pathname, lang) {
+  const basePath = stripSpanishPrefix(pathname);
+  if (lang === "es") {
+    return basePath === "/" ? "/es/" : `/es${basePath}`;
+  }
+  return basePath;
+}
+
+const LEGACY_PATH_REDIRECTS = new Map(
+  LEGACY_PATH_REDIRECT_ENTRIES.map(([from, to]) => [normalizePathLookup(from), to])
+);
+
 export async function onRequest(context) {
   const url = new URL(context.request.url);
   const host = url.hostname.toLowerCase();
-  if (REDIRECT_HOSTS.has(host)) {
+  const needsHostRedirect = REDIRECT_HOSTS.has(host);
+  if (needsHostRedirect) {
     url.protocol = "https:";
     url.hostname = "planmykorea.com";
-    return Response.redirect(url.toString(), 301);
   }
 
-  if (CANONICAL_TRAILING_SLASH.has(url.pathname)) {
-    url.pathname = `${url.pathname}/`;
-    return Response.redirect(url.toString(), 301);
-  }
+  const originalPath = url.pathname;
+  const originalSearch = url.search;
+  let nextPath = normalizeIncomingPath(originalPath);
 
-  const normalizedPath = normalizePath(url.pathname);
-  const redirectPath = LEGACY_PATH_REDIRECTS.get(normalizedPath);
+  const redirectPath = LEGACY_PATH_REDIRECTS.get(normalizePathLookup(nextPath));
   if (redirectPath) {
-    url.pathname = redirectPath;
+    nextPath = redirectPath;
+  }
+
+  const langQuery = url.searchParams.get("lang");
+  if (langQuery) {
+    const normalizedLang = langQuery.toLowerCase();
+    if ((normalizedLang === "en" || normalizedLang === "es") && !hasFileExtension(nextPath)) {
+      nextPath = withLang(nextPath, normalizedLang);
+    }
+    url.searchParams.delete("lang");
+  }
+
+  if (needsHostRedirect || nextPath !== originalPath || url.search !== originalSearch) {
+    url.pathname = nextPath;
     return Response.redirect(url.toString(), 301);
   }
 

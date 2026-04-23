@@ -4620,16 +4620,16 @@ export const siteTree: TreeNode = {
           icon: "shield",
           image: "/leaf%20images/Is%20Korea%20Safe.webp",
           description:
-            "How safe Korea is, what solo travelers should expect, and what to do in an emergency.",
+            "Korea safety guide for travelers: solo travel, night movement, emergency numbers, hospitals, lost items, and practical precautions.",
           quickAnswer:
-            "Korea is very safe for visitors, including solo travelers, but awareness and basic emergency preparation still matter.",
+            "Korea is very safe for visitors, including solo travelers, but basic preparation still matters: save 112 for police, 119 for fire or ambulance, and 1330 for travel help.",
           content: [
             {
               title: "✨ Introduction",
               body:
                 "Korea is widely considered one of the safest countries for travelers.",
               tail:
-                "Violent crime is rare in tourist areas, public transport is reliable, and streets remain active late into the night. However, \"safe\" does not mean \"careless.\" Understanding basic awareness makes your trip smoother and more confident.",
+                "Violent crime is rare in tourist areas, public transport is reliable, and streets remain active late into the night. However, \"safe\" does not mean \"careless.\" This guide covers solo travel, night movement, emergency numbers, hospitals, lost items, and simple habits that make a Korea trip smoother.",
             },
             {
               title: "🛡️ 1. General Safety Overview",
@@ -4641,7 +4641,7 @@ export const siteTree: TreeNode = {
                 "Active late-night food areas",
                 "Organized and reliable public transportation",
               ],
-              tail: "Serious incidents involving tourists are uncommon.",
+              tail: "Serious incidents involving tourists are uncommon, especially in central areas of Seoul, Busan, Jeju City, Gyeongju, and Jeonju where visitors usually stay.",
             },
             {
               title: "🧍 2. Solo Travel Safety",
@@ -4725,9 +4725,13 @@ export const siteTree: TreeNode = {
               subsections: [
                 {
                   title: "Emergency Numbers",
-                  bullets: ["Police: 112", "Fire / Ambulance: 119"],
+                  bullets: [
+                    "Police: 112",
+                    "Fire / Ambulance: 119",
+                    "Korea Travel Hotline: 1330",
+                  ],
                   tail:
-                    "These numbers work from mobile phones and public phones. English assistance is commonly available.",
+                    "112 and 119 work from mobile phones and public phones. Use 1330 for non-emergency travel help, interpretation support, and tourist information.",
                 },
                 {
                   title: "Medical Situations",
@@ -4742,7 +4746,7 @@ export const siteTree: TreeNode = {
                     "Use a pharmacy for minor issues",
                   ],
                   tail:
-                    "Hospitals in major cities often provide English-language support.",
+                    "Hospitals in major cities often provide English-language support, but large university hospitals and international clinics are usually easier for visitors than small neighborhood clinics.",
                 },
                 {
                   title: "Lost Items",
@@ -4756,6 +4760,19 @@ export const siteTree: TreeNode = {
                     "File a report",
                   ],
                   tail: "Lost items are frequently returned.",
+                },
+                {
+                  title: "Embassy and Insurance Backup",
+                  lead: [
+                    "For serious legal, passport, or medical problems:",
+                  ],
+                  bullets: [
+                    "Keep your embassy or consulate contact saved offline",
+                    "Carry your travel insurance policy number",
+                    "Keep a photo of your passport separate from the original",
+                  ],
+                  tail:
+                    "These backups are rarely needed, but they reduce stress if a minor problem becomes serious.",
                 },
               ],
             },

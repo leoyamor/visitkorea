@@ -1173,39 +1173,38 @@ const getInitials = (title: string) => {
 };
 
 const iconMap: Record<string, string> = {
-  calendar: "📅",
-  compass: "🧭",
-  spark: "✨",
-  city: "🏙️",
-  beach: "🏖️",
-  island: "🏝️",
-  temple: "🏯",
-  bowl: "🍜",
-  leaf: "🍃",
-  pin: "📍",
-  chili: "🌶️",
-  train: "🚆",
-  bus: "🚌",
-  taxi: "🚕",
-  car: "🚗",
-  card: "💳",
-  wallet: "👛",
-  transfer: "🔁",
-  bed: "🛏️",
-  sim: "📶",
-  shield: "🛡️",
-  alert: "⚠️",
-  cloud: "☁️",
-  passport: "🛂",
-  hand: "🤝",
-  checklist: "✅",
-  plane: "✈️",
-  bag: "🧳",
-  receipt: "🧾",
-  tag: "🏷️",
-  route: "🗺️",
+  calendar: "\u{1F4C5}",
+  compass: "\u{1F9ED}",
+  spark: "\u{2728}",
+  city: "\u{1F3D9}",
+  beach: "\u{1F3D6}",
+  island: "\u{1F3DD}",
+  temple: "\u{26E9}",
+  bowl: "\u{1F35C}",
+  leaf: "\u{1F342}",
+  pin: "\u{1F4CD}",
+  chili: "\u{1F336}",
+  train: "\u{1F686}",
+  bus: "\u{1F68C}",
+  taxi: "\u{1F695}",
+  car: "\u{1F697}",
+  card: "\u{1F4B3}",
+  wallet: "\u{1F45B}",
+  transfer: "\u{1F501}",
+  bed: "\u{1F6CF}",
+  sim: "\u{1F4F6}",
+  shield: "\u{1F6E1}",
+  alert: "\u{26A0}",
+  cloud: "\u{2601}",
+  passport: "\u{1F6C2}",
+  hand: "\u{270B}",
+  checklist: "\u{2705}",
+  plane: "\u{2708}",
+  bag: "\u{1F9F3}",
+  receipt: "\u{1F9FE}",
+  tag: "\u{1F3F7}",
+  route: "\u{1F9ED}",
 };
-
 const toneMap: Record<string, string> = {
   calendar: "sunset",
   compass: "sky",
@@ -1241,7 +1240,7 @@ const toneMap: Record<string, string> = {
 
 const renderIcon = (key?: string) => {
   if (!key) return null;
-  return iconMap[key] ?? "✨";
+  return iconMap[key] ?? "\u{2728}";
 };
 
 const headingEmojiPattern =
@@ -1861,12 +1860,12 @@ const checklistByLeaf: Record<string, Partial<Record<SupportedLang, string[]>>> 
   },
   "korea-travel-safety": {
     en: [
-      "I saved emergency numbers (112 and 119) in my phone.",
+      "I saved emergency numbers (112, 119, and 1330) in my phone.",
       "I saved or screenshotted my accommodation address.",
       "I know to stay on well-lit main streets at night.",
     ],
     es: [
-      "Guarde los numeros de emergencia (112 y 119) en mi telefono.",
+      "Guarde los numeros de emergencia (112, 119 y 1330) en mi telefono.",
       "Guarde o hice una captura de la direccion de mi alojamiento.",
       "Se que debo mantenerme en calles principales bien iluminadas por la noche.",
     ],

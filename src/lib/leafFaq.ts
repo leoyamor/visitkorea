@@ -405,7 +405,7 @@ const LEAF_FAQ_BY_LANG: Record<SupportedLang, Record<string, LeafFaqItem[]>> = {
       },
       {
         question: "What emergency information should travelers know in Korea?",
-        answer: "Police: 112\nFire or ambulance: 119",
+        answer: "Police: 112\nFire or ambulance: 119\nKorea Travel Hotline: 1330",
       },
       {
         question: "What should I remember after reading this guide?",
@@ -693,7 +693,7 @@ const LEAF_FAQ_BY_LANG: Record<SupportedLang, Record<string, LeafFaqItem[]>> = {
       {
         question: "Que regla de VAT refund deben recordar los viajeros?",
         answer:
-          "Los numeros clave son ₩15,000 (compra minima), ₩1,000,000 (limite de reembolso inmediato) y ₩5,000,000 (limite total por viaje).",
+          "Los numeros clave son KRW 15,000 (compra minima), KRW 1,000,000 (limite de reembolso inmediato) y KRW 5,000,000 (limite total por viaje).",
       },
       {
         question: "Que debo hacer antes de comprar?",
@@ -703,29 +703,29 @@ const LEAF_FAQ_BY_LANG: Record<SupportedLang, Record<string, LeafFaqItem[]>> = {
     ],
     "korea-entry-requirements": [
       {
-        question: "Los viajeros primerizos y recurrentes siguen reglas diferentes?",
+        question: "Los viajeros primerizos y quienes ya viajaron siguen reglas legales distintas de entrada?",
         answer:
-          "No. Dependen de la nacionalidad y la normativa vigente.",
+          "No. Las reglas legales dependen de la nacionalidad del pasaporte y de la normativa vigente en la fecha del viaje, no de la experiencia de viaje. Quienes regresan tambien deben volver a revisar K-ETA y requisitos de llegada antes de cada viaje.",
       },
       {
-        question: "Necesito K-ETA?",
+        question: "Necesito K-ETA para entrar a Corea?",
         answer:
-          "Depende de tu nacionalidad y la exención vigente.",
+          "Depende de tu nacionalidad y de la exencion temporal vigente. Algunas nacionalidades exentas de visado deben solicitar K-ETA antes de volar, mientras que otras quedan temporalmente exentas hasta el 31 de diciembre de 2026.",
       },
       {
-        question: "Cómo gestionar la e-Arrival Card en viajes multiciudad?",
+        question: "Como debo gestionar la e-Arrival Card en un viaje con varias ciudades?",
         answer:
-          "Usa una dirección principal y ten el itinerario disponible.",
+          "Declara una direccion principal de alojamiento y ten listo el itinerario completo. Si ya tienes una K-ETA valida, normalmente quedas exento de una declaracion de llegada separada, pero confirma siempre el aviso oficial mas reciente.",
       },
       {
-        question: "Qué cambia entre viajes simples y complejos?",
+        question: "Que cambia entre preparar un viaje de una ciudad y uno multiciudad?",
         answer:
-          "La preparación documental.",
+          "Las comprobaciones legales son las mismas, pero en viajes multiciudad necesitas mas orden documental: una direccion principal representativa, detalles de ruta y reservas de transporte coherentes con la fecha de entrada.",
       },
       {
-        question: "Qué revisar 24 horas antes del vuelo?",
+        question: "Que debo dejar cerrado dentro de las 24 horas previas al vuelo?",
         answer:
-          "K-ETA, e-Arrival Card y actualizaciones oficiales.",
+          "Confirma el estado de K-ETA, verifica los requisitos de e-Arrival Card y revisa la ultima actualizacion oficial. Luego deja decididos SIM o eSIM y seguro de viaje para que la llegada sea mas simple.",
       },
     ],
     seoul: [
@@ -945,29 +945,29 @@ const LEAF_FAQ_BY_LANG: Record<SupportedLang, Record<string, LeafFaqItem[]>> = {
     ],
     "attraction-passes-discounts": [
       {
-        question: "¿Necesito un pase turístico para visitar Corea?",
+        question: "Necesito un pase turistico para visitar Corea?",
         answer:
           "No necesariamente. Muchas atracciones tienen precios bajos o incluso son gratuitas. Los pases solo suelen ahorrar dinero si tu itinerario incluye varias atracciones de pago en poco tiempo.",
       },
       {
-        question: "¿Cuándo realmente vale la pena un pase turístico?",
+        question: "Cuando de verdad compensa un pase turistico?",
         answer:
-          "Normalmente cuando visitas tres o más atracciones de pago dentro del período de validez del pase y planificas tu ruta con eficiencia.",
+          "Normalmente compensa cuando visitas tres o mas atracciones de pago dentro del periodo de validez y organizas la ruta con eficiencia.",
       },
       {
-        question: "¿Cuál es el error más común que cometen los viajeros con estos pases?",
+        question: "Cual es el error mas comun con estos pases?",
         answer:
-          "Comprar el pase antes de planificar el itinerario. Los pases basados en tiempo funcionan mejor cuando las visitas están bien organizadas.",
+          "Comprar el pase antes de planificar el itinerario. Los pases por tiempo funcionan mejor cuando las visitas ya estan bien organizadas.",
       },
       {
-        question: "¿Cuál es la diferencia entre los principales pases en Corea?",
+        question: "Cual es la diferencia entre los pases principales en Corea?",
         answer:
-          "El KORAIL PASS reduce el costo de los trenes de larga distancia. En cambio, pases como Discover Seoul Pass o VISIT BUSAN PASS ofrecen entradas gratuitas o descuentos para atracciones dentro de una ciudad específica.",
+          "El KORAIL PASS se centra en reducir el costo de trenes de larga distancia. En cambio, pases como Discover Seoul Pass o VISIT BUSAN PASS dan entradas o descuentos para atracciones dentro de una ciudad concreta.",
       },
       {
-        question: "¿Cómo debería decidir si comprar un pase o no?",
+        question: "Como deberia decidir si comprar un pase o no?",
         answer:
-          "Haz una lista de las atracciones que planeas visitar, compara el precio total de las entradas individuales con el precio del pase y revisa cuáles atracciones son gratuitas y cuáles solo ofrecen descuento.",
+          "Haz una lista de atracciones que realmente vas a visitar, compara el costo total de entradas sueltas con el precio del pase y revisa cuales son gratis y cuales solo ofrecen descuento.",
       },
     ],
     "korea-now-and-more": [
